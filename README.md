@@ -1,6 +1,6 @@
 ![image](images/microchip.jpg) 
 
-## %repoDescritpion%
+## DPSK3 POWER BOOST VOLTAGE MODE CONTROL
 
 Board Image if any.
 
