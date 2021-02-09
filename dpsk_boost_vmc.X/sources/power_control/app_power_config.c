@@ -213,6 +213,9 @@ volatile uint16_t appPowerSupply_ConverterObjectInitialize(void)
     boost.startup.power_good_delay.ref_inc_step = 0;
     boost.startup.power_good_delay.reference = BOOST_VOUT_REF;
     
+    boost.startup.vcap_monitor.period = BOOST_CHRG_PER;
+    boost.startup.vcap_monitor.timeout = BOOST_CHRG_PER;
+    boost.startup.vcap_monitor.v_drop = BOOST_VOUT_VFWD_DROP;
     
     return(retval);
 }

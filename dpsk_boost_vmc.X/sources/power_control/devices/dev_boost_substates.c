@@ -9,12 +9,14 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h> // include standard integer data types
 #include <stdbool.h> // include standard boolean data types
+#include <stdlib.h> // include C standard library header
 
 #include "dev_boost_pconfig.h" // include boost converter
 #include "dev_boost_typedef.h" // include boost converter data object declarations
 
 // Private function prototypes of sub-state functions
 volatile uint16_t __attribute__((always_inline)) SubState_PowerOnDelay(volatile struct BOOST_CONVERTER_s *boostInstance);
+volatile uint16_t __attribute__((always_inline)) Substate_VCapMonitor(volatile struct BOOST_CONVERTER_s *boostInstance);
 volatile uint16_t __attribute__((always_inline)) SubState_PrepareVRampUp(volatile struct BOOST_CONVERTER_s *boostInstance);
 volatile uint16_t __attribute__((always_inline)) SubState_VRampUp(volatile struct BOOST_CONVERTER_s *boostInstance);
 volatile uint16_t __attribute__((always_inline)) SubState_IRampUp(volatile struct BOOST_CONVERTER_s *boostInstance);
@@ -25,14 +27,88 @@ volatile uint16_t __attribute__((always_inline)) SubState_PowerGoodDelay(volatil
 volatile uint16_t (*BoostConverterRampUpSubStateMachine[])(volatile struct BOOST_CONVERTER_s *boostInstance) = 
 {
     SubState_PowerOnDelay,      ///< Sub-State #0: Wait programmed number of state machine ticks until startup is triggered
-    SubState_PrepareVRampUp,    ///< Sub-State #1: Determine ramp up condition, pre-charge controllers and program PWM/Peripherals
-    SubState_VRampUp,           ///< Sub-State #2: Output voltage ramp up
-    SubState_IRampUp,           ///< Sub-State #3: Output current ramp up (optional, for startup current limiting only)
-    SubState_PowerGoodDelay     ///< Sub-State #4: Wait until power good delay has expired and optionally set a GPIO
+    Substate_VCapMonitor,       ///< Sub-State #1: Monitors the output capacitor voltage until the voltage has settled
+    SubState_PrepareVRampUp,    ///< Sub-State #2: Determine ramp up condition, pre-charge controllers and program PWM/Peripherals
+    SubState_VRampUp,           ///< Sub-State #3: Output voltage ramp up
+    SubState_IRampUp,           ///< Sub-State #4: Output current ramp up (optional, for startup current limiting only)
+    SubState_PowerGoodDelay     ///< Sub-State #5: Wait until power good delay has expired and optionally set a GPIO
 };
 
 // Declaration variable capturing the size of the sub-state function pointer array 
 volatile uint16_t BoostRampUpSubStateList_size = (sizeof(BoostConverterRampUpSubStateMachine)/sizeof(BoostConverterRampUpSubStateMachine[0])); 
+
+
+/***********************************************************************************
+ * @fn      uint16_t Substate_VCapMonitor(volatile struct BOOST_CONVERTER_s *boostInstance)
+ * @ingroup lib-layer-boost-state-machine-functions
+ * @brief   This function monitors the output capacitor voltage waiting until the voltage has settled
+ * @param	boostInstance  Pointer to a Boost Converter data object of type struct BOOST_CONVERTER_s
+ * @return  unsigned integer (0=failure, 1=success)
+ * 
+ * @details
+ * The boost converter output capacitor is by default automatically charged 
+ * through the boost rectifier resp. the high-side MOSFET body diode. Before 
+ * the power supply is started, the state machine waits for the output
+ * capacitor voltage to settle to reduce component stress during startup.
+ **********************************************************************************/
+
+volatile uint16_t Substate_VCapMonitor(volatile struct BOOST_CONVERTER_s *boostInstance)
+{
+    static   uint16_t _pre_sample=0;
+    static   uint16_t _timeout_counter=0;
+    static   uint16_t _counter=0;
+    volatile uint16_t _source=0;
+
+    // Set BUSY bit until process is complete
+    boostInstance->status.bits.busy = true;
+    
+    // Reset Pre-Sample Value
+    if (_timeout_counter == 0)
+        _pre_sample = 0;
+    
+    // Capture compare value
+    _source = abs(boostInstance->data.v_out - _pre_sample); 
+
+    if(_source > boostInstance->startup.vcap_monitor.v_drop)
+        _counter = 0; // Reset counter if voltage is not tuned in yet
+
+    // Copy most recent sample into previous sample buffer
+    _pre_sample = boostInstance->data.v_out; 
+    
+    // Monitor settled voltage for the given period of time
+    if (_counter++ > 
+        boostInstance->startup.vcap_monitor.period)
+    {
+        _counter = 0;
+        _timeout_counter = 0;
+        
+        Nop();  // Please Debugging Breakpoint
+        Nop();
+        Nop();
+
+        return(BOOST_OPSRET_COMPLETE);
+        
+    }
+    
+    // In case of a timeout, reset state machine and try again
+    if (_timeout_counter++ > 
+        boostInstance->startup.vcap_monitor.timeout)
+    {
+        _counter = 0;
+        _timeout_counter = 0;
+
+        Nop();  // Please Debugging Breakpoint
+        Nop();
+        Nop();
+
+        return (BOOST_OPSRET_ERROR);
+
+    }
+
+    // Recall this sub-state
+    return(BOOST_OPSRET_REPEAT);
+         
+}
 
 /***********************************************************************************
  * @fn      uint16_t SubState_PowerOnDelay(volatile struct BOOST_CONVERTER_s *boostInstance)

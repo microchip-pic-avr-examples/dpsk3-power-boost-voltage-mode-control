@@ -1086,6 +1086,7 @@
 #define BOOST_VOUT_NOMINAL           (float)15.00   ///< Nominal output voltage
 #define BOOST_VOUT_TOLERANCE_MAX     (float)0.500   ///< Output voltage tolerance [+/-]
 #define BOOST_VOUT_TOLERANCE_MIN     (float)0.100   ///< Output voltage tolerance [+/-]
+#define BOOST_VOUT_VFWD_DROP_MAX     (float)0.400   ///< Recitifer diode forward voltage drop maximum
     
 #define BOOST_VOUT_DIV_R1            (float)(6.980) ///< Upper voltage divider resistor in kOhm
 #define BOOST_VOUT_DIV_R2            (float)(1.000) ///< Lower voltage divider resistor in kOhm
@@ -1128,18 +1129,19 @@
 
 #define BOOST_VOUT_FEEDBACK_GAIN (float)((BOOST_VOUT_DIV_R2) / (BOOST_VOUT_DIV_R1 + BOOST_VOUT_DIV_R2))
 
-#define BOOST_VOUT_REF           (uint16_t)(BOOST_VOUT_NOMINAL * BOOST_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the output voltage reference given above in [V]
-#define BOOST_VOUT_NOM           BOOST_VOUT_REF ///< Alias macro of the integer number equivalent of the nominal output voltage given above in [V]
-#define BOOST_VOUT_DEV_TRIP      (uint16_t)(BOOST_VOUT_TOLERANCE_MAX * BOOST_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which will lead to a converter shut down when exceeded.
-#define BOOST_VOUT_DEV_RELEASE   (uint16_t)(BOOST_VOUT_TOLERANCE_MIN * BOOST_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which needs to be underrun before a shut-down converter can recover
-#define BOOST_VOUT_OFFSET        (uint16_t)(BOOST_VOUT_FEEDBACK_OFFSET / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the physical, static signal offset of this feedback channel
-#define BOOST_VOUT_ADC_TRGDLY    (uint16_t)(BOOST_VOUT_ADC_TRG_DELAY / PWM_CLOCK_PERIOD) ///< Macro calculating the integer number equivalent of the signal chain time delay between internal PWM timebase and effective switching edge of the leading FET
+#define BOOST_VOUT_REF          (uint16_t)(BOOST_VOUT_NOMINAL * BOOST_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the output voltage reference given above in [V]
+#define BOOST_VOUT_NOM          BOOST_VOUT_REF ///< Alias macro of the integer number equivalent of the nominal output voltage given above in [V]
+#define BOOST_VOUT_DEV_TRIP     (uint16_t)(BOOST_VOUT_TOLERANCE_MAX * BOOST_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which will lead to a converter shut down when exceeded.
+#define BOOST_VOUT_DEV_RELEASE  (uint16_t)(BOOST_VOUT_TOLERANCE_MIN * BOOST_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which needs to be underrun before a shut-down converter can recover
+#define BOOST_VOUT_OFFSET       (uint16_t)(BOOST_VOUT_FEEDBACK_OFFSET / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the physical, static signal offset of this feedback channel
+#define BOOST_VOUT_ADC_TRGDLY   (uint16_t)(BOOST_VOUT_ADC_TRG_DELAY / PWM_CLOCK_PERIOD) ///< Macro calculating the integer number equivalent of the signal chain time delay between internal PWM timebase and effective switching edge of the leading FET
+#define BOOST_VOUT_VFWD_DROP    (uint16_t)(BOOST_VOUT_VFWD_DROP_MAX / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum forward voltage drop across teh rectifier diode
 
-#define BOOST_VOUT_NORM_INV_G    (float)(1.0/BOOST_VOUT_FEEDBACK_GAIN) ///< Inverted feedback gain required for value normalization
-#define BOOST_VOUT_NORM_SCALER   (int16_t)(ceil(log(BOOST_VOUT_NORM_INV_G)) + 1) ///< VOUT normalization  
-#define BOOST_VOUT_NORM_FACTOR   (int16_t)((BOOST_VOUT_NORM_INV_G / pow(2.0, BOOST_VOUT_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< VOUT normalization factor scaled in Q15
+#define BOOST_VOUT_NORM_INV_G   (float)(1.0/BOOST_VOUT_FEEDBACK_GAIN) ///< Inverted feedback gain required for value normalization
+#define BOOST_VOUT_NORM_SCALER  (int16_t)(ceil(log(BOOST_VOUT_NORM_INV_G)) + 1) ///< VOUT normalization  
+#define BOOST_VOUT_NORM_FACTOR  (int16_t)((BOOST_VOUT_NORM_INV_G / pow(2.0, BOOST_VOUT_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< VOUT normalization factor scaled in Q15
 
-#define BOOST_VOUT_RANGE_MAX     (float)(ADC_REFERENCE * BOOST_VOUT_NORM_INV_G) ///< Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]]
+#define BOOST_VOUT_RANGE_MAX    (float)(ADC_REFERENCE * BOOST_VOUT_NORM_INV_G) ///< Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]]
     
 /** @} */ // end of group output-voltage-feedback-macros ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1164,8 +1166,8 @@
  * *************************************************************************************************/
 
 // Feedback Declarations
-#define BOOST_ISNS_LSCS    0                 ///< Use low-side shunt resistor as main current feedback source
-#define BOOST_ISNS_AMP   1                   ///< Use shunt amplifier as main current feedback source
+#define BOOST_ISNS_LSCS     0                   ///< Use low-side shunt resistor as main current feedback source
+#define BOOST_ISNS_AMP      1                   ///< Use shunt amplifier as main current feedback source
     
 #define BOOST_ISNS_OPTION    BOOST_ISNS_LSCS    ///< Select one of the available current sense feedback options
 
@@ -1345,7 +1347,7 @@
  * sections. Any change of these parameters will also result in a change of the values of the 
  * gain modulation parameters of this section.
  * *************************************************************************************************/
-/* ToDo: AGC is temporarily disabled for the boost converter and requires further verification
+/* ToDo: AGC is temporarily disabled for the boost converter and requires further verification 
 
 #define BOOST_VL_MINIMUM         (float)(BOOST_VIN_UNDER_VOLTAGE - BOOST_VOUT_RANGE_MAX) ///< Minimum input voltage - maximum output voltate
 #define BOOST_VL_NOMINAL         (float)(BOOST_VIN_NOMINAL       - BOOST_VOUT_NOMINAL) ///< Nominal input voltage - nominal output voltate
@@ -1403,11 +1405,14 @@
  * applied as desired.
  **************************************************************************************************/
 
-#define BOOST_POWER_ON_DELAY          (float) 200e-3 ///< power on delay in [sec]
-#define BOOST_VRAMP_PERIOD            (float) 100e-3 ///< voltage ramp-up period in [sec]
-#define BOOST_IRAMP_PERIOD            (float) 100e-3 ///< output current ramp-up period in [sec]
-#define BOOST_POWER_GOOD_DELAY        (float) 200e-3 ///< power good delay in [sec]
+#define BOOST_POWER_ON_DELAY        (float) 200e-3 ///< power on delay in [sec]
+#define BOOST_VRAMP_PERIOD          (float) 100e-3 ///< voltage ramp-up period in [sec]
+#define BOOST_IRAMP_PERIOD          (float) 100e-3 ///< output current ramp-up period in [sec]
+#define BOOST_POWER_GOOD_DELAY      (float) 200e-3 ///< power good delay in [sec]
 
+#define BOOST_CHARGEUP_PERIOD       (float)  50e-3 ///< output capacitor charge up monitor period in [sec]
+#define BOOST_CHARGEUP_TIMEOUT      (float) 200e-3 ///< output capacitor charge up monitor timeout in [sec]
+    
 /** @} */ // end of group startup-timing-settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1427,6 +1432,8 @@
 #define BOOST_IRAMP_PER (uint16_t)(((float)BOOST_IRAMP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
 #define BOOST_IREF_STEP (uint16_t)((float)BOOST_ISNS_REF / (float)(BOOST_VRAMP_PER + 1.0))
 #define BOOST_PGD       (uint16_t)(((float)BOOST_POWER_GOOD_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BOOST_CHRG_PER  (uint16_t)(((float)BOOST_CHARGEUP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BOOST_CHRG_TOUT (uint16_t)(((float)BOOST_CHARGEUP_TIMEOUT / (float)MAIN_EXECUTION_PERIOD)-1.0)
 
 /** @} */ // end of group startup-timing-macros ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

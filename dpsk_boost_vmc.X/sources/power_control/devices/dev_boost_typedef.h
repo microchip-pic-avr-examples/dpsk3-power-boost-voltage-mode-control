@@ -118,10 +118,11 @@ typedef enum BOOST_OPSTATES_e BOOST_OPSTATE_t; ///< Enumeration of state machine
 enum BOOST_SUBSTATES_e {  // Enumeration of state machine operating sub-states
 
     BOOST_OPSTATE_POWER_ON_DELAY = 0x00,  ///< power converter control state #3: power on delay (no action)
-    BOOST_OPSTATE_PREPARE_V_RAMP = 0x01,  ///< power converter control state #4: turn on PWM outputs and enable controller
-    BOOST_OPSTATE_V_RAMP_UP      = 0x02,  ///< power converter control state #5: perform output voltage ramp up based on parameters and system response 
-    BOOST_OPSTATE_I_RAMP_UP      = 0x03,  ///< power converter control state #6: perform output current ramp up based on parameters and system response (average current mode only)
-    BOOST_OPSTATE_PWRGOOD_DELAY  = 0x04   ///< power converter control state #7: Output reached regulation point but waits until things have settled
+    BOOST_OPSTATE_VCAP_MONITOR   = 0x01,  ///< power converter control state #4: wait for the output voltage to settle
+    BOOST_OPSTATE_PREPARE_V_RAMP = 0x02,  ///< power converter control state #5: turn on PWM outputs and enable controller
+    BOOST_OPSTATE_V_RAMP_UP      = 0x03,  ///< power converter control state #6: perform output voltage ramp up based on parameters and system response 
+    BOOST_OPSTATE_I_RAMP_UP      = 0x04,  ///< power converter control state #7: perform output current ramp up based on parameters and system response (average current mode only)
+    BOOST_OPSTATE_PWRGOOD_DELAY  = 0x05   ///< power converter control state #8: Output reached regulation point but waits until things have settled
     
 }; ///< Enumeration of state machine operating sub-states 
 typedef enum BOOST_SUBSTATES_e BOOST_OP_SUBSTATES_t; ///< Enumeration of state machine operating sub-states data type
@@ -272,6 +273,28 @@ typedef struct BOOST_STARTUP_PERIOD_HANDLER_s BOOST_STARTUP_PERIOD_HANDLER_t; //
 
 /****************************************************************************************************
  * @ingroup lib-layer-boost-converter-properties-private-data-types
+ * @struct  BOOST_STARTUP_VCAP_PRECHARGE_s
+ * @brief   Boost converter output capacitor voltage monitor charge-up monitor settings
+ * @extends BOOST_CONVERTER_STARTUP_s
+ * 
+ * @details
+ * This data structure is used to set the startup settings such as power on delay, power good delay
+ * and ramp up time. It further covers private values like startup counters and reference values
+ * for voltage and current, which are used internally by the controller (read only) but are still
+ * accessible for external code modules for monitoring, diagnostics and fault handling purposes.
+ * 
+ **************************************************************************************************** */
+struct BOOST_STARTUP_VCAP_PRECHARGE_s {
+    
+    volatile uint16_t period;       ///< Soft-Start VCAP Charge-Up Period (minimum time to wait when voltage has settled)
+    volatile uint16_t timeout;      ///< Soft-Start VCAP Charge-Up Monitor Period Counter Timeout (state machine fault state trigger)
+    volatile uint16_t v_drop;       ///< Acceptable voltage drop between input and output voltage when output capacitor is charging up
+    
+}; // Power converter soft-start Vcap auxiliary variables
+typedef struct BOOST_STARTUP_VCAP_PRECHARGE_s BOOST_STARTUP_VCAP_PRECHARGE_t; // Power converter Vcap pre-charge auxiliary variables data types
+
+/****************************************************************************************************
+ * @ingroup lib-layer-boost-converter-properties-private-data-types
  * @struct  BOOST_CONVERTER_STARTUP_s
  * @brief   Power Converter Startup Timing Settings
  * @extends BOOST_CONVERTER_s
@@ -282,6 +305,7 @@ typedef struct BOOST_STARTUP_PERIOD_HANDLER_s BOOST_STARTUP_PERIOD_HANDLER_t; //
     volatile struct BOOST_STARTUP_PERIOD_HANDLER_s power_good_delay;
     volatile struct BOOST_STARTUP_PERIOD_HANDLER_s i_ramp;
     volatile struct BOOST_STARTUP_PERIOD_HANDLER_s v_ramp;
+    volatile struct BOOST_STARTUP_VCAP_PRECHARGE_s vcap_monitor;
     
 }; // Power converter start-up settings and variables
 typedef struct BOOST_CONVERTER_STARTUP_s  BOOST_CONVERTER_STARTUP_t; // Power converter start-up settings and variables data type
