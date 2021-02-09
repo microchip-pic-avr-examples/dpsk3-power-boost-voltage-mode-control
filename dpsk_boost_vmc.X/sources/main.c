@@ -82,7 +82,7 @@ int main(void) {
     volatile uint16_t retval = 1;
     volatile uint16_t timeout = 0;
     
-// Initialize basic system configuration
+    // Initialize basic system configuration
     retval &= SYSTEM_Initialize();
     
     // Initialize special, application-specific peripherals 
