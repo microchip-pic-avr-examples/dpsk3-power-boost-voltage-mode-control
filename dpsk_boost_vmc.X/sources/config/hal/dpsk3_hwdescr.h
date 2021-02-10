@@ -910,11 +910,11 @@
 #define BOOST_NO_OF_PHASES              1U ///< Number of power converter phases of this design
 
 #define BOOST_SWITCHING_FREQUENCY       (float)500.0e+3 ///< Fixed Switching frequency in [Hz]
-#define BOOST_PWM_DUTY_CYCLE_MIN        (float)0.050 ///< Minimum on/off-time ratio (duty ratio) in [%]
+#define BOOST_PWM_DUTY_CYCLE_MIN        (float)0.040 ///< Minimum on/off-time ratio (duty ratio) in [%]
 #define BOOST_PWM_DUTY_CYCLE_MAX        (float)0.850 ///< Maximum on/off-time ratio (duty ratio) in [%]
 #define BOOST_LEADING_EDGE_BLANKING     (float)120.0e-9 ///< Leading Edge Blanking period in [sec]
-#define BOOST_DEAD_TIME_LEADING_EDGE    (float)60.0e-9 ///< Leading Edge Dead Time delay in [sec]
-#define BOOST_DEAD_TIME_FALLING_EDGE    (float)50.0e-9 ///< Falling Edge Dead Time delay in [sec]
+#define BOOST_DEAD_TIME_LEADING_EDGE    (float) 0.0e-9 ///< Leading Edge Dead Time delay in [sec]
+#define BOOST_DEAD_TIME_FALLING_EDGE    (float) 0.0e-9 ///< Falling Edge Dead Time delay in [sec]
 
 /** @} */ // end of group pwm-settings ~~~~~~~~~~~~~~~~~~~~
 
@@ -1250,7 +1250,7 @@
     #define BOOST_ISNS_ADCTRIG          PG2TRIGB    ///< Register used for trigger placement
     #define BOOST_ISNS_TRGSRC           BOOST_PWM_TRGSRC_TRG2 ///< PWM2 (=PG2) Trigger 2 via PGxTRIGB
 
-    #define BOOST_ISNS_OPA_INSTANCE     2U  ///< Operational amplifier instance used as ISNS aplifier (0 = disables op-amp))
+    #define BOOST_ISNS_OPA_INSTANCE     2U  ///< Operational amplifier instance used as ISNS aplifier (0 = disables op-amp option))
 
 #elif (BOOST_ISNS_OPTION == BOOST_ISNS_AMP)
 

@@ -286,7 +286,9 @@ typedef struct BOOST_STARTUP_PERIOD_HANDLER_s BOOST_STARTUP_PERIOD_HANDLER_t; //
  **************************************************************************************************** */
 struct BOOST_STARTUP_VCAP_PRECHARGE_s {
     
+    volatile uint16_t counter;      ///< Soft-Start VCAP Charge-Up Period Counter
     volatile uint16_t period;       ///< Soft-Start VCAP Charge-Up Period (minimum time to wait when voltage has settled)
+    volatile uint16_t timeout_counter; ///< Soft-Start VCAP Charge-Up Timeout Counter
     volatile uint16_t timeout;      ///< Soft-Start VCAP Charge-Up Monitor Period Counter Timeout (state machine fault state trigger)
     volatile uint16_t v_drop;       ///< Acceptable voltage drop between input and output voltage when output capacitor is charging up
     

@@ -55,32 +55,31 @@ volatile uint16_t BoostRampUpSubStateList_size = (sizeof(BoostConverterRampUpSub
 volatile uint16_t Substate_VCapMonitor(volatile struct BOOST_CONVERTER_s *boostInstance)
 {
     static   uint16_t _pre_sample=0;
-    static   uint16_t _timeout_counter=0;
-    static   uint16_t _counter=0;
     volatile uint16_t _source=0;
 
     // Set BUSY bit until process is complete
     boostInstance->status.bits.busy = true;
     
     // Reset Pre-Sample Value
-    if (_timeout_counter == 0)
+    if (boostInstance->startup.vcap_monitor.timeout_counter == 0)
         _pre_sample = 0;
     
     // Capture compare value
     _source = abs(boostInstance->data.v_out - _pre_sample); 
 
-    if(_source > boostInstance->startup.vcap_monitor.v_drop)
-        _counter = 0; // Reset counter if voltage is not tuned in yet
+    if((_source > boostInstance->startup.vcap_monitor.v_drop) &&
+       (boostInstance->startup.vcap_monitor.period > 0))
+        boostInstance->startup.vcap_monitor.counter = 0; // Reset counter if voltage is not tuned in yet
 
     // Copy most recent sample into previous sample buffer
     _pre_sample = boostInstance->data.v_out; 
     
     // Monitor settled voltage for the given period of time
-    if (_counter++ > 
+    if (++boostInstance->startup.vcap_monitor.counter > 
         boostInstance->startup.vcap_monitor.period)
     {
-        _counter = 0;
-        _timeout_counter = 0;
+        boostInstance->startup.vcap_monitor.counter = 0;
+        boostInstance->startup.vcap_monitor.timeout_counter = 0;
         
         Nop();  // Please Debugging Breakpoint
         Nop();
@@ -91,11 +90,11 @@ volatile uint16_t Substate_VCapMonitor(volatile struct BOOST_CONVERTER_s *boostI
     }
     
     // In case of a timeout, reset state machine and try again
-    if (_timeout_counter++ > 
+    if (boostInstance->startup.vcap_monitor.timeout_counter++ > 
         boostInstance->startup.vcap_monitor.timeout)
     {
-        _counter = 0;
-        _timeout_counter = 0;
+        boostInstance->startup.vcap_monitor.counter = 0;
+        boostInstance->startup.vcap_monitor.timeout_counter = 0;
 
         Nop();  // Please Debugging Breakpoint
         Nop();
