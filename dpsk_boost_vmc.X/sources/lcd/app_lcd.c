@@ -155,15 +155,19 @@ volatile uint16_t appLCD_Execute(void)
 
             default:    // Output voltage display
                 
-                if (!boost.status.bits.fault_active)
+                if((double)vo < 10.000)
                     PrintLcd(1, "VOUT    = %2.2f V", (double)vo);
-                else {
+                else
+                    PrintLcd(1, "VOUT    = %2.1f V", (double)vo);
+
+                if (boost.status.bits.fault_active)
+                {
                     if (fltobj_BoostUVLO.Status.bits.FaultStatus)
-                        PrintLcd(1, "VOUT(UV)= %2.2f V", (double)vo);
+                        dev_Lcd_WriteStringXY(4, 1, "(UV)");
                     else if (fltobj_BoostOVLO.Status.bits.FaultStatus)
-                        PrintLcd(1, "VOUT(OV)= %2.2f V", (double)vo);
+                        dev_Lcd_WriteStringXY(4, 1, "(OV)");
                     else if (fltobj_BoostRegErr.Status.bits.FaultStatus)
-                        PrintLcd(1, "VOUT(RE)= %2.2f V", (double)vo);
+                        dev_Lcd_WriteStringXY(4, 1, "(RE)");
                 }
                 break;
         }
