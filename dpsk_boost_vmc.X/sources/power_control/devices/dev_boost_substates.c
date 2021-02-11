@@ -54,26 +54,18 @@ volatile uint16_t BoostRampUpSubStateList_size = (sizeof(BoostConverterRampUpSub
 
 volatile uint16_t Substate_VCapMonitor(volatile struct BOOST_CONVERTER_s *boostInstance)
 {
-    static   uint16_t _pre_sample=0;
     volatile uint16_t _source=0;
 
     // Set BUSY bit until process is complete
     boostInstance->status.bits.busy = true;
     
-    // Reset Pre-Sample Value
-    if (boostInstance->startup.vcap_monitor.timeout_counter == 0)
-        _pre_sample = 0;
-    
     // Capture compare value
-    _source = abs(boostInstance->data.v_out - _pre_sample); 
+    _source = abs(boostInstance->data.v_in - boostInstance->data.v_out); 
 
     if((_source > boostInstance->startup.vcap_monitor.v_drop) &&
        (boostInstance->startup.vcap_monitor.period > 0))
         boostInstance->startup.vcap_monitor.counter = 0; // Reset counter if voltage is not tuned in yet
 
-    // Copy most recent sample into previous sample buffer
-    _pre_sample = boostInstance->data.v_out; 
-    
     // Monitor settled voltage for the given period of time
     if (++boostInstance->startup.vcap_monitor.counter > 
         boostInstance->startup.vcap_monitor.period)
