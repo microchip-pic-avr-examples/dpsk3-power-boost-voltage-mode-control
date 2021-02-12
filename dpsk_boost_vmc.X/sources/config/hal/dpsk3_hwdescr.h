@@ -1183,7 +1183,7 @@
     //#define BOOST_ISNS_FEEDBACK_OFFSET   (float) 1.125       ///< Current sense feedback offset (average)
     #define BOOST_ISNS_FEEDBACK_OFFSET   (float) 0.000       ///< Current sense feedback offset (average)
 
-    #define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE  false      ///< Current Sense Offset Calibration is disabled 
+    #define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE  true       ///< Current Sense Offset Calibration is disabled 
 
 #elif (BOOST_ISNS_OPTION == BOOST_ISNS_AMP)
 
