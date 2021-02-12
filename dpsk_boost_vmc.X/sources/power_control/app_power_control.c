@@ -65,8 +65,8 @@ volatile uint16_t appPowerSupply_Execute(void)
     volatile uint16_t retval=1;
 
     // Capture data values
-    boost.data.v_in = BOOST_VIN_ADCBUF;
-    boost.data.i_sns[0] = BOOST_ISNS_ADCBUF;
+    boost.data.v_in = (BOOST_VIN_ADCBUF - BOOST_VIN_OFFSET);
+    boost.data.i_sns[0] = (BOOST_ISNS_ADCBUF - boost.i_loop[0].feedback_offset);
     boost.data.temp = BOOST_TEMP_ADCBUF;
     
     // Average inductor current value
