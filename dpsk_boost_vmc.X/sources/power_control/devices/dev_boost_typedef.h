@@ -274,7 +274,7 @@ typedef struct BOOST_STARTUP_PERIOD_HANDLER_s BOOST_STARTUP_PERIOD_HANDLER_t; //
 /****************************************************************************************************
  * @ingroup lib-layer-boost-converter-properties-private-data-types
  * @struct  BOOST_STARTUP_VCAP_PRECHARGE_s
- * @brief   Boost converter output capacitor voltage monitor charge-up monitor settings
+ * @brief   Boost converter output capacitor voltage charge-up monitor settings
  * @extends BOOST_CONVERTER_STARTUP_s
  * 
  * @details
@@ -303,11 +303,11 @@ typedef struct BOOST_STARTUP_VCAP_PRECHARGE_s BOOST_STARTUP_VCAP_PRECHARGE_t; //
  * *************************************************************************************************** */
  struct BOOST_CONVERTER_STARTUP_s {
     
-    volatile struct BOOST_STARTUP_PERIOD_HANDLER_s power_on_delay;
-    volatile struct BOOST_STARTUP_PERIOD_HANDLER_s power_good_delay;
-    volatile struct BOOST_STARTUP_PERIOD_HANDLER_s i_ramp;
-    volatile struct BOOST_STARTUP_PERIOD_HANDLER_s v_ramp;
-    volatile struct BOOST_STARTUP_VCAP_PRECHARGE_s vcap_monitor;
+    volatile struct BOOST_STARTUP_PERIOD_HANDLER_s power_on_delay; ///< Power-On Delay period deinitions
+    volatile struct BOOST_STARTUP_PERIOD_HANDLER_s power_good_delay; ///< Power-Good Delay period deinitions
+    volatile struct BOOST_STARTUP_PERIOD_HANDLER_s i_ramp; ///< Current Ramp-Up period deinitions
+    volatile struct BOOST_STARTUP_PERIOD_HANDLER_s v_ramp; ///< Voltage Ramp-Up period deinitions
+    volatile struct BOOST_STARTUP_VCAP_PRECHARGE_s vcap_monitor; ///< Output Capacitor Charging Time period deinitions
     
 }; // Power converter start-up settings and variables
 typedef struct BOOST_CONVERTER_STARTUP_s  BOOST_CONVERTER_STARTUP_t; // Power converter start-up settings and variables data type
