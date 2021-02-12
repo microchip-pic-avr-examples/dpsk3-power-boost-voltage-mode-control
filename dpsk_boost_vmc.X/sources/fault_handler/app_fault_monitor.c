@@ -87,9 +87,6 @@ volatile uint16_t appFaultMonitor_Execute(void)
     retval &= drv_FaultHandler_CheckObject(&fltobj_BoostRegErr);
     retval &= drv_FaultHandler_CheckObject(&fltobj_BoostOCP);
 
-    fltobj_BoostRegErr.Status.bits.FaultStatus = 0;
-    fltobj_BoostOCP.Status.bits.FaultStatus = 0;
-    
     // Combine individual fault bits to a common fault indicator
     boost.status.bits.fault_active = (bool) (
         fltobj_BoostUVLO.Status.bits.FaultStatus | 
