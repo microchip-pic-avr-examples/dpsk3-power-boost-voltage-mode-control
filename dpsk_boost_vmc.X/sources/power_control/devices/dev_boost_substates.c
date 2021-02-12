@@ -441,11 +441,13 @@ volatile uint16_t SubState_PowerGoodDelay(volatile struct BOOST_CONVERTER_s *boo
         if(boostInstance->gpio.PowerGood.enabled)
         {
             retval = boostGPIO_Set(&boostInstance->gpio.PowerGood);
-            if(!retval)
-                return(BOOST_OPSTATE_ERROR);
+            
+            if(!retval) 
+            { retval = BOOST_OPSTATE_ERROR; }
         }
-        
+
         retval = BOOST_OPSRET_COMPLETE;
+
     }
     else
     // if period has not expired yet, remain in this state
