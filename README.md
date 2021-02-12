@@ -1,18 +1,26 @@
 ![image](images/microchip.png) 
 
 --- 
-## dsPIC33C Digital Power Starter Kit
+# dsPIC33C Digital Power Starter Kit
 ### Asynchronous Boost Converter: Voltage Mode Control
 
 
 <p><center><a target="_blank" href="https://www.microchip.com/DM330017-3" rel="nofollow">
+<p>
 <img src="images/dm330017-3-1.jpg" alt="dsPIC33C Digital Power Starter Kit" width="400">
 &nbsp; 
-<img src="images/dm330017-3-2.jpg" width="400">
-<br>
+<img src="images/dm330017-3-2.jpg" width="400"></p>
+</a>
+</center>
+</p>
+
+<p>
+<center>
+<a target="_blank" href="https://www.microchip.com/DM330017-3" rel="nofollow">
 dsPIC33C Digital Power Starter Kit (DPSK3) (Part-No. DM330017-3)
 </a>
-</center></p>
+</center>
+</p>
 
 
 - - -
@@ -32,20 +40,20 @@ This code example also includes the LCD driver allowing users to observe runtime
 - [dsPIC33CK256MP508 Family Data Sheet](https://www.microchip.com/70005349)
 - [dsPIC33CK256MP508 Family Silicon Errata and Data Sheet Clarification](https://www.microchip.com/80000796)
 
-**Please always check for the latest data sheets on the respective product websites:**
+##### Please always check for the latest data sheets on the respective product websites:
 - [dsPIC33CK256MP508 Family](https://www.microchip.com/dsPIC33CK256MP508)
 - [dsPIC33CH512MP508 Family](https://www.microchip.com/dsPIC33CH512MP508)
 
 ## Software Used 
-- [MPLAB® X IDE v5.45](https://www.microchip.com/mplabx-ide-windows-installer)
-- [MPLAB XC16 Compiler v1.61](https://www.microchip.com/mplabxc16windows)
+- [MPLAB&reg; X IDE v5.45](https://www.microchip.com/mplabx-ide-windows-installer)
+- [MPLAB&reg; XC16 Compiler v1.61](https://www.microchip.com/mplabxc16windows)
 - [Microchip Code Configurator v4.0.2](https://www.microchip.com/mplab/mplab-code-configurator)
-
+- [MPLAB&reg; PowerSmart&trade; Digital Control Library Designer v0.9.12](https://areiter128.github.io/DCLD)
 ## Hardware Used
 - dsPIC33C Digital Power Starter Kit, Part-No. [DM330017-3](https://www.microchip.com/DM330017-3)
 
 ## Supported Target Devices
-- 48-pin [dsPIC33CK256MP505](https://www.microchip.com/dsPIC33CK256MP505)
+
 
 ***Focus Microchip Technology Devices***
 - [48-pin Digital Signal Controller, dsPIC33CK256MP505](https://www.microchip.com/dsPIC33CK256MP505)
@@ -130,4 +138,4 @@ For more information, please read the [Digital Power Starter Kit 3 User Guide](h
 
 - - - 
 
-© 2021, Microchip Technology Inc.
+&copy; 2021, Microchip Technology Inc.
