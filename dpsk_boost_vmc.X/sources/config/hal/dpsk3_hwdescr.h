@@ -1035,7 +1035,7 @@
 #define BOOST_VIN_ADCCORE        8           ///< 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
 #define BOOST_VIN_ADCIN          12          ///< Analog input number (e.g. '5' for 'AN5')
 #define BOOST_VIN_ADCBUF         ADCBUF12     ///< ADC input buffer of this ADC channel
-#define BOOST_VIN_ADCTRIG        PG1TRIGB    ///< Register used for trigger placement
+#define BOOST_VIN_ADCTRIG        PG2TRIGB    ///< Register used for trigger placement
 #define BOOST_VIN_TRGSRC         BOOST_PWM_TRGSRC_TRG2 ///< PWM1 (=PG1) Trigger 2 via PGxTRIGB
 
 /** @} */ // end of group input-voltage-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1179,7 +1179,8 @@
     #define BOOST_ISNS_MAXIMUM           (float) 2.500       ///< absolute total maximum output current (average)
     #define BOOST_ISNS_RELEASE           (float) 1.500       ///< current reset level after over current event
     #define BOOST_ISNS_REFERENCE         (float) 2.500       ///< output current reference (average)
-    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 200.0e-9     ///< ADC trigger delay for current sense in [sec]
+    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 200.0e-9    ///< ADC trigger delay for current sense in [sec]
+    //#define BOOST_ISNS_FEEDBACK_OFFSET   (float) 1.125       ///< Current sense feedback offset (average)
     #define BOOST_ISNS_FEEDBACK_OFFSET   (float) 0.000       ///< Current sense feedback offset (average)
 
     #define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE  false      ///< Current Sense Offset Calibration is disabled 
@@ -1331,7 +1332,7 @@
 #define BOOST_TEMP_ADCCORE           8           // 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
 #define BOOST_TEMP_ADCIN             2           // Analog input number (e.g. '5' for 'AN5')
 #define BOOST_TEMP_ADCBUF            ADCBUF2     ///< GPIO analog function mode enable bit
-#define BOOST_TEMP_ADCTRIG           PG1TRIGB    ///< Register used for trigger placement
+#define BOOST_TEMP_ADCTRIG           PG2TRIGB    ///< Register used for trigger placement
 #define BOOST_TEMP_TRGSRC            BOOST_PWM_TRGSRC_TRG2    // PWM2 Trigger 2
     
 /** @} */ // end of group temperature-feedback-mcal
