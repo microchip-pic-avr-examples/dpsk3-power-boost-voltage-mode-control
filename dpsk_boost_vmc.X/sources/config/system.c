@@ -58,6 +58,9 @@ volatile uint16_t sysUserPeriperhals_Initialize(void) {
 
     volatile uint16_t retval=1;
     
+    // Reset the operation amplifier module to a disabled default state.
+    retval &= sysOpAmp_ModuleReset();
+    
     // Initialize boost converter current sense op-amp
     retval &= sysOpAmp_Initialize(BOOST_ISNS_OPA_INSTANCE, false); // Initialize op-amp #2 used to amplify the low-side current sense of the boost converter
     

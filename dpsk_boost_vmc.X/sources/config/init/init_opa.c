@@ -37,10 +37,6 @@ volatile uint16_t sysOpAmp_Initialize(volatile uint16_t opaInstance, volatile bo
     volatile uint16_t idum=0;
     volatile struct P33C_OPA_MODULE_s* opa = p33c_OpaModule_GetHandle();
 
-    // Disable and reset op-amp module
-    *opa = opaModuleDefault;
-    opa->AmpCon1L.value = 0; // Disable and reset Op-Amp module
-
     // If instance is set = 0, op-amp will be skipped and op-amps will be turned off
     if(opaInstance > 0)
     {
@@ -83,6 +79,35 @@ volatile uint16_t sysOpAmp_ModuleEnable(void)
     volatile struct P33C_OPA_MODULE_s* opa = p33c_OpaModule_GetHandle();
     opa->AmpCon1L.bits.AMPON = true; // Enable Op-Amp module
     return (opa->AmpCon1L.bits.AMPON);
+}
+
+
+/***********************************************************************************
+ * @fn uint16_t sysOpAmp_ModuleReset
+ * @brief  Resets the on-chip operational amplifier module
+ * @return unsigned integer
+ * @return 0=failure
+ * @return 1=success
+ * 
+ * @details
+ * The on-chip operational amplifier module allows the configuration of multiple 
+ * operational amplifier instances. The module itself provides an additional 
+ * master enable bit to turn on/off the entire module as well as to enable/disable 
+ * the N-inputs of individual op-amps. This function resets the op-amp module 
+ * to its default disabling the N-channel inputs of all op-amps, disables all
+ * individual op-amps as well as turns of the op-amp module master switch.
+ * 
+ **********************************************************************************/
+
+volatile uint16_t sysOpAmp_ModuleReset(void)
+{
+    volatile struct P33C_OPA_MODULE_s* opa = p33c_OpaModule_GetHandle();
+
+    // Disable and reset op-amp module
+    *opa = opaModuleDefault;    // Load configuration defaults
+    opa->AmpCon1L.value = 0;    // Disable and reset Op-Amp module
+
+    return (1-opa->AmpCon1L.bits.AMPON);
 }
 
 /** @}*/ // end of group op-amp-initialization
