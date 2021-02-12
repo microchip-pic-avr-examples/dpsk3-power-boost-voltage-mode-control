@@ -1,0 +1,28 @@
+<map id="BOOST_LOOP_SETTINGS_s" name="BOOST_LOOP_SETTINGS_s">
+<area shape="rect" id="node1" title="User defined settings for control loops;." alt="" coords="875,182,1069,377"/>
+<area shape="rect" id="node2" href="$a01564.html" title="BOOST control &amp; monitoring data structure." alt="" coords="888,542,1056,619"/>
+<area shape="rect" id="node3" href="$a01552.html" title="Boost converter feedback declarations." alt="" coords="5,807,235,884"/>
+<area shape="rect" id="node6" href="$a01504.html" title="data structure for the boost statement ID for sub&#45;operating and operating states" alt="" coords="259,785,407,906"/>
+<area shape="rect" id="node7" href="$a01540.html" title="Switching signal timing settings." alt="" coords="431,733,683,957"/>
+<area shape="rect" id="node8" href="$a01532.html" title="Generic power controller control settings." alt="" coords="707,785,946,906"/>
+<area shape="rect" id="node9" href="$a01524.html" title="Power Converter Startup Timing Settings." alt="" coords="971,807,1205,884"/>
+<area shape="rect" id="node12" href="$a01492.html" title="Generic power controller status word." alt="" coords="1230,704,1455,987"/>
+<area shape="rect" id="node13" href="$a01560.html" title="GPIO instance of the converter control GPIO." alt="" coords="1479,807,1670,884"/>
+<area shape="rect" id="node15" href="$a01528.html" title="Publicly accessible data buffer of most recent runtime data values." alt="" coords="1694,755,1903,935"/>
+<area shape="rect" id="node4" href="$a01548.html" title="ADC input channel configuration." alt="" coords="7,1093,236,1317"/>
+<area shape="rect" id="node5" href="$a01544.html" title="ADC input signal scaling = (ADCBUF &#45; &lt;offset&gt;) * &lt;factor&gt; &gt;&gt; 2^&lt;scaler&gt;" alt="" coords="10,1380,233,1487"/>
+<area shape="rect" id="node10" href="$a01520.html" title="Boost converter output capacitor voltage charge&#45;up monitor settings." alt="" coords="899,1130,1075,1281"/>
+<area shape="rect" id="node11" href="$a01516.html" title="Generic power controller startup period settings." alt="" coords="1099,1137,1288,1273"/>
+<area shape="rect" id="node14" href="$a01556.html" title="GPIO instance of the converter control GPIO." alt="" coords="1479,1137,1670,1273"/>
+<area shape="rect" id="node16" href="$a01624.html" title="Global NPNZ controller data object." alt="" coords="1855,5,1945,83"/>
+<area shape="rect" id="node17" href="$a01608.html" title="Automated ADC Trigger handling." alt="" coords="1094,219,1266,340"/>
+<area shape="rect" id="node18" href="$a01600.html" title="Adaptive Gain Control Modulation Parameters." alt="" coords="1291,219,1467,340"/>
+<area shape="rect" id="node19" href="$a01604.html" title="System Anti&#45;Windup (Output Clamping) Thresholds." alt="" coords="1491,219,1608,340"/>
+<area shape="rect" id="node20" href="$a01620.html" title="User Data Space for Advanced Control Functions." alt="" coords="1632,189,1845,369"/>
+<area shape="rect" id="node21" href="$a01592.html" title="Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters." alt="" coords="1870,241,2018,318"/>
+<area shape="rect" id="node23" href="$a01596.html" title="Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters." alt="" coords="2042,145,2225,413"/>
+<area shape="rect" id="node24" href="$a01612.html" title="Data Provider Target Memory Addresses." alt="" coords="2249,219,2481,340"/>
+<area shape="rect" id="node25" href="$a01616.html" title="User Extension Function Call Parameters." alt="" coords="2506,153,2742,406"/>
+<area shape="rect" id="node26" href="$a01572.html" title="NPNZ16b controller object status and control word." alt="" coords="2766,182,2933,377"/>
+<area shape="rect" id="node22" href="$a01588.html" title="Data Input/Output Port declaration of memory addresses, signal offsets and normalization settings." alt="" coords="1888,520,2000,641"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="boostGPIO_Set" name="boostGPIO_Set">
+<area shape="rect" id="node1" title="This function sets the selected general purpose input/ouput pins." alt="" coords="236,5,349,32"/>
+<area shape="rect" id="node2" href="$a00479.html#ga4ea63447e4d102bafe1fa664adc06d3f" title="In this function, a counter is incremented until the power good delay has expired." alt="" coords="5,5,188,32"/>
+</map>
