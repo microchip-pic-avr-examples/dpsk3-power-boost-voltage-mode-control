@@ -313,7 +313,7 @@
 #define BUCK_PWM_GPIO_INSTANCE      1U ///< Number indicating device port, where 0=Port RA, 0=Port RB, 0=Port RC, etc.
 #define BUCK_PWM_GPIO_PORT_PINH     14U ///< Port Pin Number
 #define BUCK_PWM_GPIO_PORT_PINL     15U ///< Port Pin Number
-#define BUCK_PWM_OUTPUT_SWAP        true ///< true = PWMxH is the leading PWM output, false = PWMxL is the leading PWM output
+#define BUCK_PWM_OUTPUT_SWAP        false ///< true = PWMxH is the leading PWM output, false = PWMxL is the leading PWM output
     
 #define BUCK_PWM_PDC                PG1DC    ///< PWM Instance Duty Cycle Register
 #define BUCK_PWMH_TRIS              _TRISB14 ///< Device Port TRIS register
@@ -412,8 +412,8 @@
 #define BUCK_VIN_ADCCORE        8           ///< 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
 #define BUCK_VIN_ADCIN          12          ///< Analog input number (e.g. '5' for 'AN5')
 #define BUCK_VIN_ADCBUF         ADCBUF12     ///< ADC input buffer of this ADC channel
-#define BUCK_VIN_ADCTRIG        PG1TRIGB    ///< Register used for trigger placement
-#define BUCK_VIN_TRGSRC         BUCK_PWM_TRGSRC_TRG2 ///< PWM1 (=PG1) Trigger 2 via PGxTRIGB
+#define BUCK_VIN_ADCTRIG        PG1TRIGA    ///< Register used for trigger placement
+#define BUCK_VIN_TRGSRC         BUCK_PWM_TRGSRC_TRG1 ///< PWM1 (=PG1) Trigger 1 via PGxTRIGA
 
 /** @} */ // end of group input-voltage-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -550,12 +550,13 @@
 #if (BUCK_ISNS_OPTION == BUCK_ISNS_CT)
 
     #define BUCK_ISNS_FEEDBACK_GAIN     (float) 1.000       ///< Current Gain in V/A
-    #define BUCK_ISNS_MINIMUM           (float) 0.000       ///< absolute total minimum output current (average)
-    #define BUCK_ISNS_MAXIMUM           (float) 2.500       ///< absolute total maximum output current (average)
-    #define BUCK_ISNS_RELEASE           (float) 2.500       ///< current reset level after over current event
-    #define BUCK_ISNS_REFERENCE         (float) 2.500       ///< output current reference (average)
+    #define BUCK_ISNS_MINIMUM           (float) 0.000       ///< absolute total minimum output current (average) in [A]
+    #define BUCK_ISNS_MAXIMUM           (float) 2.500       ///< absolute total maximum output current (average) in [A]
+    #define BUCK_ISNS_RELEASE           (float) 2.500       ///< current reset level after over current event in [A]
+    #define BUCK_ISNS_REFERENCE         (float) 2.500       ///< output current reference (average) in [A]
+    #define BUCK_ISNS_REFERENCE_STARTUP (float) 2.500       ///< maximum output current (average) at startup in [A]
     #define BUCK_ISNS_ADC_TRG_DELAY     (float) 80.0e-9     ///< ADC trigger delay for current sense in [sec]
-    #define BUCK_ISNS_FEEDBACK_OFFSET   (float) 0.025       ///< Current sense feedback offset (average)
+    #define BUCK_ISNS_FEEDBACK_OFFSET   (float) 0.000       ///< Current sense feedback offset (average) in [V]
 
     #define BUCK_ISNS_OFFSET_CALIBRATION_ENABLE  false      ///< Current Sense Offset Calibration is disabled 
 
@@ -566,6 +567,7 @@
     #define BUCK_ISNS_MAXIMUM           (float) 2.500       ///< absolute total maximum output current (average)
     #define BUCK_ISNS_RELEASE           (float) 2.500       ///< current reset level after over current event
     #define BUCK_ISNS_REFERENCE         (float) 2.500       ///< output current reference (average)
+    #define BUCK_ISNS_REFERENCE_STARTUP (float) 2.500       ///< maximum output current (average) at startup
     #define BUCK_ISNS_ADC_TRG_DELAY     (float) 240.0e-9    ///< ADC trigger delay for current sense in [sec]
     #define BUCK_ISNS_FEEDBACK_OFFSET   (float) 1.650       ///< current sense #1 feedback offset (average)
 
@@ -587,9 +589,11 @@
  */
 
 // Phase Current Feedback Settings Conversion Macros
-#define BUCK_ISNS_OCL           (uint16_t)((BUCK_ISNS_MAXIMUM * BUCK_ISNS_FEEDBACK_GAIN + BUCK_ISNS_FEEDBACK_OFFSET) / ADC_GRANULARITY)  ///< Over Current Limit
-#define BUCK_ISNS_OCL_RELEASE   (uint16_t)((BUCK_ISNS_RELEASE * BUCK_ISNS_FEEDBACK_GAIN + BUCK_ISNS_FEEDBACK_OFFSET) / ADC_GRANULARITY)  ///< Over Current Release Level
-#define BUCK_ISNS_REF           (uint16_t)(BUCK_ISNS_REFERENCE * BUCK_ISNS_FEEDBACK_GAIN / ADC_GRANULARITY)  ///< Output Current Reference
+#define BUCK_ISNS_MIN           (uint16_t)(int16_t)(((BUCK_ISNS_MINIMUM-BUCK_ISNS_FEEDBACK_OFFSET) * BUCK_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Current Limit
+#define BUCK_ISNS_OCL           (uint16_t)(((BUCK_ISNS_MAXIMUM-BUCK_ISNS_FEEDBACK_OFFSET) * BUCK_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Current Limit
+#define BUCK_ISNS_OCL_RELEASE   (uint16_t)(((BUCK_ISNS_RELEASE-BUCK_ISNS_FEEDBACK_OFFSET) * BUCK_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Current Release Level
+#define BUCK_ISNS_REF           (uint16_t)((BUCK_ISNS_REFERENCE * BUCK_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Output Current Reference
+#define BUCK_ISNS_REF_STARTUP   (uint16_t)((BUCK_ISNS_REFERENCE_STARTUP * BUCK_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Output Current Startup Reference
 #define BUCK_ISNS_FB_OFFSET     (uint16_t)(BUCK_ISNS_FEEDBACK_OFFSET / ADC_GRANULARITY)
 #define BUCK_ISNS_ADC_TRGDLY    (uint16_t)(BUCK_ISNS_ADC_TRG_DELAY / PWM_CLOCK_PERIOD)
 
@@ -702,8 +706,8 @@
 #define BUCK_TEMP_ADCCORE           8           // 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
 #define BUCK_TEMP_ADCIN             2           // Analog input number (e.g. '5' for 'AN5')
 #define BUCK_TEMP_ADCBUF            ADCBUF2     ///< GPIO analog function mode enable bit
-#define BUCK_TEMP_ADCTRIG           PG1TRIGB    ///< Register used for trigger placement
-#define BUCK_TEMP_TRGSRC            BUCK_PWM_TRGSRC_TRG2    // PWM1 Trigger 2
+#define BUCK_TEMP_ADCTRIG           PG1TRIGA    ///< Register used for trigger placement
+#define BUCK_TEMP_TRGSRC            BUCK_PWM_TRGSRC_TRG1    // PWM1 Trigger 1
     
 /** @} */ // end of group temperature-feedback-mcal
 
@@ -1174,28 +1178,29 @@
 // Settings based on the selection made above
 #if (BOOST_ISNS_OPTION == BOOST_ISNS_LSCS)
 
-    #define BOOST_ISNS_FEEDBACK_GAIN     (float) 1.000       ///< Current Gain in V/A
-    #define BOOST_ISNS_MINIMUM           (float) 0.000       ///< absolute total minimum output current (average)
-    #define BOOST_ISNS_MAXIMUM           (float) 2.500       ///< absolute total maximum output current (average)
-    #define BOOST_ISNS_RELEASE           (float) 1.500       ///< current reset level after over current event
-    #define BOOST_ISNS_REFERENCE         (float) 2.500       ///< output current reference (average)
-    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 200.0e-9    ///< ADC trigger delay for current sense in [sec]
-    //#define BOOST_ISNS_FEEDBACK_OFFSET   (float) 1.125       ///< Current sense feedback offset (average)
-    #define BOOST_ISNS_FEEDBACK_OFFSET   (float) 0.000       ///< Current sense feedback offset (average)
+    #define BOOST_ISNS_FEEDBACK_GAIN     (float) 1.000      ///< Current Gain in V/A
+    #define BOOST_ISNS_MINIMUM           (float) 0.000      ///< absolute total minimum output current (average) in [A]
+    #define BOOST_ISNS_MAXIMUM           (float) 2.500      ///< absolute total maximum output current (average) in [A]
+    #define BOOST_ISNS_RELEASE           (float) 1.500      ///< current reset level after over current event in [A]
+    #define BOOST_ISNS_REFERENCE         (float) 2.500      ///< output current reference (average) in [A]
+    #define BOOST_ISNS_REFERENCE_STARTUP (float) 2.500      ///< maximum output current (average) at startup in [A]
+    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 200.0e-9   ///< ADC trigger delay for current sense in [sec]
+    #define BOOST_ISNS_FEEDBACK_OFFSET   (float) 1.125      ///< Current sense feedback offset (average) in [V]
 
     #define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE  true       ///< Current Sense Offset Calibration is disabled 
 
 #elif (BOOST_ISNS_OPTION == BOOST_ISNS_AMP)
 
-    #define BOOST_ISNS_FEEDBACK_GAIN     (float) 0.600       ///< Current Gain in V/A
-    #define BOOST_ISNS_MINIMUM           (float) 0.000       ///< absolute total minimum output current (average)
-    #define BOOST_ISNS_MAXIMUM           (float) 2.500       ///< absolute total maximum output current (average)
-    #define BOOST_ISNS_RELEASE           (float) 2.500       ///< current reset level after over current event
-    #define BOOST_ISNS_REFERENCE         (float) 2.500       ///< output current reference (average)
-    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 240.0e-9    ///< ADC trigger delay for current sense in [sec]
-    #define BOOST_ISNS_FEEDBACK_OFFSET   (float) 1.650       ///< current sense #1 feedback offset (average)
+    #define BOOST_ISNS_FEEDBACK_GAIN     (float) 0.600      ///< Current Gain in V/A
+    #define BOOST_ISNS_MINIMUM           (float) 0.000      ///< absolute total minimum output current (average) in [A]
+    #define BOOST_ISNS_MAXIMUM           (float) 2.500      ///< absolute total maximum output current (average) in [A]
+    #define BOOST_ISNS_RELEASE           (float) 2.500      ///< current reset level after over current event in [A]
+    #define BOOST_ISNS_REFERENCE         (float) 2.500      ///< output current reference (average) in [A]
+    #define BOOST_ISNS_REFERENCE_STARTUP (float) 2.500      ///< maximum output current (average) at startup in [A]
+    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 240.0e-9   ///< ADC trigger delay for current sense in [sec]
+    #define BOOST_ISNS_FEEDBACK_OFFSET   (float) 1.650      ///< current sense #1 feedback offset (average) in [V]
 
-    #define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE true        ///< Current Sense Offset Calibration is disabled 
+    #define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE true       ///< Current Sense Offset Calibration is disabled 
 
 #endif
 
@@ -1213,9 +1218,11 @@
  */
 
 // Phase Current Feedback Settings Conversion Macros
-#define BOOST_ISNS_OCL           (uint16_t)((BOOST_ISNS_MAXIMUM * BOOST_ISNS_FEEDBACK_GAIN + BOOST_ISNS_FEEDBACK_OFFSET) / ADC_GRANULARITY)  ///< Over Current Limit
-#define BOOST_ISNS_OCL_RELEASE   (uint16_t)((BOOST_ISNS_RELEASE * BOOST_ISNS_FEEDBACK_GAIN + BOOST_ISNS_FEEDBACK_OFFSET) / ADC_GRANULARITY)  ///< Over Current Release Level
-#define BOOST_ISNS_REF           (uint16_t)(BOOST_ISNS_REFERENCE * BOOST_ISNS_FEEDBACK_GAIN / ADC_GRANULARITY)  ///< Output Current Reference
+#define BOOST_ISNS_MIN           (uint16_t)(int16_t)(((BOOST_ISNS_MINIMUM-BOOST_ISNS_FEEDBACK_OFFSET) * BOOST_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Current Limit
+#define BOOST_ISNS_OCL           (uint16_t)(((BOOST_ISNS_MAXIMUM-BOOST_ISNS_FEEDBACK_OFFSET) * BOOST_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Current Limit
+#define BOOST_ISNS_OCL_RELEASE   (uint16_t)(((BOOST_ISNS_RELEASE-BOOST_ISNS_FEEDBACK_OFFSET) * BOOST_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Current Release Level
+#define BOOST_ISNS_REF           (uint16_t)((BOOST_ISNS_REFERENCE * BOOST_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Output Current Reference
+#define BOOST_ISNS_REF_STARTUP   (uint16_t)((BOOST_ISNS_REFERENCE_STARTUP * BOOST_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Output Current Startup Reference
 #define BOOST_ISNS_FB_OFFSET     (uint16_t)(BOOST_ISNS_FEEDBACK_OFFSET / ADC_GRANULARITY)
 #define BOOST_ISNS_ADC_TRGDLY    (uint16_t)(BOOST_ISNS_ADC_TRG_DELAY / PWM_CLOCK_PERIOD)
 

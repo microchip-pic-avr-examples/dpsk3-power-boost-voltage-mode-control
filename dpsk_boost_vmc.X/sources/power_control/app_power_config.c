@@ -51,6 +51,7 @@ volatile uint16_t appPowerSupply_ConverterObjectInitialize(void)
     boost.set_values.control_mode = BOOST_CONTROL_MODE_VMC; // Set Control Mode
     boost.set_values.no_of_phases = BOOST_NO_OF_PHASES; // Set number of power train phases
     boost.set_values.i_ref = BOOST_ISNS_REF; // Set current loop reference
+    boost.set_values.i_ref_startup = BOOST_ISNS_REF_STARTUP; // Set current loop reference at startup
     boost.set_values.v_ref = BOOST_VOUT_REF; // Set voltage loop reference
     
     // Clear Runtime Data
