@@ -1178,29 +1178,29 @@
 // Settings based on the selection made above
 #if (BOOST_ISNS_OPTION == BOOST_ISNS_LSCS)
 
-    #define BOOST_ISNS_FEEDBACK_GAIN     (float) 1.000       ///< Current Gain in V/A
+    #define BOOST_ISNS_FEEDBACK_GAIN     (float) 1.000      ///< Current Gain in V/A
     #define BOOST_ISNS_MINIMUM           (float) 0.000      ///< absolute total minimum output current (average) in [A]
     #define BOOST_ISNS_MAXIMUM           (float) 2.500      ///< absolute total maximum output current (average) in [A]
     #define BOOST_ISNS_RELEASE           (float) 1.500      ///< current reset level after over current event in [A]
     #define BOOST_ISNS_REFERENCE         (float) 2.500      ///< output current reference (average) in [A]
     #define BOOST_ISNS_REFERENCE_STARTUP (float) 2.500      ///< maximum output current (average) at startup in [A]
-    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 200.0e-9    ///< ADC trigger delay for current sense in [sec]
+    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 200.0e-9   ///< ADC trigger delay for current sense in [sec]
     #define BOOST_ISNS_FEEDBACK_OFFSET   (float) 1.125      ///< Current sense feedback offset (average) in [V]
 
     #define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE  true       ///< Current Sense Offset Calibration is disabled 
 
 #elif (BOOST_ISNS_OPTION == BOOST_ISNS_AMP)
 
-    #define BOOST_ISNS_FEEDBACK_GAIN     (float) 0.600       ///< Current Gain in V/A
+    #define BOOST_ISNS_FEEDBACK_GAIN     (float) 0.600      ///< Current Gain in V/A
     #define BOOST_ISNS_MINIMUM           (float) 0.000      ///< absolute total minimum output current (average) in [A]
     #define BOOST_ISNS_MAXIMUM           (float) 2.500      ///< absolute total maximum output current (average) in [A]
     #define BOOST_ISNS_RELEASE           (float) 2.500      ///< current reset level after over current event in [A]
     #define BOOST_ISNS_REFERENCE         (float) 2.500      ///< output current reference (average) in [A]
     #define BOOST_ISNS_REFERENCE_STARTUP (float) 2.500      ///< maximum output current (average) at startup in [A]
-    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 240.0e-9    ///< ADC trigger delay for current sense in [sec]
+    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 240.0e-9   ///< ADC trigger delay for current sense in [sec]
     #define BOOST_ISNS_FEEDBACK_OFFSET   (float) 1.650      ///< current sense #1 feedback offset (average) in [V]
 
-    #define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE true        ///< Current Sense Offset Calibration is disabled 
+    #define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE true       ///< Current Sense Offset Calibration is disabled 
 
 #endif
 
