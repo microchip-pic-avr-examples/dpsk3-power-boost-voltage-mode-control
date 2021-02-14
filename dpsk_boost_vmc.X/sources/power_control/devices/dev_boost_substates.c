@@ -183,7 +183,7 @@ volatile uint16_t SubState_PrepareVRampUp(volatile struct BOOST_CONVERTER_s *boo
     // In average current mode, set current reference limit to max startup current level
     if (boostInstance->set_values.control_mode == BOOST_CONTROL_MODE_ACMC) 
     {   // Disable all current control loops and reset control loop histories
-        boostInstance->v_loop.maximum = boostInstance->set_values.i_ref;
+        boostInstance->v_loop.maximum = boostInstance->set_values.i_ref_startup;
         boostInstance->v_loop.controller->Limits.MaxOutput = boostInstance->v_loop.maximum;
     }
 
@@ -388,10 +388,10 @@ volatile uint16_t SubState_IRampUp(volatile struct BOOST_CONVERTER_s *boostInsta
         // Increment maximum current limit
         boostInstance->v_loop.controller->Limits.MaxOutput += boostInstance->startup.i_ramp.ref_inc_step; 
 
-        if (boostInstance->v_loop.controller->Limits.MaxOutput >= boostInstance->set_values.i_ref)
+        if (boostInstance->v_loop.controller->Limits.MaxOutput >= boostInstance->set_values.i_ref_startup)
         // check if ramp is complete
         {
-            boostInstance->v_loop.maximum = boostInstance->set_values.i_ref;
+            boostInstance->v_loop.maximum = boostInstance->set_values.i_ref_startup;
             boostInstance->v_loop.controller->Limits.MaxOutput = boostInstance->v_loop.maximum;
             retval = BOOST_OPSRET_COMPLETE;
         }

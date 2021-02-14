@@ -351,6 +351,7 @@ struct BOOST_CONVERTER_SETTINGS_s {
     volatile uint16_t no_of_phases;             ///< number of converter phases
     volatile uint16_t v_ref;                    ///< User reference setting used to control the power converter controller
     volatile uint16_t i_ref;                    ///< User reference setting used to control the power converter controller
+    volatile uint16_t i_ref_startup;            ///< User setting of the initial current reference at startup (used to limit startup currents)
     
 };  ///> Boost converter main settings
 typedef struct BOOST_CONVERTER_SETTINGS_s BOOST_CONVERTER_SETTINGS_t;  ///> Boost converter main settings
