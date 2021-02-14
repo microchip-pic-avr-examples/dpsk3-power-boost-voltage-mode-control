@@ -1,7 +1,7 @@
 <map id="BOOST_CONVERTER_s" name="BOOST_CONVERTER_s">
 <area shape="rect" id="node1" title="BOOST control &amp; monitoring data structure." alt="" coords="1042,5,1210,215"/>
 <area shape="rect" id="node2" href="$a01528.html" title="Publicly accessible data buffer of most recent runtime data values." alt="" coords="5,314,215,494"/>
-<area shape="rect" id="node3" href="$a01532.html" title="Generic power controller control settings." alt="" coords="239,343,477,465"/>
+<area shape="rect" id="node3" href="$a01532.html" title="Generic power controller control settings." alt="" coords="239,336,477,472"/>
 <area shape="rect" id="node4" href="$a01524.html" title="Power Converter Startup Timing Settings." alt="" coords="502,336,737,472"/>
 <area shape="rect" id="node7" href="$a01492.html" title="Generic power controller status word." alt="" coords="761,263,987,545"/>
 <area shape="rect" id="node8" href="$a01552.html" title="Boost converter feedback declarations." alt="" coords="1011,343,1241,465"/>

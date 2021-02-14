@@ -105,7 +105,8 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00402.svg" width="371" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00402.svg" width="371" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="memitem:ga61df29741cab195009bbfb71d99d5be1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00402.html#ga61df29741cab195009bbfb71d99d5be1">BUCK_PWM_CHANNEL</a>&#160;&#160;&#160;1U</td></tr>
@@ -120,7 +121,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 <tr class="memitem:gae1fbe0f70b1d7a42d37531d6d2965bba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00402.html#gae1fbe0f70b1d7a42d37531d6d2965bba">BUCK_PWM_GPIO_PORT_PINL</a>&#160;&#160;&#160;15U</td></tr>
 <tr class="memdesc:gae1fbe0f70b1d7a42d37531d6d2965bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Port Pin Number.  <a href="a00402.html#gae1fbe0f70b1d7a42d37531d6d2965bba">More...</a><br /></td></tr>
 <tr class="separator:gae1fbe0f70b1d7a42d37531d6d2965bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacd0fe449d364732b7096f12260cb97f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00402.html#gacd0fe449d364732b7096f12260cb97f6">BUCK_PWM_OUTPUT_SWAP</a>&#160;&#160;&#160;true</td></tr>
+<tr class="memitem:gacd0fe449d364732b7096f12260cb97f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00402.html#gacd0fe449d364732b7096f12260cb97f6">BUCK_PWM_OUTPUT_SWAP</a>&#160;&#160;&#160;false</td></tr>
 <tr class="memdesc:gacd0fe449d364732b7096f12260cb97f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">true = PWMxH is the leading PWM output, false = PWMxL is the leading PWM output  <a href="a00402.html#gacd0fe449d364732b7096f12260cb97f6">More...</a><br /></td></tr>
 <tr class="separator:gacd0fe449d364732b7096f12260cb97f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab4497dfda3603e074c0c61a70756bb22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00402.html#gab4497dfda3603e074c0c61a70756bb22">BUCK_PWM_PDC</a>&#160;&#160;&#160;PG1DC</td></tr>
@@ -301,7 +302,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 <p>Converter phase #1 uses a simple half-bridge to commutate the switch node. The signal source therefore only requires a single PWM generator instance to be configured in fixed frequency complementary mode with dead times. Additional PWM peripheral features are used by the firmware to respond to interrupts, trigger ADC conversions, control device output pins during startup and fault responses and to change timing settings on the fly.</p>
 <p>Please review the device data sheet for details about register names and settings. PWM Instance Index (e.g. 1=PWM1, 2=PWM2, etc.) </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00935">935</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00939">939</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -366,7 +367,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_PWM_OUTPUT_SWAP&#160;&#160;&#160;true</td>
+          <td class="memname">#define BUCK_PWM_OUTPUT_SWAP&#160;&#160;&#160;false</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -767,7 +768,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>Number indicating device port, where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00936">936</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00940">940</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -785,7 +786,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>Port Pin Number. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00937">937</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00941">941</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -803,7 +804,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>Port Pin Number. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00938">938</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00942">942</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -821,7 +822,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>true = PWMxH is the leading PWM output, false = PWMxL is the leading PWM output </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00939">939</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00943">943</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -839,7 +840,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>PWM Instance Duty Cycle Register. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00941">941</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00945">945</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -857,7 +858,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>Device Port TRIS register. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00942">942</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00946">946</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -875,7 +876,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>Device Pin WRITE. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00943">943</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00947">947</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -893,7 +894,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>Device Pin READ. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00944">944</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00948">948</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -911,7 +912,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>Device Pin output remappable pin number (RPx) </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00945">945</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00949">949</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -929,7 +930,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>Device Port TRIS register. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00946">946</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00950">950</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -947,7 +948,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>Device Pin WRITE. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00947">947</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00951">951</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -965,7 +966,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>Device Pin READ. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00948">948</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00952">952</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -983,7 +984,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>Device Pin output remappable pin number (RPx) </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00949">949</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00953">953</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -1001,7 +1002,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>PWM Interrupt Service Routine label. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00951">951</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00955">955</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -1019,7 +1020,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>PWM Interrupt Flag Bit. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00952">952</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00956">956</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -1037,7 +1038,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>PWM Interrupt Enable Bit. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00953">953</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00957">957</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -1055,7 +1056,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>PWM Interrupt Priority. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00954">954</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00958">958</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -1073,7 +1074,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>PWM Trigger #1 Trigger Source of this channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00955">955</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00959">959</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -1091,7 +1092,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>PWM Trigger #2 Trigger Source of this channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00956">956</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00960">960</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -1109,7 +1110,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>PWM trigger register A. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00957">957</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00961">961</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -1127,7 +1128,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>PWM trigger register B. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00958">958</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00962">962</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -1145,7 +1146,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>PWM trigger register C. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00959">959</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00963">963</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -1163,7 +1164,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>ADC Trigger 1 Offset: 0...31. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00961">961</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00965">965</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -1181,7 +1182,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
 
 <p>ADC Trigger 1 Postscaler: 0...31. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00962">962</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00966">966</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -1197,7 +1198,7 @@ $(document).ready(function(){initNavTree('a00402.html',''); initResizable(); });
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00964">964</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00968">968</a> of file <a class="el" href="a00110_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

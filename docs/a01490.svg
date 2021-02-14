@@ -209,22 +209,23 @@ var sectionId = 'dynsection-1';
 <g id="node20" class="node">
 <title>Node20</title>
 <g id="a_node20"><a xlink:href="a01532.html" target="_top" xlink:title="Generic power controller control settings.">
-<polygon fill="white" stroke="black" points="336,-430.5 336,-520.5 515,-520.5 515,-430.5 336,-430.5"/>
-<text text-anchor="middle" x="425.5" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_CONVERTER_SETTINGS_s</text>
-<polyline fill="none" stroke="black" points="336,-501.5 515,-501.5 "/>
-<text text-anchor="start" x="344" y="-489.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ control_mode</text>
-<text text-anchor="start" x="344" y="-478.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ no_of_phases</text>
-<text text-anchor="start" x="344" y="-467.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ v_ref</text>
-<text text-anchor="start" x="344" y="-456.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref</text>
-<polyline fill="none" stroke="black" points="336,-449.5 515,-449.5 "/>
-<text text-anchor="middle" x="425.5" y="-437.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="black" points="336,-425 336,-526 515,-526 515,-425 336,-425"/>
+<text text-anchor="middle" x="425.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_CONVERTER_SETTINGS_s</text>
+<polyline fill="none" stroke="black" points="336,-507 515,-507 "/>
+<text text-anchor="start" x="344" y="-495" font-family="Helvetica,sans-Serif" font-size="10.00">+ control_mode</text>
+<text text-anchor="start" x="344" y="-484" font-family="Helvetica,sans-Serif" font-size="10.00">+ no_of_phases</text>
+<text text-anchor="start" x="344" y="-473" font-family="Helvetica,sans-Serif" font-size="10.00">+ v_ref</text>
+<text text-anchor="start" x="344" y="-462" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref</text>
+<text text-anchor="start" x="344" y="-451" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref_startup</text>
+<polyline fill="none" stroke="black" points="336,-444 515,-444 "/>
+<text text-anchor="middle" x="425.5" y="-432" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node20 -->
 <g id="edge36" class="edge">
 <title>Node2&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M649.05,-657.13C609.98,-651.63 562.69,-640.09 526.5,-616 491.03,-592.39 463.76,-551.84 446.54,-520.53"/>
+<path fill="none" stroke="midnightblue" d="M649.05,-657.13C609.98,-651.63 562.69,-640.09 526.5,-616 493.15,-593.8 467.04,-556.62 449.73,-526.22"/>
 <polygon fill="none" stroke="midnightblue" points="648.94,-660.65 659.31,-658.46 649.84,-653.7 648.94,-660.65"/>
 </g>
 <!-- Node21 -->
@@ -728,7 +729,7 @@ var sectionId = 'dynsection-1';
 <!-- Node20&#45;&gt;Node2 -->
 <g id="edge35" class="edge">
 <title>Node20&#45;&gt;Node2</title>
-<path fill="none" stroke="#404040" d="M457.8,-520.56C482.65,-551.48 519.58,-591.51 560.5,-616 586.84,-631.76 618.83,-642.33 647.4,-649.32"/>
+<path fill="none" stroke="#404040" d="M462.41,-526.23C487.1,-556.23 522.04,-592.98 560.5,-616 586.84,-631.76 618.83,-642.33 647.4,-649.32"/>
 <polygon fill="none" stroke="#404040" points="647.72,-649.39 654.46,-646.85 659.41,-652.1 652.66,-654.64 647.72,-649.39"/>
 <text text-anchor="middle" x="588" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00"> +set_values</text>
 </g>

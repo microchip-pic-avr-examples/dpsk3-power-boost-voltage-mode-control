@@ -4,7 +4,7 @@
 <area shape="rect" id="node3" href="$a01536.html" title="User defined settings for control loops;." alt="" coords="1755,388,1950,583"/>
 <area shape="rect" id="node15" href="$a01552.html" title="Boost converter feedback declarations." alt="" coords="803,447,1033,524"/>
 <area shape="rect" id="node18" href="$a01540.html" title="Switching signal timing settings." alt="" coords="5,373,257,597"/>
-<area shape="rect" id="node19" href="$a01532.html" title="Generic power controller control settings." alt="" coords="281,425,520,546"/>
+<area shape="rect" id="node19" href="$a01532.html" title="Generic power controller control settings." alt="" coords="281,417,520,553"/>
 <area shape="rect" id="node20" href="$a01524.html" title="Power Converter Startup Timing Settings." alt="" coords="545,447,779,524"/>
 <area shape="rect" id="node23" href="$a01492.html" title="Generic power controller status word." alt="" coords="1057,344,1283,627"/>
 <area shape="rect" id="node24" href="$a01560.html" title="GPIO instance of the converter control GPIO." alt="" coords="1307,447,1497,524"/>

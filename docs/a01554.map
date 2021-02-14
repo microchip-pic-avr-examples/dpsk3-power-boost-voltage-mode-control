@@ -6,7 +6,7 @@
 <area shape="rect" id="node16" href="$a01552.html" title="Boost converter feedback declarations." alt="" coords="717,616,946,693"/>
 <area shape="rect" id="node19" href="$a01504.html" title="data structure for the boost statement ID for sub&#45;operating and operating states" alt="" coords="5,594,153,715"/>
 <area shape="rect" id="node20" href="$a01540.html" title="Switching signal timing settings." alt="" coords="177,543,429,767"/>
-<area shape="rect" id="node21" href="$a01532.html" title="Generic power controller control settings." alt="" coords="453,594,692,715"/>
+<area shape="rect" id="node21" href="$a01532.html" title="Generic power controller control settings." alt="" coords="453,587,692,723"/>
 <area shape="rect" id="node22" href="$a01524.html" title="Power Converter Startup Timing Settings." alt="" coords="970,616,1205,693"/>
 <area shape="rect" id="node25" href="$a01492.html" title="Generic power controller status word." alt="" coords="1229,513,1455,796"/>
 <area shape="rect" id="node26" href="$a01528.html" title="Publicly accessible data buffer of most recent runtime data values." alt="" coords="1479,565,1688,745"/>

@@ -123,22 +123,23 @@
 <g id="node19" class="node">
 <title>Node19</title>
 <g id="a_node19"><a xlink:href="a01532.html" target="_top" xlink:title="Generic power controller control settings.">
-<polygon fill="white" stroke="black" points="526.5,-436 526.5,-526 705.5,-526 705.5,-436 526.5,-436"/>
-<text text-anchor="middle" x="616" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_CONVERTER_SETTINGS_s</text>
-<polyline fill="none" stroke="black" points="526.5,-507 705.5,-507 "/>
-<text text-anchor="start" x="534.5" y="-495" font-family="Helvetica,sans-Serif" font-size="10.00">+ control_mode</text>
-<text text-anchor="start" x="534.5" y="-484" font-family="Helvetica,sans-Serif" font-size="10.00">+ no_of_phases</text>
-<text text-anchor="start" x="534.5" y="-473" font-family="Helvetica,sans-Serif" font-size="10.00">+ v_ref</text>
-<text text-anchor="start" x="534.5" y="-462" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref</text>
-<polyline fill="none" stroke="black" points="526.5,-455 705.5,-455 "/>
-<text text-anchor="middle" x="616" y="-443" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="black" points="526.5,-430.5 526.5,-531.5 705.5,-531.5 705.5,-430.5 526.5,-430.5"/>
+<text text-anchor="middle" x="616" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_CONVERTER_SETTINGS_s</text>
+<polyline fill="none" stroke="black" points="526.5,-512.5 705.5,-512.5 "/>
+<text text-anchor="start" x="534.5" y="-500.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ control_mode</text>
+<text text-anchor="start" x="534.5" y="-489.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ no_of_phases</text>
+<text text-anchor="start" x="534.5" y="-478.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ v_ref</text>
+<text text-anchor="start" x="534.5" y="-467.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref</text>
+<text text-anchor="start" x="534.5" y="-456.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref_startup</text>
+<polyline fill="none" stroke="black" points="526.5,-449.5 705.5,-449.5 "/>
+<text text-anchor="middle" x="616" y="-437.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node19 -->
 <g id="edge35" class="edge">
 <title>Node1&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M740.84,-639.68C734.91,-635.74 729.2,-631.5 724,-627 690.65,-598.14 661.38,-557.28 641.75,-526.29"/>
+<path fill="none" stroke="midnightblue" d="M740.84,-639.68C734.91,-635.74 729.2,-631.5 724,-627 692.55,-599.79 664.72,-561.9 645.2,-531.68"/>
 <polygon fill="none" stroke="midnightblue" points="739.33,-642.87 749.65,-645.25 743.07,-636.95 739.33,-642.87"/>
 </g>
 <!-- Node20 -->
@@ -675,7 +676,7 @@
 <!-- Node19&#45;&gt;Node1 -->
 <g id="edge34" class="edge">
 <title>Node19&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M652.02,-526.29C677.24,-556.14 712.46,-595.64 747,-627 751.02,-630.65 755.31,-634.29 759.7,-637.84"/>
+<path fill="none" stroke="#404040" d="M656.52,-531.59C681.33,-560.71 714.47,-597.47 747,-627 751.02,-630.65 755.31,-634.29 759.7,-637.84"/>
 <polygon fill="none" stroke="#404040" points="759.93,-638.02 767.12,-638.57 769.37,-645.43 762.18,-644.87 759.93,-638.02"/>
 <text text-anchor="middle" x="774.5" y="-613.5" font-family="Helvetica,sans-Serif" font-size="10.00"> +set_values</text>
 </g>
