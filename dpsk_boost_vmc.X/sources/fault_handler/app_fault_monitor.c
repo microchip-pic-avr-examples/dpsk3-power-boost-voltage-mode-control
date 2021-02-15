@@ -331,7 +331,7 @@ volatile uint16_t ocp_FaultInitialize(void)
     fltobj_BoostOCP.Counter = 0;        // Clear fault event counter
     fltobj_BoostOCP.Status.bits.FaultActive = true; // Set fault condition flag (must be cleared by fault check)
     fltobj_BoostOCP.Status.bits.FaultStatus = true; // Set fault flag (must be cleared by fault check)
-    fltobj_BoostOCP.Status.bits.Enabled = true; // Enable fault checks    
+    fltobj_BoostOCP.Status.bits.Enabled = false; // Enable fault checks    
 
     return(retval);
     

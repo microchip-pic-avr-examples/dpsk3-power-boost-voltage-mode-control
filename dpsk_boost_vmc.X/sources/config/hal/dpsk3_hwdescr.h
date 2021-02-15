@@ -385,11 +385,11 @@
 #define BUCK_VIN_OVER_VOLTAGE       (float)14.300   ///< Over Voltage Lock Out Cut Off in [V]
 #define BUCK_VIN_HYSTERESIS         (float) 1.000   ///< UVLO/OVLO Hysteresis in [V]
     
-#define BUCK_VIN_R1                 (float)(6.980)  ///< Upper voltage divider resistor in [kOhm]
-#define BUCK_VIN_R2                 (float)(1.000)  ///< Lower voltage divider resistor in [kOhm]
+#define BUCK_VIN_R1                 (float) 6.980   ///< Upper voltage divider resistor in [kOhm]
+#define BUCK_VIN_R2                 (float) 1.000   ///< Lower voltage divider resistor in [kOhm]
     
-#define BUCK_VIN_FEEDBACK_OFFSET    (float)(0.0000) ///< Physical, static signal offset in [V]
-#define BUCK_VIN_ADC_TRG_DELAY      (float)(20.0e-9) ///< ADC trigger delay in [sec]
+#define BUCK_VIN_FEEDBACK_OFFSET    (float) 0.0000  ///< Physical, static signal offset in [V]
+#define BUCK_VIN_ADC_TRG_DELAY      (float) 20.0e-9  ///< ADC trigger delay in [sec]
 
 /** @} */ // end of group input-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
 
@@ -460,14 +460,14 @@
  * *************************************************************************************************/
 
 // Feedback Declarations
-#define BUCK_VOUT_NOMINAL           (float)3.300   ///< Nominal output voltage
-#define BUCK_VOUT_TOLERANCE_MAX     (float)0.500   ///< Output voltage tolerance [+/-]
-#define BUCK_VOUT_TOLERANCE_MIN     (float)0.100   ///< Output voltage tolerance [+/-]
+#define BUCK_VOUT_NOMINAL           (float) 3.300   ///< Nominal output voltage
+#define BUCK_VOUT_TOLERANCE_MAX     (float) 0.500   ///< Output voltage tolerance [+/-]
+#define BUCK_VOUT_TOLERANCE_MIN     (float) 0.100   ///< Output voltage tolerance [+/-]
     
-#define BUCK_VOUT_DIV_R1            (float)(1.000) ///< Upper voltage divider resistor in kOhm
-#define BUCK_VOUT_DIV_R2            (float)(1.000) ///< Lower voltage divider resistor in kOhm
-#define BUCK_VOUT_FEEDBACK_OFFSET   (float)(0.0)   ///< Physical, static signal offset in [V]
-#define BUCK_VOUT_ADC_TRG_DELAY     (float)(20.0e-9) ///< Trigger delay in [sec]
+#define BUCK_VOUT_DIV_R1            (float) 1.000   ///< Upper voltage divider resistor in kOhm
+#define BUCK_VOUT_DIV_R2            (float) 1.000   ///< Lower voltage divider resistor in kOhm
+#define BUCK_VOUT_FEEDBACK_OFFSET   (float) 0.000   ///< Physical, static signal offset in [V]
+#define BUCK_VOUT_ADC_TRG_DELAY     (float)20.0e-9  ///< Trigger delay in [sec]
 
 /** @} */ // end of group output-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
 
@@ -1012,11 +1012,11 @@
 #define BOOST_VIN_OVER_VOLTAGE       (float)14.300   ///< Over Voltage Lock Out Cut Off in [V]
 #define BOOST_VIN_HYSTERESIS         (float) 1.000   ///< UVLO/OVLO Hysteresis in [V]
     
-#define BOOST_VIN_R1                 (float)(6.980)  ///< Upper voltage divider resistor in [kOhm]
-#define BOOST_VIN_R2                 (float)(1.000)  ///< Lower voltage divider resistor in [kOhm]
+#define BOOST_VIN_R1                 (float) 6.980   ///< Upper voltage divider resistor in [kOhm]
+#define BOOST_VIN_R2                 (float) 1.000   ///< Lower voltage divider resistor in [kOhm]
     
-#define BOOST_VIN_FEEDBACK_OFFSET    (float)(0.0000) ///< Physical, static signal offset in [V]
-#define BOOST_VIN_ADC_TRG_DELAY      (float)(20.0e-9) ///< ADC trigger delay in [sec]
+#define BOOST_VIN_FEEDBACK_OFFSET    (float) 0.0000  ///< Physical, static signal offset in [V]
+#define BOOST_VIN_ADC_TRG_DELAY      (float)20.0e-9  ///< ADC trigger delay in [sec]
 
 /** @} */ // end of group input-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
 
@@ -1088,14 +1088,14 @@
 
 // Feedback Declarations
 #define BOOST_VOUT_NOMINAL           (float)15.00   ///< Nominal output voltage
-#define BOOST_VOUT_TOLERANCE_MAX     (float)0.500   ///< Output voltage tolerance [+/-]
-#define BOOST_VOUT_TOLERANCE_MIN     (float)0.100   ///< Output voltage tolerance [+/-]
-#define BOOST_VOUT_VFWD_DROP_MAX     (float)0.400   ///< Recitifer diode forward voltage drop maximum
+#define BOOST_VOUT_TOLERANCE_MAX     (float) 0.500  ///< Output voltage tolerance [+/-]
+#define BOOST_VOUT_TOLERANCE_MIN     (float) 0.100  ///< Output voltage tolerance [+/-]
+#define BOOST_VOUT_VFWD_DROP_MAX     (float) 0.400  ///< Recitifer diode forward voltage drop maximum
     
-#define BOOST_VOUT_DIV_R1            (float)(6.980) ///< Upper voltage divider resistor in kOhm
-#define BOOST_VOUT_DIV_R2            (float)(1.000) ///< Lower voltage divider resistor in kOhm
-#define BOOST_VOUT_FEEDBACK_OFFSET   (float)(0.0)   ///< Physical, static signal offset in [V]
-#define BOOST_VOUT_ADC_TRG_DELAY     (float)(20.0e-9) ///< Trigger delay in [sec]
+#define BOOST_VOUT_DIV_R1            (float) 6.980  ///< Upper voltage divider resistor in kOhm
+#define BOOST_VOUT_DIV_R2            (float) 1.000  ///< Lower voltage divider resistor in kOhm
+#define BOOST_VOUT_FEEDBACK_OFFSET   (float) 0.000  ///< Physical, static signal offset in [V]
+#define BOOST_VOUT_ADC_TRG_DELAY     (float)20.0e-9 ///< Trigger delay in [sec]
 
 /** @} */ // end of group output-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
 
@@ -1184,7 +1184,7 @@
     #define BOOST_ISNS_RELEASE           (float) 1.500      ///< current reset level after over current event in [A]
     #define BOOST_ISNS_REFERENCE         (float) 2.500      ///< output current reference (average) in [A]
     #define BOOST_ISNS_REFERENCE_STARTUP (float) 2.500      ///< maximum output current (average) at startup in [A]
-    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 200.0e-9   ///< ADC trigger delay for current sense in [sec]
+    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 80.0e-9    ///< ADC trigger delay for current sense in [sec]
     #define BOOST_ISNS_FEEDBACK_OFFSET   (float) 1.125      ///< Current sense feedback offset (average) in [V]
 
     #define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE  true       ///< Current Sense Offset Calibration is disabled 
