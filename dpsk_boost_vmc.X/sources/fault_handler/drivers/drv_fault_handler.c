@@ -73,7 +73,7 @@ volatile struct FAULT_OBJECT_s fltObjectClear =
     };
 
 /*******************************************************************************
- * @fn	volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltObject)
+ * @fn	uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltObject)
  * @ingroup lib-layer-fault-functions-public
  * @param	fltObject Pointer to a Fault Monitoring Object of type struct FAULT_OBJECT_s
  * @return  unsigned integer (0=failure, 1=success)

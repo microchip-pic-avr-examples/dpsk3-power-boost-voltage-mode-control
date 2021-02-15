@@ -66,15 +66,23 @@ volatile uint16_t appPowerSupply_Execute(void)
 
     // Capture data values
     boost.data.v_in = (BOOST_VIN_ADCBUF - BOOST_VIN_OFFSET);
-    boost.data.i_sns[0] = (BOOST_ISNS_ADCBUF - boost.i_loop[0].feedback_offset);
     boost.data.temp = BOOST_TEMP_ADCBUF;
+    boost.data.i_sns[0] = BOOST_ISNS_ADCBUF;
     
-    // Average inductor current value
+    // Average inductor current value and calculate output current
     isns_samples += boost.data.i_sns[0];
+    
     if(!(++_isns_sample_count & ISNS_AVG_BITMASK))
     {
-        boost.data.i_out = (isns_samples >> 3);
-        isns_samples = 0;
+        isns_samples = (isns_samples >> 3);
+        isns_samples -= boost.i_loop[0].feedback_offset;
+        if((int16_t)isns_samples < 0) isns_samples = 0;
+
+        // Output current is estimated without considering internal power losses
+        isns_samples = (uint16_t)( (float)boost.data.v_in * (float)isns_samples / (float)boost.data.v_out );
+        boost.data.i_out = isns_samples;
+        
+        isns_samples = 0; // Reset data buffer
     }
     
     // Execute boost converter state machine
@@ -88,10 +96,12 @@ volatile uint16_t appPowerSupply_Execute(void)
         fltobj_BoostRegErr.ReferenceObject.ptrObject = boost.v_loop.controller->Ports.ptrControlReference;
         #if (PLANT_MEASUREMENT == false)
         fltobj_BoostRegErr.Status.bits.Enabled = boost.v_loop.controller->status.bits.enabled;
+        fltobj_BoostOCP.Status.bits.Enabled = boost.v_loop.controller->status.bits.enabled;
         #endif
     }
     else {
         fltobj_BoostRegErr.Status.bits.Enabled = false;
+        fltobj_BoostOCP.Status.bits.Enabled = false;
     }
     
     return(retval); 
