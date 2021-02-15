@@ -217,7 +217,7 @@ volatile uint16_t appPowerSupply_ConverterObjectInitialize(void)
     boost.startup.vcap_monitor.counter = 0;
     boost.startup.vcap_monitor.timeout_counter = 0;
     boost.startup.vcap_monitor.period = BOOST_CHRG_PER;
-    boost.startup.vcap_monitor.timeout = BOOST_CHRG_PER;
+    boost.startup.vcap_monitor.timeout = BOOST_CHRG_TOUT;
     boost.startup.vcap_monitor.v_drop = BOOST_VOUT_VFWD_DROP;
     
     return(retval);
