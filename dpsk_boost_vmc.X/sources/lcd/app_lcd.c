@@ -119,14 +119,9 @@ volatile uint16_t appLCD_Execute(void)
     if(lcd_cnt == lcd.refresh) {
         
         // Calculate output values
-        temp = ((float)(boost.data.temp - BOOST_FB_TEMP_ZERO) / BOOST_FB_TEMP_SLOPE); // Scale ADC value to physical unit
-        temp = (float)(int)(100.0 * temp);  // Rounding operation required to prevent display 
-        temp /= 100.0;                      // rounding issues around 9.99 and 10.0 V
         vi = ((boost.data.v_in << 3) * ADC_GRANULARITY); // Scale ADC value to physical unit
         vi = (float)(int)(100.0 * vi);      // Rounding operation required to prevent display
         vi /= 100.0;                        // rounding issues around 9.99 and 10.0 ° C
-        vo = ((boost.data.v_out << 3) * ADC_GRANULARITY); // Scale ADC value to physical unit
-        isns = (((boost.data.i_out - BOOST_ISNS_FB_OFFSET) * ADC_GRANULARITY) /  BOOST_ISNS_FEEDBACK_GAIN); // Scale ADC value to physical unit
         
         // Input voltage display
         if((double)vi < 10.000)
@@ -137,6 +132,11 @@ volatile uint16_t appLCD_Execute(void)
         switch (lcd.screen)
         {
             case 1:     // Show Temperature Output
+
+                temp = ((float)(boost.data.temp - BOOST_FB_TEMP_ZERO) / BOOST_FB_TEMP_SLOPE); // Scale ADC value to physical unit
+                temp = (float)(int)(100.0 * temp);  // Rounding operation required to prevent display 
+                temp /= 100.0;                      // rounding issues around 9.99 and 10.0 V
+
                 if((double)temp < 10.000)
                     PrintLcd(1, "TEMP    = %2.2f C", (double)temp);
                 else
@@ -144,17 +144,24 @@ volatile uint16_t appLCD_Execute(void)
                 break;
             
             case 2:     // Show Current Output
+
+                isns = ((boost.data.i_out * ADC_GRANULARITY) /  BOOST_ISNS_FEEDBACK_GAIN); // Scale ADC value to physical unit
+
                 if((double)isns < 1.000)
                 {
                     isns *= 1000.0;
                     PrintLcd(1, "ISNS    = %3d mA", (int)isns);
                 }
                 else
+                {
                     PrintLcd(1, "ISNS    = %1.2f A", (double)isns);
+                }
                 break;
 
             default:    // Output voltage display
                 
+                vo = ((boost.data.v_out << 3) * ADC_GRANULARITY); // Scale ADC value to physical unit
+
                 if((double)vo < 10.000)
                     PrintLcd(1, "VOUT    = %2.2f V", (double)vo);
                 else
