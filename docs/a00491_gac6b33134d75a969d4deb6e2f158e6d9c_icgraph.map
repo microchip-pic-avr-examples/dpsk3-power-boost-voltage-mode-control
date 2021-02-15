@@ -1,0 +1,5 @@
+<map id="boostPWM_Suspend" name="boostPWM_Suspend">
+<area shape="rect" id="node1" title="This function disables the PWM generator IOs." alt="" coords="148,31,293,57"/>
+<area shape="rect" id="node2" href="$a00479.html#ga9eb174458c7fd652dd725988f435cfdb" title="If this function is called, the state machine is reset to INITIALIZE (URL=State_Initialize)." alt="" coords="9,5,97,32"/>
+<area shape="rect" id="node3" href="$a00479.html#ga54a9e1e78d536910ed756a227c2ed30b" title="This function resets the boost control operation by re&#45;initiating the control mode,..." alt="" coords="5,56,100,83"/>
+</map>
