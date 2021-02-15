@@ -71,6 +71,7 @@ volatile uint16_t appPowerSupply_Execute(void)
     
     // Average inductor current value and calculate output current
     isns_samples += boost.data.i_sns[0];
+    
     if(!(++_isns_sample_count & ISNS_AVG_BITMASK))
     {
         isns_samples = (isns_samples >> 3);
@@ -95,10 +96,12 @@ volatile uint16_t appPowerSupply_Execute(void)
         fltobj_BoostRegErr.ReferenceObject.ptrObject = boost.v_loop.controller->Ports.ptrControlReference;
         #if (PLANT_MEASUREMENT == false)
         fltobj_BoostRegErr.Status.bits.Enabled = boost.v_loop.controller->status.bits.enabled;
+        fltobj_BoostOCP.Status.bits.Enabled = boost.v_loop.controller->status.bits.enabled;
         #endif
     }
     else {
         fltobj_BoostRegErr.Status.bits.Enabled = false;
+        fltobj_BoostOCP.Status.bits.Enabled = false;
     }
     
     return(retval); 
