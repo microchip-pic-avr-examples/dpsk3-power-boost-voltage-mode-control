@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "dsPIC33C Digital Power Starter Kit 3 Firmware", "index.html", [
+  [ "Digital Power Starter Kit 3 Firmware", "index.html", [
     [ "dsPIC33C Digital Power Starter Kit", "index.html#autotoc_md17", [
       [ "Summary", "index.html#autotoc_md18", null ],
       [ "Description", "index.html#autotoc_md19", null ],
