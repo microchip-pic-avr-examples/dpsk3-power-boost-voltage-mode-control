@@ -36,6 +36,10 @@ This code example demonstrates the implementation of a simple voltage mode contr
 This code example also includes the LCD driver allowing users to observe runtime data on the on-board LC display. The on-board user switch `USER` is allows users to change the active display page to observe input voltage, output voltage, output current and board temperature.
 
 ## Related Documentation
+
+##### Firmware Documentation
+- [Online Firmware Documentation of this Code Example](https://microchip-pic-avr-examples.github.io/dpsk3-power-boost-voltage-mode-control/)
+##### Hardware and Target Device Documentation
 - [Digital Power Starter Kit 3 User Guide](https://www.microchip.com/50002867)
 - [dsPIC33CK256MP508 Family Data Sheet](https://www.microchip.com/70005349)
 - [dsPIC33CK256MP508 Family Silicon Errata and Data Sheet Clarification](https://www.microchip.com/80000796)
