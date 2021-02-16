@@ -1,13 +1,7 @@
 var a00420 =
 [
-    [ "BUCK_VL_MINIMUM", "a00420.html#ga41af1de3fe8252ea181dc05f33c14b68", null ],
-    [ "BUCK_VL_NOMINAL", "a00420.html#ga6999c379d5a1a2c4fb81902bfc1fe3b1", null ],
-    [ "BUCK_VL_MAXIMUM", "a00420.html#ga16553be6e8fe8ab34f6d078ff6e39cd7", null ],
-    [ "BUCK_AGC_FACTOR_MAX", "a00420.html#ga30083345d8b122bce51aa372bc4ce148", null ],
-    [ "BUCK_VIN_NORM_FCT", "a00420.html#ga64367e1b5414f4ab9ce0bd5f8a7ec618", null ],
-    [ "BUCK_AGC_IO_NORM_SCALER", "a00420.html#gafbaa80db67366c907a4dcc3a27e63ff1", null ],
-    [ "BUCK_AGC_IO_NORM_FACTOR", "a00420.html#gabdbb5d2baae550abbc0c8d5cfa515e05", null ],
-    [ "BUCK_AGC_MEDIAN", "a00420.html#gab66099c12e6b9f4153aeb8ef6e8487d5", null ],
-    [ "BUCK_AGC_NOM_SCALER", "a00420.html#ga2f08303f166365f97a7390fa1ef1503d", null ],
-    [ "BUCK_AGC_NOM_FACTOR", "a00420.html#gac099d403afaf30b093a91400740b5737", null ]
+    [ "PLANT_MEASUREMENT", "a00420.html#ga0bec5510da2215eafb1e118d9dc786c7", null ],
+    [ "DBGPIN1_ENABLE", "a00420.html#ga558e9be0d6b69c99c432b0e34923921e", null ],
+    [ "DBGPIN2_ENABLE", "a00420.html#ga410c4fdcc59dde5886e61f88917c88e7", null ],
+    [ "DBGDAC_ENABLE", "a00420.html#ga1fae4fbca01ef05d76f53ca54d362a14", null ]
 ];

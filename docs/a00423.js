@@ -1,7 +1,7 @@
 var a00423 =
 [
-    [ "PLANT_MEASUREMENT", "a00423.html#ga0bec5510da2215eafb1e118d9dc786c7", null ],
-    [ "DBGPIN1_ENABLE", "a00423.html#ga558e9be0d6b69c99c432b0e34923921e", null ],
-    [ "DBGPIN2_ENABLE", "a00423.html#ga410c4fdcc59dde5886e61f88917c88e7", null ],
-    [ "DBGDAC_ENABLE", "a00423.html#ga1fae4fbca01ef05d76f53ca54d362a14", null ]
+    [ "fltobj_BoostUVLO", "a00423.html#gaefcb53ce90e80bdbc5c3569d8ca409b9", null ],
+    [ "fltobj_BoostOVLO", "a00423.html#gafc25554053f2af5c3761b876470d00ea", null ],
+    [ "fltobj_BoostOCP", "a00423.html#ga1ef1cfeec9796c32ee314549f2b299b6", null ],
+    [ "fltobj_BoostRegErr", "a00423.html#gae81929e3905d846905d49fa9c024b55b", null ]
 ];

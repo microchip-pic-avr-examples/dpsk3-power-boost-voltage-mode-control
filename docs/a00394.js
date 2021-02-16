@@ -1,19 +1,8 @@
 var a00394 =
 [
-    [ "BUCK_UVLO_TDLY", "a00394.html#gaf019187252e22bf0b5ba36f8c24a796b", null ],
-    [ "BOOST_UVLO_TDLY", "a00394.html#gab8b2a67978f222add5f842866e90d563", null ],
-    [ "BUCK_UVLO_RDLY", "a00394.html#ga26802d3c1f81381aabd8828738450559", null ],
-    [ "BUCK_OVLO_TDLY", "a00394.html#ga2f95f26dbb49e01a4e4352b251ac1ac4", null ],
-    [ "BUCK_OVLO_RDLY", "a00394.html#gaeaf0ac8cd4701531aea9cbc915cf0048", null ],
-    [ "BUCK_REGERR_TDLY", "a00394.html#ga7ba8b1157772d52ae804f727da6a7585", null ],
-    [ "BUCK_REGERR_RDLY", "a00394.html#ga5d7876048e15068d5e6651a5f46f84fc", null ],
-    [ "BUCK_OCP_TDLY", "a00394.html#ga12a19c7fa0770351c8a4f0bfc10511e8", null ],
-    [ "BUCK_OCP_RDLY", "a00394.html#gaa711f0459b9c6a44ee47ef6f680cac49", null ],
-    [ "BOOST_UVLO_RDLY", "a00394.html#gac8ac88a56309cb5dcb5133d5403d8396", null ],
-    [ "BOOST_OVLO_TDLY", "a00394.html#gab7ed723b159671948862bbd5938fc014", null ],
-    [ "BOOST_OVLO_RDLY", "a00394.html#ga74eeca885f03d35d861a135acfefcc9f", null ],
-    [ "BOOST_REGERR_TDLY", "a00394.html#gabe8eb9e44ffb20e8fbd4e27bf9605518", null ],
-    [ "BOOST_REGERR_RDLY", "a00394.html#ga3bc85c3c81befdb6e648607e7963f873", null ],
-    [ "BOOST_OCP_TDLY", "a00394.html#gad2f97b558d7cafe96553b6fb634bd92c", null ],
-    [ "BOOST_OCP_RDLY", "a00394.html#ga5d1f75618cb0c1b174e1d071ad85afe9", null ]
+    [ "DAC_OUTPUT_INSTANCE", "a00394.html#gabec08b2d9b12805edaddcf94288c3f46", null ],
+    [ "DAC_BUFFER_OPA_INSTANCE", "a00394.html#ga12db0418f0d3984970fbff2b77d86ea9", null ],
+    [ "DAC_OUTPUT_INIT_VALUE", "a00394.html#ga8ca6f3a35334e80ad2fffb2efd570b57", null ],
+    [ "DACOUT_Set", "a00394.html#gae819dedb558c1ebfd083be382c1d39ee", null ],
+    [ "DACOUT_Get", "a00394.html#ga8ba8a7cc89f151d869c7fff72d368d62", null ]
 ];

@@ -37,14 +37,15 @@ This code example also includes the LCD driver allowing users to observe runtime
 
 ## Related Documentation
 
-##### Firmware Documentation
+#### Firmware Documentation
 - [Online Firmware Documentation of this Code Example](https://microchip-pic-avr-examples.github.io/dpsk3-power-boost-voltage-mode-control/)
-##### Hardware and Target Device Documentation
+
+#### Hardware and Target Device Documentation
 - [Digital Power Starter Kit 3 User Guide](https://www.microchip.com/50002867)
 - [dsPIC33CK256MP508 Family Data Sheet](https://www.microchip.com/70005349)
 - [dsPIC33CK256MP508 Family Silicon Errata and Data Sheet Clarification](https://www.microchip.com/80000796)
 
-##### Please always check for the latest data sheets on the respective product websites:
+#### Please always check for the latest data sheets on the respective product websites:
 - [dsPIC33CK256MP508 Family](https://www.microchip.com/dsPIC33CK256MP508)
 - [dsPIC33CH512MP508 Family](https://www.microchip.com/dsPIC33CH512MP508)
 
@@ -53,16 +54,18 @@ This code example also includes the LCD driver allowing users to observe runtime
 - [MPLAB&reg; XC16 Compiler v1.61](https://www.microchip.com/mplabxc16windows)
 - [Microchip Code Configurator v4.0.2](https://www.microchip.com/mplab/mplab-code-configurator)
 - [MPLAB&reg; PowerSmart&trade; Digital Control Library Designer v0.9.12](https://areiter128.github.io/DCLD)
+
 ## Hardware Used
 - dsPIC33C Digital Power Starter Kit, Part-No. [DM330017-3](https://www.microchip.com/DM330017-3)
 
 ## Supported Target Devices
 
 
-***Focus Microchip Technology Devices***
+#### Focus Microchip Technology Devices
 - [48-pin Digital Signal Controller, dsPIC33CK256MP505](https://www.microchip.com/dsPIC33CK256MP505)
 
-***Further Microchip Technology Devices used in this Design***
+#### Further Microchip Technology Devices used in this Design
+
 *a) Power Supply Circuit*
 - [8-MHz MEMS Oscillator, DSC6011JI2A-008](https://www.microchip.com/DSC6000B)
 - [50V/1A, Asynchronous Buck Regulator, MCP16331](https://www.microchip.com/MCP16331)
