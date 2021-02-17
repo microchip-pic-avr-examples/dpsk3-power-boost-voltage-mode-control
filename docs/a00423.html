@@ -132,22 +132,22 @@ Variables</h2></td></tr>
 <p>Public properties of the first application layer task. </p>
 <p>This is the detailed description of public variables, data types, enumerations, defines and macros of the fault monitor application layer. </p>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="gaefcb53ce90e80bdbc5c3569d8ca409b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaefcb53ce90e80bdbc5c3569d8ca409b9">&#9670;&nbsp;</a></span>fltobj_BoostUVLO</h2>
+<a id="ga1ef1cfeec9796c32ee314549f2b299b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1ef1cfeec9796c32ee314549f2b299b6">&#9670;&nbsp;</a></span>fltobj_BoostOCP</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="a01413.html">FAULT_OBJECT_s</a> fltobj_BoostUVLO</td>
+          <td class="memname">struct <a class="el" href="a01413.html">FAULT_OBJECT_s</a> fltobj_BoostOCP</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Under Voltage Lock Out Fault Object. </p>
+<p>Over Current Protection Fault Object. </p>
 <p><br  />
 </p>
-<p>This fault object monitors the input voltage of the power supply scanning for conditions violating the minimum required input voltage level for the specified amount of time. </p>
+<p>This fault object monitors the average output current of the power supply scanning for conditions exceeding the maximum allowed output current level for the specified amount of time. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00164_source.html#l00001">1</a> of file <a class="el" href="a00164_source.html">app_fault_monitor.c</a>.</p>
 
@@ -174,27 +174,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga1ef1cfeec9796c32ee314549f2b299b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1ef1cfeec9796c32ee314549f2b299b6">&#9670;&nbsp;</a></span>fltobj_BoostOCP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="a01413.html">FAULT_OBJECT_s</a> fltobj_BoostOCP</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Over Current Protection Fault Object. </p>
-<p><br  />
-</p>
-<p>This fault object monitors the average output current of the power supply scanning for conditions exceeding the maximum allowed output current level for the specified amount of time. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00164_source.html#l00001">1</a> of file <a class="el" href="a00164_source.html">app_fault_monitor.c</a>.</p>
-
-</div>
-</div>
 <a id="gae81929e3905d846905d49fa9c024b55b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae81929e3905d846905d49fa9c024b55b">&#9670;&nbsp;</a></span>fltobj_BoostRegErr</h2>
 
@@ -211,6 +190,27 @@ Variables</h2></td></tr>
 <p><br  />
 </p>
 <p>This fault object monitors the deviation between voltage reference and most recent output voltage of the power supply scanning for conditions where a maximum allowed deviation is exceeded for the specified amount of time. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00164_source.html#l00001">1</a> of file <a class="el" href="a00164_source.html">app_fault_monitor.c</a>.</p>
+
+</div>
+</div>
+<a id="gaefcb53ce90e80bdbc5c3569d8ca409b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaefcb53ce90e80bdbc5c3569d8ca409b9">&#9670;&nbsp;</a></span>fltobj_BoostUVLO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="a01413.html">FAULT_OBJECT_s</a> fltobj_BoostUVLO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Under Voltage Lock Out Fault Object. </p>
+<p><br  />
+</p>
+<p>This fault object monitors the input voltage of the power supply scanning for conditions violating the minimum required input voltage level for the specified amount of time. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00164_source.html#l00001">1</a> of file <a class="el" href="a00164_source.html">app_fault_monitor.c</a>.</p>
 

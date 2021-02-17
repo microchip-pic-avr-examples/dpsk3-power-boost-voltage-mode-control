@@ -162,14 +162,213 @@ Functions</h2></td></tr>
 <p>Functions of the second library layer. </p>
 <p>This is the detailed description of public functions of the peripheral configuration module of the boost converter device driver library. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga6b5da6f69a70380e159502fbd7199a10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6b5da6f69a70380e159502fbd7199a10">&#9670;&nbsp;</a></span>boostPWM_ModuleInitialize()</h2>
+<a id="ga85ae5f6b841cc22a5cb39e750abb67a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85ae5f6b841cc22a5cb39e750abb67a3">&#9670;&nbsp;</a></span>boostADC_ChannelInitialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t boostPWM_ModuleInitialize </td>
+          <td class="memname">uint16_t boostADC_ChannelInitialize </td>
+          <td>(</td>
+          <td class="paramtype">volatile struct <a class="el" href="a01545.html">BOOST_ADC_INPUT_SETTINGS_s</a> *&#160;</td>
+          <td class="paramname"><em>adcInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function initializes the settings for the ADC channel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">adcInstance</td><td>Pointer to an ADC Input Configuration data object of type struct <a class="el" href="a01545.html" title="ADC input channel configuration.">BOOST_ADC_INPUT_SETTINGS_s</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This function initializes the ADC input registers based on the selected ADC channel. This function sets the input channel trigger source, input mode, and the ADC core connected to the selected channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00531">531</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga85ae5f6b841cc22a5cb39e750abb67a3_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ga751421523389bc4548a4920ac1c85937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga751421523389bc4548a4920ac1c85937">&#9670;&nbsp;</a></span>boostADC_ModuleInitialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t boostADC_ModuleInitialize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This fucntion initializes the boost by resetting all its registers to default. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>The ADC initialization covers basic configurations like data format, clock sources and dividers as well as specific configurations for ADC cores. These settings are general, basic settings and not related to specific analog inputs. The standard configuration set here sets up the ADC module and ADC cores for maximum performance. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00432">432</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga751421523389bc4548a4920ac1c85937_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ga904680160cbf8b8fe4d41f87b1a69e44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga904680160cbf8b8fe4d41f87b1a69e44">&#9670;&nbsp;</a></span>boostADC_Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t boostADC_Start </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function enables the ADC module and starts the ADC cores analog inputs for the required input signals. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This function enables the ADC module, powers-up and enables the ADC cores used and waits until ADC cores are ready. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00625">625</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga904680160cbf8b8fe4d41f87b1a69e44_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ga0e291d0cb856167fd188be50090ef5ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e291d0cb856167fd188be50090ef5ce">&#9670;&nbsp;</a></span>boostGPIO_Clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t boostGPIO_Clear </td>
+          <td>(</td>
+          <td class="paramtype">volatile struct <a class="el" href="a01553.html">BOOST_GPIO_INSTANCE_s</a> *&#160;</td>
+          <td class="paramname"><em>boostGPIOInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function clears the selected general purpose input/output pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boostGPIOInstance</td><td>Pointer to a GPIO instance data object of type struct <a class="el" href="a01553.html" title="GPIO instance of the converter control GPIO.">BOOST_GPIO_INSTANCE_s</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This function captures the pin that the use desired to be put in inactive state. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00691">691</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga0e291d0cb856167fd188be50090ef5ce_cgraph.svg" width="383" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga0e291d0cb856167fd188be50090ef5ce_icgraph.svg" width="100%" height="454"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ga2690f2504ec6bad359a1ad75316a13f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2690f2504ec6bad359a1ad75316a13f1">&#9670;&nbsp;</a></span>boostGPIO_GetPinState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool boostGPIO_GetPinState </td>
+          <td>(</td>
+          <td class="paramtype">volatile struct <a class="el" href="a01553.html">BOOST_GPIO_INSTANCE_s</a> *&#160;</td>
+          <td class="paramname"><em>boostGPIOInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function gets the state of the selected pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boostGPIOInstance</td><td>Pointer to a GPIO instance data object of type struct <a class="el" href="a01553.html" title="GPIO instance of the converter control GPIO.">BOOST_GPIO_INSTANCE_s</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This function captures the selected pin and read its state. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00726">726</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga2690f2504ec6bad359a1ad75316a13f1_cgraph.svg" width="424" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga2690f2504ec6bad359a1ad75316a13f1_icgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ga204b527b94398e138949cd166bcc24dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga204b527b94398e138949cd166bcc24dc">&#9670;&nbsp;</a></span>boostGPIO_Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t boostGPIO_Initialize </td>
           <td>(</td>
           <td class="paramtype">volatile struct <a class="el" href="a01561.html">BOOST_CONVERTER_s</a> *&#160;</td>
           <td class="paramname"><em>boostInstance</em></td><td>)</td>
@@ -178,7 +377,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes the boost PWM module by resetting its registers to default. </p>
+<p>This function initializes the boost input pins. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">boostInstance</td><td>Pointer to a Boost Converter data object of type struct <a class="el" href="a01561.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a> </td></tr>
@@ -186,27 +385,110 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function initializes the boost PWM module base registers with default values for maximum performance.</p>
-<p>Default configuration:</p><ul>
-<li>all PWM peripheral power is enabled</li>
-<li>all PWM generators are disabled</li>
-<li>default PWM Module configurations are written in boost PWM module base registers </li>
-</ul>
+<p>This function initializes the ENABLE input pin and POWER GOOD output pin using the boost GPIO_PrivateInitialize (URL = <a class="el" href="a00488.html#ga2968a8235de619bada4a5aa5f3073019">boostGPIO_PrivateInitialize</a>). </p>
 
-<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00054">54</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00757">757</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga6b5da6f69a70380e159502fbd7199a10_cgraph.svg" width="444" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga204b527b94398e138949cd166bcc24dc_cgraph.svg" width="627" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga6b5da6f69a70380e159502fbd7199a10_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga204b527b94398e138949cd166bcc24dc_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ga2968a8235de619bada4a5aa5f3073019"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2968a8235de619bada4a5aa5f3073019">&#9670;&nbsp;</a></span>boostGPIO_PrivateInitialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t boostGPIO_PrivateInitialize </td>
+          <td>(</td>
+          <td class="paramtype">volatile struct <a class="el" href="a01553.html">BOOST_GPIO_INSTANCE_s</a> *&#160;</td>
+          <td class="paramname"><em>boostGPIOInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function sets the pin as input or output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boostGPIOInstance</td><td>Pointer to a GPIO instance data object of type struct <a class="el" href="a01553.html" title="GPIO instance of the converter control GPIO.">BOOST_GPIO_INSTANCE_s</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This function captures the user selected pin then set the pin to inactive and set it as digital input or output pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00789">789</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga2968a8235de619bada4a5aa5f3073019_cgraph.svg" width="439" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga2968a8235de619bada4a5aa5f3073019_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="gadad66ac21f9bc94ef2ba538316c76efc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadad66ac21f9bc94ef2ba538316c76efc">&#9670;&nbsp;</a></span>boostGPIO_Set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t boostGPIO_Set </td>
+          <td>(</td>
+          <td class="paramtype">volatile struct <a class="el" href="a01553.html">BOOST_GPIO_INSTANCE_s</a> *&#160;</td>
+          <td class="paramname"><em>boostGPIOInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function sets the selected general purpose input/ouput pins. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boostGPIOInstance</td><td>Pointer to a GPIO instance data object of type struct <a class="el" href="a01553.html" title="GPIO instance of the converter control GPIO.">BOOST_GPIO_INSTANCE_s</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This function captures the user selected pin to be activated through LAT register. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00656">656</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
+<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_gadad66ac21f9bc94ef2ba538316c76efc_cgraph.svg" width="374" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_gadad66ac21f9bc94ef2ba538316c76efc_icgraph.svg" width="355" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -243,19 +525,112 @@ Functions</h2></td></tr>
 </ul>
 
 <p class="definition">Definition at line <a class="el" href="a00260_source.html#l00110">110</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga76d61bc918bb955a0d2019a9469b2e25_cgraph.svg" width="458" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga76d61bc918bb955a0d2019a9469b2e25_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ga6b5da6f69a70380e159502fbd7199a10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b5da6f69a70380e159502fbd7199a10">&#9670;&nbsp;</a></span>boostPWM_ModuleInitialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t boostPWM_ModuleInitialize </td>
+          <td>(</td>
+          <td class="paramtype">volatile struct <a class="el" href="a01561.html">BOOST_CONVERTER_s</a> *&#160;</td>
+          <td class="paramname"><em>boostInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the boost PWM module by resetting its registers to default. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boostInstance</td><td>Pointer to a Boost Converter data object of type struct <a class="el" href="a01561.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This function initializes the boost PWM module base registers with default values for maximum performance.</p>
+<p>Default configuration:</p><ul>
+<li>all PWM peripheral power is enabled</li>
+<li>all PWM generators are disabled</li>
+<li>default PWM Module configurations are written in boost PWM module base registers </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00054">54</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
+<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga6b5da6f69a70380e159502fbd7199a10_cgraph.svg" width="444" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga6b5da6f69a70380e159502fbd7199a10_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ga5f53e68e580abcb4c924dc029c47e578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f53e68e580abcb4c924dc029c47e578">&#9670;&nbsp;</a></span>boostPWM_Resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t boostPWM_Resume </td>
+          <td>(</td>
+          <td class="paramtype">volatile struct <a class="el" href="a01561.html">BOOST_CONVERTER_s</a> *&#160;</td>
+          <td class="paramname"><em>boostInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function resumes the boost PWM operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boostInstance</td><td>Pointer to a Boost Converter data object of type struct <a class="el" href="a01561.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>THis function updates the PWM timing bit and the PWM output pins are enabled. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00372">372</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
+<div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga5f53e68e580abcb4c924dc029c47e578_cgraph.svg" width="412" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga5f53e68e580abcb4c924dc029c47e578_icgraph.svg" width="344" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -287,18 +662,18 @@ Functions</h2></td></tr>
 <p>This function starts the operation of the boost PWM by enabling the PWM generator and its output pins. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00260_source.html#l00215">215</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga538ef6022b1b46d667919a42ce88076b_cgraph.svg" width="392" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga538ef6022b1b46d667919a42ce88076b_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -332,18 +707,18 @@ Functions</h2></td></tr>
 <p>If the Power Good output is enabled, this output pin will also be reset. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00260_source.html#l00284">284</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
-<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga106051f11636da04a8f6a91413a10390_cgraph.svg" width="640" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga106051f11636da04a8f6a91413a10390_icgraph.svg" width="548" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -376,394 +751,19 @@ Functions</h2></td></tr>
 <p>This function suspends the boost PWM operation by disabling all PWM outputs of the recent boost converter configuration, overriding the PWM output pins and setting the duty cycle to 0. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00260_source.html#l00330">330</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
-<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_gac6b33134d75a969d4deb6e2f158e6d9c_cgraph.svg" width="664" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_gac6b33134d75a969d4deb6e2f158e6d9c_icgraph.svg" width="299" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="ga5f53e68e580abcb4c924dc029c47e578"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5f53e68e580abcb4c924dc029c47e578">&#9670;&nbsp;</a></span>boostPWM_Resume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t boostPWM_Resume </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01561.html">BOOST_CONVERTER_s</a> *&#160;</td>
-          <td class="paramname"><em>boostInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function resumes the boost PWM operation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">boostInstance</td><td>Pointer to a Boost Converter data object of type struct <a class="el" href="a01561.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>THis function updates the PWM timing bit and the PWM output pins are enabled. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00372">372</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
-<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga5f53e68e580abcb4c924dc029c47e578_cgraph.svg" width="412" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga5f53e68e580abcb4c924dc029c47e578_icgraph.svg" width="344" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="ga751421523389bc4548a4920ac1c85937"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga751421523389bc4548a4920ac1c85937">&#9670;&nbsp;</a></span>boostADC_ModuleInitialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t boostADC_ModuleInitialize </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This fucntion initializes the boost by resetting all its registers to default. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">void</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>The ADC initialization covers basic configurations like data format, clock sources and dividers as well as specific configurations for ADC cores. These settings are general, basic settings and not related to specific analog inputs. The standard configuration set here sets up the ADC module and ADC cores for maximum performance. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00432">432</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
-<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga751421523389bc4548a4920ac1c85937_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="ga85ae5f6b841cc22a5cb39e750abb67a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga85ae5f6b841cc22a5cb39e750abb67a3">&#9670;&nbsp;</a></span>boostADC_ChannelInitialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t boostADC_ChannelInitialize </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01545.html">BOOST_ADC_INPUT_SETTINGS_s</a> *&#160;</td>
-          <td class="paramname"><em>adcInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function initializes the settings for the ADC channel. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">adcInstance</td><td>Pointer to an ADC Input Configuration data object of type struct <a class="el" href="a01545.html" title="ADC input channel configuration.">BOOST_ADC_INPUT_SETTINGS_s</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function initializes the ADC input registers based on the selected ADC channel. This function sets the input channel trigger source, input mode, and the ADC core connected to the selected channel. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00531">531</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
-<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga85ae5f6b841cc22a5cb39e750abb67a3_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="ga904680160cbf8b8fe4d41f87b1a69e44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga904680160cbf8b8fe4d41f87b1a69e44">&#9670;&nbsp;</a></span>boostADC_Start()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t boostADC_Start </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function enables the ADC module and starts the ADC cores analog inputs for the required input signals. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">void</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function enables the ADC module, powers-up and enables the ADC cores used and waits until ADC cores are ready. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00625">625</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
-<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga904680160cbf8b8fe4d41f87b1a69e44_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="gadad66ac21f9bc94ef2ba538316c76efc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadad66ac21f9bc94ef2ba538316c76efc">&#9670;&nbsp;</a></span>boostGPIO_Set()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t boostGPIO_Set </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01553.html">BOOST_GPIO_INSTANCE_s</a> *&#160;</td>
-          <td class="paramname"><em>boostGPIOInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function sets the selected general purpose input/ouput pins. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">boostGPIOInstance</td><td>Pointer to a GPIO instance data object of type struct <a class="el" href="a01553.html" title="GPIO instance of the converter control GPIO.">BOOST_GPIO_INSTANCE_s</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function captures the user selected pin to be activated through LAT register. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00656">656</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
-<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_gadad66ac21f9bc94ef2ba538316c76efc_cgraph.svg" width="374" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_gadad66ac21f9bc94ef2ba538316c76efc_icgraph.svg" width="355" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="ga0e291d0cb856167fd188be50090ef5ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0e291d0cb856167fd188be50090ef5ce">&#9670;&nbsp;</a></span>boostGPIO_Clear()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t boostGPIO_Clear </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01553.html">BOOST_GPIO_INSTANCE_s</a> *&#160;</td>
-          <td class="paramname"><em>boostGPIOInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function clears the selected general purpose input/output pin. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">boostGPIOInstance</td><td>Pointer to a GPIO instance data object of type struct <a class="el" href="a01553.html" title="GPIO instance of the converter control GPIO.">BOOST_GPIO_INSTANCE_s</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function captures the pin that the use desired to be put in inactive state. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00691">691</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
-<div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga0e291d0cb856167fd188be50090ef5ce_cgraph.svg" width="383" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga0e291d0cb856167fd188be50090ef5ce_icgraph.svg" width="100%" height="454"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="ga2690f2504ec6bad359a1ad75316a13f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2690f2504ec6bad359a1ad75316a13f1">&#9670;&nbsp;</a></span>boostGPIO_GetPinState()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool boostGPIO_GetPinState </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01553.html">BOOST_GPIO_INSTANCE_s</a> *&#160;</td>
-          <td class="paramname"><em>boostGPIOInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function gets the state of the selected pin. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">boostGPIOInstance</td><td>Pointer to a GPIO instance data object of type struct <a class="el" href="a01553.html" title="GPIO instance of the converter control GPIO.">BOOST_GPIO_INSTANCE_s</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function captures the selected pin and read its state. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00726">726</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
-<div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga2690f2504ec6bad359a1ad75316a13f1_cgraph.svg" width="424" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga2690f2504ec6bad359a1ad75316a13f1_icgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="ga204b527b94398e138949cd166bcc24dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga204b527b94398e138949cd166bcc24dc">&#9670;&nbsp;</a></span>boostGPIO_Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t boostGPIO_Initialize </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01561.html">BOOST_CONVERTER_s</a> *&#160;</td>
-          <td class="paramname"><em>boostInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function initializes the boost input pins. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">boostInstance</td><td>Pointer to a Boost Converter data object of type struct <a class="el" href="a01561.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function initializes the ENABLE input pin and POWER GOOD output pin using the boost GPIO_PrivateInitialize (URL = <a class="el" href="a00488.html#ga2968a8235de619bada4a5aa5f3073019">boostGPIO_PrivateInitialize</a>). </p>
-
-<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00757">757</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
-<div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga204b527b94398e138949cd166bcc24dc_cgraph.svg" width="627" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga204b527b94398e138949cd166bcc24dc_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="ga2968a8235de619bada4a5aa5f3073019"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2968a8235de619bada4a5aa5f3073019">&#9670;&nbsp;</a></span>boostGPIO_PrivateInitialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t boostGPIO_PrivateInitialize </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01553.html">BOOST_GPIO_INSTANCE_s</a> *&#160;</td>
-          <td class="paramname"><em>boostGPIOInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function sets the pin as input or output. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">boostGPIOInstance</td><td>Pointer to a GPIO instance data object of type struct <a class="el" href="a01553.html" title="GPIO instance of the converter control GPIO.">BOOST_GPIO_INSTANCE_s</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function captures the user selected pin then set the pin to inactive and set it as digital input or output pin. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00789">789</a> of file <a class="el" href="a00260_source.html">dev_boost_pconfig.c</a>.</p>
 <div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-24-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga2968a8235de619bada4a5aa5f3073019_cgraph.svg" width="439" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_gac6b33134d75a969d4deb6e2f158e6d9c_cgraph.svg" width="664" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga2968a8235de619bada4a5aa5f3073019_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_gac6b33134d75a969d4deb6e2f158e6d9c_icgraph.svg" width="299" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

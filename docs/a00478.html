@@ -132,6 +132,42 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Variables of the boost converter state machine. </p>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="ga07f8bf8c06711c608ee570b6dd8d9d4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga07f8bf8c06711c608ee570b6dd8d9d4b">&#9670;&nbsp;</a></span>BoostConverterRampUpSubStateMachine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t(* BoostConverterRampUpSubStateMachine)[](volatile struct <a class="el" href="a01561.html">BOOST_CONVERTER_s</a> *boostInstance)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Boost converter state machine function pointer array. </p>
+<p>Function pointer array of boost converter startup sub-states.</p>
+<p>The function pointer list BoostConverterRampUpSubStateMachine[] is providing access to a list of state functions. Each function mapped into this array as function pointer represents a self-contained, independent sub-state. The main state machine will call functions from this list in order of their index within the array, starting from '0'. While this list is executed, the calling main state is transparent by passing through the return value of the most recent sub-state. Once all sub-states have been executed, the calling main state will return the COMPLETE flag, allowing the main state machine to move on.</p>
+<p>Each function needs to be called by handing over a parameter of type</p>
+<ul>
+<li>struct <a class="el" href="a01561.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a></li>
+</ul>
+<p>Each function returns of type unsigned integer:</p>
+<ul>
+<li>0 = BOOST_OPSRET_ERROR</li>
+<li>1 = BOOST_OPSRET_COMPLETE</li>
+<li>2 = BOOST_OPSRET_REPEAT </li>
+</ul>
+
+</div>
+</div>
 <a id="ga44f3bd251411e2eab723c19810ede057"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga44f3bd251411e2eab723c19810ede057">&#9670;&nbsp;</a></span>BoostConverterStateMachine</h2>
 
@@ -169,6 +205,25 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga0e2fe23262e3c767c02b3d2c4d666799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e2fe23262e3c767c02b3d2c4d666799">&#9670;&nbsp;</a></span>BoostRampUpSubStateList_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t BoostRampUpSubStateList_size = (sizeof(<a class="el" href="a00478.html#ga07f8bf8c06711c608ee570b6dd8d9d4b">BoostConverterRampUpSubStateMachine</a>)/sizeof(<a class="el" href="a00478.html#ga07f8bf8c06711c608ee570b6dd8d9d4b">BoostConverterRampUpSubStateMachine</a>[0]))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Boost converter sub-state machine function pointer array size. </p>
+<p>Boost converter state machine function pointer array size. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00272_source.html#l00038">38</a> of file <a class="el" href="a00272_source.html">dev_boost_substates.c</a>.</p>
+
+</div>
+</div>
 <a id="ga78b3ed92dc4684652c8266db453d3d87"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga78b3ed92dc4684652c8266db453d3d87">&#9670;&nbsp;</a></span>BoostStateList_size</h2>
 
@@ -186,61 +241,6 @@ Variables</h2></td></tr>
 <p>Boost converter state machine function pointer array size. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00254_source.html#l00039">39</a> of file <a class="el" href="a00254_source.html">dev_boost_opstates.c</a>.</p>
-
-</div>
-</div>
-<a id="ga07f8bf8c06711c608ee570b6dd8d9d4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga07f8bf8c06711c608ee570b6dd8d9d4b">&#9670;&nbsp;</a></span>BoostConverterRampUpSubStateMachine</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t(* BoostConverterRampUpSubStateMachine)[](volatile struct <a class="el" href="a01561.html">BOOST_CONVERTER_s</a> *boostInstance)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Boost converter state machine function pointer array. </p>
-<p>Function pointer array of boost converter startup sub-states.</p>
-<p>The function pointer list BoostConverterRampUpSubStateMachine[] is providing access to a list of state functions. Each function mapped into this array as function pointer represents a self-contained, independent sub-state. The main state machine will call functions from this list in order of their index within the array, starting from '0'. While this list is executed, the calling main state is transparent by passing through the return value of the most recent sub-state. Once all sub-states have been executed, the calling main state will return the COMPLETE flag, allowing the main state machine to move on.</p>
-<p>Each function needs to be called by handing over a parameter of type</p>
-<ul>
-<li>struct <a class="el" href="a01561.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a></li>
-</ul>
-<p>Each function returns of type unsigned integer:</p>
-<ul>
-<li>0 = BOOST_OPSRET_ERROR</li>
-<li>1 = BOOST_OPSRET_COMPLETE</li>
-<li>2 = BOOST_OPSRET_REPEAT </li>
-</ul>
-
-</div>
-</div>
-<a id="ga0e2fe23262e3c767c02b3d2c4d666799"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0e2fe23262e3c767c02b3d2c4d666799">&#9670;&nbsp;</a></span>BoostRampUpSubStateList_size</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t BoostRampUpSubStateList_size = (sizeof(<a class="el" href="a00478.html#ga07f8bf8c06711c608ee570b6dd8d9d4b">BoostConverterRampUpSubStateMachine</a>)/sizeof(<a class="el" href="a00478.html#ga07f8bf8c06711c608ee570b6dd8d9d4b">BoostConverterRampUpSubStateMachine</a>[0]))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Boost converter sub-state machine function pointer array size. </p>
-<p>Boost converter state machine function pointer array size. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00272_source.html#l00038">38</a> of file <a class="el" href="a00272_source.html">dev_boost_substates.c</a>.</p>
 
 </div>
 </div>

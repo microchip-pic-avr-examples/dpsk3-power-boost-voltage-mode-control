@@ -138,50 +138,6 @@ Functions</h2></td></tr>
 <p>Public functions of the second library layer. </p>
 <p>This is the detailed description of public functions of the boost converter device driver library application programming interface (API). </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gafe5ee9f0daeb397241fe4c9d799ac5f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafe5ee9f0daeb397241fe4c9d799ac5f3">&#9670;&nbsp;</a></span>drv_BoostConverter_Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t drv_BoostConverter_Initialize </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01561.html">BOOST_CONVERTER_s</a> *&#160;</td>
-          <td class="paramname"><em>boostInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function initializes all peripheral modules and their instances used by the power controller. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">boostInstance</td><td>Pointer to a Boost Converter data object of type struct <a class="el" href="a01561.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function initializes the PWM module, PWM channels, ADC channels for temperature, input voltage, output voltage and phase current. The boost IO pins are also initialize while keeping the boost converter operation disabled. The state machine is set to Initialize. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00248_source.html#l00030">30</a> of file <a class="el" href="a00248_source.html">dev_boost_converter.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00465_gafe5ee9f0daeb397241fe4c9d799ac5f3_cgraph.svg" width="100%" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00465_gafe5ee9f0daeb397241fe4c9d799ac5f3_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
 <a id="gac9132ab11bac82cf39cc4647fa7b5a1a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac9132ab11bac82cf39cc4647fa7b5a1a">&#9670;&nbsp;</a></span>drv_BoostConverter_Execute()</h2>
 
@@ -219,19 +175,107 @@ Functions</h2></td></tr>
 </ul>
 
 <p class="definition">Definition at line <a class="el" href="a00248_source.html#l00082">82</a> of file <a class="el" href="a00248_source.html">dev_boost_converter.c</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00465_gac9132ab11bac82cf39cc4647fa7b5a1a_cgraph.svg" width="606" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00465_gac9132ab11bac82cf39cc4647fa7b5a1a_icgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="gafe5ee9f0daeb397241fe4c9d799ac5f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe5ee9f0daeb397241fe4c9d799ac5f3">&#9670;&nbsp;</a></span>drv_BoostConverter_Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t drv_BoostConverter_Initialize </td>
+          <td>(</td>
+          <td class="paramtype">volatile struct <a class="el" href="a01561.html">BOOST_CONVERTER_s</a> *&#160;</td>
+          <td class="paramname"><em>boostInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function initializes all peripheral modules and their instances used by the power controller. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boostInstance</td><td>Pointer to a Boost Converter data object of type struct <a class="el" href="a01561.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This function initializes the PWM module, PWM channels, ADC channels for temperature, input voltage, output voltage and phase current. The boost IO pins are also initialize while keeping the boost converter operation disabled. The state machine is set to Initialize. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00248_source.html#l00030">30</a> of file <a class="el" href="a00248_source.html">dev_boost_converter.c</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00465_gac9132ab11bac82cf39cc4647fa7b5a1a_cgraph.svg" width="606" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00465_gafe5ee9f0daeb397241fe4c9d799ac5f3_cgraph.svg" width="100%" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00465_gac9132ab11bac82cf39cc4647fa7b5a1a_icgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00465_gafe5ee9f0daeb397241fe4c9d799ac5f3_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="gaac655851a3986299a041f1d453e9f27e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaac655851a3986299a041f1d453e9f27e">&#9670;&nbsp;</a></span>drv_BoostConverter_Resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t drv_BoostConverter_Resume </td>
+          <td>(</td>
+          <td class="paramtype">volatile struct <a class="el" href="a01561.html">BOOST_CONVERTER_s</a> *&#160;</td>
+          <td class="paramname"><em>boostInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function resume the operation of the boost converter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boostInstance</td><td>Pointer to a Boost Converter data object of type struct <a class="el" href="a01561.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This function executes the latest task in the state machine enforcing state switch immediately. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00248_source.html#l00294">294</a> of file <a class="el" href="a00248_source.html">dev_boost_converter.c</a>.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00465_gaac655851a3986299a041f1d453e9f27e_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00465_gaac655851a3986299a041f1d453e9f27e_icgraph.svg" width="367" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -263,18 +307,18 @@ Functions</h2></td></tr>
 <p>This function starts the boost converter operation by enabling the the boost PWM and ADC peripherals, enabling the boost converter and reseting the state machine to Initialize. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00248_source.html#l00197">197</a> of file <a class="el" href="a00248_source.html">dev_boost_converter.c</a>.</p>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="a00465_gaa47cd700d524e5c52eeadd4ecd2ed5ee_cgraph.svg" width="574" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="a00465_gaa47cd700d524e5c52eeadd4ecd2ed5ee_icgraph.svg" width="572" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -307,18 +351,18 @@ Functions</h2></td></tr>
 <p>This function stops the boost converter operation by shutting down the PWM generator, disabling the voltage/current loop and reset the state machine to Initialize. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00248_source.html#l00240">240</a> of file <a class="el" href="a00248_source.html">dev_boost_converter.c</a>.</p>
-<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00465_gaaf54320205622e4683e05c9c30c83dc0_cgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="a00465_gaaf54320205622e4683e05c9c30c83dc0_icgraph.svg" width="379" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -351,63 +395,19 @@ Functions</h2></td></tr>
 <p>This function sets the suspend bit terminating operation. This bit will be evaluated in the State machine tasks which eventually shuts down the operation of the boost converter. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00248_source.html#l00273">273</a> of file <a class="el" href="a00248_source.html">dev_boost_converter.c</a>.</p>
-<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00465_ga06815ea10e42fd1e1347e17e90bf49b9_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00465_ga06815ea10e42fd1e1347e17e90bf49b9_icgraph.svg" width="100%" height="442"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="gaac655851a3986299a041f1d453e9f27e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaac655851a3986299a041f1d453e9f27e">&#9670;&nbsp;</a></span>drv_BoostConverter_Resume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t drv_BoostConverter_Resume </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01561.html">BOOST_CONVERTER_s</a> *&#160;</td>
-          <td class="paramname"><em>boostInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function resume the operation of the boost converter. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">boostInstance</td><td>Pointer to a Boost Converter data object of type struct <a class="el" href="a01561.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function executes the latest task in the state machine enforcing state switch immediately. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00248_source.html#l00294">294</a> of file <a class="el" href="a00248_source.html">dev_boost_converter.c</a>.</p>
 <div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00465_gaac655851a3986299a041f1d453e9f27e_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00465_ga06815ea10e42fd1e1347e17e90bf49b9_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00465_gaac655851a3986299a041f1d453e9f27e_icgraph.svg" width="367" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00465_ga06815ea10e42fd1e1347e17e90bf49b9_icgraph.svg" width="100%" height="442"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>

@@ -197,96 +197,6 @@ Data Fields</h2></td></tr>
  
 <p class="definition">Definition at line <a class="el" href="a00281_source.html#l00371">371</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="aad7bda3be2c1e6a89bd7093086bbeec8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad7bda3be2c1e6a89bd7093086bbeec8">&#9670;&nbsp;</a></span>reference</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t reference</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Control loop reference variable. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00374">374</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="a81d3656451b3c24b602aa60c01cd88f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81d3656451b3c24b602aa60c01cd88f6">&#9670;&nbsp;</a></span>feedback_offset</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t feedback_offset</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Feedback offset value for calibration or bi-direction feedback signals. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00375">375</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="ad15abe564957bceb1997a22552534262"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad15abe564957bceb1997a22552534262">&#9670;&nbsp;</a></span>trigger_offset</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t trigger_offset</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>ADC trigger offset value for trigger fine-tuning. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00376">376</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="a880eff7691ea805dc7726dc9dc65170a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a880eff7691ea805dc7726dc9dc65170a">&#9670;&nbsp;</a></span>minimum</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile int16_t minimum</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>output clamping value (minimum) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00377">377</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="a62d4b288fdba9a5d426a707407903376"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62d4b288fdba9a5d426a707407903376">&#9670;&nbsp;</a></span>maximum</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t maximum</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>output clamping value (maximum) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00378">378</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
-
-</div>
-</div>
 <a id="a86e023cf3f4b4255c1b514b6d70ef74f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a86e023cf3f4b4255c1b514b6d70ef74f">&#9670;&nbsp;</a></span>controller</h2>
 
@@ -320,6 +230,24 @@ Data Fields</h2></td></tr>
 <p>Function pointer to INIT routine. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00281_source.html#l00382">382</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a1abd824af35613110d119216a9ef6772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1abd824af35613110d119216a9ef6772">&#9670;&nbsp;</a></span>ctrl_Precharge</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* ctrl_Precharge) (volatile struct <a class="el" href="a01621.html">NPNZ16b_s</a> *, volatile fractional, volatile fractional)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function pointer to PRECHARGE routine. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00385">385</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
@@ -359,21 +287,93 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a1abd824af35613110d119216a9ef6772"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1abd824af35613110d119216a9ef6772">&#9670;&nbsp;</a></span>ctrl_Precharge</h2>
+<a id="a81d3656451b3c24b602aa60c01cd88f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81d3656451b3c24b602aa60c01cd88f6">&#9670;&nbsp;</a></span>feedback_offset</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* ctrl_Precharge) (volatile struct <a class="el" href="a01621.html">NPNZ16b_s</a> *, volatile fractional, volatile fractional)</td>
+          <td class="memname">volatile uint16_t feedback_offset</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Function pointer to PRECHARGE routine. </p>
+<p>Feedback offset value for calibration or bi-direction feedback signals. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00385">385</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00375">375</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a62d4b288fdba9a5d426a707407903376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62d4b288fdba9a5d426a707407903376">&#9670;&nbsp;</a></span>maximum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t maximum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>output clamping value (maximum) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00378">378</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a880eff7691ea805dc7726dc9dc65170a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a880eff7691ea805dc7726dc9dc65170a">&#9670;&nbsp;</a></span>minimum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile int16_t minimum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>output clamping value (minimum) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00377">377</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="aad7bda3be2c1e6a89bd7093086bbeec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad7bda3be2c1e6a89bd7093086bbeec8">&#9670;&nbsp;</a></span>reference</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t reference</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Control loop reference variable. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00374">374</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="ad15abe564957bceb1997a22552534262"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad15abe564957bceb1997a22552534262">&#9670;&nbsp;</a></span>trigger_offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t trigger_offset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC trigger offset value for trigger fine-tuning. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00376">376</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>

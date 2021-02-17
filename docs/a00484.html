@@ -125,25 +125,6 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>List of variables of the Special Function state machine extensions. </p>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ga8ffae58655f6c0e52467cc76e897d15b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8ffae58655f6c0e52467cc76e897d15b">&#9670;&nbsp;</a></span>calib_cs</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct CS_CALIBRATION_s calib_cs[<a class="el" href="a00469.html#ga9f732532b64d46552260f09e4d98325a">BOOST_MPHASE_COUNT</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Array of current sense calibration data objects of type CS_CALIBRATION_t. </p>
-<p>The current sense feedback offset calibration requires a data space to accumulate and average the static feedback offset value. The final result is written to the feedback channel configuration of the boost converter data object, hence, the CS_CALIBRATION_s data structure used for the current sense feedback offset calibration is kept private and inaccessible from external firmware modules. This variable is declared as array reserving a data set for each current sense feedback channel. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00266_source.html#l00001">1</a> of file <a class="el" href="a00266_source.html">dev_boost_special_functions.c</a>.</p>
-
-</div>
-</div>
 <a id="ga44f615fd5c0d6dfe789f6f945ce4e04c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga44f615fd5c0d6dfe789f6f945ce4e04c">&#9670;&nbsp;</a></span>BoostConverterSpecialFunctions</h2>
 
@@ -180,6 +161,25 @@ Variables</h2></td></tr>
 <p></b></p>
 
 <p class="definition">Definition at line <a class="el" href="a00266_source.html#l00088">88</a> of file <a class="el" href="a00266_source.html">dev_boost_special_functions.c</a>.</p>
+
+</div>
+</div>
+<a id="ga8ffae58655f6c0e52467cc76e897d15b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8ffae58655f6c0e52467cc76e897d15b">&#9670;&nbsp;</a></span>calib_cs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct CS_CALIBRATION_s calib_cs[<a class="el" href="a00469.html#ga9f732532b64d46552260f09e4d98325a">BOOST_MPHASE_COUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Array of current sense calibration data objects of type CS_CALIBRATION_t. </p>
+<p>The current sense feedback offset calibration requires a data space to accumulate and average the static feedback offset value. The final result is written to the feedback channel configuration of the boost converter data object, hence, the CS_CALIBRATION_s data structure used for the current sense feedback offset calibration is kept private and inaccessible from external firmware modules. This variable is declared as array reserving a data set for each current sense feedback channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00266_source.html#l00001">1</a> of file <a class="el" href="a00266_source.html">dev_boost_special_functions.c</a>.</p>
 
 </div>
 </div>

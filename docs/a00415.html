@@ -125,22 +125,19 @@ $(document).ready(function(){initNavTree('a00415.html',''); initResizable(); });
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Conversion macros for user-declarations of temperature feedback parameters. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gacde6c3fa85c34fe5414566acd2e77ca8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacde6c3fa85c34fe5414566acd2e77ca8">&#9670;&nbsp;</a></span>BUCK_FB_TEMP_ZERO</h2>
+<a id="gaabab1ff0ffe06204aa20f33caec4f6ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaabab1ff0ffe06204aa20f33caec4f6ce">&#9670;&nbsp;</a></span>BOOST_FB_TEMP_SLOPE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_FB_TEMP_ZERO&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00414.html#gae1bfd432f4281610523780a3c7dea8c2">BUCK_TEMPCAL_ZERO</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define BOOST_FB_TEMP_SLOPE&#160;&#160;&#160;(float)(<a class="el" href="a00414.html#gaa3973a312a9169505ae4ee1f19f8ec87">BOOST_TEMPCAL_SLOPE</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Conversion macros of temperature feedback parameters. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00685">685</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01319">1319</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -179,19 +176,22 @@ $(document).ready(function(){initNavTree('a00415.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="gaabab1ff0ffe06204aa20f33caec4f6ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaabab1ff0ffe06204aa20f33caec4f6ce">&#9670;&nbsp;</a></span>BOOST_FB_TEMP_SLOPE</h2>
+<a id="gacde6c3fa85c34fe5414566acd2e77ca8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacde6c3fa85c34fe5414566acd2e77ca8">&#9670;&nbsp;</a></span>BUCK_FB_TEMP_ZERO</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_FB_TEMP_SLOPE&#160;&#160;&#160;(float)(<a class="el" href="a00414.html#gaa3973a312a9169505ae4ee1f19f8ec87">BOOST_TEMPCAL_SLOPE</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define BUCK_FB_TEMP_ZERO&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00414.html#gae1bfd432f4281610523780a3c7dea8c2">BUCK_TEMPCAL_ZERO</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01319">1319</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>Conversion macros of temperature feedback parameters. </p>
+<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00685">685</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
