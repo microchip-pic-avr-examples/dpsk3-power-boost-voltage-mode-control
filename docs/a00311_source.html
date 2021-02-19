@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('a00311_source.html',''); initResizable
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * CGS Date:            02/03/2021</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * *********************************************************************************</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * User:                M91406</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Date/Time:           02/09/2021 16:07:20</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Date/Time:           02/19/2021 15:50:48</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * ********************************************************************************/</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;v_loop.h&quot;</span></div>
@@ -152,11 +152,11 @@ $(document).ready(function(){initNavTree('a00311_source.html',''); initResizable
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> * Pole&amp;Zero Placement:</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> * *********************************************************************************</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> *    fP0:    320 Hz</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> *    fP1:    60000 Hz</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> *    fP2:    180000 Hz</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> *    fP0:    360 Hz</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> *    fP1:    40000 Hz</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> *    fP2:    160000 Hz</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> *    fZ1:    1810 Hz</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> *    fZ2:    4000 Hz</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> *    fZ2:    3833 Hz</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> * *********************************************************************************</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> * Filter Coefficients and Parameters:</span></div>
@@ -164,17 +164,17 @@ $(document).ready(function(){initNavTree('a00311_source.html',''); initResizable
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">volatile</span> int32_t v_loop_ACoefficients [3] =</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    0x5906FFFF, <span class="comment">// Coefficient A1 will be multiplied with controller output u(n-1)</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    0xA3080001, <span class="comment">// Coefficient A2 will be multiplied with controller output u(n-2)</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    0x8E1A0005  <span class="comment">// Coefficient A3 will be multiplied with controller output u(n-3)</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    0x6620FFFF, <span class="comment">// Coefficient A1 will be multiplied with controller output u(n-1)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    0xB3F60000, <span class="comment">// Coefficient A2 will be multiplied with controller output u(n-2)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    0x982E0009  <span class="comment">// Coefficient A3 will be multiplied with controller output u(n-3)</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">volatile</span> int32_t v_loop_BCoefficients [4] =</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    0x43ABFFFC, <span class="comment">// Coefficient B0 will be multiplied with error input e(n-0)</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    0x8258FFFD, <span class="comment">// Coefficient B1 will be multiplied with error input e(n-1)</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    0xBC69FFFC, <span class="comment">// Coefficient B2 will be multiplied with error input e(n-2)</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    0x7DCFFFFD  <span class="comment">// Coefficient B3 will be multiplied with error input e(n-3)</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    0x6DFEFFFD, <span class="comment">// Coefficient B0 will be multiplied with error input e(n-0)</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    0x99A9FFFD, <span class="comment">// Coefficient B1 will be multiplied with error input e(n-1)</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    0x9221FFFD, <span class="comment">// Coefficient B2 will be multiplied with error input e(n-2)</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    0x6676FFFD  <span class="comment">// Coefficient B3 will be multiplied with error input e(n-3)</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// Coefficient normalization factors</span></div>
@@ -184,7 +184,7 @@ $(document).ready(function(){initNavTree('a00311_source.html',''); initResizable
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">volatile</span> fractional v_loop_post_scaler = 0x0000;  <span class="comment">// Q15 fractional factor used to perform control output value backward normalization</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// P-Term Coefficient for Plant Measurements</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="a00506.html#gae1ef8104d52fe123c04e1107fd8ff55f">   85</a></span>&#160;<span class="keyword">volatile</span> int16_t <a class="code" href="a00506.html#gae1ef8104d52fe123c04e1107fd8ff55f">v_loop_pterm_factor</a> = 0x617A;    <span class="comment">// Q15 fractional of the P-Term factor</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="a00506.html#gae1ef8104d52fe123c04e1107fd8ff55f">   85</a></span>&#160;<span class="keyword">volatile</span> int16_t <a class="code" href="a00506.html#gae1ef8104d52fe123c04e1107fd8ff55f">v_loop_pterm_factor</a> = 0x6188;    <span class="comment">// Q15 fractional of the P-Term factor</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="a00506.html#ga566701f8f607a93f33e17e799fae6ac5">   86</a></span>&#160;<span class="keyword">volatile</span> int16_t <a class="code" href="a00506.html#ga566701f8f607a93f33e17e799fae6ac5">v_loop_pterm_scaler</a> = 0xFFFF;    <span class="comment">// Bit-shift scaler of the P-Term factor</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>

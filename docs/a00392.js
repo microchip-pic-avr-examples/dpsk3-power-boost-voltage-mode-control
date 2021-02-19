@@ -1,5 +1,6 @@
 var a00392 =
 [
-    [ "Device GPIO Assignments", "a00393.html", "a00393" ],
-    [ "Device Peripheral Assignments", "a00394.html", "a00394" ]
+    [ "User Settings", "a00393.html", "a00393" ],
+    [ "Conversion Macros", "a00394.html", "a00394" ],
+    [ "Microcontroller Abstraction", "a00395.html", "a00395" ]
 ];
