@@ -15,8 +15,8 @@
 #include "dev_boost_typedef.h" // include boost converter data object declarations
 
 // Private function prototypes of sub-state functions
-volatile uint16_t __attribute__((always_inline)) Substate_VCapMonitor(volatile struct BOOST_CONVERTER_s *boostInstance);
 volatile uint16_t __attribute__((always_inline)) SubState_PowerOnDelay(volatile struct BOOST_CONVERTER_s *boostInstance);
+volatile uint16_t __attribute__((always_inline)) Substate_VCapMonitor(volatile struct BOOST_CONVERTER_s *boostInstance);
 volatile uint16_t __attribute__((always_inline)) SubState_PrepareVRampUp(volatile struct BOOST_CONVERTER_s *boostInstance);
 volatile uint16_t __attribute__((always_inline)) SubState_VRampUp(volatile struct BOOST_CONVERTER_s *boostInstance);
 volatile uint16_t __attribute__((always_inline)) SubState_IRampUp(volatile struct BOOST_CONVERTER_s *boostInstance);
@@ -26,8 +26,8 @@ volatile uint16_t __attribute__((always_inline)) SubState_PowerGoodDelay(volatil
 // Declaration of function pointer array listing sub-state functions in order of execution
 volatile uint16_t (*BoostConverterRampUpSubStateMachine[])(volatile struct BOOST_CONVERTER_s *boostInstance) = 
 {
-    Substate_VCapMonitor,       ///< Sub-State #0: Monitors the output capacitor voltage until the voltage has settled
     SubState_PowerOnDelay,      ///< Sub-State #1: Wait programmed number of state machine ticks until startup is triggered
+    Substate_VCapMonitor,       ///< Sub-State #0: Monitors the output capacitor voltage until the voltage has settled
     SubState_PrepareVRampUp,    ///< Sub-State #2: Determine ramp up condition, pre-charge controllers and program PWM/Peripherals
     SubState_VRampUp,           ///< Sub-State #3: Output voltage ramp up
     SubState_IRampUp,           ///< Sub-State #4: Output current ramp up (optional, for startup current limiting only)
@@ -168,6 +168,9 @@ volatile uint16_t SubState_PrepareVRampUp(volatile struct BOOST_CONVERTER_s *boo
 
     // Set BUSY bit until process is complete
     boostInstance->status.bits.busy = true;
+
+    // Copy user setting for voltage reference
+    boostInstance->v_loop.reference = boostInstance->set_values.v_ref;
     
     // Hijack voltage loop controller reference
     boostInstance->startup.v_ramp.reference = 0; // Reset Soft-Start Voltage Reference
