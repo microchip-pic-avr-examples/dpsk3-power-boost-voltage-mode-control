@@ -292,7 +292,7 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     boost.v_loop.controller->Ports.AltTarget.NormFactor = 0x7FFF; // Secondary control output normalization factor fractional 
     
     // Configure controller control ports
-    boost.v_loop.controller->Ports.ptrControlReference = &boost.v_loop.reference; // Set pointer to Reference
+    boost.v_loop.controller->Ports.ptrControlReference = &boost.set_values.v_ref; // Set pointer to Reference
     
     // Data Input/Output Limit Configuration
     boost.v_loop.controller->Limits.MinOutput = boost.v_loop.minimum;
