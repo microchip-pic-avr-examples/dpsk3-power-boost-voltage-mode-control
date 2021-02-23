@@ -1,6 +1,4 @@
 var a00467 =
 [
-    [ "Public Functions", "a00468.html", "a00468" ],
-    [ "Public Properties", "a00469.html", "a00469" ],
-    [ "Private Properties", "a00473.html", "a00473" ]
+    [ "BoostConverterConstants", "a00467.html#ga5737c9c36d7573ed5746d563ef7387f5", null ]
 ];

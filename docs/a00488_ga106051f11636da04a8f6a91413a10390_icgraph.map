@@ -1,0 +1,5 @@
+<map id="boostPWM_Stop" name="boostPWM_Stop">
+<area shape="rect" id="node1" title="This function stops the boost PWM output." alt="" coords="421,5,543,32"/>
+<area shape="rect" id="node2" href="$a00465.html#gaaf54320205622e4683e05c9c30c83dc0" title="This function stop the boost converter opration." alt="" coords="207,5,373,32"/>
+<area shape="rect" id="node3" href="$a00458.html#gaa7d413f62f7b5f25d152cc12354241f0" title="This function calls the boost converter device driver function stopping the power supply." alt="" coords="5,5,159,32"/>
+</map>

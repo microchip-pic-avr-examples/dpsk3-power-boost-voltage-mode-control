@@ -1,5 +1,5 @@
 var a00395 =
 [
-    [ "Device GPIO Assignments", "a00396.html", "a00396" ],
-    [ "Device Peripheral Assignments", "a00397.html", "a00397" ]
+    [ "Converter Phase #1", "a00396.html", "a00396" ],
+    [ "Converter Phase #2", "a00397.html", null ]
 ];

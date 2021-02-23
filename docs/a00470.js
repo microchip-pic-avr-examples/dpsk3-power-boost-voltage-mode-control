@@ -1,4 +1,6 @@
 var a00470 =
 [
-    [ "BoostConverterConstants", "a00470.html#ga5737c9c36d7573ed5746d563ef7387f5", null ]
+    [ "Variables & Constants", "a00471.html", null ],
+    [ "Data Types", "a00472.html", "a00472" ],
+    [ "Defines and Macros", "a00473.html", null ]
 ];

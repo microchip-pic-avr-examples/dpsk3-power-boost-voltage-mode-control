@@ -1,4 +1,4 @@
-<map id="Device GPIO Assignments" name="Device GPIO Assignments">
-<area shape="rect" id="node1" href="$a00395.html" title=" " alt="" coords="5,5,152,45"/>
-<area shape="rect" id="node2" title="Assignment of microcontroller device pins to circuit functions and signals." alt="" coords="200,13,376,38"/>
+<map id="Converter Phase #1" name="Converter Phase #1">
+<area shape="rect" id="node1" href="$a00395.html" title="PWM peripheral output pins, control signals and register assignments." alt="" coords="5,5,183,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="231,5,365,31"/>
 </map>

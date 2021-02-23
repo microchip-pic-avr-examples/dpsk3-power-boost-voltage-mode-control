@@ -117,15 +117,15 @@ typedef enum BOOST_OPSTATES_e BOOST_OPSTATE_t; ///< Enumeration of state machine
  **************************************************************************************************** */
 enum BOOST_SUBSTATES_e {  // Enumeration of state machine operating sub-states
 
-    BOOST_OPSTATE_VCAP_MONITOR   = 0x00,  ///< power converter control state #3: wait for the output voltage to settle
-    BOOST_OPSTATE_POWER_ON_DELAY = 0x01,  ///< power converter control state #4: power on delay (no action)
+    BOOST_OPSTATE_POWER_ON_DELAY = 0x00,  ///< power converter control state #4: power on delay (no action)
+    BOOST_OPSTATE_VCAP_MONITOR   = 0x01,  ///< power converter control state #3: wait for the output voltage to settle
     BOOST_OPSTATE_PREPARE_V_RAMP = 0x02,  ///< power converter control state #5: turn on PWM outputs and enable controller
     BOOST_OPSTATE_V_RAMP_UP      = 0x03,  ///< power converter control state #6: perform output voltage ramp up based on parameters and system response 
     BOOST_OPSTATE_I_RAMP_UP      = 0x04,  ///< power converter control state #7: perform output current ramp up based on parameters and system response (average current mode only)
     BOOST_OPSTATE_PWRGOOD_DELAY  = 0x05   ///< power converter control state #8: Output reached regulation point but waits until things have settled
     
 }; ///< Enumeration of state machine operating sub-states 
-typedef enum BOOST_SUBSTATES_e BOOST_OP_SUBSTATES_t; ///< Enumeration of state machine operating sub-states data type
+typedef enum BOOST_SUBSTATES_e BOOST_SUBSTATES_t; ///< Enumeration of state machine operating sub-states data type
 
 /****************************************************************************************************
  * @ingroup lib-layer-boost-converter-properties-private-data-types
