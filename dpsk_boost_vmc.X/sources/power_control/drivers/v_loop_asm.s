@@ -2,7 +2,7 @@
 ;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.672
 ;  CGS Version: Code Generator Script v3.0.6 (02/03/2021)
 ;  Author:      M91406
-;  Date/Time:   02/09/2021 16:07:20
+;  Date/Time:   02/19/2021 15:50:48
 ; **********************************************************************************
 ;  3P3Z Control Library File (Fast Floating Point Coefficient Scaling Mode)
 ; **********************************************************************************
@@ -133,8 +133,6 @@
 ; Write control output value to target
     mov [w0 + #ptrTargetRegister], w8       ; capture pointer to target in working register
     mov w4, [w8]                            ; move control output to target address
-    mov [w0 + #ptrDProvControlOutput], w2   ; load pointer address of target buffer of most recent controller output value from data structure
-    mov w4, [w2]                            ; copy most recent controller output value to given data buffer target
     
 ;------------------------------------------------------------------------------
 ; Update ADC trigger locations
@@ -170,8 +168,6 @@
     mov [w2], w1                            ; move value from input source into working register
     mov [w0 + #ptrDProvControlInputComp], w2 ; load pointer address of target buffer of most recent, compensated controller input from data structure
     mov w1, [w2]                            ; copy most recent controller input value to given data buffer target
-    mov [w0 + #ptrDProvControlOutput], w2   ; load pointer address of target buffer of most recent controller output value from data structure
-    clr [w2]                                ; copy most recent controller output value to given data buffer target
     V_LOOP_LOOP_EXIT:                       ; Exit control loop branch target
     
 ;------------------------------------------------------------------------------
@@ -310,8 +306,6 @@
 ; Write control output value to target
     mov [w0 + #ptrTargetRegister], w8       ; capture pointer to target in working register
     mov w4, [w8]                            ; move control output to target address
-    mov [w0 + #ptrDProvControlOutput], w2   ; load pointer address of target buffer of most recent controller output value from data structure
-    mov w4, [w2]                            ; copy most recent controller output value to given data buffer target
     
 ;------------------------------------------------------------------------------
 ; Update ADC trigger locations
@@ -335,8 +329,6 @@
     mov [w2], w1                            ; move value from input source into working register
     mov [w0 + #ptrDProvControlInputComp], w2 ; load pointer address of target buffer of most recent, compensated controller input from data structure
     mov w1, [w2]                            ; copy most recent controller input value to given data buffer target
-    mov [w0 + #ptrDProvControlOutput], w2   ; load pointer address of target buffer of most recent controller output value from data structure
-    clr [w2]                                ; copy most recent controller output value to given data buffer target
     V_LOOP_PTERM_LOOP_EXIT:                 ; Exit P-Term control loop branch target
     
 ;------------------------------------------------------------------------------

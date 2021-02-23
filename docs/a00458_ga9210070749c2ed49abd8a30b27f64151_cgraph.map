@@ -1,0 +1,7 @@
+<map id="appPowerSupply_Start" name="appPowerSupply_Start">
+<area shape="rect" id="node1" title="This function calls the boost converter device driver function starting the power supply." alt="" coords="5,31,160,57"/>
+<area shape="rect" id="node2" href="$a00465.html#gaa47cd700d524e5c52eeadd4ecd2ed5ee" title="This function starts the boost converter." alt="" coords="208,23,341,65"/>
+<area shape="rect" id="node3" href="$a00488.html#ga904680160cbf8b8fe4d41f87b1a69e44" title="This function enables the ADC module and starts the ADC cores analog inputs for the required input si..." alt="" coords="393,5,509,32"/>
+<area shape="rect" id="node4" href="$a00488.html#ga538ef6022b1b46d667919a42ce88076b" title="This function enables the boost PWM operation." alt="" coords="389,56,512,83"/>
+<area shape="rect" id="node5" href="$a00369.html#ga55e525c7ac54a365ab6dad558ec17f0b" title="Returns the PWM generator index." alt="" coords="560,56,771,83"/>
+</map>

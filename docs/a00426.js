@@ -1,7 +1,7 @@
 var a00426 =
 [
-    [ "fltobj_BoostUVLO", "a00426.html#gaefcb53ce90e80bdbc5c3569d8ca409b9", null ],
-    [ "fltobj_BoostOVLO", "a00426.html#gafc25554053f2af5c3761b876470d00ea", null ],
-    [ "fltobj_BoostOCP", "a00426.html#ga1ef1cfeec9796c32ee314549f2b299b6", null ],
-    [ "fltobj_BoostRegErr", "a00426.html#gae81929e3905d846905d49fa9c024b55b", null ]
+    [ "Public Functions", "a00427.html", "a00427" ],
+    [ "Public Properties", "a00428.html", "a00428" ],
+    [ "Private Functions", "a00429.html", null ],
+    [ "Private Properties", "a00430.html", "a00430" ]
 ];
