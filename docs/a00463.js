@@ -1,4 +1,5 @@
 var a00463 =
 [
-    [ "_BOOST_VLOOP_Interrupt", "a00421.html#ga029e8d25bead6a85b786242e3b9cf4d1", null ]
+    [ "Boost Converter Library API", "a00464.html", "a00464" ],
+    [ "Boost Converter Library Modules", "a00474.html", "a00474" ]
 ];

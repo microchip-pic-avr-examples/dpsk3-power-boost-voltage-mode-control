@@ -1,5 +1,6 @@
 var a00466 =
 [
-    [ "Boost Converter Library API", "a00467.html", "a00467" ],
-    [ "Boost Converter Library Modules", "a00477.html", "a00477" ]
+    [ "Variables & Constants", "a00467.html", "a00467" ],
+    [ "Data Types", "a00468.html", "a00468" ],
+    [ "Defines and Macros", "a00469.html", "a00469" ]
 ];

@@ -287,7 +287,7 @@
 #define BUCK_NO_OF_PHASES              1U ///< Number of power converter phases of this design
 
 #define BUCK_SWITCHING_FREQUENCY       (float)500.0e+3 ///< Fixed Switching frequency in [Hz]
-#define BUCK_PWM_DUTY_CYCLE_MIN        (float)0.010 ///< Minimum on/off-time ratio (duty ratio) in [%]
+#define BUCK_PWM_DUTY_CYCLE_MIN        (float)0.000 ///< Minimum on/off-time ratio (duty ratio) in [%]
 #define BUCK_PWM_DUTY_CYCLE_MAX        (float)0.900 ///< Maximum on/off-time ratio (duty ratio) in [%]
 #define BUCK_LEADING_EDGE_BLANKING     (float)120.0e-9 ///< Leading Edge Blanking period in [sec]
 #define BUCK_DEAD_TIME_LEADING_EDGE    (float)20.0e-9 ///< Leading Edge Dead Time delay in [sec]

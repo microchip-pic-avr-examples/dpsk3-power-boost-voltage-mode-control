@@ -1,4 +1,6 @@
-<map id="Events and Interrupts" name="Events and Interrupts">
-<area shape="rect" id="node1" href="$a00460.html" title=" " alt="" coords="5,5,176,45"/>
-<area shape="rect" id="node2" title="Public events of the application layer of the power control task." alt="" coords="224,13,368,38"/>
+<map id="Boost Converter Library" name="Boost Converter Library">
+<area shape="rect" id="node1" href="$a00464.html" title=" " alt="" coords="397,5,580,31"/>
+<area shape="rect" id="node2" href="$a00474.html" title=" " alt="" coords="410,55,567,95"/>
+<area shape="rect" id="node3" title=" " alt="" coords="192,35,349,60"/>
+<area shape="rect" id="node4" href="$a00536.html" title="Generic Device Driver Layer." alt="" coords="5,27,144,67"/>
 </map>
