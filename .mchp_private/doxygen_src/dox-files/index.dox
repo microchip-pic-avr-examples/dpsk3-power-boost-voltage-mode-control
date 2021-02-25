@@ -42,7 +42,7 @@ process of the firmware.
 @code{.c} #pragma config FNOSC = FRCDIVN @endcode
  
  - <b>Step 1 (System Initialization):</b><br><br>
-   The first step focusses on essential IC resources only, such as oscillator and device inputs/outputs.
+   The first step focuses on essential IC resources only, such as oscillator and device inputs/outputs.
    The following modules are initialized in the given order:<br><br>
    - <b>Main Oscillator: </b><br>
    In this design the internal 8 MHz RC oscillator is used. Hence, the very first step in the firmware is to set up 
@@ -87,7 +87,7 @@ process of the firmware.
    parameters. (Please refer to the documentation of each task for details.)<br><br>
    - <b>Power Control Task</b><br>
      The Power Control Task covers the complete management of the included power supply circuit and control loops.
-     This task utilizes a standard single- and multiphase boost converter library, which provides a complete runtime 
+     This tasks utilizes a standard single- and multiphase buck converter library, which provides a complete runtime 
      state-machine managing self-initialization, soft-start, soft-stop, runtime reference tuning and auto-restart.
      It also includes enhanced features such as automatic adjustment to pre-biased outputs, feedback offset compensation
      and supports different control modes such as voltage mode control (VMC) or average current mode control (ACMC).
@@ -98,7 +98,7 @@ process of the firmware.
    <br><br>
 
  - <b>Step 4 (OS Timer Initialization):</b><br><br>
-   In the fourth step the operating system time base is initialized. In this slim applicaiton the operating system
+   In the fourth step the operating system time base is initialized. In this slim application the operating system
    consists of two different task execution levels on two priority levels:
    <br><br>
    - <b>Low-Priority Task Execution</b><br>
@@ -136,16 +136,6 @@ process of the firmware.
  being called on the defined priority level (default = 2). The interrupt service routine utiilzes an alternate
  working register set for optimum coontext management. By default, alternate working register set #1 is reserved
  for high priority tasks.
-
-							   
-					  
-				 
-		
-																										 
-																									  
-																	
-
-
 */
 
 //Device Start-Up Sub-Index
@@ -201,22 +191,22 @@ process of the firmware.
 @details
  This system initialization segment is reserved for user configurations, which are not covered 
  by standard library functions, such as circuit specific feedback signal conditioning or other
- independent funcitons.
+ independent functions.
 
 @defgroup user-peripherals-initialization User Peripheral Initialization
 @ingroup system-initialization-user-peripherals
 @brief 
 @details
- Some applicaitons require specific peripheral module functions to implement functions, 
+ Some applications require specific peripheral module functions to implement functions, 
  which are not covered by user-task device driver modules, such as special logic functions 
  or additional analog components like operational amplifiers for signal conditioning. This 
  initialization routine can be used to add user-configurations to the project, which are 
- independent from device driver modules, These special peripehral modules are initialized 
- before the user tasks. Users will have to decide when and how these additional peripehrals
+ independent from device driver modules, These special peripheral modules are initialized 
+ before the user tasks. Users will have to decide when and how these additional peripherals
  may be enabled to ensure no conflicts with user task device drivers occur.
 */
 
-/* Applicaiton-specific hardware or microcontroller declarations */
+/* Application-specific hardware or microcontroller declarations */
 /**
 @defgroup dac-initialization Digital-to-Analog Converter
 @ingroup system-initialization-user-peripherals
@@ -225,11 +215,8 @@ process of the firmware.
  DPSK3 uses one of the available on-chip Digital-to-Analog Converters (DAC) to generate 
  a dynamic, analog output signal, which can be used for enhanced debugging of high-speed
  processes such as control output monitoring.
-																						 
-																					 
-											 
 @note
- The DAC output signal is buffered by utilizing one of the availalbe on-chip operational
+ The DAC output signal is buffered by utilizing one of the available on-chip operational
  amplifiers. Please refer to the Operational Amplifier Configuration section for details.
  
 @defgroup op-amp-initialization Operational Amplifier Configuration
@@ -238,11 +225,9 @@ process of the firmware.
 @details
  As described in the Digital-to-Analog Converter (DAC) initialization section, DPSK3
  supports an internally generated, tunable, analog voltage signal for enhanced debugging.
-																							
  This DAC output signal is buffered by using one of the available on-chip operational amlifiers,
  which is configured and enabled in this section.
 @note
-																						
  Please refer to the Digital-to-Analog (DAC) Configuration section for further details on
  the configuration of this peripheral.
 */
@@ -253,7 +238,7 @@ process of the firmware.
 @ingroup device-start-up
 @brief 
 @details
- The appliation wide task execution requires a two step approach, where first the operating 
+ The application wide task execution requires a two step approach, where first the operating 
  system time base is configured and then all user-tasks are initialized. Once these two steps
  have been completed, the OS timer can be enabled and the main program will enter the main loop,
  continuously executing the specified and enabled user-tasks in high- and low-priority task
