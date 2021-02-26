@@ -1,5 +1,4 @@
-<map id="Firmware Architecture" name="Firmware Architecture">
-<area shape="rect" id="node1" href="$a00519.html" title="Main Loop." alt="" coords="217,5,300,31"/>
-<area shape="rect" id="node2" title="Firmware Flowchart." alt="" coords="5,31,155,56"/>
-<area shape="rect" id="node3" href="$a00518.html" title="Device Start Up." alt="" coords="203,55,315,80"/>
+<map id="Digital&#45;to&#45;Analog Converter" name="Digital&#45;to&#45;Analog Converter">
+<area shape="rect" id="node1" title=" " alt="" coords="221,13,396,38"/>
+<area shape="rect" id="node2" href="$a00515.html" title=" " alt="" coords="5,5,173,45"/>
 </map>

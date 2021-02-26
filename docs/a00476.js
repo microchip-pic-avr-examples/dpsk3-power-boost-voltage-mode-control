@@ -1,15 +1,17 @@
 var a00476 =
 [
-    [ "State_Error", "a00476.html#ga9eb174458c7fd652dd725988f435cfdb", null ],
-    [ "State_Initialize", "a00476.html#ga1fe433a16d6bbf6f0a79f6e38e029133", null ],
-    [ "State_Online", "a00476.html#gaeb2d729e224179cd20afe73137ca7320", null ],
-    [ "State_RampUp", "a00476.html#gab2ada25ee98953acc76f067b62e2c7de", null ],
-    [ "State_Reset", "a00476.html#ga54a9e1e78d536910ed756a227c2ed30b", null ],
-    [ "State_Standby", "a00476.html#ga8a53068be7d60fac00393db6b7a24448", null ],
-    [ "SubState_IRampUp", "a00476.html#ga2affac930aede08480d05711ed8e63b9", null ],
-    [ "SubState_PowerGoodDelay", "a00476.html#ga4ea63447e4d102bafe1fa664adc06d3f", null ],
-    [ "SubState_PowerOnDelay", "a00476.html#ga127a53cf81a169a38c5b905bff93dba0", null ],
-    [ "SubState_PrepareVRampUp", "a00476.html#ga5cfed631bf7546357503bf898741b702", null ],
-    [ "Substate_VCapMonitor", "a00476.html#gab682038b567985c96e5dc110438955be", null ],
-    [ "SubState_VRampUp", "a00476.html#gac6b35848a96ea078d2639b6b78e4e296", null ]
+    [ "boostADC_ChannelInitialize", "a00476.html#ga85ae5f6b841cc22a5cb39e750abb67a3", null ],
+    [ "boostADC_ModuleInitialize", "a00476.html#ga751421523389bc4548a4920ac1c85937", null ],
+    [ "boostADC_Start", "a00476.html#ga904680160cbf8b8fe4d41f87b1a69e44", null ],
+    [ "boostGPIO_Clear", "a00476.html#ga0e291d0cb856167fd188be50090ef5ce", null ],
+    [ "boostGPIO_GetPinState", "a00476.html#ga2690f2504ec6bad359a1ad75316a13f1", null ],
+    [ "boostGPIO_Initialize", "a00476.html#ga204b527b94398e138949cd166bcc24dc", null ],
+    [ "boostGPIO_PrivateInitialize", "a00476.html#ga2968a8235de619bada4a5aa5f3073019", null ],
+    [ "boostGPIO_Set", "a00476.html#gadad66ac21f9bc94ef2ba538316c76efc", null ],
+    [ "boostPWM_ChannelInitialize", "a00476.html#ga76d61bc918bb955a0d2019a9469b2e25", null ],
+    [ "boostPWM_ModuleInitialize", "a00476.html#ga6b5da6f69a70380e159502fbd7199a10", null ],
+    [ "boostPWM_Resume", "a00476.html#ga5f53e68e580abcb4c924dc029c47e578", null ],
+    [ "boostPWM_Start", "a00476.html#ga538ef6022b1b46d667919a42ce88076b", null ],
+    [ "boostPWM_Stop", "a00476.html#ga106051f11636da04a8f6a91413a10390", null ],
+    [ "boostPWM_Suspend", "a00476.html#gac6b33134d75a969d4deb6e2f158e6d9c", null ]
 ];

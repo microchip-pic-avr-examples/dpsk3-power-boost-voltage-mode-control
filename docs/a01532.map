@@ -1,4 +1,6 @@
-<map id="BOOST_LOOP_SETTINGS_s" name="BOOST_LOOP_SETTINGS_s">
-<area shape="rect" id="node1" title="User defined settings for control loops;." alt="" coords="5,263,200,472"/>
-<area shape="rect" id="node2" href="$a01561.html" title="BOOST control &amp; monitoring data structure." alt="" coords="19,5,187,215"/>
+<map id="BOOST_ADC_INPUT_SETTINGS_s" name="BOOST_ADC_INPUT_SETTINGS_s">
+<area shape="rect" id="node1" title="ADC input channel configuration." alt="" coords="5,432,235,671"/>
+<area shape="rect" id="node4" href="$a01529.html" title="ADC input signal scaling = (ADCBUF &#45; &lt;offset&gt;) * &lt;factor&gt; &gt;&gt; 2^&lt;scaler&gt;" alt="" coords="9,719,231,825"/>
+<area shape="rect" id="node2" href="$a01537.html" title="Boost converter feedback declarations." alt="" coords="5,263,235,384"/>
+<area shape="rect" id="node3" href="$a01549.html" title="BOOST control &amp; monitoring data structure." alt="" coords="36,5,204,215"/>
 </map>

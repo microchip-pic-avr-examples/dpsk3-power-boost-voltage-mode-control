@@ -1,4 +1,6 @@
 var a00370 =
 [
-    [ "ccpConfigDefault", "a00370.html#gaace96580ebc36260c1b6072178f25987", null ]
+    [ "User Settings", "a00371.html", "a00371" ],
+    [ "Conversion Macros", "a00372.html", "a00372" ],
+    [ "Device Peripheral Assignments", "a00373.html", "a00373" ]
 ];

@@ -1,7 +1,6 @@
 var a00426 =
 [
-    [ "Public Functions", "a00427.html", "a00427" ],
-    [ "Public Properties", "a00428.html", "a00428" ],
-    [ "Private Functions", "a00429.html", null ],
-    [ "Private Properties", "a00430.html", "a00430" ]
+    [ "appLCD_Dispose", "a00426.html#ga38c10d91e208e9eb081d0341792954d7", null ],
+    [ "appLCD_Execute", "a00426.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5", null ],
+    [ "appLCD_Initialize", "a00426.html#gab93992748ced72fdc2989d0b0f369e54", null ]
 ];

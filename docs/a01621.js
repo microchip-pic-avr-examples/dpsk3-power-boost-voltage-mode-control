@@ -1,12 +1,9 @@
 var a01621 =
 [
-    [ "ADCTriggerControl", "a01621.html#aa708a44ef3b59a931f929bc6c72e07fc", null ],
-    [ "Advanced", "a01621.html#ae10c373e7000ff11abbb151f019793e0", null ],
-    [ "DataProviders", "a01621.html#a971260b757f0c8822315d8c82a603142", null ],
-    [ "ExtensionHooks", "a01621.html#a486610694a9aac008ab8c01a0ab88090", null ],
-    [ "Filter", "a01621.html#aa98db9224dce165f72d861acc8558419", null ],
-    [ "GainControl", "a01621.html#a3c9fc0a5e04a384801d066b95dc27f5d", null ],
-    [ "Limits", "a01621.html#a6127947619eb634f1a3c3650529e092c", null ],
-    [ "Ports", "a01621.html#ae834fa9c7338d08d0fa927c901c2503f", null ],
-    [ "status", "a01621.html#a38a4b2427f4b2b06c112385e722e1419", null ]
+    [ "enabled", "a01621.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
+    [ "long_press", "a01621.html#ae6577f0794699101b84e90afcdfcaaaa", null ],
+    [ "pressed", "a01621.html#aa5848ca5944f6a2c0d6562778651629e", null ],
+    [ "sw_event", "a01621.html#a4e5a3be7a99ad29f863ea0dd636cea0a", null ],
+    [ "unsigned", "a01621.html#a32e93b068e309da5a319a7a69f3b3ff5", null ],
+    [ "value", "a01621.html#a3f0c55f449560b03ce0ac43270c26600", null ]
 ];

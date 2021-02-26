@@ -1,6 +1,4 @@
-<map id="BOOST_CONVERTER_STARTUP_s" name="BOOST_CONVERTER_STARTUP_s">
-<area shape="rect" id="node1" title="Power Converter Startup Timing Settings." alt="" coords="85,263,320,399"/>
-<area shape="rect" id="node3" href="$a01513.html" title="Generic power controller startup period settings." alt="" coords="5,454,195,590"/>
-<area shape="rect" id="node4" href="$a01517.html" title="Boost converter output capacitor voltage charge&#45;up monitor settings." alt="" coords="219,447,395,597"/>
-<area shape="rect" id="node2" href="$a01561.html" title="BOOST control &amp; monitoring data structure." alt="" coords="119,5,287,215"/>
+<map id="BOOST_LOOP_SETTINGS_s" name="BOOST_LOOP_SETTINGS_s">
+<area shape="rect" id="node1" title="User defined settings for control loops;." alt="" coords="5,263,200,472"/>
+<area shape="rect" id="node2" href="$a01549.html" title="BOOST control &amp; monitoring data structure." alt="" coords="19,5,187,215"/>
 </map>

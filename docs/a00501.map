@@ -1,4 +1,4 @@
-<map id="Objects" name="Objects">
-<area shape="rect" id="node1" href="$a00499.html" title=" " alt="" coords="5,5,167,45"/>
-<area shape="rect" id="node2" title="Public Objects of the Power Converter Control driver." alt="" coords="215,13,281,38"/>
+<map id="Public Functions" name="Public Functions">
+<area shape="rect" id="node1" title="Public functions of the push button device driver library." alt="" coords="191,5,309,31"/>
+<area shape="rect" id="node2" href="$a00500.html" title=" " alt="" coords="5,5,143,31"/>
 </map>

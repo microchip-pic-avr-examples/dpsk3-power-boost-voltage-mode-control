@@ -1,7 +1,6 @@
 var a00365 =
 [
-    [ "p33c_GpioInstance_ConfigRead", "a00365.html#ga57ba471912470e16a01d27589e011147", null ],
-    [ "p33c_GpioInstance_ConfigWrite", "a00365.html#gadf3bba95ba8b4f2c34af8678ea5e7ff0", null ],
-    [ "p33c_GpioInstance_Dispose", "a00365.html#gaa1640e884e367bc54c91864dc3a3d7ed", null ],
-    [ "p33c_GpioInstance_GetHandle", "a00365.html#ga4d67af688d8f7f911d79107974e11e6b", null ]
+    [ "pgConfigClear", "a00365.html#ga75ca6374eb31a3224a8e7bcfd4cd56a0", null ],
+    [ "pwmConfigClear", "a00365.html#gafeca0163f581790a35cef7b99a276adc", null ],
+    [ "pwmConfigDefault", "a00365.html#gaf8f0ea73e96ecddb846d1361098c09fe", null ]
 ];

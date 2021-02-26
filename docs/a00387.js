@@ -1,13 +1,23 @@
 var a00387 =
 [
-    [ "BOOST_CHARGEUP_PERIOD", "a00387.html#ga54fa6c219dce9de5f816617ce4716b35", null ],
-    [ "BOOST_CHARGEUP_TIMEOUT", "a00387.html#gae3597efdac20bf9aee16420f6f6d8be4", null ],
-    [ "BOOST_IRAMP_PERIOD", "a00387.html#ga37bef3bc61987dfa7912227dcd2e8475", null ],
-    [ "BOOST_POWER_GOOD_DELAY", "a00387.html#ga8a44fb1bbfee2714f51174f5ec741c01", null ],
-    [ "BOOST_POWER_ON_DELAY", "a00387.html#ga0c3f62393119606cf410bc110c3485c1", null ],
-    [ "BOOST_VRAMP_PERIOD", "a00387.html#ga96ef5acd0b4aa670827cb7b418fee8a9", null ],
-    [ "BUCK_IRAMP_PERIOD", "a00387.html#ga97ee7cbed4a1ed9ebae5c8576d292103", null ],
-    [ "BUCK_POWER_GOOD_DELAY", "a00387.html#ga4cf9c52e0a9c20641018ebdd2679f3c1", null ],
-    [ "BUCK_POWER_ON_DELAY", "a00387.html#ga4308ebf74c3332bd1edfdb6952629eaa", null ],
-    [ "BUCK_VRAMP_PERIOD", "a00387.html#ga5adf9fb727870e57bf02ead3ac7c63ac", null ]
+    [ "BOOST_VIN_ADC_TRG_DELAY", "a00387.html#gabf31dcb35b27258749eaebc91bc25c86", null ],
+    [ "BOOST_VIN_FEEDBACK_OFFSET", "a00387.html#gaebdcf7b89be3517cbe6464a32216c341", null ],
+    [ "BOOST_VIN_HYSTERESIS", "a00387.html#ga9bd075cb27c7aef0a12dba19e0509a48", null ],
+    [ "BOOST_VIN_MAXIMUM", "a00387.html#ga58ae34b85408432b3ba0d7774d9b34f1", null ],
+    [ "BOOST_VIN_MINIMUM", "a00387.html#ga38b44ccc543c64207ce806f1d3a15ebc", null ],
+    [ "BOOST_VIN_NOMINAL", "a00387.html#gad24de47b6326d94841299f3d4063edff", null ],
+    [ "BOOST_VIN_OVER_VOLTAGE", "a00387.html#ga731ec038ed3218a73f37f7c82d05dd39", null ],
+    [ "BOOST_VIN_R1", "a00387.html#ga5cbf22f4ec2ccdfdefead58c0cea6f8d", null ],
+    [ "BOOST_VIN_R2", "a00387.html#ga305c8ee15fc7ffea43b3621db232a51d", null ],
+    [ "BOOST_VIN_UNDER_VOLTAGE", "a00387.html#gad0982e95f129233155bda6bbd3f37f6b", null ],
+    [ "BUCK_VIN_ADC_TRG_DELAY", "a00387.html#ga424be83a416e00c8a543dba4c4fc0b4b", null ],
+    [ "BUCK_VIN_FEEDBACK_OFFSET", "a00387.html#gaf593cd65bd5f4c5e89e53a2f18eee78f", null ],
+    [ "BUCK_VIN_HYSTERESIS", "a00387.html#gac9d550e31988f099595df4e1cf57c6fe", null ],
+    [ "BUCK_VIN_MAXIMUM", "a00387.html#gaf44f0978ee4afa8c9934405d94c4f7a7", null ],
+    [ "BUCK_VIN_MINIMUM", "a00387.html#ga2b9d7fd5b2702046315df96e0dac53a6", null ],
+    [ "BUCK_VIN_NOMINAL", "a00387.html#ga5c7772209d64e3a378005e91041e4909", null ],
+    [ "BUCK_VIN_OVER_VOLTAGE", "a00387.html#ga045299d4d5087811ae36728c59f4f8fb", null ],
+    [ "BUCK_VIN_R1", "a00387.html#ga1e5a2551445274f32a9dde1ccab41511", null ],
+    [ "BUCK_VIN_R2", "a00387.html#gab95ae3ec4f9a91b3a65fbeedc2d5f3dd", null ],
+    [ "BUCK_VIN_UNDER_VOLTAGE", "a00387.html#ga5bb8349b54c2abdb048d8c6cb5abb97a", null ]
 ];

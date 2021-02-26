@@ -1,9 +1,8 @@
 var a00368 =
 [
-    [ "PPS_LockIO", "a00368.html#gaa09c4349fd01cc9b6b01d435bd022b56", null ],
-    [ "PPS_RemapInput", "a00368.html#ga6be1f27b70496503b7bda6edc2cfb59b", null ],
-    [ "PPS_RemapOutput", "a00368.html#ga592e485a9574eeebc2e1dc6993de1f55", null ],
-    [ "PPS_UnlockIO", "a00368.html#ga64624ae359fb9dd170bb9a3f85dd81f2", null ],
-    [ "PPS_UnmapInput", "a00368.html#ga76a2264a280f74b1e66ff047241e7a5c", null ],
-    [ "PPS_UnmapOutput", "a00368.html#gac40d40430a5237549eaafb4aa6ab3a24", null ]
+    [ "ADC_REFERENCE", "a00368.html#ga317868c528ebe27fbca094a8bc2d910c", null ],
+    [ "ADC_RESOLUTION", "a00368.html#ga00978ca9e8220475258dcbbbb7d29129", null ],
+    [ "CPU_FREQUENCY", "a00368.html#gaf73acdf7fb3be35ff98322b7e827d349", null ],
+    [ "PWM_CLOCK_FREQUENCY", "a00368.html#gaf4bf7a89bb59df42a846b9532dce8db9", null ],
+    [ "PWM_CLOCK_HIGH_RESOLUTION", "a00368.html#ga62b04d6cee79ca8f957ed1d5e6c46dd2", null ]
 ];

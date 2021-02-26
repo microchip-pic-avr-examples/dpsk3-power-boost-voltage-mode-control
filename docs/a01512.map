@@ -1,5 +1,4 @@
-<map id="BOOST_STARTUP_PERIOD_HANDLER_s" name="BOOST_STARTUP_PERIOD_HANDLER_s">
-<area shape="rect" id="node1" title="Generic power controller startup period settings." alt="" coords="28,447,217,583"/>
-<area shape="rect" id="node2" href="$a01521.html" title="Power Converter Startup Timing Settings." alt="" coords="5,263,240,399"/>
-<area shape="rect" id="node3" href="$a01561.html" title="BOOST control &amp; monitoring data structure." alt="" coords="39,5,207,215"/>
+<map id="BOOST_CONVERTER_DATA_s" name="BOOST_CONVERTER_DATA_s">
+<area shape="rect" id="node1" title="Publicly accessible data buffer of most recent runtime data values." alt="" coords="5,263,215,443"/>
+<area shape="rect" id="node2" href="$a01549.html" title="BOOST control &amp; monitoring data structure." alt="" coords="26,5,194,215"/>
 </map>

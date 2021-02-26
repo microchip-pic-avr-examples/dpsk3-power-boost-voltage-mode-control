@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: DEBUGGING_LED_s Struct Reference</title>
+<title>Digital Power Starter Kit 3 Firmware: BOOST_CONVERTER_STATUS_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -99,52 +106,400 @@ $(document).ready(function(){initNavTree('a01477.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">DEBUGGING_LED_s Struct Reference<div class="ingroups"><a class="el" href="a00535.html">Application Layer</a> &raquo; <a class="el" href="a00452.html">Debugging LED Application Layer</a> &raquo; <a class="el" href="a00454.html">Public Properties</a></div></div>  </div>
+<div class="title">BOOST_CONVERTER_STATUS_s Struct Reference<div class="ingroups"><a class="el" href="a00524.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00451.html">Boost Converter Library</a> &raquo; <a class="el" href="a00452.html">Boost Converter Library API</a> &raquo; <a class="el" href="a00458.html">Private Properties</a> &raquo; <a class="el" href="a00460.html">Data Types</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Debugging LED settings data object.  
+<p>Generic power controller status word.  
  <a href="a01477.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00218_source.html">led/app_led.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00269_source.html">power_control/devices/dev_boost_typedef.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for DEBUGGING_LED_s:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for BOOST_CONVERTER_STATUS_s:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01475.svg" width="158" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01476.svg" width="236" height="551"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for BOOST_CONVERTER_STATUS_s:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01475.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a48f363c7bcd47589472b59f0a7dfb74b"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#a48f363c7bcd47589472b59f0a7dfb74b">period</a></td></tr>
-<tr class="separator:a48f363c7bcd47589472b59f0a7dfb74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0e97211b1666adf8c159624c1faf871"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:a3f0c55f449560b03ce0ac43270c26600"><td class="memItemLeft" >&#160;&#160;&#160;volatile uint16_t&#160;&#160;&#160;<a class="el" href="a01477.html#a3f0c55f449560b03ce0ac43270c26600">value</a></td></tr>
+<tr class="separator:a3f0c55f449560b03ce0ac43270c26600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0e97211b1666adf8c159624c1faf871"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:af0e97211b1666adf8c159624c1faf871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17c7212252d1da4aacdddd45db29a6d1"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#a17c7212252d1da4aacdddd45db29a6d1">ready</a>:1</td></tr>
+<tr class="memdesc:a17c7212252d1da4aacdddd45db29a6d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit #0: status bit, indicating boost converter is initialized and ready to run.  <a href="a01477.html#a17c7212252d1da4aacdddd45db29a6d1">More...</a><br /></td></tr>
+<tr class="separator:a17c7212252d1da4aacdddd45db29a6d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae04b22175817e3ca9a061687c0d90786"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#ae04b22175817e3ca9a061687c0d90786">adc_active</a>:1</td></tr>
+<tr class="memdesc:ae04b22175817e3ca9a061687c0d90786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit #1: indicating that ADC has been started and samples are taken.  <a href="a01477.html#ae04b22175817e3ca9a061687c0d90786">More...</a><br /></td></tr>
+<tr class="separator:ae04b22175817e3ca9a061687c0d90786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3555b7c3161b809155ece11ad9c3998b"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#a3555b7c3161b809155ece11ad9c3998b">pwm_active</a>:1</td></tr>
+<tr class="memdesc:a3555b7c3161b809155ece11ad9c3998b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit #2: indicating that PWM has been started and ADC triggers are generated.  <a href="a01477.html#a3555b7c3161b809155ece11ad9c3998b">More...</a><br /></td></tr>
+<tr class="separator:a3555b7c3161b809155ece11ad9c3998b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32e93b068e309da5a319a7a69f3b3ff5"><td class="memItemLeft" align="right" valign="top">volatile&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a>:1</td></tr>
+<tr class="memdesc:a32e93b068e309da5a319a7a69f3b3ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit #3: (reserved)  <a href="a01477.html#a32e93b068e309da5a319a7a69f3b3ff5">More...</a><br /></td></tr>
+<tr class="separator:a32e93b068e309da5a319a7a69f3b3ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af78f4ca56ae204a32d6dd7c5d601824c"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#af78f4ca56ae204a32d6dd7c5d601824c">cs_calib_complete</a>:1</td></tr>
+<tr class="memdesc:af78f4ca56ae204a32d6dd7c5d601824c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit #4: indicating that current sensor calibration has completed.  <a href="a01477.html#af78f4ca56ae204a32d6dd7c5d601824c">More...</a><br /></td></tr>
+<tr class="separator:af78f4ca56ae204a32d6dd7c5d601824c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c13a249f66fa45797ad435bf8ee402"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#ac1c13a249f66fa45797ad435bf8ee402">fault_active</a>:1</td></tr>
+<tr class="memdesc:ac1c13a249f66fa45797ad435bf8ee402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit #5: Flag bit indicating system is in enforced shut down mode (usually due to a fault condition)  <a href="a01477.html#ac1c13a249f66fa45797ad435bf8ee402">More...</a><br /></td></tr>
+<tr class="separator:ac1c13a249f66fa45797ad435bf8ee402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3b43148595a6839035c62ed5151a98d"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#aa3b43148595a6839035c62ed5151a98d">suspend</a>:1</td></tr>
+<tr class="memdesc:aa3b43148595a6839035c62ed5151a98d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit #6: Control bit to put the converter in suspend mode (turned off while ENABLE bit is still on)  <a href="a01477.html#aa3b43148595a6839035c62ed5151a98d">More...</a><br /></td></tr>
+<tr class="separator:aa3b43148595a6839035c62ed5151a98d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70e323088aaa8fc65f804e5c6a1def9f"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#a70e323088aaa8fc65f804e5c6a1def9f">busy</a>:1</td></tr>
+<tr class="memdesc:a70e323088aaa8fc65f804e5c6a1def9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit #7: Flag bit indicating that the state machine is executing a process (e.g. startup-ramp)  <a href="a01477.html#a70e323088aaa8fc65f804e5c6a1def9f">More...</a><br /></td></tr>
+<tr class="separator:a70e323088aaa8fc65f804e5c6a1def9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fe5c2d73da4c29aebb2986663c8a28b"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#a1fe5c2d73da4c29aebb2986663c8a28b">cs_calib_enable</a>:1</td></tr>
+<tr class="memdesc:a1fe5c2d73da4c29aebb2986663c8a28b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit #8: Flag bit indicating that current sensors need to calibrated.  <a href="a01477.html#a1fe5c2d73da4c29aebb2986663c8a28b">More...</a><br /></td></tr>
+<tr class="separator:a1fe5c2d73da4c29aebb2986663c8a28b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff031707fa6f03164dffc5c80c15cd9"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#a4ff031707fa6f03164dffc5c80c15cd9">async_mode</a>:1</td></tr>
+<tr class="memdesc:a4ff031707fa6f03164dffc5c80c15cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit #9: Control bit suspending the synchronous rectifier switch PWM channel.  <a href="a01477.html#a4ff031707fa6f03164dffc5c80c15cd9">More...</a><br /></td></tr>
+<tr class="separator:a4ff031707fa6f03164dffc5c80c15cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab6d21e9933d6573f5ea51230bb80951"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#aab6d21e9933d6573f5ea51230bb80951">GO</a>:1</td></tr>
+<tr class="memdesc:aab6d21e9933d6573f5ea51230bb80951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit #13: When set, the GO-bit fires up the power supply.  <a href="a01477.html#aab6d21e9933d6573f5ea51230bb80951">More...</a><br /></td></tr>
+<tr class="separator:aab6d21e9933d6573f5ea51230bb80951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade0f0626b86d63fc4c2e05089a97a909"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#ade0f0626b86d63fc4c2e05089a97a909">autorun</a>:1</td></tr>
+<tr class="memdesc:ade0f0626b86d63fc4c2e05089a97a909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit #14: Control bit determining if charger is starting automatically or on command (using the GO bit)  <a href="a01477.html#ade0f0626b86d63fc4c2e05089a97a909">More...</a><br /></td></tr>
+<tr class="separator:ade0f0626b86d63fc4c2e05089a97a909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a085e9fc0863cee4864cf51dcfe1e32df"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01477.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a>:1</td></tr>
+<tr class="memdesc:a085e9fc0863cee4864cf51dcfe1e32df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit #15: Control bit enabling/disabling the charger port.  <a href="a01477.html#a085e9fc0863cee4864cf51dcfe1e32df">More...</a><br /></td></tr>
+<tr class="separator:a085e9fc0863cee4864cf51dcfe1e32df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_a01549"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01549')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01549.html">BOOST_CONVERTER_s</a></td></tr>
+<tr class="memitem:a43ac04e696799481a75b1e5c2772ffe3 inherit pub_attribs_a01549"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01477.html">BOOST_CONVERTER_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01549.html#a43ac04e696799481a75b1e5c2772ffe3">status</a></td></tr>
+<tr class="memdesc:a43ac04e696799481a75b1e5c2772ffe3 inherit pub_attribs_a01549"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST operation status bits.  <a href="a01549.html#a43ac04e696799481a75b1e5c2772ffe3">More...</a><br /></td></tr>
+<tr class="separator:a43ac04e696799481a75b1e5c2772ffe3 inherit pub_attribs_a01549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a753d49e459d6acea8dca783faddea1df inherit pub_attribs_a01549"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01489.html">BOOST_STATE_ID_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01549.html#a753d49e459d6acea8dca783faddea1df">state_id</a></td></tr>
+<tr class="memdesc:a753d49e459d6acea8dca783faddea1df inherit pub_attribs_a01549"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST state machine operating state ID.  <a href="a01549.html#a753d49e459d6acea8dca783faddea1df">More...</a><br /></td></tr>
+<tr class="separator:a753d49e459d6acea8dca783faddea1df inherit pub_attribs_a01549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef4c8320b07ea3539f664d10c9c4f835 inherit pub_attribs_a01549"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01509.html">BOOST_CONVERTER_STARTUP_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01549.html#aef4c8320b07ea3539f664d10c9c4f835">startup</a></td></tr>
+<tr class="memdesc:aef4c8320b07ea3539f664d10c9c4f835 inherit pub_attribs_a01549"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST startup timing settings.  <a href="a01549.html#aef4c8320b07ea3539f664d10c9c4f835">More...</a><br /></td></tr>
+<tr class="separator:aef4c8320b07ea3539f664d10c9c4f835 inherit pub_attribs_a01549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65372722a32dba273f722b29a2609d8a inherit pub_attribs_a01549"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01517.html">BOOST_CONVERTER_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01549.html#a65372722a32dba273f722b29a2609d8a">set_values</a></td></tr>
+<tr class="memdesc:a65372722a32dba273f722b29a2609d8a inherit pub_attribs_a01549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control field for global access to references.  <a href="a01549.html#a65372722a32dba273f722b29a2609d8a">More...</a><br /></td></tr>
+<tr class="separator:a65372722a32dba273f722b29a2609d8a inherit pub_attribs_a01549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae94e8223319b210a6af5fac01d2c6d5e inherit pub_attribs_a01549"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01513.html">BOOST_CONVERTER_DATA_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01549.html#ae94e8223319b210a6af5fac01d2c6d5e">data</a></td></tr>
+<tr class="memdesc:ae94e8223319b210a6af5fac01d2c6d5e inherit pub_attribs_a01549"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST runtime data.  <a href="a01549.html#ae94e8223319b210a6af5fac01d2c6d5e">More...</a><br /></td></tr>
+<tr class="separator:ae94e8223319b210a6af5fac01d2c6d5e inherit pub_attribs_a01549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d6a3cd26694bebeed63fd1e1a1eb2e inherit pub_attribs_a01549"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01537.html">BOOST_FEEDBACK_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01549.html#a63d6a3cd26694bebeed63fd1e1a1eb2e">feedback</a></td></tr>
+<tr class="memdesc:a63d6a3cd26694bebeed63fd1e1a1eb2e inherit pub_attribs_a01549"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST converter feedback settings.  <a href="a01549.html#a63d6a3cd26694bebeed63fd1e1a1eb2e">More...</a><br /></td></tr>
+<tr class="separator:a63d6a3cd26694bebeed63fd1e1a1eb2e inherit pub_attribs_a01549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25c2cb61021c319b38a5c024e48c3310 inherit pub_attribs_a01549"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01525.html">BOOST_SWITCH_NODE_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01549.html#a25c2cb61021c319b38a5c024e48c3310">sw_node</a> [<a class="el" href="a00457.html#ga9f732532b64d46552260f09e4d98325a">BOOST_MPHASE_COUNT</a>]</td></tr>
+<tr class="memdesc:a25c2cb61021c319b38a5c024e48c3310 inherit pub_attribs_a01549"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST converter switch node settings.  <a href="a01549.html#a25c2cb61021c319b38a5c024e48c3310">More...</a><br /></td></tr>
+<tr class="separator:a25c2cb61021c319b38a5c024e48c3310 inherit pub_attribs_a01549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86a71e9beada7e2064de976b164cd84b inherit pub_attribs_a01549"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01545.html">BOOST_GPIO_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01549.html#a86a71e9beada7e2064de976b164cd84b">gpio</a></td></tr>
+<tr class="memdesc:a86a71e9beada7e2064de976b164cd84b inherit pub_attribs_a01549"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST converter additional GPIO specification.  <a href="a01549.html#a86a71e9beada7e2064de976b164cd84b">More...</a><br /></td></tr>
+<tr class="separator:a86a71e9beada7e2064de976b164cd84b inherit pub_attribs_a01549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22db2a2436558a1cb087f0f2ad607a64 inherit pub_attribs_a01549"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01521.html">BOOST_LOOP_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01549.html#a22db2a2436558a1cb087f0f2ad607a64">v_loop</a></td></tr>
+<tr class="memdesc:a22db2a2436558a1cb087f0f2ad607a64 inherit pub_attribs_a01549"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST voltage control loop object.  <a href="a01549.html#a22db2a2436558a1cb087f0f2ad607a64">More...</a><br /></td></tr>
+<tr class="separator:a22db2a2436558a1cb087f0f2ad607a64 inherit pub_attribs_a01549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0a6d2e4b96edeb1086709409e5f0e28 inherit pub_attribs_a01549"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01521.html">BOOST_LOOP_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01549.html#ac0a6d2e4b96edeb1086709409e5f0e28">i_loop</a> [<a class="el" href="a00457.html#ga9f732532b64d46552260f09e4d98325a">BOOST_MPHASE_COUNT</a>]</td></tr>
+<tr class="memdesc:ac0a6d2e4b96edeb1086709409e5f0e28 inherit pub_attribs_a01549"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST Current control loop objects.  <a href="a01549.html#ac0a6d2e4b96edeb1086709409e5f0e28">More...</a><br /></td></tr>
+<tr class="separator:ac0a6d2e4b96edeb1086709409e5f0e28 inherit pub_attribs_a01549"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Debugging LED settings data object. </p>
-<p>This data structure holds all adjustable parameters used by the debugging LED driver required to tailor the driver functions to specific application requirements. </p>
+<div class="textblock"><p>Generic power controller status word. </p>
+<p>The power controller status/control word contains status (low-byte) and control bits (high-byte).</p><ol type="1">
+<li>Status Bits:<ul>
+<li>ADC_ACTIVE: ADC is active and running (read only)</li>
+<li>PWM_STARTED: PWM is active and running generating ADC triggers (read only)</li>
+<li>POWERSOURCE_DETECTED: A valid power source has been detected allowing the converter to run (read only)</li>
+<li>CS_READ: Current sense feedback ready (read only)</li>
+<li>FORCED_SHUT_DOWN: Control(Status bit for external software components forcing the converter to stay off</li>
+<li>BUSY: Converter is currently going through an internal process (e.g. ramp up/down) (read only)</li>
+</ul>
+</li>
+<li>Control Bits<ul>
+<li>ENABLE: Enables/Disables the power converter</li>
+<li>AUTORUN: When set, the power converter will automatically start up once all status bits are set accordingly</li>
+<li>GO: Control bit to manually start the power converter if (AUTOSTART=0) </li>
+</ul>
+</li>
+</ol>
 
-<p class="definition">Definition at line <a class="el" href="a00218_source.html#l00055">55</a> of file <a class="el" href="a00218_source.html">app_led.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00205">205</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a48f363c7bcd47589472b59f0a7dfb74b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48f363c7bcd47589472b59f0a7dfb74b">&#9670;&nbsp;</a></span>period</h2>
+<a id="af0e97211b1666adf8c159624c1faf871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0e97211b1666adf8c159624c1faf871">&#9670;&nbsp;</a></span>@1</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t period</td>
+          <td class="memname">union { ... } </td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00218_source.html#l00056">56</a> of file <a class="el" href="a00218_source.html">app_led.h</a>.</p>
+</div>
+</div>
+<a id="ae04b22175817e3ca9a061687c0d90786"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae04b22175817e3ca9a061687c0d90786">&#9670;&nbsp;</a></span>adc_active</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool adc_active</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #1: indicating that ADC has been started and samples are taken. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00210">210</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a4ff031707fa6f03164dffc5c80c15cd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ff031707fa6f03164dffc5c80c15cd9">&#9670;&nbsp;</a></span>async_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool async_mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #9: Control bit suspending the synchronous rectifier switch PWM channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00219">219</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="ade0f0626b86d63fc4c2e05089a97a909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade0f0626b86d63fc4c2e05089a97a909">&#9670;&nbsp;</a></span>autorun</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool autorun</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #14: Control bit determining if charger is starting automatically or on command (using the GO bit) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00224">224</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a70e323088aaa8fc65f804e5c6a1def9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70e323088aaa8fc65f804e5c6a1def9f">&#9670;&nbsp;</a></span>busy</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool busy</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #7: Flag bit indicating that the state machine is executing a process (e.g. startup-ramp) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00216">216</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="af78f4ca56ae204a32d6dd7c5d601824c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af78f4ca56ae204a32d6dd7c5d601824c">&#9670;&nbsp;</a></span>cs_calib_complete</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool cs_calib_complete</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #4: indicating that current sensor calibration has completed. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00213">213</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a1fe5c2d73da4c29aebb2986663c8a28b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fe5c2d73da4c29aebb2986663c8a28b">&#9670;&nbsp;</a></span>cs_calib_enable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool cs_calib_enable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #8: Flag bit indicating that current sensors need to calibrated. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00218">218</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a085e9fc0863cee4864cf51dcfe1e32df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a085e9fc0863cee4864cf51dcfe1e32df">&#9670;&nbsp;</a></span>enabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool enabled</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #15: Control bit enabling/disabling the charger port. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00225">225</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="ac1c13a249f66fa45797ad435bf8ee402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1c13a249f66fa45797ad435bf8ee402">&#9670;&nbsp;</a></span>fault_active</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool fault_active</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #5: Flag bit indicating system is in enforced shut down mode (usually due to a fault condition) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00214">214</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="aab6d21e9933d6573f5ea51230bb80951"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab6d21e9933d6573f5ea51230bb80951">&#9670;&nbsp;</a></span>GO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool GO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #13: When set, the GO-bit fires up the power supply. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00223">223</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a3555b7c3161b809155ece11ad9c3998b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3555b7c3161b809155ece11ad9c3998b">&#9670;&nbsp;</a></span>pwm_active</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool pwm_active</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #2: indicating that PWM has been started and ADC triggers are generated. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00211">211</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a17c7212252d1da4aacdddd45db29a6d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17c7212252d1da4aacdddd45db29a6d1">&#9670;&nbsp;</a></span>ready</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool ready</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #0: status bit, indicating boost converter is initialized and ready to run. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00209">209</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="aa3b43148595a6839035c62ed5151a98d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3b43148595a6839035c62ed5151a98d">&#9670;&nbsp;</a></span>suspend</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool suspend</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #6: Control bit to put the converter in suspend mode (turned off while ENABLE bit is still on) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00215">215</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a32e93b068e309da5a319a7a69f3b3ff5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32e93b068e309da5a319a7a69f3b3ff5">&#9670;&nbsp;</a></span>unsigned</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile unsigned</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #3: (reserved) </p>
+<p>Bit #12: (reserved)</p>
+<p>Bit #11: (reserved)</p>
+<p>Bit #10: (reserved) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00212">212</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a3f0c55f449560b03ce0ac43270c26600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f0c55f449560b03ce0ac43270c26600">&#9670;&nbsp;</a></span>value</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00228">228</a> of file <a class="el" href="a00269_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dpsk_boost_vmc.X/sources/led/<a class="el" href="a00218_source.html">app_led.h</a></li>
+<li>dpsk_boost_vmc.X/sources/power_control/devices/<a class="el" href="a00269_source.html">dev_boost_typedef.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -152,7 +507,7 @@ Data Fields</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01477.html">DEBUGGING_LED_s</a></li>
+    <li class="navelem"><a class="el" href="a01477.html">BOOST_CONVERTER_STATUS_s</a></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

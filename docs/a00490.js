@@ -1,5 +1,7 @@
 var a00490 =
 [
-    [ "adcore_diff_mask", "a00490.html#ga215a815cad00177161895a74f526cfc1", null ],
-    [ "adcore_mask", "a00490.html#ga8312ee90c2e73a1ad6bc8b0e545368c2", null ]
+    [ "Data Objects", "a00491.html", "a00491" ],
+    [ "Data Object Members", "a00492.html", "a00492" ],
+    [ "Defines & Macros", "a00493.html", "a00493" ],
+    [ "Variables", "a00494.html", "a00494" ]
 ];

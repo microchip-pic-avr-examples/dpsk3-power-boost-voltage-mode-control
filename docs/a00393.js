@@ -1,17 +1,15 @@
 var a00393 =
 [
-    [ "BOOST_DEAD_TIME_FALLING_EDGE", "a00393.html#gacc7415a2a9fd14abe19588dac5804b22", null ],
-    [ "BOOST_DEAD_TIME_LEADING_EDGE", "a00393.html#ga30bc95c5be03be162bd08c04706e34b2", null ],
-    [ "BOOST_LEADING_EDGE_BLANKING", "a00393.html#gadef417fa6e9b29f43fc1b26321f07750", null ],
-    [ "BOOST_NO_OF_PHASES", "a00393.html#ga5208c54df1cdb14e00e62eb7957820f6", null ],
-    [ "BOOST_PWM_DUTY_CYCLE_MAX", "a00393.html#gafe2eededed4304c44e47642b9093beda", null ],
-    [ "BOOST_PWM_DUTY_CYCLE_MIN", "a00393.html#gaf4b6b5baf07ba17e75f66ec5305c68fb", null ],
-    [ "BOOST_SWITCHING_FREQUENCY", "a00393.html#ga190c68d192a604d70087146623fedd1d", null ],
-    [ "BUCK_DEAD_TIME_FALLING_EDGE", "a00393.html#gafe895b572c7fdeced04221d53c18695d", null ],
-    [ "BUCK_DEAD_TIME_LEADING_EDGE", "a00393.html#gaee8430cb24cfc1cdd3b12dd3c40b09d5", null ],
-    [ "BUCK_LEADING_EDGE_BLANKING", "a00393.html#ga53e830102be3559594f1f107c42e3cb2", null ],
-    [ "BUCK_NO_OF_PHASES", "a00393.html#ga353ba60329e90d1aca97deba7e0bd669", null ],
-    [ "BUCK_PWM_DUTY_CYCLE_MAX", "a00393.html#ga355fe35bc08bc0f4657be7f638a643a6", null ],
-    [ "BUCK_PWM_DUTY_CYCLE_MIN", "a00393.html#gabcc43f4201492160173351db97ddcfda", null ],
-    [ "BUCK_SWITCHING_FREQUENCY", "a00393.html#gadecc3fb9cc6da0d2add11d577d50d5b5", null ]
+    [ "BOOST_VOUT_ADCBUF", "a00393.html#ga7be2db4ea22a5ed0e0425f2442200d5e", null ],
+    [ "BOOST_VOUT_ADCCORE", "a00393.html#ga6c4f711685cc1501eb94c9db5bd27199", null ],
+    [ "BOOST_VOUT_ADCIN", "a00393.html#ga2142a1219d575b2df562afd5610f34ac", null ],
+    [ "BOOST_VOUT_ADCTRIG", "a00393.html#gaa17ed262d95146b0aa4e281ae6f25530", null ],
+    [ "BOOST_VOUT_ANSEL", "a00393.html#ga141f25042cbe329584d519a4a000bb64", null ],
+    [ "BOOST_VOUT_TRGSRC", "a00393.html#ga03502d6af9477b4622620cd3bc74d280", null ],
+    [ "BUCK_VOUT_ADCBUF", "a00393.html#gab5a66db522e36f4df6c1261ac6f169f7", null ],
+    [ "BUCK_VOUT_ADCCORE", "a00393.html#gadca72f2007af7bbcfeabea3f088417c1", null ],
+    [ "BUCK_VOUT_ADCIN", "a00393.html#ga0f65d536bafa774db983f1654d9c0fb1", null ],
+    [ "BUCK_VOUT_ADCTRIG", "a00393.html#ga4cc0051ef254bbf7167af02c30e9489d", null ],
+    [ "BUCK_VOUT_ANSEL", "a00393.html#gac90fa2099f502ddf5210bcbae94b5cc0", null ],
+    [ "BUCK_VOUT_TRGSRC", "a00393.html#ga582c1b8e723703fb75c4d14c766a6ce0", null ]
 ];

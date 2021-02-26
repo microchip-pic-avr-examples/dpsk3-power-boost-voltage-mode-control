@@ -1,4 +1,4 @@
-<map id="Functions" name="Functions">
-<area shape="rect" id="node1" title="Functions of the second library layer." alt="" coords="236,5,315,31"/>
-<area shape="rect" id="node2" href="$a00493.html" title=" " alt="" coords="5,5,188,31"/>
+<map id="Variables" name="Variables">
+<area shape="rect" id="node1" title="Public variables of the Power Converter Control driver." alt="" coords="135,5,211,31"/>
+<area shape="rect" id="node2" href="$a00490.html" title="Public properties of the Power Converter Control driver." alt="" coords="5,5,87,31"/>
 </map>

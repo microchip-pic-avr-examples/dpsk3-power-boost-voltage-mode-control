@@ -1,8 +1,13 @@
 var a01521 =
 [
-    [ "i_ramp", "a01521.html#ae34933c79a1eb3fdef6c02e32ae36186", null ],
-    [ "power_good_delay", "a01521.html#a67c2e20a6115bb96fae40277a95b95de", null ],
-    [ "power_on_delay", "a01521.html#a49019e7edba1caaa3a29eb871755c8fb", null ],
-    [ "v_ramp", "a01521.html#a5a126c8888be5665a7e43e542e34229e", null ],
-    [ "vcap_monitor", "a01521.html#af1f991e7b870e0a969b413a350831e14", null ]
+    [ "controller", "a01521.html#a86e023cf3f4b4255c1b514b6d70ef74f", null ],
+    [ "ctrl_Initialize", "a01521.html#ad9db676a96d1d3f30adf55e6c03fe5e6", null ],
+    [ "ctrl_Precharge", "a01521.html#a1abd824af35613110d119216a9ef6772", null ],
+    [ "ctrl_Reset", "a01521.html#a9de67ce75a551430588dd9954a5692c3", null ],
+    [ "ctrl_Update", "a01521.html#a95eb0e366ec0c0c509d13060e796a7c2", null ],
+    [ "feedback_offset", "a01521.html#a81d3656451b3c24b602aa60c01cd88f6", null ],
+    [ "maximum", "a01521.html#a62d4b288fdba9a5d426a707407903376", null ],
+    [ "minimum", "a01521.html#afc13a108399a3d53cf5993e6fd187f2a", null ],
+    [ "reference", "a01521.html#aad7bda3be2c1e6a89bd7093086bbeec8", null ],
+    [ "trigger_offset", "a01521.html#ad15abe564957bceb1997a22552534262", null ]
 ];

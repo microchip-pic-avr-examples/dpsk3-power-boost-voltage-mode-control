@@ -1,8 +1,8 @@
 var a01517 =
 [
-    [ "counter", "a01517.html#a8544f2f5b43d21d6a0a586fc81f9ce92", null ],
-    [ "period", "a01517.html#a48f363c7bcd47589472b59f0a7dfb74b", null ],
-    [ "timeout", "a01517.html#a6c62baa0700be0e0f6c448a291ad4bbb", null ],
-    [ "timeout_counter", "a01517.html#a4dd8a9e05341c1861d0087e5b31dabb6", null ],
-    [ "v_drop", "a01517.html#a2a849358127253350a60d1a4e98bc177", null ]
+    [ "control_mode", "a01517.html#a5c9f2d633c8d36feec081c1ac13df6a3", null ],
+    [ "i_ref", "a01517.html#a0e321445042c37cbb7283d5de4583c09", null ],
+    [ "i_ref_startup", "a01517.html#a3ce17aa31469af72e8a7743a7b69f405", null ],
+    [ "no_of_phases", "a01517.html#ae002814d52c388ce7d51c8d566d63489", null ],
+    [ "v_ref", "a01517.html#a1c39765936057b7b2b1b90a4126d3f80", null ]
 ];

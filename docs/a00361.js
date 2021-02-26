@@ -1,5 +1,4 @@
 var a00361 =
 [
-    [ "Public Functions", "a00369.html", "a00369" ],
-    [ "Private Properties", "a00377.html", "a00377" ]
+    [ "gpioConfigClear", "a00361.html#gab964f86f667e2391e953d4c267d09663", null ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: User Settings</title>
+<title>Digital Power Starter Kit 3 Firmware: Microcontroller Abstraction</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -97,318 +104,276 @@ $(document).ready(function(){initNavTree('a00393.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">User Settings<div class="ingroups"><a class="el" href="a00534.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00392.html">PWM Settings</a></div></div>  </div>
+<div class="title">Microcontroller Abstraction<div class="ingroups"><a class="el" href="a00522.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00390.html">Output Voltage Feedback</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Parameter defintions using physical quantities.  
+<p>Device analog input pin, register and interrupt vector assignments of output voltage feedback signal(s)  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for User Settings:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Microcontroller Abstraction:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00393.svg" width="267" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00393.svg" width="407" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:ga353ba60329e90d1aca97deba7e0bd669"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga353ba60329e90d1aca97deba7e0bd669">BUCK_NO_OF_PHASES</a>&#160;&#160;&#160;1U</td></tr>
-<tr class="memdesc:ga353ba60329e90d1aca97deba7e0bd669"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-declaration of global defines for PWM signal generator settings.  <a href="a00393.html#ga353ba60329e90d1aca97deba7e0bd669">More...</a><br /></td></tr>
-<tr class="separator:ga353ba60329e90d1aca97deba7e0bd669"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadecc3fb9cc6da0d2add11d577d50d5b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gadecc3fb9cc6da0d2add11d577d50d5b5">BUCK_SWITCHING_FREQUENCY</a>&#160;&#160;&#160;(float)500.0e+3</td></tr>
-<tr class="memdesc:gadecc3fb9cc6da0d2add11d577d50d5b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixed Switching frequency in [Hz].  <a href="a00393.html#gadecc3fb9cc6da0d2add11d577d50d5b5">More...</a><br /></td></tr>
-<tr class="separator:gadecc3fb9cc6da0d2add11d577d50d5b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabcc43f4201492160173351db97ddcfda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gabcc43f4201492160173351db97ddcfda">BUCK_PWM_DUTY_CYCLE_MIN</a>&#160;&#160;&#160;(float)0.000</td></tr>
-<tr class="memdesc:gabcc43f4201492160173351db97ddcfda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum on/off-time ratio (duty ratio) in [%].  <a href="a00393.html#gabcc43f4201492160173351db97ddcfda">More...</a><br /></td></tr>
-<tr class="separator:gabcc43f4201492160173351db97ddcfda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga355fe35bc08bc0f4657be7f638a643a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga355fe35bc08bc0f4657be7f638a643a6">BUCK_PWM_DUTY_CYCLE_MAX</a>&#160;&#160;&#160;(float)0.900</td></tr>
-<tr class="memdesc:ga355fe35bc08bc0f4657be7f638a643a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum on/off-time ratio (duty ratio) in [%].  <a href="a00393.html#ga355fe35bc08bc0f4657be7f638a643a6">More...</a><br /></td></tr>
-<tr class="separator:ga355fe35bc08bc0f4657be7f638a643a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga53e830102be3559594f1f107c42e3cb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga53e830102be3559594f1f107c42e3cb2">BUCK_LEADING_EDGE_BLANKING</a>&#160;&#160;&#160;(float)120.0e-9</td></tr>
-<tr class="memdesc:ga53e830102be3559594f1f107c42e3cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Blanking period in [sec].  <a href="a00393.html#ga53e830102be3559594f1f107c42e3cb2">More...</a><br /></td></tr>
-<tr class="separator:ga53e830102be3559594f1f107c42e3cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaee8430cb24cfc1cdd3b12dd3c40b09d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gaee8430cb24cfc1cdd3b12dd3c40b09d5">BUCK_DEAD_TIME_LEADING_EDGE</a>&#160;&#160;&#160;(float)20.0e-9</td></tr>
-<tr class="memdesc:gaee8430cb24cfc1cdd3b12dd3c40b09d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Dead Time delay in [sec].  <a href="a00393.html#gaee8430cb24cfc1cdd3b12dd3c40b09d5">More...</a><br /></td></tr>
-<tr class="separator:gaee8430cb24cfc1cdd3b12dd3c40b09d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafe895b572c7fdeced04221d53c18695d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gafe895b572c7fdeced04221d53c18695d">BUCK_DEAD_TIME_FALLING_EDGE</a>&#160;&#160;&#160;(float)60.0e-9</td></tr>
-<tr class="memdesc:gafe895b572c7fdeced04221d53c18695d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Falling Edge Dead Time delay in [sec].  <a href="a00393.html#gafe895b572c7fdeced04221d53c18695d">More...</a><br /></td></tr>
-<tr class="separator:gafe895b572c7fdeced04221d53c18695d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5208c54df1cdb14e00e62eb7957820f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga5208c54df1cdb14e00e62eb7957820f6">BOOST_NO_OF_PHASES</a>&#160;&#160;&#160;1U</td></tr>
-<tr class="memdesc:ga5208c54df1cdb14e00e62eb7957820f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-declaration of global defines for PWM signal generator settings.  <a href="a00393.html#ga5208c54df1cdb14e00e62eb7957820f6">More...</a><br /></td></tr>
-<tr class="separator:ga5208c54df1cdb14e00e62eb7957820f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga190c68d192a604d70087146623fedd1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga190c68d192a604d70087146623fedd1d">BOOST_SWITCHING_FREQUENCY</a>&#160;&#160;&#160;(float)500.0e+3</td></tr>
-<tr class="memdesc:ga190c68d192a604d70087146623fedd1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixed Switching frequency in [Hz].  <a href="a00393.html#ga190c68d192a604d70087146623fedd1d">More...</a><br /></td></tr>
-<tr class="separator:ga190c68d192a604d70087146623fedd1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf4b6b5baf07ba17e75f66ec5305c68fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gaf4b6b5baf07ba17e75f66ec5305c68fb">BOOST_PWM_DUTY_CYCLE_MIN</a>&#160;&#160;&#160;(float)0.040</td></tr>
-<tr class="memdesc:gaf4b6b5baf07ba17e75f66ec5305c68fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum on/off-time ratio (duty ratio) in [%].  <a href="a00393.html#gaf4b6b5baf07ba17e75f66ec5305c68fb">More...</a><br /></td></tr>
-<tr class="separator:gaf4b6b5baf07ba17e75f66ec5305c68fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafe2eededed4304c44e47642b9093beda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gafe2eededed4304c44e47642b9093beda">BOOST_PWM_DUTY_CYCLE_MAX</a>&#160;&#160;&#160;(float)0.850</td></tr>
-<tr class="memdesc:gafe2eededed4304c44e47642b9093beda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum on/off-time ratio (duty ratio) in [%].  <a href="a00393.html#gafe2eededed4304c44e47642b9093beda">More...</a><br /></td></tr>
-<tr class="separator:gafe2eededed4304c44e47642b9093beda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadef417fa6e9b29f43fc1b26321f07750"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gadef417fa6e9b29f43fc1b26321f07750">BOOST_LEADING_EDGE_BLANKING</a>&#160;&#160;&#160;(float)120.0e-9</td></tr>
-<tr class="memdesc:gadef417fa6e9b29f43fc1b26321f07750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Blanking period in [sec].  <a href="a00393.html#gadef417fa6e9b29f43fc1b26321f07750">More...</a><br /></td></tr>
-<tr class="separator:gadef417fa6e9b29f43fc1b26321f07750"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga30bc95c5be03be162bd08c04706e34b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga30bc95c5be03be162bd08c04706e34b2">BOOST_DEAD_TIME_LEADING_EDGE</a>&#160;&#160;&#160;(float) 0.0e-9</td></tr>
-<tr class="memdesc:ga30bc95c5be03be162bd08c04706e34b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Dead Time delay in [sec].  <a href="a00393.html#ga30bc95c5be03be162bd08c04706e34b2">More...</a><br /></td></tr>
-<tr class="separator:ga30bc95c5be03be162bd08c04706e34b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacc7415a2a9fd14abe19588dac5804b22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gacc7415a2a9fd14abe19588dac5804b22">BOOST_DEAD_TIME_FALLING_EDGE</a>&#160;&#160;&#160;(float) 0.0e-9</td></tr>
-<tr class="memdesc:gacc7415a2a9fd14abe19588dac5804b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Falling Edge Dead Time delay in [sec].  <a href="a00393.html#gacc7415a2a9fd14abe19588dac5804b22">More...</a><br /></td></tr>
-<tr class="separator:gacc7415a2a9fd14abe19588dac5804b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac90fa2099f502ddf5210bcbae94b5cc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gac90fa2099f502ddf5210bcbae94b5cc0">BUCK_VOUT_ANSEL</a>&#160;&#160;&#160;_ANSELC1</td></tr>
+<tr class="memdesc:gac90fa2099f502ddf5210bcbae94b5cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input assignments of output voltage feedback signals.  <a href="a00393.html#gac90fa2099f502ddf5210bcbae94b5cc0">More...</a><br /></td></tr>
+<tr class="separator:gac90fa2099f502ddf5210bcbae94b5cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadca72f2007af7bbcfeabea3f088417c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gadca72f2007af7bbcfeabea3f088417c1">BUCK_VOUT_ADCCORE</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:gadca72f2007af7bbcfeabea3f088417c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core  <a href="a00393.html#gadca72f2007af7bbcfeabea3f088417c1">More...</a><br /></td></tr>
+<tr class="separator:gadca72f2007af7bbcfeabea3f088417c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f65d536bafa774db983f1654d9c0fb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga0f65d536bafa774db983f1654d9c0fb1">BUCK_VOUT_ADCIN</a>&#160;&#160;&#160;13</td></tr>
+<tr class="memdesc:ga0f65d536bafa774db983f1654d9c0fb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analog input number (e.g. '5' for 'AN5')  <a href="a00393.html#ga0f65d536bafa774db983f1654d9c0fb1">More...</a><br /></td></tr>
+<tr class="separator:ga0f65d536bafa774db983f1654d9c0fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab5a66db522e36f4df6c1261ac6f169f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gab5a66db522e36f4df6c1261ac6f169f7">BUCK_VOUT_ADCBUF</a>&#160;&#160;&#160;ADCBUF13</td></tr>
+<tr class="memdesc:gab5a66db522e36f4df6c1261ac6f169f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input buffer of this ADC channel.  <a href="a00393.html#gab5a66db522e36f4df6c1261ac6f169f7">More...</a><br /></td></tr>
+<tr class="separator:gab5a66db522e36f4df6c1261ac6f169f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4cc0051ef254bbf7167af02c30e9489d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga4cc0051ef254bbf7167af02c30e9489d">BUCK_VOUT_ADCTRIG</a>&#160;&#160;&#160;PG1TRIGA</td></tr>
+<tr class="memdesc:ga4cc0051ef254bbf7167af02c30e9489d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register used for trigger placement.  <a href="a00393.html#ga4cc0051ef254bbf7167af02c30e9489d">More...</a><br /></td></tr>
+<tr class="separator:ga4cc0051ef254bbf7167af02c30e9489d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga582c1b8e723703fb75c4d14c766a6ce0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga582c1b8e723703fb75c4d14c766a6ce0">BUCK_VOUT_TRGSRC</a>&#160;&#160;&#160;<a class="el" href="a00384.html#ga7220e89a59d6abd8bf7611a3ed4da166">BUCK_PWM_TRGSRC_TRG1</a></td></tr>
+<tr class="memdesc:ga582c1b8e723703fb75c4d14c766a6ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM1 (=PG2) Trigger 1 via PGxTRIGA.  <a href="a00393.html#ga582c1b8e723703fb75c4d14c766a6ce0">More...</a><br /></td></tr>
+<tr class="separator:ga582c1b8e723703fb75c4d14c766a6ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga141f25042cbe329584d519a4a000bb64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga141f25042cbe329584d519a4a000bb64">BOOST_VOUT_ANSEL</a>&#160;&#160;&#160;_ANSELD10</td></tr>
+<tr class="memdesc:ga141f25042cbe329584d519a4a000bb64"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input assignments of output voltage feedback signals.  <a href="a00393.html#ga141f25042cbe329584d519a4a000bb64">More...</a><br /></td></tr>
+<tr class="separator:ga141f25042cbe329584d519a4a000bb64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c4f711685cc1501eb94c9db5bd27199"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga6c4f711685cc1501eb94c9db5bd27199">BOOST_VOUT_ADCCORE</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:ga6c4f711685cc1501eb94c9db5bd27199"><td class="mdescLeft">&#160;</td><td class="mdescRight">0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core  <a href="a00393.html#ga6c4f711685cc1501eb94c9db5bd27199">More...</a><br /></td></tr>
+<tr class="separator:ga6c4f711685cc1501eb94c9db5bd27199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2142a1219d575b2df562afd5610f34ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga2142a1219d575b2df562afd5610f34ac">BOOST_VOUT_ADCIN</a>&#160;&#160;&#160;18</td></tr>
+<tr class="memdesc:ga2142a1219d575b2df562afd5610f34ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analog input number (e.g. '5' for 'AN5')  <a href="a00393.html#ga2142a1219d575b2df562afd5610f34ac">More...</a><br /></td></tr>
+<tr class="separator:ga2142a1219d575b2df562afd5610f34ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7be2db4ea22a5ed0e0425f2442200d5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga7be2db4ea22a5ed0e0425f2442200d5e">BOOST_VOUT_ADCBUF</a>&#160;&#160;&#160;ADCBUF18</td></tr>
+<tr class="memdesc:ga7be2db4ea22a5ed0e0425f2442200d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input buffer of this ADC channel.  <a href="a00393.html#ga7be2db4ea22a5ed0e0425f2442200d5e">More...</a><br /></td></tr>
+<tr class="separator:ga7be2db4ea22a5ed0e0425f2442200d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa17ed262d95146b0aa4e281ae6f25530"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gaa17ed262d95146b0aa4e281ae6f25530">BOOST_VOUT_ADCTRIG</a>&#160;&#160;&#160;PG2TRIGA</td></tr>
+<tr class="memdesc:gaa17ed262d95146b0aa4e281ae6f25530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register used for trigger placement.  <a href="a00393.html#gaa17ed262d95146b0aa4e281ae6f25530">More...</a><br /></td></tr>
+<tr class="separator:gaa17ed262d95146b0aa4e281ae6f25530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga03502d6af9477b4622620cd3bc74d280"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga03502d6af9477b4622620cd3bc74d280">BOOST_VOUT_TRGSRC</a>&#160;&#160;&#160;<a class="el" href="a00384.html#gacea17e5f96aee1f9a4cf0ecb825749aa">BOOST_PWM_TRGSRC_TRG1</a></td></tr>
+<tr class="memdesc:ga03502d6af9477b4622620cd3bc74d280"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM2 (=PG2) Trigger 1 via PGxTRIGA.  <a href="a00393.html#ga03502d6af9477b4622620cd3bc74d280">More...</a><br /></td></tr>
+<tr class="separator:ga03502d6af9477b4622620cd3bc74d280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Parameter defintions using physical quantities. </p>
+<p>Device analog input pin, register and interrupt vector assignments of output voltage feedback signal(s) </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gacc7415a2a9fd14abe19588dac5804b22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacc7415a2a9fd14abe19588dac5804b22">&#9670;&nbsp;</a></span>BOOST_DEAD_TIME_FALLING_EDGE</h2>
+<a id="ga7be2db4ea22a5ed0e0425f2442200d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7be2db4ea22a5ed0e0425f2442200d5e">&#9670;&nbsp;</a></span>BOOST_VOUT_ADCBUF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_DEAD_TIME_FALLING_EDGE&#160;&#160;&#160;(float) 0.0e-9</td>
+          <td class="memname">#define BOOST_VOUT_ADCBUF&#160;&#160;&#160;ADCBUF18</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Falling Edge Dead Time delay in [sec]. </p>
+<p>ADC input buffer of this ADC channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00921">921</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01117">1117</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga30bc95c5be03be162bd08c04706e34b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga30bc95c5be03be162bd08c04706e34b2">&#9670;&nbsp;</a></span>BOOST_DEAD_TIME_LEADING_EDGE</h2>
+<a id="ga6c4f711685cc1501eb94c9db5bd27199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c4f711685cc1501eb94c9db5bd27199">&#9670;&nbsp;</a></span>BOOST_VOUT_ADCCORE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_DEAD_TIME_LEADING_EDGE&#160;&#160;&#160;(float) 0.0e-9</td>
+          <td class="memname">#define BOOST_VOUT_ADCCORE&#160;&#160;&#160;8</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Leading Edge Dead Time delay in [sec]. </p>
+<p>0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00920">920</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01115">1115</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gadef417fa6e9b29f43fc1b26321f07750"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadef417fa6e9b29f43fc1b26321f07750">&#9670;&nbsp;</a></span>BOOST_LEADING_EDGE_BLANKING</h2>
+<a id="ga2142a1219d575b2df562afd5610f34ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2142a1219d575b2df562afd5610f34ac">&#9670;&nbsp;</a></span>BOOST_VOUT_ADCIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_LEADING_EDGE_BLANKING&#160;&#160;&#160;(float)120.0e-9</td>
+          <td class="memname">#define BOOST_VOUT_ADCIN&#160;&#160;&#160;18</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Leading Edge Blanking period in [sec]. </p>
+<p>Analog input number (e.g. '5' for 'AN5') </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00919">919</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01116">1116</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga5208c54df1cdb14e00e62eb7957820f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5208c54df1cdb14e00e62eb7957820f6">&#9670;&nbsp;</a></span>BOOST_NO_OF_PHASES</h2>
+<a id="gaa17ed262d95146b0aa4e281ae6f25530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa17ed262d95146b0aa4e281ae6f25530">&#9670;&nbsp;</a></span>BOOST_VOUT_ADCTRIG</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_NO_OF_PHASES&#160;&#160;&#160;1U</td>
+          <td class="memname">#define BOOST_VOUT_ADCTRIG&#160;&#160;&#160;PG2TRIGA</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>User-declaration of global defines for PWM signal generator settings. </p>
-<p>This section defines fundamental PWM settings required for the on-board boost converter of DPSK3. These settings are determined by hardware and defined using physical quantities. Pre-compiler macros are used to convert physical values into binary (integer) numbers to be written to Special Function Registers (SFR). Number of power converter phases of this design </p>
+<p>Register used for trigger placement. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00914">914</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01118">1118</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gafe2eededed4304c44e47642b9093beda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafe2eededed4304c44e47642b9093beda">&#9670;&nbsp;</a></span>BOOST_PWM_DUTY_CYCLE_MAX</h2>
+<a id="ga141f25042cbe329584d519a4a000bb64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga141f25042cbe329584d519a4a000bb64">&#9670;&nbsp;</a></span>BOOST_VOUT_ANSEL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_DUTY_CYCLE_MAX&#160;&#160;&#160;(float)0.850</td>
+          <td class="memname">#define BOOST_VOUT_ANSEL&#160;&#160;&#160;_ANSELD10</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maximum on/off-time ratio (duty ratio) in [%]. </p>
+<p>ADC input assignments of output voltage feedback signals. </p>
+<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. GPIO analog function mode enable bit </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00918">918</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01114">1114</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaf4b6b5baf07ba17e75f66ec5305c68fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf4b6b5baf07ba17e75f66ec5305c68fb">&#9670;&nbsp;</a></span>BOOST_PWM_DUTY_CYCLE_MIN</h2>
+<a id="ga03502d6af9477b4622620cd3bc74d280"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga03502d6af9477b4622620cd3bc74d280">&#9670;&nbsp;</a></span>BOOST_VOUT_TRGSRC</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_DUTY_CYCLE_MIN&#160;&#160;&#160;(float)0.040</td>
+          <td class="memname">#define BOOST_VOUT_TRGSRC&#160;&#160;&#160;<a class="el" href="a00384.html#gacea17e5f96aee1f9a4cf0ecb825749aa">BOOST_PWM_TRGSRC_TRG1</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Minimum on/off-time ratio (duty ratio) in [%]. </p>
+<p>PWM2 (=PG2) Trigger 1 via PGxTRIGA. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00917">917</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01119">1119</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga190c68d192a604d70087146623fedd1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga190c68d192a604d70087146623fedd1d">&#9670;&nbsp;</a></span>BOOST_SWITCHING_FREQUENCY</h2>
+<a id="gab5a66db522e36f4df6c1261ac6f169f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab5a66db522e36f4df6c1261ac6f169f7">&#9670;&nbsp;</a></span>BUCK_VOUT_ADCBUF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_SWITCHING_FREQUENCY&#160;&#160;&#160;(float)500.0e+3</td>
+          <td class="memname">#define BUCK_VOUT_ADCBUF&#160;&#160;&#160;ADCBUF13</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fixed Switching frequency in [Hz]. </p>
+<p>ADC input buffer of this ADC channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00916">916</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00489">489</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gafe895b572c7fdeced04221d53c18695d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafe895b572c7fdeced04221d53c18695d">&#9670;&nbsp;</a></span>BUCK_DEAD_TIME_FALLING_EDGE</h2>
+<a id="gadca72f2007af7bbcfeabea3f088417c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadca72f2007af7bbcfeabea3f088417c1">&#9670;&nbsp;</a></span>BUCK_VOUT_ADCCORE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_DEAD_TIME_FALLING_EDGE&#160;&#160;&#160;(float)60.0e-9</td>
+          <td class="memname">#define BUCK_VOUT_ADCCORE&#160;&#160;&#160;8</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Falling Edge Dead Time delay in [sec]. </p>
+<p>0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00294">294</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00487">487</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaee8430cb24cfc1cdd3b12dd3c40b09d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaee8430cb24cfc1cdd3b12dd3c40b09d5">&#9670;&nbsp;</a></span>BUCK_DEAD_TIME_LEADING_EDGE</h2>
+<a id="ga0f65d536bafa774db983f1654d9c0fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0f65d536bafa774db983f1654d9c0fb1">&#9670;&nbsp;</a></span>BUCK_VOUT_ADCIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_DEAD_TIME_LEADING_EDGE&#160;&#160;&#160;(float)20.0e-9</td>
+          <td class="memname">#define BUCK_VOUT_ADCIN&#160;&#160;&#160;13</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Leading Edge Dead Time delay in [sec]. </p>
+<p>Analog input number (e.g. '5' for 'AN5') </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00293">293</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00488">488</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga53e830102be3559594f1f107c42e3cb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga53e830102be3559594f1f107c42e3cb2">&#9670;&nbsp;</a></span>BUCK_LEADING_EDGE_BLANKING</h2>
+<a id="ga4cc0051ef254bbf7167af02c30e9489d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4cc0051ef254bbf7167af02c30e9489d">&#9670;&nbsp;</a></span>BUCK_VOUT_ADCTRIG</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_LEADING_EDGE_BLANKING&#160;&#160;&#160;(float)120.0e-9</td>
+          <td class="memname">#define BUCK_VOUT_ADCTRIG&#160;&#160;&#160;PG1TRIGA</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Leading Edge Blanking period in [sec]. </p>
+<p>Register used for trigger placement. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00292">292</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00490">490</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga353ba60329e90d1aca97deba7e0bd669"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga353ba60329e90d1aca97deba7e0bd669">&#9670;&nbsp;</a></span>BUCK_NO_OF_PHASES</h2>
+<a id="gac90fa2099f502ddf5210bcbae94b5cc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac90fa2099f502ddf5210bcbae94b5cc0">&#9670;&nbsp;</a></span>BUCK_VOUT_ANSEL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_NO_OF_PHASES&#160;&#160;&#160;1U</td>
+          <td class="memname">#define BUCK_VOUT_ANSEL&#160;&#160;&#160;_ANSELC1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>User-declaration of global defines for PWM signal generator settings. </p>
-<p>This section defines fundamental PWM settings required for the on-board buck converter of DPSK3. These settings are determined by hardware and defined using physical quantities. Pre-compiler macros are used to convert physical values into binary (integer) numbers to be written to Special Function Registers (SFR). Number of power converter phases of this design </p>
+<p>ADC input assignments of output voltage feedback signals. </p>
+<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. GPIO analog function mode enable bit </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00287">287</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00486">486</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga355fe35bc08bc0f4657be7f638a643a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga355fe35bc08bc0f4657be7f638a643a6">&#9670;&nbsp;</a></span>BUCK_PWM_DUTY_CYCLE_MAX</h2>
+<a id="ga582c1b8e723703fb75c4d14c766a6ce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga582c1b8e723703fb75c4d14c766a6ce0">&#9670;&nbsp;</a></span>BUCK_VOUT_TRGSRC</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_PWM_DUTY_CYCLE_MAX&#160;&#160;&#160;(float)0.900</td>
+          <td class="memname">#define BUCK_VOUT_TRGSRC&#160;&#160;&#160;<a class="el" href="a00384.html#ga7220e89a59d6abd8bf7611a3ed4da166">BUCK_PWM_TRGSRC_TRG1</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maximum on/off-time ratio (duty ratio) in [%]. </p>
+<p>PWM1 (=PG2) Trigger 1 via PGxTRIGA. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00291">291</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gabcc43f4201492160173351db97ddcfda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabcc43f4201492160173351db97ddcfda">&#9670;&nbsp;</a></span>BUCK_PWM_DUTY_CYCLE_MIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_PWM_DUTY_CYCLE_MIN&#160;&#160;&#160;(float)0.000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Minimum on/off-time ratio (duty ratio) in [%]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00290">290</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gadecc3fb9cc6da0d2add11d577d50d5b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadecc3fb9cc6da0d2add11d577d50d5b5">&#9670;&nbsp;</a></span>BUCK_SWITCHING_FREQUENCY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_SWITCHING_FREQUENCY&#160;&#160;&#160;(float)500.0e+3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fixed Switching frequency in [Hz]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00289">289</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00491">491</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

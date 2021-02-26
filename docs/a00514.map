@@ -1,4 +1,4 @@
-<map id="Public Properties" name="Public Properties">
-<area shape="rect" id="node1" title="Public properties of the push button device driver library." alt="" coords="191,5,312,31"/>
-<area shape="rect" id="node2" href="$a00512.html" title=" " alt="" coords="5,5,143,31"/>
+<map id="Digital Signal Processor Configuration" name="Digital Signal Processor Configuration">
+<area shape="rect" id="node1" href="$a00510.html" title=" " alt="" coords="5,5,143,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="191,5,352,45"/>
 </map>

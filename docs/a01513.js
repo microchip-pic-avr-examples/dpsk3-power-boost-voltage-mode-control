@@ -1,7 +1,11 @@
 var a01513 =
 [
-    [ "counter", "a01513.html#a8544f2f5b43d21d6a0a586fc81f9ce92", null ],
-    [ "period", "a01513.html#a48f363c7bcd47589472b59f0a7dfb74b", null ],
-    [ "ref_inc_step", "a01513.html#a832c6be5021565e3da55cbc0a523e744", null ],
-    [ "reference", "a01513.html#aad7bda3be2c1e6a89bd7093086bbeec8", null ]
+    [ "control_error", "a01513.html#ac8075e097d2f5b01f5e19a1c088b2765", null ],
+    [ "control_input", "a01513.html#a1f1df1b6b181796635627d10d720dd4f", null ],
+    [ "control_output", "a01513.html#ac7ce35c7ae4977118fe839759bf34518", null ],
+    [ "i_out", "a01513.html#a9e418d7d3d756a1d9e0b63765d5392a4", null ],
+    [ "i_sns", "a01513.html#a6cd19bf51c65176a79cd02e615317c54", null ],
+    [ "temp", "a01513.html#aa9f24b0c02dbbc6659649c7b7a124dc4", null ],
+    [ "v_in", "a01513.html#af34b61c0a55244bf4aa166666a322efa", null ],
+    [ "v_out", "a01513.html#a81d40bc6e9f5a711379a1d3d40123bd9", null ]
 ];

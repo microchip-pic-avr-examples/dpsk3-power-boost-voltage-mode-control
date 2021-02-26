@@ -1,7 +1,7 @@
 var a00412 =
 [
-    [ "BOOST_FB_TEMP_SLOPE", "a00412.html#gaabab1ff0ffe06204aa20f33caec4f6ce", null ],
-    [ "BOOST_FB_TEMP_ZERO", "a00412.html#ga093804711059cf01cdb3113365ec8ea3", null ],
-    [ "BUCK_FB_TEMP_SLOPE", "a00412.html#ga014133f88cd82218241bf16985302cd4", null ],
-    [ "BUCK_FB_TEMP_ZERO", "a00412.html#gacde6c3fa85c34fe5414566acd2e77ca8", null ]
+    [ "ocp_FaultInitialize", "a00412.html#ga54f9db91ea0782b08aa16ee77a57c5e5", null ],
+    [ "ovlo_FaultInitialize", "a00412.html#gade437244e8f6e5ff7c57a73442063350", null ],
+    [ "regerr_FaultInitialize", "a00412.html#ga82dc317e3adac0308e5ac3f5ad321605", null ],
+    [ "uvlo_FaultInitialize", "a00412.html#ga9441220f8a7d4a6805467d04b734e6b5", null ]
 ];

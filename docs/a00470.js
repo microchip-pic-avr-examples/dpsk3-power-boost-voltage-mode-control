@@ -1,6 +1,5 @@
 var a00470 =
 [
-    [ "Variables & Constants", "a00471.html", null ],
-    [ "Data Types", "a00472.html", "a00472" ],
-    [ "Defines and Macros", "a00473.html", null ]
+    [ "CurrentSenseOffsetCalibration", "a00470.html#gafd8064d14747bfca36fddaa63fac9908", null ],
+    [ "drv_BoostConverter_SpecialFunctionExecute", "a00470.html#ga8da16d7e071fa88d5e45c7dac51053d8", null ]
 ];

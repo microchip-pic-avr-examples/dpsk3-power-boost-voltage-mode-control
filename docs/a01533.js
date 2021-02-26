@@ -1,13 +1,15 @@
 var a01533 =
 [
-    [ "controller", "a01533.html#a86e023cf3f4b4255c1b514b6d70ef74f", null ],
-    [ "ctrl_Initialize", "a01533.html#ad9db676a96d1d3f30adf55e6c03fe5e6", null ],
-    [ "ctrl_Precharge", "a01533.html#a1abd824af35613110d119216a9ef6772", null ],
-    [ "ctrl_Reset", "a01533.html#a9de67ce75a551430588dd9954a5692c3", null ],
-    [ "ctrl_Update", "a01533.html#a95eb0e366ec0c0c509d13060e796a7c2", null ],
-    [ "feedback_offset", "a01533.html#a81d3656451b3c24b602aa60c01cd88f6", null ],
-    [ "maximum", "a01533.html#a62d4b288fdba9a5d426a707407903376", null ],
-    [ "minimum", "a01533.html#a880eff7691ea805dc7726dc9dc65170a", null ],
-    [ "reference", "a01533.html#aad7bda3be2c1e6a89bd7093086bbeec8", null ],
-    [ "trigger_offset", "a01533.html#ad15abe564957bceb1997a22552534262", null ]
+    [ "adc_buffer", "a01533.html#ae6b3bf1e59067bcf24c50032a88b454e", null ],
+    [ "adc_core", "a01533.html#a1108a003f371af97be13ed110ebdf23b", null ],
+    [ "adc_input", "a01533.html#ac5ef35fa6037886ca3a101f4a2b37928", null ],
+    [ "differential_input", "a01533.html#ac22ebd6bfde052a5134c47bec2396bbc", null ],
+    [ "early_interrupt_enable", "a01533.html#a01450dd198f268c49d3c6523135f6a66", null ],
+    [ "enabled", "a01533.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
+    [ "gpio_instance", "a01533.html#a87d4166062b0a4ec5b940c458cc92d8f", null ],
+    [ "interrupt_enable", "a01533.html#a793ba9a93f3a49413df9cdc16e9339f1", null ],
+    [ "level_trigger", "a01533.html#a901cea2416e72a6e745a679ba42aa03a", null ],
+    [ "scaling", "a01533.html#ae76a392e1ccbcd112bbc4bcb0ce126c4", null ],
+    [ "signed_result", "a01533.html#aad3977aa344b7d6cd2f0d88693a8ccde", null ],
+    [ "trigger_source", "a01533.html#a3ac3aa57346150cb34db841906e581cb", null ]
 ];

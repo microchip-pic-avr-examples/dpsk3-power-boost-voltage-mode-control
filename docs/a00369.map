@@ -1,4 +1,4 @@
-<map id="Public Functions" name="Public Functions">
-<area shape="rect" id="node1" title="Public functions of the HSPWM PRAL driver." alt="" coords="225,13,344,38"/>
-<area shape="rect" id="node2" href="$a00361.html" title="High&#45;Speed PWM Module Special Function Register Abstraction Driver." alt="" coords="5,5,177,45"/>
+<map id="Conversion Macros" name="Conversion Macros">
+<area shape="rect" id="node1" title="Conversion macros converting physical quantities of parameters into binary (integer) numbers for regi..." alt="" coords="203,13,335,38"/>
+<area shape="rect" id="node2" href="$a00367.html" title="Declarations of fundamental microcontroller device parameters." alt="" coords="5,5,155,45"/>
 </map>

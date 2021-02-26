@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Boost Converter Library</title>
+<title>Digital Power Starter Kit 3 Firmware: Boost Converter State Machine</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -99,29 +106,35 @@ $(document).ready(function(){initNavTree('a00463.html',''); initResizable(); });
   <div class="summary">
 <a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Boost Converter Library<div class="ingroups"><a class="el" href="a00536.html">Device Driver Library Layer</a></div></div>  </div>
+<div class="title">Boost Converter State Machine<div class="ingroups"><a class="el" href="a00524.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00451.html">Boost Converter Library</a> &raquo; <a class="el" href="a00462.html">Boost Converter Library Modules</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Description of the Boost Converter Library State Machine library module.  
+<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Boost Converter Library:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Boost Converter State Machine:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00463.svg" width="586" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00463.svg" width="495" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
 Modules</h2></td></tr>
-<tr class="memitem:a00464"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00464.html">Boost Converter Library API</a></td></tr>
+<tr class="memitem:a00464"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00464.html">Functions</a></td></tr>
+<tr class="memdesc:a00464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions of the second library layer. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00474"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00474.html">Boost Converter Library Modules</a></td></tr>
+<tr class="memitem:a00465"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00465.html">Properties</a></td></tr>
+<tr class="memdesc:a00465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Properties of the second library layer. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>The Boost Converter Library is a comprehensive device driver providing a state machine managing initialization, configurable, protected startup, runtime reference tuning and auto-restart capabilities. Special Functions are available to extend the essential features of the state machine supporting specific, optional sub-circuits and functions.</p>
-<p>This device driver also includes functions for the configuration of device peripherals by providing templates of the fundamental peripheral set initialization required to drive and control the supported type of power converter, significantly reducing the amount of parameters users have to select and set.</p>
-<p>All settings are made available through the <a class="el" href="a01561.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a> data structure, described in the Public Properties / Data Types section of this documentation. </p>
+<p>Description of the Boost Converter Library State Machine library module. </p>
+<p>The converter state machine defines the steps required to initialize the power supply chip resources and converter data objects, resets the most recent runtime data in preparation for a power supply startup, monitors the status of fault and control flags and provides sub-functions for powering up the power converter and its control system dependent on which kind of control mode is selected.</p>
+<p>The soft-start process includes programmable delays such as Power-On Delay and Power Good Delay including the ramp-up slew rate of the output voltage. In case of system or software errors, the state machine will shut down the power supply and execute a restart attempt.</p>
+<p>The complete state machine is encapsulated in and managed by the converter device driver. No user control is required other than calling the high-level 'drv_BoostConverter_Execute' device driver API function at a constant repetition rate. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_boost_vmc.X/sources/power_control/devices/dev_boost_templates.h Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_boost_vmc.X/sources/power_control/devices/templates/dev_boost_ptemp_dac.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -97,64 +104,60 @@ $(document).ready(function(){initNavTree('a00278_source.html',''); initResizable
 
 <div class="header">
   <div class="headertitle">
-<div class="title">dev_boost_templates.h</div>  </div>
+<div class="title">dev_boost_ptemp_dac.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Microchip Technology Inc. and its subsidiaries.  You may use this software </span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * and any derivatives exclusively with Microchip products. </span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * THIS SOFTWARE IS SUPPLIED BY MICROCHIP &quot;AS IS&quot;.  NO WARRANTIES, WHETHER </span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED </span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A </span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION </span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION. </span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, </span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND </span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS </span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE.  TO THE </span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP&#39;S TOTAL LIABILITY ON ALL CLAIMS </span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF </span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE </span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * TERMS. </span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * File:   dev_boost_templates.h</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * Author: M91406</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Comments: Peripheral Special Function Register Configuration Templates</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * Revision history: </span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *   10/29/2020     1.0     initial release</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// This is a guard condition so that contents of this file are not included</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// more than once.  </span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifndef BOOST_CONVERTER_PERIPHERAL_CONFIGURATION_TEMPLATES_H</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define BOOST_CONVERTER_PERIPHERAL_CONFIGURATION_TEMPLATES_H</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span> <span class="comment">// include processor files - each processor file is guarded.  </span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span> <span class="comment">// include standard integer data types</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span> <span class="comment">// include standard boolean data types</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span> <span class="comment">// include standard definition data types</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="a00484.html#ga3eb853285f90f7070d48676afdf6de8e">    1</a></span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   dev_boost_ptemp_dac.c</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: M91406</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on October 29, 2020, 10:31 AM</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;xc16_pral.h&quot;</span> <span class="comment">// include peripehral register abstraction layer drivers</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;dev_boost_ptemp_dac.h&quot;</span> <span class="comment">// include peripheral register configuration values header</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00709.html">P33C_DAC_MODULE_s</a> <a class="code" href="a00484.html#ga3eb853285f90f7070d48676afdf6de8e">boostDacModuleConfig</a> = </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    .<a class="code" href="a00709.html#a74170bc94163a939331836705eb483d6">DacModuleCtrl1L</a>.<a class="code" href="a00709.html#a3f0c55f449560b03ce0ac43270c26600">value</a> = 0x0000, </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    .DacModuleCtrl2L.value = 0x0000, </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    .DacModuleCtrl2H.value = 0x0000  </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00737.html">P33C_DAC_INSTANCE_s</a> <a class="code" href="a00484.html#gaae34d54d57a4631106e67d1514246173">boostDacInstanceConfig</a> = </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    .<a class="code" href="a00737.html#a329570b04db28a6a424c776cb105a176">DACxCONL</a>.<a class="code" href="a00737.html#a3f0c55f449560b03ce0ac43270c26600">value</a> = <a class="code" href="a00486.html#ga4040cf3dc25dad9e41a1da945b07d296">REG_DACxCONL</a>, </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    .DACxCONH.value = <a class="code" href="a00486.html#gaa6e98055bc0d35732906fb5b0785b30a">REG_DACxCONH</a>, </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    .DACxDATL.value = 0x0000,       </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    .DACxDATH.value = 0x0000,       </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    .SLPxCONL.value = <a class="code" href="a00486.html#ga512689ef8611be9275733eb81f13707f">REG_SLPxCONL</a>, </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    .SLPxCONH.value = <a class="code" href="a00486.html#ga91d0af2b9336b872cb114c3b58efa261">REG_SLPxCONH</a>, </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    .SLPxDAT.value = 0x0000         </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;xc16_pral.h&quot;</span> <span class="comment">// include peripheral register abstraction layer drivers</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;templates/dev_boost_ptemp_pwm.h&quot;</span> <span class="comment">// Include PWM configuration template header file</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;templates/dev_boost_ptemp_adc.h&quot;</span> <span class="comment">// Include ADC configuration template header file</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;templates/dev_boost_ptemp_dac.h&quot;</span> <span class="comment">// Include DAC configuration template header file</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* BOOST_CONVERTER_PERIPHERAL_CONFIGURATION_TEMPLATES_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// end of file</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aa00737_html"><div class="ttname"><a href="a00737.html">P33C_DAC_INSTANCE_s</a></div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00094">p33c_dac.h:94</a></div></div>
+<div class="ttc" id="aa00737_html_a3f0c55f449560b03ce0ac43270c26600"><div class="ttname"><a href="a00737.html#a3f0c55f449560b03ce0ac43270c26600">P33C_DAC_INSTANCE_s::value</a></div><div class="ttdeci">volatile uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00097">p33c_dac.h:97</a></div></div>
+<div class="ttc" id="aa00484_html_ga3eb853285f90f7070d48676afdf6de8e"><div class="ttname"><a href="a00484.html#ga3eb853285f90f7070d48676afdf6de8e">boostDacModuleConfig</a></div><div class="ttdeci">volatile struct P33C_DAC_MODULE_s boostDacModuleConfig</div><div class="ttdoc">DAC module default configuration.</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00001">dev_boost_ptemp_dac.c:16</a></div></div>
+<div class="ttc" id="aa00486_html_gaa6e98055bc0d35732906fb5b0785b30a"><div class="ttname"><a href="a00486.html#gaa6e98055bc0d35732906fb5b0785b30a">REG_DACxCONH</a></div><div class="ttdeci">#define REG_DACxCONH</div><div class="ttdoc">DACxCONH: DACx CONTROL REGISTER LOW.</div><div class="ttdef"><b>Definition:</b> <a href="a00281_source.html#l00098">dev_boost_ptemp_dac.h:98</a></div></div>
+<div class="ttc" id="aa00709_html_a3f0c55f449560b03ce0ac43270c26600"><div class="ttname"><a href="a00709.html#a3f0c55f449560b03ce0ac43270c26600">P33C_DAC_MODULE_s::value</a></div><div class="ttdeci">volatile uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00063">p33c_dac.h:63</a></div></div>
+<div class="ttc" id="aa00486_html_ga512689ef8611be9275733eb81f13707f"><div class="ttname"><a href="a00486.html#ga512689ef8611be9275733eb81f13707f">REG_SLPxCONL</a></div><div class="ttdeci">#define REG_SLPxCONL</div><div class="ttdoc">SLPxCONL: DACx SLOPE CONTROL REGISTER LOW.</div><div class="ttdef"><b>Definition:</b> <a href="a00281_source.html#l00127">dev_boost_ptemp_dac.h:127</a></div></div>
+<div class="ttc" id="aa00709_html"><div class="ttname"><a href="a00709.html">P33C_DAC_MODULE_s</a></div><div class="ttdoc">Abstracted set of Special Function Registers of a Digital-to-Analog Converter peripheral.</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00060">p33c_dac.h:60</a></div></div>
+<div class="ttc" id="aa00484_html_gaae34d54d57a4631106e67d1514246173"><div class="ttname"><a href="a00484.html#gaae34d54d57a4631106e67d1514246173">boostDacInstanceConfig</a></div><div class="ttdeci">volatile struct P33C_DAC_INSTANCE_s boostDacInstanceConfig</div><div class="ttdoc">DAC generator default configuration.</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00001">dev_boost_ptemp_dac.c:29</a></div></div>
+<div class="ttc" id="aa00737_html_a329570b04db28a6a424c776cb105a176"><div class="ttname"><a href="a00737.html#a329570b04db28a6a424c776cb105a176">P33C_DAC_INSTANCE_s::DACxCONL</a></div><div class="ttdeci">union P33C_DAC_INSTANCE_s::@6 DACxCONL</div></div>
+<div class="ttc" id="aa00486_html_ga4040cf3dc25dad9e41a1da945b07d296"><div class="ttname"><a href="a00486.html#ga4040cf3dc25dad9e41a1da945b07d296">REG_DACxCONL</a></div><div class="ttdeci">#define REG_DACxCONL</div><div class="ttdoc">DACxCONL: DACx CONTROL REGISTER LOW.</div><div class="ttdef"><b>Definition:</b> <a href="a00281_source.html#l00072">dev_boost_ptemp_dac.h:72</a></div></div>
+<div class="ttc" id="aa00709_html_a74170bc94163a939331836705eb483d6"><div class="ttname"><a href="a00709.html#a74170bc94163a939331836705eb483d6">P33C_DAC_MODULE_s::DacModuleCtrl1L</a></div><div class="ttdeci">union P33C_DAC_MODULE_s::@0 DacModuleCtrl1L</div></div>
+<div class="ttc" id="aa00486_html_ga91d0af2b9336b872cb114c3b58efa261"><div class="ttname"><a href="a00486.html#ga91d0af2b9336b872cb114c3b58efa261">REG_SLPxCONH</a></div><div class="ttdeci">#define REG_SLPxCONH</div><div class="ttdoc">SLPxCONH: DACx SLOPE CONTROL REGISTER LOW.</div><div class="ttdef"><b>Definition:</b> <a href="a00281_source.html#l00153">dev_boost_ptemp_dac.h:153</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_b243a48454939fba398f3081ea81cd74.html">dpsk_boost_vmc.X</a></li><li class="navelem"><a class="el" href="dir_0e4839e6c0519f71971690c8a50975c4.html">sources</a></li><li class="navelem"><a class="el" href="dir_983c4c9ed402a8dd52b63434889c5d7a.html">power_control</a></li><li class="navelem"><a class="el" href="dir_11d8261c0d1735c4862853685b7287af.html">devices</a></li><li class="navelem"><b>dev_boost_templates.h</b></li>
+    <li class="navelem"><a class="el" href="dir_b243a48454939fba398f3081ea81cd74.html">dpsk_boost_vmc.X</a></li><li class="navelem"><a class="el" href="dir_0e4839e6c0519f71971690c8a50975c4.html">sources</a></li><li class="navelem"><a class="el" href="dir_983c4c9ed402a8dd52b63434889c5d7a.html">power_control</a></li><li class="navelem"><a class="el" href="dir_11d8261c0d1735c4862853685b7287af.html">devices</a></li><li class="navelem"><a class="el" href="dir_ad5ea883a0e54b0db4f91d5175a7781e.html">templates</a></li><li class="navelem"><b>dev_boost_ptemp_dac.c</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

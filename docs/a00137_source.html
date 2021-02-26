@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_boost_vmc.X/sources/config/init/init_gpio.h Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_boost_vmc.X/sources/config/init/init_pmd.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -97,7 +104,7 @@ $(document).ready(function(){initNavTree('a00137_source.html',''); initResizable
 
 <div class="header">
   <div class="headertitle">
-<div class="title">init_gpio.h</div>  </div>
+<div class="title">init_pmd.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Microchip Technology Inc. and its subsidiaries.  You may use this software </span></div>
@@ -138,17 +145,19 @@ $(document).ready(function(){initNavTree('a00137_source.html',''); initResizable
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00525.html#ga79cb6e309797560a9a262a562fe40fee">sysGpio_Initialize</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;main.h&quot;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* SYSTEM_INITIALIZE_GPIO_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00513.html#ga79cb6e309797560a9a262a562fe40fee">sysGpio_Initialize</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* SYSTEM_INITIALIZE_GPIO_H */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00525_html_ga79cb6e309797560a9a262a562fe40fee"><div class="ttname"><a href="a00525.html#ga79cb6e309797560a9a262a562fe40fee">sysGpio_Initialize</a></div><div class="ttdeci">volatile uint16_t sysGpio_Initialize(void)</div><div class="ttdoc">Resets the device input/output pins to digital inputs.</div><div class="ttdef"><b>Definition:</b> <a href="a00134_source.html#l00027">init_gpio.c:27</a></div></div>
+<div class="ttc" id="aa00513_html_ga79cb6e309797560a9a262a562fe40fee"><div class="ttname"><a href="a00513.html#ga79cb6e309797560a9a262a562fe40fee">sysGpio_Initialize</a></div><div class="ttdeci">volatile uint16_t sysGpio_Initialize(void)</div><div class="ttdoc">Resets the device input/output pins to digital inputs.</div><div class="ttdef"><b>Definition:</b> <a href="a00122_source.html#l00027">init_gpio.c:27</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_b243a48454939fba398f3081ea81cd74.html">dpsk_boost_vmc.X</a></li><li class="navelem"><a class="el" href="dir_0e4839e6c0519f71971690c8a50975c4.html">sources</a></li><li class="navelem"><a class="el" href="dir_b3064761391da413f04bf0fe95e4194b.html">config</a></li><li class="navelem"><a class="el" href="dir_92961f2de99098457722d12194bb4b8f.html">init</a></li><li class="navelem"><b>init_gpio.h</b></li>
+    <li class="navelem"><a class="el" href="dir_b243a48454939fba398f3081ea81cd74.html">dpsk_boost_vmc.X</a></li><li class="navelem"><a class="el" href="dir_0e4839e6c0519f71971690c8a50975c4.html">sources</a></li><li class="navelem"><a class="el" href="dir_b3064761391da413f04bf0fe95e4194b.html">config</a></li><li class="navelem"><a class="el" href="dir_92961f2de99098457722d12194bb4b8f.html">init</a></li><li class="navelem"><b>init_pmd.h</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Special Firmware Options</title>
+<title>Digital Power Starter Kit 3 Firmware: Data Types</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -97,103 +104,173 @@ $(document).ready(function(){initNavTree('a00420.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Special Firmware Options<div class="ingroups"><a class="el" href="a00534.html">Hardware Abstraction Layer</a></div></div>  </div>
+<div class="title">Data Types<div class="ingroups"><a class="el" href="a00524.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00414.html">Fault Handler Library</a> &raquo; <a class="el" href="a00416.html">Public Properties</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Special Firmware Options:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Data Types:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00420.svg" width="376" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00420.svg" width="268" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:ga0bec5510da2215eafb1e118d9dc786c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html#ga0bec5510da2215eafb1e118d9dc786c7">PLANT_MEASUREMENT</a>&#160;&#160;&#160;false</td></tr>
-<tr class="memdesc:ga0bec5510da2215eafb1e118d9dc786c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global defines used to enable/disable special firmware options.  <a href="a00420.html#ga0bec5510da2215eafb1e118d9dc786c7">More...</a><br /></td></tr>
-<tr class="separator:ga0bec5510da2215eafb1e118d9dc786c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga558e9be0d6b69c99c432b0e34923921e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html#ga558e9be0d6b69c99c432b0e34923921e">DBGPIN1_ENABLE</a>&#160;&#160;&#160;true</td></tr>
-<tr class="memdesc:ga558e9be0d6b69c99c432b0e34923921e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables debug pin indicating control loop execution timing.  <a href="a00420.html#ga558e9be0d6b69c99c432b0e34923921e">More...</a><br /></td></tr>
-<tr class="separator:ga558e9be0d6b69c99c432b0e34923921e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga410c4fdcc59dde5886e61f88917c88e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html#ga410c4fdcc59dde5886e61f88917c88e7">DBGPIN2_ENABLE</a>&#160;&#160;&#160;true</td></tr>
-<tr class="memdesc:ga410c4fdcc59dde5886e61f88917c88e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables debug pin indicating control loop execution timing.  <a href="a00420.html#ga410c4fdcc59dde5886e61f88917c88e7">More...</a><br /></td></tr>
-<tr class="separator:ga410c4fdcc59dde5886e61f88917c88e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1fae4fbca01ef05d76f53ca54d362a14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html#ga1fae4fbca01ef05d76f53ca54d362a14">DBGDAC_ENABLE</a>&#160;&#160;&#160;true</td></tr>
-<tr class="memdesc:ga1fae4fbca01ef05d76f53ca54d362a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables debug DAC output pin reproduing control loop output as analog signal.  <a href="a00420.html#ga1fae4fbca01ef05d76f53ca54d362a14">More...</a><br /></td></tr>
-<tr class="separator:ga1fae4fbca01ef05d76f53ca54d362a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee63654a5e14dd3b2bab6179a5cbe2ab"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a> { <br />
+&#160;&#160;<b>TRAP_OSCILLATOR_FAIL</b> = 0x0001, 
+<b>TRAP_ADDRESS_ERROR</b> = 0x0002, 
+<b>TRAP_STACK_ERROR</b> = 0x0004, 
+<b>TRAP_MATH_ERROR</b> = 0x0008, 
+<b>TRAP_DMA_ERROR</b> = 0x0010, 
+<b>TRAP_SOFT_TRAP_ERROR</b> = 0x0020, 
+<b>TRAP_HARD_TRAP_ERROR</b> = 0x0040, 
+<b>TRAP_RESERVED_TRAP_5_ERROR</b> = 0x0080, 
+<b>TRAP_RESERVED_TRAP_7_ERROR</b> = 0x0080, 
+<b>TRAP_ALT_OSCILLATOR_FAIL</b> = 0x0100, 
+<br />
+&#160;&#160;<b>TRAP_ALT_ADDRESS_ERROR</b> = 0x0200, 
+<b>TRAP_ALT_STACK_ERROR</b> = 0x0400, 
+<b>TRAP_ALT_MATH_ERROR</b> = 0x0800, 
+<b>TRAP_ALT_DMA_ERROR</b> = 0x1000, 
+<b>TRAP_ALT_SOFT_TRAP_ERROR</b> = 0x2000, 
+<b>TRAP_ALT_HARD_TRAP_ERROR</b> = 0x4000, 
+<b>TRAP_RESET_MSK</b> = 0x7F1F
+<br />
+ }</td></tr>
+<tr class="memdesc:gaee63654a5e14dd3b2bab6179a5cbe2ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">defining trap-ID for primary and secondary vectors  <a href="a00420.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">More...</a><br /></td></tr>
+<tr class="separator:gaee63654a5e14dd3b2bab6179a5cbe2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1a3bb25ab328fe3ed0f3494dd58d41e"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="a00420.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html#gac1a3bb25ab328fe3ed0f3494dd58d41e">TRAP_ID_t</a></td></tr>
+<tr class="separator:gac1a3bb25ab328fe3ed0f3494dd58d41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga34f8f3a66ba022a11555bcbcc1d7c143"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01405.html">TRAP_FLAGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html#ga34f8f3a66ba022a11555bcbcc1d7c143">TRAP_FLAGS_t</a></td></tr>
+<tr class="separator:ga34f8f3a66ba022a11555bcbcc1d7c143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35071dd1d28db260f503cf7783b8562c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01417.html">CPU_INTTREG_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html#ga35071dd1d28db260f503cf7783b8562c">CPU_INTTREG_t</a></td></tr>
+<tr class="separator:ga35071dd1d28db260f503cf7783b8562c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga727efbb8fb2703832a116d8d7b70f9fa"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01429.html">CPU_RCON_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html#ga727efbb8fb2703832a116d8d7b70f9fa">CPU_RCON_t</a></td></tr>
+<tr class="separator:ga727efbb8fb2703832a116d8d7b70f9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa086a924e5aaa2bed5a676106fe284c6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01441.html">TRAPLOG_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html#gaa086a924e5aaa2bed5a676106fe284c6">TRAPLOG_STATUS_t</a></td></tr>
+<tr class="separator:gaa086a924e5aaa2bed5a676106fe284c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacab9a7bab555242c176709817ecda6f3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01453.html">TASK_INFO_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html#gacab9a7bab555242c176709817ecda6f3">TASK_INFO_t</a></td></tr>
+<tr class="separator:gacab9a7bab555242c176709817ecda6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa31136531ddd10f950990ce253c0de78"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01457.html">TRAP_LOGGER_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html#gaa31136531ddd10f950990ce253c0de78">TRAP_LOGGER_t</a></td></tr>
+<tr class="separator:gaa31136531ddd10f950990ce253c0de78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga1fae4fbca01ef05d76f53ca54d362a14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1fae4fbca01ef05d76f53ca54d362a14">&#9670;&nbsp;</a></span>DBGDAC_ENABLE</h2>
+<p>This chapter provides detailed information about the public data types provided by the fault handler library. </p>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga35071dd1d28db260f503cf7783b8562c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga35071dd1d28db260f503cf7783b8562c">&#9670;&nbsp;</a></span>CPU_INTTREG_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGDAC_ENABLE&#160;&#160;&#160;true</td>
+          <td class="memname">typedef struct <a class="el" href="a01417.html">CPU_INTTREG_s</a> <a class="el" href="a00420.html#ga35071dd1d28db260f503cf7783b8562c">CPU_INTTREG_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enables debug DAC output pin reproduing control loop output as analog signal. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00074">74</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
 </div>
 </div>
-<a id="ga558e9be0d6b69c99c432b0e34923921e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga558e9be0d6b69c99c432b0e34923921e">&#9670;&nbsp;</a></span>DBGPIN1_ENABLE</h2>
+<a id="ga727efbb8fb2703832a116d8d7b70f9fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga727efbb8fb2703832a116d8d7b70f9fa">&#9670;&nbsp;</a></span>CPU_RCON_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN1_ENABLE&#160;&#160;&#160;true</td>
+          <td class="memname">typedef struct <a class="el" href="a01429.html">CPU_RCON_s</a> <a class="el" href="a00420.html#ga727efbb8fb2703832a116d8d7b70f9fa">CPU_RCON_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enables debug pin indicating control loop execution timing. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00071">71</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
 </div>
 </div>
-<a id="ga410c4fdcc59dde5886e61f88917c88e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga410c4fdcc59dde5886e61f88917c88e7">&#9670;&nbsp;</a></span>DBGPIN2_ENABLE</h2>
+<a id="gacab9a7bab555242c176709817ecda6f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacab9a7bab555242c176709817ecda6f3">&#9670;&nbsp;</a></span>TASK_INFO_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN2_ENABLE&#160;&#160;&#160;true</td>
+          <td class="memname">typedef struct <a class="el" href="a01453.html">TASK_INFO_s</a> <a class="el" href="a00420.html#gacab9a7bab555242c176709817ecda6f3">TASK_INFO_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enables debug pin indicating control loop execution timing. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00072">72</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
 </div>
 </div>
-<a id="ga0bec5510da2215eafb1e118d9dc786c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0bec5510da2215eafb1e118d9dc786c7">&#9670;&nbsp;</a></span>PLANT_MEASUREMENT</h2>
+<a id="ga34f8f3a66ba022a11555bcbcc1d7c143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga34f8f3a66ba022a11555bcbcc1d7c143">&#9670;&nbsp;</a></span>TRAP_FLAGS_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PLANT_MEASUREMENT&#160;&#160;&#160;false</td>
+          <td class="memname">typedef struct <a class="el" href="a01405.html">TRAP_FLAGS_s</a> <a class="el" href="a00420.html#ga34f8f3a66ba022a11555bcbcc1d7c143">TRAP_FLAGS_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Global defines used to enable/disable special firmware options. </p>
-<p>This section is used to enable/disable special options useful during development, debugging, troubleshooting the recent firmware or to tailor special functions of this application. If enabled, replaces the common voltage control loop by a simple P-control loop to perform measurements of the plant transfer function. </p>
+</div>
+</div>
+<a id="gac1a3bb25ab328fe3ed0f3494dd58d41e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac1a3bb25ab328fe3ed0f3494dd58d41e">&#9670;&nbsp;</a></span>TRAP_ID_t</h2>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00069">69</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="a00420.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a> <a class="el" href="a00420.html#gac1a3bb25ab328fe3ed0f3494dd58d41e">TRAP_ID_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa31136531ddd10f950990ce253c0de78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa31136531ddd10f950990ce253c0de78">&#9670;&nbsp;</a></span>TRAP_LOGGER_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="a01457.html">TRAP_LOGGER_s</a> <a class="el" href="a00420.html#gaa31136531ddd10f950990ce253c0de78">TRAP_LOGGER_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa086a924e5aaa2bed5a676106fe284c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa086a924e5aaa2bed5a676106fe284c6">&#9670;&nbsp;</a></span>TRAPLOG_STATUS_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="a01441.html">TRAPLOG_STATUS_s</a> <a class="el" href="a00420.html#gaa086a924e5aaa2bed5a676106fe284c6">TRAPLOG_STATUS_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gaee63654a5e14dd3b2bab6179a5cbe2ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaee63654a5e14dd3b2bab6179a5cbe2ab">&#9670;&nbsp;</a></span>TRAP_ID_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00420.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>defining trap-ID for primary and secondary vectors </p>
+
+<p class="definition">Definition at line <a class="el" href="a00170_source.html#l00099">99</a> of file <a class="el" href="a00170_source.html">drv_trap_handler.h</a>.</p>
 
 </div>
 </div>

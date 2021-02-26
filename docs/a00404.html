@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Conversion Macros</title>
+<title>Digital Power Starter Kit 3 Firmware: LC Display Interface Declarations</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -97,511 +104,656 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Conversion Macros<div class="ingroups"><a class="el" href="a00534.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00402.html">Output Voltage Feedback</a></div></div>  </div>
+<div class="title">LC Display Interface Declarations<div class="ingroups"><a class="el" href="a00522.html">Hardware Abstraction Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Conversion macros for user-declarations of output voltage feedback parameters.  
+<p>LC display SPI interface GPIO declarations.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Conversion Macros:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for LC Display Interface Declarations:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00404.svg" width="362" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00404.svg" width="344" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:ga78e303e825ebbb38c8f61ddcb0a0d718"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga78e303e825ebbb38c8f61ddcb0a0d718">BUCK_VOUT_FEEDBACK_GAIN</a>&#160;&#160;&#160;(float)((<a class="el" href="a00403.html#ga4a6f31de7c3a357b3747d872b39a33e1">BUCK_VOUT_DIV_R2</a>) / (<a class="el" href="a00403.html#gaf247595693964a16cab1ca49e91d0825">BUCK_VOUT_DIV_R1</a> + <a class="el" href="a00403.html#ga4a6f31de7c3a357b3747d872b39a33e1">BUCK_VOUT_DIV_R2</a>))</td></tr>
-<tr class="memdesc:ga78e303e825ebbb38c8f61ddcb0a0d718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of output voltage feedback parameters.  <a href="a00404.html#ga78e303e825ebbb38c8f61ddcb0a0d718">More...</a><br /></td></tr>
-<tr class="separator:ga78e303e825ebbb38c8f61ddcb0a0d718"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga42d8626bfa1f343d89033f82963fd2b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga42d8626bfa1f343d89033f82963fd2b5">BUCK_VOUT_REF</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga28660f68fd69aa1cf4c352f88634060c">BUCK_VOUT_NOMINAL</a> * <a class="el" href="a00404.html#ga78e303e825ebbb38c8f61ddcb0a0d718">BUCK_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:ga42d8626bfa1f343d89033f82963fd2b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the output voltage reference given above in [V].  <a href="a00404.html#ga42d8626bfa1f343d89033f82963fd2b5">More...</a><br /></td></tr>
-<tr class="separator:ga42d8626bfa1f343d89033f82963fd2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2f6b12d2606761c0b8a9bfdb446d2543"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga2f6b12d2606761c0b8a9bfdb446d2543">BUCK_VOUT_NOM</a>&#160;&#160;&#160;<a class="el" href="a00404.html#ga42d8626bfa1f343d89033f82963fd2b5">BUCK_VOUT_REF</a></td></tr>
-<tr class="memdesc:ga2f6b12d2606761c0b8a9bfdb446d2543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias macro of the integer number equivalent of the nominal output voltage given above in [V].  <a href="a00404.html#ga2f6b12d2606761c0b8a9bfdb446d2543">More...</a><br /></td></tr>
-<tr class="separator:ga2f6b12d2606761c0b8a9bfdb446d2543"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9d5cfb44a2773e8854f007c13c65cfca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga9d5cfb44a2773e8854f007c13c65cfca">BUCK_VOUT_DEV_TRIP</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#gaf67774fbccd9ee5ac60e5aed4cc7c5b4">BUCK_VOUT_TOLERANCE_MAX</a> * <a class="el" href="a00404.html#ga78e303e825ebbb38c8f61ddcb0a0d718">BUCK_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:ga9d5cfb44a2773e8854f007c13c65cfca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which will lead to a converter shut down when exceeded.  <a href="a00404.html#ga9d5cfb44a2773e8854f007c13c65cfca">More...</a><br /></td></tr>
-<tr class="separator:ga9d5cfb44a2773e8854f007c13c65cfca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga39f60f293aceb0c208718d11a7637487"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga39f60f293aceb0c208718d11a7637487">BUCK_VOUT_DEV_RELEASE</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga31ccbf02b1090ae456771ab15c6b632b">BUCK_VOUT_TOLERANCE_MIN</a> * <a class="el" href="a00404.html#ga78e303e825ebbb38c8f61ddcb0a0d718">BUCK_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:ga39f60f293aceb0c208718d11a7637487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which needs to be underrun before a shut-down converter can recover.  <a href="a00404.html#ga39f60f293aceb0c208718d11a7637487">More...</a><br /></td></tr>
-<tr class="separator:ga39f60f293aceb0c208718d11a7637487"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga403bc23d113ac96de0317aed5b8ae747"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga403bc23d113ac96de0317aed5b8ae747">BUCK_VOUT_OFFSET</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga48f54a116cb069cff526d482aa83fafd">BUCK_VOUT_FEEDBACK_OFFSET</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:ga403bc23d113ac96de0317aed5b8ae747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the physical, static signal offset of this feedback channel.  <a href="a00404.html#ga403bc23d113ac96de0317aed5b8ae747">More...</a><br /></td></tr>
-<tr class="separator:ga403bc23d113ac96de0317aed5b8ae747"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga62220308b2f2b302fbf9ef2cf0eefad4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga62220308b2f2b302fbf9ef2cf0eefad4">BUCK_VOUT_ADC_TRGDLY</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#gae49c146c9868c9b950a541ebb1c3fcb6">BUCK_VOUT_ADC_TRG_DELAY</a> / <a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga62220308b2f2b302fbf9ef2cf0eefad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the signal chain time delay between internal PWM timebase and effective switching edge of the leading FET.  <a href="a00404.html#ga62220308b2f2b302fbf9ef2cf0eefad4">More...</a><br /></td></tr>
-<tr class="separator:ga62220308b2f2b302fbf9ef2cf0eefad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6f46102d2cb00d541e0cf6b3d7c3d46b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga6f46102d2cb00d541e0cf6b3d7c3d46b">BUCK_VOUT_NORM_INV_G</a>&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00404.html#ga78e303e825ebbb38c8f61ddcb0a0d718">BUCK_VOUT_FEEDBACK_GAIN</a>)</td></tr>
-<tr class="memdesc:ga6f46102d2cb00d541e0cf6b3d7c3d46b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverted feedback gain required for value normalization.  <a href="a00404.html#ga6f46102d2cb00d541e0cf6b3d7c3d46b">More...</a><br /></td></tr>
-<tr class="separator:ga6f46102d2cb00d541e0cf6b3d7c3d46b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2fb593feff154f722e2e42554df78218"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga2fb593feff154f722e2e42554df78218">BUCK_VOUT_NORM_SCALER</a>&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00404.html#ga6f46102d2cb00d541e0cf6b3d7c3d46b">BUCK_VOUT_NORM_INV_G</a>)) + 1)</td></tr>
-<tr class="memdesc:ga2fb593feff154f722e2e42554df78218"><td class="mdescLeft">&#160;</td><td class="mdescRight">VOUT normalization <br  />
-  <a href="a00404.html#ga2fb593feff154f722e2e42554df78218">More...</a><br /></td></tr>
-<tr class="separator:ga2fb593feff154f722e2e42554df78218"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3c2ee8d6fd16a7f81797411913942854"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga3c2ee8d6fd16a7f81797411913942854">BUCK_VOUT_NORM_FACTOR</a>&#160;&#160;&#160;(int16_t)((<a class="el" href="a00404.html#ga6f46102d2cb00d541e0cf6b3d7c3d46b">BUCK_VOUT_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00404.html#ga2fb593feff154f722e2e42554df78218">BUCK_VOUT_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td></tr>
-<tr class="memdesc:ga3c2ee8d6fd16a7f81797411913942854"><td class="mdescLeft">&#160;</td><td class="mdescRight">VOUT normalization factor scaled in Q15.  <a href="a00404.html#ga3c2ee8d6fd16a7f81797411913942854">More...</a><br /></td></tr>
-<tr class="separator:ga3c2ee8d6fd16a7f81797411913942854"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8596a14d59666e7db30e52a5a3a39c8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga8596a14d59666e7db30e52a5a3a39c8f">BUCK_VOUT_RANGE_MAX</a>&#160;&#160;&#160;(float)(<a class="el" href="a00380.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a> * <a class="el" href="a00404.html#ga6f46102d2cb00d541e0cf6b3d7c3d46b">BUCK_VOUT_NORM_INV_G</a>)</td></tr>
-<tr class="memdesc:ga8596a14d59666e7db30e52a5a3a39c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]].  <a href="a00404.html#ga8596a14d59666e7db30e52a5a3a39c8f">More...</a><br /></td></tr>
-<tr class="separator:ga8596a14d59666e7db30e52a5a3a39c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga79b327f868575255cf09583cf1970ea1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a>&#160;&#160;&#160;(float)((<a class="el" href="a00403.html#ga2a1cf9da772e7fcb7803898deb0ebe86">BOOST_VOUT_DIV_R2</a>) / (<a class="el" href="a00403.html#gae629607ddac2fc054db8ca364ec1a9de">BOOST_VOUT_DIV_R1</a> + <a class="el" href="a00403.html#ga2a1cf9da772e7fcb7803898deb0ebe86">BOOST_VOUT_DIV_R2</a>))</td></tr>
-<tr class="memdesc:ga79b327f868575255cf09583cf1970ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of output voltage feedback parameters.  <a href="a00404.html#ga79b327f868575255cf09583cf1970ea1">More...</a><br /></td></tr>
-<tr class="separator:ga79b327f868575255cf09583cf1970ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacdf6d826f314362d3aef5c3b31d40a80"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gacdf6d826f314362d3aef5c3b31d40a80">BOOST_VOUT_REF</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga56b83d27441bfa88e19670b4dedf2de8">BOOST_VOUT_NOMINAL</a> * <a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gacdf6d826f314362d3aef5c3b31d40a80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the output voltage reference given above in [V].  <a href="a00404.html#gacdf6d826f314362d3aef5c3b31d40a80">More...</a><br /></td></tr>
-<tr class="separator:gacdf6d826f314362d3aef5c3b31d40a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae263e35d15b959f9bb7f4c970ffbbb06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gae263e35d15b959f9bb7f4c970ffbbb06">BOOST_VOUT_NOM</a>&#160;&#160;&#160;<a class="el" href="a00404.html#gacdf6d826f314362d3aef5c3b31d40a80">BOOST_VOUT_REF</a></td></tr>
-<tr class="memdesc:gae263e35d15b959f9bb7f4c970ffbbb06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias macro of the integer number equivalent of the nominal output voltage given above in [V].  <a href="a00404.html#gae263e35d15b959f9bb7f4c970ffbbb06">More...</a><br /></td></tr>
-<tr class="separator:gae263e35d15b959f9bb7f4c970ffbbb06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3623bcffba8c593a603c6103e3f64297"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga3623bcffba8c593a603c6103e3f64297">BOOST_VOUT_DEV_TRIP</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga7bd7a9ba2474596e89b528ed8a473ef0">BOOST_VOUT_TOLERANCE_MAX</a> * <a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:ga3623bcffba8c593a603c6103e3f64297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which will lead to a converter shut down when exceeded.  <a href="a00404.html#ga3623bcffba8c593a603c6103e3f64297">More...</a><br /></td></tr>
-<tr class="separator:ga3623bcffba8c593a603c6103e3f64297"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac82c2e723104acfda07731c063ba3a0c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gac82c2e723104acfda07731c063ba3a0c">BOOST_VOUT_DEV_RELEASE</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga144893b4f72cc59c6b0ff16935025a3b">BOOST_VOUT_TOLERANCE_MIN</a> * <a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gac82c2e723104acfda07731c063ba3a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which needs to be underrun before a shut-down converter can recover.  <a href="a00404.html#gac82c2e723104acfda07731c063ba3a0c">More...</a><br /></td></tr>
-<tr class="separator:gac82c2e723104acfda07731c063ba3a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac4697105411532711d7f40611e141f0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gac4697105411532711d7f40611e141f0b">BOOST_VOUT_OFFSET</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#gae78f23318f657874fa3169b6c7659908">BOOST_VOUT_FEEDBACK_OFFSET</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gac4697105411532711d7f40611e141f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the physical, static signal offset of this feedback channel.  <a href="a00404.html#gac4697105411532711d7f40611e141f0b">More...</a><br /></td></tr>
-<tr class="separator:gac4697105411532711d7f40611e141f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacd456414b9bbddcdde3f08c0efbd903d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gacd456414b9bbddcdde3f08c0efbd903d">BOOST_VOUT_ADC_TRGDLY</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga930ff93bcf4b17bda050d16c61ee496e">BOOST_VOUT_ADC_TRG_DELAY</a> / <a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:gacd456414b9bbddcdde3f08c0efbd903d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the signal chain time delay between internal PWM timebase and effective switching edge of the leading FET.  <a href="a00404.html#gacd456414b9bbddcdde3f08c0efbd903d">More...</a><br /></td></tr>
-<tr class="separator:gacd456414b9bbddcdde3f08c0efbd903d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae5901b3c629143c11577539079d473f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gae5901b3c629143c11577539079d473f7">BOOST_VOUT_VFWD_DROP</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#gaece94d159a42f7cf2300ac46103f482f">BOOST_VOUT_VFWD_DROP_MAX</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gae5901b3c629143c11577539079d473f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the maximum forward voltage drop across teh rectifier diode.  <a href="a00404.html#gae5901b3c629143c11577539079d473f7">More...</a><br /></td></tr>
-<tr class="separator:gae5901b3c629143c11577539079d473f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga04c4a2562cf5be6641eb0408fc66bfcc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a>&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a>)</td></tr>
-<tr class="memdesc:ga04c4a2562cf5be6641eb0408fc66bfcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverted feedback gain required for value normalization.  <a href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">More...</a><br /></td></tr>
-<tr class="separator:ga04c4a2562cf5be6641eb0408fc66bfcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1bdaef3c6d009b06488ff96c79c0da0d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga1bdaef3c6d009b06488ff96c79c0da0d">BOOST_VOUT_NORM_SCALER</a>&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a>)) + 1)</td></tr>
-<tr class="memdesc:ga1bdaef3c6d009b06488ff96c79c0da0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">VOUT normalization <br  />
-  <a href="a00404.html#ga1bdaef3c6d009b06488ff96c79c0da0d">More...</a><br /></td></tr>
-<tr class="separator:ga1bdaef3c6d009b06488ff96c79c0da0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae7710dcb41a428ae2c56b4948227d320"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gae7710dcb41a428ae2c56b4948227d320">BOOST_VOUT_NORM_FACTOR</a>&#160;&#160;&#160;(int16_t)((<a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00404.html#ga1bdaef3c6d009b06488ff96c79c0da0d">BOOST_VOUT_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td></tr>
-<tr class="memdesc:gae7710dcb41a428ae2c56b4948227d320"><td class="mdescLeft">&#160;</td><td class="mdescRight">VOUT normalization factor scaled in Q15.  <a href="a00404.html#gae7710dcb41a428ae2c56b4948227d320">More...</a><br /></td></tr>
-<tr class="separator:gae7710dcb41a428ae2c56b4948227d320"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0bb83c6df66e6b7193260bb06a5fcda8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga0bb83c6df66e6b7193260bb06a5fcda8">BOOST_VOUT_RANGE_MAX</a>&#160;&#160;&#160;(float)(<a class="el" href="a00380.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a> * <a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a>)</td></tr>
-<tr class="memdesc:ga0bb83c6df66e6b7193260bb06a5fcda8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]].  <a href="a00404.html#ga0bb83c6df66e6b7193260bb06a5fcda8">More...</a><br /></td></tr>
-<tr class="separator:ga0bb83c6df66e6b7193260bb06a5fcda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa9402f02b36f1fec44e4e87fafdb817b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gaa9402f02b36f1fec44e4e87fafdb817b">LCD_SCL_SetHigh</a>()&#160;&#160;&#160;_LATC5 = 1</td></tr>
+<tr class="memdesc:gaa9402f02b36f1fec44e4e87fafdb817b"><td class="mdescLeft">&#160;</td><td class="mdescRight">LC Display Interface Declarations.  <a href="a00404.html#gaa9402f02b36f1fec44e4e87fafdb817b">More...</a><br /></td></tr>
+<tr class="separator:gaa9402f02b36f1fec44e4e87fafdb817b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafbfedfcd2988a1fef6709ad56f7af61f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gafbfedfcd2988a1fef6709ad56f7af61f">LCD_SCL_SetLow</a>()&#160;&#160;&#160;_LATC5 = 0</td></tr>
+<tr class="separator:gafbfedfcd2988a1fef6709ad56f7af61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3136542f8e65397970c5de77865fb116"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga3136542f8e65397970c5de77865fb116">LCD_SCL_Toggle</a>()&#160;&#160;&#160;_LATC5 ^= 1</td></tr>
+<tr class="separator:ga3136542f8e65397970c5de77865fb116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3a27f82b8cb41529fc9651bf5159792c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga3a27f82b8cb41529fc9651bf5159792c">LCD_SCL_GetValue</a>()&#160;&#160;&#160;_RC5</td></tr>
+<tr class="separator:ga3a27f82b8cb41529fc9651bf5159792c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9acae30823c664b7b3ff4f708f67a11f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga9acae30823c664b7b3ff4f708f67a11f">LCD_SCL_SetDigitalInput</a>()&#160;&#160;&#160;_TRISC5 = 1</td></tr>
+<tr class="separator:ga9acae30823c664b7b3ff4f708f67a11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga69ff4891bcb2880e50cd2c9171723912"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga69ff4891bcb2880e50cd2c9171723912">LCD_SCL_SetDigitalOutput</a>()&#160;&#160;&#160;_TRISC5 = 0</td></tr>
+<tr class="separator:ga69ff4891bcb2880e50cd2c9171723912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73d5022528fa731ea7ef27312472209a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga73d5022528fa731ea7ef27312472209a">LCD_SDI_SetHigh</a>()&#160;&#160;&#160;_LATC4 = 1</td></tr>
+<tr class="separator:ga73d5022528fa731ea7ef27312472209a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga03f57a80c82216fef78a18b92cf09a68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga03f57a80c82216fef78a18b92cf09a68">LCD_SDI_SetLow</a>()&#160;&#160;&#160;_LATC4 = 0</td></tr>
+<tr class="separator:ga03f57a80c82216fef78a18b92cf09a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafdf7312085e344f8588e0dd77ceaffc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gafdf7312085e344f8588e0dd77ceaffc0">LCD_SDI_Toggle</a>()&#160;&#160;&#160;_LATC4 ^= 1</td></tr>
+<tr class="separator:gafdf7312085e344f8588e0dd77ceaffc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5adb907f3466db0ff4ea6dc1ef9a23e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga5adb907f3466db0ff4ea6dc1ef9a23e2">LCD_SDI_GetValue</a>()&#160;&#160;&#160;_RC4</td></tr>
+<tr class="separator:ga5adb907f3466db0ff4ea6dc1ef9a23e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga397e38fd8ccd3d7376f0bd767e416002"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga397e38fd8ccd3d7376f0bd767e416002">LCD_SDI_SetDigitalInput</a>()&#160;&#160;&#160;_TRISC4 = 1</td></tr>
+<tr class="separator:ga397e38fd8ccd3d7376f0bd767e416002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga406187bfac1f96601580b8dc14afa73d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga406187bfac1f96601580b8dc14afa73d">LCD_SDI_SetDigitalOutput</a>()&#160;&#160;&#160;_TRISC4 = 0</td></tr>
+<tr class="separator:ga406187bfac1f96601580b8dc14afa73d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaac69a266bd88f02fbe10059aee1566f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gaac69a266bd88f02fbe10059aee1566f6">LCD_CS_SetHigh</a>()&#160;&#160;&#160;_LATD8 = 1</td></tr>
+<tr class="separator:gaac69a266bd88f02fbe10059aee1566f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4f0f052518d81d65830b216d68a8300"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gab4f0f052518d81d65830b216d68a8300">LCD_CS_SetLow</a>()&#160;&#160;&#160;_LATD8 = 0</td></tr>
+<tr class="separator:gab4f0f052518d81d65830b216d68a8300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70ed509b8e57e8f589db3a20d71cc1bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga70ed509b8e57e8f589db3a20d71cc1bd">LCD_CS_Toggle</a>()&#160;&#160;&#160;_LATD8 ^= 1</td></tr>
+<tr class="separator:ga70ed509b8e57e8f589db3a20d71cc1bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9202660e08ee2488e5e0faec08ae6b14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga9202660e08ee2488e5e0faec08ae6b14">LCD_CS_GetValue</a>()&#160;&#160;&#160;_RD8</td></tr>
+<tr class="separator:ga9202660e08ee2488e5e0faec08ae6b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae49482de9c08f4631e50b39fb9eca140"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gae49482de9c08f4631e50b39fb9eca140">LCD_CS_SetDigitalInput</a>()&#160;&#160;&#160;_TRISD8 = 1</td></tr>
+<tr class="separator:gae49482de9c08f4631e50b39fb9eca140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5e40a0178f0e23dc0d20669561dd7099"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga5e40a0178f0e23dc0d20669561dd7099">LCD_CS_SetDigitalOutput</a>()&#160;&#160;&#160;_TRISD8 = 0</td></tr>
+<tr class="separator:ga5e40a0178f0e23dc0d20669561dd7099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7d336117627d35e9323d6ec7acc344f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga7d336117627d35e9323d6ec7acc344f8">LCD_RST_SetHigh</a>()&#160;&#160;&#160;_LATC8 = 1</td></tr>
+<tr class="separator:ga7d336117627d35e9323d6ec7acc344f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga76f8f56762d39688cc7e5d1883642433"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga76f8f56762d39688cc7e5d1883642433">LCD_RST_SetLow</a>()&#160;&#160;&#160;_LATC8 = 0</td></tr>
+<tr class="separator:ga76f8f56762d39688cc7e5d1883642433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga749fb50183cd9ac6cefc595159b9e925"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga749fb50183cd9ac6cefc595159b9e925">LCD_RST_Toggle</a>()&#160;&#160;&#160;_LATC8 ^= 1</td></tr>
+<tr class="separator:ga749fb50183cd9ac6cefc595159b9e925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac41ef83918bece90b2c35a3b33a51409"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gac41ef83918bece90b2c35a3b33a51409">LCD_RST_GetValue</a>()&#160;&#160;&#160;_RC8</td></tr>
+<tr class="separator:gac41ef83918bece90b2c35a3b33a51409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72cedc14ba8396a4672e467983b80604"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga72cedc14ba8396a4672e467983b80604">LCD_RST_SetDigitalInput</a>()&#160;&#160;&#160;_TRISC8 = 1</td></tr>
+<tr class="separator:ga72cedc14ba8396a4672e467983b80604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0af443d764e5faaa75d4cd2e8b703c49"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga0af443d764e5faaa75d4cd2e8b703c49">LCD_RST_SetDigitalOutput</a>()&#160;&#160;&#160;_TRISC8 = 0</td></tr>
+<tr class="separator:ga0af443d764e5faaa75d4cd2e8b703c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga19c41c1494a15bd66a0af8a1a8c864dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga19c41c1494a15bd66a0af8a1a8c864dd">LCD_RS_SetHigh</a>()&#160;&#160;&#160;_LATC9 = 1</td></tr>
+<tr class="separator:ga19c41c1494a15bd66a0af8a1a8c864dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e073e0e85a0e0abdc1de7d883274daa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga4e073e0e85a0e0abdc1de7d883274daa">LCD_RS_SetLow</a>()&#160;&#160;&#160;_LATC9 = 0</td></tr>
+<tr class="separator:ga4e073e0e85a0e0abdc1de7d883274daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf66e9d17c45a3dfa410b0ba0d5ec0309"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gaf66e9d17c45a3dfa410b0ba0d5ec0309">LCD_RS_Toggle</a>()&#160;&#160;&#160;_LATC9 ^= 1</td></tr>
+<tr class="separator:gaf66e9d17c45a3dfa410b0ba0d5ec0309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf58146131941d1c6ef9d0a523fafa3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gaaf58146131941d1c6ef9d0a523fafa3f">LCD_RS_GetValue</a>()&#160;&#160;&#160;_RC9</td></tr>
+<tr class="separator:gaaf58146131941d1c6ef9d0a523fafa3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1a34566aa213eecb785f2e1a1781e5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gae1a34566aa213eecb785f2e1a1781e5c">LCD_RS_SetDigitalInput</a>()&#160;&#160;&#160;_TRISC9 = 1</td></tr>
+<tr class="separator:gae1a34566aa213eecb785f2e1a1781e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga475da773b8a8cee0e3a2d6ff393dc1db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga475da773b8a8cee0e3a2d6ff393dc1db">LCD_RS_SetDigitalOutput</a>()&#160;&#160;&#160;_TRISC9 = 0</td></tr>
+<tr class="separator:ga475da773b8a8cee0e3a2d6ff393dc1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Conversion macros for user-declarations of output voltage feedback parameters. </p>
+<p>LC display SPI interface GPIO declarations. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gacd456414b9bbddcdde3f08c0efbd903d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacd456414b9bbddcdde3f08c0efbd903d">&#9670;&nbsp;</a></span>BOOST_VOUT_ADC_TRGDLY</h2>
+<a id="ga9202660e08ee2488e5e0faec08ae6b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9202660e08ee2488e5e0faec08ae6b14">&#9670;&nbsp;</a></span>LCD_CS_GetValue</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_ADC_TRGDLY&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga930ff93bcf4b17bda050d16c61ee496e">BOOST_VOUT_ADC_TRG_DELAY</a> / <a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">#define LCD_CS_GetValue</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_RD8</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro calculating the integer number equivalent of the signal chain time delay between internal PWM timebase and effective switching edge of the leading FET. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01141">1141</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01568">1568</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gac82c2e723104acfda07731c063ba3a0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac82c2e723104acfda07731c063ba3a0c">&#9670;&nbsp;</a></span>BOOST_VOUT_DEV_RELEASE</h2>
+<a id="gae49482de9c08f4631e50b39fb9eca140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae49482de9c08f4631e50b39fb9eca140">&#9670;&nbsp;</a></span>LCD_CS_SetDigitalInput</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_DEV_RELEASE&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga144893b4f72cc59c6b0ff16935025a3b">BOOST_VOUT_TOLERANCE_MIN</a> * <a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define LCD_CS_SetDigitalInput</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_TRISD8 = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which needs to be underrun before a shut-down converter can recover. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01139">1139</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01569">1569</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga3623bcffba8c593a603c6103e3f64297"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3623bcffba8c593a603c6103e3f64297">&#9670;&nbsp;</a></span>BOOST_VOUT_DEV_TRIP</h2>
+<a id="ga5e40a0178f0e23dc0d20669561dd7099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5e40a0178f0e23dc0d20669561dd7099">&#9670;&nbsp;</a></span>LCD_CS_SetDigitalOutput</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_DEV_TRIP&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga7bd7a9ba2474596e89b528ed8a473ef0">BOOST_VOUT_TOLERANCE_MAX</a> * <a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define LCD_CS_SetDigitalOutput</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_TRISD8 = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which will lead to a converter shut down when exceeded. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01138">1138</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01570">1570</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga79b327f868575255cf09583cf1970ea1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga79b327f868575255cf09583cf1970ea1">&#9670;&nbsp;</a></span>BOOST_VOUT_FEEDBACK_GAIN</h2>
+<a id="gaac69a266bd88f02fbe10059aee1566f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaac69a266bd88f02fbe10059aee1566f6">&#9670;&nbsp;</a></span>LCD_CS_SetHigh</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_FEEDBACK_GAIN&#160;&#160;&#160;(float)((<a class="el" href="a00403.html#ga2a1cf9da772e7fcb7803898deb0ebe86">BOOST_VOUT_DIV_R2</a>) / (<a class="el" href="a00403.html#gae629607ddac2fc054db8ca364ec1a9de">BOOST_VOUT_DIV_R1</a> + <a class="el" href="a00403.html#ga2a1cf9da772e7fcb7803898deb0ebe86">BOOST_VOUT_DIV_R2</a>))</td>
+          <td class="memname">#define LCD_CS_SetHigh</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATD8 = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Conversion macros of output voltage feedback parameters. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01134">1134</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01565">1565</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gae263e35d15b959f9bb7f4c970ffbbb06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae263e35d15b959f9bb7f4c970ffbbb06">&#9670;&nbsp;</a></span>BOOST_VOUT_NOM</h2>
+<a id="gab4f0f052518d81d65830b216d68a8300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab4f0f052518d81d65830b216d68a8300">&#9670;&nbsp;</a></span>LCD_CS_SetLow</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_NOM&#160;&#160;&#160;<a class="el" href="a00404.html#gacdf6d826f314362d3aef5c3b31d40a80">BOOST_VOUT_REF</a></td>
+          <td class="memname">#define LCD_CS_SetLow</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATD8 = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Alias macro of the integer number equivalent of the nominal output voltage given above in [V]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01137">1137</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01566">1566</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gae7710dcb41a428ae2c56b4948227d320"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae7710dcb41a428ae2c56b4948227d320">&#9670;&nbsp;</a></span>BOOST_VOUT_NORM_FACTOR</h2>
+<a id="ga70ed509b8e57e8f589db3a20d71cc1bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga70ed509b8e57e8f589db3a20d71cc1bd">&#9670;&nbsp;</a></span>LCD_CS_Toggle</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_NORM_FACTOR&#160;&#160;&#160;(int16_t)((<a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00404.html#ga1bdaef3c6d009b06488ff96c79c0da0d">BOOST_VOUT_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td>
+          <td class="memname">#define LCD_CS_Toggle</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATD8 ^= 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>VOUT normalization factor scaled in Q15. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01146">1146</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01567">1567</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga04c4a2562cf5be6641eb0408fc66bfcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga04c4a2562cf5be6641eb0408fc66bfcc">&#9670;&nbsp;</a></span>BOOST_VOUT_NORM_INV_G</h2>
+<a id="gaaf58146131941d1c6ef9d0a523fafa3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaf58146131941d1c6ef9d0a523fafa3f">&#9670;&nbsp;</a></span>LCD_RS_GetValue</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_NORM_INV_G&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a>)</td>
+          <td class="memname">#define LCD_RS_GetValue</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_RC9</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Inverted feedback gain required for value normalization. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01144">1144</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01582">1582</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga1bdaef3c6d009b06488ff96c79c0da0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1bdaef3c6d009b06488ff96c79c0da0d">&#9670;&nbsp;</a></span>BOOST_VOUT_NORM_SCALER</h2>
+<a id="gae1a34566aa213eecb785f2e1a1781e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae1a34566aa213eecb785f2e1a1781e5c">&#9670;&nbsp;</a></span>LCD_RS_SetDigitalInput</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_NORM_SCALER&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a>)) + 1)</td>
+          <td class="memname">#define LCD_RS_SetDigitalInput</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_TRISC9 = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>VOUT normalization <br  />
- </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01145">1145</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01583">1583</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gac4697105411532711d7f40611e141f0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac4697105411532711d7f40611e141f0b">&#9670;&nbsp;</a></span>BOOST_VOUT_OFFSET</h2>
+<a id="ga475da773b8a8cee0e3a2d6ff393dc1db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga475da773b8a8cee0e3a2d6ff393dc1db">&#9670;&nbsp;</a></span>LCD_RS_SetDigitalOutput</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_OFFSET&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#gae78f23318f657874fa3169b6c7659908">BOOST_VOUT_FEEDBACK_OFFSET</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define LCD_RS_SetDigitalOutput</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_TRISC9 = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro calculating the integer number equivalent of the physical, static signal offset of this feedback channel. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01140">1140</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01584">1584</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga0bb83c6df66e6b7193260bb06a5fcda8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0bb83c6df66e6b7193260bb06a5fcda8">&#9670;&nbsp;</a></span>BOOST_VOUT_RANGE_MAX</h2>
+<a id="ga19c41c1494a15bd66a0af8a1a8c864dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga19c41c1494a15bd66a0af8a1a8c864dd">&#9670;&nbsp;</a></span>LCD_RS_SetHigh</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_RANGE_MAX&#160;&#160;&#160;(float)(<a class="el" href="a00380.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a> * <a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a>)</td>
+          <td class="memname">#define LCD_RS_SetHigh</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATC9 = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01148">1148</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01579">1579</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gacdf6d826f314362d3aef5c3b31d40a80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacdf6d826f314362d3aef5c3b31d40a80">&#9670;&nbsp;</a></span>BOOST_VOUT_REF</h2>
+<a id="ga4e073e0e85a0e0abdc1de7d883274daa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e073e0e85a0e0abdc1de7d883274daa">&#9670;&nbsp;</a></span>LCD_RS_SetLow</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_REF&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga56b83d27441bfa88e19670b4dedf2de8">BOOST_VOUT_NOMINAL</a> * <a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define LCD_RS_SetLow</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATC9 = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro calculating the integer number equivalent of the output voltage reference given above in [V]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01136">1136</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01580">1580</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gae5901b3c629143c11577539079d473f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae5901b3c629143c11577539079d473f7">&#9670;&nbsp;</a></span>BOOST_VOUT_VFWD_DROP</h2>
+<a id="gaf66e9d17c45a3dfa410b0ba0d5ec0309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf66e9d17c45a3dfa410b0ba0d5ec0309">&#9670;&nbsp;</a></span>LCD_RS_Toggle</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_VFWD_DROP&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#gaece94d159a42f7cf2300ac46103f482f">BOOST_VOUT_VFWD_DROP_MAX</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define LCD_RS_Toggle</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATC9 ^= 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro calculating the integer number equivalent of the maximum forward voltage drop across teh rectifier diode. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01142">1142</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01581">1581</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga62220308b2f2b302fbf9ef2cf0eefad4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga62220308b2f2b302fbf9ef2cf0eefad4">&#9670;&nbsp;</a></span>BUCK_VOUT_ADC_TRGDLY</h2>
+<a id="gac41ef83918bece90b2c35a3b33a51409"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac41ef83918bece90b2c35a3b33a51409">&#9670;&nbsp;</a></span>LCD_RST_GetValue</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_ADC_TRGDLY&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#gae49c146c9868c9b950a541ebb1c3fcb6">BUCK_VOUT_ADC_TRG_DELAY</a> / <a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">#define LCD_RST_GetValue</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_RC8</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro calculating the integer number equivalent of the signal chain time delay between internal PWM timebase and effective switching edge of the leading FET. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00513">513</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01575">1575</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga39f60f293aceb0c208718d11a7637487"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga39f60f293aceb0c208718d11a7637487">&#9670;&nbsp;</a></span>BUCK_VOUT_DEV_RELEASE</h2>
+<a id="ga72cedc14ba8396a4672e467983b80604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga72cedc14ba8396a4672e467983b80604">&#9670;&nbsp;</a></span>LCD_RST_SetDigitalInput</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_DEV_RELEASE&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga31ccbf02b1090ae456771ab15c6b632b">BUCK_VOUT_TOLERANCE_MIN</a> * <a class="el" href="a00404.html#ga78e303e825ebbb38c8f61ddcb0a0d718">BUCK_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define LCD_RST_SetDigitalInput</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_TRISC8 = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which needs to be underrun before a shut-down converter can recover. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00511">511</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01576">1576</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga9d5cfb44a2773e8854f007c13c65cfca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9d5cfb44a2773e8854f007c13c65cfca">&#9670;&nbsp;</a></span>BUCK_VOUT_DEV_TRIP</h2>
+<a id="ga0af443d764e5faaa75d4cd2e8b703c49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0af443d764e5faaa75d4cd2e8b703c49">&#9670;&nbsp;</a></span>LCD_RST_SetDigitalOutput</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_DEV_TRIP&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#gaf67774fbccd9ee5ac60e5aed4cc7c5b4">BUCK_VOUT_TOLERANCE_MAX</a> * <a class="el" href="a00404.html#ga78e303e825ebbb38c8f61ddcb0a0d718">BUCK_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define LCD_RST_SetDigitalOutput</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_TRISC8 = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which will lead to a converter shut down when exceeded. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00510">510</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01577">1577</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga78e303e825ebbb38c8f61ddcb0a0d718"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga78e303e825ebbb38c8f61ddcb0a0d718">&#9670;&nbsp;</a></span>BUCK_VOUT_FEEDBACK_GAIN</h2>
+<a id="ga7d336117627d35e9323d6ec7acc344f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7d336117627d35e9323d6ec7acc344f8">&#9670;&nbsp;</a></span>LCD_RST_SetHigh</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_FEEDBACK_GAIN&#160;&#160;&#160;(float)((<a class="el" href="a00403.html#ga4a6f31de7c3a357b3747d872b39a33e1">BUCK_VOUT_DIV_R2</a>) / (<a class="el" href="a00403.html#gaf247595693964a16cab1ca49e91d0825">BUCK_VOUT_DIV_R1</a> + <a class="el" href="a00403.html#ga4a6f31de7c3a357b3747d872b39a33e1">BUCK_VOUT_DIV_R2</a>))</td>
+          <td class="memname">#define LCD_RST_SetHigh</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATC8 = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Conversion macros of output voltage feedback parameters. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00506">506</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01572">1572</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga2f6b12d2606761c0b8a9bfdb446d2543"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2f6b12d2606761c0b8a9bfdb446d2543">&#9670;&nbsp;</a></span>BUCK_VOUT_NOM</h2>
+<a id="ga76f8f56762d39688cc7e5d1883642433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga76f8f56762d39688cc7e5d1883642433">&#9670;&nbsp;</a></span>LCD_RST_SetLow</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_NOM&#160;&#160;&#160;<a class="el" href="a00404.html#ga42d8626bfa1f343d89033f82963fd2b5">BUCK_VOUT_REF</a></td>
+          <td class="memname">#define LCD_RST_SetLow</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATC8 = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Alias macro of the integer number equivalent of the nominal output voltage given above in [V]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00509">509</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01573">1573</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga3c2ee8d6fd16a7f81797411913942854"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3c2ee8d6fd16a7f81797411913942854">&#9670;&nbsp;</a></span>BUCK_VOUT_NORM_FACTOR</h2>
+<a id="ga749fb50183cd9ac6cefc595159b9e925"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga749fb50183cd9ac6cefc595159b9e925">&#9670;&nbsp;</a></span>LCD_RST_Toggle</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_NORM_FACTOR&#160;&#160;&#160;(int16_t)((<a class="el" href="a00404.html#ga6f46102d2cb00d541e0cf6b3d7c3d46b">BUCK_VOUT_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00404.html#ga2fb593feff154f722e2e42554df78218">BUCK_VOUT_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td>
+          <td class="memname">#define LCD_RST_Toggle</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATC8 ^= 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>VOUT normalization factor scaled in Q15. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00517">517</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01574">1574</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga6f46102d2cb00d541e0cf6b3d7c3d46b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6f46102d2cb00d541e0cf6b3d7c3d46b">&#9670;&nbsp;</a></span>BUCK_VOUT_NORM_INV_G</h2>
+<a id="ga3a27f82b8cb41529fc9651bf5159792c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3a27f82b8cb41529fc9651bf5159792c">&#9670;&nbsp;</a></span>LCD_SCL_GetValue</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_NORM_INV_G&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00404.html#ga78e303e825ebbb38c8f61ddcb0a0d718">BUCK_VOUT_FEEDBACK_GAIN</a>)</td>
+          <td class="memname">#define LCD_SCL_GetValue</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_RC5</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Inverted feedback gain required for value normalization. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00515">515</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01554">1554</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga2fb593feff154f722e2e42554df78218"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2fb593feff154f722e2e42554df78218">&#9670;&nbsp;</a></span>BUCK_VOUT_NORM_SCALER</h2>
+<a id="ga9acae30823c664b7b3ff4f708f67a11f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9acae30823c664b7b3ff4f708f67a11f">&#9670;&nbsp;</a></span>LCD_SCL_SetDigitalInput</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_NORM_SCALER&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00404.html#ga6f46102d2cb00d541e0cf6b3d7c3d46b">BUCK_VOUT_NORM_INV_G</a>)) + 1)</td>
+          <td class="memname">#define LCD_SCL_SetDigitalInput</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_TRISC5 = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>VOUT normalization <br  />
- </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00516">516</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01555">1555</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga403bc23d113ac96de0317aed5b8ae747"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga403bc23d113ac96de0317aed5b8ae747">&#9670;&nbsp;</a></span>BUCK_VOUT_OFFSET</h2>
+<a id="ga69ff4891bcb2880e50cd2c9171723912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga69ff4891bcb2880e50cd2c9171723912">&#9670;&nbsp;</a></span>LCD_SCL_SetDigitalOutput</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_OFFSET&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga48f54a116cb069cff526d482aa83fafd">BUCK_VOUT_FEEDBACK_OFFSET</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define LCD_SCL_SetDigitalOutput</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_TRISC5 = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro calculating the integer number equivalent of the physical, static signal offset of this feedback channel. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00512">512</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01556">1556</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga8596a14d59666e7db30e52a5a3a39c8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8596a14d59666e7db30e52a5a3a39c8f">&#9670;&nbsp;</a></span>BUCK_VOUT_RANGE_MAX</h2>
+<a id="gaa9402f02b36f1fec44e4e87fafdb817b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa9402f02b36f1fec44e4e87fafdb817b">&#9670;&nbsp;</a></span>LCD_SCL_SetHigh</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_RANGE_MAX&#160;&#160;&#160;(float)(<a class="el" href="a00380.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a> * <a class="el" href="a00404.html#ga6f46102d2cb00d541e0cf6b3d7c3d46b">BUCK_VOUT_NORM_INV_G</a>)</td>
+          <td class="memname">#define LCD_SCL_SetHigh</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATC5 = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]]. </p>
+<p>LC Display Interface Declarations. </p>
+<p>The LCD device driver is controlling the on-board LC display via a SPI interface. The required SPI interface device pin assignments are declared here. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00519">519</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01551">1551</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga42d8626bfa1f343d89033f82963fd2b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga42d8626bfa1f343d89033f82963fd2b5">&#9670;&nbsp;</a></span>BUCK_VOUT_REF</h2>
+<a id="gafbfedfcd2988a1fef6709ad56f7af61f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafbfedfcd2988a1fef6709ad56f7af61f">&#9670;&nbsp;</a></span>LCD_SCL_SetLow</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_REF&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga28660f68fd69aa1cf4c352f88634060c">BUCK_VOUT_NOMINAL</a> * <a class="el" href="a00404.html#ga78e303e825ebbb38c8f61ddcb0a0d718">BUCK_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00381.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define LCD_SCL_SetLow</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATC5 = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro calculating the integer number equivalent of the output voltage reference given above in [V]. </p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01552">1552</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00508">508</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+</div>
+</div>
+<a id="ga3136542f8e65397970c5de77865fb116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3136542f8e65397970c5de77865fb116">&#9670;&nbsp;</a></span>LCD_SCL_Toggle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_SCL_Toggle</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATC5 ^= 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01553">1553</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga5adb907f3466db0ff4ea6dc1ef9a23e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5adb907f3466db0ff4ea6dc1ef9a23e2">&#9670;&nbsp;</a></span>LCD_SDI_GetValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_SDI_GetValue</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_RC4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01561">1561</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga397e38fd8ccd3d7376f0bd767e416002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga397e38fd8ccd3d7376f0bd767e416002">&#9670;&nbsp;</a></span>LCD_SDI_SetDigitalInput</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_SDI_SetDigitalInput</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_TRISC4 = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01562">1562</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga406187bfac1f96601580b8dc14afa73d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga406187bfac1f96601580b8dc14afa73d">&#9670;&nbsp;</a></span>LCD_SDI_SetDigitalOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_SDI_SetDigitalOutput</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_TRISC4 = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01563">1563</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga73d5022528fa731ea7ef27312472209a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga73d5022528fa731ea7ef27312472209a">&#9670;&nbsp;</a></span>LCD_SDI_SetHigh</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_SDI_SetHigh</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATC4 = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01558">1558</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga03f57a80c82216fef78a18b92cf09a68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga03f57a80c82216fef78a18b92cf09a68">&#9670;&nbsp;</a></span>LCD_SDI_SetLow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_SDI_SetLow</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATC4 = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01559">1559</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gafdf7312085e344f8588e0dd77ceaffc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafdf7312085e344f8588e0dd77ceaffc0">&#9670;&nbsp;</a></span>LCD_SDI_Toggle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_SDI_Toggle</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_LATC4 ^= 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01560">1560</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

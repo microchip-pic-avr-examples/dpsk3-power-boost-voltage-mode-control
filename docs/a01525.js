@@ -1,11 +1,21 @@
 var a01525 =
 [
-    [ "control_error", "a01525.html#ac8075e097d2f5b01f5e19a1c088b2765", null ],
-    [ "control_input", "a01525.html#a1f1df1b6b181796635627d10d720dd4f", null ],
-    [ "control_output", "a01525.html#ac7ce35c7ae4977118fe839759bf34518", null ],
-    [ "i_out", "a01525.html#a9e418d7d3d756a1d9e0b63765d5392a4", null ],
-    [ "i_sns", "a01525.html#a6cd19bf51c65176a79cd02e615317c54", null ],
-    [ "temp", "a01525.html#aa9f24b0c02dbbc6659649c7b7a124dc4", null ],
-    [ "v_in", "a01525.html#af34b61c0a55244bf4aa166666a322efa", null ],
-    [ "v_out", "a01525.html#a81d40bc6e9f5a711379a1d3d40123bd9", null ]
+    [ "dead_time_falling", "a01525.html#aca5eccd84c19ceab228bfd5e99bbcbfc", null ],
+    [ "dead_time_rising", "a01525.html#a853862f4280ea0cc15f5d7f872e9fa6c", null ],
+    [ "duty_ratio_init", "a01525.html#a654366239edeecb51c0fa5bf8d72e277", null ],
+    [ "duty_ratio_max", "a01525.html#a6c90759b50465ad81c384285a9f20971", null ],
+    [ "duty_ratio_min", "a01525.html#a76412863b3c111042a9a7a06fb921868", null ],
+    [ "gpio_high", "a01525.html#a9320214ec2c12b30553f18b90bd66a40", null ],
+    [ "gpio_instance", "a01525.html#a87d4166062b0a4ec5b940c458cc92d8f", null ],
+    [ "gpio_low", "a01525.html#a736c541e05db7c7a5f434d82089ea922", null ],
+    [ "high_resolution_enable", "a01525.html#ab8295ce9e8d8fdba19b866d1cac71421", null ],
+    [ "leb_period", "a01525.html#a3ece9c519d1aed8dc10812a363b658fb", null ],
+    [ "master_period_enable", "a01525.html#aec90912c08828f327183b3fdd22597b5", null ],
+    [ "period", "a01525.html#a48f363c7bcd47589472b59f0a7dfb74b", null ],
+    [ "phase", "a01525.html#a967bd3db9155623e93c2592050b13227", null ],
+    [ "pwm_instance", "a01525.html#ac2593427e75f5587a35e071bfd512a87", null ],
+    [ "swap_outputs", "a01525.html#a9279b0b5c37b5449f3d970968b1e38fa", null ],
+    [ "sync_drive", "a01525.html#a7160bcf47975cd60e3cf24410c4023f4", null ],
+    [ "trigger_offset", "a01525.html#ad15abe564957bceb1997a22552534262", null ],
+    [ "trigger_scaler", "a01525.html#a3d76e04ea6b1bb827e0df3aa9aeae87d", null ]
 ];

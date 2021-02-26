@@ -1,7 +1,7 @@
 var a00411 =
 [
-    [ "BOOST_TEMPCAL_SLOPE", "a00411.html#gaa3973a312a9169505ae4ee1f19f8ec87", null ],
-    [ "BOOST_TEMPCAL_ZERO", "a00411.html#ga6c73550242695c13f4019492d7782fc2", null ],
-    [ "BUCK_TEMPCAL_SLOPE", "a00411.html#gabb9a63a36610e526480fce9dbe4e77d7", null ],
-    [ "BUCK_TEMPCAL_ZERO", "a00411.html#gae1bfd432f4281610523780a3c7dea8c2", null ]
+    [ "fltobj_BoostOCP", "a00411.html#ga1ef1cfeec9796c32ee314549f2b299b6", null ],
+    [ "fltobj_BoostOVLO", "a00411.html#gafc25554053f2af5c3761b876470d00ea", null ],
+    [ "fltobj_BoostRegErr", "a00411.html#gae81929e3905d846905d49fa9c024b55b", null ],
+    [ "fltobj_BoostUVLO", "a00411.html#gaefcb53ce90e80bdbc5c3569d8ca409b9", null ]
 ];

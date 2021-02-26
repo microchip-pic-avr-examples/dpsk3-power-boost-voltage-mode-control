@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Public Functions</title>
+<title>Digital Power Starter Kit 3 Firmware: User Settings</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -96,286 +103,129 @@ $(document).ready(function(){initNavTree('a00368.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00537.html">Library Driver Layer</a> &raquo; <a class="el" href="a00353.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00360.html">Peripheral Pin Select Module (PPS)</a></div></div>  </div>
+<div class="title">User Settings<div class="ingroups"><a class="el" href="a00522.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00367.html">Microcontroller Device Abstraction</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Public functions of the PPS PRAL driver.  
+<p>Parameter defintions using physical quantities.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Public Functions:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for User Settings:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00368.svg" width="322" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00368.svg" width="310" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gaa09c4349fd01cc9b6b01d435bd022b56"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00368.html#gaa09c4349fd01cc9b6b01d435bd022b56">PPS_LockIO</a> (void)</td></tr>
-<tr class="memdesc:gaa09c4349fd01cc9b6b01d435bd022b56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks the Peripheral Pin Select Configuration registers against accidental changes.  <a href="a00368.html#gaa09c4349fd01cc9b6b01d435bd022b56">More...</a><br /></td></tr>
-<tr class="separator:gaa09c4349fd01cc9b6b01d435bd022b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga64624ae359fb9dd170bb9a3f85dd81f2"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00368.html#ga64624ae359fb9dd170bb9a3f85dd81f2">PPS_UnlockIO</a> (void)</td></tr>
-<tr class="memdesc:ga64624ae359fb9dd170bb9a3f85dd81f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the Peripheral Pin Select Configuration registers to enable changes.  <a href="a00368.html#ga64624ae359fb9dd170bb9a3f85dd81f2">More...</a><br /></td></tr>
-<tr class="separator:ga64624ae359fb9dd170bb9a3f85dd81f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga592e485a9574eeebc2e1dc6993de1f55"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00368.html#ga592e485a9574eeebc2e1dc6993de1f55">PPS_RemapOutput</a> (volatile uint8_t pinno, volatile uint8_t peripheral)</td></tr>
-<tr class="memdesc:ga592e485a9574eeebc2e1dc6993de1f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns a digital function output to a pin.  <a href="a00368.html#ga592e485a9574eeebc2e1dc6993de1f55">More...</a><br /></td></tr>
-<tr class="separator:ga592e485a9574eeebc2e1dc6993de1f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6be1f27b70496503b7bda6edc2cfb59b"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00368.html#ga6be1f27b70496503b7bda6edc2cfb59b">PPS_RemapInput</a> (volatile uint8_t pinno, volatile uint8_t *peripheral)</td></tr>
-<tr class="memdesc:ga6be1f27b70496503b7bda6edc2cfb59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns a pin to a digital function input.  <a href="a00368.html#ga6be1f27b70496503b7bda6edc2cfb59b">More...</a><br /></td></tr>
-<tr class="separator:ga6be1f27b70496503b7bda6edc2cfb59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac40d40430a5237549eaafb4aa6ab3a24"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00368.html#gac40d40430a5237549eaafb4aa6ab3a24">PPS_UnmapOutput</a> (volatile uint8_t pinno)</td></tr>
-<tr class="memdesc:gac40d40430a5237549eaafb4aa6ab3a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects a pin from a digital function output.  <a href="a00368.html#gac40d40430a5237549eaafb4aa6ab3a24">More...</a><br /></td></tr>
-<tr class="separator:gac40d40430a5237549eaafb4aa6ab3a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga76a2264a280f74b1e66ff047241e7a5c"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00368.html#ga76a2264a280f74b1e66ff047241e7a5c">PPS_UnmapInput</a> (volatile uint8_t *peripheral)</td></tr>
-<tr class="memdesc:ga76a2264a280f74b1e66ff047241e7a5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects a pin from a digital function input.  <a href="a00368.html#ga76a2264a280f74b1e66ff047241e7a5c">More...</a><br /></td></tr>
-<tr class="separator:ga76a2264a280f74b1e66ff047241e7a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf73acdf7fb3be35ff98322b7e827d349"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00368.html#gaf73acdf7fb3be35ff98322b7e827d349">CPU_FREQUENCY</a>&#160;&#160;&#160;(float)100000000.0</td></tr>
+<tr class="memdesc:gaf73acdf7fb3be35ff98322b7e827d349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fundamental microcontroller device settings.  <a href="a00368.html#gaf73acdf7fb3be35ff98322b7e827d349">More...</a><br /></td></tr>
+<tr class="separator:gaf73acdf7fb3be35ff98322b7e827d349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga317868c528ebe27fbca094a8bc2d910c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00368.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a>&#160;&#160;&#160;(float)3.300</td></tr>
+<tr class="memdesc:ga317868c528ebe27fbca094a8bc2d910c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC reference voltage in [V].  <a href="a00368.html#ga317868c528ebe27fbca094a8bc2d910c">More...</a><br /></td></tr>
+<tr class="separator:ga317868c528ebe27fbca094a8bc2d910c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga00978ca9e8220475258dcbbbb7d29129"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00368.html#ga00978ca9e8220475258dcbbbb7d29129">ADC_RESOLUTION</a>&#160;&#160;&#160;(float)12.0</td></tr>
+<tr class="memdesc:ga00978ca9e8220475258dcbbbb7d29129"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC resolution in [bit].  <a href="a00368.html#ga00978ca9e8220475258dcbbbb7d29129">More...</a><br /></td></tr>
+<tr class="separator:ga00978ca9e8220475258dcbbbb7d29129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga62b04d6cee79ca8f957ed1d5e6c46dd2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00368.html#ga62b04d6cee79ca8f957ed1d5e6c46dd2">PWM_CLOCK_HIGH_RESOLUTION</a>&#160;&#160;&#160;true</td></tr>
+<tr class="memdesc:ga62b04d6cee79ca8f957ed1d5e6c46dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables/disables the PWM generator high resolution mode of 250 ps versus 2 ns.  <a href="a00368.html#ga62b04d6cee79ca8f957ed1d5e6c46dd2">More...</a><br /></td></tr>
+<tr class="separator:ga62b04d6cee79ca8f957ed1d5e6c46dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf4bf7a89bb59df42a846b9532dce8db9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00368.html#gaf4bf7a89bb59df42a846b9532dce8db9">PWM_CLOCK_FREQUENCY</a>&#160;&#160;&#160;(float)500.0e+6</td></tr>
+<tr class="memdesc:gaf4bf7a89bb59df42a846b9532dce8db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Clock Frequency in [Hz].  <a href="a00368.html#gaf4bf7a89bb59df42a846b9532dce8db9">More...</a><br /></td></tr>
+<tr class="separator:gaf4bf7a89bb59df42a846b9532dce8db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Public functions of the PPS PRAL driver. </p>
-<p>This is the detailed description of public functions of the PPS PRAL driver </p>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="gaa09c4349fd01cc9b6b01d435bd022b56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa09c4349fd01cc9b6b01d435bd022b56">&#9670;&nbsp;</a></span>PPS_LockIO()</h2>
+<p>Parameter defintions using physical quantities. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga317868c528ebe27fbca094a8bc2d910c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga317868c528ebe27fbca094a8bc2d910c">&#9670;&nbsp;</a></span>ADC_REFERENCE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t PPS_LockIO </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">#define ADC_REFERENCE&#160;&#160;&#160;(float)3.300</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Locks the Peripheral Pin Select Configuration registers against accidental changes. </p>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer 1: Success 0: Error</dd></dl>
-<p>This inline-assembly routine locks the Port Multiplexing Configuration registers by keeping the required number of cycles during the Lock pocess. This function has to be called once before digital functions are mapped to a specific pin. Once called, a series of assignments can be executed.</p>
-<dl class="section note"><dt>Note</dt><dd>If bit IOL1WAY in the Oscillator Configuration Bits (FOSC) is set, only one pin assignment operation will be allowed. all following calls of Unlock() or Lock() will be ignored.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00080_source.html">p33c_pps.h</a> </dd></dl>
+<p>ADC reference voltage in [V]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00077_source.html#l00075">75</a> of file <a class="el" href="a00077_source.html">p33c_pps.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00092">92</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga6be1f27b70496503b7bda6edc2cfb59b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6be1f27b70496503b7bda6edc2cfb59b">&#9670;&nbsp;</a></span>PPS_RemapInput()</h2>
+<a id="ga00978ca9e8220475258dcbbbb7d29129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga00978ca9e8220475258dcbbbb7d29129">&#9670;&nbsp;</a></span>ADC_RESOLUTION</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t PPS_RemapInput </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint8_t&#160;</td>
-          <td class="paramname"><em>pinno</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">volatile uint8_t *&#160;</td>
-          <td class="paramname"><em>peripheral</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">#define ADC_RESOLUTION&#160;&#160;&#160;(float)12.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Assigns a pin to a digital function input. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pinno</td><td>Index number of the RPx-pin of type uint8_t, which should be assigned to the function </td></tr>
-    <tr><td class="paramname">peripheral</td><td>Pointer to peripheral/function of type uint8_t, which should be assigned to the pin </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer 1: Success 0: Error</dd></dl>
-<p>Any RPx pin can be assigned to a supported digital function input (e.g. UART RxD). To assign a pin to a function input, call</p>
-<p>smpsPPS_RemapInput([RP-NUMBER], [FUNCTION])</p>
-<div class="fragment"><div class="line">lres |= smpsPPS_RemapInput(PIN_RP10, PPSIN_U1RX);      <span class="comment">// Assign RP10 to UART1 RxD</span></div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd>p33SMPS_pps.h, FOSC, IOL1WAY, IOL1WAY_ON, IOL1WAY_OFF, smpsPPS_LockIO, smpsPPS_UnlockIO, smpsPPS_RemapOutput, smpsPPS_UnmapInput, smpsPPS_UnmapOutput </dd></dl>
+<p>ADC resolution in [bit]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00077_source.html#l00174">174</a> of file <a class="el" href="a00077_source.html">p33c_pps.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00368_ga6be1f27b70496503b7bda6edc2cfb59b_icgraph.svg" width="310" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00093">93</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga592e485a9574eeebc2e1dc6993de1f55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga592e485a9574eeebc2e1dc6993de1f55">&#9670;&nbsp;</a></span>PPS_RemapOutput()</h2>
+<a id="gaf73acdf7fb3be35ff98322b7e827d349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf73acdf7fb3be35ff98322b7e827d349">&#9670;&nbsp;</a></span>CPU_FREQUENCY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t PPS_RemapOutput </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint8_t&#160;</td>
-          <td class="paramname"><em>pinno</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">volatile uint8_t&#160;</td>
-          <td class="paramname"><em>peripheral</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">#define CPU_FREQUENCY&#160;&#160;&#160;(float)100000000.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Assigns a digital function output to a pin. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pinno</td><td>Index number of the RPx-pin of type uint8_t, which should be assigned to the function </td></tr>
-    <tr><td class="paramname">peripheral</td><td>Peripheral/Function ID of type uint8_t, which should be assigned to the pin </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer 1: Success 0: Error</dd></dl>
-<p>Any supported digital function output (e.g. UART TxD) can be assigned to one of the RPx pins of the MCU/DSC. To assign a function output to a pin, call</p>
-<p>smpsPPS_RemapOutput([RP-NUMBER], [FUNCTION])</p>
-<div class="fragment"><div class="line">lres |= smpsPPS_RemapOutput(PIN_RP9 , PPSOUT_SYNCO1);  <span class="comment">// Assign RP9 to PWMSyncClkOutput</span></div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="a00080_source.html">p33c_pps.h</a> </dd></dl>
+<p>Fundamental microcontroller device settings. </p>
+<p>This section is used to define device specific parameters like ADC reference and resolution, main execution clock frequency and peripheral time base settings. All parameters are defined using physical quantities. CPU frequency in [Hz] </p>
 
-<p class="definition">Definition at line <a class="el" href="a00077_source.html#l00133">133</a> of file <a class="el" href="a00077_source.html">p33c_pps.c</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00368_ga592e485a9574eeebc2e1dc6993de1f55_icgraph.svg" width="331" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00089">89</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga64624ae359fb9dd170bb9a3f85dd81f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga64624ae359fb9dd170bb9a3f85dd81f2">&#9670;&nbsp;</a></span>PPS_UnlockIO()</h2>
+<a id="gaf4bf7a89bb59df42a846b9532dce8db9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf4bf7a89bb59df42a846b9532dce8db9">&#9670;&nbsp;</a></span>PWM_CLOCK_FREQUENCY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t PPS_UnlockIO </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">#define PWM_CLOCK_FREQUENCY&#160;&#160;&#160;(float)500.0e+6</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Unlocks the Peripheral Pin Select Configuration registers to enable changes. </p>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer 1: Success 0: Error</dd></dl>
-<p>This inline-assembly routine unlocks the Port Multiplexing Configuration registers by keeping the required number of cycles during the unlock process. This function has to be called once after digital functions have been mapped to a specific pin, to prevent accidental changes.</p>
-<dl class="section note"><dt>Note</dt><dd>If bit IOL1WAY in the Oscillator Configuration Bits (FOSC) is set, only one pin assignment operation will be allowed. all following calls of Unlock() or Lock() will be ignored.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00080_source.html">p33c_pps.h</a> </dd></dl>
+<p>PWM Clock Frequency in [Hz]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00077_source.html#l00102">102</a> of file <a class="el" href="a00077_source.html">p33c_pps.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00101">101</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga76a2264a280f74b1e66ff047241e7a5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga76a2264a280f74b1e66ff047241e7a5c">&#9670;&nbsp;</a></span>PPS_UnmapInput()</h2>
+<a id="ga62b04d6cee79ca8f957ed1d5e6c46dd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga62b04d6cee79ca8f957ed1d5e6c46dd2">&#9670;&nbsp;</a></span>PWM_CLOCK_HIGH_RESOLUTION</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t PPS_UnmapInput </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint8_t *&#160;</td>
-          <td class="paramname"><em>peripheral</em></td><td>)</td>
-          <td></td>
+          <td class="memname">#define PWM_CLOCK_HIGH_RESOLUTION&#160;&#160;&#160;true</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Disconnects a pin from a digital function input. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">peripheral</td><td>Pointer to peripheral of type uint8_t, which should be assigned to the pin </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer <br  />
- 1: Success 0: Error</dd></dl>
-<p>An existing assignment between any RPx pin and a supported digital function input will be dissolved.</p>
-<p>smpsPPS_UnmapInput([RP-NUMBER])</p>
-<div class="fragment"><div class="line">lres |= smpsPPS_UnmapInput(PIN_RP10);      <span class="comment">// Dissolve RP10 assignment</span></div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="a00080_source.html">p33c_pps.h</a> </dd></dl>
+<p>Enables/disables the PWM generator high resolution mode of 250 ps versus 2 ns. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00077_source.html#l00240">240</a> of file <a class="el" href="a00077_source.html">p33c_pps.c</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00368_ga76a2264a280f74b1e66ff047241e7a5c_cgraph.svg" width="310" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="gac40d40430a5237549eaafb4aa6ab3a24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac40d40430a5237549eaafb4aa6ab3a24">&#9670;&nbsp;</a></span>PPS_UnmapOutput()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t PPS_UnmapOutput </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint8_t&#160;</td>
-          <td class="paramname"><em>pinno</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Disconnects a pin from a digital function output. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pinno</td><td>Index number of the RPx-pin of type uint8_t, which should be assigned to the function </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer <br  />
- 1: Success 0: Error</dd></dl>
-<p>An existing assignment between any RPx pin and a supported digital function output will be dissolved.</p>
-<p>smpsPPS_UnmapOutput([RP-NUMBER])</p>
-<div class="fragment"><div class="line">lres |= smpsPPS_UnmapOutput(PIN_RP10);     <span class="comment">// Dissolve RP10 assignment</span></div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="a00080_source.html">p33c_pps.h</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="a00077_source.html#l00207">207</a> of file <a class="el" href="a00077_source.html">p33c_pps.c</a>.</p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00368_gac40d40430a5237549eaafb4aa6ab3a24_cgraph.svg" width="331" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00096">96</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

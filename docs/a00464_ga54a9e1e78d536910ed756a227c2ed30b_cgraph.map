@@ -1,0 +1,7 @@
+<map id="State_Reset" name="State_Reset">
+<area shape="rect" id="node1" title="This function resets the boost control operation by re&#45;initiating the control mode,..." alt="" coords="5,31,100,57"/>
+<area shape="rect" id="node2" href="$a00476.html#gac6b33134d75a969d4deb6e2f158e6d9c" title="This function disables the PWM generator IOs." alt="" coords="148,31,293,57"/>
+<area shape="rect" id="node3" href="$a00476.html#ga0e291d0cb856167fd188be50090ef5ce" title="This function clears the selected general purpose input/output pin." alt="" coords="385,5,508,32"/>
+<area shape="rect" id="node5" href="$a00357.html#ga55e525c7ac54a365ab6dad558ec17f0b" title="Returns the PWM generator index." alt="" coords="341,56,552,83"/>
+<area shape="rect" id="node4" href="$a00353.html#ga4d67af688d8f7f911d79107974e11e6b" title="Gets pointer to GPIO Instance SFR set." alt="" coords="600,5,801,32"/>
+</map>

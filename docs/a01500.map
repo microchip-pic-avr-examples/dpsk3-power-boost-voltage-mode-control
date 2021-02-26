@@ -1,4 +1,5 @@
-<map id="BOOST_STATE_ID_s" name="BOOST_STATE_ID_s">
-<area shape="rect" id="node1" title="data structure for the boost statement ID for sub&#45;operating and operating states" alt="" coords="15,263,163,384"/>
-<area shape="rect" id="node2" href="$a01561.html" title="BOOST control &amp; monitoring data structure." alt="" coords="5,5,173,215"/>
+<map id="BOOST_STARTUP_PERIOD_HANDLER_s" name="BOOST_STARTUP_PERIOD_HANDLER_s">
+<area shape="rect" id="node1" title="Generic power controller startup period settings." alt="" coords="28,447,217,583"/>
+<area shape="rect" id="node2" href="$a01509.html" title="Power Converter Startup Timing Settings." alt="" coords="5,263,240,399"/>
+<area shape="rect" id="node3" href="$a01549.html" title="BOOST control &amp; monitoring data structure." alt="" coords="39,5,207,215"/>
 </map>

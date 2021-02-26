@@ -1,0 +1,10 @@
+<map id="p33c_PwmGenerator_ConfigWrite" name="p33c_PwmGenerator_ConfigWrite">
+<area shape="rect" id="node1" title="Disposes a given PWM generator by resetting all its registers to default." alt="" coords="1099,56,1285,97"/>
+<area shape="rect" id="node2" href="$a00476.html#ga76d61bc918bb955a0d2019a9469b2e25" title="This function initializes the output pins for the PWM output and the default boost PWM settings." alt="" coords="858,13,1046,39"/>
+<area shape="rect" id="node7" href="$a00357.html#ga6e1280685b113efc186dfc2a79c8874a" title="Disposes a given PWM generator by resetting all its registers to default." alt="" coords="853,63,1051,90"/>
+<area shape="rect" id="node8" href="$a00357.html#ga7f779276e0cf4c974267fdbb7c1ea86c" title="Initializes a given PWM generator by resetting all its registers to default." alt="" coords="853,114,1051,141"/>
+<area shape="rect" id="node3" href="$a00453.html#gafe5ee9f0daeb397241fe4c9d799ac5f3" title="This function initializes all peripheral modules and their instances used by the power controller." alt="" coords="672,5,805,47"/>
+<area shape="rect" id="node4" href="$a00449.html#ga0b26acfec74d1804384b4ba1a3cffab4" title="This function is used to load peripheral configuration templates from the power controller device dri..." alt="" coords="433,5,624,47"/>
+<area shape="rect" id="node5" href="$a00446.html#ga7a4cf6371d09457539f96a74b2809ca0" title="Calls the application layer power controller initialization." alt="" coords="212,13,385,39"/>
+<area shape="rect" id="node6" href="$a00521.html#ga2be64f5f0b9a2c0c6713f5a69d793e05" title="Initializes the user&#45;defined tasks." alt="" coords="5,13,164,39"/>
+</map>

@@ -1,7 +1,6 @@
 var a01453 =
 [
-    [ "cpu_reset_trigger", "a01453.html#a121370958c3700325011062cf1ac9895", null ],
-    [ "sw_reset", "a01453.html#a72321fd148e1835890801e1a25836718", null ],
-    [ "unsigned", "a01453.html#a32e93b068e309da5a319a7a69f3b3ff5", null ],
-    [ "value", "a01453.html#a3f0c55f449560b03ce0ac43270c26600", null ]
+    [ "fault_id", "a01453.html#adaa58bcfb27a91d5b05c91eb859c8dbd", null ],
+    [ "op_mode", "a01453.html#a9e0ef62a34eda46979d38550fcbdc8ea", null ],
+    [ "task_id", "a01453.html#a4d841b369f22fced9481909bf997f519", null ]
 ];
