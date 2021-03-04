@@ -1,7 +1,6 @@
 var a01489 =
 [
-    [ "bits", "a01489.html#ad88520af679ea3b51646a918f8d87078", null ],
-    [ "opstate_id", "a01489.html#a99aa686a264279f5df4172c40fcacaaa", null ],
-    [ "substate_id", "a01489.html#a892bae6a1e59c022a6b290576b2ca56d", null ],
-    [ "value", "a01489.html#ac394992c7d47027da1de259f501bff0e", null ]
+    [ "enabled", "a01489.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
+    [ "refresh", "a01489.html#adc2298ffda0c853e699e6da9098f82ae", null ],
+    [ "screen", "a01489.html#aea467a9fc04f0771215b952d26bc4392", null ]
 ];

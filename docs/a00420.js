@@ -1,11 +1,13 @@
 var a00420 =
 [
-    [ "CPU_INTTREG_t", "a00420.html#ga35071dd1d28db260f503cf7783b8562c", null ],
-    [ "CPU_RCON_t", "a00420.html#ga727efbb8fb2703832a116d8d7b70f9fa", null ],
-    [ "TASK_INFO_t", "a00420.html#gacab9a7bab555242c176709817ecda6f3", null ],
-    [ "TRAP_FLAGS_t", "a00420.html#ga34f8f3a66ba022a11555bcbcc1d7c143", null ],
-    [ "TRAP_ID_t", "a00420.html#gac1a3bb25ab328fe3ed0f3494dd58d41e", null ],
-    [ "TRAP_LOGGER_t", "a00420.html#gaa31136531ddd10f950990ce253c0de78", null ],
-    [ "TRAPLOG_STATUS_t", "a00420.html#gaa086a924e5aaa2bed5a676106fe284c6", null ],
-    [ "TRAP_ID_e", "a00420.html#gaee63654a5e14dd3b2bab6179a5cbe2ab", null ]
+    [ "_BOOST_ISNS_ADCInterrupt", "a00420.html#gaed34df72fdacf6d4d55263843ed6cbbd", null ],
+    [ "_BOOST_ISNS_ADCISR_IF", "a00420.html#ga0d8267b426d0bc84ec5acdbf10b5e3df", null ],
+    [ "BOOST_ISNS_ADCBUF", "a00420.html#gac9aa4c0d96c4dc542102de737a80fc22", null ],
+    [ "BOOST_ISNS_ADCCORE", "a00420.html#ga0ba97643f5d8e16e78a10fe47cbf4a8b", null ],
+    [ "BOOST_ISNS_ADCIN", "a00420.html#gae02526509f417227907c4779c1793ac0", null ],
+    [ "BOOST_ISNS_ADCTRIG", "a00420.html#gae5d9e6107a6225aa595955299f60ac8f", null ],
+    [ "BOOST_ISNS_ALT_IN_SELECT", "a00420.html#gaf21dc65c571a0222a0f91c4111733e64", null ],
+    [ "BOOST_ISNS_ANSEL", "a00420.html#gabaf85a9498cdf32fd9a8a1300c372b38", null ],
+    [ "BOOST_ISNS_OPA_INSTANCE", "a00420.html#ga6aa7d9f06dc8297dd3917ebe6884027b", null ],
+    [ "BOOST_ISNS_TRGSRC", "a00420.html#gad48871ec1f075ad73f49a79619afcbdf", null ]
 ];

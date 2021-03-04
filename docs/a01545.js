@@ -1,5 +1,8 @@
 var a01545 =
 [
-    [ "EnableInput", "a01545.html#ad5c434beca0466b2bc8220837a9e8bc9", null ],
-    [ "PowerGood", "a01545.html#ac99840662723fe23cc06134e25ba7342", null ]
+    [ "control_mode", "a01545.html#a5c9f2d633c8d36feec081c1ac13df6a3", null ],
+    [ "i_ref", "a01545.html#a0e321445042c37cbb7283d5de4583c09", null ],
+    [ "i_ref_startup", "a01545.html#a3ce17aa31469af72e8a7743a7b69f405", null ],
+    [ "no_of_phases", "a01545.html#ae002814d52c388ce7d51c8d566d63489", null ],
+    [ "v_ref", "a01545.html#a1c39765936057b7b2b1b90a4126d3f80", null ]
 ];

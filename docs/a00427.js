@@ -1,8 +1,4 @@
 var a00427 =
 [
-    [ "LCD_s", "a01461.html", [
-      [ "enabled", "a01461.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
-      [ "refresh", "a01461.html#adc2298ffda0c853e699e6da9098f82ae", null ],
-      [ "screen", "a01461.html#aea467a9fc04f0771215b952d26bc4392", null ]
-    ] ]
+    [ "BOOST_AGC_EXECUTION_DELAY", "a00427.html#ga3ea375c0bbbdc01dd6a3e4cdfbbdc588", null ]
 ];

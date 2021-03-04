@@ -1,7 +1,5 @@
 var a01573 =
 [
-    [ "NormFactor", "a01573.html#a337a5aff8a1ccc3c7c13dde864a0a59c", null ],
-    [ "NormScaler", "a01573.html#abb43ba3046080953e2c35a68eb471193", null ],
-    [ "Offset", "a01573.html#a7da24ddfbcba445de2da4ac0468f7a06", null ],
-    [ "ptrAddress", "a01573.html#aa37b174ac35fcbc1a22f5a8e221700e2", null ]
+    [ "EnableInput", "a01573.html#ad5c434beca0466b2bc8220837a9e8bc9", null ],
+    [ "PowerGood", "a01573.html#ac99840662723fe23cc06134e25ba7342", null ]
 ];

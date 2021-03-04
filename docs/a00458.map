@@ -1,7 +1,8 @@
-<map id="Private Properties" name="Private Properties">
-<area shape="rect" id="node1" href="$a00452.html" title=" " alt="" coords="5,55,188,80"/>
-<area shape="rect" id="node4" title="Private properties of the second library layer." alt="" coords="236,55,360,80"/>
-<area shape="rect" id="node2" href="$a00461.html" title=" " alt="" coords="415,5,553,31"/>
-<area shape="rect" id="node3" href="$a00459.html" title=" " alt="" coords="408,55,560,80"/>
-<area shape="rect" id="node5" href="$a00460.html" title=" " alt="" coords="440,104,528,129"/>
+<map id="LC&#45;Display Library" name="LC&#45;Display Library">
+<area shape="rect" id="node1" href="$a00459.html" title="Public functions of the LC display device driver library." alt="" coords="371,5,489,31"/>
+<area shape="rect" id="node2" href="$a00462.html" title="Private properties of the LC display device driver library." alt="" coords="368,55,492,80"/>
+<area shape="rect" id="node3" title=" " alt="" coords="192,80,320,105"/>
+<area shape="rect" id="node4" href="$a00460.html" title="Public properties of the LC display device driver library." alt="" coords="369,104,491,129"/>
+<area shape="rect" id="node5" href="$a00461.html" title="Private functions of the LC display device driver library." alt="" coords="369,153,491,179"/>
+<area shape="rect" id="node6" href="$a00552.html" title="Generic Device Driver Layer." alt="" coords="5,73,144,113"/>
 </map>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Boost Peripheral Configuration</title>
+<title>Digital Power Starter Kit 3 Firmware: Public Properties</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,31 +104,52 @@ $(document).ready(function(){initNavTree('a00475.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Modules</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">Boost Peripheral Configuration<div class="ingroups"><a class="el" href="a00524.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00451.html">Boost Converter Library</a> &raquo; <a class="el" href="a00462.html">Boost Converter Library Modules</a></div></div>  </div>
+<div class="title">Public Properties<div class="ingroups"><a class="el" href="a00551.html">Application Layer</a> &raquo; <a class="el" href="a00473.html">Power Control Application Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Public properties of the application layer of the power control task.  
+<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Boost Peripheral Configuration:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Public Properties:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00475.svg" width="543" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00475.svg" width="351" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:a00476"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00476.html">Functions</a></td></tr>
-<tr class="memdesc:a00476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions of the second library layer. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00477"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00477.html">Properties</a></td></tr>
-<tr class="memdesc:a00477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Properties of the second library layer. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga11f977bc851868f114487831049c436f"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01577.html">BOOST_CONVERTER_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00475.html#ga11f977bc851868f114487831049c436f">boost</a></td></tr>
+<tr class="memdesc:ga11f977bc851868f114487831049c436f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global data object for a BOOST CONVERTER.  <a href="a00475.html#ga11f977bc851868f114487831049c436f">More...</a><br /></td></tr>
+<tr class="separator:ga11f977bc851868f114487831049c436f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>The boost converter device driver self-manages its chip resources required to initialize and drive the converter stage and related control loops. The device driver provides standard configurations for all peripherals which are loaded into the respective Special Function Registers of each peripheral. The generic configuraitons are sublemented by the user-settings written to the converter data structure in the application layer initialization routine. </p>
+<p>Public properties of the application layer of the power control task. </p>
+<p>This is the detailed description of public variables, data types, enumerations, defines and macros of the application layer of the power control task. </p>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga11f977bc851868f114487831049c436f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga11f977bc851868f114487831049c436f">&#9670;&nbsp;</a></span>boost</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile struct <a class="el" href="a01577.html">BOOST_CONVERTER_s</a> boost</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Global data object for a BOOST CONVERTER. </p>
+<p>The 'boost' data object holds all status, control and monitoring values of the BOOST power controller. The <a class="el" href="a01577.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a> data structure is defined in <a class="el" href="a00248_source.html" title="This file contains APIs to for the power control.">dev_boost_converter.h</a>. Please refer to the comments on top of this file for further information. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00230_source.html#l00001">1</a> of file <a class="el" href="a00230_source.html">app_power_control.c</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

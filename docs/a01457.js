@@ -1,11 +1,18 @@
 var a01457 =
 [
-    [ "inttreg", "a01457.html#aee75cee827a498ec0f8db43c25fe1de7", null ],
-    [ "rcon_reg", "a01457.html#a622b54af34934b9ed58310984866f335", null ],
-    [ "reset_count", "a01457.html#a95744ea4cf032674585b4e25a114c31a", null ],
-    [ "status", "a01457.html#a67fe8ce905ea66883a557013c4069068", null ],
-    [ "task_capture", "a01457.html#a0738b0afe33da51a74ec003d4a2d7656", null ],
-    [ "trap_count", "a01457.html#a9216196898128a7f976617aabd34ba77", null ],
-    [ "trap_flags", "a01457.html#ac5a997d3d4260463e5998191af6a24cb", null ],
-    [ "trap_id", "a01457.html#a6e7be26899e4fa61a356b5e7eeec83d1", null ]
+    [ "bor", "a01457.html#a0d1d9d9e0e54a78001a69b5be4d229fc", null ],
+    [ "cm", "a01457.html#adc5c38bee4e056f44dda90caa63b7c73", null ],
+    [ "extr", "a01457.html#a9b81e83964a784e2f534afb7195b595d", null ],
+    [ "idle", "a01457.html#ae4451d42d030ce53d42476d531c824ee", null ],
+    [ "iopuwr", "a01457.html#a0f4030ad708ac59267a9c6fad51960c7", null ],
+    [ "por", "a01457.html#a7f07a2e8a867dd37118fa2624121fe84", null ],
+    [ "sleep", "a01457.html#a99a9f6c53abba5e5603d533ba3bdafb7", null ],
+    [ "swdten", "a01457.html#a6f857e259cb61f4363445cf47aa23040", null ],
+    [ "swr", "a01457.html#a9fb4e051f32fbd009ad13750fa6798c5", null ],
+    [ "trapr", "a01457.html#a864ed28be6028b4e0b67f6d0ba7e3a29", null ],
+    [ "unsigned", "a01457.html#a32e93b068e309da5a319a7a69f3b3ff5", null ],
+    [ "value", "a01457.html#a3f0c55f449560b03ce0ac43270c26600", null ],
+    [ "vregs", "a01457.html#a50b204d27cba3d51848c83354e71296f", null ],
+    [ "vregsf", "a01457.html#a6516dffe775a593a505dcd61d17db9bb", null ],
+    [ "wdto", "a01457.html#a083cb133a97eda83a14b880ac432fa49", null ]
 ];

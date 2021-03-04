@@ -1,7 +1,7 @@
 var a00490 =
 [
-    [ "Data Objects", "a00491.html", "a00491" ],
-    [ "Data Object Members", "a00492.html", "a00492" ],
-    [ "Defines & Macros", "a00493.html", "a00493" ],
-    [ "Variables", "a00494.html", "a00494" ]
+    [ "Boost Converter State Machine", "a00491.html", "a00491" ],
+    [ "Boost Special Functions", "a00497.html", "a00497" ],
+    [ "Boost Peripheral Configuration", "a00503.html", "a00503" ],
+    [ "Boost Peripheral Templates", "a00509.html", "a00509" ]
 ];

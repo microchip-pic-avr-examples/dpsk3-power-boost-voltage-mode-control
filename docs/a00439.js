@@ -1,7 +1,7 @@
 var a00439 =
 [
-    [ "LCD_CS_nSELECTED", "a00439.html#ga54b80311c5aac1052284a52ad5824fc9", null ],
-    [ "LCD_CS_SELECTED", "a00439.html#gab579f782fdb44ac74dd8c2681503f71a", null ],
-    [ "LCD_RS_COMMAND", "a00439.html#ga6f7c55d9c8246fa677ae8d8d2c88df9e", null ],
-    [ "LCD_RS_DATA", "a00439.html#ga9993ce43cdf8d8cb194c2e23c3d2698d", null ]
+    [ "fltobj_BoostOCP", "a00439.html#ga1ef1cfeec9796c32ee314549f2b299b6", null ],
+    [ "fltobj_BoostOVLO", "a00439.html#gafc25554053f2af5c3761b876470d00ea", null ],
+    [ "fltobj_BoostRegErr", "a00439.html#gae81929e3905d846905d49fa9c024b55b", null ],
+    [ "fltobj_BoostUVLO", "a00439.html#gaefcb53ce90e80bdbc5c3569d8ca409b9", null ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: NPNZ_STATUS_s Struct Reference</title>
+<title>Digital Power Starter Kit 3 Firmware: BOOST_ADC_INPUT_SCALING_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,25 +103,27 @@ $(document).ready(function(){initNavTree('a01557.html',''); initResizable(); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">NPNZ_STATUS_s Struct Reference<div class="ingroups"><a class="el" href="a00525.html">Library Driver Layer</a> &raquo; <a class="el" href="a00487.html">Power Converter Control Driver</a> &raquo; <a class="el" href="a00490.html">Properties</a> &raquo; <a class="el" href="a00492.html">Data Object Members</a></div></div>  </div>
+<div class="title">BOOST_ADC_INPUT_SCALING_s Struct Reference<div class="ingroups"><a class="el" href="a00552.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00479.html">Boost Converter Library</a> &raquo; <a class="el" href="a00480.html">Boost Converter Library API</a> &raquo; <a class="el" href="a00486.html">Private Properties</a> &raquo; <a class="el" href="a00488.html">Data Types</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>NPNZ16b controller object status and control word.  
+<p>ADC input signal scaling = (ADCBUF - &lt;offset&gt;) * &lt;factor&gt; &gt;&gt; 2^&lt;scaler&gt;  
  <a href="a01557.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00293_source.html">power_control/drivers/npnz16b.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00278_source.html">power_control/devices/dev_boost_typedef.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for NPNZ_STATUS_s:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for BOOST_ADC_INPUT_SCALING_s:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01556.svg" width="178" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01556.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for NPNZ_STATUS_s:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for BOOST_ADC_INPUT_SCALING_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
@@ -129,217 +131,163 @@ $(document).ready(function(){initNavTree('a01557.html',''); initResizable(); });
 </div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_attribs_a01609"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01609')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01609.html">NPNZ16b_s</a></td></tr>
-<tr class="memitem:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01609"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01557.html">NPNZ_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01609.html#a38a4b2427f4b2b06c112385e722e1419">status</a></td></tr>
-<tr class="memdesc:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control Loop Status and Control flags.  <a href="a01609.html#a38a4b2427f4b2b06c112385e722e1419">More...</a><br /></td></tr>
-<tr class="separator:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae834fa9c7338d08d0fa927c901c2503f inherit pub_attribs_a01609"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01577.html">NPNZ_PORTS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01609.html#ae834fa9c7338d08d0fa927c901c2503f">Ports</a></td></tr>
-<tr class="memdesc:ae834fa9c7338d08d0fa927c901c2503f inherit pub_attribs_a01609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controller input and output ports.  <a href="a01609.html#ae834fa9c7338d08d0fa927c901c2503f">More...</a><br /></td></tr>
-<tr class="separator:ae834fa9c7338d08d0fa927c901c2503f inherit pub_attribs_a01609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01609"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01581.html">NPNZ_FILTER_PARAMS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01609.html#aa98db9224dce165f72d861acc8558419">Filter</a></td></tr>
-<tr class="memdesc:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter parameters such as pointer to history and coefficient arrays and number scaling.  <a href="a01609.html#aa98db9224dce165f72d861acc8558419">More...</a><br /></td></tr>
-<tr class="separator:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01609"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01585.html">NPNZ_GAIN_CONTROL_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01609.html#a3c9fc0a5e04a384801d066b95dc27f5d">GainControl</a></td></tr>
-<tr class="memdesc:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter section for advanced control options.  <a href="a01609.html#a3c9fc0a5e04a384801d066b95dc27f5d">More...</a><br /></td></tr>
-<tr class="separator:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01609"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01589.html">NPNZ_LIMITS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01609.html#a6127947619eb634f1a3c3650529e092c">Limits</a></td></tr>
-<tr class="memdesc:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input and output clamping values.  <a href="a01609.html#a6127947619eb634f1a3c3650529e092c">More...</a><br /></td></tr>
-<tr class="separator:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01609"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01593.html">NPNZ_ADC_TRGCTRL_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01609.html#aa708a44ef3b59a931f929bc6c72e07fc">ADCTriggerControl</a></td></tr>
-<tr class="memdesc:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatic ADC trigger placement options for ADC Trigger A and B.  <a href="a01609.html#aa708a44ef3b59a931f929bc6c72e07fc">More...</a><br /></td></tr>
-<tr class="separator:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01609"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01597.html">NPNZ_DATA_PROVIDERS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01609.html#a971260b757f0c8822315d8c82a603142">DataProviders</a></td></tr>
-<tr class="memdesc:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automated data sources pushing recent data points to user-defined variables.  <a href="a01609.html#a971260b757f0c8822315d8c82a603142">More...</a><br /></td></tr>
-<tr class="separator:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01609"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01601.html">NPNZ_EXTENSION_HOOKS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01609.html#a486610694a9aac008ab8c01a0ab88090">ExtensionHooks</a></td></tr>
-<tr class="memdesc:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01609"><td class="mdescLeft">&#160;</td><td class="mdescRight">User extension function triggers using function pointers with parameters.  <a href="a01609.html#a486610694a9aac008ab8c01a0ab88090">More...</a><br /></td></tr>
-<tr class="separator:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01609"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01605.html">NPNZ_USER_DATA_BUFFER_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01609.html#ae10c373e7000ff11abbb151f019793e0">Advanced</a></td></tr>
-<tr class="memdesc:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter section for advanced user control options.  <a href="a01609.html#ae10c373e7000ff11abbb151f019793e0">More...</a><br /></td></tr>
-<tr class="separator:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:aa9a9b14569ac48dc290e2df6162fb42f"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01557.html#aa9a9b14569ac48dc290e2df6162fb42f">factor</a></td></tr>
+<tr class="memdesc:aa9a9b14569ac48dc290e2df6162fb42f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fractional scaling factor (range -1 ... 0.99969)  <a href="a01557.html#aa9a9b14569ac48dc290e2df6162fb42f">More...</a><br /></td></tr>
+<tr class="separator:aa9a9b14569ac48dc290e2df6162fb42f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefa09a3fb2e5db126ad75513aede5fb3"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01557.html#aefa09a3fb2e5db126ad75513aede5fb3">scaler</a></td></tr>
+<tr class="memdesc:aefa09a3fb2e5db126ad75513aede5fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feedback bit-shift scaler used for number normalization.  <a href="a01557.html#aefa09a3fb2e5db126ad75513aede5fb3">More...</a><br /></td></tr>
+<tr class="separator:aefa09a3fb2e5db126ad75513aede5fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba44d6d5a7e55c468854c5487df135c"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01557.html#acba44d6d5a7e55c468854c5487df135c">offset</a></td></tr>
+<tr class="memdesc:acba44d6d5a7e55c468854c5487df135c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal offset as signed integer to be subtracted from ADC input.  <a href="a01557.html#acba44d6d5a7e55c468854c5487df135c">More...</a><br /></td></tr>
+<tr class="separator:acba44d6d5a7e55c468854c5487df135c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_a01561"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01561')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01561.html">BOOST_ADC_INPUT_SETTINGS_s</a></td></tr>
+<tr class="memitem:a085e9fc0863cee4864cf51dcfe1e32df inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a></td></tr>
+<tr class="memdesc:a085e9fc0863cee4864cf51dcfe1e32df inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">input channel enable bit  <a href="a01561.html#a085e9fc0863cee4864cf51dcfe1e32df">More...</a><br /></td></tr>
+<tr class="separator:a085e9fc0863cee4864cf51dcfe1e32df inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6b3bf1e59067bcf24c50032a88b454e inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile uint16_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#ae6b3bf1e59067bcf24c50032a88b454e">adc_buffer</a></td></tr>
+<tr class="memdesc:ae6b3bf1e59067bcf24c50032a88b454e inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to ADC result buffer  <a href="a01561.html#ae6b3bf1e59067bcf24c50032a88b454e">More...</a><br /></td></tr>
+<tr class="separator:ae6b3bf1e59067bcf24c50032a88b454e inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d4166062b0a4ec5b940c458cc92d8f inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a87d4166062b0a4ec5b940c458cc92d8f">gpio_instance</a></td></tr>
+<tr class="memdesc:a87d4166062b0a4ec5b940c458cc92d8f inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO instance of the selected PWM generator.  <a href="a01561.html#a87d4166062b0a4ec5b940c458cc92d8f">More...</a><br /></td></tr>
+<tr class="separator:a87d4166062b0a4ec5b940c458cc92d8f inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ef35fa6037886ca3a101f4a2b37928 inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#ac5ef35fa6037886ca3a101f4a2b37928">adc_input</a></td></tr>
+<tr class="memdesc:ac5ef35fa6037886ca3a101f4a2b37928 inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of the ADC input channel used  <a href="a01561.html#ac5ef35fa6037886ca3a101f4a2b37928">More...</a><br /></td></tr>
+<tr class="separator:ac5ef35fa6037886ca3a101f4a2b37928 inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1108a003f371af97be13ed110ebdf23b inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a1108a003f371af97be13ed110ebdf23b">adc_core</a></td></tr>
+<tr class="memdesc:a1108a003f371af97be13ed110ebdf23b inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of the ADC core connected to the selected channel  <a href="a01561.html#a1108a003f371af97be13ed110ebdf23b">More...</a><br /></td></tr>
+<tr class="separator:a1108a003f371af97be13ed110ebdf23b inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ac3aa57346150cb34db841906e581cb inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a3ac3aa57346150cb34db841906e581cb">trigger_source</a></td></tr>
+<tr class="memdesc:a3ac3aa57346150cb34db841906e581cb inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">input channel trigger source  <a href="a01561.html#a3ac3aa57346150cb34db841906e581cb">More...</a><br /></td></tr>
+<tr class="separator:a3ac3aa57346150cb34db841906e581cb inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a793ba9a93f3a49413df9cdc16e9339f1 inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a793ba9a93f3a49413df9cdc16e9339f1">interrupt_enable</a></td></tr>
+<tr class="memdesc:a793ba9a93f3a49413df9cdc16e9339f1 inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">input channel interrupt enable bit  <a href="a01561.html#a793ba9a93f3a49413df9cdc16e9339f1">More...</a><br /></td></tr>
+<tr class="separator:a793ba9a93f3a49413df9cdc16e9339f1 inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01450dd198f268c49d3c6523135f6a66 inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a01450dd198f268c49d3c6523135f6a66">early_interrupt_enable</a></td></tr>
+<tr class="memdesc:a01450dd198f268c49d3c6523135f6a66 inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">input channel early interrupt enable bit  <a href="a01561.html#a01450dd198f268c49d3c6523135f6a66">More...</a><br /></td></tr>
+<tr class="separator:a01450dd198f268c49d3c6523135f6a66 inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac22ebd6bfde052a5134c47bec2396bbc inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#ac22ebd6bfde052a5134c47bec2396bbc">differential_input</a></td></tr>
+<tr class="memdesc:ac22ebd6bfde052a5134c47bec2396bbc inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">input channel differential mode enable bit  <a href="a01561.html#ac22ebd6bfde052a5134c47bec2396bbc">More...</a><br /></td></tr>
+<tr class="separator:ac22ebd6bfde052a5134c47bec2396bbc inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad3977aa344b7d6cd2f0d88693a8ccde inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#aad3977aa344b7d6cd2f0d88693a8ccde">signed_result</a></td></tr>
+<tr class="memdesc:aad3977aa344b7d6cd2f0d88693a8ccde inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">input channel singed result mode enable bit  <a href="a01561.html#aad3977aa344b7d6cd2f0d88693a8ccde">More...</a><br /></td></tr>
+<tr class="separator:aad3977aa344b7d6cd2f0d88693a8ccde inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a901cea2416e72a6e745a679ba42aa03a inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a901cea2416e72a6e745a679ba42aa03a">level_trigger</a></td></tr>
+<tr class="memdesc:a901cea2416e72a6e745a679ba42aa03a inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">input channel level trigger mode enable bit  <a href="a01561.html#a901cea2416e72a6e745a679ba42aa03a">More...</a><br /></td></tr>
+<tr class="separator:a901cea2416e72a6e745a679ba42aa03a inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae76a392e1ccbcd112bbc4bcb0ce126c4 inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01557.html">BOOST_ADC_INPUT_SCALING_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#ae76a392e1ccbcd112bbc4bcb0ce126c4">scaling</a></td></tr>
+<tr class="memdesc:ae76a392e1ccbcd112bbc4bcb0ce126c4 inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">normalization scaling settings  <a href="a01561.html#ae76a392e1ccbcd112bbc4bcb0ce126c4">More...</a><br /></td></tr>
+<tr class="separator:ae76a392e1ccbcd112bbc4bcb0ce126c4 inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_a01565"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01565')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01565.html">BOOST_FEEDBACK_SETTINGS_s</a></td></tr>
+<tr class="memitem:a18195de455ff4cd15308ecb59555a911 inherit pub_attribs_a01565"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01561.html">BOOST_ADC_INPUT_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html#a18195de455ff4cd15308ecb59555a911">ad_vin</a></td></tr>
+<tr class="memdesc:a18195de455ff4cd15308ecb59555a911 inherit pub_attribs_a01565"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input sampling input voltage.  <a href="a01565.html#a18195de455ff4cd15308ecb59555a911">More...</a><br /></td></tr>
+<tr class="separator:a18195de455ff4cd15308ecb59555a911 inherit pub_attribs_a01565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c105672be980e48cb87e8600dee572e inherit pub_attribs_a01565"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01561.html">BOOST_ADC_INPUT_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html#a1c105672be980e48cb87e8600dee572e">ad_vout</a></td></tr>
+<tr class="memdesc:a1c105672be980e48cb87e8600dee572e inherit pub_attribs_a01565"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input sampling output voltage.  <a href="a01565.html#a1c105672be980e48cb87e8600dee572e">More...</a><br /></td></tr>
+<tr class="separator:a1c105672be980e48cb87e8600dee572e inherit pub_attribs_a01565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa55fe3a4f78581ac272747c3c344a297 inherit pub_attribs_a01565"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01561.html">BOOST_ADC_INPUT_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html#aa55fe3a4f78581ac272747c3c344a297">ad_isns</a> [<a class="el" href="a00485.html#ga9f732532b64d46552260f09e4d98325a">BOOST_MPHASE_COUNT</a>]</td></tr>
+<tr class="memdesc:aa55fe3a4f78581ac272747c3c344a297 inherit pub_attribs_a01565"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input sampling phase current.  <a href="a01565.html#aa55fe3a4f78581ac272747c3c344a297">More...</a><br /></td></tr>
+<tr class="separator:aa55fe3a4f78581ac272747c3c344a297 inherit pub_attribs_a01565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0024a912aae5a494f77bc64641fb54e6 inherit pub_attribs_a01565"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01561.html">BOOST_ADC_INPUT_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html#a0024a912aae5a494f77bc64641fb54e6">ad_temp</a></td></tr>
+<tr class="memdesc:a0024a912aae5a494f77bc64641fb54e6 inherit pub_attribs_a01565"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input sampling temperature.  <a href="a01565.html#a0024a912aae5a494f77bc64641fb54e6">More...</a><br /></td></tr>
+<tr class="separator:a0024a912aae5a494f77bc64641fb54e6 inherit pub_attribs_a01565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_a01577"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01577')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01577.html">BOOST_CONVERTER_s</a></td></tr>
+<tr class="memitem:a43ac04e696799481a75b1e5c2772ffe3 inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01505.html">BOOST_CONVERTER_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a43ac04e696799481a75b1e5c2772ffe3">status</a></td></tr>
+<tr class="memdesc:a43ac04e696799481a75b1e5c2772ffe3 inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST operation status bits.  <a href="a01577.html#a43ac04e696799481a75b1e5c2772ffe3">More...</a><br /></td></tr>
+<tr class="separator:a43ac04e696799481a75b1e5c2772ffe3 inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a753d49e459d6acea8dca783faddea1df inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01517.html">BOOST_STATE_ID_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a753d49e459d6acea8dca783faddea1df">state_id</a></td></tr>
+<tr class="memdesc:a753d49e459d6acea8dca783faddea1df inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST state machine operating state ID.  <a href="a01577.html#a753d49e459d6acea8dca783faddea1df">More...</a><br /></td></tr>
+<tr class="separator:a753d49e459d6acea8dca783faddea1df inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef4c8320b07ea3539f664d10c9c4f835 inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01537.html">BOOST_CONVERTER_STARTUP_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#aef4c8320b07ea3539f664d10c9c4f835">startup</a></td></tr>
+<tr class="memdesc:aef4c8320b07ea3539f664d10c9c4f835 inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST startup timing settings.  <a href="a01577.html#aef4c8320b07ea3539f664d10c9c4f835">More...</a><br /></td></tr>
+<tr class="separator:aef4c8320b07ea3539f664d10c9c4f835 inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65372722a32dba273f722b29a2609d8a inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01545.html">BOOST_CONVERTER_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a65372722a32dba273f722b29a2609d8a">set_values</a></td></tr>
+<tr class="memdesc:a65372722a32dba273f722b29a2609d8a inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control field for global access to references.  <a href="a01577.html#a65372722a32dba273f722b29a2609d8a">More...</a><br /></td></tr>
+<tr class="separator:a65372722a32dba273f722b29a2609d8a inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae94e8223319b210a6af5fac01d2c6d5e inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01541.html">BOOST_CONVERTER_DATA_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#ae94e8223319b210a6af5fac01d2c6d5e">data</a></td></tr>
+<tr class="memdesc:ae94e8223319b210a6af5fac01d2c6d5e inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST runtime data.  <a href="a01577.html#ae94e8223319b210a6af5fac01d2c6d5e">More...</a><br /></td></tr>
+<tr class="separator:ae94e8223319b210a6af5fac01d2c6d5e inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d6a3cd26694bebeed63fd1e1a1eb2e inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01565.html">BOOST_FEEDBACK_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a63d6a3cd26694bebeed63fd1e1a1eb2e">feedback</a></td></tr>
+<tr class="memdesc:a63d6a3cd26694bebeed63fd1e1a1eb2e inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST converter feedback settings.  <a href="a01577.html#a63d6a3cd26694bebeed63fd1e1a1eb2e">More...</a><br /></td></tr>
+<tr class="separator:a63d6a3cd26694bebeed63fd1e1a1eb2e inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25c2cb61021c319b38a5c024e48c3310 inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01553.html">BOOST_SWITCH_NODE_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a25c2cb61021c319b38a5c024e48c3310">sw_node</a> [<a class="el" href="a00485.html#ga9f732532b64d46552260f09e4d98325a">BOOST_MPHASE_COUNT</a>]</td></tr>
+<tr class="memdesc:a25c2cb61021c319b38a5c024e48c3310 inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST converter switch node settings.  <a href="a01577.html#a25c2cb61021c319b38a5c024e48c3310">More...</a><br /></td></tr>
+<tr class="separator:a25c2cb61021c319b38a5c024e48c3310 inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86a71e9beada7e2064de976b164cd84b inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01573.html">BOOST_GPIO_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a86a71e9beada7e2064de976b164cd84b">gpio</a></td></tr>
+<tr class="memdesc:a86a71e9beada7e2064de976b164cd84b inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST converter additional GPIO specification.  <a href="a01577.html#a86a71e9beada7e2064de976b164cd84b">More...</a><br /></td></tr>
+<tr class="separator:a86a71e9beada7e2064de976b164cd84b inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22db2a2436558a1cb087f0f2ad607a64 inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01549.html">BOOST_LOOP_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a22db2a2436558a1cb087f0f2ad607a64">v_loop</a></td></tr>
+<tr class="memdesc:a22db2a2436558a1cb087f0f2ad607a64 inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST voltage control loop object.  <a href="a01577.html#a22db2a2436558a1cb087f0f2ad607a64">More...</a><br /></td></tr>
+<tr class="separator:a22db2a2436558a1cb087f0f2ad607a64 inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0a6d2e4b96edeb1086709409e5f0e28 inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01549.html">BOOST_LOOP_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#ac0a6d2e4b96edeb1086709409e5f0e28">i_loop</a> [<a class="el" href="a00485.html#ga9f732532b64d46552260f09e4d98325a">BOOST_MPHASE_COUNT</a>]</td></tr>
+<tr class="memdesc:ac0a6d2e4b96edeb1086709409e5f0e28 inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST Current control loop objects.  <a href="a01577.html#ac0a6d2e4b96edeb1086709409e5f0e28">More...</a><br /></td></tr>
+<tr class="separator:ac0a6d2e4b96edeb1086709409e5f0e28 inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>NPNZ16b controller object status and control word. </p>
-<p>The <a class="el" href="a01609.html" title="Global NPNZ controller data object.">NPNZ16b_s</a> status word is providing status flag bits for monitoring and controlling the NPNZ16b control library code execution from outside the library module.</p>
-<p>1) Status Byte The low byte of the <a class="el" href="a01609.html" title="Global NPNZ controller data object.">NPNZ16b_s</a> status word is used for READ ONLY status flags, set and cleared automatically by the control loop library routine.</p>
-<p>2) Control Byte The high byte of the status word is used for control flags, through which users can control the control loop execution. This includes enabling/disabling the control loop execution, switch between different input and output sources, invert input values or enable/disable advanced functions. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00293_source.html#l00183">183</a> of file <a class="el" href="a00293_source.html">npnz16b.h</a>.</p>
+<div class="textblock"><p>ADC input signal scaling = (ADCBUF - &lt;offset&gt;) * &lt;factor&gt; &gt;&gt; 2^&lt;scaler&gt; </p>
+<p>Generic power converter feedback specifications.</p>
+<p>This data structure is used to set the converter feedback specifications declaring which ADC channels are used including the individual AD input configuration such as trigger mode, input mode, result format and value normalization.</p>
+<hr  />
+ 
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00437">437</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a2586f148981aa257903e8e8c220be49f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2586f148981aa257903e8e8c220be49f">&#9670;&nbsp;</a></span>agc_enabled</h2>
+<a id="aa9a9b14569ac48dc290e2df6162fb42f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a9b14569ac48dc290e2df6162fb42f">&#9670;&nbsp;</a></span>factor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool agc_enabled</td>
+          <td class="memname">volatile int16_t factor</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bit 11: when set, Adaptive Gain Control Modulation is enabled. </p>
+<p>Fractional scaling factor (range -1 ... 0.99969) </p>
 
-<p class="definition">Definition at line <a class="el" href="a00293_source.html#l00198">198</a> of file <a class="el" href="a00293_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00439">439</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="a085e9fc0863cee4864cf51dcfe1e32df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a085e9fc0863cee4864cf51dcfe1e32df">&#9670;&nbsp;</a></span>enabled</h2>
+<a id="acba44d6d5a7e55c468854c5487df135c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba44d6d5a7e55c468854c5487df135c">&#9670;&nbsp;</a></span>offset</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool enabled</td>
+          <td class="memname">volatile int16_t offset</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bit 15: enables/disables control loop execution. </p>
+<p>Signal offset as signed integer to be subtracted from ADC input. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00293_source.html#l00202">202</a> of file <a class="el" href="a00293_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00441">441</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="a87a4d49caab529c62352ee8e36739705"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87a4d49caab529c62352ee8e36739705">&#9670;&nbsp;</a></span>invert_input</h2>
+<a id="aefa09a3fb2e5db126ad75513aede5fb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefa09a3fb2e5db126ad75513aede5fb3">&#9670;&nbsp;</a></span>scaler</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool invert_input</td>
+          <td class="memname">volatile int16_t scaler</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bit 14: when set, most recent error input value to controller is inverted. </p>
+<p>Feedback bit-shift scaler used for number normalization. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00293_source.html#l00201">201</a> of file <a class="el" href="a00293_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="a54de55df60f9214cecb0d0210f1633ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54de55df60f9214cecb0d0210f1633ab">&#9670;&nbsp;</a></span>lower_saturation_event</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool lower_saturation_event</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit 0: control loop is clamped at minimum output level. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00293_source.html#l00186">186</a> of file <a class="el" href="a00293_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="ac0e5228116af2eb515feaae87f10473c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0e5228116af2eb515feaae87f10473c">&#9670;&nbsp;</a></span>swap_source</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool swap_source</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit 13: when set, AltSource is used as data input to controller. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00293_source.html#l00200">200</a> of file <a class="el" href="a00293_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="aa6704f24bbe78d8899af231051a73b6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6704f24bbe78d8899af231051a73b6b">&#9670;&nbsp;</a></span>swap_target</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool swap_target</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit 12: when set, AltTarget is used as data output of controller. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00293_source.html#l00199">199</a> of file <a class="el" href="a00293_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="a32e93b068e309da5a319a7a69f3b3ff5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32e93b068e309da5a319a7a69f3b3ff5">&#9670;&nbsp;</a></span>unsigned</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile unsigned</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit 2: reserved. </p>
-<p>Bit 11: reserved.</p>
-<p>Bit 9: reserved.</p>
-<p>Bit 8: reserved.</p>
-<p>Bit 7: reserved.</p>
-<p>Bit 6: reserved.</p>
-<p>Bit 5: reserved.</p>
-<p>Bit 4: reserved.</p>
-<p>Bit 3: reserved. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00293_source.html#l00188">188</a> of file <a class="el" href="a00293_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="afa922f84528fb8c9b073548653220d9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa922f84528fb8c9b073548653220d9a">&#9670;&nbsp;</a></span>upper_saturation_event</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool upper_saturation_event</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit 1: control loop is clamped at maximum output level. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00293_source.html#l00187">187</a> of file <a class="el" href="a00293_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="a3f0c55f449560b03ce0ac43270c26600"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f0c55f449560b03ce0ac43270c26600">&#9670;&nbsp;</a></span>value</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t value</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Controller status full register access. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00293_source.html#l00204">204</a> of file <a class="el" href="a00293_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00440">440</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dpsk_boost_vmc.X/sources/power_control/drivers/<a class="el" href="a00293_source.html">npnz16b.h</a></li>
+<li>dpsk_boost_vmc.X/sources/power_control/devices/<a class="el" href="a00278_source.html">dev_boost_typedef.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -347,7 +295,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01557.html">NPNZ_STATUS_s</a></li>
+    <li class="navelem"><a class="el" href="a01557.html">BOOST_ADC_INPUT_SCALING_s</a></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Variables &amp; Constants</title>
+<title>Digital Power Starter Kit 3 Firmware: Private Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,151 +104,61 @@ $(document).ready(function(){initNavTree('a00466.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Variables &amp; Constants<div class="ingroups"><a class="el" href="a00524.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00451.html">Boost Converter Library</a> &raquo; <a class="el" href="a00462.html">Boost Converter Library Modules</a> &raquo; <a class="el" href="a00463.html">Boost Converter State Machine</a> &raquo; <a class="el" href="a00465.html">Properties</a></div></div>  </div>
+<div class="title">Private Functions<div class="ingroups"><a class="el" href="a00553.html">Library Driver Layer</a> &raquo; <a class="el" href="a00463.html">LC-Display Interface Driver</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Variables of the boost converter state machine.  
+<p>Private functions of the LC display interface driver.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Variables &amp; Constants:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Private Functions:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00466.svg" width="292" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00466.svg" width="320" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga44f3bd251411e2eab723c19810ede057"><td class="memItemLeft" align="right" valign="top">volatile uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00466.html#ga44f3bd251411e2eab723c19810ede057">BoostConverterStateMachine</a> [])(volatile struct <a class="el" href="a01549.html">BOOST_CONVERTER_s</a> *boostInstance)</td></tr>
-<tr class="memdesc:ga44f3bd251411e2eab723c19810ede057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boost converter state machine function pointer array.  <a href="a00466.html#ga44f3bd251411e2eab723c19810ede057">More...</a><br /></td></tr>
-<tr class="separator:ga44f3bd251411e2eab723c19810ede057"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga78b3ed92dc4684652c8266db453d3d87"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00466.html#ga78b3ed92dc4684652c8266db453d3d87">BoostStateList_size</a> = (sizeof(<a class="el" href="a00466.html#ga44f3bd251411e2eab723c19810ede057">BoostConverterStateMachine</a>)/sizeof(<a class="el" href="a00466.html#ga44f3bd251411e2eab723c19810ede057">BoostConverterStateMachine</a>[0]))</td></tr>
-<tr class="memdesc:ga78b3ed92dc4684652c8266db453d3d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boost converter state machine function pointer array size <br  />
-  <a href="a00466.html#ga78b3ed92dc4684652c8266db453d3d87">More...</a><br /></td></tr>
-<tr class="separator:ga78b3ed92dc4684652c8266db453d3d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga07f8bf8c06711c608ee570b6dd8d9d4b"><td class="memItemLeft" align="right" valign="top">volatile uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00466.html#ga07f8bf8c06711c608ee570b6dd8d9d4b">BoostConverterRampUpSubStateMachine</a> [])(volatile struct <a class="el" href="a01549.html">BOOST_CONVERTER_s</a> *boostInstance)</td></tr>
-<tr class="memdesc:ga07f8bf8c06711c608ee570b6dd8d9d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boost converter state machine function pointer array.  <a href="a00466.html#ga07f8bf8c06711c608ee570b6dd8d9d4b">More...</a><br /></td></tr>
-<tr class="separator:ga07f8bf8c06711c608ee570b6dd8d9d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0e2fe23262e3c767c02b3d2c4d666799"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00466.html#ga0e2fe23262e3c767c02b3d2c4d666799">BoostRampUpSubStateList_size</a> = (sizeof(<a class="el" href="a00466.html#ga07f8bf8c06711c608ee570b6dd8d9d4b">BoostConverterRampUpSubStateMachine</a>)/sizeof(<a class="el" href="a00466.html#ga07f8bf8c06711c608ee570b6dd8d9d4b">BoostConverterRampUpSubStateMachine</a>[0]))</td></tr>
-<tr class="memdesc:ga0e2fe23262e3c767c02b3d2c4d666799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boost converter sub-state machine function pointer array size.  <a href="a00466.html#ga0e2fe23262e3c767c02b3d2c4d666799">More...</a><br /></td></tr>
-<tr class="separator:ga0e2fe23262e3c767c02b3d2c4d666799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga50b8734fca19fc75dd778a9902c63082"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00466.html#ga50b8734fca19fc75dd778a9902c63082">drv_LcdInterface_SpiSend</a> (uint8_t data)</td></tr>
+<tr class="memdesc:ga50b8734fca19fc75dd778a9902c63082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data through the SPI interface to the LCD controller.  <a href="a00466.html#ga50b8734fca19fc75dd778a9902c63082">More...</a><br /></td></tr>
+<tr class="separator:ga50b8734fca19fc75dd778a9902c63082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Variables of the boost converter state machine. </p>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ga07f8bf8c06711c608ee570b6dd8d9d4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga07f8bf8c06711c608ee570b6dd8d9d4b">&#9670;&nbsp;</a></span>BoostConverterRampUpSubStateMachine</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t(* BoostConverterRampUpSubStateMachine)[](volatile struct <a class="el" href="a01549.html">BOOST_CONVERTER_s</a> *boostInstance)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Boost converter state machine function pointer array. </p>
-<p>Function pointer array of boost converter startup sub-states.</p>
-<p>The function pointer list BoostConverterRampUpSubStateMachine[] is providing access to a list of state functions. Each function mapped into this array as function pointer represents a self-contained, independent sub-state. The main state machine will call functions from this list in order of their index within the array, starting from '0'. While this list is executed, the calling main state is transparent by passing through the return value of the most recent sub-state. Once all sub-states have been executed, the calling main state will return the COMPLETE flag, allowing the main state machine to move on.</p>
-<p>Each function needs to be called by handing over a parameter of type</p>
-<ul>
-<li>struct <a class="el" href="a01549.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a></li>
-</ul>
-<p>Each function returns of type unsigned integer:</p>
-<ul>
-<li>0 = BOOST_OPSRET_ERROR</li>
-<li>1 = BOOST_OPSRET_COMPLETE</li>
-<li>2 = BOOST_OPSRET_REPEAT </li>
-</ul>
-
-</div>
-</div>
-<a id="ga44f3bd251411e2eab723c19810ede057"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga44f3bd251411e2eab723c19810ede057">&#9670;&nbsp;</a></span>BoostConverterStateMachine</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t(* BoostConverterStateMachine)[](volatile struct <a class="el" href="a01549.html">BOOST_CONVERTER_s</a> *boostInstance)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Boost converter state machine function pointer array. </p>
-<p>Function pointer array defining the state machine execution sequence <br  />
-</p>
-<p>The function pointer list BoostConverterStateMachine[] is providing access to a list of state functions. Each function mapped into this array as function pointer represents a self-contained, independent sub-state. The main state machine will call functions from this list in order of their index within the array, starting from '0'. While this list is executed, the calling main state is transparent by passing through the return value of the most recent sub-state. Once all sub-states have been executed, the calling main state will return the COMPLETE flag, allowing the main state machine to move on.</p>
-<p>Each function needs to be called by handing over a parameter of type</p>
-<ul>
-<li>struct <a class="el" href="a01549.html" title="BOOST control &amp; monitoring data structure.">BOOST_CONVERTER_s</a></li>
-</ul>
-<p>Each function returns of type unsigned integer:</p>
-<ul>
-<li>0 = BOOST_OPSRET_ERROR</li>
-<li>1 = BOOST_OPSRET_COMPLETE</li>
-<li>2 = BOOST_OPSRET_REPEAT </li>
-</ul>
-
-</div>
-</div>
-<a id="ga0e2fe23262e3c767c02b3d2c4d666799"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0e2fe23262e3c767c02b3d2c4d666799">&#9670;&nbsp;</a></span>BoostRampUpSubStateList_size</h2>
+<p>Private functions of the LC display interface driver. </p>
+<p>This is the detailed description of private functions of the LC display interface driver. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga50b8734fca19fc75dd778a9902c63082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50b8734fca19fc75dd778a9902c63082">&#9670;&nbsp;</a></span>drv_LcdInterface_SpiSend()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t BoostRampUpSubStateList_size = (sizeof(<a class="el" href="a00466.html#ga07f8bf8c06711c608ee570b6dd8d9d4b">BoostConverterRampUpSubStateMachine</a>)/sizeof(<a class="el" href="a00466.html#ga07f8bf8c06711c608ee570b6dd8d9d4b">BoostConverterRampUpSubStateMachine</a>[0]))</td>
+          <td class="memname">void drv_LcdInterface_SpiSend </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Boost converter sub-state machine function pointer array size. </p>
-<p>Boost converter state machine function pointer array size. </p>
+<p>Sends data through the SPI interface to the LCD controller. </p>
+<p>This function sends one byte via the initialized SPI interface to the LCD controller. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00260_source.html#l00038">38</a> of file <a class="el" href="a00260_source.html">dev_boost_substates.c</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="a00203_source.html#l00128">128</a> of file <a class="el" href="a00203_source.html">drv_lcd_interface.c</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00466_ga50b8734fca19fc75dd778a9902c63082_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
-<a id="ga78b3ed92dc4684652c8266db453d3d87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga78b3ed92dc4684652c8266db453d3d87">&#9670;&nbsp;</a></span>BoostStateList_size</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t BoostStateList_size = (sizeof(<a class="el" href="a00466.html#ga44f3bd251411e2eab723c19810ede057">BoostConverterStateMachine</a>)/sizeof(<a class="el" href="a00466.html#ga44f3bd251411e2eab723c19810ede057">BoostConverterStateMachine</a>[0]))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Boost converter state machine function pointer array size <br  />
- </p>
-<p>Boost converter state machine function pointer array size. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00242_source.html#l00039">39</a> of file <a class="el" href="a00242_source.html">dev_boost_opstates.c</a>.</p>
 
 </div>
 </div>

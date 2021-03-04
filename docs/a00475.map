@@ -1,6 +1,4 @@
-<map id="Boost Peripheral Configuration" name="Boost Peripheral Configuration">
-<area shape="rect" id="node1" href="$a00476.html" title="Functions of the second library layer." alt="" coords="457,5,536,31"/>
-<area shape="rect" id="node2" href="$a00462.html" title=" " alt="" coords="5,23,163,63"/>
-<area shape="rect" id="node4" title=" " alt="" coords="211,31,408,56"/>
-<area shape="rect" id="node3" href="$a00477.html" title="Properties of the second library layer." alt="" coords="456,55,537,80"/>
+<map id="Public Properties" name="Public Properties">
+<area shape="rect" id="node1" href="$a00473.html" title=" " alt="" coords="5,5,176,45"/>
+<area shape="rect" id="node2" title="Public properties of the application layer of the power control task." alt="" coords="224,13,345,38"/>
 </map>

@@ -1,7 +1,6 @@
 var a00400 =
 [
-    [ "BOOST_FB_TEMP_SLOPE", "a00400.html#gaabab1ff0ffe06204aa20f33caec4f6ce", null ],
-    [ "BOOST_FB_TEMP_ZERO", "a00400.html#ga093804711059cf01cdb3113365ec8ea3", null ],
-    [ "BUCK_FB_TEMP_SLOPE", "a00400.html#ga014133f88cd82218241bf16985302cd4", null ],
-    [ "BUCK_FB_TEMP_ZERO", "a00400.html#gacde6c3fa85c34fe5414566acd2e77ca8", null ]
+    [ "User Settings", "a00401.html", "a00401" ],
+    [ "Conversion Macros", "a00403.html", "a00403" ],
+    [ "Microcontroller Abstraction", "a00405.html", "a00405" ]
 ];

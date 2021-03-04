@@ -1,5 +1,4 @@
 var a00475 =
 [
-    [ "Functions", "a00476.html", "a00476" ],
-    [ "Properties", "a00477.html", "a00477" ]
+    [ "boost", "a00475.html#ga11f977bc851868f114487831049c436f", null ]
 ];

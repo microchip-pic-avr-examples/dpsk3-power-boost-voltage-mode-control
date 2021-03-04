@@ -1,5 +1,7 @@
 var a00512 =
 [
-    [ "sysAclk_Initialize", "a00512.html#ga3f3f3c22c6c2b95518271fae8f58b03f", null ],
-    [ "sysFosc_Initialize", "a00512.html#ga40d0188218fbc4f682cbddffff9e1269", null ]
+    [ "boostDacInstanceConfig", "a00512.html#gaae34d54d57a4631106e67d1514246173", null ],
+    [ "boostDacModuleConfig", "a00512.html#ga3eb853285f90f7070d48676afdf6de8e", null ],
+    [ "boostPwmGeneratorConfig", "a00512.html#ga04b39278134969d0781c1346249040cb", null ],
+    [ "boostPwmModuleConfig", "a00512.html#gae46a47655ad99846ff118b012da953e2", null ]
 ];

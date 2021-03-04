@@ -1,4 +1,8 @@
 var a00473 =
 [
-    [ "BOOST_SPECIAL_FUNCTIONS_e", "a00473.html#gafe77e91ec8a7b26e1346673300dcfb01", null ]
+    [ "Public Functions", "a00474.html", "a00474" ],
+    [ "Public Properties", "a00475.html", "a00475" ],
+    [ "Events and Interrupts", "a00476.html", "a00476" ],
+    [ "Private Functions", "a00477.html", "a00477" ],
+    [ "Private Properties", "a00478.html", null ]
 ];

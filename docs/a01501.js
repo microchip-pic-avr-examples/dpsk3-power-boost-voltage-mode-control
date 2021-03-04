@@ -1,7 +1,8 @@
 var a01501 =
 [
-    [ "counter", "a01501.html#a8544f2f5b43d21d6a0a586fc81f9ce92", null ],
-    [ "period", "a01501.html#a48f363c7bcd47589472b59f0a7dfb74b", null ],
-    [ "ref_inc_step", "a01501.html#a832c6be5021565e3da55cbc0a523e744", null ],
-    [ "reference", "a01501.html#aad7bda3be2c1e6a89bd7093086bbeec8", null ]
+    [ "ControlModes", "a01501.html#a4950b1ebf0bd9792674e71cee2882489", null ],
+    [ "OpStateOpCodes", "a01501.html#a12b27c7fc5c5ca8eab5fb8a62cf2fc58", null ],
+    [ "OpStateReturnValues", "a01501.html#afc9a0cdb70d5ea4ea1f23b8bbf9bdf88", null ],
+    [ "StatusFlags", "a01501.html#a2f3444cbdb2b554c3cd5572d076b42aa", null ],
+    [ "SubStateOpCodes", "a01501.html#a0d58890e2a2d10cd219278a9518ba5ac", null ]
 ];

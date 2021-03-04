@@ -1,7 +1,5 @@
 var a00500 =
 [
-    [ "Public Functions", "a00501.html", "a00501" ],
-    [ "Public Properties", "a00502.html", "a00502" ],
-    [ "Private Functions", "a00503.html", null ],
-    [ "Private Properties", "a00504.html", null ]
+    [ "BoostConverterSpecialFunctions", "a00500.html#ga44f615fd5c0d6dfe789f6f945ce4e04c", null ],
+    [ "calib_cs", "a00500.html#ga8ffae58655f6c0e52467cc76e897d15b", null ]
 ];

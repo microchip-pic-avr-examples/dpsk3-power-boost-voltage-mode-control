@@ -1,4 +1,5 @@
 var a00358 =
 [
-    [ "ccpConfigDefault", "a00358.html#gaace96580ebc36260c1b6072178f25987", null ]
+    [ "Public Functions", "a00366.html", "a00366" ],
+    [ "Private Properties", "a00374.html", "a00374" ]
 ];

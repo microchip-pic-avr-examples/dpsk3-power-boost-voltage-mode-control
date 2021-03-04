@@ -1,5 +1,6 @@
 var a00470 =
 [
-    [ "CurrentSenseOffsetCalibration", "a00470.html#gafd8064d14747bfca36fddaa63fac9908", null ],
-    [ "drv_BoostConverter_SpecialFunctionExecute", "a00470.html#ga8da16d7e071fa88d5e45c7dac51053d8", null ]
+    [ "DEBUGGING_LED_s", "a01493.html", [
+      [ "period", "a01493.html#a48f363c7bcd47589472b59f0a7dfb74b", null ]
+    ] ]
 ];

@@ -1,13 +1,13 @@
 var a00402 =
 [
-    [ "BUCK_AGC_FACTOR_MAX", "a00402.html#ga30083345d8b122bce51aa372bc4ce148", null ],
-    [ "BUCK_AGC_IO_NORM_FACTOR", "a00402.html#gabdbb5d2baae550abbc0c8d5cfa515e05", null ],
-    [ "BUCK_AGC_IO_NORM_SCALER", "a00402.html#gafbaa80db67366c907a4dcc3a27e63ff1", null ],
-    [ "BUCK_AGC_MEDIAN", "a00402.html#gab66099c12e6b9f4153aeb8ef6e8487d5", null ],
-    [ "BUCK_AGC_NOM_FACTOR", "a00402.html#gac099d403afaf30b093a91400740b5737", null ],
-    [ "BUCK_AGC_NOM_SCALER", "a00402.html#ga2f08303f166365f97a7390fa1ef1503d", null ],
-    [ "BUCK_VIN_NORM_FCT", "a00402.html#ga64367e1b5414f4ab9ce0bd5f8a7ec618", null ],
-    [ "BUCK_VL_MAXIMUM", "a00402.html#ga16553be6e8fe8ab34f6d078ff6e39cd7", null ],
-    [ "BUCK_VL_MINIMUM", "a00402.html#ga41af1de3fe8252ea181dc05f33c14b68", null ],
-    [ "BUCK_VL_NOMINAL", "a00402.html#ga6999c379d5a1a2c4fb81902bfc1fe3b1", null ]
+    [ "BOOST_VIN_ADC_TRG_DELAY", "a00402.html#gabf31dcb35b27258749eaebc91bc25c86", null ],
+    [ "BOOST_VIN_FEEDBACK_OFFSET", "a00402.html#gaebdcf7b89be3517cbe6464a32216c341", null ],
+    [ "BOOST_VIN_HYSTERESIS", "a00402.html#ga9bd075cb27c7aef0a12dba19e0509a48", null ],
+    [ "BOOST_VIN_MAXIMUM", "a00402.html#ga58ae34b85408432b3ba0d7774d9b34f1", null ],
+    [ "BOOST_VIN_MINIMUM", "a00402.html#ga38b44ccc543c64207ce806f1d3a15ebc", null ],
+    [ "BOOST_VIN_NOMINAL", "a00402.html#gad24de47b6326d94841299f3d4063edff", null ],
+    [ "BOOST_VIN_OVER_VOLTAGE", "a00402.html#ga731ec038ed3218a73f37f7c82d05dd39", null ],
+    [ "BOOST_VIN_R1", "a00402.html#ga5cbf22f4ec2ccdfdefead58c0cea6f8d", null ],
+    [ "BOOST_VIN_R2", "a00402.html#ga305c8ee15fc7ffea43b3621db232a51d", null ],
+    [ "BOOST_VIN_UNDER_VOLTAGE", "a00402.html#gad0982e95f129233155bda6bbd3f37f6b", null ]
 ];

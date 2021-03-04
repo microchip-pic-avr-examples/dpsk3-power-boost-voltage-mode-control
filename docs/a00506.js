@@ -1,6 +1,5 @@
 var a00506 =
 [
-    [ "Initializing Essential Chip Resources", "a00510.html", "a00510" ],
-    [ "Initializing Hardware-Specific Chip Resources", "a00515.html", "a00515" ],
-    [ "Initializing Firmware Tasks", "a00519.html", "a00519" ]
+    [ "adcore_diff_mask", "a00506.html#ga215a815cad00177161895a74f526cfc1", null ],
+    [ "adcore_mask", "a00506.html#ga8312ee90c2e73a1ad6bc8b0e545368c2", null ]
 ];

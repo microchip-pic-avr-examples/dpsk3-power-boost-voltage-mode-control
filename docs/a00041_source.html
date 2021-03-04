@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_boost_vmc.X/sources/common/p33c_pral/p33c_dsp.h Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_boost_vmc.X/sources/common/p33c_pral/p33c_ccp.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,220 +104,183 @@ $(document).ready(function(){initNavTree('a00041_source.html',''); initResizable
 
 <div class="header">
   <div class="headertitle">
-<div class="title">p33c_dsp.h</div>  </div>
+<div class="title">p33c_ccp.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*LICENSE *****************************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Software License Agreement</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Copyright (R) 2012 Microchip Technology Inc.  All rights reserved. Microchip licenses to you the</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * right to use, modify, copy and distribute Software only when embedded on a Microchip </span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * microcontroller or digital signal controller, which is integrated into your product or third </span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * party product (pursuant to the sublicense terms in the accompanying license agreement).</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * You should refer to the license agreement accompanying this Software for additional information </span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * regarding your rights and obligations.</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * SOFTWARE AND DOCUMENTATION ARE PROVIDED &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR </span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * IMPLIED, INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, NON-INFRINGEMENT </span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL MICROCHIP OR ITS LICENSORS BE LIABLE OR</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * OBLIGATED UNDER CONTRACT, NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR </span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * OTHER LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING BUT NOT  </span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE OR CONSEQUENTIAL DAMAGES, LOST PROFITS  </span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * OR LOST DATA, COST OF PROCUREMENT OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY  </span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * THIRD PARTIES (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * ***********************************************************************************************/</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef P33C_CCP_SFR_ABSTRACTION_H</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define P33C_CCP_SFR_ABSTRACTION_H</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span> <span class="comment">// include processor files - each processor file is guarded.  </span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span> <span class="comment">// include standard integer data types</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span> <span class="comment">// include standard boolean data types</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span> <span class="comment">// include standard definition data types</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifndef P33C_DSP_SFR_ABSTRACTION_H</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define P33C_DSP_SFR_ABSTRACTION_H</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifndef P33C_CCP_INSTANCE_SFRSET_s     </span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// CORCON: CORE CONTROL REGISTER</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a00557.html">   38</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="a00557.html">P33C_CCP_INSTANCE_SFRSET_s</a> {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define REG_CORCON_UNUSED_MSK           0b0100000000000000</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define REG_CORCON_VALID_DATA_WRITE_MSK 0b1011100011110011</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define REG_CORCON_VALID_DATA_READ_MSK  0b1011111111111111</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define REG_CORCON_VAR_VARIABLE         0b1000000000000000</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define REG_CORCON_VAR_FIXED            0b0000000000000000</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">enum</span> CORCON_VAR_e{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    CORCON_VAR_VARIABLE = 0b1, <span class="comment">// Variable exception processing is enabled</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    CORCON_VAR_FIXED = 0b0 <span class="comment">// Fixed exception processing is enabled</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> CORCON_VAR_e CORCON_VAR_t; <span class="comment">// Variable Exception Processing Latency Control bit</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define REG_CORCON_US_MIXED     0b0010000000000000 // DSP engine multiplies are mixed sign</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define REG_CORCON_US_UNSIGNED  0b0001000000000000 // DSP engine multiplies are unsigned</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define REG_CORCON_US_SIGNED    0b0000000000000000 // DSP engine multiplies are signed</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">enum</span> CORCON_US_e{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    CORCON_US_MIXED = 0b10, <span class="comment">// DSP engine multiplies are mixed sign</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    CORCON_US_UNSIGNED = 0b01, <span class="comment">// DSP engine multiplies are unsigned</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    CORCON_US_SIGNED = 0b00 <span class="comment">// DSP engine multiplies are signed</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> CORCON_US_e CORCON_US_t; <span class="comment">// DSP Multiply Unsigned/Signed Control bits</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#define REG_CORCON_EDT_TERMINATE 0b0000100000000000</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#define REG_CORCON_EDT_RUN 0b0000000000000000</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">enum</span> CORCON_EDT_e{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    CORCON_EDT_TERMINATE = 0b1, <span class="comment">// Terminates executing DO loop at the end of the current loop iteration</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    CORCON_EDT_RUN = 0b0 <span class="comment">// No effect</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> CORCON_EDT_e CORCON_EDT_t; <span class="comment">// Early DO Loop Termination Control bit</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#define REG_CORCON_DL_7 0b0000011100000000 // Seven DO loops are active</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#define REG_CORCON_DL_6 0b0000011100000000 // Six DO loops are active</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#define REG_CORCON_DL_5 0b0000011100000000 // Five DO loops are active</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#define REG_CORCON_DL_4 0b0000011100000000 // Four DO loops are active</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#define REG_CORCON_DL_3 0b0000011100000000 // Three DO loops are active</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#define REG_CORCON_DL_2 0b0000011100000000 // Two DO loops are active</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#define REG_CORCON_DL_1 0b0000011100000000 // One DO loops are active</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#define REG_CORCON_DL_0 0b0000011100000000 // Zero DO loops are active</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">enum</span> CORCON_DL_STAT_e{</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    CORCON_DL_7 = 0b111, <span class="comment">// Seven DO loops are active</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    CORCON_DL_6 = 0b110, <span class="comment">// Six DO loops are active</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    CORCON_DL_5 = 0b101, <span class="comment">// Five DO loops are active</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    CORCON_DL_4 = 0b100, <span class="comment">// Four DO loops are active</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    CORCON_DL_3 = 0b011, <span class="comment">// Three DO loops are active</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    CORCON_DL_2 = 0b010, <span class="comment">// Two DO loops are active</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    CORCON_DL_1 = 0b001, <span class="comment">// One DO loops are active</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    CORCON_DL_0 = 0b000  <span class="comment">// Zero DO loops are active</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> CORCON_DL_STAT_e CORCON_DL_STAT_t; <span class="comment">// DO Loop Nesting Level Status bits</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#define REG_CORCON_SATA_ON  0b0000000010000000 // Accumulator A saturation is enabled</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#define REG_CORCON_SATA_OFF 0b0000000000000000 // Accumulator A saturation is disabled</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">enum</span> CORCON_SATA_e{</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    CORCON_SATA_ON = 0b1, <span class="comment">// Accumulator A saturation is enabled</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    CORCON_SATA_OFF = 0b0 <span class="comment">// Accumulator A saturation is disabled</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> CORCON_SATA_e CORCON_SATA_t; <span class="comment">// ACCA Saturation Enable bit</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#define REG_CORCON_SATB_ON  0b0000000001000000 // Accumulator B saturation is enabled</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#define REG_CORCON_SATB_OFF 0b0000000000000000 // Accumulator B saturation is disabled</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">enum</span> CORCON_SATB_e{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    CORCON_SATB_ON = 0b1, <span class="comment">// Accumulator B saturation is enabled</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    CORCON_SATB_OFF = 0b0 <span class="comment">// Accumulator B saturation is disabled</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> CORCON_SATB_e CORCON_SATB_t; <span class="comment">// ACCB Saturation Enable bit</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#define REG_CORCON_SATDW_ON  0b0000000000100000 // Data Space write saturation is enabled</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#define REG_CORCON_SATDW_OFF 0b0000000000000000 // Data Space write saturation is disabled</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">enum</span> CORCON_SATDW_e{</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    CORCON_SATDW_ON = 0b1, <span class="comment">// Data Space write saturation is enabled</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    CORCON_SATDW_OFF = 0b0 <span class="comment">// Data Space write saturation is disabled</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> CORCON_SATDW_e CORCON_SATDW_t; <span class="comment">// Data Space Write from DSP Engine Saturation Enable bit</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#define REG_CORCON_ACCSAT_931 0b0000000000010000 // 9.31 saturation (super saturation)</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#define REG_CORCON_ACCSAT_131 0b0000000000000000  // 1.31 saturation (normal saturation)</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">enum</span> CORCON_ACCSAT_e{</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    CORCON_ACCSAT_931 = 0b1, <span class="comment">// 9.31 saturation (super saturation)</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    CORCON_ACCSAT_131 = 0b0  <span class="comment">// 1.31 saturation (normal saturation)</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;};</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> CORCON_ACCSAT_e CORCON_ACCSAT_t; <span class="comment">// Accumulator Saturation Mode Select bit</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#define REG_CORCON_IPL3_STAT_GT7 0b0000000000001000</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#define REG_CORCON_IPL3_STAT_LT7 0b0000000000000000</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">enum</span> CORCON_IPL3_STAT_e{</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    CORCON_IPL3_STAT_GT7 = 0b1, <span class="comment">// CPU Interrupt Priority Level is greater than 7</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    CORCON_IPL3_STAT_LT7 = 0b0  <span class="comment">// CPU Interrupt Priority Level is 7 or less</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> CORCON_IPL3_STAT_e CORCON_IPL3_STAT_t; <span class="comment">// CPU Interrupt Priority Level Status bit 3</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#define REG_CORCON_SFA_ACTIVE   0b0000000000000100 // Stack frame is active; W14 and W15 address 0x0000 to 0xFFFF, regardless of DSRPAG</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#define REG_CORCON_SFA_INACTIVE 0b0000000000000000 // Stack frame is not active; W14 and W15 address the base Data Space</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">enum</span> CORCON_SFA_e{</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    CORCON_SFA_ACTIVE = 0b1, <span class="comment">// Stack frame is active; W14 and W15 address 0x0000 to 0xFFFF, regardless of DSRPAG</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    CORCON_SFA_INACTIVE = 0b0 <span class="comment">// Stack frame is not active; W14 and W15 address the base Data Space</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> CORCON_SFA_e CORCON_SFA_t; <span class="comment">// Stack Frame Active Status bit</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">#define REG_CORCON_RND_BIASED   0b0000000000000010 // Biased (conventional) rounding is enabled</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#define REG_CORCON_RND_UNBIASED 0b0000000000000000 // Unbiased (convergent) rounding is enabled</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keyword">enum</span> CORCON_RND_e{</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    CORCON_RND_BIASED = 0b1, <span class="comment">// Biased (conventional) rounding is enabled</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    CORCON_RND_UNBIASED = 0b0 <span class="comment">// Unbiased (convergent) rounding is enabled</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> CORCON_RND_e CORCON_RND_t; <span class="comment">// Rounding Mode Select bit</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#define REG_CORCON_IF_INTEGER    0b0000000000000001 // Integer mode is enabled for DSP multiply</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#define REG_CORCON_IF_FRACTIONAL 0b0000000000000000 // Fractional mode is enabled for DSP multiply</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">struct </span>tagCCP1CON1LBITS <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">   42</a></span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00557.html#a9d9a18705cf617292bc45daf8006d7d4">   43</a></span>&#160;        } <a class="code" href="a00557.html#a9d9a18705cf617292bc45daf8006d7d4">CCPxCON1L</a>; <span class="comment">// CCPxCON1L: CCPx CONTROL 1 LOW REGISTERS</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keyword">struct </span>tagCCP1CON1HBITS <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00557.html#a2511d5ec91b350ea622cebb134091ca2">   47</a></span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00557.html#a48cc84e6f8ac23730310f81c91683940">   48</a></span>&#160;        } <a class="code" href="a00557.html#a48cc84e6f8ac23730310f81c91683940">CCPxCON1H</a>; <span class="comment">// CCPxCON1H: CCPx CONTROL 1 HIGH REGISTERS</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">struct </span>tagCCP1CON2LBITS <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a00557.html#a2ba91f6c72badc6e8c6310d95d524f61">   52</a></span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00557.html#a43ebb7226a97f80e87ca59c252d95c3e">   53</a></span>&#160;        } <a class="code" href="a00557.html#a43ebb7226a97f80e87ca59c252d95c3e">CCPxCON2L</a>; <span class="comment">// CCPxCON2L: CCPx CONTROL 2 LOW REGISTERS</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">struct </span>tagCCP1CON2HBITS <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a00557.html#a0f2fdea0ceb0e30021e720192786e7bb">   57</a></span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="a00557.html#a4327c245f9cb581c693b2662e08dccb4">   58</a></span>&#160;        } <a class="code" href="a00557.html#a4327c245f9cb581c693b2662e08dccb4">CCPxCON2H</a>; <span class="comment">// CCPxCON2H: CCPx CONTROL 2 HIGH REGISTERS</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">        #if defined (CCP9CON3L)</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">struct </span>tagCCP9CON3LBITS <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        } CCPxCON3L; <span class="comment">// CCPxCON3L: CCPx CONTROL 3 LOW REGISTERS (implemented in MCCP9 module only)</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">        #else</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="a00557.html#a32e93b068e309da5a319a7a69f3b3ff5">   66</a></span>&#160;        <span class="keyword">volatile</span> <a class="code" href="a00557.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> :16;  <span class="comment">// (reserved) Memory gap between CCPxCON2H and CCPxCON3H</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">        #endif</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keyword">struct </span>tagCCP1CON3HBITS <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a00557.html#a9e53cc25d9421f74335303c97bda833a">   71</a></span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="a00557.html#a8cd08d06ca3fdc4bd723d76f98d19291">   72</a></span>&#160;        } <a class="code" href="a00557.html#a8cd08d06ca3fdc4bd723d76f98d19291">CCPxCON3H</a>; <span class="comment">// CCPxCON3H: CCPx CONTROL 3 HIGH REGISTERS</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keyword">struct </span>tagCCP1STATLBITS <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="a00557.html#adc08ef06ae70448a10169a769070bf95">   77</a></span>&#160;        } <a class="code" href="a00557.html#adc08ef06ae70448a10169a769070bf95">CCPxSTATL</a>; <span class="comment">// CCPxSTATL: CCPx STATUS REGISTER</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">volatile</span> <a class="code" href="a00557.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> :16; <span class="comment">// (reserved)</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="a00557.html#a4db789b24f9462ad41ac06552b903e6e">   83</a></span>&#160;                <span class="keyword">volatile</span> uint16_t <a class="code" href="a00557.html#a4db789b24f9462ad41ac06552b903e6e">CCPTMRL</a> : 16; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="a00557.html#ab72d0a1159bfd82f4773056fd7e546e0">   84</a></span>&#160;            } <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="a00557.html#a537d44d6baaa4008aa4ccd19f81b5610">   86</a></span>&#160;        } <a class="code" href="a00557.html#a537d44d6baaa4008aa4ccd19f81b5610">CCPxTMRL</a>; <span class="comment">// CCPxTMRL: CCPx TIMER COUTER REGISTER LOW </span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="a00557.html#ac12e6aa2004c920da0949906a43efb3e">   90</a></span>&#160;                <span class="keyword">volatile</span> uint16_t <a class="code" href="a00557.html#ac12e6aa2004c920da0949906a43efb3e">CCPTMRH</a> : 16; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="a00557.html#a5e2d5ec809a4415d527483b1346162cf">   91</a></span>&#160;            } <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="a00557.html#ab6e4e405cece5bc3bc9523bad8c274ea">   93</a></span>&#160;        } <a class="code" href="a00557.html#ab6e4e405cece5bc3bc9523bad8c274ea">CCPxTMRH</a>; <span class="comment">// CCPxTMRH: CCPx TIMER COUTER REGISTER HIGH</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="a00557.html#add82eda187462e4361c817c5157b70de">   97</a></span>&#160;                <span class="keyword">volatile</span> uint16_t <a class="code" href="a00557.html#add82eda187462e4361c817c5157b70de">CCPPRL</a> : 16; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="a00557.html#af498f0a31c9110463c75f070f3b1a338">   98</a></span>&#160;            } <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="a00557.html#a9d89e82f7e898ed9fd903d67bc941847">  100</a></span>&#160;        } <a class="code" href="a00557.html#a9d89e82f7e898ed9fd903d67bc941847">CCPxPRL</a>; <span class="comment">// CCPx TIMER PERIOD REGISTER LOW</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="a00557.html#a626e6d18a70ce748dfda0c697f8d46a3">  104</a></span>&#160;                <span class="keyword">volatile</span> uint16_t <a class="code" href="a00557.html#a626e6d18a70ce748dfda0c697f8d46a3">CCPPRH</a> : 16; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="a00557.html#a8f127c65d22850bda75c4f8e9a98886a">  105</a></span>&#160;            } <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="a00557.html#a34164053821c7c8fa5e3eddba203d62f">  107</a></span>&#160;        } <a class="code" href="a00557.html#a34164053821c7c8fa5e3eddba203d62f">CCPxPRH</a>; <span class="comment">// CCPx TIMER PERIOD REGISTER HIGH</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="a00557.html#a7ced2ff0386765f860134b27279bfbf3">  111</a></span>&#160;                <span class="keyword">volatile</span> uint16_t <a class="code" href="a00557.html#a7ced2ff0386765f860134b27279bfbf3">CCPRAL</a> : 16; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="a00557.html#acf70b58f4087acd61d46443cc808a336">  112</a></span>&#160;            } <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="a00557.html#aae6ebf63dec7891f39e0f974bfe09b94">  114</a></span>&#160;        } <a class="code" href="a00557.html#aae6ebf63dec7891f39e0f974bfe09b94">CCPxRAL</a>; <span class="comment">// CCPxRAL: CCPx PRIMARY OUTPUT COMPARE DATA BUFFER LOW</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keyword">volatile</span> <a class="code" href="a00557.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> :16;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="a00557.html#adc676ba4812f7f2ea59f74442c6b1fa9">  120</a></span>&#160;                <span class="keyword">volatile</span> uint16_t <a class="code" href="a00557.html#adc676ba4812f7f2ea59f74442c6b1fa9">CCPRBL</a> : 16; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="a00557.html#a8dccd9e3c13f38b42beecd38f4e6e841">  121</a></span>&#160;            } <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="a00557.html#a269fae7310d4e791d785527195df12d2">  123</a></span>&#160;        } <a class="code" href="a00557.html#a269fae7310d4e791d785527195df12d2">CCPxRBL</a>; <span class="comment">// CCPxRBL: CCPx SECONDARY OUTPUT COMPARE DATA BUFFER LOW</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">  125</a></span>&#160;        <span class="keyword">volatile</span> <a class="code" href="a00557.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> :16;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="a00557.html#ab0b3d8d3658d07b805242305f2651190">  129</a></span>&#160;                <span class="keyword">volatile</span> uint16_t <a class="code" href="a00557.html#ab0b3d8d3658d07b805242305f2651190">CCPBUFL</a> : 16; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="a00557.html#a0c6c0f71c3104eef5f9d64f662cf4f46">  130</a></span>&#160;            } <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="a00557.html#a19067e6246ef53102df46dc7fbb3aca6">  132</a></span>&#160;        } <a class="code" href="a00557.html#a19067e6246ef53102df46dc7fbb3aca6">CCPxBUFL</a>; <span class="comment">// CCPxBUFL: CCPx INPUT CAPTURE BUFFER LOW</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="a00557.html#a5c784c9fe2f3c3afe37b79b6e46b39f2">  136</a></span>&#160;                <span class="keyword">volatile</span> uint16_t <a class="code" href="a00557.html#a5c784c9fe2f3c3afe37b79b6e46b39f2">CCPBUFH</a> : 16; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="a00557.html#a40d85b62aff2f15c2ea610ca57f9af00">  137</a></span>&#160;            } <a class="code" href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">bits</a>; <span class="comment">// Register bit-field</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            uint16_t <a class="code" href="a00557.html#a900b69af7d674b8db3bceae754b4955a">value</a>; <span class="comment">// 16-bit wide register value</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="a00557.html#a7397e6977a8365831e011732493ff0fa">  139</a></span>&#160;        } <a class="code" href="a00557.html#a7397e6977a8365831e011732493ff0fa">CCPxBUFH</a>; <span class="comment">// CCPxBUFH: CCPx INPUT CAPTURE BUFFER HIGH</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    } __attribute__((packed));</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a00557.html">P33C_CCP_INSTANCE_SFRSET_s</a> <a class="code" href="a00557.html">P33C_CCP_MODULE_SFRSET_t</a>;  </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">    #define P33C_CCPGEN_SFR_OFFSET  ((volatile uint16_t)&amp;CCP2CON1L - (volatile uint16_t)&amp;CCP1CON1L) </span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor"></span> </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">/* GLOBAL FUNCTION CALL PROTOTYPES */</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">enum</span> CORCON_IF_e{</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    CORCON_IF_INTEGER = 0b1, <span class="comment">// Integer mode is enabled for DSP multiply</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    CORCON_IF_FRACTIONAL = 0b0 <span class="comment">// Fractional mode is enabled for DSP multiply</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> CORCON_IF_e CORCON_IF_t; <span class="comment">// Integer or Fractional Multiplier Mode Select bit</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="a00797.html">  166</a></span>&#160;<span class="keyword">struct </span><a class="code" href="a00797.html">DSP_CONFIG_s</a></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">union </span>{</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="a00797.html#a1e7f7bae532e80d9b54a6acab2474b55">  170</a></span>&#160;        <span class="keyword">volatile</span> CORCON_IF_t <a class="code" href="a00797.html#a1e7f7bae532e80d9b54a6acab2474b55">IF</a> : 1; <span class="comment">// Integer or Fractional Multiplier Mode Select bit</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="a00797.html#a0675e7fa49994bf6f5958c3df8d370f2">  171</a></span>&#160;        <span class="keyword">volatile</span> CORCON_RND_t <a class="code" href="a00797.html#a0675e7fa49994bf6f5958c3df8d370f2">RND</a> : 1; <span class="comment">// Rounding Mode Select bit</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="a00797.html#a6546794ab4cff147105087deeba459cd">  172</a></span>&#160;        <span class="keyword">volatile</span> CORCON_SFA_t <a class="code" href="a00797.html#a6546794ab4cff147105087deeba459cd">SFA</a> : 1; <span class="comment">// Stack Frame Active Status bit</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="a00797.html#a756c1c50e40bfff5a035578c95f19ad5">  173</a></span>&#160;        <span class="keyword">volatile</span> CORCON_IPL3_STAT_t <a class="code" href="a00797.html#a756c1c50e40bfff5a035578c95f19ad5">IPL3</a> : 1; <span class="comment">// CPU Interrupt Priority Level Status bit 3</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="a00797.html#a5c2c7428e9312492055207da7c8de5ca">  174</a></span>&#160;        <span class="keyword">volatile</span> CORCON_ACCSAT_t <a class="code" href="a00797.html#a5c2c7428e9312492055207da7c8de5ca">ACCSAT</a> : 1; <span class="comment">// Accumulator Saturation Mode Select bit</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="a00797.html#aa19d08b83e73991dc281b98d59e06ab7">  175</a></span>&#160;        <span class="keyword">volatile</span> CORCON_SATDW_t <a class="code" href="a00797.html#aa19d08b83e73991dc281b98d59e06ab7">SATDW</a> : 1; <span class="comment">// Data Space Write from DSP Engine Saturation Enable bit</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="a00797.html#a4630d9527b3bae7b7a8e9fef16eaf8f8">  176</a></span>&#160;        <span class="keyword">volatile</span> CORCON_SATB_t <a class="code" href="a00797.html#a4630d9527b3bae7b7a8e9fef16eaf8f8">SATB</a> : 1; <span class="comment">// ACCB Saturation Enable bit</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="a00797.html#af53bfab89b9aada9cd4600d06ff9c410">  177</a></span>&#160;        <span class="keyword">volatile</span> CORCON_SATA_t <a class="code" href="a00797.html#af53bfab89b9aada9cd4600d06ff9c410">SATA</a> : 1; <span class="comment">// ACCA Saturation Enable bit</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="a00797.html#a2c1fcbae3e0c80d07acb52b3f777a23c">  179</a></span>&#160;        <span class="keyword">volatile</span> CORCON_DL_STAT_t <a class="code" href="a00797.html#a2c1fcbae3e0c80d07acb52b3f777a23c">DL</a> : 3; <span class="comment">// DO Loop Nesting Level Status bits</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="a00797.html#a1315dec4332fb86c7041d49e4e856d88">  180</a></span>&#160;        <span class="keyword">volatile</span> CORCON_EDT_t <a class="code" href="a00797.html#a1315dec4332fb86c7041d49e4e856d88">EDT</a> : 1; <span class="comment">// Early DO Loop Termination Control bit</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="a00797.html#a66fa34c648c876d2048d9d78b7ea686b">  181</a></span>&#160;        <span class="keyword">volatile</span> CORCON_US_t <a class="code" href="a00797.html#a66fa34c648c876d2048d9d78b7ea686b">US</a> : 2; <span class="comment">// DSP Multiply Unsigned/Signed Control bits</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="a00797.html#a32e93b068e309da5a319a7a69f3b3ff5">  182</a></span>&#160;        <span class="keyword">volatile</span> <a class="code" href="a00797.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> : 1; <span class="comment">// reserved</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="a00797.html#a88c251a76ee3d54b5a7fb76ecbaf24a5">  183</a></span>&#160;        <span class="keyword">volatile</span> CORCON_VAR_t <a class="code" href="a00797.html#a88c251a76ee3d54b5a7fb76ecbaf24a5">VAR</a> : 1; <span class="comment">// Variable Exception Processing Latency Control bit</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    } __attribute__((packed)) bits; <span class="comment">// CORCON: CORE CONTROL REGISTER BITFIELD</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="a00797.html#a3f0c55f449560b03ce0ac43270c26600">  186</a></span>&#160;    <span class="keyword">volatile</span> uint16_t <a class="code" href="a00797.html#a3f0c55f449560b03ce0ac43270c26600">value</a>;  <span class="comment">// CORCON: CORE CONTROL REGISTER VALUE</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    };</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a00797.html">DSP_CONFIG_s</a> <a class="code" href="a00797.html">DSP_CONFIG_t</a>; <span class="comment">// CORCON: CORE CONTROL REGISTER</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">/* PROTOTYPES */</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00352.html#gaf288dad5df78426690b7296f0a38bce4">Dsp_SetConfig</a>(<span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a00797.html">DSP_CONFIG_s</a> dsp_cfg);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00797.html">DSP_CONFIG_s</a> <a class="code" href="a00352.html#gaa6137620b2ae63fce63701725d97ee89">Dsp_GetConfig</a>(void);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* end of P33C_DSP_SFR_ABSTRACTION_H */</span><span class="preprocessor"> </span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">// end of file</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00557.html">P33C_CCP_INSTANCE_SFRSET_s</a>* <a class="code" href="a00359.html#ga69f27108ee95b46a170b3fd0900665ed">p33c_CcpInstance_GetHandle</a>(<span class="keyword">volatile</span> uint16_t ccpInstance);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00557.html">P33C_CCP_INSTANCE_SFRSET_s</a>  <a class="code" href="a00359.html#ga85e7392861b4162d105c2fb2c3fac15b">p33c_CcpInstance_ConfigRead</a>(volatile uint16_t ccpInstance);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00359.html#ga92df713d7ce95d9ce7408d246cfe5d17">p33c_CcpInstance_ConfigWrite</a>(</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="keyword">volatile</span> uint16_t ccpInstance, </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a00557.html">P33C_CCP_INSTANCE_SFRSET_s</a> ccpConfig</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            );</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* P33C_CCP_SFR_ABSTRACTION_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">// END OF FILE</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00797_html_a1315dec4332fb86c7041d49e4e856d88"><div class="ttname"><a href="a00797.html#a1315dec4332fb86c7041d49e4e856d88">DSP_CONFIG_s::EDT</a></div><div class="ttdeci">volatile CORCON_EDT_t EDT</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00180">p33c_dsp.h:180</a></div></div>
-<div class="ttc" id="aa00797_html_a0675e7fa49994bf6f5958c3df8d370f2"><div class="ttname"><a href="a00797.html#a0675e7fa49994bf6f5958c3df8d370f2">DSP_CONFIG_s::RND</a></div><div class="ttdeci">volatile CORCON_RND_t RND</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00171">p33c_dsp.h:171</a></div></div>
-<div class="ttc" id="aa00352_html_gaa6137620b2ae63fce63701725d97ee89"><div class="ttname"><a href="a00352.html#gaa6137620b2ae63fce63701725d97ee89">Dsp_GetConfig</a></div><div class="ttdeci">volatile struct DSP_CONFIG_s Dsp_GetConfig(void)</div><div class="ttdoc">Reads the DSP engine configuration.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00053">p33c_dsp.c:78</a></div></div>
-<div class="ttc" id="aa00797_html_a66fa34c648c876d2048d9d78b7ea686b"><div class="ttname"><a href="a00797.html#a66fa34c648c876d2048d9d78b7ea686b">DSP_CONFIG_s::US</a></div><div class="ttdeci">volatile CORCON_US_t US</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00181">p33c_dsp.h:181</a></div></div>
-<div class="ttc" id="aa00797_html_a88c251a76ee3d54b5a7fb76ecbaf24a5"><div class="ttname"><a href="a00797.html#a88c251a76ee3d54b5a7fb76ecbaf24a5">DSP_CONFIG_s::VAR</a></div><div class="ttdeci">volatile CORCON_VAR_t VAR</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00183">p33c_dsp.h:183</a></div></div>
-<div class="ttc" id="aa00797_html_aa19d08b83e73991dc281b98d59e06ab7"><div class="ttname"><a href="a00797.html#aa19d08b83e73991dc281b98d59e06ab7">DSP_CONFIG_s::SATDW</a></div><div class="ttdeci">volatile CORCON_SATDW_t SATDW</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00175">p33c_dsp.h:175</a></div></div>
-<div class="ttc" id="aa00797_html_a1e7f7bae532e80d9b54a6acab2474b55"><div class="ttname"><a href="a00797.html#a1e7f7bae532e80d9b54a6acab2474b55">DSP_CONFIG_s::IF</a></div><div class="ttdeci">volatile CORCON_IF_t IF</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00170">p33c_dsp.h:170</a></div></div>
-<div class="ttc" id="aa00797_html"><div class="ttname"><a href="a00797.html">DSP_CONFIG_s</a></div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00166">p33c_dsp.h:167</a></div></div>
-<div class="ttc" id="aa00797_html_a3f0c55f449560b03ce0ac43270c26600"><div class="ttname"><a href="a00797.html#a3f0c55f449560b03ce0ac43270c26600">DSP_CONFIG_s::value</a></div><div class="ttdeci">volatile uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00186">p33c_dsp.h:186</a></div></div>
-<div class="ttc" id="aa00797_html_a4630d9527b3bae7b7a8e9fef16eaf8f8"><div class="ttname"><a href="a00797.html#a4630d9527b3bae7b7a8e9fef16eaf8f8">DSP_CONFIG_s::SATB</a></div><div class="ttdeci">volatile CORCON_SATB_t SATB</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00176">p33c_dsp.h:176</a></div></div>
-<div class="ttc" id="aa00797_html_af53bfab89b9aada9cd4600d06ff9c410"><div class="ttname"><a href="a00797.html#af53bfab89b9aada9cd4600d06ff9c410">DSP_CONFIG_s::SATA</a></div><div class="ttdeci">volatile CORCON_SATA_t SATA</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00177">p33c_dsp.h:177</a></div></div>
-<div class="ttc" id="aa00797_html_a2c1fcbae3e0c80d07acb52b3f777a23c"><div class="ttname"><a href="a00797.html#a2c1fcbae3e0c80d07acb52b3f777a23c">DSP_CONFIG_s::DL</a></div><div class="ttdeci">volatile CORCON_DL_STAT_t DL</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00179">p33c_dsp.h:179</a></div></div>
-<div class="ttc" id="aa00797_html_a6546794ab4cff147105087deeba459cd"><div class="ttname"><a href="a00797.html#a6546794ab4cff147105087deeba459cd">DSP_CONFIG_s::SFA</a></div><div class="ttdeci">volatile CORCON_SFA_t SFA</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00172">p33c_dsp.h:172</a></div></div>
-<div class="ttc" id="aa00797_html_a756c1c50e40bfff5a035578c95f19ad5"><div class="ttname"><a href="a00797.html#a756c1c50e40bfff5a035578c95f19ad5">DSP_CONFIG_s::IPL3</a></div><div class="ttdeci">volatile CORCON_IPL3_STAT_t IPL3</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00173">p33c_dsp.h:173</a></div></div>
-<div class="ttc" id="aa00352_html_gaf288dad5df78426690b7296f0a38bce4"><div class="ttname"><a href="a00352.html#gaf288dad5df78426690b7296f0a38bce4">Dsp_SetConfig</a></div><div class="ttdeci">volatile uint16_t Dsp_SetConfig(volatile struct DSP_CONFIG_s dsp_cfg)</div><div class="ttdoc">Initializes the DSP engine in accordance to user settings.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00053">p33c_dsp.c:53</a></div></div>
-<div class="ttc" id="aa00797_html_a5c2c7428e9312492055207da7c8de5ca"><div class="ttname"><a href="a00797.html#a5c2c7428e9312492055207da7c8de5ca">DSP_CONFIG_s::ACCSAT</a></div><div class="ttdeci">volatile CORCON_ACCSAT_t ACCSAT</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00174">p33c_dsp.h:174</a></div></div>
-<div class="ttc" id="aa00797_html_a32e93b068e309da5a319a7a69f3b3ff5"><div class="ttname"><a href="a00797.html#a32e93b068e309da5a319a7a69f3b3ff5">DSP_CONFIG_s::unsigned</a></div><div class="ttdeci">volatile unsigned</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00182">p33c_dsp.h:182</a></div></div>
+<div class="ttc" id="aa00359_html_ga85e7392861b4162d105c2fb2c3fac15b"><div class="ttname"><a href="a00359.html#ga85e7392861b4162d105c2fb2c3fac15b">p33c_CcpInstance_ConfigRead</a></div><div class="ttdeci">volatile struct P33C_CCP_INSTANCE_SFRSET_s p33c_CcpInstance_ConfigRead(volatile uint16_t ccpInstance)</div><div class="ttdoc">Read the current configuration from the CCP instance registers.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00060">p33c_ccp.c:86</a></div></div>
+<div class="ttc" id="aa00359_html_ga92df713d7ce95d9ce7408d246cfe5d17"><div class="ttname"><a href="a00359.html#ga92df713d7ce95d9ce7408d246cfe5d17">p33c_CcpInstance_ConfigWrite</a></div><div class="ttdeci">volatile uint16_t p33c_CcpInstance_ConfigWrite(volatile uint16_t ccpInstance, volatile struct P33C_CCP_INSTANCE_SFRSET_s ccpConfig)</div><div class="ttdoc">Writes a user-defined configuration to the CCP instance registers.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00116">p33c_ccp.c:116</a></div></div>
+<div class="ttc" id="aa00557_html_ab0b3d8d3658d07b805242305f2651190"><div class="ttname"><a href="a00557.html#ab0b3d8d3658d07b805242305f2651190">P33C_CCP_INSTANCE_SFRSET_s::CCPBUFL</a></div><div class="ttdeci">volatile uint16_t CCPBUFL</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00129">p33c_ccp.h:129</a></div></div>
+<div class="ttc" id="aa00557_html_a7ced2ff0386765f860134b27279bfbf3"><div class="ttname"><a href="a00557.html#a7ced2ff0386765f860134b27279bfbf3">P33C_CCP_INSTANCE_SFRSET_s::CCPRAL</a></div><div class="ttdeci">volatile uint16_t CCPRAL</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00111">p33c_ccp.h:111</a></div></div>
+<div class="ttc" id="aa00557_html_a19067e6246ef53102df46dc7fbb3aca6"><div class="ttname"><a href="a00557.html#a19067e6246ef53102df46dc7fbb3aca6">P33C_CCP_INSTANCE_SFRSET_s::CCPxBUFL</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@12 CCPxBUFL</div></div>
+<div class="ttc" id="aa00557_html_a537d44d6baaa4008aa4ccd19f81b5610"><div class="ttname"><a href="a00557.html#a537d44d6baaa4008aa4ccd19f81b5610">P33C_CCP_INSTANCE_SFRSET_s::CCPxTMRL</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@6 CCPxTMRL</div></div>
+<div class="ttc" id="aa00557_html_a9d9a18705cf617292bc45daf8006d7d4"><div class="ttname"><a href="a00557.html#a9d9a18705cf617292bc45daf8006d7d4">P33C_CCP_INSTANCE_SFRSET_s::CCPxCON1L</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@0 CCPxCON1L</div></div>
+<div class="ttc" id="aa00557_html_a8cd08d06ca3fdc4bd723d76f98d19291"><div class="ttname"><a href="a00557.html#a8cd08d06ca3fdc4bd723d76f98d19291">P33C_CCP_INSTANCE_SFRSET_s::CCPxCON3H</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@4 CCPxCON3H</div></div>
+<div class="ttc" id="aa00557_html_aaaba5e152ad094ef2ca2a7985fcc99b2"><div class="ttname"><a href="a00557.html#aaaba5e152ad094ef2ca2a7985fcc99b2">P33C_CCP_INSTANCE_SFRSET_s::bits</a></div><div class="ttdeci">struct tagCCP1CON1LBITS bits</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00125">p33c_ccp.h:41</a></div></div>
+<div class="ttc" id="aa00557_html_a626e6d18a70ce748dfda0c697f8d46a3"><div class="ttname"><a href="a00557.html#a626e6d18a70ce748dfda0c697f8d46a3">P33C_CCP_INSTANCE_SFRSET_s::CCPPRH</a></div><div class="ttdeci">volatile uint16_t CCPPRH</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00104">p33c_ccp.h:104</a></div></div>
+<div class="ttc" id="aa00557_html_add82eda187462e4361c817c5157b70de"><div class="ttname"><a href="a00557.html#add82eda187462e4361c817c5157b70de">P33C_CCP_INSTANCE_SFRSET_s::CCPPRL</a></div><div class="ttdeci">volatile uint16_t CCPPRL</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00097">p33c_ccp.h:97</a></div></div>
+<div class="ttc" id="aa00557_html_aae6ebf63dec7891f39e0f974bfe09b94"><div class="ttname"><a href="a00557.html#aae6ebf63dec7891f39e0f974bfe09b94">P33C_CCP_INSTANCE_SFRSET_s::CCPxRAL</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@10 CCPxRAL</div></div>
+<div class="ttc" id="aa00557_html_a32e93b068e309da5a319a7a69f3b3ff5"><div class="ttname"><a href="a00557.html#a32e93b068e309da5a319a7a69f3b3ff5">P33C_CCP_INSTANCE_SFRSET_s::unsigned</a></div><div class="ttdeci">volatile unsigned</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00066">p33c_ccp.h:66</a></div></div>
+<div class="ttc" id="aa00557_html_a269fae7310d4e791d785527195df12d2"><div class="ttname"><a href="a00557.html#a269fae7310d4e791d785527195df12d2">P33C_CCP_INSTANCE_SFRSET_s::CCPxRBL</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@11 CCPxRBL</div></div>
+<div class="ttc" id="aa00557_html_a9d89e82f7e898ed9fd903d67bc941847"><div class="ttname"><a href="a00557.html#a9d89e82f7e898ed9fd903d67bc941847">P33C_CCP_INSTANCE_SFRSET_s::CCPxPRL</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@8 CCPxPRL</div></div>
+<div class="ttc" id="aa00557_html_a43ebb7226a97f80e87ca59c252d95c3e"><div class="ttname"><a href="a00557.html#a43ebb7226a97f80e87ca59c252d95c3e">P33C_CCP_INSTANCE_SFRSET_s::CCPxCON2L</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@2 CCPxCON2L</div></div>
+<div class="ttc" id="aa00557_html_a5c784c9fe2f3c3afe37b79b6e46b39f2"><div class="ttname"><a href="a00557.html#a5c784c9fe2f3c3afe37b79b6e46b39f2">P33C_CCP_INSTANCE_SFRSET_s::CCPBUFH</a></div><div class="ttdeci">volatile uint16_t CCPBUFH</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00136">p33c_ccp.h:136</a></div></div>
+<div class="ttc" id="aa00557_html_adc676ba4812f7f2ea59f74442c6b1fa9"><div class="ttname"><a href="a00557.html#adc676ba4812f7f2ea59f74442c6b1fa9">P33C_CCP_INSTANCE_SFRSET_s::CCPRBL</a></div><div class="ttdeci">volatile uint16_t CCPRBL</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00120">p33c_ccp.h:120</a></div></div>
+<div class="ttc" id="aa00557_html_a34164053821c7c8fa5e3eddba203d62f"><div class="ttname"><a href="a00557.html#a34164053821c7c8fa5e3eddba203d62f">P33C_CCP_INSTANCE_SFRSET_s::CCPxPRH</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@9 CCPxPRH</div></div>
+<div class="ttc" id="aa00557_html_a4db789b24f9462ad41ac06552b903e6e"><div class="ttname"><a href="a00557.html#a4db789b24f9462ad41ac06552b903e6e">P33C_CCP_INSTANCE_SFRSET_s::CCPTMRL</a></div><div class="ttdeci">volatile uint16_t CCPTMRL</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00083">p33c_ccp.h:83</a></div></div>
+<div class="ttc" id="aa00359_html_ga69f27108ee95b46a170b3fd0900665ed"><div class="ttname"><a href="a00359.html#ga69f27108ee95b46a170b3fd0900665ed">p33c_CcpInstance_GetHandle</a></div><div class="ttdeci">volatile struct P33C_CCP_INSTANCE_SFRSET_s * p33c_CcpInstance_GetHandle(volatile uint16_t ccpInstance)</div><div class="ttdoc">Gets pointer to CCP instance SFR set.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00060">p33c_ccp.c:60</a></div></div>
+<div class="ttc" id="aa00557_html_a48cc84e6f8ac23730310f81c91683940"><div class="ttname"><a href="a00557.html#a48cc84e6f8ac23730310f81c91683940">P33C_CCP_INSTANCE_SFRSET_s::CCPxCON1H</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@1 CCPxCON1H</div></div>
+<div class="ttc" id="aa00557_html_ab6e4e405cece5bc3bc9523bad8c274ea"><div class="ttname"><a href="a00557.html#ab6e4e405cece5bc3bc9523bad8c274ea">P33C_CCP_INSTANCE_SFRSET_s::CCPxTMRH</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@7 CCPxTMRH</div></div>
+<div class="ttc" id="aa00557_html_adc08ef06ae70448a10169a769070bf95"><div class="ttname"><a href="a00557.html#adc08ef06ae70448a10169a769070bf95">P33C_CCP_INSTANCE_SFRSET_s::CCPxSTATL</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@5 CCPxSTATL</div></div>
+<div class="ttc" id="aa00557_html"><div class="ttname"><a href="a00557.html">P33C_CCP_INSTANCE_SFRSET_s</a></div><div class="ttdoc">Generic Capture Compare Driver Module (header file)</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00038">p33c_ccp.h:38</a></div></div>
+<div class="ttc" id="aa00557_html_ac12e6aa2004c920da0949906a43efb3e"><div class="ttname"><a href="a00557.html#ac12e6aa2004c920da0949906a43efb3e">P33C_CCP_INSTANCE_SFRSET_s::CCPTMRH</a></div><div class="ttdeci">volatile uint16_t CCPTMRH</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00090">p33c_ccp.h:90</a></div></div>
+<div class="ttc" id="aa00557_html_a4327c245f9cb581c693b2662e08dccb4"><div class="ttname"><a href="a00557.html#a4327c245f9cb581c693b2662e08dccb4">P33C_CCP_INSTANCE_SFRSET_s::CCPxCON2H</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@3 CCPxCON2H</div></div>
+<div class="ttc" id="aa00557_html_a7397e6977a8365831e011732493ff0fa"><div class="ttname"><a href="a00557.html#a7397e6977a8365831e011732493ff0fa">P33C_CCP_INSTANCE_SFRSET_s::CCPxBUFH</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@13 CCPxBUFH</div></div>
+<div class="ttc" id="aa00557_html_a900b69af7d674b8db3bceae754b4955a"><div class="ttname"><a href="a00557.html#a900b69af7d674b8db3bceae754b4955a">P33C_CCP_INSTANCE_SFRSET_s::value</a></div><div class="ttdeci">uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00042">p33c_ccp.h:42</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_b243a48454939fba398f3081ea81cd74.html">dpsk_boost_vmc.X</a></li><li class="navelem"><a class="el" href="dir_0e4839e6c0519f71971690c8a50975c4.html">sources</a></li><li class="navelem"><a class="el" href="dir_3930eb7ae7689ba14f1e726de8f174cf.html">common</a></li><li class="navelem"><a class="el" href="dir_5405c1a44a6bf69d5044980887ef36e7.html">p33c_pral</a></li><li class="navelem"><b>p33c_dsp.h</b></li>
+    <li class="navelem"><a class="el" href="dir_b243a48454939fba398f3081ea81cd74.html">dpsk_boost_vmc.X</a></li><li class="navelem"><a class="el" href="dir_0e4839e6c0519f71971690c8a50975c4.html">sources</a></li><li class="navelem"><a class="el" href="dir_3930eb7ae7689ba14f1e726de8f174cf.html">common</a></li><li class="navelem"><a class="el" href="dir_5405c1a44a6bf69d5044980887ef36e7.html">p33c_pral</a></li><li class="navelem"><b>p33c_ccp.h</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

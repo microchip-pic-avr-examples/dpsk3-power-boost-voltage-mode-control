@@ -1,6 +1,7 @@
 var a01529 =
 [
-    [ "factor", "a01529.html#aa9a9b14569ac48dc290e2df6162fb42f", null ],
-    [ "offset", "a01529.html#acba44d6d5a7e55c468854c5487df135c", null ],
-    [ "scaler", "a01529.html#aefa09a3fb2e5db126ad75513aede5fb3", null ]
+    [ "counter", "a01529.html#a8544f2f5b43d21d6a0a586fc81f9ce92", null ],
+    [ "period", "a01529.html#a48f363c7bcd47589472b59f0a7dfb74b", null ],
+    [ "ref_inc_step", "a01529.html#a832c6be5021565e3da55cbc0a523e744", null ],
+    [ "reference", "a01529.html#aad7bda3be2c1e6a89bd7093086bbeec8", null ]
 ];

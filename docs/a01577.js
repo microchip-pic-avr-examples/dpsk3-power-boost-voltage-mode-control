@@ -1,8 +1,13 @@
 var a01577 =
 [
-    [ "AltSource", "a01577.html#a3a379c646ec42095e042129a3d5be4c6", null ],
-    [ "AltTarget", "a01577.html#a6b05be809e02d6df3543491ac1b0a33f", null ],
-    [ "ptrControlReference", "a01577.html#a306222c526fd3d513d6b71a8bb81fbb2", null ],
-    [ "Source", "a01577.html#ae15e31196b49064de35eff167eb5d2fa", null ],
-    [ "Target", "a01577.html#adea3417126acdc7fcc1f1dac45b7dd83", null ]
+    [ "data", "a01577.html#ae94e8223319b210a6af5fac01d2c6d5e", null ],
+    [ "feedback", "a01577.html#a63d6a3cd26694bebeed63fd1e1a1eb2e", null ],
+    [ "gpio", "a01577.html#a86a71e9beada7e2064de976b164cd84b", null ],
+    [ "i_loop", "a01577.html#ac0a6d2e4b96edeb1086709409e5f0e28", null ],
+    [ "set_values", "a01577.html#a65372722a32dba273f722b29a2609d8a", null ],
+    [ "startup", "a01577.html#aef4c8320b07ea3539f664d10c9c4f835", null ],
+    [ "state_id", "a01577.html#a753d49e459d6acea8dca783faddea1df", null ],
+    [ "status", "a01577.html#a43ac04e696799481a75b1e5c2772ffe3", null ],
+    [ "sw_node", "a01577.html#a25c2cb61021c319b38a5c024e48c3310", null ],
+    [ "v_loop", "a01577.html#a22db2a2436558a1cb087f0f2ad607a64", null ]
 ];

@@ -1,4 +1,6 @@
-<map id="Private Functions" name="Private Functions">
-<area shape="rect" id="node1" href="$a00500.html" title=" " alt="" coords="5,5,143,31"/>
-<area shape="rect" id="node2" title="Private functions of the push button device driver library." alt="" coords="191,5,313,31"/>
+<map id="Boost Peripheral Configuration" name="Boost Peripheral Configuration">
+<area shape="rect" id="node1" href="$a00504.html" title="Functions of the second library layer." alt="" coords="457,5,536,31"/>
+<area shape="rect" id="node2" href="$a00490.html" title=" " alt="" coords="5,23,163,63"/>
+<area shape="rect" id="node4" title=" " alt="" coords="211,31,408,56"/>
+<area shape="rect" id="node3" href="$a00505.html" title="Properties of the second library layer." alt="" coords="456,55,537,80"/>
 </map>

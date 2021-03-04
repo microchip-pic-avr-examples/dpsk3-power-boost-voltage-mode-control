@@ -1,8 +1,4 @@
-<map id="Fault Monitor Application Layer" name="Fault Monitor Application Layer">
-<area shape="rect" id="node1" href="$a00410.html" title="Public functions of the first application layer task." alt="" coords="393,5,512,31"/>
-<area shape="rect" id="node2" href="$a00413.html" title="Private properties of the first application layer task." alt="" coords="391,55,515,80"/>
-<area shape="rect" id="node3" title=" " alt="" coords="176,73,343,113"/>
-<area shape="rect" id="node4" href="$a00411.html" title="Public properties of the first application layer task." alt="" coords="392,104,513,129"/>
-<area shape="rect" id="node6" href="$a00412.html" title="Private functions of the first application layer task." alt="" coords="391,153,514,179"/>
-<area shape="rect" id="node5" href="$a00523.html" title="Task Layer." alt="" coords="5,80,128,105"/>
+<map id="Boost Converter" name="Boost Converter">
+<area shape="rect" id="node1" title="User&#45;declaration of output voltage feedback parameters of the boost converter using physical quantiti..." alt="" coords="155,5,269,31"/>
+<area shape="rect" id="node2" href="$a00408.html" title="User&#45;declaration of output voltage feedback parameters using physical quantities." alt="" coords="5,5,107,31"/>
 </map>

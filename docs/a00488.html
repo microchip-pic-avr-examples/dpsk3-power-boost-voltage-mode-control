@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Functions</title>
+<title>Digital Power Starter Kit 3 Firmware: Data Types</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,240 +104,205 @@ $(document).ready(function(){initNavTree('a00488.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
-<div class="title">Functions<div class="ingroups"><a class="el" href="a00525.html">Library Driver Layer</a> &raquo; <a class="el" href="a00487.html">Power Converter Control Driver</a></div></div>  </div>
+<div class="title">Data Types<div class="ingroups"><a class="el" href="a00552.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00479.html">Boost Converter Library</a> &raquo; <a class="el" href="a00480.html">Boost Converter Library API</a> &raquo; <a class="el" href="a00486.html">Private Properties</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Public functions of the Power Converter Control driver.  
-<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Functions:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Data Types:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00488.svg" width="299" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00488.svg" width="271" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga62d45a18f3dd47fa691fbb463f90e051"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00488.html#ga62d45a18f3dd47fa691fbb463f90e051">v_loop_Initialize</a> (volatile struct <a class="el" href="a01609.html">NPNZ16b_s</a> *controller)</td></tr>
-<tr class="memdesc:ga62d45a18f3dd47fa691fbb463f90e051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes controller coefficient arrays and normalization factors.  <a href="a00488.html#ga62d45a18f3dd47fa691fbb463f90e051">More...</a><br /></td></tr>
-<tr class="separator:ga62d45a18f3dd47fa691fbb463f90e051"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabb35e824b8586b680f54d59975ada3c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00488.html#gabb35e824b8586b680f54d59975ada3c7">v_loop_Reset</a> (volatile struct <a class="el" href="a01609.html">NPNZ16b_s</a> *controller)</td></tr>
-<tr class="memdesc:gabb35e824b8586b680f54d59975ada3c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prototype of the Assembly routine '_v_loop_Reset' clearing the NPNZ16b controller output and error histories.  <a href="a00488.html#gabb35e824b8586b680f54d59975ada3c7">More...</a><br /></td></tr>
-<tr class="separator:gabb35e824b8586b680f54d59975ada3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3cdf7d86ab440015768706f04bd588e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00488.html#ga3cdf7d86ab440015768706f04bd588e9">v_loop_Precharge</a> (volatile struct <a class="el" href="a01609.html">NPNZ16b_s</a> *controller, volatile fractional ctrl_input, volatile fractional ctrl_output)</td></tr>
-<tr class="memdesc:ga3cdf7d86ab440015768706f04bd588e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prototype of the Assembly routine '_v_loop_Precharge' loading user-defined values into the NPNZ16b controller output and error histories.  <a href="a00488.html#ga3cdf7d86ab440015768706f04bd588e9">More...</a><br /></td></tr>
-<tr class="separator:ga3cdf7d86ab440015768706f04bd588e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab8180f1cb973d694be5caffaec3ce940"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00488.html#gab8180f1cb973d694be5caffaec3ce940">v_loop_Update</a> (volatile struct <a class="el" href="a01609.html">NPNZ16b_s</a> *controller)</td></tr>
-<tr class="memdesc:gab8180f1cb973d694be5caffaec3ce940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prototype of the Assembly feedback control loop routine helping to call the v_loop controller from C-code.  <a href="a00488.html#gab8180f1cb973d694be5caffaec3ce940">More...</a><br /></td></tr>
-<tr class="separator:gab8180f1cb973d694be5caffaec3ce940"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac782e99f408e1d33286076e69a14f781"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00488.html#gac782e99f408e1d33286076e69a14f781">v_loop_PTermUpdate</a> (volatile struct <a class="el" href="a01609.html">NPNZ16b_s</a> *controller)</td></tr>
-<tr class="memdesc:gac782e99f408e1d33286076e69a14f781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prototype of the alternate Assembly P-Term control loop helping to call the v_loop P-Term controller from C-code.  <a href="a00488.html#gac782e99f408e1d33286076e69a14f781">More...</a><br /></td></tr>
-<tr class="separator:gac782e99f408e1d33286076e69a14f781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01505.html">BOOST_CONVERTER_STATUS_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic power controller status word.  <a href="a01505.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01517.html">BOOST_STATE_ID_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">data structure for the boost statement ID for sub-operating and operating states  <a href="a01517.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01529.html">BOOST_STARTUP_PERIOD_HANDLER_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic power controller startup period settings.  <a href="a01529.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01533.html">BOOST_STARTUP_VCAP_PRECHARGE_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boost converter output capacitor voltage charge-up monitor settings.  <a href="a01533.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01537.html">BOOST_CONVERTER_STARTUP_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power Converter Startup Timing Settings.  <a href="a01537.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01541.html">BOOST_CONVERTER_DATA_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publicly accessible data buffer of most recent runtime data values.  <a href="a01541.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01545.html">BOOST_CONVERTER_SETTINGS_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic power controller control settings.  <a href="a01545.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01549.html">BOOST_LOOP_SETTINGS_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">User defined settings for control loops;.  <a href="a01549.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html">BOOST_SWITCH_NODE_SETTINGS_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switching signal timing settings.  <a href="a01553.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01557.html">BOOST_ADC_INPUT_SCALING_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input signal scaling = (ADCBUF - &lt;offset&gt;) * &lt;factor&gt; &gt;&gt; 2^&lt;scaler&gt;  <a href="a01557.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html">BOOST_ADC_INPUT_SETTINGS_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input channel configuration.  <a href="a01561.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html">BOOST_FEEDBACK_SETTINGS_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boost converter feedback declarations.  <a href="a01565.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html">BOOST_GPIO_INSTANCE_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO instance of the converter control GPIO.  <a href="a01569.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01573.html">BOOST_GPIO_SETTINGS_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO instance of the converter control GPIO.  <a href="a01573.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gab6bb1782082308282ea5eac8178c9d35"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00488.html#gab6bb1782082308282ea5eac8178c9d35">BOOST_STATUS_FLAGS_e</a> { <br />
+&#160;&#160;<b>BOOST_STAT_READY</b> = 0b0000000000000001, 
+<b>BOOST_STAT_ADC_ACTIVE</b> = 0b0000000000000010, 
+<b>BOOST_STAT_PWM_ACTIVE</b> = 0b0000000000000100, 
+<b>BOOST_STAT_POWERSOURCE_DETECTED</b> = 0b0000000000001000, 
+<b>BOOST_STAT_CS_SENSE_READY</b> = 0b0000000000010000, 
+<b>BOOST_STAT_FORCED_SHUT_DOWN</b> = 0b0000000010000000, 
+<b>BOOST_STAT_BUSY</b> = 0b0000000100000000, 
+<b>BOOST_STAT_GO</b> = 0b0010000000000000, 
+<b>BOOST_STAT_AUTORUN</b> = 0b0100000000000000, 
+<b>BOOST_STAT_NO_AUTORUN</b> = 0b0000000000000000, 
+<br />
+&#160;&#160;<b>BOOST_STAT_ENABLED</b> = 0b1000000000000000, 
+<b>BOOST_STAT_DISABLED</b> = 0b0000000000000000
+<br />
+ }</td></tr>
+<tr class="memdesc:gab6bb1782082308282ea5eac8178c9d35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of status and control flags.  <a href="a00488.html#gab6bb1782082308282ea5eac8178c9d35">More...</a><br /></td></tr>
+<tr class="separator:gab6bb1782082308282ea5eac8178c9d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1aae62c3b72232032f067db3a401a83c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00488.html#ga1aae62c3b72232032f067db3a401a83c">BOOST_OPSTATES_e</a> { <b>BOOST_OPSTATE_ERROR</b> = 0x00, 
+<b>BOOST_OPSTATE_INITIALIZE</b> = 0x01, 
+<b>BOOST_OPSTATE_RESET</b> = 0x02, 
+<b>BOOST_OPSTATE_STANDBY</b> = 0x03, 
+<b>BOOST_OPSTATE_RAMPUP</b> = 0x04, 
+<b>BOOST_OPSTATE_ONLINE</b> = 0x05
+ }</td></tr>
+<tr class="memdesc:ga1aae62c3b72232032f067db3a401a83c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of state machine operating states.  <a href="a00488.html#ga1aae62c3b72232032f067db3a401a83c">More...</a><br /></td></tr>
+<tr class="separator:ga1aae62c3b72232032f067db3a401a83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa310a5d5989ad9a9b6223e956212e3dd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00488.html#gaa310a5d5989ad9a9b6223e956212e3dd">BOOST_SUBSTATES_e</a> { <b>BOOST_OPSTATE_POWER_ON_DELAY</b> = 0x00, 
+<b>BOOST_OPSTATE_VCAP_MONITOR</b> = 0x01, 
+<b>BOOST_OPSTATE_PREPARE_V_RAMP</b> = 0x02, 
+<b>BOOST_OPSTATE_V_RAMP_UP</b> = 0x03, 
+<b>BOOST_OPSTATE_I_RAMP_UP</b> = 0x04, 
+<b>BOOST_OPSTATE_PWRGOOD_DELAY</b> = 0x05
+ }</td></tr>
+<tr class="memdesc:gaa310a5d5989ad9a9b6223e956212e3dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of state machine operating sub-states.  <a href="a00488.html#gaa310a5d5989ad9a9b6223e956212e3dd">More...</a><br /></td></tr>
+<tr class="separator:gaa310a5d5989ad9a9b6223e956212e3dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8292d39e2dfc6e9c88c106417789d28d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00488.html#ga8292d39e2dfc6e9c88c106417789d28d">BOOST_OPSTATE_RETURNS_e</a> { <b>BOOST_OPSRET_ERROR</b> = 0x0000, 
+<b>BOOST_OPSRET_COMPLETE</b> = 0x0001, 
+<b>BOOST_OPSRET_REPEAT</b> = 0x0002
+ }</td></tr>
+<tr class="memdesc:ga8292d39e2dfc6e9c88c106417789d28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of state machine operating state return values.  <a href="a00488.html#ga8292d39e2dfc6e9c88c106417789d28d">More...</a><br /></td></tr>
+<tr class="separator:ga8292d39e2dfc6e9c88c106417789d28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga973b0d6a48fe92a3e44f3d1c6b766b8a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00488.html#ga973b0d6a48fe92a3e44f3d1c6b766b8a">BOOST_CONTROL_MODE_e</a> { <b>BOOST_CONTROL_MODE_VMC</b> = 0, 
+<b>BOOST_CONTROL_MODE_ACMC</b> = 2
+ }</td></tr>
+<tr class="memdesc:ga973b0d6a48fe92a3e44f3d1c6b766b8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of the power supply mode control.  <a href="a00488.html#ga973b0d6a48fe92a3e44f3d1c6b766b8a">More...</a><br /></td></tr>
+<tr class="separator:ga973b0d6a48fe92a3e44f3d1c6b766b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Public functions of the Power Converter Control driver. </p>
-<p>This is the detailed description of public API functions of the Power Converter Control driver listing all available public functions of each individual feedback loop object. </p>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ga62d45a18f3dd47fa691fbb463f90e051"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga62d45a18f3dd47fa691fbb463f90e051">&#9670;&nbsp;</a></span>v_loop_Initialize()</h2>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga973b0d6a48fe92a3e44f3d1c6b766b8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga973b0d6a48fe92a3e44f3d1c6b766b8a">&#9670;&nbsp;</a></span>BOOST_CONTROL_MODE_e</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t v_loop_Initialize </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01609.html">NPNZ16b_s</a> *&#160;</td>
-          <td class="paramname"><em>controller</em></td><td>)</td>
-          <td></td>
+          <td class="memname">enum <a class="el" href="a00488.html#ga973b0d6a48fe92a3e44f3d1c6b766b8a">BOOST_CONTROL_MODE_e</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes controller coefficient arrays and normalization factors. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">controller</td><td>Pointer to NPNZ Controller Data Object of type struct <a class="el" href="a01609.html" title="Global NPNZ controller data object.">NPNZ16b_s</a></td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This function needs to be called from user code at startup once to initialize coefficient arrays and number normalization settings of the v_loop controller object.</p>
-<dl class="section attention"><dt>Attention</dt><dd>This routine DOES NOT initialize the complete controller object. User-defined settings such as pointers to the control reference, source and target registers, output minima and maxima and further, design-dependent settings, need to be specified in user code. </dd></dl>
+<p>Enumeration of the power supply mode control. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00299_source.html#l00103">103</a> of file <a class="el" href="a00299_source.html">v_loop.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00488_ga62d45a18f3dd47fa691fbb463f90e051_cgraph.svg" width="270" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga62d45a18f3dd47fa691fbb463f90e051_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00152">152</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="ga3cdf7d86ab440015768706f04bd588e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3cdf7d86ab440015768706f04bd588e9">&#9670;&nbsp;</a></span>v_loop_Precharge()</h2>
+<a id="ga8292d39e2dfc6e9c88c106417789d28d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8292d39e2dfc6e9c88c106417789d28d">&#9670;&nbsp;</a></span>BOOST_OPSTATE_RETURNS_e</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void v_loop_Precharge </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01609.html">NPNZ16b_s</a> *&#160;</td>
-          <td class="paramname"><em>controller</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">volatile fractional&#160;</td>
-          <td class="paramname"><em>ctrl_input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">volatile fractional&#160;</td>
-          <td class="paramname"><em>ctrl_output</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">enum <a class="el" href="a00488.html#ga8292d39e2dfc6e9c88c106417789d28d">BOOST_OPSTATE_RETURNS_e</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Prototype of the Assembly routine '_v_loop_Precharge' loading user-defined values into the NPNZ16b controller output and error histories. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">controller</td><td>Pointer to NPNZ16b data object of type struct NPNZ16b_s* </td></tr>
-    <tr><td class="paramname">ctrl_input</td><td>user-defined, constant error history value of type fractional </td></tr>
-    <tr><td class="paramname">ctrl_output</td><td>user-defined, constant control output history value of type fractional</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This function loads user-defined values into NPNZ16b controller output and error histories where the parameters ctrl_input and ctrl_output will written to the entire delay line of the filter emulating a pre-existing steady state operation under the user defined conditions. </p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_ga3cdf7d86ab440015768706f04bd588e9_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
+<p>Enumeration of state machine operating state return values. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00136">136</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="gac782e99f408e1d33286076e69a14f781"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac782e99f408e1d33286076e69a14f781">&#9670;&nbsp;</a></span>v_loop_PTermUpdate()</h2>
+<a id="ga1aae62c3b72232032f067db3a401a83c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1aae62c3b72232032f067db3a401a83c">&#9670;&nbsp;</a></span>BOOST_OPSTATES_e</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void v_loop_PTermUpdate </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01609.html">NPNZ16b_s</a> *&#160;</td>
-          <td class="paramname"><em>controller</em></td><td>)</td>
-          <td></td>
+          <td class="memname">enum <a class="el" href="a00488.html#ga1aae62c3b72232032f067db3a401a83c">BOOST_OPSTATES_e</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Prototype of the alternate Assembly P-Term control loop helping to call the v_loop P-Term controller from C-code. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">controller</td><td>Pointer to NPNZ16b data object of type struct NPNZ16b_s*</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This function has been added as extension function supporting the development process, introducing an alternative control loop able to replace the conventional compensation feedback loop with a simple P-Term controller, allowing users to perform measurements of the plant transfer function. To use this function, users may replace the default compensation feedback loop function call v_loop_Update by v_loop_PTermUpdate to perform the measurement.</p>
-<p>This additional controller seamlessly fits into the controller data interface by using the same <a class="el" href="a01609.html" title="Global NPNZ controller data object.">NPNZ16b_s</a> data structure and does not need additional configuration or initialization.</p>
-<dl class="section attention"><dt>Attention</dt><dd>THIS CONTROLLER IS USED FOR MEASUREMENTS OF THE PLANT TRANSFER FUNCTION ONLY. THIS LOOP IS BY DEFAULT UNSTABLE AND ONLY WORKS UNDER STABLE TEST CONDITIONS. DO NOT USE THIS CONTROLLER TYPE FOR NORMAL OPERATION </dd></dl>
+<p>Enumeration of state machine operating states. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00099">99</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="gabb35e824b8586b680f54d59975ada3c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabb35e824b8586b680f54d59975ada3c7">&#9670;&nbsp;</a></span>v_loop_Reset()</h2>
+<a id="gab6bb1782082308282ea5eac8178c9d35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab6bb1782082308282ea5eac8178c9d35">&#9670;&nbsp;</a></span>BOOST_STATUS_FLAGS_e</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void v_loop_Reset </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01609.html">NPNZ16b_s</a> *&#160;</td>
-          <td class="paramname"><em>controller</em></td><td>)</td>
-          <td></td>
+          <td class="memname">enum <a class="el" href="a00488.html#gab6bb1782082308282ea5eac8178c9d35">BOOST_STATUS_FLAGS_e</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Prototype of the Assembly routine '_v_loop_Reset' clearing the NPNZ16b controller output and error histories. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">controller</td><td>Pointer to NPNZ16b data object of type struct NPNZ16b_s*</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This Assembly function clears the NPNZ16b controller output and error histories by settings all elements of the delay lines to zero. This resets the controller to ist default state. This function should be called every time before the control loop is started from a disabled, unbiased output. </p><dl class="section note"><dt>Note</dt><dd>Use function 'v_loop_Precharge' to start the feedback loop controller when the output is pre-biased. </dd></dl>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_gabb35e824b8586b680f54d59975ada3c7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
+<p>Enumeration of status and control flags. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00071">71</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="gab8180f1cb973d694be5caffaec3ce940"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab8180f1cb973d694be5caffaec3ce940">&#9670;&nbsp;</a></span>v_loop_Update()</h2>
+<a id="gaa310a5d5989ad9a9b6223e956212e3dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa310a5d5989ad9a9b6223e956212e3dd">&#9670;&nbsp;</a></span>BOOST_SUBSTATES_e</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void v_loop_Update </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01609.html">NPNZ16b_s</a> *&#160;</td>
-          <td class="paramname"><em>controller</em></td><td>)</td>
-          <td></td>
+          <td class="memname">enum <a class="el" href="a00488.html#gaa310a5d5989ad9a9b6223e956212e3dd">BOOST_SUBSTATES_e</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Prototype of the Assembly feedback control loop routine helping to call the v_loop controller from C-code. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">controller</td><td>Pointer to NPNZ16b data object of type struct NPNZ16b_s*</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This function is the main controller function which must be called at the control frequency from the control interrupt service routine. It calculates the most recent control error and processes it in the compensation filter computation after which the new result is written to the control output target. Runtime control is provided through the NPNZ16b data object status &amp; control word. </p><dl class="section note"><dt>Note</dt><dd>Available control options depend on the controller feature configuration. Please refer to the user guide for more detailed information. </dd></dl>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00488_gab8180f1cb973d694be5caffaec3ce940_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
+<p>Enumeration of state machine operating sub-states. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00118">118</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>

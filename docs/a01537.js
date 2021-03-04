@@ -1,7 +1,8 @@
 var a01537 =
 [
-    [ "ad_isns", "a01537.html#aa55fe3a4f78581ac272747c3c344a297", null ],
-    [ "ad_temp", "a01537.html#a0024a912aae5a494f77bc64641fb54e6", null ],
-    [ "ad_vin", "a01537.html#a18195de455ff4cd15308ecb59555a911", null ],
-    [ "ad_vout", "a01537.html#a1c105672be980e48cb87e8600dee572e", null ]
+    [ "i_ramp", "a01537.html#ae34933c79a1eb3fdef6c02e32ae36186", null ],
+    [ "power_good_delay", "a01537.html#a67c2e20a6115bb96fae40277a95b95de", null ],
+    [ "power_on_delay", "a01537.html#a49019e7edba1caaa3a29eb871755c8fb", null ],
+    [ "v_ramp", "a01537.html#a5a126c8888be5665a7e43e542e34229e", null ],
+    [ "vcap_monitor", "a01537.html#af1f991e7b870e0a969b413a350831e14", null ]
 ];

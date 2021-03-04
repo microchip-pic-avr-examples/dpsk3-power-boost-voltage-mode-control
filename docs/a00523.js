@@ -1,8 +1,7 @@
 var a00523 =
 [
-    [ "Fault Monitor Application Layer", "a00409.html", "a00409" ],
-    [ "LC-Display Application Layer", "a00425.html", "a00425" ],
-    [ "Debugging LED Application Layer", "a00440.html", "a00440" ],
-    [ "Power Control Application Layer", "a00445.html", "a00445" ],
-    [ "Push-Button Application Layer", "a00495.html", "a00495" ]
+    [ "Public Functions", "a00524.html", "a00524" ],
+    [ "Public Properties", "a00525.html", null ],
+    [ "Private Functions", "a00526.html", "a00526" ],
+    [ "Private Properties", "a00527.html", null ]
 ];

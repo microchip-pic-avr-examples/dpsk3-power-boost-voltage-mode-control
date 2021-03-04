@@ -1,4 +1,6 @@
 var a00511 =
 [
-    [ "SYSTEM_Initialize", "a00511.html#ga12ce46460ff0657fc879f5b23ed8ccb1", null ]
+    [ "Variables & Constants", "a00512.html", "a00512" ],
+    [ "Data Types", "a00513.html", null ],
+    [ "Defines and Macros", "a00514.html", "a00514" ]
 ];

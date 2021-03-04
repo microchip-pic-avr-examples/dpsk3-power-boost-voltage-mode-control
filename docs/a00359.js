@@ -1,6 +1,6 @@
 var a00359 =
 [
-    [ "dacConfigClear", "a00359.html#gab89a67798717a61affd24c0a5ca9a71f", null ],
-    [ "dacModuleConfigClear", "a00359.html#ga533a5e749ab3eb533348dcc12c328e89", null ],
-    [ "dacModuleDefault", "a00359.html#ga2c035262266900ab045b40d8f9d007b9", null ]
+    [ "p33c_CcpInstance_ConfigRead", "a00359.html#ga85e7392861b4162d105c2fb2c3fac15b", null ],
+    [ "p33c_CcpInstance_ConfigWrite", "a00359.html#ga92df713d7ce95d9ce7408d246cfe5d17", null ],
+    [ "p33c_CcpInstance_GetHandle", "a00359.html#ga69f27108ee95b46a170b3fd0900665ed", null ]
 ];

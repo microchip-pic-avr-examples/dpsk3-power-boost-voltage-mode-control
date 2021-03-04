@@ -1,6 +1,4 @@
 var a00370 =
 [
-    [ "User Settings", "a00371.html", "a00371" ],
-    [ "Conversion Macros", "a00372.html", "a00372" ],
-    [ "Device Peripheral Assignments", "a00373.html", "a00373" ]
+    [ "gpioConfigClear", "a00370.html#gab964f86f667e2391e953d4c267d09663", null ]
 ];

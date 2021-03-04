@@ -1,5 +1,4 @@
-<map id="BOOST_GPIO_SETTINGS_s" name="BOOST_GPIO_SETTINGS_s">
-<area shape="rect" id="node1" title="GPIO instance of the converter control GPIO." alt="" coords="5,263,196,355"/>
-<area shape="rect" id="node3" href="$a01541.html" title="GPIO instance of the converter control GPIO." alt="" coords="5,403,196,539"/>
-<area shape="rect" id="node2" href="$a01549.html" title="BOOST control &amp; monitoring data structure." alt="" coords="17,5,185,215"/>
+<map id="BOOST_CONVERTER_SETTINGS_s" name="BOOST_CONVERTER_SETTINGS_s">
+<area shape="rect" id="node1" title="Generic power controller control settings." alt="" coords="5,263,244,399"/>
+<area shape="rect" id="node2" href="$a01577.html" title="BOOST control &amp; monitoring data structure." alt="" coords="41,5,209,215"/>
 </map>

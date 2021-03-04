@@ -1,6 +1,11 @@
 var a00350 =
 [
-    [ "p33c_CcpInstance_ConfigRead", "a00350.html#ga85e7392861b4162d105c2fb2c3fac15b", null ],
-    [ "p33c_CcpInstance_ConfigWrite", "a00350.html#ga92df713d7ce95d9ce7408d246cfe5d17", null ],
-    [ "p33c_CcpInstance_GetHandle", "a00350.html#ga69f27108ee95b46a170b3fd0900665ed", null ]
+    [ "Capture Compare Module (SCCP/MCCP)", "a00351.html", "a00351" ],
+    [ "Digital-To-Analog Converter Module (DAC)", "a00352.html", "a00352" ],
+    [ "Digital Signal Processor Converter Module (DSP)", "a00353.html", "a00353" ],
+    [ "General Purpose Input/Output (GPIO)", "a00354.html", "a00354" ],
+    [ "Operational Amplifier Module (AMP)", "a00355.html", "a00355" ],
+    [ "Oscillator Module (OSC)", "a00356.html", "a00356" ],
+    [ "Peripheral Pin Select Module (PPS)", "a00357.html", "a00357" ],
+    [ "High-Speed PWM Module (HSPWM)", "a00358.html", "a00358" ]
 ];
