@@ -1,4 +1,4 @@
-<map id="Device GPIO Assignments" name="Device GPIO Assignments">
-<area shape="rect" id="node1" href="$a00417.html" title=" " alt="" coords="5,5,159,31"/>
-<area shape="rect" id="node2" title="Assignment of microcontroller device pins to circuit functions and signals." alt="" coords="207,5,383,31"/>
+<map id="Boost Converter" name="Boost Converter">
+<area shape="rect" id="node1" href="$a00417.html" title="Conversion macros for user&#45;declarations of phase current feedback parameters." alt="" coords="5,5,137,31"/>
+<area shape="rect" id="node2" title="Conversion macros for user&#45;declarations of phase current feedback parameters of the boost converter." alt="" coords="185,5,300,31"/>
 </map>

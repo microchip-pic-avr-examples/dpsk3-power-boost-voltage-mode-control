@@ -1,5 +1,7 @@
 var a01625 =
 [
-    [ "ACoefficients", "a01625.html#ae35beb5531d5f8d35ef4ff4c55049a7c", null ],
-    [ "BCoefficients", "a01625.html#add551471b8f6e1a3552faaacd1097d09", null ]
+    [ "ptrDProvControlError", "a01625.html#a6fa6d9ee16172bc38667fa42c719f3bd", null ],
+    [ "ptrDProvControlInput", "a01625.html#a69148c2c54a089c711120fff25fb7476", null ],
+    [ "ptrDProvControlInputCompensated", "a01625.html#acde428aaa0e39d9f081ca8fba07c0de8", null ],
+    [ "ptrDProvControlOutput", "a01625.html#a01d375870a9b4ee0dcc4fe8d68340906", null ]
 ];

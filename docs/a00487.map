@@ -1,6 +1,4 @@
-<map id="Boost Peripheral Configuration" name="Boost Peripheral Configuration">
-<area shape="rect" id="node1" href="$a00488.html" title="Functions of the second library layer." alt="" coords="457,5,536,31"/>
-<area shape="rect" id="node2" href="$a00474.html" title=" " alt="" coords="5,23,163,63"/>
-<area shape="rect" id="node4" title=" " alt="" coords="211,31,408,56"/>
-<area shape="rect" id="node3" href="$a00489.html" title="Properties of the second library layer." alt="" coords="456,55,537,80"/>
+<map id="Variables &amp; Constants" name="Variables &amp; Constants">
+<area shape="rect" id="node1" title=" " alt="" coords="177,5,329,31"/>
+<area shape="rect" id="node2" href="$a00486.html" title="Private properties of the second library layer." alt="" coords="5,5,129,31"/>
 </map>

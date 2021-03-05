@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Microcontroller Abstraction</title>
+<title>Digital Power Starter Kit 3 Firmware: Boost Converter</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -97,342 +104,149 @@ $(document).ready(function(){initNavTree('a00413.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Microcontroller Abstraction<div class="ingroups"><a class="el" href="a00534.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00410.html">Temperature Feedback</a></div></div>  </div>
+<div class="title">Boost Converter<div class="ingroups"><a class="el" href="a00550.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00407.html">Output Voltage Feedback</a> &raquo; <a class="el" href="a00412.html">Microcontroller Abstraction</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Device analog input pin, register and interrupt vector assignments of temperature feedback signal(s)  
+<p>Device analog output pin, register and interrupt vector assignments of output voltage feedback signal(s) of the boost converter.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Microcontroller Abstraction:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Boost Converter:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00413.svg" width="391" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00413.svg" width="351" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:ga0b7be0893cc684d4b6648a6c3c509039"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#ga0b7be0893cc684d4b6648a6c3c509039">_BUCK_TEMP_ADCInterrupt</a>&#160;&#160;&#160;_ADCAN2Interrupt</td></tr>
-<tr class="memdesc:ga0b7be0893cc684d4b6648a6c3c509039"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input assignments of temperature feedback signals.  <a href="a00413.html#ga0b7be0893cc684d4b6648a6c3c509039">More...</a><br /></td></tr>
-<tr class="separator:ga0b7be0893cc684d4b6648a6c3c509039"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga674e1e3d93d30d98028c51569d50cf99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#ga674e1e3d93d30d98028c51569d50cf99">_BUCK_TEMP_ADCISR_IF</a>&#160;&#160;&#160;_ADCAN2IF</td></tr>
-<tr class="memdesc:ga674e1e3d93d30d98028c51569d50cf99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt Service Routine Flag Bit.  <a href="a00413.html#ga674e1e3d93d30d98028c51569d50cf99">More...</a><br /></td></tr>
-<tr class="separator:ga674e1e3d93d30d98028c51569d50cf99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga951cf80538bdaab3dc46fc10a906a4c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#ga951cf80538bdaab3dc46fc10a906a4c1">BUCK_TEMP_ANSEL</a>&#160;&#160;&#160;_ANSELB7</td></tr>
-<tr class="memdesc:ga951cf80538bdaab3dc46fc10a906a4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO analog function mode enable bit.  <a href="a00413.html#ga951cf80538bdaab3dc46fc10a906a4c1">More...</a><br /></td></tr>
-<tr class="separator:ga951cf80538bdaab3dc46fc10a906a4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga34d54b71aa34e14ae7899691b398c143"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#ga34d54b71aa34e14ae7899691b398c143">BUCK_TEMP_ADCCORE</a>&#160;&#160;&#160;8</td></tr>
-<tr class="separator:ga34d54b71aa34e14ae7899691b398c143"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1390c9b7eb6211bf82f41548c2559769"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#ga1390c9b7eb6211bf82f41548c2559769">BUCK_TEMP_ADCIN</a>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:ga1390c9b7eb6211bf82f41548c2559769"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac1882746fdaa93688a88870fd243a2b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#gac1882746fdaa93688a88870fd243a2b3">BUCK_TEMP_ADCBUF</a>&#160;&#160;&#160;ADCBUF2</td></tr>
-<tr class="memdesc:gac1882746fdaa93688a88870fd243a2b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO analog function mode enable bit.  <a href="a00413.html#gac1882746fdaa93688a88870fd243a2b3">More...</a><br /></td></tr>
-<tr class="separator:gac1882746fdaa93688a88870fd243a2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeac79e4136c87ddc66c021ae6ac06902"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#gaeac79e4136c87ddc66c021ae6ac06902">BUCK_TEMP_ADCTRIG</a>&#160;&#160;&#160;PG1TRIGA</td></tr>
-<tr class="memdesc:gaeac79e4136c87ddc66c021ae6ac06902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register used for trigger placement.  <a href="a00413.html#gaeac79e4136c87ddc66c021ae6ac06902">More...</a><br /></td></tr>
-<tr class="separator:gaeac79e4136c87ddc66c021ae6ac06902"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac40eaecce71e8e5aff7b1742fa4833b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#gac40eaecce71e8e5aff7b1742fa4833b3">BUCK_TEMP_TRGSRC</a>&#160;&#160;&#160;<a class="el" href="a00396.html#ga7220e89a59d6abd8bf7611a3ed4da166">BUCK_PWM_TRGSRC_TRG1</a></td></tr>
-<tr class="separator:gac40eaecce71e8e5aff7b1742fa4833b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadc0cf7db58fdcce9ff4a95981cd8e3a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#gadc0cf7db58fdcce9ff4a95981cd8e3a4">_BOOST_TEMP_ADCInterrupt</a>&#160;&#160;&#160;_ADCAN2Interrupt</td></tr>
-<tr class="memdesc:gadc0cf7db58fdcce9ff4a95981cd8e3a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input assignments of temperature feedback signals.  <a href="a00413.html#gadc0cf7db58fdcce9ff4a95981cd8e3a4">More...</a><br /></td></tr>
-<tr class="separator:gadc0cf7db58fdcce9ff4a95981cd8e3a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa8a5e038eb4a48ebce7d153827040781"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#gaa8a5e038eb4a48ebce7d153827040781">_BOOST_TEMP_ADCISR_IF</a>&#160;&#160;&#160;_ADCAN2IF</td></tr>
-<tr class="memdesc:gaa8a5e038eb4a48ebce7d153827040781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt Service Routine Flag Bit.  <a href="a00413.html#gaa8a5e038eb4a48ebce7d153827040781">More...</a><br /></td></tr>
-<tr class="separator:gaa8a5e038eb4a48ebce7d153827040781"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae21cea027e71ad93d4372a693170fee5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#gae21cea027e71ad93d4372a693170fee5">BOOST_TEMP_ANSEL</a>&#160;&#160;&#160;_ANSELB7</td></tr>
-<tr class="memdesc:gae21cea027e71ad93d4372a693170fee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO analog function mode enable bit.  <a href="a00413.html#gae21cea027e71ad93d4372a693170fee5">More...</a><br /></td></tr>
-<tr class="separator:gae21cea027e71ad93d4372a693170fee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae09cb57d1c3431e9a48e443310ee3c30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#gae09cb57d1c3431e9a48e443310ee3c30">BOOST_TEMP_ADCCORE</a>&#160;&#160;&#160;8</td></tr>
-<tr class="separator:gae09cb57d1c3431e9a48e443310ee3c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2af68000fa5d1b4bced1b9429ddaaef5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#ga2af68000fa5d1b4bced1b9429ddaaef5">BOOST_TEMP_ADCIN</a>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:ga2af68000fa5d1b4bced1b9429ddaaef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga78599bd669ae88ae6209fcd45b0fb242"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#ga78599bd669ae88ae6209fcd45b0fb242">BOOST_TEMP_ADCBUF</a>&#160;&#160;&#160;ADCBUF2</td></tr>
-<tr class="memdesc:ga78599bd669ae88ae6209fcd45b0fb242"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO analog function mode enable bit.  <a href="a00413.html#ga78599bd669ae88ae6209fcd45b0fb242">More...</a><br /></td></tr>
-<tr class="separator:ga78599bd669ae88ae6209fcd45b0fb242"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf452e6622f44ee5b1a1c4e8fe7958363"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#gaf452e6622f44ee5b1a1c4e8fe7958363">BOOST_TEMP_ADCTRIG</a>&#160;&#160;&#160;PG2TRIGB</td></tr>
-<tr class="memdesc:gaf452e6622f44ee5b1a1c4e8fe7958363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register used for trigger placement.  <a href="a00413.html#gaf452e6622f44ee5b1a1c4e8fe7958363">More...</a><br /></td></tr>
-<tr class="separator:gaf452e6622f44ee5b1a1c4e8fe7958363"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga97b24b342e987a92a0d14a3f364e1bbe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#ga97b24b342e987a92a0d14a3f364e1bbe">BOOST_TEMP_TRGSRC</a>&#160;&#160;&#160;<a class="el" href="a00396.html#gaa8e5c81a584c25dcb070282ec867bd08">BOOST_PWM_TRGSRC_TRG2</a></td></tr>
-<tr class="separator:ga97b24b342e987a92a0d14a3f364e1bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga141f25042cbe329584d519a4a000bb64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#ga141f25042cbe329584d519a4a000bb64">BOOST_VOUT_ANSEL</a>&#160;&#160;&#160;_ANSELD10</td></tr>
+<tr class="memdesc:ga141f25042cbe329584d519a4a000bb64"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input assignments of output voltage feedback signals.  <a href="a00413.html#ga141f25042cbe329584d519a4a000bb64">More...</a><br /></td></tr>
+<tr class="separator:ga141f25042cbe329584d519a4a000bb64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c4f711685cc1501eb94c9db5bd27199"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#ga6c4f711685cc1501eb94c9db5bd27199">BOOST_VOUT_ADCCORE</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:ga6c4f711685cc1501eb94c9db5bd27199"><td class="mdescLeft">&#160;</td><td class="mdescRight">0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core  <a href="a00413.html#ga6c4f711685cc1501eb94c9db5bd27199">More...</a><br /></td></tr>
+<tr class="separator:ga6c4f711685cc1501eb94c9db5bd27199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2142a1219d575b2df562afd5610f34ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#ga2142a1219d575b2df562afd5610f34ac">BOOST_VOUT_ADCIN</a>&#160;&#160;&#160;18</td></tr>
+<tr class="memdesc:ga2142a1219d575b2df562afd5610f34ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analog input number (e.g. '5' for 'AN5')  <a href="a00413.html#ga2142a1219d575b2df562afd5610f34ac">More...</a><br /></td></tr>
+<tr class="separator:ga2142a1219d575b2df562afd5610f34ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7be2db4ea22a5ed0e0425f2442200d5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#ga7be2db4ea22a5ed0e0425f2442200d5e">BOOST_VOUT_ADCBUF</a>&#160;&#160;&#160;ADCBUF18</td></tr>
+<tr class="memdesc:ga7be2db4ea22a5ed0e0425f2442200d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input buffer of this ADC channel.  <a href="a00413.html#ga7be2db4ea22a5ed0e0425f2442200d5e">More...</a><br /></td></tr>
+<tr class="separator:ga7be2db4ea22a5ed0e0425f2442200d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa17ed262d95146b0aa4e281ae6f25530"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#gaa17ed262d95146b0aa4e281ae6f25530">BOOST_VOUT_ADCTRIG</a>&#160;&#160;&#160;PG2TRIGA</td></tr>
+<tr class="memdesc:gaa17ed262d95146b0aa4e281ae6f25530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register used for trigger placement.  <a href="a00413.html#gaa17ed262d95146b0aa4e281ae6f25530">More...</a><br /></td></tr>
+<tr class="separator:gaa17ed262d95146b0aa4e281ae6f25530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga03502d6af9477b4622620cd3bc74d280"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html#ga03502d6af9477b4622620cd3bc74d280">BOOST_VOUT_TRGSRC</a>&#160;&#160;&#160;<a class="el" href="a00399.html#gacea17e5f96aee1f9a4cf0ecb825749aa">BOOST_PWM_TRGSRC_TRG1</a></td></tr>
+<tr class="memdesc:ga03502d6af9477b4622620cd3bc74d280"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM2 (=PG2) Trigger 1 via PGxTRIGA.  <a href="a00413.html#ga03502d6af9477b4622620cd3bc74d280">More...</a><br /></td></tr>
+<tr class="separator:ga03502d6af9477b4622620cd3bc74d280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device analog input pin, register and interrupt vector assignments of temperature feedback signal(s) </p>
+<p>Device analog output pin, register and interrupt vector assignments of output voltage feedback signal(s) of the boost converter. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gadc0cf7db58fdcce9ff4a95981cd8e3a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadc0cf7db58fdcce9ff4a95981cd8e3a4">&#9670;&nbsp;</a></span>_BOOST_TEMP_ADCInterrupt</h2>
+<a id="ga7be2db4ea22a5ed0e0425f2442200d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7be2db4ea22a5ed0e0425f2442200d5e">&#9670;&nbsp;</a></span>BOOST_VOUT_ADCBUF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define _BOOST_TEMP_ADCInterrupt&#160;&#160;&#160;_ADCAN2Interrupt</td>
+          <td class="memname">#define BOOST_VOUT_ADCBUF&#160;&#160;&#160;ADCBUF18</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>ADC input assignments of temperature feedback signals. </p>
-<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. Interrupt Service Routine function name </p>
+<p>ADC input buffer of this ADC channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01335">1335</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01114">1114</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaa8a5e038eb4a48ebce7d153827040781"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa8a5e038eb4a48ebce7d153827040781">&#9670;&nbsp;</a></span>_BOOST_TEMP_ADCISR_IF</h2>
+<a id="ga6c4f711685cc1501eb94c9db5bd27199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c4f711685cc1501eb94c9db5bd27199">&#9670;&nbsp;</a></span>BOOST_VOUT_ADCCORE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define _BOOST_TEMP_ADCISR_IF&#160;&#160;&#160;_ADCAN2IF</td>
+          <td class="memname">#define BOOST_VOUT_ADCCORE&#160;&#160;&#160;8</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Interrupt Service Routine Flag Bit. </p>
+<p>0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01336">1336</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01112">1112</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga0b7be0893cc684d4b6648a6c3c509039"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0b7be0893cc684d4b6648a6c3c509039">&#9670;&nbsp;</a></span>_BUCK_TEMP_ADCInterrupt</h2>
+<a id="ga2142a1219d575b2df562afd5610f34ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2142a1219d575b2df562afd5610f34ac">&#9670;&nbsp;</a></span>BOOST_VOUT_ADCIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define _BUCK_TEMP_ADCInterrupt&#160;&#160;&#160;_ADCAN2Interrupt</td>
+          <td class="memname">#define BOOST_VOUT_ADCIN&#160;&#160;&#160;18</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>ADC input assignments of temperature feedback signals. </p>
-<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. Interrupt Service Routine function name </p>
+<p>Analog input number (e.g. '5' for 'AN5') </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00702">702</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01113">1113</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga674e1e3d93d30d98028c51569d50cf99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga674e1e3d93d30d98028c51569d50cf99">&#9670;&nbsp;</a></span>_BUCK_TEMP_ADCISR_IF</h2>
+<a id="gaa17ed262d95146b0aa4e281ae6f25530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa17ed262d95146b0aa4e281ae6f25530">&#9670;&nbsp;</a></span>BOOST_VOUT_ADCTRIG</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define _BUCK_TEMP_ADCISR_IF&#160;&#160;&#160;_ADCAN2IF</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Interrupt Service Routine Flag Bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00703">703</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga78599bd669ae88ae6209fcd45b0fb242"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga78599bd669ae88ae6209fcd45b0fb242">&#9670;&nbsp;</a></span>BOOST_TEMP_ADCBUF</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_TEMP_ADCBUF&#160;&#160;&#160;ADCBUF2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO analog function mode enable bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01341">1341</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gae09cb57d1c3431e9a48e443310ee3c30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae09cb57d1c3431e9a48e443310ee3c30">&#9670;&nbsp;</a></span>BOOST_TEMP_ADCCORE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_TEMP_ADCCORE&#160;&#160;&#160;8</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01339">1339</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga2af68000fa5d1b4bced1b9429ddaaef5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2af68000fa5d1b4bced1b9429ddaaef5">&#9670;&nbsp;</a></span>BOOST_TEMP_ADCIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_TEMP_ADCIN&#160;&#160;&#160;2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01340">1340</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaf452e6622f44ee5b1a1c4e8fe7958363"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf452e6622f44ee5b1a1c4e8fe7958363">&#9670;&nbsp;</a></span>BOOST_TEMP_ADCTRIG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_TEMP_ADCTRIG&#160;&#160;&#160;PG2TRIGB</td>
+          <td class="memname">#define BOOST_VOUT_ADCTRIG&#160;&#160;&#160;PG2TRIGA</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Register used for trigger placement. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01342">1342</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01115">1115</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gae21cea027e71ad93d4372a693170fee5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae21cea027e71ad93d4372a693170fee5">&#9670;&nbsp;</a></span>BOOST_TEMP_ANSEL</h2>
+<a id="ga141f25042cbe329584d519a4a000bb64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga141f25042cbe329584d519a4a000bb64">&#9670;&nbsp;</a></span>BOOST_VOUT_ANSEL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_TEMP_ANSEL&#160;&#160;&#160;_ANSELB7</td>
+          <td class="memname">#define BOOST_VOUT_ANSEL&#160;&#160;&#160;_ANSELD10</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>GPIO analog function mode enable bit. </p>
+<p>ADC input assignments of output voltage feedback signals. </p>
+<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. GPIO analog function mode enable bit </p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01338">1338</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01111">1111</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga97b24b342e987a92a0d14a3f364e1bbe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga97b24b342e987a92a0d14a3f364e1bbe">&#9670;&nbsp;</a></span>BOOST_TEMP_TRGSRC</h2>
+<a id="ga03502d6af9477b4622620cd3bc74d280"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga03502d6af9477b4622620cd3bc74d280">&#9670;&nbsp;</a></span>BOOST_VOUT_TRGSRC</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_TEMP_TRGSRC&#160;&#160;&#160;<a class="el" href="a00396.html#gaa8e5c81a584c25dcb070282ec867bd08">BOOST_PWM_TRGSRC_TRG2</a></td>
+          <td class="memname">#define BOOST_VOUT_TRGSRC&#160;&#160;&#160;<a class="el" href="a00399.html#gacea17e5f96aee1f9a4cf0ecb825749aa">BOOST_PWM_TRGSRC_TRG1</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l01343">1343</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>PWM2 (=PG2) Trigger 1 via PGxTRIGA. </p>
 
-</div>
-</div>
-<a id="gac1882746fdaa93688a88870fd243a2b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac1882746fdaa93688a88870fd243a2b3">&#9670;&nbsp;</a></span>BUCK_TEMP_ADCBUF</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_TEMP_ADCBUF&#160;&#160;&#160;ADCBUF2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO analog function mode enable bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00708">708</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga34d54b71aa34e14ae7899691b398c143"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga34d54b71aa34e14ae7899691b398c143">&#9670;&nbsp;</a></span>BUCK_TEMP_ADCCORE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_TEMP_ADCCORE&#160;&#160;&#160;8</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00706">706</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga1390c9b7eb6211bf82f41548c2559769"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1390c9b7eb6211bf82f41548c2559769">&#9670;&nbsp;</a></span>BUCK_TEMP_ADCIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_TEMP_ADCIN&#160;&#160;&#160;2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00707">707</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaeac79e4136c87ddc66c021ae6ac06902"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaeac79e4136c87ddc66c021ae6ac06902">&#9670;&nbsp;</a></span>BUCK_TEMP_ADCTRIG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_TEMP_ADCTRIG&#160;&#160;&#160;PG1TRIGA</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Register used for trigger placement. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00709">709</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga951cf80538bdaab3dc46fc10a906a4c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga951cf80538bdaab3dc46fc10a906a4c1">&#9670;&nbsp;</a></span>BUCK_TEMP_ANSEL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_TEMP_ANSEL&#160;&#160;&#160;_ANSELB7</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO analog function mode enable bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00705">705</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gac40eaecce71e8e5aff7b1742fa4833b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac40eaecce71e8e5aff7b1742fa4833b3">&#9670;&nbsp;</a></span>BUCK_TEMP_TRGSRC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_TEMP_TRGSRC&#160;&#160;&#160;<a class="el" href="a00396.html#ga7220e89a59d6abd8bf7611a3ed4da166">BUCK_PWM_TRGSRC_TRG1</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00710">710</a> of file <a class="el" href="a00107_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01116">1116</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

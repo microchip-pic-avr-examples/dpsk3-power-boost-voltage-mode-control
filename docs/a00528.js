@@ -1,4 +1,7 @@
 var a00528 =
 [
-    [ "sysUserPeriperhals_Initialize", "a00528.html#ga70c5cba054e38a4e8c8285a187ff61fa", null ]
+    [ "Public Functions", "a00529.html", "a00529" ],
+    [ "Public Properties", "a00530.html", "a00530" ],
+    [ "Private Functions", "a00531.html", null ],
+    [ "Private Properties", "a00532.html", null ]
 ];

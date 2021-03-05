@@ -1,7 +1,7 @@
 # dpsk3-power-boost-voltage-mode-control, release v1.1.0
 
 ### Release Highlights
-This is the initial release demonstrating the basic control loop implementation of a simple digital voltage mode control loop regulating the output voltage of an asynchronous boost converter.
+This code example is demonstrating the implementation of a simple digital voltage mode control loop regulating the output voltage of an asynchronous boost converter.
 This example is part of a series of code examples for the Digital Power Starter Kit 3 demonstrating the implementation of specific control modes and features.
 
 ### Features Added\Updated

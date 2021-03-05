@@ -1,8 +1,11 @@
 var a01485 =
 [
-    [ "ControlModes", "a01485.html#a4950b1ebf0bd9792674e71cee2882489", null ],
-    [ "OpStateOpCodes", "a01485.html#a12b27c7fc5c5ca8eab5fb8a62cf2fc58", null ],
-    [ "OpStateReturnValues", "a01485.html#afc9a0cdb70d5ea4ea1f23b8bbf9bdf88", null ],
-    [ "StatusFlags", "a01485.html#a2f3444cbdb2b554c3cd5572d076b42aa", null ],
-    [ "SubStateOpCodes", "a01485.html#a0d58890e2a2d10cd219278a9518ba5ac", null ]
+    [ "inttreg", "a01485.html#aee75cee827a498ec0f8db43c25fe1de7", null ],
+    [ "rcon_reg", "a01485.html#a622b54af34934b9ed58310984866f335", null ],
+    [ "reset_count", "a01485.html#a95744ea4cf032674585b4e25a114c31a", null ],
+    [ "status", "a01485.html#a67fe8ce905ea66883a557013c4069068", null ],
+    [ "task_capture", "a01485.html#a0738b0afe33da51a74ec003d4a2d7656", null ],
+    [ "trap_count", "a01485.html#a9216196898128a7f976617aabd34ba77", null ],
+    [ "trap_flags", "a01485.html#ac5a997d3d4260463e5998191af6a24cb", null ],
+    [ "trap_id", "a01485.html#a6e7be26899e4fa61a356b5e7eeec83d1", null ]
 ];

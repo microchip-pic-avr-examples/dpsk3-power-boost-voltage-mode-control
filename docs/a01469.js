@@ -1,11 +1,7 @@
 var a01469 =
 [
-    [ "inttreg", "a01469.html#aee75cee827a498ec0f8db43c25fe1de7", null ],
-    [ "rcon_reg", "a01469.html#a622b54af34934b9ed58310984866f335", null ],
-    [ "reset_count", "a01469.html#a95744ea4cf032674585b4e25a114c31a", null ],
-    [ "status", "a01469.html#a67fe8ce905ea66883a557013c4069068", null ],
-    [ "task_capture", "a01469.html#a0738b0afe33da51a74ec003d4a2d7656", null ],
-    [ "trap_count", "a01469.html#a9216196898128a7f976617aabd34ba77", null ],
-    [ "trap_flags", "a01469.html#ac5a997d3d4260463e5998191af6a24cb", null ],
-    [ "trap_id", "a01469.html#a6e7be26899e4fa61a356b5e7eeec83d1", null ]
+    [ "cpu_reset_trigger", "a01469.html#a121370958c3700325011062cf1ac9895", null ],
+    [ "sw_reset", "a01469.html#a72321fd148e1835890801e1a25836718", null ],
+    [ "unsigned", "a01469.html#a32e93b068e309da5a319a7a69f3b3ff5", null ],
+    [ "value", "a01469.html#a3f0c55f449560b03ce0ac43270c26600", null ]
 ];

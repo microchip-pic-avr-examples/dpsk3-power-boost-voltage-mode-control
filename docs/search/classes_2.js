@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['debugging_5fled_5fs_1439',['DEBUGGING_LED_s',['../a01477.html',1,'']]],
-  ['dsp_5fconfig_5fs_1440',['DSP_CONFIG_s',['../a00809.html',1,'']]]
+  ['debugging_5fled_5fs_1279',['DEBUGGING_LED_s',['../a01493.html',1,'']]],
+  ['dsp_5fconfig_5fs_1280',['DSP_CONFIG_s',['../a00825.html',1,'']]]
 ];

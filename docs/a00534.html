@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Hardware Abstraction Layer</title>
+<title>Digital Power Starter Kit 3 Firmware: Device Start Up</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -99,67 +106,109 @@ $(document).ready(function(){initNavTree('a00534.html',''); initResizable(); });
   <div class="summary">
 <a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Hardware Abstraction Layer</div>  </div>
+<div class="title">Device Start Up<div class="ingroups"><a class="el" href="a00533.html">Firmware Architecture</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Hardware Abstraction Layer Declarations.  
+<p>Device Start Up.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Hardware Abstraction Layer:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Device Start Up:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00534.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00534.svg" width="536" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
 Modules</h2></td></tr>
-<tr class="memitem:a00378"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00378.html">Hardware Version ID</a></td></tr>
-<tr class="memdesc:a00378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global identified to the hardware version used. <br /></td></tr>
+<tr class="memitem:a00538"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00538.html">Initializing Essential Chip Resources</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00379"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00379.html">Microcontroller Device Abstraction</a></td></tr>
-<tr class="memdesc:a00379"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declarations of fundamental microcontroller device parameters. <br /></td></tr>
+<tr class="memitem:a00543"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00543.html">Initializing Hardware-Specific Chip Resources</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00382"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00382.html">State Machine Settings</a></td></tr>
-<tr class="memdesc:a00382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of global state-machine parameters. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00386"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html">Startup Timing Settings</a></td></tr>
-<tr class="memdesc:a00386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of startup timing periods. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00389"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00389.html">Fault Response Settings</a></td></tr>
-<tr class="memdesc:a00389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of fault object trip and recovery delays. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00392"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00392.html">PWM Settings</a></td></tr>
-<tr class="memdesc:a00392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of fundamental PWM parameters. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00398"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html">Input Voltage Feedback</a></td></tr>
-<tr class="memdesc:a00398"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of input voltage feedback parameters. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00402"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00402.html">Output Voltage Feedback</a></td></tr>
-<tr class="memdesc:a00402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of output voltage feedback parameters. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00406"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00406.html">Phase Current Feedback</a></td></tr>
-<tr class="memdesc:a00406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of phase current feedback parameters. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00410"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00410.html">Temperature Feedback</a></td></tr>
-<tr class="memdesc:a00410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of temperature feedback parameters. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00414"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html">Adaptive Gain Control Feed Forward</a></td></tr>
-<tr class="memdesc:a00414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of macros calculating additional parameters for Adaptive Gain Modulation. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00416"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html">LC Display Interface Declarations</a></td></tr>
-<tr class="memdesc:a00416"><td class="mdescLeft">&#160;</td><td class="mdescRight">LC display SPI interface GPIO declarations. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00417"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00417.html">Special Circuit Signals</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00420"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html">Special Firmware Options</a></td></tr>
+<tr class="memitem:a00547"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00547.html">Initializing Firmware Tasks</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Hardware Abstraction Layer Declarations. </p>
-<p>The hardware abstraction layer introduces global defines which can be used in the firmware section of the source code to reference hardware dependent parameters and device peripheral instances and features. This abstraction is essential to adapt to hardware changes including migration across microcontroller device families and hardware versions with minimum risk and time efforts. As the microcontroller used in this design is a fixed, irreplaceable board component, this particular Hardware Abstraction Layer (HAL) covers declarations of circuit control and feedback signals as well as associated microcontroller peripheral instances and features. </p>
+<p>Device Start Up. </p>
+<p><div class="dotgraph">
+<iframe scrolling="no" frameborder="0" src="dot_dev-startup.svg" width="370" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+  When the device comes out of RESET, it is running off the selected oscillator at its natural frequency. The startup oscillator type is declared in the FOSCSEL register by setting the respective configuration bits (FUSES). FUSES (configuration bits) can only be set at compile time before the settings are programmed into the device. </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma config FNOSC = FRCDIVN </span></div>
+</div><!-- fragment --><ul>
+<li><b>Step 1 (System Initialization):</b><br  />
+<br  />
+ The first step focuses on essential IC resources only, such as oscillator and device inputs/outputs. The following modules are initialized in the given order:<br  />
+<br  />
+<ul>
+<li><b>Main Oscillator: </b><br  />
+ In this design the internal 8 MHz RC oscillator is used. Hence, the very first step in the firmware is to set up the internal PLL to operate the CPU at maximum speed of 100 MIPS (100 MHz instruction cycle). <br  />
+<br  />
+</li>
+<li><b>Auxiliary Oscillator: </b><br  />
+ The Auxiliary Oscillator is a second PLL, which can be set up to a different frequency than the main oscillator and provided to peripheral modules. This auxiliary clock signal is used by the PWM and ADC module to perform at maximum speed and performance. In this design, the auxiliary clock is set up for 500 MHz base clock. <br  />
+<br  />
+</li>
+<li><b>GPIO Reset: </b><br  />
+ To make sure there are no conflicts with individual application tasks and related peripheral configurations, all General Purpose Inputs/Outputs (GPIOs) are set as digital inputs with its internal control signals set LOW. <br  />
+<br  />
+</li>
+<li><b>Digital Signal Processor Logic (DSP): </b><br  />
+ The internal Digital Signal Processing (DSP) engine is configured for fractional multiplication with saturation enabled. This configuration is optimized for control loop computations. The control loops are able to self-manage their required DSP configuration, however, this would add execution cycles and increase the overall CPU load. As no other task/process in this application uses the DSP, the DSP configuration has been taken out of the control loop CPU configuration self-management and added to the system initialization of the project as static configuration to reduce the overall CPU workload. <br  />
+<br  />
+</li>
+</ul>
+</li>
+<li><b>Step 2 (User Peripheral Initialization):</b><br  />
+<br  />
+ The second step initializes user-defined peripherals, which are not managed by any other part of the application. The following modules are initialized in the given order:<br  />
+<br  />
+<ul>
+<li><b>Digital-To-Analog Converter (DAC)</b><br  />
+ This design requires an independent reference voltage to adjust external current sense shunt amplifier devices to offset their output voltage, allowing the monitoring of the full triangular inductor current waveform in discontinuous as well as continuous conduction mode. Each DAC module of dsPIC33 also includes an analog high-sped comparator, which is not used in this configuration. <br  />
+<br  />
+</li>
+<li><b>Operational Amplifier (OPA)</b><br  />
+ The internally generated reference voltage (see DAC configuration above) is buffered by using one of the on-chip Operational amplifiers. This section assigns the input pin to this op-amp and enables the output. <br  />
+<br  />
+</li>
+</ul>
+</li>
+<li><b>Step 3 (User Peripheral Initialization):</b><br  />
+<br  />
+ In the third step all tasks of the application are initialized by calling their default API INITIALIZE function. Each task module is self-managing and does not require additional parameters to be considered at this function call level. However, each task provides an individual application layer which is used to configure the task and all its implied settings and parameters. (Please refer to the documentation of each task for details.)<br  />
+<br  />
+<ul>
+<li><b>Power Control Task</b><br  />
+ The Power Control Task covers the complete management of the included power supply circuit and control loops. This tasks utilizes a standard single- and multiphase buck converter library, which provides a complete runtime state-machine managing self-initialization, soft-start, soft-stop, runtime reference tuning and auto-restart. It also includes enhanced features such as automatic adjustment to pre-biased outputs, feedback offset compensation and supports different control modes such as voltage mode control (VMC) or average current mode control (ACMC). <br  />
+<br  />
+</li>
+<li><b>Fault Monitor Task</b><br  />
+ The Fault Monitor Task is a global task providing application-wide fault detection. The separation of power converter control and fault monitoring allows the consideration of application dependencies between tasks. <br  />
+<br  />
+</li>
+</ul>
+</li>
+<li><p class="startli"><b>Step 4 (OS Timer Initialization):</b><br  />
+<br  />
+ In the fourth step the operating system time base is initialized. In this slim application the operating system consists of two different task execution levels on two priority levels: <br  />
+<br  />
+</p><ul>
+<li><b>Low-Priority Task Execution</b><br  />
+ the low priority tasks are executed from a common function called <a class="el" href="a00536.html#gaa1ec8154dbf983b02b3b2dc186c5079d">sysLowPriorityTasks_Execute</a>. This task layer is executed with lowest priority (=0). <br  />
+<br  />
+</li>
+<li><b>High-Priority Task Execution</b><br  />
+ High priority tasks are executed from the Timer Interrupt Service Routine (ISR) of the OS timebase timer. The interupt priority is set one above the low priority task level (default = 2). In this application the alternate working registers of the device have been configured to automatically switch context when the timer interrupt is triggered by setting FUSE CTXT1 = IPL2. <div class="fragment"><div class="line"><span class="preprocessor">#pragma config CTXT1 = IPL2 </span></div>
+</div><!-- fragment --></li>
+</ul>
+<p class="startli"><br  />
+<br  />
+ <br  />
+<br  />
+ </p>
+</li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

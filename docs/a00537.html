@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Library Driver Layer</title>
+<title>Digital Power Starter Kit 3 Firmware: High-Priority Task Execution</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -97,36 +104,66 @@ $(document).ready(function(){initNavTree('a00537.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Modules</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Library Driver Layer</div>  </div>
+<div class="title">High-Priority Task Execution<div class="ingroups"><a class="el" href="a00533.html">Firmware Architecture</a> &raquo; <a class="el" href="a00535.html">Main Loop</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Generic Library Driver Layer.  
+<p>High priority task execution.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Library Driver Layer:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for High-Priority Task Execution:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00537.svg" width="354" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00537.svg" width="267" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:a00353"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00353.html">Peripheral Register Abstraction Layer (PRAL) Library</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00447"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00447.html">LC-Display Interface Driver</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00499"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00499.html">Power Converter Control Driver</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga1873ce221ca3545badd9c72c846bba3d"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00537.html#ga1873ce221ca3545badd9c72c846bba3d">sysHighPriorityTasks_Execute</a> (void)</td></tr>
+<tr class="memdesc:ga1873ce221ca3545badd9c72c846bba3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">High priority task sequence executed at a fixed repetition frequency.  <a href="a00537.html#ga1873ce221ca3545badd9c72c846bba3d">More...</a><br /></td></tr>
+<tr class="separator:ga1873ce221ca3545badd9c72c846bba3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Generic Library Driver Layer. </p>
-<p>Library drivers are generic function libraries providing specific sub-functions for library modules. Each library driver is widely self-contained and includes functional software routines and resource management functions. Because of their generic nature, each library driver requires to be configured by proprietary user code to tailor their function to a specific application. The settings required to set up the library driver data objects are routed through the overlaying device driver, which also provides the API and public data objects holding the library driver settings.</p>
-<p>Please refer to the specific library driver for more information. </p>
+<p>High priority task execution. </p>
+<p>The execution of the sequence of high priority tasks is triggered by the operating system timer interrupt being called on the defined priority level (default = 2). The interrupt service routine utiilzes an alternate working register set for optimum coontext management. By default, alternate working register set #1 is reserved for high priority tasks. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga1873ce221ca3545badd9c72c846bba3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1873ce221ca3545badd9c72c846bba3d">&#9670;&nbsp;</a></span>sysHighPriorityTasks_Execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t sysHighPriorityTasks_Execute </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>High priority task sequence executed at a fixed repetition frequency. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This application executes different tasks of which some are time critical while others are insensitive against execution period or execution repetition frequency jitter.</p>
+<p>The following function calls a sequence of time critical tasks. This function is called by an interrupt service routine at a higher priority than the main loop, enforcing a more time stringent execution repetition frequency. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00221_source.html#l00172">172</a> of file <a class="el" href="a00221_source.html">main.c</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00537_ga1873ce221ca3545badd9c72c846bba3d_cgraph.svg" width="100%" height="372"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

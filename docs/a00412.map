@@ -1,4 +1,5 @@
-<map id="Conversion Macros" name="Conversion Macros">
-<area shape="rect" id="node1" title="Conversion macros for user&#45;declarations of temperature feedback parameters." alt="" coords="208,5,340,31"/>
-<area shape="rect" id="node2" href="$a00410.html" title="Declaration of temperature feedback parameters." alt="" coords="5,5,160,31"/>
+<map id="Microcontroller Abstraction" name="Microcontroller Abstraction">
+<area shape="rect" id="node1" title="Device analog output pin, register and interrupt vector assignments of output voltage feedback signal..." alt="" coords="224,5,401,31"/>
+<area shape="rect" id="node2" href="$a00413.html" title="Device analog output pin, register and interrupt vector assignments of output voltage feedback signal..." alt="" coords="449,5,564,31"/>
+<area shape="rect" id="node3" href="$a00407.html" title="Declaration of output voltage feedback parameters." alt="" coords="5,5,176,31"/>
 </map>

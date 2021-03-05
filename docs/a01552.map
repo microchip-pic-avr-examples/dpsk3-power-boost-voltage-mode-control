@@ -1,5 +1,4 @@
-<map id="BOOST_GPIO_INSTANCE_s" name="BOOST_GPIO_INSTANCE_s">
-<area shape="rect" id="node1" title="GPIO instance of the converter control GPIO." alt="" coords="5,403,196,539"/>
-<area shape="rect" id="node2" href="$a01557.html" title="GPIO instance of the converter control GPIO." alt="" coords="5,263,196,355"/>
-<area shape="rect" id="node3" href="$a01561.html" title="BOOST control &amp; monitoring data structure." alt="" coords="17,5,185,215"/>
+<map id="BOOST_SWITCH_NODE_SETTINGS_s" name="BOOST_SWITCH_NODE_SETTINGS_s">
+<area shape="rect" id="node1" title="Switching signal timing settings." alt="" coords="5,263,257,487"/>
+<area shape="rect" id="node2" href="$a01577.html" title="BOOST control &amp; monitoring data structure." alt="" coords="47,5,215,215"/>
 </map>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: PUSH_BUTTON_OBJECT_s Struct Reference</title>
+<title>Digital Power Starter Kit 3 Firmware: V_LOOP_CONTROL_LOOP_HISTORIES_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -99,189 +106,69 @@ $(document).ready(function(){initNavTree('a01645.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">PUSH_BUTTON_OBJECT_s Struct Reference<div class="ingroups"><a class="el" href="a00536.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00512.html">Push-Button Library</a> &raquo; <a class="el" href="a00514.html">Public Properties</a></div></div>  </div>
+<div class="title">V_LOOP_CONTROL_LOOP_HISTORIES_s Struct Reference<div class="ingroups"><a class="el" href="a00553.html">Library Driver Layer</a> &raquo; <a class="el" href="a00515.html">Power Converter Control Driver</a> &raquo; <a class="el" href="a00518.html">Properties</a> &raquo; <a class="el" href="a00519.html">Data Objects</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Push button function driver data object.  
+<p>Data structure packing A- and B- coefficient arrays in a linear memory space for optimized DSP code execution.  
  <a href="a01645.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00335_source.html">push_button/drivers/drv_push_button.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00311_source.html">power_control/drivers/v_loop.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for PUSH_BUTTON_OBJECT_s:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for V_LOOP_CONTROL_LOOP_HISTORIES_s:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01644.svg" width="198" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for PUSH_BUTTON_OBJECT_s:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01643.svg" width="198" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01643.svg" width="196" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a16a03dc6d0fd95cb3dffee0f76de5cd9"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01633.html">PUSH_BUTTON_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01645.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a></td></tr>
-<tr class="memdesc:a16a03dc6d0fd95cb3dffee0f76de5cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status word of the switch object.  <a href="a01645.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">More...</a><br /></td></tr>
-<tr class="separator:a16a03dc6d0fd95cb3dffee0f76de5cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78437774e630c432a18d708b25955f0f"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01645.html#a78437774e630c432a18d708b25955f0f">debounce_delay</a></td></tr>
-<tr class="memdesc:a78437774e630c432a18d708b25955f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of call cycles until a switch event is triggered.  <a href="a01645.html#a78437774e630c432a18d708b25955f0f">More...</a><br /></td></tr>
-<tr class="separator:a78437774e630c432a18d708b25955f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92322dfa9ee932050da2a695bc5fe160"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01645.html#a92322dfa9ee932050da2a695bc5fe160">long_press_delay</a></td></tr>
-<tr class="memdesc:a92322dfa9ee932050da2a695bc5fe160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of call cycles until a "long press" switch event is triggered.  <a href="a01645.html#a92322dfa9ee932050da2a695bc5fe160">More...</a><br /></td></tr>
-<tr class="separator:a92322dfa9ee932050da2a695bc5fe160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ec310dc3aa8f6b3c0635719fdf6062a"><td class="memItemLeft" align="right" valign="top">volatile uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01645.html#a5ec310dc3aa8f6b3c0635719fdf6062a">event_btn_down</a> )(void)</td></tr>
-<tr class="memdesc:a5ec310dc3aa8f6b3c0635719fdf6062a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer to user function triggering a PRESSED event.  <a href="a01645.html#a5ec310dc3aa8f6b3c0635719fdf6062a">More...</a><br /></td></tr>
-<tr class="separator:a5ec310dc3aa8f6b3c0635719fdf6062a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6ccfc633b01bf4d5aba1121b52cbe16"><td class="memItemLeft" align="right" valign="top">volatile uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01645.html#ab6ccfc633b01bf4d5aba1121b52cbe16">event_long_press</a> )(void)</td></tr>
-<tr class="memdesc:ab6ccfc633b01bf4d5aba1121b52cbe16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer to user function triggering a LONG_PRESS event.  <a href="a01645.html#ab6ccfc633b01bf4d5aba1121b52cbe16">More...</a><br /></td></tr>
-<tr class="separator:ab6ccfc633b01bf4d5aba1121b52cbe16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4aec1837a6756f26ba5b7a95721e2f53"><td class="memItemLeft" align="right" valign="top">volatile uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01645.html#a4aec1837a6756f26ba5b7a95721e2f53">event_pressed</a> )(void)</td></tr>
-<tr class="memdesc:a4aec1837a6756f26ba5b7a95721e2f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer to user function triggering a LONG_PRESS event.  <a href="a01645.html#a4aec1837a6756f26ba5b7a95721e2f53">More...</a><br /></td></tr>
-<tr class="separator:a4aec1837a6756f26ba5b7a95721e2f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2f2ef2afa1e13d9a26d222a716226ec"><td class="memItemLeft" align="right" valign="top">volatile uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01645.html#aa2f2ef2afa1e13d9a26d222a716226ec">event_btn_up</a> )(void)</td></tr>
-<tr class="memdesc:aa2f2ef2afa1e13d9a26d222a716226ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer to user function triggering a RELEASE event.  <a href="a01645.html#aa2f2ef2afa1e13d9a26d222a716226ec">More...</a><br /></td></tr>
-<tr class="separator:aa2f2ef2afa1e13d9a26d222a716226ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77b0b607088023c04d12d6900d1dd65c"><td class="memItemLeft" align="right" valign="top">volatile fractional&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01645.html#a77b0b607088023c04d12d6900d1dd65c">ControlHistory</a> [3]</td></tr>
+<tr class="separator:a77b0b607088023c04d12d6900d1dd65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75f1a7034703c8f9176c694f149a1c6f"><td class="memItemLeft" align="right" valign="top">volatile fractional&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01645.html#a75f1a7034703c8f9176c694f149a1c6f">ErrorHistory</a> [4]</td></tr>
+<tr class="separator:a75f1a7034703c8f9176c694f149a1c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Push button function driver data object. </p>
-<p>The Push Button function driver data object is used to store the user configuration of a push-button. Thus, multiple push button objects can be defined, which will be individually monitored by the drv_PushButton_Execute function. </p>
+<div class="textblock"><p>Data structure packing A- and B- coefficient arrays in a linear memory space for optimized DSP code execution. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00335_source.html#l00108">108</a> of file <a class="el" href="a00335_source.html">drv_push_button.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00065">65</a> of file <a class="el" href="a00311_source.html">v_loop.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a78437774e630c432a18d708b25955f0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78437774e630c432a18d708b25955f0f">&#9670;&nbsp;</a></span>debounce_delay</h2>
+<a id="a77b0b607088023c04d12d6900d1dd65c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b0b607088023c04d12d6900d1dd65c">&#9670;&nbsp;</a></span>ControlHistory</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t debounce_delay</td>
+          <td class="memname">volatile fractional ControlHistory[3]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Number of call cycles until a switch event is triggered. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00335_source.html#l00111">111</a> of file <a class="el" href="a00335_source.html">drv_push_button.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00067">67</a> of file <a class="el" href="a00311_source.html">v_loop.h</a>.</p>
 
 </div>
 </div>
-<a id="a5ec310dc3aa8f6b3c0635719fdf6062a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ec310dc3aa8f6b3c0635719fdf6062a">&#9670;&nbsp;</a></span>event_btn_down</h2>
+<a id="a75f1a7034703c8f9176c694f149a1c6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75f1a7034703c8f9176c694f149a1c6f">&#9670;&nbsp;</a></span>ErrorHistory</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t(* event_btn_down) (void)</td>
+          <td class="memname">volatile fractional ErrorHistory[4]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Function pointer to user function triggering a PRESSED event. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00335_source.html#l00113">113</a> of file <a class="el" href="a00335_source.html">drv_push_button.h</a>.</p>
-
-</div>
-</div>
-<a id="aa2f2ef2afa1e13d9a26d222a716226ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2f2ef2afa1e13d9a26d222a716226ec">&#9670;&nbsp;</a></span>event_btn_up</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t(* event_btn_up) (void)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Function pointer to user function triggering a RELEASE event. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00335_source.html#l00116">116</a> of file <a class="el" href="a00335_source.html">drv_push_button.h</a>.</p>
-
-</div>
-</div>
-<a id="ab6ccfc633b01bf4d5aba1121b52cbe16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6ccfc633b01bf4d5aba1121b52cbe16">&#9670;&nbsp;</a></span>event_long_press</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t(* event_long_press) (void)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Function pointer to user function triggering a LONG_PRESS event. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00335_source.html#l00114">114</a> of file <a class="el" href="a00335_source.html">drv_push_button.h</a>.</p>
-
-</div>
-</div>
-<a id="a4aec1837a6756f26ba5b7a95721e2f53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4aec1837a6756f26ba5b7a95721e2f53">&#9670;&nbsp;</a></span>event_pressed</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t(* event_pressed) (void)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Function pointer to user function triggering a LONG_PRESS event. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00335_source.html#l00115">115</a> of file <a class="el" href="a00335_source.html">drv_push_button.h</a>.</p>
-
-</div>
-</div>
-<a id="a92322dfa9ee932050da2a695bc5fe160"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92322dfa9ee932050da2a695bc5fe160">&#9670;&nbsp;</a></span>long_press_delay</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t long_press_delay</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Number of call cycles until a "long press" switch event is triggered. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00335_source.html#l00112">112</a> of file <a class="el" href="a00335_source.html">drv_push_button.h</a>.</p>
-
-</div>
-</div>
-<a id="a16a03dc6d0fd95cb3dffee0f76de5cd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16a03dc6d0fd95cb3dffee0f76de5cd9">&#9670;&nbsp;</a></span>status</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile struct <a class="el" href="a01633.html">PUSH_BUTTON_STATUS_s</a> status</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Status word of the switch object. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00335_source.html#l00015">15</a> of file <a class="el" href="a00335_source.html">drv_push_button.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00068">68</a> of file <a class="el" href="a00311_source.html">v_loop.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dpsk_boost_vmc.X/sources/push_button/drivers/<a class="el" href="a00335_source.html">drv_push_button.h</a></li>
+<li>dpsk_boost_vmc.X/sources/power_control/drivers/<a class="el" href="a00311_source.html">v_loop.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -289,7 +176,7 @@ Data Fields</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01645.html">PUSH_BUTTON_OBJECT_s</a></li>
+    <li class="navelem"><a class="el" href="a01645.html">V_LOOP_CONTROL_LOOP_HISTORIES_s</a></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

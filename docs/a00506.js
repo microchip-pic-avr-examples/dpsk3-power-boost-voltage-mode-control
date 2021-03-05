@@ -1,5 +1,5 @@
 var a00506 =
 [
-    [ "v_loop_pterm_factor", "a00506.html#gae1ef8104d52fe123c04e1107fd8ff55f", null ],
-    [ "v_loop_pterm_scaler", "a00506.html#ga566701f8f607a93f33e17e799fae6ac5", null ]
+    [ "adcore_diff_mask", "a00506.html#ga215a815cad00177161895a74f526cfc1", null ],
+    [ "adcore_mask", "a00506.html#ga8312ee90c2e73a1ad6bc8b0e545368c2", null ]
 ];
