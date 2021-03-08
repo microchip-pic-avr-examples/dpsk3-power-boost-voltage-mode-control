@@ -843,6 +843,12 @@
  * This setting defines for how long a fault condition has to be continuously cleared before the 
  * effective fault recovery status/event will be triggered.
  * 
+ * - Restart Cycle Limit
+ * In case of a persistent fault condition (e.g continuous short circuit or unstable feedback loop)
+ * the fault monitor will limit the number of restart attempts specified by FAULT_RESTART_CYCLES.
+ * When this threshold is exceeded, the power supply will latch in save state (off) and a CPU or 
+ * power cycle is required to start-up the power supply again.
+ * 
  *************************************************************************************************/
 
 #define BUCK_UVLO_TRIP_DELAY         (float) 5e-3   ///< under voltage lock out trip delay in [sec]
@@ -853,6 +859,8 @@
 #define BUCK_REGERR_RECOVERY_DELAY   (float) 500e-3 ///< regulation error recovery delay in [sec]
 #define BUCK_OCP_TRIP_DELAY          (float) 2e-3   ///< over current proection trip delay in [sec]
 #define BUCK_OCP_RECOVERY_DELAY      (float) 500e-3 ///< over current proection recovery delay in [sec]
+
+#define BUCK_FAULT_RESTART_CYCLES   10  ///< Maximum number of restart cycles: Fault state will be latched until CPU reset or power cycle
 
 /** @} */ // end of group fault-response-settings-buck ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1461,6 +1469,12 @@
  * This setting defines for how long a fault condition has to be continuously cleared before the 
  * effective fault recovery status/event will be triggered.
  * 
+ * - Restart Cycle Limit
+ * In case of a persistent fault condition (e.g continuous short circuit or unstable feedback loop)
+ * the fault monitor will limit the number of restart attempts specified by FAULT_RESTART_CYCLES.
+ * When this threshold is exceeded, the power supply will latch in save state (off) and a CPU or 
+ * power cycle is required to start-up the power supply again.
+ * 
  *************************************************************************************************/
 
 #define BOOST_UVLO_TRIP_DELAY         (float) 5e-3   ///< under voltage lock out trip delay in [sec]
@@ -1471,6 +1485,8 @@
 #define BOOST_REGERR_RECOVERY_DELAY   (float) 500e-3 ///< regulation error recovery delay in [sec]
 #define BOOST_OCP_TRIP_DELAY          (float) 2e-3   ///< over current proection trip delay in [sec]
 #define BOOST_OCP_RECOVERY_DELAY      (float) 500e-3 ///< over current proection recovery delay in [sec]
+
+#define BOOST_FAULT_RESTART_CYCLES  10  ///< Maximum number of restart cycles: Fault state will be latched until CPU reset or power cycle
 
 /** @} */ // end of group fault-response-settings-boost ~~~~~~~~~~~~~~~~~~~~~~~
 

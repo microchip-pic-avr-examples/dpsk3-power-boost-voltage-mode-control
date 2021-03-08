@@ -58,6 +58,8 @@ volatile uint16_t __attribute__((always_inline)) ovlo_FaultInitialize(void);
 volatile uint16_t __attribute__((always_inline)) ocp_FaultInitialize(void);
 volatile uint16_t __attribute__((always_inline)) regerr_FaultInitialize(void);
 
+// Variables
+volatile uint16_t FaultRecoveryCounter=0;
 
 /*********************************************************************************
  * @fn     volatile uint16_t appFaultMonitor_Execute(void)  
@@ -98,8 +100,21 @@ volatile uint16_t appFaultMonitor_Execute(void)
     // If system has recovered from a global fault condition, 
     // trigger fault recovery function
     if ((pre_fault_active) && (!boost.status.bits.fault_active))
-        { retval = appPowerSupply_Resume(); }
+    { 
+        if (FaultRecoveryCounter++ < BOOST_FAULT_RESTART_CYCLES)
+        { retval = appPowerSupply_Resume(); } // Initiate restart attempt
+        else
+        { // Latch Fault Condition keeping power supply disabled
+            boost.status.bits.fault_active = true; 
+            FaultRecoveryCounter = BOOST_FAULT_RESTART_CYCLES;
+        }
+    }
     
+    // If power supply controller passes POWER GOOD and reaches state ONLINE,
+    // reset restart cycle counter
+    if (boost.state_id.bits.opstate_id == BOOST_OPSTATE_ONLINE)
+        FaultRecoveryCounter = 0;
+
     // Track global fault bit transitions
     pre_fault_active = boost.status.bits.fault_active;
     
