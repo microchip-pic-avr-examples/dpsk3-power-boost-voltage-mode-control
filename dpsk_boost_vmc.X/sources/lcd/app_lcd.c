@@ -60,6 +60,18 @@ volatile uint16_t lcd_cnt = 0;  ///< Local counter used to trigger LCD refresh e
 
 /** @} */ // end of group app-layer-lcd-properties-private
 
+/***********************************************************************************
+ * @ingroup app-layer-lcd-properties-private
+ * @{
+ * @def LCD_NO_OF_SCREENS
+ * @brief Number of screens which can be selected
+ * @details
+ *  This application supports multiple different screens which can be selected by
+ *  the user to display different runtime data fields.
+ ***********************************************************************************/
+#define LCD_NO_OF_SCREENS   3   ///< Number of screens which can be selected
+
+/** @} */ // end of group app-layer-lcd-properties-private
 
 /*********************************************************************************
  * @ingroup app-layer-lcd-functions-public
@@ -80,6 +92,8 @@ volatile uint16_t appLCD_Initialize(void)
     if (lcd.refresh == 0)
         lcd.refresh = LCD_STARTUP;
     
+    lcd.screens = LCD_NO_OF_SCREENS;
+
     dev_Lcd_Initialize();
     dev_Lcd_WriteStringXY(0,0,"==== DPSK-3 ====");
     dev_Lcd_WriteStringXY(0,1,"   BOOST VMC    ");
@@ -158,6 +172,10 @@ volatile uint16_t appLCD_Execute(void)
                 }
                 break;
 
+            case 3:     // Firmware Version Number
+                PrintLcd(1, "Firmware: %s", FIRMWARE_VERSION_STRING);
+                break;
+
             default:    // Output voltage display
                 
                 vo = ((boost.data.v_out << 3) * ADC_GRANULARITY); // Scale ADC value to physical unit
@@ -171,7 +189,7 @@ volatile uint16_t appLCD_Execute(void)
         }
         
         // Add Error Indicators
-        if ((lcd.screen<3) && (boost.status.bits.fault_active))
+        if ((lcd.screen<lcd.screens) && (boost.status.bits.fault_active))
         {
             if (fltobj_BoostUVLO.Status.bits.FaultStatus)
                 dev_Lcd_WriteStringXY(4, 1, "(UV)");
