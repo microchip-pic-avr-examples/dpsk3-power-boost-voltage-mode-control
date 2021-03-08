@@ -1482,9 +1482,9 @@
 #define BOOST_OVLO_TRIP_DELAY       (float) 5e-3    ///< over voltage lock out trip delay in [sec]
 #define BOOST_OVLO_RECOVERY_DELAY   (float) 500e-3  ///< over voltage lock out recovery delay in [sec]
 #define BOOST_REGERR_TRIP_DELAY     (float) 25e-3   ///< regulation error trip delay in [sec]
-#define BOOST_REGERR_RECOVERY_DELAY (float) 2000e-3 ///< regulation error recovery delay in [sec]
+#define BOOST_REGERR_RECOVERY_DELAY (float)2000e-3 ///< regulation error recovery delay in [sec]
 #define BOOST_OCP_TRIP_DELAY        (float) 2e-3    ///< over current proection trip delay in [sec]
-#define BOOST_OCP_RECOVERY_DELAY    (float) 2000e-3 ///< over current proection recovery delay in [sec]
+#define BOOST_OCP_RECOVERY_DELAY    (float)2000e-3 ///< over current proection recovery delay in [sec]
 
 #define BOOST_FAULT_RESTART_CYCLES  10  ///< Maximum number of restart cycles: Fault state will be latched until CPU reset or power cycle
 
