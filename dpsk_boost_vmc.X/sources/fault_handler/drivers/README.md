@@ -396,6 +396,7 @@ typedef struct CPU_RCON_s
 ##### History:
 * 03/13/2020 v1.0 (M91406) Initial release
 * 11/02/2020 v2.0 (M91406) Enhanced version with generic trap handler
+* 03/08/2021 v2.1 (M91406) Improved ENABLE bit handling keeping fault check executed but bypassing fault trip and recovery responses
 
 ---
 © 2021, Microchip Technology Inc.

@@ -174,14 +174,6 @@ volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* f
     if (fltObject == NULL)
         return(0);
 
-    // If FAULT CHECK is disabled, exit here
-    if (!fltObject->Status.bits.Enabled) {
-        fltObject->Counter = 0;                        // Clear Counter
-        fltObject->Status.bits.FaultActive = false;   // Clear immediate fault flag
-        fltObject->Status.bits.FaultStatus = false;   // Clear fault status flag
-        return(1);  // Return success
-    }
-    
     // If the source object is not initialized, exit here with error
     if (fltObject->SourceObject.ptrObject == NULL)
         return(0);
@@ -254,7 +246,8 @@ volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* f
     }
             
     // If a fault condition has been detected while no FAULT has been tripped....
-    if ((fltObject->Status.bits.FaultActive) && (!fltObject->Status.bits.FaultStatus)) {
+    if ((fltObject->Status.bits.FaultActive) && (!fltObject->Status.bits.FaultStatus) &&
+        (fltObject->Status.bits.Enabled)) {
     
         fltObject->Counter++;  // Increment fault event counter
         
@@ -269,7 +262,9 @@ volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* f
 
     }
     // If a FAULT has been tripped but no fault condition has been detected anymore....
-    else if ((fltObject->Status.bits.FaultStatus) && (!fltObject->Status.bits.FaultActive)) {
+    else if (((fltObject->Status.bits.FaultStatus) && (!fltObject->Status.bits.FaultActive)) ||
+             (!fltObject->Status.bits.Enabled))
+    {
     
         fltObject->Counter++;  // Increment fault event counter
 
