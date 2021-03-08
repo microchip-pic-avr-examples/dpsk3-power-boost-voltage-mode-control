@@ -167,20 +167,26 @@ volatile uint16_t appLCD_Execute(void)
                 else
                     PrintLcd(1, "VOUT    = %2.1f V", (double)vo);
 
-                if (boost.status.bits.fault_active)
-                {
-                    if (fltobj_BoostUVLO.Status.bits.FaultStatus)
-                        dev_Lcd_WriteStringXY(4, 1, "(UV)");
-                    else if (fltobj_BoostOVLO.Status.bits.FaultStatus)
-                        dev_Lcd_WriteStringXY(4, 1, "(OV)");
-                    else if (fltobj_BoostRegErr.Status.bits.FaultStatus)
-                        dev_Lcd_WriteStringXY(4, 1, "(RE)");
-                }
                 break;
         }
         
+        // Add Error Indicators
+        if ((lcd.screen<3) && (boost.status.bits.fault_active))
+        {
+            if (fltobj_BoostUVLO.Status.bits.FaultStatus)
+                dev_Lcd_WriteStringXY(4, 1, "(UV)");
+            else if (fltobj_BoostOVLO.Status.bits.FaultStatus)
+                dev_Lcd_WriteStringXY(4, 1, "(OV)");
+            else if (fltobj_BoostRegErr.Status.bits.FaultStatus)
+                dev_Lcd_WriteStringXY(4, 1, "(RE)");
+            else if (fltobj_BoostOCP.Status.bits.FaultStatus)
+                dev_Lcd_WriteStringXY(4, 1, "(OC)");
+            else 
+                dev_Lcd_WriteStringXY(4, 1, "(LA)");
+        }
+
+        // Trigger LCD Refresh
         lcd.refresh = LCD_REFRESH;
-        
         lcd_cnt = 0; // Reset internal interval counter
     }
     
