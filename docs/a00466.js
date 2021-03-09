@@ -1,6 +1,4 @@
 var a00466 =
 [
-    [ "Variables & Constants", "a00467.html", "a00467" ],
-    [ "Data Types", "a00468.html", "a00468" ],
-    [ "Defines and Macros", "a00469.html", "a00469" ]
+    [ "drv_LcdInterface_SpiSend", "a00466.html#ga50b8734fca19fc75dd778a9902c63082", null ]
 ];

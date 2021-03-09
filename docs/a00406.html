@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Phase Current Feedback</title>
+<title>Digital Power Starter Kit 3 Firmware: Boost Converter</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -96,38 +103,194 @@ $(document).ready(function(){initNavTree('a00406.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Phase Current Feedback<div class="ingroups"><a class="el" href="a00534.html">Hardware Abstraction Layer</a></div></div>  </div>
+<div class="title">Boost Converter<div class="ingroups"><a class="el" href="a00550.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00400.html">Input Voltage Feedback</a> &raquo; <a class="el" href="a00405.html">Microcontroller Abstraction</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Declaration of phase current feedback parameters.  
+<p>Device analog input pin, register and interrupt vector assignments of input voltage feedback signal(s) of the boost converter.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Phase Current Feedback:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Boost Converter:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00406.svg" width="598" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00406.svg" width="351" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:a00407"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00407.html">User Settings</a></td></tr>
-<tr class="memdesc:a00407"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-declaration of phase current feedback parameters using physical quantities. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00408"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html">Conversion Macros</a></td></tr>
-<tr class="memdesc:a00408"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros for user-declarations of phase current feedback parameters. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00409"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html">Microcontroller Abstraction</a></td></tr>
-<tr class="memdesc:a00409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device analog input pin, register and interrupt vector assignments of phase current feedback signal(s) <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad307e954c5c557bf8b6bc58aa903ef81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00406.html#gad307e954c5c557bf8b6bc58aa903ef81">_BOOST_VIN_ADCInterrupt</a>&#160;&#160;&#160;_ADCAN12Interrupt</td></tr>
+<tr class="memdesc:gad307e954c5c557bf8b6bc58aa903ef81"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input assignments of input voltage feedback signals.  <a href="a00406.html#gad307e954c5c557bf8b6bc58aa903ef81">More...</a><br /></td></tr>
+<tr class="separator:gad307e954c5c557bf8b6bc58aa903ef81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga630ebd77c0370e75ac01f72df812cbfb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00406.html#ga630ebd77c0370e75ac01f72df812cbfb">_BOOST_VIN_ADCISR_IF</a>&#160;&#160;&#160;_ADCAN12IF</td></tr>
+<tr class="memdesc:ga630ebd77c0370e75ac01f72df812cbfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC interrupt flag bit of the input voltage feedback channel.  <a href="a00406.html#ga630ebd77c0370e75ac01f72df812cbfb">More...</a><br /></td></tr>
+<tr class="separator:ga630ebd77c0370e75ac01f72df812cbfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f8fc3cc23d74cff84b66a15c1a4144a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00406.html#ga2f8fc3cc23d74cff84b66a15c1a4144a">BOOST_VIN_ANSEL</a>&#160;&#160;&#160;_ANSELC0</td></tr>
+<tr class="memdesc:ga2f8fc3cc23d74cff84b66a15c1a4144a"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO analog function mode enable bit.  <a href="a00406.html#ga2f8fc3cc23d74cff84b66a15c1a4144a">More...</a><br /></td></tr>
+<tr class="separator:ga2f8fc3cc23d74cff84b66a15c1a4144a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaebc5ce2006d20b9a9e8e0d380d0a59fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00406.html#gaebc5ce2006d20b9a9e8e0d380d0a59fc">BOOST_VIN_ADCCORE</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:gaebc5ce2006d20b9a9e8e0d380d0a59fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core  <a href="a00406.html#gaebc5ce2006d20b9a9e8e0d380d0a59fc">More...</a><br /></td></tr>
+<tr class="separator:gaebc5ce2006d20b9a9e8e0d380d0a59fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f8e69a10fcad8fad360d2c72c00d142"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00406.html#ga4f8e69a10fcad8fad360d2c72c00d142">BOOST_VIN_ADCIN</a>&#160;&#160;&#160;12</td></tr>
+<tr class="memdesc:ga4f8e69a10fcad8fad360d2c72c00d142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analog input number (e.g. '5' for 'AN5')  <a href="a00406.html#ga4f8e69a10fcad8fad360d2c72c00d142">More...</a><br /></td></tr>
+<tr class="separator:ga4f8e69a10fcad8fad360d2c72c00d142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37f7db0137b8395eb67247493be227cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00406.html#ga37f7db0137b8395eb67247493be227cf">BOOST_VIN_ADCBUF</a>&#160;&#160;&#160;ADCBUF12</td></tr>
+<tr class="memdesc:ga37f7db0137b8395eb67247493be227cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input buffer of this ADC channel.  <a href="a00406.html#ga37f7db0137b8395eb67247493be227cf">More...</a><br /></td></tr>
+<tr class="separator:ga37f7db0137b8395eb67247493be227cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac2dc7bb665d5a22aa00dbfeb2aed167f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00406.html#gac2dc7bb665d5a22aa00dbfeb2aed167f">BOOST_VIN_ADCTRIG</a>&#160;&#160;&#160;PG2TRIGB</td></tr>
+<tr class="memdesc:gac2dc7bb665d5a22aa00dbfeb2aed167f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register used for trigger placement.  <a href="a00406.html#gac2dc7bb665d5a22aa00dbfeb2aed167f">More...</a><br /></td></tr>
+<tr class="separator:gac2dc7bb665d5a22aa00dbfeb2aed167f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac40a516f8246206918dc9b0c991a55d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00406.html#gac40a516f8246206918dc9b0c991a55d6">BOOST_VIN_TRGSRC</a>&#160;&#160;&#160;<a class="el" href="a00399.html#gaa8e5c81a584c25dcb070282ec867bd08">BOOST_PWM_TRGSRC_TRG2</a></td></tr>
+<tr class="memdesc:gac40a516f8246206918dc9b0c991a55d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM2 (=PG2) Trigger 2 via PGxTRIGB.  <a href="a00406.html#gac40a516f8246206918dc9b0c991a55d6">More...</a><br /></td></tr>
+<tr class="separator:gac40a516f8246206918dc9b0c991a55d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Declaration of phase current feedback parameters. </p>
+<p>Device analog input pin, register and interrupt vector assignments of input voltage feedback signal(s) of the boost converter. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gad307e954c5c557bf8b6bc58aa903ef81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad307e954c5c557bf8b6bc58aa903ef81">&#9670;&nbsp;</a></span>_BOOST_VIN_ADCInterrupt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _BOOST_VIN_ADCInterrupt&#160;&#160;&#160;_ADCAN12Interrupt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC input assignments of input voltage feedback signals. </p>
+<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. ADC interrupt service routine function call of the input voltage feedback channel </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01033">1033</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga630ebd77c0370e75ac01f72df812cbfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga630ebd77c0370e75ac01f72df812cbfb">&#9670;&nbsp;</a></span>_BOOST_VIN_ADCISR_IF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _BOOST_VIN_ADCISR_IF&#160;&#160;&#160;_ADCAN12IF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC interrupt flag bit of the input voltage feedback channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01034">1034</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga37f7db0137b8395eb67247493be227cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga37f7db0137b8395eb67247493be227cf">&#9670;&nbsp;</a></span>BOOST_VIN_ADCBUF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VIN_ADCBUF&#160;&#160;&#160;ADCBUF12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC input buffer of this ADC channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01039">1039</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaebc5ce2006d20b9a9e8e0d380d0a59fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaebc5ce2006d20b9a9e8e0d380d0a59fc">&#9670;&nbsp;</a></span>BOOST_VIN_ADCCORE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VIN_ADCCORE&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01037">1037</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga4f8e69a10fcad8fad360d2c72c00d142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4f8e69a10fcad8fad360d2c72c00d142">&#9670;&nbsp;</a></span>BOOST_VIN_ADCIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VIN_ADCIN&#160;&#160;&#160;12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Analog input number (e.g. '5' for 'AN5') </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01038">1038</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gac2dc7bb665d5a22aa00dbfeb2aed167f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac2dc7bb665d5a22aa00dbfeb2aed167f">&#9670;&nbsp;</a></span>BOOST_VIN_ADCTRIG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VIN_ADCTRIG&#160;&#160;&#160;PG2TRIGB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register used for trigger placement. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01040">1040</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga2f8fc3cc23d74cff84b66a15c1a4144a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f8fc3cc23d74cff84b66a15c1a4144a">&#9670;&nbsp;</a></span>BOOST_VIN_ANSEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VIN_ANSEL&#160;&#160;&#160;_ANSELC0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO analog function mode enable bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01036">1036</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gac40a516f8246206918dc9b0c991a55d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac40a516f8246206918dc9b0c991a55d6">&#9670;&nbsp;</a></span>BOOST_VIN_TRGSRC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VIN_TRGSRC&#160;&#160;&#160;<a class="el" href="a00399.html#gaa8e5c81a584c25dcb070282ec867bd08">BOOST_PWM_TRGSRC_TRG2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM2 (=PG2) Trigger 2 via PGxTRIGB. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01041">1041</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

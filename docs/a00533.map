@@ -1,4 +1,5 @@
-<map id="User Task Initialization" name="User Task Initialization">
-<area shape="rect" id="node1" title=" " alt="" coords="189,13,343,38"/>
-<area shape="rect" id="node2" href="$a00531.html" title=" " alt="" coords="5,5,141,45"/>
+<map id="Firmware Architecture" name="Firmware Architecture">
+<area shape="rect" id="node1" href="$a00535.html" title="Main Loop." alt="" coords="217,5,300,31"/>
+<area shape="rect" id="node2" title="Firmware Flowchart." alt="" coords="5,31,155,56"/>
+<area shape="rect" id="node3" href="$a00534.html" title="Device Start Up." alt="" coords="203,55,315,80"/>
 </map>

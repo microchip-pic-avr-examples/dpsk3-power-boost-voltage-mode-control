@@ -25,34 +25,34 @@
 var NAVTREE =
 [
   [ "Digital Power Starter Kit 3 Firmware", "index.html", [
-    [ "dsPIC33C Digital Power Starter Kit", "index.html#autotoc_md17", [
-      [ "Summary", "index.html#autotoc_md18", null ],
-      [ "Description", "index.html#autotoc_md19", null ],
-      [ "Related Documentation", "index.html#autotoc_md20", null ],
-      [ "Software Used", "index.html#autotoc_md21", null ],
-      [ "Hardware Used", "index.html#autotoc_md22", null ],
-      [ "Supported Target Devices", "index.html#autotoc_md23", null ],
-      [ "Security and Safety Requirements", "index.html#autotoc_md24", null ],
-      [ "Setup", "index.html#autotoc_md25", null ],
-      [ "Operation", "index.html#autotoc_md26", null ]
+    [ "dsPIC33C Digital Power Starter Kit", "index.html#autotoc_md1", [
+      [ "Summary", "index.html#autotoc_md2", null ],
+      [ "Description", "index.html#autotoc_md3", null ],
+      [ "Related Documentation", "index.html#autotoc_md4", null ],
+      [ "Software Used", "index.html#autotoc_md5", null ],
+      [ "Hardware Used", "index.html#autotoc_md6", null ],
+      [ "Supported Target Devices", "index.html#autotoc_md7", null ],
+      [ "Security and Safety Requirements", "index.html#autotoc_md8", null ],
+      [ "Setup", "index.html#autotoc_md9", null ],
+      [ "Operation", "index.html#autotoc_md10", null ]
     ] ],
-    [ "Getting Started", "a01646.html", [
-      [ "Table of Contents", "a01646.html#autotoc_md1", null ],
-      [ "1) Microchip SMPS Firmware Framework Architecture Overview", "a01646.html#autotoc_md2", null ],
-      [ "2) Boost Converter State Machine", "a01646.html#autotoc_md3", null ],
-      [ "3) Real Start-Up Timing of DPSK3", "a01646.html#autotoc_md4", null ],
-      [ "4) Fault Monitor", "a01646.html#autotoc_md5", null ],
-      [ "5) Evaluation, Customization and Code Migration", "a01646.html#autotoc_md6", null ],
-      [ "6) Digital Controller Design", "a01646.html#autotoc_md7", null ],
-      [ "7) Power Plant Measurement Support", "a01646.html#autotoc_md8", null ]
+    [ "Getting Started", "a01666.html", [
+      [ "Table of Contents", "a01666.html#autotoc_md12", null ],
+      [ "1) Microchip SMPS Firmware Framework Architecture Overview", "a01666.html#autotoc_md13", null ],
+      [ "2) Boost Converter State Machine", "a01666.html#autotoc_md14", null ],
+      [ "3) Real Start-Up Timing of DPSK3", "a01666.html#autotoc_md15", null ],
+      [ "4) Fault Monitor", "a01666.html#autotoc_md16", null ],
+      [ "5) Evaluation, Customization and Code Migration", "a01666.html#autotoc_md17", null ],
+      [ "6) Digital Controller Design", "a01666.html#autotoc_md18", null ],
+      [ "7) Power Plant Measurement Support", "a01666.html#autotoc_md19", null ]
     ] ],
-    [ "Power Supply Control", "a01647.html", [
-      [ "Table of Contents", "a01647.html#autotoc_md10", null ],
-      [ "1) DPSK3 Boost Converter Voltage Mode Control Loop Implementation", "a01647.html#autotoc_md11", null ],
-      [ "2) Control Loop Block Diagram", "a01647.html#autotoc_md12", null ],
-      [ "3) Control Loop Timing", "a01647.html#autotoc_md13", null ],
-      [ "4) Control Loop Flow Chart", "a01647.html#autotoc_md14", null ],
-      [ "5) Control Loop Firmware Implementation", "a01647.html#autotoc_md15", null ]
+    [ "Power Supply Control", "a01667.html", [
+      [ "Table of Contents", "a01667.html#autotoc_md21", null ],
+      [ "1) DPSK3 Boost Converter Voltage Mode Control Loop Implementation", "a01667.html#autotoc_md22", null ],
+      [ "2) Control Loop Block Diagram", "a01667.html#autotoc_md23", null ],
+      [ "3) Control Loop Timing", "a01667.html#autotoc_md24", null ],
+      [ "4) Control Loop Flow Chart", "a01667.html#autotoc_md25", null ],
+      [ "5) Control Loop Firmware Implementation", "a01667.html#autotoc_md26", null ]
     ] ],
     [ "Software Overview", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
@@ -68,13 +68,12 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"a00353.html",
-"a00396.html#gabf2ad9b2299924fa6c2a9fb609923d4c",
-"a00416.html#ga397e38fd8ccd3d7376f0bd767e416002",
-"a00472.html#ga1aae62c3b72232032f067db3a401a83c",
-"a00721.html#a9a368360ec65d1aa196a351efe509d42",
-"a01453.html#a32e93b068e309da5a319a7a69f3b3ff5",
-"a01625.html#ae35beb5531d5f8d35ef4ff4c55049a7c"
+"a00350.html",
+"a00409.html#ga56b83d27441bfa88e19670b4dedf2de8",
+"a00460.html",
+"a00521.html#ga39110329b3127929de102c5d810f83f1",
+"a01125.html#a5d05a526ecf8d614d51386a0a7c5e591",
+"a01573.html#ad5c434beca0466b2bc8220837a9e8bc9"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,6 +1,8 @@
 var a00377 =
 [
-    [ "pgConfigClear", "a00377.html#ga75ca6374eb31a3224a8e7bcfd4cd56a0", null ],
-    [ "pwmConfigClear", "a00377.html#gafeca0163f581790a35cef7b99a276adc", null ],
-    [ "pwmConfigDefault", "a00377.html#gaf8f0ea73e96ecddb846d1361098c09fe", null ]
+    [ "ADC_REFERENCE", "a00377.html#ga317868c528ebe27fbca094a8bc2d910c", null ],
+    [ "ADC_RESOLUTION", "a00377.html#ga00978ca9e8220475258dcbbbb7d29129", null ],
+    [ "CPU_FREQUENCY", "a00377.html#gaf73acdf7fb3be35ff98322b7e827d349", null ],
+    [ "PWM_CLOCK_FREQUENCY", "a00377.html#gaf4bf7a89bb59df42a846b9532dce8db9", null ],
+    [ "PWM_CLOCK_HIGH_RESOLUTION", "a00377.html#ga62b04d6cee79ca8f957ed1d5e6c46dd2", null ]
 ];

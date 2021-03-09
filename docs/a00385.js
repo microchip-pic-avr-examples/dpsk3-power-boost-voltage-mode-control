@@ -1,8 +1,9 @@
 var a00385 =
 [
-    [ "_OSTIMER_IE", "a00385.html#gaf169ca56f95334f16dd2bca15dc108d5", null ],
-    [ "_OSTIMER_IF", "a00385.html#gaf0c6fb4644dc461d279c70028eeb0e0a", null ],
-    [ "_OSTIMER_IP", "a00385.html#ga9e2f08edcbbe0b28c502b3b024572962", null ],
-    [ "_OSTIMER_PRIORITY", "a00385.html#gae01b52fce8c5689574bfa3ad07c29f4e", null ],
-    [ "_OsTimerInterrupt", "a00385.html#ga197f587a79697441cb15f08ffe527e56", null ]
+    [ "BOOST_CHARGEUP_PERIOD", "a00385.html#ga54fa6c219dce9de5f816617ce4716b35", null ],
+    [ "BOOST_CHARGEUP_TIMEOUT", "a00385.html#gae3597efdac20bf9aee16420f6f6d8be4", null ],
+    [ "BOOST_IRAMP_PERIOD", "a00385.html#ga37bef3bc61987dfa7912227dcd2e8475", null ],
+    [ "BOOST_POWER_GOOD_DELAY", "a00385.html#ga8a44fb1bbfee2714f51174f5ec741c01", null ],
+    [ "BOOST_POWER_ON_DELAY", "a00385.html#ga0c3f62393119606cf410bc110c3485c1", null ],
+    [ "BOOST_VRAMP_PERIOD", "a00385.html#ga96ef5acd0b4aa670827cb7b418fee8a9", null ]
 ];

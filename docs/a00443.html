@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -99,108 +106,155 @@ $(document).ready(function(){initNavTree('a00443.html',''); initResizable(); });
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00536.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00442.html">LC-Display Library</a></div></div>  </div>
+<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00552.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00442.html">Fault Handler Library</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Public functions of the LC display device driver library.  
+<p>Public functions of the fault handler library layer.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Public Functions:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00443.svg" width="306" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00443.svg" width="320" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga5d8f09855e28846e87400692d186781a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00443.html#ga5d8f09855e28846e87400692d186781a">dev_Lcd_Initialize</a> (void)</td></tr>
-<tr class="memdesc:ga5d8f09855e28846e87400692d186781a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the LCD Device.  <a href="a00443.html#ga5d8f09855e28846e87400692d186781a">More...</a><br /></td></tr>
-<tr class="separator:ga5d8f09855e28846e87400692d186781a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0bff8adf9ea1196bdd69b3e47b2b77cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00443.html#ga0bff8adf9ea1196bdd69b3e47b2b77cd">dev_Lcd_Clear</a> (void)</td></tr>
-<tr class="memdesc:ga0bff8adf9ea1196bdd69b3e47b2b77cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the LC Display Screen.  <a href="a00443.html#ga0bff8adf9ea1196bdd69b3e47b2b77cd">More...</a><br /></td></tr>
-<tr class="separator:ga0bff8adf9ea1196bdd69b3e47b2b77cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5c431635cb94750b2f6e938d7f1f0cf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00443.html#ga5c431635cb94750b2f6e938d7f1f0cf1">dev_Lcd_GotoXY</a> (volatile uint8_t x, volatile uint8_t y)</td></tr>
-<tr class="memdesc:ga5c431635cb94750b2f6e938d7f1f0cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cursor position to the given x- and y-coordinates.  <a href="a00443.html#ga5c431635cb94750b2f6e938d7f1f0cf1">More...</a><br /></td></tr>
-<tr class="separator:ga5c431635cb94750b2f6e938d7f1f0cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3cb1303cba012af043a87af0bcab16d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00443.html#ga3cb1303cba012af043a87af0bcab16d8">dev_Lcd_WriteChar</a> (const char ch)</td></tr>
-<tr class="memdesc:ga3cb1303cba012af043a87af0bcab16d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a character on the LCD screen.  <a href="a00443.html#ga3cb1303cba012af043a87af0bcab16d8">More...</a><br /></td></tr>
-<tr class="separator:ga3cb1303cba012af043a87af0bcab16d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac07de05132918ca2db8cf4492819eca6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00443.html#gac07de05132918ca2db8cf4492819eca6">dev_Lcd_WriteString</a> (const char *str)</td></tr>
-<tr class="memdesc:gac07de05132918ca2db8cf4492819eca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a complete string on the LCD screen.  <a href="a00443.html#gac07de05132918ca2db8cf4492819eca6">More...</a><br /></td></tr>
-<tr class="separator:gac07de05132918ca2db8cf4492819eca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga24701a4c3ae760e7e0b9c70d93370ff3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00443.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a> (volatile uint8_t column_index, volatile uint8_t line_index, const char *str)</td></tr>
-<tr class="memdesc:ga24701a4c3ae760e7e0b9c70d93370ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cursor position to the given x- and y-coordinates and writes the given string on the lcd screen.  <a href="a00443.html#ga24701a4c3ae760e7e0b9c70d93370ff3">More...</a><br /></td></tr>
-<tr class="separator:ga24701a4c3ae760e7e0b9c70d93370ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa513cf169f787b56d70d5d793d2367f7"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00443.html#gaa513cf169f787b56d70d5d793d2367f7">drv_FaultHandler_CheckObject</a> (volatile struct <a class="el" href="a01429.html">FAULT_OBJECT_s</a> *fltObject)</td></tr>
+<tr class="memdesc:gaa513cf169f787b56d70d5d793d2367f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check current fault status of a user-defined fault object.  <a href="a00443.html#gaa513cf169f787b56d70d5d793d2367f7">More...</a><br /></td></tr>
+<tr class="separator:gaa513cf169f787b56d70d5d793d2367f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3b96ecc924931497bada0ea1957f0634"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00443.html#ga3b96ecc924931497bada0ea1957f0634">drv_TrapHandler_SoftTrapsInitialize</a> (bool accumulator_a_overflow_trap_enable, bool accumulator_b_overflow_trap_enable, bool accumulator_catastrophic_overflow_trap_enable)</td></tr>
+<tr class="memdesc:ga3b96ecc924931497bada0ea1957f0634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the software-configurable traps.  <a href="a00443.html#ga3b96ecc924931497bada0ea1957f0634">More...</a><br /></td></tr>
+<tr class="separator:ga3b96ecc924931497bada0ea1957f0634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0250f20caa12da59ca4f42c807cff152"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00443.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a> (enum <a class="el" href="a00448.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a> trap_id)</td></tr>
+<tr class="memdesc:ga0250f20caa12da59ca4f42c807cff152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Centralized trap handler routine.  <a href="a00443.html#ga0250f20caa12da59ca4f42c807cff152">More...</a><br /></td></tr>
+<tr class="separator:ga0250f20caa12da59ca4f42c807cff152"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Public functions of the LC display device driver library. </p>
-<p>This is the detailed description of public API functions of the LC display device driver library. </p>
+<p>Public functions of the fault handler library layer. </p>
+<p>This is the detailed description of public functions of the fault handler library. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga0bff8adf9ea1196bdd69b3e47b2b77cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0bff8adf9ea1196bdd69b3e47b2b77cd">&#9670;&nbsp;</a></span>dev_Lcd_Clear()</h2>
+<a id="ga0250f20caa12da59ca4f42c807cff152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0250f20caa12da59ca4f42c807cff152">&#9670;&nbsp;</a></span>DefaultTrapHandler()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void dev_Lcd_Clear </td>
+          <td class="memname">void DefaultTrapHandler </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">enum <a class="el" href="a00448.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a>&#160;</td>
+          <td class="paramname"><em>trap_id</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Clears the LC Display Screen. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">void</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void  This function clears the LCD screen and sets the cursor position at 0,0 (left upper corner). Instead of calling this function, clearing the screen can also be achieved by sending the character '\f' within a string </dd></dl>
+<p>Centralized trap handler routine. </p>
+<p>This routine is used as centralized trap handler for all traps. Each trap is identified and logged by a unique trap ID and the status bits of traps and interrupt vectors are captured</p>
+<p>Users may modify the basic framework provided here to suit to the needs of their application. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00197_source.html#l00166">166</a> of file <a class="el" href="a00197_source.html">dev_lcd.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00443_ga0bff8adf9ea1196bdd69b3e47b2b77cd_cgraph.svg" width="563" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00443_ga0bff8adf9ea1196bdd69b3e47b2b77cd_icgraph.svg" width="100%" height="378"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
+<p class="definition">Definition at line <a class="el" href="a00176_source.html#l00116">116</a> of file <a class="el" href="a00176_source.html">drv_trap_handler.c</a>.</p>
 
 </div>
 </div>
-<a id="ga5c431635cb94750b2f6e938d7f1f0cf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5c431635cb94750b2f6e938d7f1f0cf1">&#9670;&nbsp;</a></span>dev_Lcd_GotoXY()</h2>
+<a id="gaa513cf169f787b56d70d5d793d2367f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa513cf169f787b56d70d5d793d2367f7">&#9670;&nbsp;</a></span>drv_FaultHandler_CheckObject()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void dev_Lcd_GotoXY </td>
+          <td class="memname">uint16_t drv_FaultHandler_CheckObject </td>
           <td>(</td>
-          <td class="paramtype">volatile uint8_t&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
+          <td class="paramtype">volatile struct <a class="el" href="a01429.html">FAULT_OBJECT_s</a> *&#160;</td>
+          <td class="paramname"><em>fltObject</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check current fault status of a user-defined fault object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fltObject</td><td>Pointer to a Fault Monitoring Object of type struct <a class="el" href="a01429.html" title="This data structure is a collection of data structures for fault handling.">FAULT_OBJECT_s</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This routine compares the most recent value of a global variable or SFR (SOURCE) against user-defined thresholds. If the value violates/exceeds one or more of the user defined conditions, a fault counter is incremented.</p>
+<p>When this fault counter exceeds the user-defined maximum, a fault condition is tripped and the fault_status flag bit is set.</p>
+<p>When a fault condition has been tripped and the fault status is set (=true), the fault check monitors for the source value triggering a recovery event. The recovery process works like the fault trip event by comparing the most recent source value against the user-defined RECOVERY_LEVEL. Once the value has been RSTCNT_MAX times below the RECOVERY_LEVEL threshold, the fault will automatically be cleared.</p>
+<p>a) Comparison Types</p>
+<p>The fault handler offers the following different comparison methods:</p><ul>
+<li>Greater Than:<ul>
+<li>performs comparison SOURCE &gt; TRIP_LEVEL</li>
+<li>TRIP_LEVEL is greater than RECOVERY_LEVEL. The difference between TRIP_LEVEL and RECOVERY_LEVEL is the hysteresis of the defined threshold.</li>
+</ul>
+</li>
+<li>Less Than:<ul>
+<li>performs comparison SOURCE &lt; TRIP_LEVEL</li>
+<li>TRIP_LEVEL is less than RECOVERY_LEVEL. The difference between TRIP_LEVEL and RECOVERY_LEVEL is the hysteresis of the defined threshold.</li>
+</ul>
+</li>
+<li>Is Equal:<ul>
+<li>performs comparison SOURCE == TRIP_LEVEL</li>
+<li>RECOVERY_LEVEL is ignored.</li>
+</ul>
+</li>
+<li>Is Not Equal:<ul>
+<li>performs comparison SOURCE != TRIP_LEVEL</li>
+<li>RECOVERY_LEVEL is ignored.</li>
+</ul>
+</li>
+<li>Between:<ul>
+<li>performs comparison RECOVERY_LEVEL &lt; SOURCE &lt; TRIP_LEVEL</li>
+<li>min/max of the FAULT range is defined by the range between RECOVERY_LEVEL (min) and TRIP_LEVEL (max)</li>
+</ul>
+</li>
+<li>Outside:<ul>
+<li>performs comparison (SOURCE &lt; RECOVERY_LEVEL) or (TRIP_LEVEL &lt; SOURCE)</li>
+<li>min/max of the allowed operating range is defined by the range between RECOVERY_LEVEL (min) and TRIP_LEVEL (max)</li>
+</ul>
+</li>
+</ul>
+<p>b) Value Filtering</p>
+<p>A bit-mask filter can be used to monitor individual register bits or filter on specific bits within a 16-bit wide value. The bit-mask is always applied the source value. If no bit-mask is required, set bitmask = 0xFFFF;</p>
+<p>c) Comparison of two dynamic values</p>
+<p>When dynamic values of two variables need to be compared, the fault object offers a second pointer to a so-called reference object "ref_obj". When this pointer is != NULL, the absolute value of the difference between SOURCE and REFERNCE is compared against the user-defined TRIP and RECOVERY thresholds. When no second value is used, set ref_obj = NULL (NULL-pointer). This will force the fault check to ignore this value.</p>
+<p>d) User defined responses</p>
+<p>Function pointers "trip_response" and "reset_response" can be used to assign user-defined functions which should be called when a fault condition has been tripped or reset. I no user-defined function should be called, these pointers can be set = NULL (NULL-pointer)</p>
+<dl class="section note"><dt>Note</dt><dd>If the value is within normal operating conditions, the fault counter will be cleared. Thus fault events must occur successively incrementing the fault event counter high enough to eventually trip a fault event. Thus the fault event counter can be used to adjust the sensitivity of the fault response. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="a00170_source.html#l00168">168</a> of file <a class="el" href="a00170_source.html">drv_fault_handler.c</a>.</p>
+
+</div>
+</div>
+<a id="ga3b96ecc924931497bada0ea1957f0634"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3b96ecc924931497bada0ea1957f0634">&#9670;&nbsp;</a></span>drv_TrapHandler_SoftTrapsInitialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t drv_TrapHandler_SoftTrapsInitialize </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>accumulator_a_overflow_trap_enable</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">volatile uint8_t&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>accumulator_b_overflow_trap_enable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>accumulator_catastrophic_overflow_trap_enable</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -210,251 +264,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the cursor position to the given x- and y-coordinates. </p>
+<p>Configures the software-configurable traps. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>x-coordinate for the new cursor position starting with zero </td></tr>
-    <tr><td class="paramname">y</td><td>y-coordinate for the new cursor position starting with zero </td></tr>
+    <tr><td class="paramname">accumulator_a_overflow_trap_enable</td><td>Flag of type Boolean enabling/disabling accumulator A trap at 1.31 overflow </td></tr>
+    <tr><td class="paramname">accumulator_b_overflow_trap_enable</td><td>Flag of type Boolean enabling/disabling accumulator B trap at 1.31 overflow </td></tr>
+    <tr><td class="paramname">accumulator_catastrophic_overflow_trap_enable</td><td>Flag of type Boolean enabling/disabling catastrophic accumulator trap at 9.31 overflow</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void  This function sets the cursor position to the given x- and y-coordinates starting at (0, 0) in the upper left corner. </dd></dl>
+<p>This routine sets the DSP-specific traps for overflow-events of accumulator A and B. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00197_source.html#l00184">184</a> of file <a class="el" href="a00197_source.html">dev_lcd.c</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00443_ga5c431635cb94750b2f6e938d7f1f0cf1_cgraph.svg" width="576" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00443_ga5c431635cb94750b2f6e938d7f1f0cf1_icgraph.svg" width="100%" height="378"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga5d8f09855e28846e87400692d186781a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5d8f09855e28846e87400692d186781a">&#9670;&nbsp;</a></span>dev_Lcd_Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void dev_Lcd_Initialize </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initializes the LCD Device. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">void</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void  This function initializes the LCD Device Driver. It needs to be called once at boot-up before that device can be used. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="a00197_source.html#l00126">126</a> of file <a class="el" href="a00197_source.html">dev_lcd.c</a>.</p>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00443_ga5d8f09855e28846e87400692d186781a_cgraph.svg" width="579" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00443_ga5d8f09855e28846e87400692d186781a_icgraph.svg" width="511" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga3cb1303cba012af043a87af0bcab16d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3cb1303cba012af043a87af0bcab16d8">&#9670;&nbsp;</a></span>dev_Lcd_WriteChar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void dev_Lcd_WriteChar </td>
-          <td>(</td>
-          <td class="paramtype">const char&#160;</td>
-          <td class="paramname"><em>ch</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Writes a character on the LCD screen. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ch</td><td>character be written to the LCD screen </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void  This function writes the single character 'ch' to the currently selected position on LCD screen. The following special characters will result in a specific response of the LCD:</dd></dl>
-<ul>
-<li>Character '\f' clears the screen and positions the cursor on the upper left corner</li>
-<li>Character '\r' sets the x position of the cursor to 0</li>
-<li>Character '<br  />
-' puts the cursor on the next line (without changing the x-position) </li>
-</ul>
-
-<p class="definition">Definition at line <a class="el" href="a00197_source.html#l00209">209</a> of file <a class="el" href="a00197_source.html">dev_lcd.c</a>.</p>
-<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00443_ga3cb1303cba012af043a87af0bcab16d8_cgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00443_ga3cb1303cba012af043a87af0bcab16d8_icgraph.svg" width="100%" height="378"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="gac07de05132918ca2db8cf4492819eca6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac07de05132918ca2db8cf4492819eca6">&#9670;&nbsp;</a></span>dev_Lcd_WriteString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void dev_Lcd_WriteString </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Writes a complete string on the LCD screen. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>Pointer to a string variable to be written on the LCD screen </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void  This function writes a complete string 'str' to the currently selected position on LCD screen. If the length of the string exceeds the available number display digits, the position will overrun and start again from position (0, 0).</dd></dl>
-<p>The following special characters within the string will result in a specific response of the LCD:</p>
-<ul>
-<li>Character '\f' clears the screen and positions the cursor on the upper left corner</li>
-<li>Character '\r' sets the x position of the cursor to 0</li>
-<li>Character '<br  />
-' puts the cursor on the next line (without changing the x-position) </li>
-</ul>
-
-<p class="definition">Definition at line <a class="el" href="a00197_source.html#l00272">272</a> of file <a class="el" href="a00197_source.html">dev_lcd.c</a>.</p>
-<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00443_gac07de05132918ca2db8cf4492819eca6_cgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00443_gac07de05132918ca2db8cf4492819eca6_icgraph.svg" width="100%" height="378"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga24701a4c3ae760e7e0b9c70d93370ff3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga24701a4c3ae760e7e0b9c70d93370ff3">&#9670;&nbsp;</a></span>dev_Lcd_WriteStringXY()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void dev_Lcd_WriteStringXY </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint8_t&#160;</td>
-          <td class="paramname"><em>column_index</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">volatile uint8_t&#160;</td>
-          <td class="paramname"><em>line_index</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the cursor position to the given x- and y-coordinates and writes the given string on the lcd screen. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">column_index</td><td>x-coordinates for the new cursor position starting with zero </td></tr>
-    <tr><td class="paramname">line_index</td><td>y-coordinates for the new cursor position starting with zero </td></tr>
-    <tr><td class="paramname">str</td><td>pointer to a string variable to be written on the LCD screen </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void  This function positions the cursor at the location defined by parameters x and y and writes a complete string 'str' to the newly selected position on LCD screen. If the length of the string exceeds the available number display digits, the position will overrun and start again from position (0, 0) in the upper left corner.</dd></dl>
-<p>The following special characters within the string will result in a specific response of the LCD:</p>
-<ul>
-<li>Character '\f' clears the screen and positions the cursor on the upper left corner</li>
-<li>Character '\r' sets the x position of the cursor to 0</li>
-<li>Character '<br  />
-' puts the cursor on the next line (without changing the x-position) </li>
-</ul>
-
-<p class="definition">Definition at line <a class="el" href="a00197_source.html#l00305">305</a> of file <a class="el" href="a00197_source.html">dev_lcd.c</a>.</p>
-<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00443_ga24701a4c3ae760e7e0b9c70d93370ff3_cgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00443_ga24701a4c3ae760e7e0b9c70d93370ff3_icgraph.svg" width="546" height="104"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<p class="definition">Definition at line <a class="el" href="a00176_source.html#l00090">90</a> of file <a class="el" href="a00176_source.html">drv_trap_handler.c</a>.</p>
 
 </div>
 </div>

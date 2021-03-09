@@ -66,7 +66,7 @@ volatile uint16_t appPowerSupply_Execute(void)
 
     // Capture data values
     boost.data.v_in = (BOOST_VIN_ADCBUF - BOOST_VIN_OFFSET);
-    boost.data.temp = BOOST_TEMP_ADCBUF;
+    boost.data.temp = TEMP_ADCBUF;
     boost.data.i_sns[0] = BOOST_ISNS_ADCBUF;
     
     // Average inductor current value and calculate output current
@@ -90,8 +90,9 @@ volatile uint16_t appPowerSupply_Execute(void)
 
     // Boost regulation error is only active while controller is running
     // and while being tied to a valid reference
-    if( (boost.state_id.bits.opstate_id >= BOOST_OPSTATE_RAMPUP) &&
-        (boost.state_id.bits.substate_id >= BOOST_OPSTATE_V_RAMP_UP) )
+    if(((boost.state_id.bits.opstate_id  >= BOOST_OPSTATE_RAMPUP) &&
+        (boost.state_id.bits.substate_id >= BOOST_OPSTATE_V_RAMP_UP)) ||
+       ((boost.state_id.bits.opstate_id  == BOOST_OPSTATE_ONLINE)))
     {
         fltobj_BoostRegErr.ReferenceObject.ptrObject = boost.v_loop.controller->Ports.ptrControlReference;
         #if (PLANT_MEASUREMENT == false)

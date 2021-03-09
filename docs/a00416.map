@@ -1,4 +1,4 @@
-<map id="LC Display Interface Declarations" name="LC Display Interface Declarations">
-<area shape="rect" id="node1" href="$a00534.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,5,152,45"/>
-<area shape="rect" id="node2" title="LC display SPI interface GPIO declarations." alt="" coords="200,5,339,45"/>
+<map id="Boost Converter" name="Boost Converter">
+<area shape="rect" id="node1" href="$a00415.html" title="User&#45;declaration of phase current feedback parameters using physical quantities." alt="" coords="5,5,107,31"/>
+<area shape="rect" id="node2" title="User&#45;declaration of phase current feedback parameters of the boost converter using physical quantitie..." alt="" coords="155,5,269,31"/>
 </map>

@@ -1,8 +1,8 @@
 ; **********************************************************************************
 ;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.672
-;  CGS Version: Code Generator Script v3.0.6 (02/03/2021)
+;  CGS Version: Code Generator Script v3.0.7 (03/07/2021)
 ;  Author:      M91406
-;  Date/Time:   02/19/2021 15:50:48
+;  Date/Time:   03/08/2021 16:08:18
 ; **********************************************************************************
 ;  3P3Z Control Library File (Fast Floating Point Coefficient Scaling Mode)
 ; **********************************************************************************
@@ -116,17 +116,23 @@
     
 ;------------------------------------------------------------------------------
 ; Controller Anti-Windup (control output value clamping)
+    mov w4, w1                              ; save copy of most recent control output in unused working register
      
 ; Check for lower limit violation
     mov [w0 + #MinOutput], w6               ; load lower limit value
     cpsgt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output > lower limit)
-    mov w6, w4                              ; override controller output
+    clr w4                                  ; clear working register holding most recent control output value
     V_LOOP_CLAMP_MIN_EXIT:
      
 ; Check for upper limit violation
     mov [w0 + #MaxOutput], w6               ; load upper limit value
     cpslt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output < upper limit)
+    bra V_LOOP_CLAMP_MAX_OVERRIDE           ; jump to override label if control output > upper limit
+    bra V_LOOP_CLAMP_MAX_EXIT               ; jump to exit
+
+    V_LOOP_CLAMP_MAX_OVERRIDE:
     mov w6, w4                              ; override controller output
+    mov w6, w1                              ; override controller output
     V_LOOP_CLAMP_MAX_EXIT:
     
 ;------------------------------------------------------------------------------
@@ -158,7 +164,7 @@
     mov w6, [w10 + #4]
     mov [w10 + #0], w6                      ; move entry (n-1) one tick down the delay line
     mov w6, [w10 + #2]
-    mov w4, [w10]                           ; add most recent control output to history
+    mov w1, [w10]                           ; add copy of unlimited most recent control output to history
     
 ;------------------------------------------------------------------------------
 ; Enable/Disable bypass branch target with dummy read of source buffer
@@ -293,7 +299,7 @@
 ; Check for lower limit violation
     mov [w0 + #MinOutput], w6               ; load lower limit value
     cpsgt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output > lower limit)
-    mov w6, w4                              ; override controller output
+    clr w4                                  ; clear working register holding most recent control output value
     V_LOOP_PTERM_CLAMP_MIN_EXIT:
      
 ; Check for upper limit violation

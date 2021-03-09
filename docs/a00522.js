@@ -1,7 +1,5 @@
 var a00522 =
 [
-    [ "Basic MCU Initialization", "a00523.html", "a00523" ],
-    [ "Main Oscillator Initialization", "a00524.html", "a00524" ],
-    [ "Device Pin Configuration", "a00525.html", "a00525" ],
-    [ "Digital Signal Processor Configuration", "a00526.html", "a00526" ]
+    [ "v_loop_pterm_factor", "a00522.html#gae1ef8104d52fe123c04e1107fd8ff55f", null ],
+    [ "v_loop_pterm_scaler", "a00522.html#ga566701f8f607a93f33e17e799fae6ac5", null ]
 ];

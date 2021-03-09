@@ -1,13 +1,15 @@
 var a01561 =
 [
-    [ "data", "a01561.html#ae94e8223319b210a6af5fac01d2c6d5e", null ],
-    [ "feedback", "a01561.html#a63d6a3cd26694bebeed63fd1e1a1eb2e", null ],
-    [ "gpio", "a01561.html#a86a71e9beada7e2064de976b164cd84b", null ],
-    [ "i_loop", "a01561.html#ac0a6d2e4b96edeb1086709409e5f0e28", null ],
-    [ "set_values", "a01561.html#a65372722a32dba273f722b29a2609d8a", null ],
-    [ "startup", "a01561.html#aef4c8320b07ea3539f664d10c9c4f835", null ],
-    [ "state_id", "a01561.html#a753d49e459d6acea8dca783faddea1df", null ],
-    [ "status", "a01561.html#a43ac04e696799481a75b1e5c2772ffe3", null ],
-    [ "sw_node", "a01561.html#a25c2cb61021c319b38a5c024e48c3310", null ],
-    [ "v_loop", "a01561.html#a22db2a2436558a1cb087f0f2ad607a64", null ]
+    [ "adc_buffer", "a01561.html#ae6b3bf1e59067bcf24c50032a88b454e", null ],
+    [ "adc_core", "a01561.html#a1108a003f371af97be13ed110ebdf23b", null ],
+    [ "adc_input", "a01561.html#ac5ef35fa6037886ca3a101f4a2b37928", null ],
+    [ "differential_input", "a01561.html#ac22ebd6bfde052a5134c47bec2396bbc", null ],
+    [ "early_interrupt_enable", "a01561.html#a01450dd198f268c49d3c6523135f6a66", null ],
+    [ "enabled", "a01561.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
+    [ "gpio_instance", "a01561.html#a87d4166062b0a4ec5b940c458cc92d8f", null ],
+    [ "interrupt_enable", "a01561.html#a793ba9a93f3a49413df9cdc16e9339f1", null ],
+    [ "level_trigger", "a01561.html#a901cea2416e72a6e745a679ba42aa03a", null ],
+    [ "scaling", "a01561.html#ae76a392e1ccbcd112bbc4bcb0ce126c4", null ],
+    [ "signed_result", "a01561.html#aad3977aa344b7d6cd2f0d88693a8ccde", null ],
+    [ "trigger_source", "a01561.html#a3ac3aa57346150cb34db841906e581cb", null ]
 ];

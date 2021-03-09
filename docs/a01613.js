@@ -1,15 +1,7 @@
 var a01613 =
 [
-    [ "ExtHookEndFunctionParam", "a01613.html#a0d0cec76368160a68c746460fb0c78de", null ],
-    [ "ExtHookPreAntiWindupFunctionParam", "a01613.html#a4751deec1568e355ede04519aca1163f", null ],
-    [ "ExtHookSourceFunctionParam", "a01613.html#a49056496daa1b372d8fc77fa0277cb7a", null ],
-    [ "ExtHookStartFunctionParam", "a01613.html#ac55c0abd3786fbced0f295d0643e860c", null ],
-    [ "ExtHookStopFunctionParam", "a01613.html#a7c0021aa8f168054383cc2c5348be89f", null ],
-    [ "ExtHookTargetFunctionParam", "a01613.html#a2a5b9d17e4385cc94016be30e5ef8a04", null ],
-    [ "ptrExtHookEndFunction", "a01613.html#ad4d47362ccc41eac37c4efbea81667ec", null ],
-    [ "ptrExtHookPreAntiWindupFunction", "a01613.html#a0a886a12a39dcf68dff8d6b17569e278", null ],
-    [ "ptrExtHookSourceFunction", "a01613.html#a56cc6ba084187143b28ed5ae3a722ab3", null ],
-    [ "ptrExtHookStartFunction", "a01613.html#aa9ccf832637ed7b72fafc3e3bc3dec1f", null ],
-    [ "ptrExtHookStopFunction", "a01613.html#a13aa0323b5f553a04526ebd4562d43f8", null ],
-    [ "ptrExtHookTargetFunction", "a01613.html#aba021e28e8aa8c60fdf0d0ad8a586bc2", null ]
+    [ "AltMaxOutput", "a01613.html#a5e923dee71273b4a3b30c6ee8f7a489d", null ],
+    [ "AltMinOutput", "a01613.html#a28fe2b583e16d86badea77dbdc199104", null ],
+    [ "MaxOutput", "a01613.html#a0ff4148e12916cb65656b9d3387a6e71", null ],
+    [ "MinOutput", "a01613.html#a4a0b0ed45a1400930c789f007bed7270", null ]
 ];

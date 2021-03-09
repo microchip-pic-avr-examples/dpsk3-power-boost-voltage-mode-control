@@ -1,7 +1,4 @@
-<map id="Public Properties" name="Public Properties">
-<area shape="rect" id="node1" href="$a00464.html" title=" " alt="" coords="5,55,188,80"/>
-<area shape="rect" id="node4" title="Public properties of the second library layer." alt="" coords="236,55,357,80"/>
-<area shape="rect" id="node2" href="$a00469.html" title=" " alt="" coords="413,5,550,31"/>
-<area shape="rect" id="node3" href="$a00468.html" title=" " alt="" coords="437,55,525,80"/>
-<area shape="rect" id="node5" href="$a00467.html" title=" " alt="" coords="405,104,557,129"/>
+<map id="Private Functions" name="Private Functions">
+<area shape="rect" id="node1" title="Private functions of the LC display interface driver." alt="" coords="192,13,315,38"/>
+<area shape="rect" id="node2" href="$a00463.html" title=" " alt="" coords="5,5,144,45"/>
 </map>

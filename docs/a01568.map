@@ -1,4 +1,5 @@
-<map id="NPNZ_STATUS_s" name="NPNZ_STATUS_s">
-<area shape="rect" id="node1" title="NPNZ16b controller object status and control word." alt="" coords="5,248,172,443"/>
-<area shape="rect" id="node2" href="$a01621.html" title="Global NPNZ controller data object." alt="" coords="18,5,159,200"/>
+<map id="BOOST_GPIO_INSTANCE_s" name="BOOST_GPIO_INSTANCE_s">
+<area shape="rect" id="node1" title="GPIO instance of the converter control GPIO." alt="" coords="5,403,196,539"/>
+<area shape="rect" id="node2" href="$a01573.html" title="GPIO instance of the converter control GPIO." alt="" coords="5,263,196,355"/>
+<area shape="rect" id="node3" href="$a01577.html" title="BOOST control &amp; monitoring data structure." alt="" coords="17,5,185,215"/>
 </map>

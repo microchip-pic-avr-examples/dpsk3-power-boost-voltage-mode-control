@@ -1,5 +1,4 @@
 var a00375 =
 [
-    [ "OSC_CLKSW_TIMEOUT", "a00375.html#ga357534a95fc647ca58434b7208581d27", null ],
-    [ "system_frequencies", "a00375.html#ga46b6a266d748ecc4aee5e5036ff2ffe1", null ]
+    [ "__DPSK3_R30__", "a00375.html#gafff853e38ff5aca0cdf027be10f6a043", null ]
 ];

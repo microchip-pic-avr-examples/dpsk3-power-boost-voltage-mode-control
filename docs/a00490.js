@@ -1,5 +1,7 @@
 var a00490 =
 [
-    [ "adcore_diff_mask", "a00490.html#ga215a815cad00177161895a74f526cfc1", null ],
-    [ "adcore_mask", "a00490.html#ga8312ee90c2e73a1ad6bc8b0e545368c2", null ]
+    [ "Boost Converter State Machine", "a00491.html", "a00491" ],
+    [ "Boost Special Functions", "a00497.html", "a00497" ],
+    [ "Boost Peripheral Configuration", "a00503.html", "a00503" ],
+    [ "Boost Peripheral Templates", "a00509.html", "a00509" ]
 ];

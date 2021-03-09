@@ -12,7 +12,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="a01561.html" target="_top" xlink:title="BOOST control &amp; monitoring data structure.">
+<g id="a_node1"><a xlink:href="a01577.html" target="_top" xlink:title="BOOST control &amp; monitoring data structure.">
 <polygon fill="white" stroke="black" points="0,-152.5 0,-171.5 126,-171.5 126,-152.5 0,-152.5"/>
 <text text-anchor="middle" x="63" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_CONVERTER_s</text>
 </a>
@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="a01525.html" target="_top" xlink:title="Publicly accessible data buffer of most recent runtime data values.">
+<g id="a_node2"><a xlink:href="a01541.html" target="_top" xlink:title="Publicly accessible data buffer of most recent runtime data values.">
 <polygon fill="white" stroke="black" points="178,-304.5 178,-323.5 335,-323.5 335,-304.5 178,-304.5"/>
 <text text-anchor="middle" x="256.5" y="-311.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_CONVERTER_DATA_s</text>
 </a>
@@ -36,7 +36,7 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
-<g id="a_node3"><a xlink:href="a01529.html" target="_top" xlink:title="Generic power controller control settings.">
+<g id="a_node3"><a xlink:href="a01545.html" target="_top" xlink:title="Generic power controller control settings.">
 <polygon fill="white" stroke="black" points="167,-266.5 167,-285.5 346,-285.5 346,-266.5 167,-266.5"/>
 <text text-anchor="middle" x="256.5" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_CONVERTER_SETTINGS_s</text>
 </a>
@@ -51,7 +51,7 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
-<g id="a_node4"><a xlink:href="a01521.html" target="_top" xlink:title="Power Converter Startup Timing Settings.">
+<g id="a_node4"><a xlink:href="a01537.html" target="_top" xlink:title="Power Converter Startup Timing Settings.">
 <polygon fill="white" stroke="black" points="168.5,-228.5 168.5,-247.5 344.5,-247.5 344.5,-228.5 168.5,-228.5"/>
 <text text-anchor="middle" x="256.5" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_CONVERTER_STARTUP_s</text>
 </a>
@@ -66,7 +66,7 @@
 <!-- Node6 -->
 <g id="node7" class="node">
 <title>Node6</title>
-<g id="a_node7"><a xlink:href="a01489.html" target="_top" xlink:title="Generic power controller status word.">
+<g id="a_node7"><a xlink:href="a01505.html" target="_top" xlink:title="Generic power controller status word.">
 <polygon fill="white" stroke="black" points="172,-190.5 172,-209.5 341,-209.5 341,-190.5 172,-190.5"/>
 <text text-anchor="middle" x="256.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_CONVERTER_STATUS_s</text>
 </a>
@@ -81,7 +81,7 @@
 <!-- Node7 -->
 <g id="node8" class="node">
 <title>Node7</title>
-<g id="a_node8"><a xlink:href="a01549.html" target="_top" xlink:title="Boost converter feedback declarations.">
+<g id="a_node8"><a xlink:href="a01565.html" target="_top" xlink:title="Boost converter feedback declarations.">
 <polygon fill="white" stroke="black" points="170.5,-152.5 170.5,-171.5 342.5,-171.5 342.5,-152.5 170.5,-152.5"/>
 <text text-anchor="middle" x="256.5" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_FEEDBACK_SETTINGS_s</text>
 </a>
@@ -96,7 +96,7 @@
 <!-- Node10 -->
 <g id="node11" class="node">
 <title>Node10</title>
-<g id="a_node11"><a xlink:href="a01557.html" target="_top" xlink:title="GPIO instance of the converter control GPIO.">
+<g id="a_node11"><a xlink:href="a01573.html" target="_top" xlink:title="GPIO instance of the converter control GPIO.">
 <polygon fill="white" stroke="black" points="185,-114.5 185,-133.5 328,-133.5 328,-114.5 185,-114.5"/>
 <text text-anchor="middle" x="256.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_GPIO_SETTINGS_s</text>
 </a>
@@ -111,7 +111,7 @@
 <!-- Node12 -->
 <g id="node13" class="node">
 <title>Node12</title>
-<g id="a_node13"><a xlink:href="a01533.html" target="_top" xlink:title="User defined settings for control loops;.">
+<g id="a_node13"><a xlink:href="a01549.html" target="_top" xlink:title="User defined settings for control loops;.">
 <polygon fill="white" stroke="black" points="183.5,-76.5 183.5,-95.5 329.5,-95.5 329.5,-76.5 183.5,-76.5"/>
 <text text-anchor="middle" x="256.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_LOOP_SETTINGS_s</text>
 </a>
@@ -126,7 +126,7 @@
 <!-- Node13 -->
 <g id="node14" class="node">
 <title>Node13</title>
-<g id="a_node14"><a xlink:href="a01501.html" target="_top" xlink:title="data structure for the boost statement ID for sub&#45;operating and operating states">
+<g id="a_node14"><a xlink:href="a01517.html" target="_top" xlink:title="data structure for the boost statement ID for sub&#45;operating and operating states">
 <polygon fill="white" stroke="black" points="201,-38.5 201,-57.5 312,-57.5 312,-38.5 201,-38.5"/>
 <text text-anchor="middle" x="256.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_STATE_ID_s</text>
 </a>
@@ -141,7 +141,7 @@
 <!-- Node14 -->
 <g id="node15" class="node">
 <title>Node14</title>
-<g id="a_node15"><a xlink:href="a01537.html" target="_top" xlink:title="Switching signal timing settings.">
+<g id="a_node15"><a xlink:href="a01553.html" target="_top" xlink:title="Switching signal timing settings.">
 <polygon fill="white" stroke="black" points="162,-0.5 162,-19.5 351,-19.5 351,-0.5 162,-0.5"/>
 <text text-anchor="middle" x="256.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_SWITCH_NODE_SETTINGS_s</text>
 </a>
@@ -156,7 +156,7 @@
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
-<g id="a_node5"><a xlink:href="a01513.html" target="_top" xlink:title="Generic power controller startup period settings.">
+<g id="a_node5"><a xlink:href="a01529.html" target="_top" xlink:title="Generic power controller startup period settings.">
 <polygon fill="white" stroke="black" points="402,-256 402,-286 544,-286 544,-256 402,-256"/>
 <text text-anchor="start" x="410" y="-274" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_STARTUP_PERIOD</text>
 <text text-anchor="middle" x="473" y="-263" font-family="Helvetica,sans-Serif" font-size="10.00">_HANDLER_s</text>
@@ -172,7 +172,7 @@
 <!-- Node5 -->
 <g id="node6" class="node">
 <title>Node5</title>
-<g id="a_node6"><a xlink:href="a01517.html" target="_top" xlink:title="Boost converter output capacitor voltage charge&#45;up monitor settings.">
+<g id="a_node6"><a xlink:href="a01533.html" target="_top" xlink:title="Boost converter output capacitor voltage charge&#45;up monitor settings.">
 <polygon fill="white" stroke="black" points="407,-207 407,-237 539,-237 539,-207 407,-207"/>
 <text text-anchor="start" x="415" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_STARTUP_VCAP</text>
 <text text-anchor="middle" x="473" y="-214" font-family="Helvetica,sans-Serif" font-size="10.00">_PRECHARGE_s</text>
@@ -188,7 +188,7 @@
 <!-- Node8 -->
 <g id="node9" class="node">
 <title>Node8</title>
-<g id="a_node9"><a xlink:href="a01545.html" target="_top" xlink:title="ADC input channel configuration.">
+<g id="a_node9"><a xlink:href="a01561.html" target="_top" xlink:title="ADC input channel configuration.">
 <polygon fill="white" stroke="black" points="387,-152.5 387,-171.5 559,-171.5 559,-152.5 387,-152.5"/>
 <text text-anchor="middle" x="473" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_ADC_INPUT_SETTINGS_s</text>
 </a>
@@ -203,7 +203,7 @@
 <!-- Node9 -->
 <g id="node10" class="node">
 <title>Node9</title>
-<g id="a_node10"><a xlink:href="a01541.html" target="_top" xlink:title="ADC input signal scaling = (ADCBUF &#45; &lt;offset&gt;) * &lt;factor&gt; &gt;&gt; 2^&lt;scaler&gt;">
+<g id="a_node10"><a xlink:href="a01557.html" target="_top" xlink:title="ADC input signal scaling = (ADCBUF &#45; &lt;offset&gt;) * &lt;factor&gt; &gt;&gt; 2^&lt;scaler&gt;">
 <polygon fill="white" stroke="black" points="595,-152.5 595,-171.5 762,-171.5 762,-152.5 595,-152.5"/>
 <text text-anchor="middle" x="678.5" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_ADC_INPUT_SCALING_s</text>
 </a>
@@ -218,7 +218,7 @@
 <!-- Node11 -->
 <g id="node12" class="node">
 <title>Node11</title>
-<g id="a_node12"><a xlink:href="a01553.html" target="_top" xlink:title="GPIO instance of the converter control GPIO.">
+<g id="a_node12"><a xlink:href="a01569.html" target="_top" xlink:title="GPIO instance of the converter control GPIO.">
 <polygon fill="white" stroke="black" points="401.5,-114.5 401.5,-133.5 544.5,-133.5 544.5,-114.5 401.5,-114.5"/>
 <text text-anchor="middle" x="473" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">BOOST_GPIO_INSTANCE_s</text>
 </a>

@@ -1,7 +1,4 @@
 var a00447 =
 [
-    [ "Public Functions", "a00448.html", "a00448" ],
-    [ "Public Properties", "a00449.html", null ],
-    [ "Private Functions", "a00450.html", "a00450" ],
-    [ "Private Properties", "a00451.html", "a00451" ]
+    [ "traplog", "a00447.html#ga952a98e41cf813dc50567ad60b3e860c", null ]
 ];
