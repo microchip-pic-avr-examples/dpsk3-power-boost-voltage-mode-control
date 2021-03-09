@@ -1,5 +1,6 @@
 var a00390 =
 [
+    [ "BOOST_FAULT_RESTART_CYCLES", "a00390.html#ga1ebc46e4b3839225b369fdc7ae17465d", null ],
     [ "BOOST_OCP_RECOVERY_DELAY", "a00390.html#ga21aabda6c863b4f02b903056dd51a886", null ],
     [ "BOOST_OCP_TRIP_DELAY", "a00390.html#ga679b8b944ffd26351d12e757af8b37a7", null ],
     [ "BOOST_OVLO_RECOVERY_DELAY", "a00390.html#gaf80ca0477099dc8e4c20d0e20bdd96a2", null ],

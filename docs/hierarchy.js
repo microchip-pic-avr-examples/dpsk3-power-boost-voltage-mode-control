@@ -21,6 +21,7 @@ var hierarchy =
       [ "BOOST_STATE_ID_s", "a01517.html", null ],
       [ "BOOST_SWITCH_NODE_SETTINGS_s", "a01553.html", null ]
     ] ],
+    [ "BUCK_CONVERTER_CONSTANTS_s", "a01665.html", null ],
     [ "DEBUGGING_LED_s", "a01493.html", null ],
     [ "DSP_CONFIG_s", "a00825.html", null ],
     [ "FAULT_OBJECT_s", "a01429.html", [
@@ -30,12 +31,12 @@ var hierarchy =
     ] ],
     [ "LCD_s", "a01489.html", null ],
     [ "NPNZ16b_s", "a01637.html", [
-      [ "NPNZ_ADC_TRGCTRL_s", "a01621.html", null ],
-      [ "NPNZ_DATA_PROVIDERS_s", "a01625.html", null ],
-      [ "NPNZ_EXTENSION_HOOKS_s", "a01629.html", null ],
+      [ "NPNZ_ADC_TRGCTRL_s", "a01617.html", null ],
+      [ "NPNZ_DATA_PROVIDERS_s", "a01621.html", null ],
+      [ "NPNZ_EXTENSION_HOOKS_s", "a01625.html", null ],
       [ "NPNZ_FILTER_PARAMS_s", "a01609.html", null ],
-      [ "NPNZ_GAIN_CONTROL_s", "a01613.html", null ],
-      [ "NPNZ_LIMITS_s", "a01617.html", null ],
+      [ "NPNZ_GAIN_CONTROL_s", "a01629.html", null ],
+      [ "NPNZ_LIMITS_s", "a01613.html", null ],
       [ "NPNZ_PORTS_s", "a01605.html", [
         [ "NPNZ_PORT_s", "a01601.html", null ]
       ] ],

@@ -15,14 +15,14 @@
 <area shape="rect" id="node11" href="$a01529.html" title="Generic power controller startup period settings." alt="" coords="1099,1137,1288,1273"/>
 <area shape="rect" id="node14" href="$a01569.html" title="GPIO instance of the converter control GPIO." alt="" coords="1479,1137,1670,1273"/>
 <area shape="rect" id="node16" href="$a01637.html" title="Global NPNZ controller data object." alt="" coords="1855,5,1945,83"/>
-<area shape="rect" id="node17" href="$a01621.html" title="Automated ADC Trigger handling." alt="" coords="1094,219,1266,340"/>
-<area shape="rect" id="node18" href="$a01613.html" title="Adaptive Gain Control Modulation Parameters." alt="" coords="1291,219,1467,340"/>
-<area shape="rect" id="node19" href="$a01617.html" title="System Anti&#45;Windup (Output Clamping) Thresholds." alt="" coords="1491,219,1608,340"/>
+<area shape="rect" id="node17" href="$a01617.html" title="Automated ADC Trigger handling." alt="" coords="1094,219,1266,340"/>
+<area shape="rect" id="node18" href="$a01629.html" title="Adaptive Gain Control Modulation Parameters." alt="" coords="1291,219,1467,340"/>
+<area shape="rect" id="node19" href="$a01613.html" title="System Anti&#45;Windup (Output Clamping) Thresholds." alt="" coords="1491,219,1608,340"/>
 <area shape="rect" id="node20" href="$a01633.html" title="User Data Space for Advanced Control Functions." alt="" coords="1632,189,1845,369"/>
 <area shape="rect" id="node21" href="$a01605.html" title="Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters." alt="" coords="1870,241,2018,318"/>
 <area shape="rect" id="node23" href="$a01609.html" title="Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters." alt="" coords="2042,145,2225,413"/>
-<area shape="rect" id="node24" href="$a01625.html" title="Data Provider Target Memory Addresses." alt="" coords="2249,219,2481,340"/>
-<area shape="rect" id="node25" href="$a01629.html" title="User Extension Function Call Parameters." alt="" coords="2506,153,2742,406"/>
+<area shape="rect" id="node24" href="$a01621.html" title="Data Provider Target Memory Addresses." alt="" coords="2249,219,2481,340"/>
+<area shape="rect" id="node25" href="$a01625.html" title="User Extension Function Call Parameters." alt="" coords="2506,153,2742,406"/>
 <area shape="rect" id="node26" href="$a01585.html" title="NPNZ16b controller object status and control word." alt="" coords="2766,182,2933,377"/>
 <area shape="rect" id="node22" href="$a01601.html" title="Data Input/Output Port declaration of memory addresses, signal offsets and normalization settings." alt="" coords="1888,520,2000,641"/>
 </map>
