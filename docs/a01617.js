@@ -1,7 +1,7 @@
 var a01617 =
 [
-    [ "AltMaxOutput", "a01617.html#a5e923dee71273b4a3b30c6ee8f7a489d", null ],
-    [ "AltMinOutput", "a01617.html#a28fe2b583e16d86badea77dbdc199104", null ],
-    [ "MaxOutput", "a01617.html#a0ff4148e12916cb65656b9d3387a6e71", null ],
-    [ "MinOutput", "a01617.html#a4a0b0ed45a1400930c789f007bed7270", null ]
+    [ "ADCTriggerAOffset", "a01617.html#ac58523daa5ba4498f98f6add321b9996", null ],
+    [ "ADCTriggerBOffset", "a01617.html#aad1976c0ad1835d9c2a65e82fb3e839f", null ],
+    [ "ptrADCTriggerARegister", "a01617.html#a46f5604170f677e6036cacb5cfe51679", null ],
+    [ "ptrADCTriggerBRegister", "a01617.html#aa76168551141e6233a9006c992475d30", null ]
 ];

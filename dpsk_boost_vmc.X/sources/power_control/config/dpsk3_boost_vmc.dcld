@@ -1,16 +1,16 @@
 [GUI]
 CreateDate=08/26/2020 14:07:37
-SaveDate=02/19/2021 15:52:29
+SaveDate=03/08/2021 16:08:36
 Name=PowerSmart™ Digital Control Library Designer
 Version=0.9.12.672
 VersionKey=912
 AGS Version=2.0.23
-CGS Version=3.0.6
-WindowState=2
-Top=-8
-Left=1912
-Height=1066
-Width=1936
+CGS Version=3.0.7
+WindowState=0
+Top=8
+Left=356
+Height=954
+Width=1384
 TabHeight=370
 [ControlSetup]
 ControlType=2
@@ -105,7 +105,7 @@ AddAntiWindupMaximumClamping=1
 AddAntiWindupMaximumClampingStatusFlag=0
 AddAntiWindupMinimumClamping=1
 AddAntiWindupMinimumClampingStatusFlag=0
-AntiWindupEnableOutputSaturation=0
+AntiWindupEnableOutputSaturation=1
 AddPTermLoop=1
 AddUserHooks=0
 AddUserHookStart=0
@@ -120,7 +120,7 @@ AddUserHookStop=0
 AddUserHookStopParam=0
 AddUserHookEnd=0
 AddUserHookEndParam=0
-AddAntiWindupMinimumClampingAutoZero=0
+AddAntiWindupMinimumClampingAutoZero=1
 [CodeGenerationPaths]
 ExportASMSource=1
 ExportCSource=1
