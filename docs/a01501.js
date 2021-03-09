@@ -1,7 +1,8 @@
 var a01501 =
 [
-    [ "bits", "a01501.html#ad88520af679ea3b51646a918f8d87078", null ],
-    [ "opstate_id", "a01501.html#a99aa686a264279f5df4172c40fcacaaa", null ],
-    [ "substate_id", "a01501.html#a892bae6a1e59c022a6b290576b2ca56d", null ],
-    [ "value", "a01501.html#ac394992c7d47027da1de259f501bff0e", null ]
+    [ "ControlModes", "a01501.html#a4950b1ebf0bd9792674e71cee2882489", null ],
+    [ "OpStateOpCodes", "a01501.html#a12b27c7fc5c5ca8eab5fb8a62cf2fc58", null ],
+    [ "OpStateReturnValues", "a01501.html#afc9a0cdb70d5ea4ea1f23b8bbf9bdf88", null ],
+    [ "StatusFlags", "a01501.html#a2f3444cbdb2b554c3cd5572d076b42aa", null ],
+    [ "SubStateOpCodes", "a01501.html#a0d58890e2a2d10cd219278a9518ba5ac", null ]
 ];

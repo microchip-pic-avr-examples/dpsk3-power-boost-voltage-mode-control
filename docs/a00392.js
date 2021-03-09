@@ -1,6 +1,11 @@
 var a00392 =
 [
-    [ "User Settings", "a00393.html", "a00393" ],
-    [ "Conversion Macros", "a00394.html", "a00394" ],
-    [ "Microcontroller Abstraction", "a00395.html", "a00395" ]
+    [ "BOOST_OCP_RDLY", "a00392.html#ga5d1f75618cb0c1b174e1d071ad85afe9", null ],
+    [ "BOOST_OCP_TDLY", "a00392.html#gad2f97b558d7cafe96553b6fb634bd92c", null ],
+    [ "BOOST_OVLO_RDLY", "a00392.html#ga74eeca885f03d35d861a135acfefcc9f", null ],
+    [ "BOOST_OVLO_TDLY", "a00392.html#gab7ed723b159671948862bbd5938fc014", null ],
+    [ "BOOST_REGERR_RDLY", "a00392.html#ga3bc85c3c81befdb6e648607e7963f873", null ],
+    [ "BOOST_REGERR_TDLY", "a00392.html#gabe8eb9e44ffb20e8fbd4e27bf9605518", null ],
+    [ "BOOST_UVLO_RDLY", "a00392.html#gac8ac88a56309cb5dcb5133d5403d8396", null ],
+    [ "BOOST_UVLO_TDLY", "a00392.html#gab8b2a67978f222add5f842866e90d563", null ]
 ];

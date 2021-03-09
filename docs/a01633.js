@@ -1,9 +1,11 @@
 var a01633 =
 [
-    [ "enabled", "a01633.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
-    [ "long_press", "a01633.html#ae6577f0794699101b84e90afcdfcaaaa", null ],
-    [ "pressed", "a01633.html#aa5848ca5944f6a2c0d6562778651629e", null ],
-    [ "sw_event", "a01633.html#a4e5a3be7a99ad29f863ea0dd636cea0a", null ],
-    [ "unsigned", "a01633.html#a32e93b068e309da5a319a7a69f3b3ff5", null ],
-    [ "value", "a01633.html#a3f0c55f449560b03ce0ac43270c26600", null ]
+    [ "usrParam0", "a01633.html#a5bd554258d0a885c9fad89cc9f778716", null ],
+    [ "usrParam1", "a01633.html#a66e5d765668368155e21aca057a51453", null ],
+    [ "usrParam2", "a01633.html#a656de07b84f049f79e3767ebf7aba5e5", null ],
+    [ "usrParam3", "a01633.html#ad0a419ebac95b9011ea00b5ec961526d", null ],
+    [ "usrParam4", "a01633.html#a1076864c16222d2a777a8c5a389ea105", null ],
+    [ "usrParam5", "a01633.html#aed8b13880b683311397efaa001a21534", null ],
+    [ "usrParam6", "a01633.html#a02056d0ee788862701d11d0f59adfefd", null ],
+    [ "usrParam7", "a01633.html#a5be6d54a965fcc6128aec07587ccb6ad", null ]
 ];

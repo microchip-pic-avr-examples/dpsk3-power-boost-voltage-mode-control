@@ -1,7 +1,7 @@
 var a01601 =
 [
-    [ "AltMaxOutput", "a01601.html#a5e923dee71273b4a3b30c6ee8f7a489d", null ],
-    [ "AltMinOutput", "a01601.html#a28fe2b583e16d86badea77dbdc199104", null ],
-    [ "MaxOutput", "a01601.html#a0ff4148e12916cb65656b9d3387a6e71", null ],
-    [ "MinOutput", "a01601.html#a4a0b0ed45a1400930c789f007bed7270", null ]
+    [ "NormFactor", "a01601.html#a337a5aff8a1ccc3c7c13dde864a0a59c", null ],
+    [ "NormScaler", "a01601.html#abb43ba3046080953e2c35a68eb471193", null ],
+    [ "Offset", "a01601.html#a7da24ddfbcba445de2da4ac0468f7a06", null ],
+    [ "ptrAddress", "a01601.html#aa37b174ac35fcbc1a22f5a8e221700e2", null ]
 ];

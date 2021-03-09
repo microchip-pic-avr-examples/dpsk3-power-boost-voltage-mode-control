@@ -1,8 +1,7 @@
 var a01517 =
 [
-    [ "counter", "a01517.html#a8544f2f5b43d21d6a0a586fc81f9ce92", null ],
-    [ "period", "a01517.html#a48f363c7bcd47589472b59f0a7dfb74b", null ],
-    [ "timeout", "a01517.html#a6c62baa0700be0e0f6c448a291ad4bbb", null ],
-    [ "timeout_counter", "a01517.html#a4dd8a9e05341c1861d0087e5b31dabb6", null ],
-    [ "v_drop", "a01517.html#a2a849358127253350a60d1a4e98bc177", null ]
+    [ "bits", "a01517.html#ad88520af679ea3b51646a918f8d87078", null ],
+    [ "opstate_id", "a01517.html#a99aa686a264279f5df4172c40fcacaaa", null ],
+    [ "substate_id", "a01517.html#a892bae6a1e59c022a6b290576b2ca56d", null ],
+    [ "value", "a01517.html#ac394992c7d47027da1de259f501bff0e", null ]
 ];

@@ -1,8 +1,7 @@
 var a01529 =
 [
-    [ "control_mode", "a01529.html#a5c9f2d633c8d36feec081c1ac13df6a3", null ],
-    [ "i_ref", "a01529.html#a0e321445042c37cbb7283d5de4583c09", null ],
-    [ "i_ref_startup", "a01529.html#a3ce17aa31469af72e8a7743a7b69f405", null ],
-    [ "no_of_phases", "a01529.html#ae002814d52c388ce7d51c8d566d63489", null ],
-    [ "v_ref", "a01529.html#a1c39765936057b7b2b1b90a4126d3f80", null ]
+    [ "counter", "a01529.html#a8544f2f5b43d21d6a0a586fc81f9ce92", null ],
+    [ "period", "a01529.html#a48f363c7bcd47589472b59f0a7dfb74b", null ],
+    [ "ref_inc_step", "a01529.html#a832c6be5021565e3da55cbc0a523e744", null ],
+    [ "reference", "a01529.html#aad7bda3be2c1e6a89bd7093086bbeec8", null ]
 ];

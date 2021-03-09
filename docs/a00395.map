@@ -1,6 +1,4 @@
-<map id="Microcontroller Abstraction" name="Microcontroller Abstraction">
-<area shape="rect" id="node1" title="PWM peripheral output pins, control signals and register assignments." alt="" coords="160,31,337,56"/>
-<area shape="rect" id="node2" href="$a00396.html" title=" " alt="" coords="385,5,520,31"/>
-<area shape="rect" id="node3" href="$a00397.html" title=" " alt="" coords="385,55,520,80"/>
-<area shape="rect" id="node4" href="$a00392.html" title="Declaration of fundamental PWM parameters." alt="" coords="5,31,112,56"/>
+<map id="Boost Converter" name="Boost Converter">
+<area shape="rect" id="node1" title="PWM parameter definitions of the boost converter using physical quantities." alt="" coords="155,5,269,31"/>
+<area shape="rect" id="node2" href="$a00394.html" title="Parameter definitions using physical quantities." alt="" coords="5,5,107,31"/>
 </map>

@@ -1,4 +1,0 @@
-<map id="boostPWM_Resume" name="boostPWM_Resume">
-<area shape="rect" id="node1" title="This function resumes the boost PWM operation." alt="" coords="196,5,339,32"/>
-<area shape="rect" id="node2" href="$a00476.html#gac6b35848a96ea078d2639b6b78e4e296" title="This function ramps up the output voltage to its nominal regulation point." alt="" coords="5,5,148,32"/>
-</map>

@@ -1,6 +1,6 @@
 var a00464 =
 [
-    [ "Public Functions", "a00465.html", "a00465" ],
-    [ "Public Properties", "a00466.html", "a00466" ],
-    [ "Private Properties", "a00470.html", "a00470" ]
+    [ "drv_LcdInterface_Initialize", "a00464.html#gaeb25fdecced4c325cd0d986a30d57e90", null ],
+    [ "drv_LcdInterface_Reset", "a00464.html#ga3f10606b6c67ff33338ab2c5c6a2d4c8", null ],
+    [ "drv_LcdInterface_SendCmd", "a00464.html#ga3e045335a3463f6a53e4fd91b50bb0ca", null ]
 ];

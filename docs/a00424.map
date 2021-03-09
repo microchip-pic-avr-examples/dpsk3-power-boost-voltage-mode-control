@@ -1,4 +1,4 @@
-<map id="Private Functions" name="Private Functions">
-<area shape="rect" id="node1" href="$a00421.html" title=" " alt="" coords="5,5,172,45"/>
-<area shape="rect" id="node2" title="Private functions of the first application layer task." alt="" coords="220,13,343,38"/>
+<map id="Microcontroller Abstraction" name="Microcontroller Abstraction">
+<area shape="rect" id="node1" title="Device analog input pin, register and interrupt vector assignments of temperature feedback signal(s)" alt="" coords="208,5,385,31"/>
+<area shape="rect" id="node2" href="$a00421.html" title="Declaration of temperature feedback parameters." alt="" coords="5,5,160,31"/>
 </map>

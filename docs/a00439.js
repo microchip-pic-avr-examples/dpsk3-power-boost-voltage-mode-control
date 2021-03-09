@@ -1,8 +1,7 @@
 var a00439 =
 [
-    [ "LCD_s", "a01473.html", [
-      [ "enabled", "a01473.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
-      [ "refresh", "a01473.html#adc2298ffda0c853e699e6da9098f82ae", null ],
-      [ "screen", "a01473.html#aea467a9fc04f0771215b952d26bc4392", null ]
-    ] ]
+    [ "fltobj_BoostOCP", "a00439.html#ga1ef1cfeec9796c32ee314549f2b299b6", null ],
+    [ "fltobj_BoostOVLO", "a00439.html#gafc25554053f2af5c3761b876470d00ea", null ],
+    [ "fltobj_BoostRegErr", "a00439.html#gae81929e3905d846905d49fa9c024b55b", null ],
+    [ "fltobj_BoostUVLO", "a00439.html#gaefcb53ce90e80bdbc5c3569d8ca409b9", null ]
 ];

@@ -1,0 +1,5 @@
+<map id="SubState_VRampUp" name="SubState_VRampUp">
+<area shape="rect" id="node1" title="This function ramps up the output voltage to its nominal regulation point." alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node2" href="$a00504.html#ga5f53e68e580abcb4c924dc029c47e578" title="This function resumes the boost PWM operation." alt="" coords="196,5,339,32"/>
+<area shape="rect" id="node3" href="$a00366.html#ga55e525c7ac54a365ab6dad558ec17f0b" title="Returns the PWM generator index." alt="" coords="387,5,597,32"/>
+</map>

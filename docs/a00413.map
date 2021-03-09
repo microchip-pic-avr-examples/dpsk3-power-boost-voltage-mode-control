@@ -1,4 +1,4 @@
-<map id="Microcontroller Abstraction" name="Microcontroller Abstraction">
-<area shape="rect" id="node1" title="Device analog input pin, register and interrupt vector assignments of temperature feedback signal(s)" alt="" coords="208,5,385,31"/>
-<area shape="rect" id="node2" href="$a00410.html" title="Declaration of temperature feedback parameters." alt="" coords="5,5,160,31"/>
+<map id="Boost Converter" name="Boost Converter">
+<area shape="rect" id="node1" href="$a00412.html" title="Device analog output pin, register and interrupt vector assignments of output voltage feedback signal..." alt="" coords="5,5,183,31"/>
+<area shape="rect" id="node2" title="Device analog output pin, register and interrupt vector assignments of output voltage feedback signal..." alt="" coords="231,5,345,31"/>
 </map>

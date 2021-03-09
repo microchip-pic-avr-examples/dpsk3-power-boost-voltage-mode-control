@@ -172,10 +172,10 @@ volatile uint16_t appPowerSupply_ConverterObjectInitialize(void)
     
     boost.feedback.ad_temp.enabled = true;   // Use this channel
 
-    boost.feedback.ad_temp.adc_input = BOOST_TEMP_ADCIN;
-    boost.feedback.ad_temp.adc_core = BOOST_TEMP_ADCCORE;
-    boost.feedback.ad_temp.adc_buffer = &BOOST_TEMP_ADCBUF;
-    boost.feedback.ad_temp.trigger_source = BOOST_TEMP_TRGSRC;
+    boost.feedback.ad_temp.adc_input = TEMP_ADCIN;
+    boost.feedback.ad_temp.adc_core = TEMP_ADCCORE;
+    boost.feedback.ad_temp.adc_buffer = &TEMP_ADCBUF;
+    boost.feedback.ad_temp.trigger_source = TEMP_TRGSRC;
 
     boost.feedback.ad_temp.differential_input = false;
     boost.feedback.ad_temp.interrupt_enable = false;
@@ -183,7 +183,7 @@ volatile uint16_t appPowerSupply_ConverterObjectInitialize(void)
     boost.feedback.ad_temp.level_trigger = false;
     boost.feedback.ad_temp.signed_result = false;
 
-    BOOST_TEMP_ANSEL = boost.feedback.ad_temp.enabled;
+    TEMP_ANSEL = boost.feedback.ad_temp.enabled;
     
     // ~~~ TEMPERATURE FEEDBACK END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

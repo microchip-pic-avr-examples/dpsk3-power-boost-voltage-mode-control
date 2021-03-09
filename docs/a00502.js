@@ -1,7 +1,4 @@
 var a00502 =
 [
-    [ "Data Objects", "a00503.html", "a00503" ],
-    [ "Data Object Members", "a00504.html", "a00504" ],
-    [ "Defines & Macros", "a00505.html", "a00505" ],
-    [ "Variables", "a00506.html", "a00506" ]
+    [ "CS_CALIB_STEPS", "a00502.html#gac3e84f17fbb5a9d23a0e089b210cb080", null ]
 ];

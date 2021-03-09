@@ -1,7 +1,12 @@
 var a01585 =
 [
-    [ "NormFactor", "a01585.html#a337a5aff8a1ccc3c7c13dde864a0a59c", null ],
-    [ "NormScaler", "a01585.html#abb43ba3046080953e2c35a68eb471193", null ],
-    [ "Offset", "a01585.html#a7da24ddfbcba445de2da4ac0468f7a06", null ],
-    [ "ptrAddress", "a01585.html#aa37b174ac35fcbc1a22f5a8e221700e2", null ]
+    [ "agc_enabled", "a01585.html#a2586f148981aa257903e8e8c220be49f", null ],
+    [ "enabled", "a01585.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
+    [ "invert_input", "a01585.html#a87a4d49caab529c62352ee8e36739705", null ],
+    [ "lower_saturation_event", "a01585.html#a54de55df60f9214cecb0d0210f1633ab", null ],
+    [ "swap_source", "a01585.html#ac0e5228116af2eb515feaae87f10473c", null ],
+    [ "swap_target", "a01585.html#aa6704f24bbe78d8899af231051a73b6b", null ],
+    [ "unsigned", "a01585.html#a32e93b068e309da5a319a7a69f3b3ff5", null ],
+    [ "upper_saturation_event", "a01585.html#afa922f84528fb8c9b073548653220d9a", null ],
+    [ "value", "a01585.html#a3f0c55f449560b03ce0ac43270c26600", null ]
 ];

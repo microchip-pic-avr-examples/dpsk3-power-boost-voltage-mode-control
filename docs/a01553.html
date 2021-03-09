@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: BOOST_GPIO_INSTANCE_s Struct Reference</title>
+<title>Digital Power Starter Kit 3 Firmware: BOOST_SWITCH_NODE_SETTINGS_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -99,24 +106,23 @@ $(document).ready(function(){initNavTree('a01553.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">BOOST_GPIO_INSTANCE_s Struct Reference<div class="ingroups"><a class="el" href="a00536.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00463.html">Boost Converter Library</a> &raquo; <a class="el" href="a00464.html">Boost Converter Library API</a> &raquo; <a class="el" href="a00470.html">Private Properties</a> &raquo; <a class="el" href="a00472.html">Data Types</a></div></div>  </div>
+<div class="title">BOOST_SWITCH_NODE_SETTINGS_s Struct Reference<div class="ingroups"><a class="el" href="a00552.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00479.html">Boost Converter Library</a> &raquo; <a class="el" href="a00480.html">Boost Converter Library API</a> &raquo; <a class="el" href="a00486.html">Private Properties</a> &raquo; <a class="el" href="a00488.html">Data Types</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>GPIO instance of the converter control GPIO.  
+<p>Switching signal timing settings.  
  <a href="a01553.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00281_source.html">power_control/devices/dev_boost_typedef.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00278_source.html">power_control/devices/dev_boost_typedef.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for BOOST_GPIO_INSTANCE_s:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for BOOST_SWITCH_NODE_SETTINGS_s:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01552.svg" width="202" height="544"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01552.svg" width="263" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for BOOST_GPIO_INSTANCE_s:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for BOOST_SWITCH_NODE_SETTINGS_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
@@ -126,160 +132,426 @@ $(document).ready(function(){initNavTree('a01553.html',''); initResizable(); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a085e9fc0863cee4864cf51dcfe1e32df"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a></td></tr>
-<tr class="memdesc:a085e9fc0863cee4864cf51dcfe1e32df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies, if this IO is used or not.  <a href="a01553.html#a085e9fc0863cee4864cf51dcfe1e32df">More...</a><br /></td></tr>
-<tr class="separator:a085e9fc0863cee4864cf51dcfe1e32df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5790090efaaa7d01ec029fb7da620b38"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a5790090efaaa7d01ec029fb7da620b38">port</a></td></tr>
-<tr class="memdesc:a5790090efaaa7d01ec029fb7da620b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port instance number (0=Port RA, 0=Port RB, 0=Port RC, etc.)  <a href="a01553.html#a5790090efaaa7d01ec029fb7da620b38">More...</a><br /></td></tr>
-<tr class="separator:a5790090efaaa7d01ec029fb7da620b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac64e25be1a4e0e3f4db659fff41763b0"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#ac64e25be1a4e0e3f4db659fff41763b0">pin</a></td></tr>
-<tr class="memdesc:ac64e25be1a4e0e3f4db659fff41763b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port pin number.  <a href="a01553.html#ac64e25be1a4e0e3f4db659fff41763b0">More...</a><br /></td></tr>
-<tr class="separator:ac64e25be1a4e0e3f4db659fff41763b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98d20232971d53a8992b562306df4cbb"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a98d20232971d53a8992b562306df4cbb">polarity</a></td></tr>
-<tr class="memdesc:a98d20232971d53a8992b562306df4cbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output polarity, where 0=ACTIVE HIGH, 1=ACTIVE_LOW.  <a href="a01553.html#a98d20232971d53a8992b562306df4cbb">More...</a><br /></td></tr>
-<tr class="separator:a98d20232971d53a8992b562306df4cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3451100070bc5449a21daa618dca87cd"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a3451100070bc5449a21daa618dca87cd">io_type</a></td></tr>
-<tr class="memdesc:a3451100070bc5449a21daa618dca87cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input/Output definition (0=push-pull output, 1=input, 2=open-drain output)  <a href="a01553.html#a3451100070bc5449a21daa618dca87cd">More...</a><br /></td></tr>
-<tr class="separator:a3451100070bc5449a21daa618dca87cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_attribs_a01557"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01557')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01557.html">BOOST_GPIO_SETTINGS_s</a></td></tr>
-<tr class="memitem:ad5c434beca0466b2bc8220837a9e8bc9 inherit pub_attribs_a01557"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01553.html">BOOST_GPIO_INSTANCE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01557.html#ad5c434beca0466b2bc8220837a9e8bc9">EnableInput</a></td></tr>
-<tr class="memdesc:ad5c434beca0466b2bc8220837a9e8bc9 inherit pub_attribs_a01557"><td class="mdescLeft">&#160;</td><td class="mdescRight">External ENABLE input.  <a href="a01557.html#ad5c434beca0466b2bc8220837a9e8bc9">More...</a><br /></td></tr>
-<tr class="separator:ad5c434beca0466b2bc8220837a9e8bc9 inherit pub_attribs_a01557"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac99840662723fe23cc06134e25ba7342 inherit pub_attribs_a01557"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01553.html">BOOST_GPIO_INSTANCE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01557.html#ac99840662723fe23cc06134e25ba7342">PowerGood</a></td></tr>
-<tr class="memdesc:ac99840662723fe23cc06134e25ba7342 inherit pub_attribs_a01557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power Good Output.  <a href="a01557.html#ac99840662723fe23cc06134e25ba7342">More...</a><br /></td></tr>
-<tr class="separator:ac99840662723fe23cc06134e25ba7342 inherit pub_attribs_a01557"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_attribs_a01561"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01561')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01561.html">BOOST_CONVERTER_s</a></td></tr>
-<tr class="memitem:a43ac04e696799481a75b1e5c2772ffe3 inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01489.html">BOOST_CONVERTER_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a43ac04e696799481a75b1e5c2772ffe3">status</a></td></tr>
-<tr class="memdesc:a43ac04e696799481a75b1e5c2772ffe3 inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST operation status bits.  <a href="a01561.html#a43ac04e696799481a75b1e5c2772ffe3">More...</a><br /></td></tr>
-<tr class="separator:a43ac04e696799481a75b1e5c2772ffe3 inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a753d49e459d6acea8dca783faddea1df inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01501.html">BOOST_STATE_ID_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a753d49e459d6acea8dca783faddea1df">state_id</a></td></tr>
-<tr class="memdesc:a753d49e459d6acea8dca783faddea1df inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST state machine operating state ID.  <a href="a01561.html#a753d49e459d6acea8dca783faddea1df">More...</a><br /></td></tr>
-<tr class="separator:a753d49e459d6acea8dca783faddea1df inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef4c8320b07ea3539f664d10c9c4f835 inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01521.html">BOOST_CONVERTER_STARTUP_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#aef4c8320b07ea3539f664d10c9c4f835">startup</a></td></tr>
-<tr class="memdesc:aef4c8320b07ea3539f664d10c9c4f835 inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST startup timing settings.  <a href="a01561.html#aef4c8320b07ea3539f664d10c9c4f835">More...</a><br /></td></tr>
-<tr class="separator:aef4c8320b07ea3539f664d10c9c4f835 inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65372722a32dba273f722b29a2609d8a inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01529.html">BOOST_CONVERTER_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a65372722a32dba273f722b29a2609d8a">set_values</a></td></tr>
-<tr class="memdesc:a65372722a32dba273f722b29a2609d8a inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control field for global access to references.  <a href="a01561.html#a65372722a32dba273f722b29a2609d8a">More...</a><br /></td></tr>
-<tr class="separator:a65372722a32dba273f722b29a2609d8a inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae94e8223319b210a6af5fac01d2c6d5e inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01525.html">BOOST_CONVERTER_DATA_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#ae94e8223319b210a6af5fac01d2c6d5e">data</a></td></tr>
-<tr class="memdesc:ae94e8223319b210a6af5fac01d2c6d5e inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST runtime data.  <a href="a01561.html#ae94e8223319b210a6af5fac01d2c6d5e">More...</a><br /></td></tr>
-<tr class="separator:ae94e8223319b210a6af5fac01d2c6d5e inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63d6a3cd26694bebeed63fd1e1a1eb2e inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01549.html">BOOST_FEEDBACK_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a63d6a3cd26694bebeed63fd1e1a1eb2e">feedback</a></td></tr>
-<tr class="memdesc:a63d6a3cd26694bebeed63fd1e1a1eb2e inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST converter feedback settings.  <a href="a01561.html#a63d6a3cd26694bebeed63fd1e1a1eb2e">More...</a><br /></td></tr>
-<tr class="separator:a63d6a3cd26694bebeed63fd1e1a1eb2e inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25c2cb61021c319b38a5c024e48c3310 inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01537.html">BOOST_SWITCH_NODE_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a25c2cb61021c319b38a5c024e48c3310">sw_node</a> [<a class="el" href="a00469.html#ga9f732532b64d46552260f09e4d98325a">BOOST_MPHASE_COUNT</a>]</td></tr>
-<tr class="memdesc:a25c2cb61021c319b38a5c024e48c3310 inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST converter switch node settings.  <a href="a01561.html#a25c2cb61021c319b38a5c024e48c3310">More...</a><br /></td></tr>
-<tr class="separator:a25c2cb61021c319b38a5c024e48c3310 inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86a71e9beada7e2064de976b164cd84b inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01557.html">BOOST_GPIO_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a86a71e9beada7e2064de976b164cd84b">gpio</a></td></tr>
-<tr class="memdesc:a86a71e9beada7e2064de976b164cd84b inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST converter additional GPIO specification.  <a href="a01561.html#a86a71e9beada7e2064de976b164cd84b">More...</a><br /></td></tr>
-<tr class="separator:a86a71e9beada7e2064de976b164cd84b inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22db2a2436558a1cb087f0f2ad607a64 inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01533.html">BOOST_LOOP_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#a22db2a2436558a1cb087f0f2ad607a64">v_loop</a></td></tr>
-<tr class="memdesc:a22db2a2436558a1cb087f0f2ad607a64 inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST voltage control loop object.  <a href="a01561.html#a22db2a2436558a1cb087f0f2ad607a64">More...</a><br /></td></tr>
-<tr class="separator:a22db2a2436558a1cb087f0f2ad607a64 inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0a6d2e4b96edeb1086709409e5f0e28 inherit pub_attribs_a01561"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01533.html">BOOST_LOOP_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01561.html#ac0a6d2e4b96edeb1086709409e5f0e28">i_loop</a> [<a class="el" href="a00469.html#ga9f732532b64d46552260f09e4d98325a">BOOST_MPHASE_COUNT</a>]</td></tr>
-<tr class="memdesc:ac0a6d2e4b96edeb1086709409e5f0e28 inherit pub_attribs_a01561"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST Current control loop objects.  <a href="a01561.html#ac0a6d2e4b96edeb1086709409e5f0e28">More...</a><br /></td></tr>
-<tr class="separator:ac0a6d2e4b96edeb1086709409e5f0e28 inherit pub_attribs_a01561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2593427e75f5587a35e071bfd512a87"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#ac2593427e75f5587a35e071bfd512a87">pwm_instance</a></td></tr>
+<tr class="memdesc:ac2593427e75f5587a35e071bfd512a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of the PWM channel used  <a href="a01553.html#ac2593427e75f5587a35e071bfd512a87">More...</a><br /></td></tr>
+<tr class="separator:ac2593427e75f5587a35e071bfd512a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d4166062b0a4ec5b940c458cc92d8f"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a87d4166062b0a4ec5b940c458cc92d8f">gpio_instance</a></td></tr>
+<tr class="memdesc:a87d4166062b0a4ec5b940c458cc92d8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO instance of the selected PWM generator.  <a href="a01553.html#a87d4166062b0a4ec5b940c458cc92d8f">More...</a><br /></td></tr>
+<tr class="separator:a87d4166062b0a4ec5b940c458cc92d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9320214ec2c12b30553f18b90bd66a40"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a9320214ec2c12b30553f18b90bd66a40">gpio_high</a></td></tr>
+<tr class="memdesc:a9320214ec2c12b30553f18b90bd66a40"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port pin-number of PWMxH of the selected PWM generator.  <a href="a01553.html#a9320214ec2c12b30553f18b90bd66a40">More...</a><br /></td></tr>
+<tr class="separator:a9320214ec2c12b30553f18b90bd66a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a736c541e05db7c7a5f434d82089ea922"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a736c541e05db7c7a5f434d82089ea922">gpio_low</a></td></tr>
+<tr class="memdesc:a736c541e05db7c7a5f434d82089ea922"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port pin-number of PWMxL of the selected PWM generator.  <a href="a01553.html#a736c541e05db7c7a5f434d82089ea922">More...</a><br /></td></tr>
+<tr class="separator:a736c541e05db7c7a5f434d82089ea922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9279b0b5c37b5449f3d970968b1e38fa"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a9279b0b5c37b5449f3d970968b1e38fa">swap_outputs</a></td></tr>
+<tr class="memdesc:a9279b0b5c37b5449f3d970968b1e38fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selecting if PWMxH (default) or PWMxL should be the leading PWM output.  <a href="a01553.html#a9279b0b5c37b5449f3d970968b1e38fa">More...</a><br /></td></tr>
+<tr class="separator:a9279b0b5c37b5449f3d970968b1e38fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec90912c08828f327183b3fdd22597b5"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#aec90912c08828f327183b3fdd22597b5">master_period_enable</a></td></tr>
+<tr class="memdesc:aec90912c08828f327183b3fdd22597b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selecting MASTER or Individual period register.  <a href="a01553.html#aec90912c08828f327183b3fdd22597b5">More...</a><br /></td></tr>
+<tr class="separator:aec90912c08828f327183b3fdd22597b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8295ce9e8d8fdba19b866d1cac71421"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#ab8295ce9e8d8fdba19b866d1cac71421">high_resolution_enable</a></td></tr>
+<tr class="memdesc:ab8295ce9e8d8fdba19b866d1cac71421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selecting if PWM module should use high-resolution mode.  <a href="a01553.html#ab8295ce9e8d8fdba19b866d1cac71421">More...</a><br /></td></tr>
+<tr class="separator:ab8295ce9e8d8fdba19b866d1cac71421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7160bcf47975cd60e3cf24410c4023f4"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a7160bcf47975cd60e3cf24410c4023f4">sync_drive</a></td></tr>
+<tr class="memdesc:a7160bcf47975cd60e3cf24410c4023f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selecting if switch node is driven in synchronous or asnchronous mode.  <a href="a01553.html#a7160bcf47975cd60e3cf24410c4023f4">More...</a><br /></td></tr>
+<tr class="separator:a7160bcf47975cd60e3cf24410c4023f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f363c7bcd47589472b59f0a7dfb74b"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a48f363c7bcd47589472b59f0a7dfb74b">period</a></td></tr>
+<tr class="memdesc:a48f363c7bcd47589472b59f0a7dfb74b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switching period.  <a href="a01553.html#a48f363c7bcd47589472b59f0a7dfb74b">More...</a><br /></td></tr>
+<tr class="separator:a48f363c7bcd47589472b59f0a7dfb74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a967bd3db9155623e93c2592050b13227"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a967bd3db9155623e93c2592050b13227">phase</a></td></tr>
+<tr class="memdesc:a967bd3db9155623e93c2592050b13227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switching signal phase-shift.  <a href="a01553.html#a967bd3db9155623e93c2592050b13227">More...</a><br /></td></tr>
+<tr class="separator:a967bd3db9155623e93c2592050b13227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654366239edeecb51c0fa5bf8d72e277"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a654366239edeecb51c0fa5bf8d72e277">duty_ratio_init</a></td></tr>
+<tr class="memdesc:a654366239edeecb51c0fa5bf8d72e277"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial duty cycle when the PWM module is being turned on.  <a href="a01553.html#a654366239edeecb51c0fa5bf8d72e277">More...</a><br /></td></tr>
+<tr class="separator:a654366239edeecb51c0fa5bf8d72e277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76412863b3c111042a9a7a06fb921868"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a76412863b3c111042a9a7a06fb921868">duty_ratio_min</a></td></tr>
+<tr class="memdesc:a76412863b3c111042a9a7a06fb921868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute duty cycle minimum during normal operation.  <a href="a01553.html#a76412863b3c111042a9a7a06fb921868">More...</a><br /></td></tr>
+<tr class="separator:a76412863b3c111042a9a7a06fb921868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c90759b50465ad81c384285a9f20971"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a6c90759b50465ad81c384285a9f20971">duty_ratio_max</a></td></tr>
+<tr class="memdesc:a6c90759b50465ad81c384285a9f20971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute duty cycle maximum during normal operation.  <a href="a01553.html#a6c90759b50465ad81c384285a9f20971">More...</a><br /></td></tr>
+<tr class="separator:a6c90759b50465ad81c384285a9f20971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a853862f4280ea0cc15f5d7f872e9fa6c"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a853862f4280ea0cc15f5d7f872e9fa6c">dead_time_rising</a></td></tr>
+<tr class="memdesc:a853862f4280ea0cc15f5d7f872e9fa6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dead time setting at rising edge of a half-bridge drive.  <a href="a01553.html#a853862f4280ea0cc15f5d7f872e9fa6c">More...</a><br /></td></tr>
+<tr class="separator:a853862f4280ea0cc15f5d7f872e9fa6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca5eccd84c19ceab228bfd5e99bbcbfc"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#aca5eccd84c19ceab228bfd5e99bbcbfc">dead_time_falling</a></td></tr>
+<tr class="memdesc:aca5eccd84c19ceab228bfd5e99bbcbfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dead time setting at falling edge of a half-bridge drive.  <a href="a01553.html#aca5eccd84c19ceab228bfd5e99bbcbfc">More...</a><br /></td></tr>
+<tr class="separator:aca5eccd84c19ceab228bfd5e99bbcbfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ece9c519d1aed8dc10812a363b658fb"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a3ece9c519d1aed8dc10812a363b658fb">leb_period</a></td></tr>
+<tr class="memdesc:a3ece9c519d1aed8dc10812a363b658fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading-Edge Blanking period.  <a href="a01553.html#a3ece9c519d1aed8dc10812a363b658fb">More...</a><br /></td></tr>
+<tr class="separator:a3ece9c519d1aed8dc10812a363b658fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d76e04ea6b1bb827e0df3aa9aeae87d"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#a3d76e04ea6b1bb827e0df3aa9aeae87d">trigger_scaler</a></td></tr>
+<tr class="memdesc:a3d76e04ea6b1bb827e0df3aa9aeae87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM triggers for ADC will be generated every n-th cycle.  <a href="a01553.html#a3d76e04ea6b1bb827e0df3aa9aeae87d">More...</a><br /></td></tr>
+<tr class="separator:a3d76e04ea6b1bb827e0df3aa9aeae87d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad15abe564957bceb1997a22552534262"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01553.html#ad15abe564957bceb1997a22552534262">trigger_offset</a></td></tr>
+<tr class="memdesc:ad15abe564957bceb1997a22552534262"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM triggers for ADC will be offset by n cycles.  <a href="a01553.html#ad15abe564957bceb1997a22552534262">More...</a><br /></td></tr>
+<tr class="separator:ad15abe564957bceb1997a22552534262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_a01577"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01577')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01577.html">BOOST_CONVERTER_s</a></td></tr>
+<tr class="memitem:a43ac04e696799481a75b1e5c2772ffe3 inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01505.html">BOOST_CONVERTER_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a43ac04e696799481a75b1e5c2772ffe3">status</a></td></tr>
+<tr class="memdesc:a43ac04e696799481a75b1e5c2772ffe3 inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST operation status bits.  <a href="a01577.html#a43ac04e696799481a75b1e5c2772ffe3">More...</a><br /></td></tr>
+<tr class="separator:a43ac04e696799481a75b1e5c2772ffe3 inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a753d49e459d6acea8dca783faddea1df inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01517.html">BOOST_STATE_ID_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a753d49e459d6acea8dca783faddea1df">state_id</a></td></tr>
+<tr class="memdesc:a753d49e459d6acea8dca783faddea1df inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST state machine operating state ID.  <a href="a01577.html#a753d49e459d6acea8dca783faddea1df">More...</a><br /></td></tr>
+<tr class="separator:a753d49e459d6acea8dca783faddea1df inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef4c8320b07ea3539f664d10c9c4f835 inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01537.html">BOOST_CONVERTER_STARTUP_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#aef4c8320b07ea3539f664d10c9c4f835">startup</a></td></tr>
+<tr class="memdesc:aef4c8320b07ea3539f664d10c9c4f835 inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST startup timing settings.  <a href="a01577.html#aef4c8320b07ea3539f664d10c9c4f835">More...</a><br /></td></tr>
+<tr class="separator:aef4c8320b07ea3539f664d10c9c4f835 inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65372722a32dba273f722b29a2609d8a inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01545.html">BOOST_CONVERTER_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a65372722a32dba273f722b29a2609d8a">set_values</a></td></tr>
+<tr class="memdesc:a65372722a32dba273f722b29a2609d8a inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control field for global access to references.  <a href="a01577.html#a65372722a32dba273f722b29a2609d8a">More...</a><br /></td></tr>
+<tr class="separator:a65372722a32dba273f722b29a2609d8a inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae94e8223319b210a6af5fac01d2c6d5e inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01541.html">BOOST_CONVERTER_DATA_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#ae94e8223319b210a6af5fac01d2c6d5e">data</a></td></tr>
+<tr class="memdesc:ae94e8223319b210a6af5fac01d2c6d5e inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST runtime data.  <a href="a01577.html#ae94e8223319b210a6af5fac01d2c6d5e">More...</a><br /></td></tr>
+<tr class="separator:ae94e8223319b210a6af5fac01d2c6d5e inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d6a3cd26694bebeed63fd1e1a1eb2e inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01565.html">BOOST_FEEDBACK_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a63d6a3cd26694bebeed63fd1e1a1eb2e">feedback</a></td></tr>
+<tr class="memdesc:a63d6a3cd26694bebeed63fd1e1a1eb2e inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST converter feedback settings.  <a href="a01577.html#a63d6a3cd26694bebeed63fd1e1a1eb2e">More...</a><br /></td></tr>
+<tr class="separator:a63d6a3cd26694bebeed63fd1e1a1eb2e inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25c2cb61021c319b38a5c024e48c3310 inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01553.html">BOOST_SWITCH_NODE_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a25c2cb61021c319b38a5c024e48c3310">sw_node</a> [<a class="el" href="a00485.html#ga9f732532b64d46552260f09e4d98325a">BOOST_MPHASE_COUNT</a>]</td></tr>
+<tr class="memdesc:a25c2cb61021c319b38a5c024e48c3310 inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST converter switch node settings.  <a href="a01577.html#a25c2cb61021c319b38a5c024e48c3310">More...</a><br /></td></tr>
+<tr class="separator:a25c2cb61021c319b38a5c024e48c3310 inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86a71e9beada7e2064de976b164cd84b inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01573.html">BOOST_GPIO_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a86a71e9beada7e2064de976b164cd84b">gpio</a></td></tr>
+<tr class="memdesc:a86a71e9beada7e2064de976b164cd84b inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST converter additional GPIO specification.  <a href="a01577.html#a86a71e9beada7e2064de976b164cd84b">More...</a><br /></td></tr>
+<tr class="separator:a86a71e9beada7e2064de976b164cd84b inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22db2a2436558a1cb087f0f2ad607a64 inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01549.html">BOOST_LOOP_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a22db2a2436558a1cb087f0f2ad607a64">v_loop</a></td></tr>
+<tr class="memdesc:a22db2a2436558a1cb087f0f2ad607a64 inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST voltage control loop object.  <a href="a01577.html#a22db2a2436558a1cb087f0f2ad607a64">More...</a><br /></td></tr>
+<tr class="separator:a22db2a2436558a1cb087f0f2ad607a64 inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0a6d2e4b96edeb1086709409e5f0e28 inherit pub_attribs_a01577"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01549.html">BOOST_LOOP_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#ac0a6d2e4b96edeb1086709409e5f0e28">i_loop</a> [<a class="el" href="a00485.html#ga9f732532b64d46552260f09e4d98325a">BOOST_MPHASE_COUNT</a>]</td></tr>
+<tr class="memdesc:ac0a6d2e4b96edeb1086709409e5f0e28 inherit pub_attribs_a01577"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOST Current control loop objects.  <a href="a01577.html#ac0a6d2e4b96edeb1086709409e5f0e28">More...</a><br /></td></tr>
+<tr class="separator:ac0a6d2e4b96edeb1086709409e5f0e28 inherit pub_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>GPIO instance of the converter control GPIO. </p>
-<p>Generic power converter GPIO specifications.</p>
-<p>This data structure is used to set the converter GPIO specifications declaring which if and which additional GPIOs are used by the converter controller, such as POWER_GOOD.</p>
+<div class="textblock"><p>Switching signal timing settings. </p>
+<p>Generic power converter switch-node specifications.</p>
+<p>This data structure is used to set the converter switch-node specifications declaring which PWM channel is used as well as its switching frequency, phase-shift, dead times and duty ratio limits.</p>
 <hr  />
  
-<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00497">497</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00402">402</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a085e9fc0863cee4864cf51dcfe1e32df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a085e9fc0863cee4864cf51dcfe1e32df">&#9670;&nbsp;</a></span>enabled</h2>
+<a id="aca5eccd84c19ceab228bfd5e99bbcbfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca5eccd84c19ceab228bfd5e99bbcbfc">&#9670;&nbsp;</a></span>dead_time_falling</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool enabled</td>
+          <td class="memname">volatile uint16_t dead_time_falling</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Specifies, if this IO is used or not. </p>
+<p>Dead time setting at falling edge of a half-bridge drive. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00499">499</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00418">418</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="a3451100070bc5449a21daa618dca87cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3451100070bc5449a21daa618dca87cd">&#9670;&nbsp;</a></span>io_type</h2>
+<a id="a853862f4280ea0cc15f5d7f872e9fa6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a853862f4280ea0cc15f5d7f872e9fa6c">&#9670;&nbsp;</a></span>dead_time_rising</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t io_type</td>
+          <td class="memname">volatile uint16_t dead_time_rising</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Input/Output definition (0=push-pull output, 1=input, 2=open-drain output) </p>
+<p>Dead time setting at rising edge of a half-bridge drive. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00503">503</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00417">417</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="ac64e25be1a4e0e3f4db659fff41763b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac64e25be1a4e0e3f4db659fff41763b0">&#9670;&nbsp;</a></span>pin</h2>
+<a id="a654366239edeecb51c0fa5bf8d72e277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654366239edeecb51c0fa5bf8d72e277">&#9670;&nbsp;</a></span>duty_ratio_init</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t pin</td>
+          <td class="memname">volatile uint16_t duty_ratio_init</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>GPIO port pin number. </p>
+<p>Initial duty cycle when the PWM module is being turned on. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00501">501</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00414">414</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="a98d20232971d53a8992b562306df4cbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98d20232971d53a8992b562306df4cbb">&#9670;&nbsp;</a></span>polarity</h2>
+<a id="a6c90759b50465ad81c384285a9f20971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c90759b50465ad81c384285a9f20971">&#9670;&nbsp;</a></span>duty_ratio_max</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t polarity</td>
+          <td class="memname">volatile uint16_t duty_ratio_max</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Output polarity, where 0=ACTIVE HIGH, 1=ACTIVE_LOW. </p>
+<p>Absolute duty cycle maximum during normal operation. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00502">502</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00416">416</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="a5790090efaaa7d01ec029fb7da620b38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5790090efaaa7d01ec029fb7da620b38">&#9670;&nbsp;</a></span>port</h2>
+<a id="a76412863b3c111042a9a7a06fb921868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76412863b3c111042a9a7a06fb921868">&#9670;&nbsp;</a></span>duty_ratio_min</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t port</td>
+          <td class="memname">volatile uint16_t duty_ratio_min</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>GPIO port instance number (0=Port RA, 0=Port RB, 0=Port RC, etc.) </p>
+<p>Absolute duty cycle minimum during normal operation. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00281_source.html#l00500">500</a> of file <a class="el" href="a00281_source.html">dev_boost_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00415">415</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a9320214ec2c12b30553f18b90bd66a40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9320214ec2c12b30553f18b90bd66a40">&#9670;&nbsp;</a></span>gpio_high</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t gpio_high</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO port pin-number of PWMxH of the selected PWM generator. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00406">406</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a87d4166062b0a4ec5b940c458cc92d8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d4166062b0a4ec5b940c458cc92d8f">&#9670;&nbsp;</a></span>gpio_instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t gpio_instance</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO instance of the selected PWM generator. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00405">405</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a736c541e05db7c7a5f434d82089ea922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a736c541e05db7c7a5f434d82089ea922">&#9670;&nbsp;</a></span>gpio_low</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t gpio_low</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO port pin-number of PWMxL of the selected PWM generator. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00407">407</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="ab8295ce9e8d8fdba19b866d1cac71421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8295ce9e8d8fdba19b866d1cac71421">&#9670;&nbsp;</a></span>high_resolution_enable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool high_resolution_enable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Selecting if PWM module should use high-resolution mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00410">410</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a3ece9c519d1aed8dc10812a363b658fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ece9c519d1aed8dc10812a363b658fb">&#9670;&nbsp;</a></span>leb_period</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t leb_period</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Leading-Edge Blanking period. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00419">419</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="aec90912c08828f327183b3fdd22597b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec90912c08828f327183b3fdd22597b5">&#9670;&nbsp;</a></span>master_period_enable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool master_period_enable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Selecting MASTER or Individual period register. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00409">409</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a48f363c7bcd47589472b59f0a7dfb74b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48f363c7bcd47589472b59f0a7dfb74b">&#9670;&nbsp;</a></span>period</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t period</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Switching period. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00412">412</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a967bd3db9155623e93c2592050b13227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a967bd3db9155623e93c2592050b13227">&#9670;&nbsp;</a></span>phase</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t phase</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Switching signal phase-shift. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00413">413</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="ac2593427e75f5587a35e071bfd512a87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2593427e75f5587a35e071bfd512a87">&#9670;&nbsp;</a></span>pwm_instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t pwm_instance</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>number of the PWM channel used </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00404">404</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a9279b0b5c37b5449f3d970968b1e38fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9279b0b5c37b5449f3d970968b1e38fa">&#9670;&nbsp;</a></span>swap_outputs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool swap_outputs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Selecting if PWMxH (default) or PWMxL should be the leading PWM output. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00408">408</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a7160bcf47975cd60e3cf24410c4023f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7160bcf47975cd60e3cf24410c4023f4">&#9670;&nbsp;</a></span>sync_drive</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool sync_drive</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Selecting if switch node is driven in synchronous or asnchronous mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00411">411</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="ad15abe564957bceb1997a22552534262"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad15abe564957bceb1997a22552534262">&#9670;&nbsp;</a></span>trigger_offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t trigger_offset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM triggers for ADC will be offset by n cycles. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00421">421</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a3d76e04ea6b1bb827e0df3aa9aeae87d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d76e04ea6b1bb827e0df3aa9aeae87d">&#9670;&nbsp;</a></span>trigger_scaler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t trigger_scaler</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM triggers for ADC will be generated every n-th cycle. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00420">420</a> of file <a class="el" href="a00278_source.html">dev_boost_typedef.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dpsk_boost_vmc.X/sources/power_control/devices/<a class="el" href="a00281_source.html">dev_boost_typedef.h</a></li>
+<li>dpsk_boost_vmc.X/sources/power_control/devices/<a class="el" href="a00278_source.html">dev_boost_typedef.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -287,7 +559,7 @@ Data Fields</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01553.html">BOOST_GPIO_INSTANCE_s</a></li>
+    <li class="navelem"><a class="el" href="a01553.html">BOOST_SWITCH_NODE_SETTINGS_s</a></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

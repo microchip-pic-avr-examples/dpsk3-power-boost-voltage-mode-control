@@ -1,4 +1,4 @@
-<map id="Variables" name="Variables">
-<area shape="rect" id="node1" href="$a00428.html" title="Public properties of the fault handler library layer." alt="" coords="5,5,127,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="175,5,251,31"/>
+<map id="Boost Converter" name="Boost Converter">
+<area shape="rect" id="node1" href="$a00430.html" title="Real&#45;time control loop interrupt service routine declarations." alt="" coords="5,5,161,45"/>
+<area shape="rect" id="node2" title="Control loop Interrupt Vector Settings of the boost converter." alt="" coords="209,13,324,38"/>
 </map>

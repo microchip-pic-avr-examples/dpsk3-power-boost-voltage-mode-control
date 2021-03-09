@@ -1,4 +1,5 @@
-<map id="Control Interrupt Vector Declarations" name="Control Interrupt Vector Declarations">
-<area shape="rect" id="node1" href="$a00534.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,5,152,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="200,5,356,45"/>
+<map id="User Settings" name="User Settings">
+<area shape="rect" id="node1" title="User&#45;declaration of phase current feedback parameters using physical quantities." alt="" coords="220,5,321,31"/>
+<area shape="rect" id="node2" href="$a00416.html" title="User&#45;declaration of phase current feedback parameters of the boost converter using physical quantitie..." alt="" coords="369,5,484,31"/>
+<area shape="rect" id="node3" href="$a00414.html" title="Declaration of phase current feedback parameters." alt="" coords="5,5,172,31"/>
 </map>

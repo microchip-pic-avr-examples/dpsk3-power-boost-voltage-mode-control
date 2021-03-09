@@ -1,4 +1,6 @@
 var a00505 =
 [
-    [ "__PSDCLD_VERSION", "a00505.html#ga39110329b3127929de102c5d810f83f1", null ]
+    [ "Variables & Constants", "a00506.html", "a00506" ],
+    [ "Data Types", "a00507.html", null ],
+    [ "Defines and Macros", "a00508.html", null ]
 ];

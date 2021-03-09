@@ -1,6 +1,5 @@
-<map id="Special Circuit Signals" name="Special Circuit Signals">
-<area shape="rect" id="node1" href="$a00534.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,23,152,63"/>
-<area shape="rect" id="node2" title=" " alt="" coords="200,31,353,56"/>
-<area shape="rect" id="node3" href="$a00419.html" title="Assignment of microcontroller device specific chip&#45;resources to circuit functions and signals." alt="" coords="401,5,604,31"/>
-<area shape="rect" id="node4" href="$a00418.html" title="Assignment of microcontroller device pins to circuit functions and signals." alt="" coords="415,55,591,80"/>
+<map id="Conversion Macros" name="Conversion Macros">
+<area shape="rect" id="node1" title="Conversion macros for user&#45;declarations of phase current feedback parameters." alt="" coords="220,5,352,31"/>
+<area shape="rect" id="node3" href="$a00418.html" title="Conversion macros for user&#45;declarations of phase current feedback parameters of the boost converter." alt="" coords="400,5,515,31"/>
+<area shape="rect" id="node2" href="$a00414.html" title="Declaration of phase current feedback parameters." alt="" coords="5,5,172,31"/>
 </map>

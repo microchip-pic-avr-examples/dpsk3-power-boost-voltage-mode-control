@@ -1,7 +1,8 @@
 var a01605 =
 [
-    [ "ADCTriggerAOffset", "a01605.html#ac58523daa5ba4498f98f6add321b9996", null ],
-    [ "ADCTriggerBOffset", "a01605.html#aad1976c0ad1835d9c2a65e82fb3e839f", null ],
-    [ "ptrADCTriggerARegister", "a01605.html#a46f5604170f677e6036cacb5cfe51679", null ],
-    [ "ptrADCTriggerBRegister", "a01605.html#aa76168551141e6233a9006c992475d30", null ]
+    [ "AltSource", "a01605.html#a3a379c646ec42095e042129a3d5be4c6", null ],
+    [ "AltTarget", "a01605.html#a6b05be809e02d6df3543491ac1b0a33f", null ],
+    [ "ptrControlReference", "a01605.html#a306222c526fd3d513d6b71a8bb81fbb2", null ],
+    [ "Source", "a01605.html#ae15e31196b49064de35eff167eb5d2fa", null ],
+    [ "Target", "a01605.html#adea3417126acdc7fcc1f1dac45b7dd83", null ]
 ];
