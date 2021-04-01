@@ -4,7 +4,7 @@
    "content":{
       "metaDataVersion":"1.0.0",
       "name":"com.microchip.mplabx.project.dpsk3-power-boost-voltage-mode-control",
-      "version":"1.2.0",
+      "version":"1.2.1",
       "displayName":"DPSK3 Asynchronous Boost Converter Voltage Mode Control",
       "projectName":"dpsk3-power-boost-voltage-mode-control",
       "shortDescription":"Digital control loop implementation of a simple voltage mode controller regulating the output voltage of an asynchronous boost converter",

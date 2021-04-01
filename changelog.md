@@ -1,3 +1,12 @@
+# dpsk3-power-boost-voltage-mode-control, release v1.2.1
+
+### Features Added\Updated
+
+In MPLAB&reg; PowerSmart&trade; Digital Control Library Designer, release 0.9.14.676 labels of user extension function hooks changed, causing the comiler to fail when new control code is generated. This firmware release ensures compatability with the latest version of this code generating tool.
+
+[MPLAB&reg; PowerSmart&trade; Digital Control Library Designer v0.9.14](https://microchip-pic-avr-tools.github.io/powersmart-dcld/)
+
+
 # dpsk3-power-boost-voltage-mode-control, release v1.2.0
 
 ### Release Highlights
