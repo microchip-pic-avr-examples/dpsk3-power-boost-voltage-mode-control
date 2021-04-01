@@ -1,6 +1,6 @@
 var a01557 =
 [
-    [ "factor", "a01557.html#aa9a9b14569ac48dc290e2df6162fb42f", null ],
-    [ "offset", "a01557.html#acba44d6d5a7e55c468854c5487df135c", null ],
-    [ "scaler", "a01557.html#aefa09a3fb2e5db126ad75513aede5fb3", null ]
+    [ "fault_id", "a01557.html#adaa58bcfb27a91d5b05c91eb859c8dbd", null ],
+    [ "op_mode", "a01557.html#a9e0ef62a34eda46979d38550fcbdc8ea", null ],
+    [ "task_id", "a01557.html#a4d841b369f22fced9481909bf997f519", null ]
 ];

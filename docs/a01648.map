@@ -1,4 +1,5 @@
-<map id="PUSH_BUTTON_STATUS_s" name="PUSH_BUTTON_STATUS_s">
-<area shape="rect" id="node1" title="Status word of the push button driver." alt="" coords="5,219,192,384"/>
-<area shape="rect" id="node2" href="$a01661.html" title="Push button function driver data object." alt="" coords="5,5,192,171"/>
+<map id="BOOST_GPIO_SETTINGS_s" name="BOOST_GPIO_SETTINGS_s">
+<area shape="rect" id="node1" title="GPIO instance of the converter control GPIO." alt="" coords="5,263,196,355"/>
+<area shape="rect" id="node3" href="$a01645.html" title="GPIO instance of the converter control GPIO." alt="" coords="5,403,196,539"/>
+<area shape="rect" id="node2" href="$a01653.html" title="BOOST control &amp; monitoring data structure." alt="" coords="17,5,185,215"/>
 </map>

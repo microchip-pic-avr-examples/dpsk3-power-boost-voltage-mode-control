@@ -1,4 +1,4 @@
-<map id="BOOST_CONVERTER_SETTINGS_s" name="BOOST_CONVERTER_SETTINGS_s">
-<area shape="rect" id="node1" title="Generic power controller control settings." alt="" coords="5,263,244,399"/>
-<area shape="rect" id="node2" href="$a01577.html" title="BOOST control &amp; monitoring data structure." alt="" coords="41,5,209,215"/>
+<map id="TRAPLOG_STATUS_s" name="TRAPLOG_STATUS_s">
+<area shape="rect" id="node1" title="Data structure for RCON status capturing." alt="" coords="5,233,160,355"/>
+<area shape="rect" id="node2" href="$a01561.html" title="Global data structure for trap event capturing." alt="" coords="17,5,149,185"/>
 </map>

@@ -1,8 +1,7 @@
 var a01545 =
 [
-    [ "control_mode", "a01545.html#a5c9f2d633c8d36feec081c1ac13df6a3", null ],
-    [ "i_ref", "a01545.html#a0e321445042c37cbb7283d5de4583c09", null ],
-    [ "i_ref_startup", "a01545.html#a3ce17aa31469af72e8a7743a7b69f405", null ],
-    [ "no_of_phases", "a01545.html#ae002814d52c388ce7d51c8d566d63489", null ],
-    [ "v_ref", "a01545.html#a1c39765936057b7b2b1b90a4126d3f80", null ]
+    [ "cpu_reset_trigger", "a01545.html#a121370958c3700325011062cf1ac9895", null ],
+    [ "sw_reset", "a01545.html#a72321fd148e1835890801e1a25836718", null ],
+    [ "unsigned", "a01545.html#a32e93b068e309da5a319a7a69f3b3ff5", null ],
+    [ "value", "a01545.html#a3f0c55f449560b03ce0ac43270c26600", null ]
 ];

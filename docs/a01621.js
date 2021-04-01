@@ -1,7 +1,8 @@
 var a01621 =
 [
-    [ "ptrDProvControlError", "a01621.html#a6fa6d9ee16172bc38667fa42c719f3bd", null ],
-    [ "ptrDProvControlInput", "a01621.html#a69148c2c54a089c711120fff25fb7476", null ],
-    [ "ptrDProvControlInputCompensated", "a01621.html#acde428aaa0e39d9f081ca8fba07c0de8", null ],
-    [ "ptrDProvControlOutput", "a01621.html#a01d375870a9b4ee0dcc4fe8d68340906", null ]
+    [ "control_mode", "a01621.html#a5c9f2d633c8d36feec081c1ac13df6a3", null ],
+    [ "i_ref", "a01621.html#a0e321445042c37cbb7283d5de4583c09", null ],
+    [ "i_ref_startup", "a01621.html#a3ce17aa31469af72e8a7743a7b69f405", null ],
+    [ "no_of_phases", "a01621.html#ae002814d52c388ce7d51c8d566d63489", null ],
+    [ "v_ref", "a01621.html#a1c39765936057b7b2b1b90a4126d3f80", null ]
 ];

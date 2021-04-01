@@ -1,5 +1,8 @@
 var a01645 =
 [
-    [ "ControlHistory", "a01645.html#a77b0b607088023c04d12d6900d1dd65c", null ],
-    [ "ErrorHistory", "a01645.html#a75f1a7034703c8f9176c694f149a1c6f", null ]
+    [ "enabled", "a01645.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
+    [ "io_type", "a01645.html#a3451100070bc5449a21daa618dca87cd", null ],
+    [ "pin", "a01645.html#ac64e25be1a4e0e3f4db659fff41763b0", null ],
+    [ "polarity", "a01645.html#a98d20232971d53a8992b562306df4cbb", null ],
+    [ "port", "a01645.html#a5790090efaaa7d01ec029fb7da620b38", null ]
 ];
