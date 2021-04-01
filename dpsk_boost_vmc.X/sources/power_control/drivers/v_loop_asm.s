@@ -1,8 +1,8 @@
 ; **********************************************************************************
-;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.672
-;  CGS Version: Code Generator Script v3.0.7 (03/07/2021)
+;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.14.676
+;  CGS Version: Code Generator Script v3.0.8 (03/12/2021)
 ;  Author:      M91406
-;  Date/Time:   03/08/2021 16:08:18
+;  Date/Time:   04/01/2021 23:47:39
 ; **********************************************************************************
 ;  3P3Z Control Library File (Fast Floating Point Coefficient Scaling Mode)
 ; **********************************************************************************
@@ -131,8 +131,8 @@
     bra V_LOOP_CLAMP_MAX_EXIT               ; jump to exit
 
     V_LOOP_CLAMP_MAX_OVERRIDE:
-    mov w6, w4                              ; override controller output
-    mov w6, w1                              ; override controller output
+    mov w6, w4                              ; override most recent controller output
+    mov w6, w1                              ; override controller output history entry
     V_LOOP_CLAMP_MAX_EXIT:
     
 ;------------------------------------------------------------------------------
@@ -305,7 +305,7 @@
 ; Check for upper limit violation
     mov [w0 + #MaxOutput], w6               ; load upper limit value
     cpslt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output < upper limit)
-    mov w6, w4                              ; override controller output
+    mov w6, w4                              ; override most recent controller output
     V_LOOP_PTERM_CLAMP_MAX_EXIT:
     
 ;------------------------------------------------------------------------------
