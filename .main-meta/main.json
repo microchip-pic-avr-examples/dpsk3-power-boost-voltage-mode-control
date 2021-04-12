@@ -34,10 +34,6 @@
 			"versionRange":"*"
 		 }
 		},
-		"author": "Microchip",
-		"subcategories": [
-		"Power"
-		],
 		"peripherals":[
 		"UART",
 		"PWM",
@@ -47,27 +43,18 @@
 		"SPI",
 		"LCD"
 		],
+      "subcategories": [
+		"Power",
+		"Power Management and Conversion"
+       ],
 		"keywords": [
 		"dsPIC",
 		"DSC",
-		"Digital Power",
 		"Digital Power Conversion",
 		"Digital Filters",
 		"Power Conversion",
 		"Power Supply",
 		"SMPS"
-		],
-		"additionalData": {
-			"longDescription": {
-				"metaDataVersion": "1.0.0",
-				"category": "com.microchip.portal.fileRef",
-				"content": {
-					"metaDataVersion": "1.0.0",
-					"fileName": "./README.md",
-					"mimeType": "text/markdown"
-				}
-			}
-		}
+		]
 	}
-
 }
