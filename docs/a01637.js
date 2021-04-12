@@ -1,12 +1,15 @@
 var a01637 =
 [
-    [ "ADCTriggerControl", "a01637.html#aa708a44ef3b59a931f929bc6c72e07fc", null ],
-    [ "Advanced", "a01637.html#ae10c373e7000ff11abbb151f019793e0", null ],
-    [ "DataProviders", "a01637.html#a971260b757f0c8822315d8c82a603142", null ],
-    [ "ExtensionHooks", "a01637.html#a486610694a9aac008ab8c01a0ab88090", null ],
-    [ "Filter", "a01637.html#aa98db9224dce165f72d861acc8558419", null ],
-    [ "GainControl", "a01637.html#a3c9fc0a5e04a384801d066b95dc27f5d", null ],
-    [ "Limits", "a01637.html#a6127947619eb634f1a3c3650529e092c", null ],
-    [ "Ports", "a01637.html#ae834fa9c7338d08d0fa927c901c2503f", null ],
-    [ "status", "a01637.html#a38a4b2427f4b2b06c112385e722e1419", null ]
+    [ "adc_buffer", "a01637.html#ae6b3bf1e59067bcf24c50032a88b454e", null ],
+    [ "adc_core", "a01637.html#a1108a003f371af97be13ed110ebdf23b", null ],
+    [ "adc_input", "a01637.html#ac5ef35fa6037886ca3a101f4a2b37928", null ],
+    [ "differential_input", "a01637.html#ac22ebd6bfde052a5134c47bec2396bbc", null ],
+    [ "early_interrupt_enable", "a01637.html#a01450dd198f268c49d3c6523135f6a66", null ],
+    [ "enabled", "a01637.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
+    [ "gpio_instance", "a01637.html#a87d4166062b0a4ec5b940c458cc92d8f", null ],
+    [ "interrupt_enable", "a01637.html#a793ba9a93f3a49413df9cdc16e9339f1", null ],
+    [ "level_trigger", "a01637.html#a901cea2416e72a6e745a679ba42aa03a", null ],
+    [ "scaling", "a01637.html#ae76a392e1ccbcd112bbc4bcb0ce126c4", null ],
+    [ "signed_result", "a01637.html#aad3977aa344b7d6cd2f0d88693a8ccde", null ],
+    [ "trigger_source", "a01637.html#a3ac3aa57346150cb34db841906e581cb", null ]
 ];

@@ -340,12 +340,12 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     boost.v_loop.controller->ExtensionHooks.ExtHookSourceFunctionParam = 0;
     boost.v_loop.controller->ExtensionHooks.ptrExtHookPreAntiWindupFunction = NULL;
     boost.v_loop.controller->ExtensionHooks.ExtHookPreAntiWindupFunctionParam = 0;
-    boost.v_loop.controller->ExtensionHooks.ptrExtHookTargetFunction = NULL;
-    boost.v_loop.controller->ExtensionHooks.ExtHookTargetFunctionParam = 0;
-    boost.v_loop.controller->ExtensionHooks.ptrExtHookStopFunction = NULL;
-    boost.v_loop.controller->ExtensionHooks.ExtHookStopFunctionParam = 0;
-    boost.v_loop.controller->ExtensionHooks.ptrExtHookEndFunction = NULL;
-    boost.v_loop.controller->ExtensionHooks.ExtHookEndFunctionParam = 0;
+    boost.v_loop.controller->ExtensionHooks.ptrExtHookPreTargetWriteFunction = NULL;
+    boost.v_loop.controller->ExtensionHooks.ExtHookPreTargetWriteFunctionParam = 0;
+    boost.v_loop.controller->ExtensionHooks.ptrExtHookEndOfLoopFunction = NULL;
+    boost.v_loop.controller->ExtensionHooks.ExtHookEndOfLoopFunctionParam = 0;
+    boost.v_loop.controller->ExtensionHooks.ptrExtHookExitFunction = NULL;
+    boost.v_loop.controller->ExtensionHooks.ExtHookExitFunctionParam = 0;
     
     // Initialize Advanced Control Settings (not used in this code example)
     boost.v_loop.controller->GainControl.AgcFactor = 0x7FFF; // Adaptive Gain Control factor fractional

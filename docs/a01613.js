@@ -1,7 +1,8 @@
 var a01613 =
 [
-    [ "AltMaxOutput", "a01613.html#a5e923dee71273b4a3b30c6ee8f7a489d", null ],
-    [ "AltMinOutput", "a01613.html#a28fe2b583e16d86badea77dbdc199104", null ],
-    [ "MaxOutput", "a01613.html#a0ff4148e12916cb65656b9d3387a6e71", null ],
-    [ "MinOutput", "a01613.html#a4a0b0ed45a1400930c789f007bed7270", null ]
+    [ "i_ramp", "a01613.html#ae34933c79a1eb3fdef6c02e32ae36186", null ],
+    [ "power_good_delay", "a01613.html#a67c2e20a6115bb96fae40277a95b95de", null ],
+    [ "power_on_delay", "a01613.html#a49019e7edba1caaa3a29eb871755c8fb", null ],
+    [ "v_ramp", "a01613.html#a5a126c8888be5665a7e43e542e34229e", null ],
+    [ "vcap_monitor", "a01613.html#af1f991e7b870e0a969b413a350831e14", null ]
 ];

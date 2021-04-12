@@ -1,15 +1,11 @@
 var a01561 =
 [
-    [ "adc_buffer", "a01561.html#ae6b3bf1e59067bcf24c50032a88b454e", null ],
-    [ "adc_core", "a01561.html#a1108a003f371af97be13ed110ebdf23b", null ],
-    [ "adc_input", "a01561.html#ac5ef35fa6037886ca3a101f4a2b37928", null ],
-    [ "differential_input", "a01561.html#ac22ebd6bfde052a5134c47bec2396bbc", null ],
-    [ "early_interrupt_enable", "a01561.html#a01450dd198f268c49d3c6523135f6a66", null ],
-    [ "enabled", "a01561.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
-    [ "gpio_instance", "a01561.html#a87d4166062b0a4ec5b940c458cc92d8f", null ],
-    [ "interrupt_enable", "a01561.html#a793ba9a93f3a49413df9cdc16e9339f1", null ],
-    [ "level_trigger", "a01561.html#a901cea2416e72a6e745a679ba42aa03a", null ],
-    [ "scaling", "a01561.html#ae76a392e1ccbcd112bbc4bcb0ce126c4", null ],
-    [ "signed_result", "a01561.html#aad3977aa344b7d6cd2f0d88693a8ccde", null ],
-    [ "trigger_source", "a01561.html#a3ac3aa57346150cb34db841906e581cb", null ]
+    [ "inttreg", "a01561.html#aee75cee827a498ec0f8db43c25fe1de7", null ],
+    [ "rcon_reg", "a01561.html#a622b54af34934b9ed58310984866f335", null ],
+    [ "reset_count", "a01561.html#a95744ea4cf032674585b4e25a114c31a", null ],
+    [ "status", "a01561.html#a67fe8ce905ea66883a557013c4069068", null ],
+    [ "task_capture", "a01561.html#a0738b0afe33da51a74ec003d4a2d7656", null ],
+    [ "trap_count", "a01561.html#a9216196898128a7f976617aabd34ba77", null ],
+    [ "trap_flags", "a01561.html#ac5a997d3d4260463e5998191af6a24cb", null ],
+    [ "trap_id", "a01561.html#a6e7be26899e4fa61a356b5e7eeec83d1", null ]
 ];

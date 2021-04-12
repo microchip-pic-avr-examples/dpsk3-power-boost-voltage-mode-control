@@ -1,8 +1,6 @@
 var a01501 =
 [
-    [ "ControlModes", "a01501.html#a4950b1ebf0bd9792674e71cee2882489", null ],
-    [ "OpStateOpCodes", "a01501.html#a12b27c7fc5c5ca8eab5fb8a62cf2fc58", null ],
-    [ "OpStateReturnValues", "a01501.html#afc9a0cdb70d5ea4ea1f23b8bbf9bdf88", null ],
-    [ "StatusFlags", "a01501.html#a2f3444cbdb2b554c3cd5572d076b42aa", null ],
-    [ "SubStateOpCodes", "a01501.html#a0d58890e2a2d10cd219278a9518ba5ac", null ]
+    [ "compareThreshold", "a01501.html#af664ff857c36352e2e5511bc2b84701b", null ],
+    [ "eventThreshold", "a01501.html#a55dd360106b5c69b1bcae2128fc63d10", null ],
+    [ "ptrResponseFunction", "a01501.html#a08a1dfc0d3a599fd76bd30752ee3f389", null ]
 ];
