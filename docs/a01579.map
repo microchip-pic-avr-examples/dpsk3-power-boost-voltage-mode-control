@@ -1,3 +1,28 @@
-<map id="NPNZ_FLAGS_s" name="NPNZ_FLAGS_s">
-<area shape="rect" id="node1" title="Consolidated list of status bit value enumerations." alt="" coords="5,5,157,171"/>
+<map id="BOOST_CONVERTER_STATUS_s" name="BOOST_CONVERTER_STATUS_s">
+<area shape="rect" id="node1" title="Generic power controller status word." alt="" coords="856,5,1081,288"/>
+<area shape="rect" id="node2" href="$a01653.html" title="BOOST control &amp; monitoring data structure." alt="" coords="885,351,1053,428"/>
+<area shape="rect" id="node3" href="$a01625.html" title="User defined settings for control loops;." alt="" coords="1678,557,1873,751"/>
+<area shape="rect" id="node15" href="$a01641.html" title="Boost converter feedback declarations." alt="" coords="717,615,946,693"/>
+<area shape="rect" id="node18" href="$a01593.html" title="data structure for the boost statement ID for sub&#45;operating and operating states" alt="" coords="5,593,153,715"/>
+<area shape="rect" id="node19" href="$a01629.html" title="Switching signal timing settings." alt="" coords="177,542,429,766"/>
+<area shape="rect" id="node20" href="$a01621.html" title="Generic power controller control settings." alt="" coords="453,586,692,722"/>
+<area shape="rect" id="node21" href="$a01613.html" title="Power Converter Startup Timing Settings." alt="" coords="970,615,1205,693"/>
+<area shape="rect" id="node24" href="$a01649.html" title="GPIO instance of the converter control GPIO." alt="" coords="1229,615,1420,693"/>
+<area shape="rect" id="node26" href="$a01617.html" title="Publicly accessible data buffer of most recent runtime data values." alt="" coords="1444,564,1653,744"/>
+<area shape="rect" id="node4" href="$a01717.html" title="Global NPNZ controller data object." alt="" coords="2621,351,2711,428"/>
+<area shape="rect" id="node5" href="$a01697.html" title="Automated ADC Trigger handling." alt="" coords="2088,593,2260,715"/>
+<area shape="rect" id="node6" href="$a01709.html" title="Adaptive Gain Control Modulation Parameters." alt="" coords="2285,593,2461,715"/>
+<area shape="rect" id="node7" href="$a01693.html" title="System Anti&#45;Windup (Output Clamping) Thresholds." alt="" coords="2485,593,2602,715"/>
+<area shape="rect" id="node8" href="$a01713.html" title="User Data Space for Advanced Control Functions." alt="" coords="2887,564,3101,744"/>
+<area shape="rect" id="node9" href="$a01685.html" title="Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters." alt="" coords="3125,615,3273,693"/>
+<area shape="rect" id="node11" href="$a01689.html" title="Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters." alt="" coords="3297,520,3480,788"/>
+<area shape="rect" id="node12" href="$a01701.html" title="Data Provider Target Memory Addresses." alt="" coords="3505,593,3737,715"/>
+<area shape="rect" id="node13" href="$a01705.html" title="User Extension Function Call Parameters." alt="" coords="2627,505,2863,803"/>
+<area shape="rect" id="node14" href="$a01661.html" title="NPNZ16b controller object status and control word." alt="" coords="1897,557,2064,751"/>
+<area shape="rect" id="node10" href="$a01681.html" title="Data Input/Output Port declaration of memory addresses, signal offsets and normalization settings." alt="" coords="3143,961,3255,1082"/>
+<area shape="rect" id="node16" href="$a01637.html" title="ADC input channel configuration." alt="" coords="654,909,883,1133"/>
+<area shape="rect" id="node17" href="$a01633.html" title="ADC input signal scaling = (ADCBUF &#45; &lt;offset&gt;) * &lt;factor&gt; &gt;&gt; 2^&lt;scaler&gt;" alt="" coords="657,1196,880,1303"/>
+<area shape="rect" id="node22" href="$a01609.html" title="Boost converter output capacitor voltage charge&#45;up monitor settings." alt="" coords="1121,946,1297,1097"/>
+<area shape="rect" id="node23" href="$a01605.html" title="Generic power controller startup period settings." alt="" coords="907,953,1097,1089"/>
+<area shape="rect" id="node25" href="$a01645.html" title="GPIO instance of the converter control GPIO." alt="" coords="1321,953,1512,1089"/>
 </map>
