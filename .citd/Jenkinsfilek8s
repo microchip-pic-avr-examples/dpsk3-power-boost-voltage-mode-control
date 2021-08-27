@@ -4,7 +4,7 @@
     shared-library-mcu16ce - https://bitbucket.microchip.com/scm/citd/shared-library-mcu16ce.git
     shared-library-common - https://bitbucket.microchip.com/scm/citd/shared-library-common.git    
 */
-@Library(['shared-library-mcu16ce@master', 'shared-library-common@master', 'doxygen_stage']) _
+@Library(['shared-library-mcu16ce@master', 'shared-library-common@master']) _
 
 pipeline {
     agent {
@@ -66,17 +66,167 @@ pipeline {
         
         stage('project config update') {
             steps {
+                script {                    
+                    mplabxProjectConfigUpdate(
+                        sourceFilePath: "${env.MPLABX_PROJECT_SOURCE}"
+                    )
+                }
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                script {                   
+                    mplabxProjectBuild(
+                        sourceFilePath: "${env.MPLABX_PROJECT_SOURCE}"
+                    )
+               }
+            }
+        }
+        
+        // Validate main.json file
+        stage('Validate main.json') {            
+            steps {
+               script {                    
+                    validateMetaData()                   
+                }
+            }
+        } 
+        
+        // Creating tag in Bitbucket repo
+        stage('Bitbucket Tag Creation') {
+            when {
+                anyOf {
+                    allOf {
+                        not { changeRequest() }
+                        anyOf {branch 'master';}
+                    }
+                }
+            }
+            
+            steps {
+               script {
+                    bitbucketTagCreation()
+                }
+            }
+        }
+        
+        stage('Doxygen files generation') {
+            when {
+                anyOf {
+                    allOf {
+                        not { changeRequest() }
+                    }
+                }
+            }
+            steps {
                 container('buildtools') {
                     script {                    
                         doxygen()
-                        
-                        archiveArtifacts artifacts: "docs/**", fingerprint: true, allowEmptyArchive: true
                     }
                 }
             }
         }
         
+        // GitHub repo creation 
+        stage('GitHub Repo Creation') {
+            when {
+                anyOf {
+                    allOf {
+                        not { changeRequest() }
+                    }
+                }
+            }
+
+            steps {
+                script {
+                    githubRepoCreate(
+                         githubOrgName: "${env.GITHUB_PRODUCTION_ORGANIZATION}",
+                         deployBranchList: "${DEPLOY_BRANCH_LIST}"
+                    )
+                }
+            }
+        } 
+
+        // Deploying the code to GitHub 
+        stage('GitHub Deploy Source') {
+            when {
+                anyOf {
+                    allOf {
+                        not { changeRequest() }
+                    }
+                }
+            }
+            
+            steps {
+                script {
+                    githubDeploySource(
+                        bitbucketUrl: "${env.BITBUCKET_SOURCE_URL}",
+                        deployBranchList: "${env.DEPLOY_BRANCH_LIST}",
+                        deployExcludeFileList: "${env.DEPLOY_EXCLUDE_FOLDER_FILE_LIST}",
+                        githubOrgName: "${env.GITHUB_PRODUCTION_ORGANIZATION}"
+                    )
+                }
+            }
+        }
         
+        // Creating GitHub release  
+        stage('GitHub release') {
+            when {
+                anyOf {
+                    allOf {
+                        not { changeRequest() }
+                    }
+                }
+            }
+            
+            steps {
+               script {
+                    githubReleaseCreate(
+                        githubOrgName: "${env.GITHUB_PRODUCTION_ORGANIZATION}",
+                        deployBranchList: "${DEPLOY_BRANCH_LIST}"                        
+                    )
+                }
+            }
+        }
+        
+        // Creating GitHub Page  
+        stage('GitHub Page Create') {
+            when {
+                anyOf {
+                    allOf {
+                        not { changeRequest() }
+                        anyOf {branch 'master';}
+                    }
+                }
+            }
+            
+            steps {
+               script {
+                    githubPageCreate(
+                        githubPage: "${env.GITHUB_PAGES}",
+                        githubOrgName: "${env.GITHUB_PRODUCTION_ORGANIZATION}"
+                    )
+                }
+            }
+        }
+        
+        //Deploying the Github content to portal
+        stage('Portal-Deploy') {
+            when {
+                allOf {
+                    not { changeRequest() }
+                    anyOf {branch 'master';}
+                }
+            }
+            steps {
+                script {
+                    portalDeploy(
+                        githubOrgName: "${env.GITHUB_PRODUCTION_ORGANIZATION}"
+                    )
+                }
+            }
+        }
   }
 
     post {
