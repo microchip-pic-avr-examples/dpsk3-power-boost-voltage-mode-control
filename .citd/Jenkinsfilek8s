@@ -4,7 +4,7 @@
     shared-library-mcu16ce - https://bitbucket.microchip.com/scm/citd/shared-library-mcu16ce.git
     shared-library-common - https://bitbucket.microchip.com/scm/citd/shared-library-common.git    
 */
-@Library(['shared-library-mcu16ce@master', 'shared-library-common@master']) _
+@Library(['shared-library-mcu16ce@master', 'shared-library-common@master', 'doxygen_stage']) _
 
 pipeline {
     agent {
