@@ -1,5 +1,0 @@
-<map id="BOOST_STARTUP_VCAP_PRECHARGE_s" name="BOOST_STARTUP_VCAP_PRECHARGE_s">
-<area shape="rect" id="node1" title="Boost converter output capacitor voltage charge&#45;up monitor settings." alt="" coords="35,447,211,597"/>
-<area shape="rect" id="node2" href="$a01537.html" title="Power Converter Startup Timing Settings." alt="" coords="5,263,240,399"/>
-<area shape="rect" id="node3" href="$a01577.html" title="BOOST control &amp; monitoring data structure." alt="" coords="39,5,207,215"/>
-</map>
