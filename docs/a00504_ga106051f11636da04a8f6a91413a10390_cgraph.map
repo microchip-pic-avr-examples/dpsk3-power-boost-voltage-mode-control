@@ -1,6 +1,0 @@
-<map id="boostPWM_Stop" name="boostPWM_Stop">
-<area shape="rect" id="node1" title="This function stops the boost PWM output." alt="" coords="5,31,127,57"/>
-<area shape="rect" id="node2" href="$a00504.html#ga0e291d0cb856167fd188be50090ef5ce" title="This function clears the selected general purpose input/output pin." alt="" coords="219,5,341,32"/>
-<area shape="rect" id="node4" href="$a00366.html#ga55e525c7ac54a365ab6dad558ec17f0b" title="Returns the PWM generator index." alt="" coords="175,56,385,83"/>
-<area shape="rect" id="node3" href="$a00362.html#ga4d67af688d8f7f911d79107974e11e6b" title="Gets pointer to GPIO Instance SFR set." alt="" coords="433,5,635,32"/>
-</map>

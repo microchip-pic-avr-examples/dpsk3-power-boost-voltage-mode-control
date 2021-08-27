@@ -111,6 +111,23 @@ pipeline {
             }
         }
         
+        stage('Doxygen files generation') {
+            when {
+                anyOf {
+                    allOf {
+                        not { changeRequest() }
+                    }
+                }
+            }
+            steps {
+                container('buildtools') {
+                    script {                    
+                        doxygen()
+                    }
+                }
+            }
+        }
+        
         // GitHub repo creation 
         stage('GitHub Repo Creation') {
             when {
