@@ -334,17 +334,17 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
      * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     */
     
-    boost.v_loop.controller->ExtensionHooks.ptrExtHookStartFunction = NULL;
+    boost.v_loop.controller->ExtensionHooks.ptrExtHookStartFunction = (uint16_t)NULL;
     boost.v_loop.controller->ExtensionHooks.ExtHookStartFunctionParam = 0;
-    boost.v_loop.controller->ExtensionHooks.ptrExtHookSourceFunction = NULL;
+    boost.v_loop.controller->ExtensionHooks.ptrExtHookSourceFunction = (uint16_t)NULL;
     boost.v_loop.controller->ExtensionHooks.ExtHookSourceFunctionParam = 0;
-    boost.v_loop.controller->ExtensionHooks.ptrExtHookPreAntiWindupFunction = NULL;
+    boost.v_loop.controller->ExtensionHooks.ptrExtHookPreAntiWindupFunction = (uint16_t)NULL;
     boost.v_loop.controller->ExtensionHooks.ExtHookPreAntiWindupFunctionParam = 0;
-    boost.v_loop.controller->ExtensionHooks.ptrExtHookPreTargetWriteFunction = NULL;
+    boost.v_loop.controller->ExtensionHooks.ptrExtHookPreTargetWriteFunction = (uint16_t)NULL;
     boost.v_loop.controller->ExtensionHooks.ExtHookPreTargetWriteFunctionParam = 0;
-    boost.v_loop.controller->ExtensionHooks.ptrExtHookEndOfLoopFunction = NULL;
+    boost.v_loop.controller->ExtensionHooks.ptrExtHookEndOfLoopFunction = (uint16_t)NULL;
     boost.v_loop.controller->ExtensionHooks.ExtHookEndOfLoopFunctionParam = 0;
-    boost.v_loop.controller->ExtensionHooks.ptrExtHookExitFunction = NULL;
+    boost.v_loop.controller->ExtensionHooks.ptrExtHookExitFunction = (uint16_t)NULL;
     boost.v_loop.controller->ExtensionHooks.ExtHookExitFunctionParam = 0;
     
     // Initialize Advanced Control Settings (not used in this code example)
