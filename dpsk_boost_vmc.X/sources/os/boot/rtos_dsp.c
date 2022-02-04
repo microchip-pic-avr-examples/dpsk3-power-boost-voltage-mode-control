@@ -6,8 +6,12 @@
  */
 
 
-#include <xc.h>
-#include "xc16_pral.h"
+#include <xc.h> // include processor files - each processor file is guarded.  
+#include <stdint.h> // include standard integer data types
+#include <stdbool.h> // include standard boolean data types
+#include <stddef.h> // include standard definition data types
+
+#include "common/p33c_pral/xc16_pral.h" // include common peripheral abstraction layer driver header file
 
 /***********************************************************************************
  * @fn uint16_t osDsp_Initialize(void)

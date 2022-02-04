@@ -6,8 +6,8 @@
  */
 
 
-#include <xc.h>
-#include "rtos_gpio.h"
+#include <xc.h> // include processor files - each processor file is guarded.  
+#include "rtos_gpio.h" // include RTOS GPIO initialization header file
 
 /***********************************************************************************
  * @fn uint16_t osGpio_Initialize(void)

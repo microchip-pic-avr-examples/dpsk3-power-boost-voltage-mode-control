@@ -6,12 +6,13 @@
  */
 
 
-#include <xc.h>
-#include <stdint.h>
-#include <stdbool.h>
+#include <xc.h> // include processor files - each processor file is guarded.  
+#include <stdint.h> // include standard integer data types
+#include <stdbool.h> // include standard boolean data types
+#include <stddef.h> // include standard definition data types
 
-#include "rtos_fosc.h"
-#include "common/p33c_pral/xc16_pral.h"
+#include "rtos_fosc.h" // include RTOS oscillator initialization header file
+#include "common/p33c_pral/xc16_pral.h" // include common peripheral abstraction layer driver header file
 
 #define TIMEOUT_LIMIT   5000    // timeout counter maximum
 
@@ -62,7 +63,6 @@ volatile uint16_t osAclk_Initialize(void) {
     volatile uint16_t retval=1;
 
     retval &= p33c_OscAuxClk_DefaultInitialize(AFPLLO_500_MHZ);
-    retval &= p33c_Osc_GetFrequencies();
 
     return(retval);
 }

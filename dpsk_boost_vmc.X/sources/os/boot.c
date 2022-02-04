@@ -19,11 +19,9 @@
 
 /***********************************************************************************
  * @fn     volatile uint16_t Boot(void)
- * @ingroup system-mcu-initialization
+ * @ingroup operating-system-device-boot
  * @brief  Initializes essential chip resources
- * @return unsigned integer 
- * 0=failure
- * 1=success
+ * @return unsigned integer (0=failure, 1=success)
  * 
  * @details
  * The Boot function covers the initialization of essential chip 

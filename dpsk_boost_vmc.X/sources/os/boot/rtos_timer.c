@@ -5,13 +5,14 @@
  * Created on July 8, 2019, 2:47 PM
  */
 
-#include <xc.h>
-#include <stdint.h>
-#include <stdbool.h>
+#include <xc.h> // include processor files - each processor file is guarded.  
+#include <stdint.h> // include standard integer data types
+#include <stdbool.h> // include standard boolean data types
+#include <stddef.h> // include standard definition data types
 
-#include "config/hal.h"
-#include "rtos_timer.h"
-#include "p33c_timer.h"   
+#include "config/hal.h" // include application hardware abstraction layer header file
+#include "rtos_timer.h" // include RTOS timer initialization header file
+#include "common/p33c_pral/xc16_pral.h" // include common peripheral abstraction layer driver header file
 
 /***********************************************************************************
  * @ingroup os-timer-initialization

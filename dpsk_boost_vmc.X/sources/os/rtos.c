@@ -16,9 +16,7 @@
 #include "config/mcal.h"    // include the microcontroller abstraction layer header file
 
 #include "rtos_typedef.h"   // include private data type defiitions
-
 #include "boot/rtos_timer.h" // include operating system timer configuration driver header file
-
 
 /*********************************************************************************
  * @ingroup operating-system-objects
@@ -402,11 +400,11 @@ static volatile uint16_t rtos_Queue_Execute(TASK_QUEUE_TYPE_t type, TASK_QUEUE_E
     volatile bool _exec=false;          // flag indicating if task is due to be executed
     volatile int32_t _tdiff=0;          // execution time difference buffer variable
 
-// DBGPIN2_Clear();
-// Nop();
-// Nop();
-// Nop();
-// DBGPIN2_Set();
+DBGPIN2_Clear();
+Nop();
+Nop();
+Nop();
+DBGPIN2_Set();
     
     // Execute queue task
     _size = os_queues.queues[type].size;        // copy of queue size in local variable
@@ -431,11 +429,7 @@ static volatile uint16_t rtos_Queue_Execute(TASK_QUEUE_TYPE_t type, TASK_QUEUE_E
                               os_queues.queues[type].ptrQueue[_i]->Settings.Offset);
                     _exec = (bool)(os_queues.queues[type].ptrQueue[_i]->Settings.Counter >= _tdiff);
                 }
-                else
-                { _exec = false; } // Clear EXECUTE flag
             }
-            else
-            { _exec = false; } // Clear EXECUTE flag
         }
 
         // IF task is due to be executed
@@ -466,15 +460,10 @@ static volatile uint16_t rtos_Queue_Execute(TASK_QUEUE_TYPE_t type, TASK_QUEUE_E
             _tdiff += os_queues.queues[type].ptrQueue[_i]->Settings.Offset;
             os_queues.queues[type].ptrQueue[_i]->Settings.Counter = _tdiff; // Set execution counter
             
-            #if __DEBUG
-            arrTaskProfile[0][ptrTaskProfileArray] = os_queues.queues[type].ptrQueue[_i]->TaskID;
-            arrTaskProfile[1][ptrTaskProfileArray] = (uint16_t)_tdiff;
-            if (++ptrTaskProfileArray >= TASK_PROFILE_ARR_SIZE) ptrTaskProfileArray = 0;
-            #endif
         }
     }
 
-// DBGPIN2_Clear();    
+DBGPIN2_Clear();    
     
     // Return result (0=failure, 1=success)
     return(retval);
