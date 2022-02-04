@@ -21,7 +21,7 @@
 #include <stddef.h> // include standard definition data types
 
 
-#ifndef P33C_CCP_INSTANCE_SFRSET_s     
+#ifndef P33C_CCP_INSTANCE_s     
 
 /***********************************************************************************
  * @ingroup lib-layer-pral-properties-public-ccp
@@ -35,7 +35,7 @@
  * 
  **********************************************************************************/
 
-    struct P33C_CCP_INSTANCE_SFRSET_s {
+    struct P33C_CCP_INSTANCE_s {
 
         union {
             struct tagCCP1CON1LBITS bits; // Register bit-field
@@ -140,28 +140,85 @@
         
     } __attribute__((packed));
     
-    typedef struct P33C_CCP_INSTANCE_SFRSET_s P33C_CCP_MODULE_SFRSET_t;  ///< CCP INSTANCE SPECIAL FUNCTION REGISTER SET
+    typedef struct P33C_CCP_INSTANCE_s P33C_CCP_INSTANCE_t;  ///< CCP INSTANCE SPECIAL FUNCTION REGISTER SET
     
 /*********************************************************************************
  * @ingroup lib-layer-pral-properties-public-ccp
- * @def     P33C_CCPGEN_SFR_OFFSET
+ * @def     P33C_CCP_SFR_OFFSET
  * @brief   Derives the address offset between two peripheral instances
  * @details
  * This macro derives the address offset between two peripheral instances. 
  * Users can use this address offset to derive the start address to/from which
  * the register set should be written or read.
  **********************************************************************************/
-    #define P33C_CCPGEN_SFR_OFFSET  ((volatile uint16_t)&CCP2CON1L - (volatile uint16_t)&CCP1CON1L) ///< CCPx SFR set instance offset
+    #define P33C_CCP_SFR_OFFSET  ((volatile uint16_t)&CCP2CON1L - (volatile uint16_t)&CCP1CON1L) ///< CCPx SFR set instance offset
 
+	// Determine number of available PWM generators on the selected device
+	#if defined (CCP9CON1L)
+		// Array of pointers to first registers of DAC instances on this device
+		#define P33C_DAC_COUNT      9
+		#define DAC_INSTANCE_COUNT	9
+	#elif defined (CCP8CON1L)
+		// Array of pointers to first registers of DAC instances on this device
+		#define P33C_DAC_COUNT      8    
+		#define DAC_INSTANCE_COUNT	8
+	#elif defined (CCP7CON1L)
+		// Array of pointers to first registers of DAC instances on this device
+		#define P33C_DAC_COUNT      7    
+		#define DAC_INSTANCE_COUNT	7
+	#elif defined (CCP6CON1L)
+		// Array of pointers to first registers of DAC instances on this device
+		#define P33C_DAC_COUNT      6    
+		#define DAC_INSTANCE_COUNT	6
+	#elif defined (CCP5CON1L)
+		// Array of pointers to first registers of DAC instances on this device
+		#define P33C_DAC_COUNT      5    
+		#define DAC_INSTANCE_COUNT	5
+	#elif defined (CCP4CON1L)
+		// Array of pointers to first registers of DAC instances on this device
+		#define P33C_DAC_COUNT      4    
+		#define DAC_INSTANCE_COUNT	4
+	#elif defined (CCP3CON1L)
+		// Array of pointers to first registers of DAC instances on this device
+		#define P33C_DAC_COUNT      3    
+		#define DAC_INSTANCE_COUNT	3
+	#elif defined (CCP2CON1L)
+		// Array of pointers to first registers of DAC instances on this device
+		#define P33C_DAC_COUNT      2    
+		#define DAC_INSTANCE_COUNT	2
+	#elif defined (CCP1CON1L)
+		// Array of pointers to first registers of DAC instances on this device
+		#define P33C_DAC_COUNT      1    
+		#define DAC_INSTANCE_COUNT	1
+	#endif
+
+
+/*********************************************************************************
+ * @def    p33c_CcpInstance_GetHandle(x)
+ * @ingroup lib-layer-pral-functions-public-ccp
+ * @brief  Gets pointer to CCP instance SFR set
+ * @param  x  Index of the Capture/Compare peripheral instance of type unsigned integer
+ * @return Pointer to SCCP/MCCP instance special function register data object of type struct P33C_CCP_INSTANCE_s 
+ *  
+ * @details
+ *      This macro returns the pointer to a CCP module register set
+ *    Special Function Register memory space. This pointer can be used to 
+ *    directly write to/read from the Special Function Registers of the 
+ *    CCP peripheral module configuration.
+ * 
+ *********************************************************************************/
+    extern volatile uint16_t* p33c_CcpInstance_Handles[];
+    #define p33c_CcpInstance_GetHandle(x) (struct P33C_CCP_INSTANCE_s*)p33c_CcpInstance_Handles[(x-1)]
+    
+    
 #endif
     
 /* GLOBAL FUNCTION CALL PROTOTYPES */
 
-extern volatile struct P33C_CCP_INSTANCE_SFRSET_s* p33c_CcpInstance_GetHandle(volatile uint16_t ccpInstance);
-extern volatile struct P33C_CCP_INSTANCE_SFRSET_s  p33c_CcpInstance_ConfigRead(volatile uint16_t ccpInstance);
+extern volatile struct P33C_CCP_INSTANCE_s  p33c_CcpInstance_ConfigRead(volatile uint16_t ccpInstance);
 extern volatile uint16_t p33c_CcpInstance_ConfigWrite(
                 volatile uint16_t ccpInstance, 
-                volatile struct P33C_CCP_INSTANCE_SFRSET_s ccpConfig
+                volatile struct P33C_CCP_INSTANCE_s ccpConfig
             );
 
 

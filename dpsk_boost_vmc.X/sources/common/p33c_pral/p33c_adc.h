@@ -126,7 +126,10 @@
 
     #endif
 
-#elif defined (__MA330048_dsPIC33CK_DPPIM__)
+#elif defined (__P33SMPS_CK102__) || defined (__P33SMPS_CK103__) || \
+      defined (__P33SMPS_CK105__) || defined (__P33SMPS_CK502__) || \
+      defined (__P33SMPS_CK503__) || defined (__P33SMPS_CK505__) || \
+      defined (__P33SMPS_CK506__) || defined (__P33SMPS_CK508__)
 
     #define ADC_CORE_COUNT          3 // Number of ADC Cores available
     #define ADC_SHARED_CORE_INDEX   (uint16_t)(ADC_CORE_COUNT - 1) // Arteficially assigned index for shared ADC core
@@ -134,15 +137,15 @@
     #define ADC_ADCMP_COUNT         4 // Number of ADC Digital Comparators
     #define ADC_ADFL_COUNT          4 // Number of ADC Digital Filters
 
-    #if defined (__P33SMPS_CK202__) || defined (__P33SMPS_CK502__)
+    #if defined (__P33SMPS_CK102__) || defined (__P33SMPS_CK202__) || defined (__P33SMPS_CK502__)
         #define ADC_ANINPUT_COUNT       12                  // Number of analog inputs without alternative or internal ports
         #define REG_ADC_CHANNEL_L_MSK   0b0000111111111111
         #define REG_ADC_CHANNEL_H_MSK   0b0000001100000000
-    #elif defined (__P33SMPS_CK203__) || defined (__P33SMPS_CK503__)
+    #elif defined (__P33SMPS_CK103__) || defined (__P33SMPS_CK203__) || defined (__P33SMPS_CK503__)
         #define ADC_ANINPUT_COUNT       16                  // Number of analog inputs without alternative or internal ports
         #define REG_ADC_CHANNEL_L_MSK   0b1111111111111111
         #define REG_ADC_CHANNEL_H_MSK   0b0000001100000000
-    #elif defined (__P33SMPS_CK205__) || defined (__P33SMPS_CK505__)
+    #elif defined (__P33SMPS_CK105__) || defined (__P33SMPS_CK205__) || defined (__P33SMPS_CK505__)
         #define ADC_ANINPUT_COUNT       19                  // Number of analog inputs without alternative or internal ports
         #define REG_ADC_CHANNEL_L_MSK   0b1111111111111111
         #define REG_ADC_CHANNEL_H_MSK   0b0000001100000111
@@ -162,21 +165,21 @@
     #define ADC_CORE_ANA0  0  // ADC input is assigned to dedicated ADC core (#0) => Alternative input to ADC Core #0
     #define ADC_CORE_ANA1  1  // ADC input is assigned to dedicated ADC core (#1) => Alternative input to ADC Core #1
 
-    #define ADC_CORE_AN24  2  // ADC input is assigned to shared ADC core (#2) => Temperature Sensor
-    #define ADC_CORE_AN25  2  // ADC input is assigned to shared ADC core (#2) => Bandgap Reference
+    #define ADC_CORE_AN24  7  // ADC input is assigned to shared ADC core (#2) => Temperature Sensor
+    #define ADC_CORE_AN25  7  // ADC input is assigned to shared ADC core (#2) => Bandgap Reference
 
     #define ADC_CORE_AN0   0  // ADC input is assigned to dedicated ADC core (#0)
     #define ADC_CORE_AN1   1  // ADC input is assigned to dedicated ADC core (#1)
-    #define ADC_CORE_AN2   2  // ADC input is assigned to shared ADC core (#2)
-    #define ADC_CORE_AN3   2  // ADC input is assigned to shared ADC core (#3)
-    #define ADC_CORE_AN4   2  // ADC input is assigned to shared ADC core (#4)
-    #define ADC_CORE_AN5   2  // ADC input is assigned to shared ADC core (#5)
-    #define ADC_CORE_AN6   2  // ADC input is assigned to shared ADC core (#6)
-    #define ADC_CORE_AN7   2  // ADC input is assigned to shared ADC core (#7)
-    #define ADC_CORE_AN8   2  // ADC input is assigned to shared ADC core (#8)
-    #define ADC_CORE_AN9   2  // ADC input is assigned to shared ADC core (#9)
-    #define ADC_CORE_AN10  2  // ADC input is assigned to shared ADC core (#10)
-    #define ADC_CORE_AN11  2  // ADC input is assigned to shared ADC core (#11)
+    #define ADC_CORE_AN2   7  // ADC input is assigned to shared ADC core (#2)
+    #define ADC_CORE_AN3   7  // ADC input is assigned to shared ADC core (#3)
+    #define ADC_CORE_AN4   7  // ADC input is assigned to shared ADC core (#4)
+    #define ADC_CORE_AN5   7  // ADC input is assigned to shared ADC core (#5)
+    #define ADC_CORE_AN6   7  // ADC input is assigned to shared ADC core (#6)
+    #define ADC_CORE_AN7   7  // ADC input is assigned to shared ADC core (#7)
+    #define ADC_CORE_AN8   7  // ADC input is assigned to shared ADC core (#8)
+    #define ADC_CORE_AN9   7  // ADC input is assigned to shared ADC core (#9)
+    #define ADC_CORE_AN10  7  // ADC input is assigned to shared ADC core (#10)
+    #define ADC_CORE_AN11  7  // ADC input is assigned to shared ADC core (#11)
 
 
     #if defined (__P33SMPS_CK203__) || defined (__P33SMPS_CK503__) || \
@@ -184,33 +187,33 @@
         defined (__P33SMPS_CK206__) || defined (__P33SMPS_CK506__) || \
         defined (__P33SMPS_CK208__) || defined (__P33SMPS_CK508__)
     // 36-/48-/64-/80-pin devices only
-    #define ADC_CORE_AN12  2  // ADC input is assigned to shared ADC core (#12)
-    #define ADC_CORE_AN13  2  // ADC input is assigned to shared ADC core (#13)
-    #define ADC_CORE_AN14  2  // ADC input is assigned to shared ADC core (#14)
-    #define ADC_CORE_AN15  2  // ADC input is assigned to shared ADC core (#15)
+    #define ADC_CORE_AN12  7  // ADC input is assigned to shared ADC core (#12)
+    #define ADC_CORE_AN13  7  // ADC input is assigned to shared ADC core (#13)
+    #define ADC_CORE_AN14  7  // ADC input is assigned to shared ADC core (#14)
+    #define ADC_CORE_AN15  7  // ADC input is assigned to shared ADC core (#15)
     #endif
 
     #if defined (__P33SMPS_CK205__) || defined (__P33SMPS_CK505__) || \
         defined (__P33SMPS_CK206__) || defined (__P33SMPS_CK506__) || \
         defined (__P33SMPS_CK208__) || defined (__P33SMPS_CK508__)
     // 48-/64-/80-pin devices only
-    #define ADC_CORE_AN16  2  // ADC input is assigned to shared ADC core (#16)
-    #define ADC_CORE_AN17  2  // ADC input is assigned to shared ADC core (#17)
-    #define ADC_CORE_AN18  2  // ADC input is assigned to shared ADC core (#19)
+    #define ADC_CORE_AN16  7  // ADC input is assigned to shared ADC core (#16)
+    #define ADC_CORE_AN17  7  // ADC input is assigned to shared ADC core (#17)
+    #define ADC_CORE_AN18  7  // ADC input is assigned to shared ADC core (#19)
     #endif
 
     #if defined (__P33SMPS_CK206__) || defined (__P33SMPS_CK506__) || \
         defined (__P33SMPS_CK208__) || defined (__P33SMPS_CK508__)
     // 64-/80-pin devices only
-    #define ADC_CORE_AN19  2  // ADC input is assigned to shared ADC core (#20)
+    #define ADC_CORE_AN19  7  // ADC input is assigned to shared ADC core (#20)
     #endif
     
     #if defined (__P33SMPS_CK208__) || defined (__P33SMPS_CK508__)
     // 80-pin devices only
-    #define ADC_CORE_AN20  2  // ADC input is assigned to shared ADC core (#21)
-    #define ADC_CORE_AN21  2  // ADC input is assigned to shared ADC core (#22)
-    #define ADC_CORE_AN22  2  // ADC input is assigned to shared ADC core (#23)
-    #define ADC_CORE_AN23  2  // ADC input is assigned to shared ADC core (#24)
+    #define ADC_CORE_AN20  7  // ADC input is assigned to shared ADC core (#21)
+    #define ADC_CORE_AN21  7  // ADC input is assigned to shared ADC core (#22)
+    #define ADC_CORE_AN22  7  // ADC input is assigned to shared ADC core (#23)
+    #define ADC_CORE_AN23  7  // ADC input is assigned to shared ADC core (#24)
     #endif
 
     typedef enum {
@@ -218,48 +221,48 @@
         ADCORE_ANA0 = 0,  // ADC input is assigned to dedicated ADC core (#0)
         ADCORE_AN1  = 1,  // ADC input is assigned to dedicated ADC core (#1)
         ADCORE_ANA1 = 1,  // ADC input is assigned to dedicated ADC core (#1)
-        ADCORE_AN2  = 2,  // ADC input is assigned to shared ADC core (#2)
-        ADCORE_AN3  = 2,  // ADC input is assigned to shared ADC core (#3)
-        ADCORE_AN4  = 2,  // ADC input is assigned to shared ADC core (#4)
-        ADCORE_AN5  = 2,  // ADC input is assigned to shared ADC core (#5)
-        ADCORE_AN6  = 2,  // ADC input is assigned to shared ADC core (#6)
-        ADCORE_AN7  = 2,  // ADC input is assigned to shared ADC core (#7)
-        ADCORE_AN8  = 2,  // ADC input is assigned to shared ADC core (#8)
-        ADCORE_AN9  = 2,  // ADC input is assigned to shared ADC core (#9)
-        ADCORE_AN10 = 2,  // ADC input is assigned to shared ADC core (#10)
-        ADCORE_AN11 = 2,  // ADC input is assigned to shared ADC core (#11)
+        ADCORE_AN2  = 7,  // ADC input is assigned to shared ADC core (#2)
+        ADCORE_AN3  = 7,  // ADC input is assigned to shared ADC core (#3)
+        ADCORE_AN4  = 7,  // ADC input is assigned to shared ADC core (#4)
+        ADCORE_AN5  = 7,  // ADC input is assigned to shared ADC core (#5)
+        ADCORE_AN6  = 7,  // ADC input is assigned to shared ADC core (#6)
+        ADCORE_AN7  = 7,  // ADC input is assigned to shared ADC core (#7)
+        ADCORE_AN8  = 7,  // ADC input is assigned to shared ADC core (#8)
+        ADCORE_AN9  = 7,  // ADC input is assigned to shared ADC core (#9)
+        ADCORE_AN10 = 7,  // ADC input is assigned to shared ADC core (#10)
+        ADCORE_AN11 = 7,  // ADC input is assigned to shared ADC core (#11)
     #if defined (__P33SMPS_CK203__) || defined (__P33SMPS_CK503__) || \
         defined (__P33SMPS_CK205__) || defined (__P33SMPS_CK505__) || \
         defined (__P33SMPS_CK206__) || defined (__P33SMPS_CK506__) || \
         defined (__P33SMPS_CK208__) || defined (__P33SMPS_CK508__)
-        ADCORE_AN12 = 2,  // ADC input is assigned to shared ADC core (#12)
-        ADCORE_AN13 = 2,  // ADC input is assigned to shared ADC core (#13)
-        ADCORE_AN14 = 2,  // ADC input is assigned to shared ADC core (#14)
-        ADCORE_AN15 = 2,  // ADC input is assigned to shared ADC core (#15)
+        ADCORE_AN12 = 7,  // ADC input is assigned to shared ADC core (#12)
+        ADCORE_AN13 = 7,  // ADC input is assigned to shared ADC core (#13)
+        ADCORE_AN14 = 7,  // ADC input is assigned to shared ADC core (#14)
+        ADCORE_AN15 = 7,  // ADC input is assigned to shared ADC core (#15)
     #endif
 
     #if defined (__P33SMPS_CK205__) || defined (__P33SMPS_CK505__) || \
         defined (__P33SMPS_CK206__) || defined (__P33SMPS_CK506__) || \
         defined (__P33SMPS_CK208__) || defined (__P33SMPS_CK508__)
-        ADCORE_AN16 = 2,  // ADC input is assigned to shared ADC core (#16)
-        ADCORE_AN17 = 2,  // ADC input is assigned to shared ADC core (#17)
-        ADCORE_AN18 = 2,  // ADC input is assigned to shared ADC core (#18)
+        ADCORE_AN16 = 7,  // ADC input is assigned to shared ADC core (#16)
+        ADCORE_AN17 = 7,  // ADC input is assigned to shared ADC core (#17)
+        ADCORE_AN18 = 7,  // ADC input is assigned to shared ADC core (#18)
     #endif
 
     #if defined (__P33SMPS_CK206__) || defined (__P33SMPS_CK506__) || \
         defined (__P33SMPS_CK208__) || defined (__P33SMPS_CK508__)
-        ADCORE_AN19 = 2,  // ADC input is assigned to shared ADC core (#19)
+        ADCORE_AN19 = 7,  // ADC input is assigned to shared ADC core (#19)
     #endif
     
     #if defined (__P33SMPS_CK208__) || defined (__P33SMPS_CK508__)
-        ADCORE_AN20 = 2,  // ADC input is assigned to shared ADC core (#20)
-        ADCORE_AN21 = 2,  // ADC input is assigned to shared ADC core (#21)
-        ADCORE_AN22 = 2,  // ADC input is assigned to shared ADC core (#22)
-        ADCORE_AN23 = 2,  // ADC input is assigned to shared ADC core (#23)
+        ADCORE_AN20 = 7,  // ADC input is assigned to shared ADC core (#20)
+        ADCORE_AN21 = 7,  // ADC input is assigned to shared ADC core (#21)
+        ADCORE_AN22 = 7,  // ADC input is assigned to shared ADC core (#22)
+        ADCORE_AN23 = 7,  // ADC input is assigned to shared ADC core (#23)
     #endif
 
-        ADCORE_AN24 = 2,  // ADC input is assigned to shared ADC core (#24) => Temperature Sensor
-        ADCORE_AN25 = 2   // ADC input is assigned to shared ADC core (#25) => Bandgap Reference
+        ADCORE_AN24 = 7,  // ADC input is assigned to shared ADC core (#24) => Temperature Sensor
+        ADCORE_AN25 = 7   // ADC input is assigned to shared ADC core (#25) => Bandgap Reference
     }ADC_CORE_INDEX_e;
 
 #else
@@ -628,7 +631,7 @@ typedef struct {
 #define REG_ADCON2H_SHRSAMC_MSK         0b0000001111111111      // Bit-Mask to filter on clock periods value bits
 #define REG_ADCON2H_SHRSAMC(Tdaclk)     ((Tdaclk-2) & REG_ADCON2H_SHRSAMC_MSK) 		// Shared ADC Core Sample Time Selection bits
 
-typedef enum {
+enum ADCOREx_SAMC_e {
     ADCORE_SAMC_DEFAULT = 0b0000000000, // Sampling time of 2 TADCORE clock periods
     ADCORE_SAMC_0002 = 0b0000000000, // Sampling time of 2 TADCORE clock periods
     ADCORE_SAMC_0003 = 0b0000000001, // Sampling time of 3 TADCORE clock periods
@@ -1654,7 +1657,8 @@ typedef enum {
     ADCORE_SAMC_1023 = 0b1111111101, // Sampling time of 1023 TADCORE clock periods
     ADCORE_SAMC_1024 = 0b1111111110, // Sampling time of 1024 TADCORE clock periods
     ADCORE_SAMC_1025 = 0b1111111111 // Sampling time of 1025 TADCORE clock periods
-} ADCOREx_SAMC_e; // Shared ADC Core Sample Time Selection bits
+}; // Shared ADC Core Sample Time Selection bits
+typedef enum ADCOREx_SAMC_e ADCOREx_SAMC_t;
 
 typedef union {
     struct {
@@ -1673,7 +1677,7 @@ typedef union {
 
 typedef union {
 struct {
-    volatile ADCOREx_SAMC_e shrsamc : 10;   // Bit 9-0: Shared ADC Core Sample Time Selection bits
+    volatile enum ADCOREx_SAMC_e shrsamc : 10;   // Bit 9-0: Shared ADC Core Sample Time Selection bits
     volatile unsigned : 4;                  // Bit 13-10: (reserved)
     volatile ADCON2_REFERR_e referr : 1;    // Bit 14: Band Gap or Reference Voltage Error Flag bit
     volatile ADCON2_REFRDY_e refrdy : 1;    // Bit 15: Band Gap Reference status
@@ -2146,17 +2150,18 @@ typedef union {
             ADCON4_C0CHS_S1AN0 = 0b00 // Dedicated ADC Core 1 Input is Slave Core #0 AN0 input
         } ADCON4_C0CHS_e; // Dedicated ADC Core 0 Input Channel Selection
 
-    #elif defined (__MA330048_dsPIC33CK_DPPIM__)
+    #elif defined (__P33SMPS_CK__)
 
         #if (ADC_CORE_COUNT > 1)
 
         #define REG_ADCON4H_C0CHS_ANA0      0b0000000000000001
         #define REG_ADCON4H_C0CHS_AN0       0b0000000000000000
 
-        typedef enum {
+        enum ADCON4_C0CHS_e {
             ADCON4_C0CHS_ANA0 = 0b01, // Dedicated ADC Core 0 Input is alternative ANA0 input
             ADCON4_C0CHS_AN0 = 0b00 // Dedicated ADC Core 0 Input is AN0 input
-        } ADCON4_C0CHS_e; // Dedicated ADC Core 0 Input Channel Selection
+        }; // Dedicated ADC Core 0 Input Channel Selection
+        typedef enum ADCON4_C0CHS_e ADCON4_C0CHS_t; // Dedicated ADC Core 0 Input Channel Selection data type
 
         #endif
 
@@ -2164,11 +2169,12 @@ typedef union {
         #define REG_ADCON4H_C1CHS_ANA1      0b0000000000000100
         #define REG_ADCON4H_C1CHS_AN1       0b0000000000000000
 
-        typedef enum {
+        enum ADCON4_C1CHS_e {
             ADCON4_C1CHS_ANA1 = 0b01, // Dedicated ADC Core 1 Input is alternative ANA1 input
             ADCON4_C1CHS_AN1 = 0b00 // Dedicated ADC Core 1 Input is AN1 input
-        } ADCON4_C1CHS_e; // Dedicated ADC Core 1 Input Channel Selection
-
+        }; // Dedicated ADC Core 1 Input Channel Selection
+        typedef enum ADCON4_C1CHS_e ADCON4_C1CHS_t; // Dedicated ADC Core 1 Input Channel Selection data type
+        
         #endif
 
         #if (ADC_CORE_COUNT > 3)
@@ -2228,7 +2234,8 @@ typedef union {
 
     #endif
 
-    typedef union {
+struct ADCON4L_s {
+    union {
         struct {
             #if (ADC_CORE_COUNT > 1)
             volatile ADCON4_SAMCxEN_e samc0en : 1;  // Bit 0: Dedicated ADC Core 0 Conversion Delay Enable
@@ -2305,17 +2312,19 @@ typedef union {
         }__attribute__((packed)) bits;
         volatile uint16_t value;
     } ADCON4L_t;       // ADCON4L: ADC CONTROL REGISTER 4 LOW
+};
+typedef struct ADCON4L_s ADCON4L_t;
     
-    
-    typedef union {
+struct ADCON4H_s {    
+    union {
         struct {
             #if (ADC_CORE_COUNT > 1)
-            volatile ADCON4_C0CHS_e c0chs : 2; // Bit 1-0: ADC Core 0 analog input selection
+            volatile enum ADCON4_C0CHS_e c0chs : 2; // Bit 1-0: ADC Core 0 analog input selection
             #else
             volatile unsigned : 2; // reserved
             #endif
             #if (ADC_CORE_COUNT > 2)
-            volatile ADCON4_C1CHS_e c1chs : 2; // Bit 3-2: ADC Core 1 analog input selection
+            volatile enum ADCON4_C1CHS_e c1chs : 2; // Bit 3-2: ADC Core 1 analog input selection
             #else
             volatile unsigned : 2; // reserved
             #endif
@@ -2347,15 +2356,9 @@ typedef union {
             volatile unsigned : 2;              // Bit 15-14: reserved
         } __attribute__((packed)) bits;
         volatile uint16_t value;
-    } ADCON4H_t;        // ADCON4H: ADC CONTROL REGISTER 4 HIGH
-    
-    typedef union {
-        struct {
-            volatile ADCON4L_t SAMC_EN; // Dedicated ADC Core 0-n Conversion Delay Enable bit
-            volatile ADCON4H_t CHS;     // Dedicated ADC Core 0-n Input Channel Selection bits
-        } bits;
-        volatile uint32_t value;
-    } ADCON4_t; // Merged ADC CONTROL REGISTER 4 HIGH/LOW
+    } ADCON4H;        // ADCON4H: ADC CONTROL REGISTER 4 HIGH
+};
+typedef struct ADCON4H_s ADCON4H_t;
 
 #else
 
@@ -2416,11 +2419,11 @@ typedef union {
 
 #define RES_ADCON5L_CxRDY(adc_core)     (uint16_t)(pow(2, adc_core) << 8) // the shared core is always treated as "Core #7"
 
-typedef enum {
+enum ADCON5_CxRDY_e {
     ADCON5_CxRDY_STAT_PWROK = 0b1, // ADC Core #n powered and ready
     ADCON5_CxRDY_OFF = 0b0 // ADC Core is turned off/not powered
-} ADCON5_CxRDY_e;
-
+};
+typedef enum ADCON5_CxRDY_e ADCON5_CxRDY_t;
 
 #define REG_ADCON5L_SHRPWR_ON           0b0000000010000000      // Shared ADC Core switched on
 #define REG_ADCON5L_SHRPWR_OFF          0b0000000000000000      // Shared ADC Core switched off
@@ -2456,10 +2459,11 @@ typedef enum {
 
 #define REG_ADCON5L_CxPWR(adc_core)     (uint16_t)(pow(2.0, adc_core)) // the shared core is always treated as "Core #7"
 
-typedef enum {
+enum ADCON5_CxPWR_e{
     ADCON5_CxPWR_ON = 0b1, // ADC Core #n powered 
     ADCON5_CxPWR_OFF = 0b0 // ADC Core is turned off/not powered
-} ADCON5_CxPWR_e;
+};
+typedef enum ADCON5_CxPWR_e ADCON5_CxPWR_t;
 
 // REGISTER ADCON5H: ANALOG-TO-DIGITAL CONTROL REGISTER 5 HIGH
 
@@ -2477,7 +2481,7 @@ typedef enum {
 #define REG_ADCON5H_WARMTIME_CLK_16		0b0000010000000000	// ADC Power Up Delay 0f 16 ATADCORE cycles
 #define REG_ADCON5H_WARMTIME_NONE       0b0000000000000000  // (used for bypass during configuraiton, valid WARMTIME must be set before powering on ADC module)
 
-typedef enum {
+enum ADCON5_WARMTIME_e {
     ADCON5H_WARMTIME_CLK_32768 = 0b1111, // 32768 Source Clock Periods
     ADCON5H_WARMTIME_CLK_16384 = 0b1110, // 16384 Source Clock Periods
     ADCON5H_WARMTIME_CLK_8192 = 0b1101, // 8192 Source Clock Periods
@@ -2491,8 +2495,8 @@ typedef enum {
     ADCON5H_WARMTIME_CLK_32 = 0b0101, // 32 Source Clock Periods
     ADCON5H_WARMTIME_CLK_16 = 0b0100, // 16 Source Clock Periods    
     ADCON5H_WARMTIME_NONE = 0b0000 // (used for bypass during configuration, valid WARMTIME must be set before powering on ADC module)
-} ADCON5_WARMTIME_e; // ADC Dedicated Core x Power-up Delay bits
-
+}; // ADC Dedicated Core x Power-up Delay bits
+typedef enum ADCON5_WARMTIME_e ADCON5_WARMTIME_t;  // ADC Dedicated Core x Power-up Delay bits data type
 
 #define REG_ADCON5H_SHRCIE_ENABLED      0b0000000010000000      // Shared ADC Core Ready Interrupt enabled
 #define REG_ADCON5H_SHRCIE_DISABLED     0b0000000000000000      // Shared ADC Core Ready Interrupt disabled
@@ -2528,147 +2532,145 @@ typedef enum {
 
 #define RES_ADCON5H_CxCIE(adc_core)     (uint16_t)(pow(2, adc_core)) // the shared core is always treated as "Core #7"
 
-typedef enum {
+enum ADCON5_CxCIE_e {
     ADCON5L_CxCIE_ENABLED = 0b1, // ADC Core #n Ready Interrupt enabled
     ADCON5L_CxCIE_DISABLED = 0b0 // ADC Core #n Ready Interrupt disabled
-} ADCON5_CxCIE_e;
+}; 
+typedef enum ADCON5_CxCIE_e ADCON5_CxCIE_t;
 
-typedef union {
-    
-    struct {
-        #if (ADC_CORE_COUNT > 1)
-        volatile ADCON5_CxPWR_e C0PWR : 1; // Bit 0: Dedicated ADC Core #0 Power Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 2)
-        volatile ADCON5_CxPWR_e C1PWR : 1; // Bit 1: Dedicated ADC Core #1 Power Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 3)
-        volatile ADCON5_CxPWR_e C2PWR : 1; // Bit 2: Dedicated ADC Core #2 Power Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 4)
-        volatile ADCON5_CxPWR_e C3PWR : 1; // Bit 3: Dedicated ADC Core #3 Power Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 5)
-        volatile ADCON5_CxPWR_e C4PWR : 1; // Bit 4: Dedicated ADC Core #4 Power Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 6)
-        volatile ADCON5_CxPWR_e C5PWR : 1; // Bit 5: Dedicated ADC Core #5 Power Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 7)
-        volatile ADCON5_CxPWR_e C6PWR : 1; // Bit 6: Dedicated ADC Core #6 Power Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
+struct ADCON5L_s {
+    union {
+        struct {
+            #if (ADC_CORE_COUNT > 1)
+            volatile enum ADCON5_CxPWR_e C0PWR : 1; // Bit 0: Dedicated ADC Core #0 Power Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 2)
+            volatile enum ADCON5_CxPWR_e C1PWR : 1; // Bit 1: Dedicated ADC Core #1 Power Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 3)
+            volatile enum ADCON5_CxPWR_e C2PWR : 1; // Bit 2: Dedicated ADC Core #2 Power Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 4)
+            volatile enum ADCON5_CxPWR_e C3PWR : 1; // Bit 3: Dedicated ADC Core #3 Power Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 5)
+            volatile enum ADCON5_CxPWR_e C4PWR : 1; // Bit 4: Dedicated ADC Core #4 Power Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 6)
+            volatile enum ADCON5_CxPWR_e C5PWR : 1; // Bit 5: Dedicated ADC Core #5 Power Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 7)
+            volatile ADCON5_CxPWR_e C6PWR : 1; // Bit 6: Dedicated ADC Core #6 Power Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
 
-        volatile ADCON5_CxPWR_e SHRPWR : 1; // Bit 7: Shared ADC Core Power Enable
+            volatile enum ADCON5_CxPWR_e SHRPWR : 1; // Bit 7: Shared ADC Core Power Enable
 
-        #if (ADC_CORE_COUNT > 1)
-        volatile ADCON5_CxRDY_e C0RDY : 1; // Bit 8: Dedicated ADC Core #0 "Powered & Ready" Status
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 2)
-        volatile ADCON5_CxRDY_e C1RDY : 1; // Bit 9: Dedicated ADC Core #1 "Powered & Ready" Status
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 3)
-        volatile ADCON5_CxRDY_e C2RDY : 1; // Bit 10: Dedicated ADC Core #2 "Powered & Ready" Status
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 4)
-        volatile ADCON5_CxRDY_e C3RDY : 1; // Bit 11: Dedicated ADC Core #3 "Powered & Ready" Status
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 5)
-        volatile ADCON5_CxRDY_e C4RDY : 1; // Bit 12: Dedicated ADC Core #4 "Powered & Ready" Status
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 6)
-        volatile ADCON5_CxRDY_e C5RDY : 1; // Bit 13: Dedicated ADC Core #5 "Powered & Ready" Status
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 7)
-        volatile ADCON5_CxRDY_e C6RDY : 1; // Bit 14: Dedicated ADC Core #6 "Powered & Ready" Status
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
+            #if (ADC_CORE_COUNT > 1)
+            volatile enum ADCON5_CxRDY_e C0RDY : 1; // Bit 8: Dedicated ADC Core #0 "Powered & Ready" Status
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 2)
+            volatile enum ADCON5_CxRDY_e C1RDY : 1; // Bit 9: Dedicated ADC Core #1 "Powered & Ready" Status
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 3)
+            volatile enum ADCON5_CxRDY_e C2RDY : 1; // Bit 10: Dedicated ADC Core #2 "Powered & Ready" Status
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 4)
+            volatile enum ADCON5_CxRDY_e C3RDY : 1; // Bit 11: Dedicated ADC Core #3 "Powered & Ready" Status
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 5)
+            volatile ADCON5_CxRDY_e C4RDY : 1; // Bit 12: Dedicated ADC Core #4 "Powered & Ready" Status
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 6)
+            volatile enum ADCON5_CxRDY_e C5RDY : 1; // Bit 13: Dedicated ADC Core #5 "Powered & Ready" Status
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 7)
+            volatile enum ADCON5_CxRDY_e C6RDY : 1; // Bit 14: Dedicated ADC Core #6 "Powered & Ready" Status
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
 
-        volatile ADCON5_CxRDY_e SHRRDY : 1; // Bit 15: Shared ADC Core "Powered & Ready" Status
+            volatile enum ADCON5_CxRDY_e SHRRDY : 1; // Bit 15: Shared ADC Core "Powered & Ready" Status
 
-    } __attribute__((packed)) bits;
-    volatile uint16_t value;
-} ADCON5L_t; // ADCON5L: ADC CONTROL REGISTER 5 LOW
+        } __attribute__((packed)) bits;
+        volatile uint16_t value;
+    } ADCON5L; // ADCON5L: ADC CONTROL REGISTER 5 LOW
+}; // ADCON5L: ADC CONTROL REGISTER 5 LOW
+typedef struct ADCON5L_s ADCON5L_t; // ADCON5L: ADC CONTROL REGISTER 5 LOW
 
-typedef union {
-    struct {
-        #if (ADC_CORE_COUNT > 1)
-        volatile ADCON5_CxCIE_e C0CIE : 1; // Bit 0: Dedicated ADC Core #0 Ready Common Interrupt Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 2)
-        volatile ADCON5_CxCIE_e C1CIE : 1; // Bit 1: Dedicated ADC Core #1 Ready Common Interrupt Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 3)
-        volatile ADCON5_CxCIE_e C2CIE : 1; // Bit 2: Dedicated ADC Core #2 Ready Common Interrupt Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 4)
-        volatile ADCON5_CxCIE_e C3CIE : 1; // Bit 3: Dedicated ADC Core #3 Ready Common Interrupt Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 5)
-        volatile ADCON5_CxCIE_e C4CIE : 1; // Bit 4: Dedicated ADC Core #4 Ready Common Interrupt Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 6)
-        volatile ADCON5_CxCIE_e C5CIE : 1; // Bit 5: Dedicated ADC Core #5 Ready Common Interrupt Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_CORE_COUNT > 7)
-        volatile ADCON5_CxCIE_e C6CIE : 1; // Bit 6: Dedicated ADC Core #6 Ready Common Interrupt Enable
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
+struct ADCON5H_s {
+    union {
+        struct {
+            #if (ADC_CORE_COUNT > 1)
+            volatile enum ADCON5_CxCIE_e C0CIE : 1; // Bit 0: Dedicated ADC Core #0 Ready Common Interrupt Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 2)
+            volatile enum ADCON5_CxCIE_e C1CIE : 1; // Bit 1: Dedicated ADC Core #1 Ready Common Interrupt Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 3)
+            volatile ADCON5_CxCIE_e C2CIE : 1; // Bit 2: Dedicated ADC Core #2 Ready Common Interrupt Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 4)
+            volatile ADCON5_CxCIE_e C3CIE : 1; // Bit 3: Dedicated ADC Core #3 Ready Common Interrupt Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 5)
+            volatile ADCON5_CxCIE_e C4CIE : 1; // Bit 4: Dedicated ADC Core #4 Ready Common Interrupt Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 6)
+            volatile ADCON5_CxCIE_e C5CIE : 1; // Bit 5: Dedicated ADC Core #5 Ready Common Interrupt Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_CORE_COUNT > 7)
+            volatile ADCON5_CxCIE_e C6CIE : 1; // Bit 6: Dedicated ADC Core #6 Ready Common Interrupt Enable
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
 
-        volatile ADCON5_CxCIE_e shrcie : 1;      // Bit 7: Shared ADC Core Ready Common Interrupt Enable
-        volatile ADCON5_WARMTIME_e warmtime : 4; // Bit 11-8: ADC Dedicated Core x Power-up Delay
-        volatile unsigned : 4;                   // Bit 15-12: reserved
+            volatile enum ADCON5_CxCIE_e shrcie : 1;      // Bit 7: Shared ADC Core Ready Common Interrupt Enable
+            volatile enum ADCON5_WARMTIME_e warmtime : 4; // Bit 11-8: ADC Dedicated Core x Power-up Delay
+            volatile unsigned : 4;                   // Bit 15-12: reserved
 
-    } __attribute__((packed)) bits;
-    volatile uint16_t value;
-} ADCON5H_t; // ADCON5H: ADC CONTROL REGISTER 5 HIGH
-
-typedef union {
-    struct {
-        volatile ADCON5L_t adcon5l;
-        volatile ADCON5H_t adcon5h;
-    } bits;
-    volatile uint32_t value;
-}ADCON5_t; // ADCON5: ADC CONTROL REGISTER 5 HIGH/LOW
+        } __attribute__((packed)) bits;
+        volatile uint16_t value;
+    }ADCON5H;  // ADCON5H: ADC CONTROL REGISTER 5 HIGH
+};  // ADCON5H: ADC CONTROL REGISTER 5 HIGH
+typedef struct ADCON5H_s ADCON5H_t; // ADCON5H: ADC CONTROL REGISTER 5 HIGH
 
 // REGISTER 19-11: ADCORExL: DEDICATED ADC CORE x CONTROL REGISTER LOW
 
@@ -2788,10 +2790,11 @@ typedef union {
 #define REG_ADLVLTRGH_AN31_LEVEL        0b1000000000000000      // AN31 is Level-Triggered
 #define REG_ADLVLTRGH_AN31_EDGE         0b0000000000000000      // AN31 is Edge-Triggered
 
-typedef enum {
+enum ADLVLTRG_e{
     ADLVLTRG_ANx_LEVEL = 0b1, // ANx is Level-Triggered
     ADLVLTRG_ANx_EDGE = 0b0  // ANx is Edge-Triggered (default)
-}ADLVLTRG_e; // Level Trigger for Corresponding Analog Input Enable bits
+};
+typedef enum ADLVLTRG_e ADLVLTRG_t; // Level Trigger for Corresponding Analog Input Enable bits
 
 
 // REGISTER 19-15: ADEIEH: ADC EARLY INTERRUPT ENABLE REGISTER LOW
@@ -2877,149 +2880,152 @@ typedef enum {
 #define REG_ADEIEH_AN31_ENABLED         0b1000000000000000      // Early Interrupt Enabled for AN31
 #define REG_ADEIEH_AN31_DISABLED        0b0000000000000000      // Early Interrupt Disabled for AN31
 
-typedef enum {
+enum ADEIE_EIEN_e {
     ADEIE_ANx_ENABLED = 0b1,      // Early Interrupt Enabled for ANx 
     ADEIE_ANx_DISABLED = 0b0      // Early Interrupt Disabled for ANx 
-}ADEIE_EIEN_e; 
+}; 
+typedef enum ADEIE_EIEN_e ADEIE_EIEN_t;
 
-typedef union {
-    struct {
-        // ---HIGH WORD---
-        volatile ADEIE_EIEN_e AN0EIE : 1; // Enable/Disable AN0 Early Interrupt
-        volatile ADEIE_EIEN_e AN1EIE : 1; // Enable/Disable AN1 Early Interrupt
-        volatile ADEIE_EIEN_e AN2EIE : 1; // Enable/Disable AN2 Early Interrupt
-        volatile ADEIE_EIEN_e AN3EIE : 1; // Enable/Disable AN3 Early Interrupt
-        volatile ADEIE_EIEN_e AN4EIE : 1; // Enable/Disable AN4 Early Interrupt
-        volatile ADEIE_EIEN_e AN5EIE : 1; // Enable/Disable AN5 Early Interrupt
-        volatile ADEIE_EIEN_e AN6EIE : 1; // Enable/Disable AN6 Early Interrupt
-        volatile ADEIE_EIEN_e AN7EIE : 1; // Enable/Disable AN7 Early Interrupt
-        #if (ADC_ANINPUT_COUNT > 7)
-        volatile ADEIE_EIEN_e AN8EIE : 1; // Enable/Disable AN8 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 8)
-        volatile ADEIE_EIEN_e AN9EIE : 1; // Enable/Disable AN9 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 9)
-        volatile ADEIE_EIEN_e AN10EIE : 1; // Enable/Disable AN10 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 10)
-        volatile ADEIE_EIEN_e AN11EIE : 1; // Enable/Disable AN11 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 11)
-        volatile ADEIE_EIEN_e AN12EIE : 1; // Enable/Disable AN12 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 12)
-        volatile ADEIE_EIEN_e AN13EIE : 1; // Enable/Disable AN13 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 13)
-        volatile ADEIE_EIEN_e AN14EIE : 1; // Enable/Disable AN14 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 14)
-        volatile ADEIE_EIEN_e AN15EIE : 1; // Enable/Disable AN15 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
+struct ADEIE_s {
+    union {
+        struct {
+            // ---HIGH WORD---
+            volatile enum ADEIE_EIEN_e AN0EIE : 1; // Enable/Disable AN0 Early Interrupt
+            volatile enum ADEIE_EIEN_e AN1EIE : 1; // Enable/Disable AN1 Early Interrupt
+            volatile enum ADEIE_EIEN_e AN2EIE : 1; // Enable/Disable AN2 Early Interrupt
+            volatile enum ADEIE_EIEN_e AN3EIE : 1; // Enable/Disable AN3 Early Interrupt
+            volatile enum ADEIE_EIEN_e AN4EIE : 1; // Enable/Disable AN4 Early Interrupt
+            volatile enum ADEIE_EIEN_e AN5EIE : 1; // Enable/Disable AN5 Early Interrupt
+            volatile enum ADEIE_EIEN_e AN6EIE : 1; // Enable/Disable AN6 Early Interrupt
+            volatile enum ADEIE_EIEN_e AN7EIE : 1; // Enable/Disable AN7 Early Interrupt
+            #if (ADC_ANINPUT_COUNT > 7)
+            volatile enum ADEIE_EIEN_e AN8EIE : 1; // Enable/Disable AN8 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 8)
+            volatile enum ADEIE_EIEN_e AN9EIE : 1; // Enable/Disable AN9 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 9)
+            volatile enum ADEIE_EIEN_e AN10EIE : 1; // Enable/Disable AN10 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 10)
+            volatile enum ADEIE_EIEN_e AN11EIE : 1; // Enable/Disable AN11 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 11)
+            volatile enum ADEIE_EIEN_e AN12EIE : 1; // Enable/Disable AN12 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 12)
+            volatile enum ADEIE_EIEN_e AN13EIE : 1; // Enable/Disable AN13 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 13)
+            volatile enum ADEIE_EIEN_e AN14EIE : 1; // Enable/Disable AN14 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 14)
+            volatile enum ADEIE_EIEN_e AN15EIE : 1; // Enable/Disable AN15 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
 
-        // ---HIGH WORD---
-        #if (ADC_ANINPUT_COUNT > 15)
-        volatile ADEIE_EIEN_e AN16EIE : 1; // Enable/Disable AN16 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 16)
-        volatile ADEIE_EIEN_e AN17EIE : 1; // Enable/Disable AN17 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 17)
-        volatile ADEIE_EIEN_e AN18EIE : 1; // Enable/Disable AN18 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 18)
-        volatile ADEIE_EIEN_e AN19EIE : 1; // Enable/Disable AN19 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 19)
-        volatile ADEIE_EIEN_e AN20EIE : 1; // Enable/Disable AN20 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 20)
-        volatile ADEIE_EIEN_e AN21EIE : 1; // Enable/Disable AN21 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 21)
-        volatile ADEIE_EIEN_e AN22EIE : 1; // Enable/Disable AN22 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 22)
-        volatile ADEIE_EIEN_e AN23EIE : 1; // Enable/Disable AN23 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 23)
-        volatile ADEIE_EIEN_e AN24EIE : 1; // Enable/Disable AN24 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 24)
-        volatile ADEIE_EIEN_e AN25EIE : 1; // Enable/Disable AN25 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 25)
-        volatile ADEIE_EIEN_e AN26EIE : 1; // Enable/Disable AN26 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 26)
-        volatile ADEIE_EIEN_e AN27EIE : 1; // Enable/Disable AN27 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 27)
-        volatile ADEIE_EIEN_e AN28EIE : 1; // Enable/Disable AN28 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 28)
-        volatile ADEIE_EIEN_e AN29EIE : 1; // Enable/Disable AN29 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 29)
-        volatile ADEIE_EIEN_e AN30EIE : 1; // Enable/Disable AN30 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 30)
-        volatile ADEIE_EIEN_e AN31EIE : 1; // Enable/Disable AN31 Early Interrupt
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
+            // ---HIGH WORD---
+            #if (ADC_ANINPUT_COUNT > 15)
+            volatile enum ADEIE_EIEN_e AN16EIE : 1; // Enable/Disable AN16 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 16)
+            volatile enum ADEIE_EIEN_e AN17EIE : 1; // Enable/Disable AN17 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 17)
+            volatile enum ADEIE_EIEN_e AN18EIE : 1; // Enable/Disable AN18 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 18)
+            volatile enum ADEIE_EIEN_e AN19EIE : 1; // Enable/Disable AN19 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 19)
+            volatile enum ADEIE_EIEN_e AN20EIE : 1; // Enable/Disable AN20 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 20)
+            volatile enum ADEIE_EIEN_e AN21EIE : 1; // Enable/Disable AN21 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 21)
+            volatile enum ADEIE_EIEN_e AN22EIE : 1; // Enable/Disable AN22 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 22)
+            volatile enum ADEIE_EIEN_e AN23EIE : 1; // Enable/Disable AN23 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 23)
+            volatile enum ADEIE_EIEN_e AN24EIE : 1; // Enable/Disable AN24 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 24)
+            volatile enum ADEIE_EIEN_e AN25EIE : 1; // Enable/Disable AN25 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 25)
+            volatile enum ADEIE_EIEN_e AN26EIE : 1; // Enable/Disable AN26 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 26)
+            volatile enum ADEIE_EIEN_e AN27EIE : 1; // Enable/Disable AN27 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 27)
+            volatile ADEIE_EIEN_e AN28EIE : 1; // Enable/Disable AN28 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 28)
+            volatile enum ADEIE_EIEN_e AN29EIE : 1; // Enable/Disable AN29 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 29)
+            volatile enum ADEIE_EIEN_e AN30EIE : 1; // Enable/Disable AN30 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 30)
+            volatile enum ADEIE_EIEN_e AN31EIE : 1; // Enable/Disable AN31 Early Interrupt
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
 
-    }__attribute__((packed)) bits; // ADC EARLY INTERRUPT ENABLE REGISTER HIGH/LOW BIT FIELD
-    volatile uint32_t value; // ADC EARLY INTERRUPT ENABLE REGISTER HIGH/LOW REGISTER VALUE
-} ADEIE_t; // ADC EARLY INTERRUPT ENABLE REGISTER HIGH/LOW BIT FIELD AND REGISTER VALUE
-
+        }__attribute__((packed)) bits; // ADC EARLY INTERRUPT ENABLE REGISTER HIGH/LOW BIT FIELD
+        volatile uint32_t value; // ADC EARLY INTERRUPT ENABLE REGISTER HIGH/LOW REGISTER VALUE
+    } ADEIE; // ADC EARLY INTERRUPT ENABLE REGISTER HIGH/LOW BIT FIELD AND REGISTER VALUE
+};
+typedef struct ADEIE_s ADEIE_t;
 
 // REGISTER 19-17: ADEISTATL: ADC EARLY INTERRUPT STATUS REGISTER LOW
 
@@ -3181,59 +3187,62 @@ typedef union {
 
 #define REG_ADMOD0_AN_SET(x)   ((uint32_t)(pow(2, x)))	// Macro to set register bit based on ANx input number
 
-typedef enum {
+enum ADMOD0_DIFF_e {
 	ADMOD0H_DIFF_DIFF = 0b1,	// ANx operates in Differential mode
 	ADMOD0H_DIFF_SNGE = 0b0		// ANx operates in single ended mode
-} ADMOD0_DIFF_e;	
+};	
+typedef enum ADMOD0_DIFF_e ADMOD0_DIFF_t;
 
-typedef enum {
+enum ADMOD0_SIGN_e {
 	ADMOD0_SIGN_SIGNED = 0b1,	// ANx AN8 output value will be signed
 	ADMOD0_SIGN_UNSIGNED = 0b0	// ANx AN8 output value will be unsigned
-} ADMOD0_SIGN_e;	
+};	
+typedef enum ADMOD0_SIGN_e ADMOD0_SIGN_t;
 
-typedef union {
-    
-    struct {
-        volatile ADMOD0_DIFF_e AN0DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN0SIGN : 1; // signed/unsigned ANx result selection bit
-        volatile ADMOD0_DIFF_e AN1DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN1SIGN : 1; // signed/unsigned ANx result selection bit
-        volatile ADMOD0_DIFF_e AN2DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN2SIGN : 1; // signed/unsigned ANx result selection bit
-        volatile ADMOD0_DIFF_e AN3DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN3SIGN : 1; // signed/unsigned ANx result selection bit
+struct ADMOD0_s {
+    union {
+        struct {
+            volatile enum ADMOD0_DIFF_e AN0DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN0SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN1DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN1SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN2DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN2SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN3DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN3SIGN : 1; // signed/unsigned ANx result selection bit
 
-        volatile ADMOD0_DIFF_e AN4DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN4SIGN : 1; // signed/unsigned ANx result selection bit
-        volatile ADMOD0_DIFF_e AN5DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN5SIGN : 1; // signed/unsigned ANx result selection bit
-        volatile ADMOD0_DIFF_e AN6DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN6SIGN : 1; // signed/unsigned ANx result selection bit
-        volatile ADMOD0_DIFF_e AN7DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN7SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN4DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN4SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN5DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN5SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN6DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN6SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN7DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN7SIGN : 1; // signed/unsigned ANx result selection bit
 
-        volatile ADMOD0_DIFF_e AN8DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN8SIGN : 1; // signed/unsigned ANx result selection bit
-        volatile ADMOD0_DIFF_e AN9DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN9SIGN : 1; // signed/unsigned ANx result selection bit
-        volatile ADMOD0_DIFF_e AN10DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN10SIGN : 1; // signed/unsigned ANx result selection bit
-        volatile ADMOD0_DIFF_e AN11DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN11SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN8DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN8SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN9DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN9SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN10DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN10SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN11DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN11SIGN : 1; // signed/unsigned ANx result selection bit
 
-        volatile ADMOD0_DIFF_e AN12DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN12SIGN : 1; // signed/unsigned ANx result selection bit
-        volatile ADMOD0_DIFF_e AN13DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN13SIGN : 1; // signed/unsigned ANx result selection bit
-        volatile ADMOD0_DIFF_e AN14DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN14SIGN : 1; // signed/unsigned ANx result selection bit
-        volatile ADMOD0_DIFF_e AN15DIFF : 1; // Differential/Single Ended mode selection bit
-        volatile ADMOD0_SIGN_e AN15SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN12DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN12SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN13DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN13SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN14DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN14SIGN : 1; // signed/unsigned ANx result selection bit
+            volatile enum ADMOD0_DIFF_e AN15DIFF : 1; // Differential/Single Ended mode selection bit
+            volatile enum ADMOD0_SIGN_e AN15SIGN : 1; // signed/unsigned ANx result selection bit
 
-    }__attribute__((packed))bits;
-    volatile uint32_t value;
-} ADMOD0_t;
-
+        }__attribute__((packed))bits;
+        volatile uint32_t value;
+    } ADMOD0;
+};
+typedef struct ADMOD0_s ADMOD0_t;
 
 // REGISTER 19-21: ADMOD1L: ADC INPUT MODE CONTROL REGISTER 1 LOW
 
@@ -3401,149 +3410,152 @@ typedef union {
 #define REG_ADIEH_AN31_DISABLED         0b0000000000000000      // Interrupt disabled for AN31
 
 
-typedef enum {
+enum ADIE_IE_e {
     ADIE_ANx_ENABLED = 0b1,      // Interrupt Generation Enabled for ANx 
     ADIE_ANx_DISABLED = 0b0      // Interrupt Generation Disabled for ANx 
-}ADIE_IE_e; 
+}; 
+typedef enum ADIE_IE_e ADIE_IE_t;
 
-typedef union {
-    struct {
-        volatile ADIE_IE_e an0ie : 1; // Enable/Disable AN0 Interrupt Generation
-        volatile ADIE_IE_e an1ie : 1; // Enable/Disable AN1 Interrupt Generation
-        volatile ADIE_IE_e an2ie : 1; // Enable/Disable AN2 Interrupt Generation
-        volatile ADIE_IE_e an3ie : 1; // Enable/Disable AN3 Interrupt Generation
-        volatile ADIE_IE_e an4ie : 1; // Enable/Disable AN4 Interrupt Generation
-        volatile ADIE_IE_e an5ie : 1; // Enable/Disable AN5 Interrupt Generation
-        volatile ADIE_IE_e an6ie : 1; // Enable/Disable AN6 Interrupt Generation
-        volatile ADIE_IE_e an7ie : 1; // Enable/Disable AN7 Interrupt Generation
-        #if (ADC_ANINPUT_COUNT > 7)
-        volatile ADIE_IE_e an8ie : 1; // Enable/Disable AN8 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 8)
-        volatile ADIE_IE_e an9ie : 1; // Enable/Disable AN9 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 9)
-        volatile ADIE_IE_e an10ie : 1; // Enable/Disable AN10 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 10)
-        volatile ADIE_IE_e an11ie : 1; // Enable/Disable AN11 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 11)
-        volatile ADIE_IE_e an12ie : 1; // Enable/Disable AN12 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 12)
-        volatile ADIE_IE_e an13ie : 1; // Enable/Disable AN13 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 13)
-        volatile ADIE_IE_e an14ie : 1; // Enable/Disable AN14 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
+struct ADIE_s {
+    union {
+        struct {
+            volatile enum ADIE_IE_e an0ie : 1; // Enable/Disable AN0 Interrupt Generation
+            volatile enum ADIE_IE_e an1ie : 1; // Enable/Disable AN1 Interrupt Generation
+            volatile enum ADIE_IE_e an2ie : 1; // Enable/Disable AN2 Interrupt Generation
+            volatile enum ADIE_IE_e an3ie : 1; // Enable/Disable AN3 Interrupt Generation
+            volatile enum ADIE_IE_e an4ie : 1; // Enable/Disable AN4 Interrupt Generation
+            volatile enum ADIE_IE_e an5ie : 1; // Enable/Disable AN5 Interrupt Generation
+            volatile enum ADIE_IE_e an6ie : 1; // Enable/Disable AN6 Interrupt Generation
+            volatile enum ADIE_IE_e an7ie : 1; // Enable/Disable AN7 Interrupt Generation
+            #if (ADC_ANINPUT_COUNT > 7)
+            volatile enum ADIE_IE_e an8ie : 1; // Enable/Disable AN8 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 8)
+            volatile enum ADIE_IE_e an9ie : 1; // Enable/Disable AN9 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 9)
+            volatile enum ADIE_IE_e an10ie : 1; // Enable/Disable AN10 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 10)
+            volatile enum ADIE_IE_e an11ie : 1; // Enable/Disable AN11 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 11)
+            volatile enum ADIE_IE_e an12ie : 1; // Enable/Disable AN12 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 12)
+            volatile enum ADIE_IE_e an13ie : 1; // Enable/Disable AN13 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 13)
+            volatile enum ADIE_IE_e an14ie : 1; // Enable/Disable AN14 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
 
-        #if (ADC_ANINPUT_COUNT > 14)
-        volatile ADIE_IE_e an15ie : 1; // Enable/Disable AN15 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        // ---------------------------
-        #if (ADC_ANINPUT_COUNT > 15)
-        volatile ADIE_IE_e an16ie : 1; // Enable/Disable AN16 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
+            #if (ADC_ANINPUT_COUNT > 14)
+            volatile enum ADIE_IE_e an15ie : 1; // Enable/Disable AN15 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            // ---------------------------
+            #if (ADC_ANINPUT_COUNT > 15)
+            volatile enum ADIE_IE_e an16ie : 1; // Enable/Disable AN16 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
 
-        #if (ADC_ANINPUT_COUNT > 16)
-        volatile ADIE_IE_e an17ie : 1; // Enable/Disable AN17 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 17)
-        volatile ADIE_IE_e an18ie : 1; // Enable/Disable AN18 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 18)
-        volatile ADIE_IE_e an19ie : 1; // Enable/Disable AN19 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 19)
-        volatile ADIE_IE_e an20ie : 1; // Enable/Disable AN20 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 20)
-        volatile ADIE_IE_e an21ie : 1; // Enable/Disable AN21 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 21)
-        volatile ADIE_IE_e an22ie : 1; // Enable/Disable AN22 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 22)
-        volatile ADIE_IE_e an23ie : 1; // Enable/Disable AN23 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 23)
-        volatile ADIE_IE_e an24ie : 1; // Enable/Disable AN24 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 24)
-        volatile ADIE_IE_e an25ie : 1; // Enable/Disable AN25 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 25)
-        volatile ADIE_IE_e an26ie : 1; // Enable/Disable AN26 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 26)
-        volatile ADIE_IE_e an27ie : 1; // Enable/Disable AN27 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 27)
-        volatile ADIE_IE_e an28ie : 1; // Enable/Disable AN28 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 28)
-        volatile ADIE_IE_e an29ie : 1; // Enable/Disable AN29 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 29)
-        volatile ADIE_IE_e an30ie : 1; // Enable/Disable AN30 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
-        #if (ADC_ANINPUT_COUNT > 30)
-        volatile ADIE_IE_e an31ie : 1; // Enable/Disable AN31 Interrupt Generation
-        #else
-        volatile unsigned : 1; // reserved
-        #endif
+            #if (ADC_ANINPUT_COUNT > 16)
+            volatile enum ADIE_IE_e an17ie : 1; // Enable/Disable AN17 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 17)
+            volatile enum ADIE_IE_e an18ie : 1; // Enable/Disable AN18 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 18)
+            volatile enum ADIE_IE_e an19ie : 1; // Enable/Disable AN19 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 19)
+            volatile enum ADIE_IE_e an20ie : 1; // Enable/Disable AN20 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 20)
+            volatile enum ADIE_IE_e an21ie : 1; // Enable/Disable AN21 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 21)
+            volatile enum ADIE_IE_e an22ie : 1; // Enable/Disable AN22 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 22)
+            volatile enum ADIE_IE_e an23ie : 1; // Enable/Disable AN23 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 23)
+            volatile enum ADIE_IE_e an24ie : 1; // Enable/Disable AN24 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 24)
+            volatile enum ADIE_IE_e an25ie : 1; // Enable/Disable AN25 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 25)
+            volatile enum ADIE_IE_e an26ie : 1; // Enable/Disable AN26 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 26)
+            volatile enum ADIE_IE_e an27ie : 1; // Enable/Disable AN27 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 27)
+            volatile enum ADIE_IE_e an28ie : 1; // Enable/Disable AN28 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 28)
+            volatile enum ADIE_IE_e an29ie : 1; // Enable/Disable AN29 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 29)
+            volatile enum ADIE_IE_e an30ie : 1; // Enable/Disable AN30 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
+            #if (ADC_ANINPUT_COUNT > 30)
+            volatile enum ADIE_IE_e an31ie : 1; // Enable/Disable AN31 Interrupt Generation
+            #else
+            volatile unsigned : 1; // reserved
+            #endif
 
-    }__attribute__((packed))bits;
-    volatile uint32_t value;
-} ADIE_t;
-
+        }__attribute__((packed))bits;
+        volatile uint32_t value;
+    } ADIE;
+};
+typedef struct ADIE_s ADIE_t;
 
 // REGISTER 19-24: ADSTATL: ADC DATA READY STATUS REGISTER LOW
 
@@ -3625,50 +3637,53 @@ typedef union {
 
 #define REG_ADSTAT_AN_SET(x)   ((uint32_t)(pow(2, x)))	// Macro to set register bit based on ANx input number
 
-typedef enum {
+enum ADSTAT_ANxRDY_e {
 	ADSTAT_ANx_SET = 0b1,	// DATA READY bit is set for ANx
 	ADSTAT_ANx_CLR = 0b0	// DATA READY bit is cleared for ANx
-} ADSTAT_e;	
+};	
+typedef enum ADSTAT_ANxRDY_e ADSTAT_ANxRDY_t;
 
-typedef union {
-    struct {
-        volatile ADSTAT_e an0rdy : 1; // DATA READY bit AN0
-        volatile ADSTAT_e an1rdy : 1; // DATA READY bit AN1
-        volatile ADSTAT_e an2rdy : 1; // DATA READY bit AN2
-        volatile ADSTAT_e an3rdy : 1; // DATA READY bit AN3
-        volatile ADSTAT_e an4rdy : 1; // DATA READY bit AN4
-        volatile ADSTAT_e an5rdy : 1; // DATA READY bit AN5
-        volatile ADSTAT_e an6rdy : 1; // DATA READY bit AN6
-        volatile ADSTAT_e an7rdy : 1; // DATA READY bit AN7
-        volatile ADSTAT_e an8rdy : 1; // DATA READY bit AN8
-        volatile ADSTAT_e an9rdy : 1; // DATA READY bit AN9
-        volatile ADSTAT_e an10rdy : 1; // DATA READY bit AN10
-        volatile ADSTAT_e an11rdy : 1; // DATA READY bit AN11
-        volatile ADSTAT_e an12rdy : 1; // DATA READY bit AN12
-        volatile ADSTAT_e an13rdy : 1; // DATA READY bit AN13
-        volatile ADSTAT_e an14rdy : 1; // DATA READY bit AN14
-        volatile ADSTAT_e an15rdy : 1; // DATA READY bit AN15
+struct ADSTAT_s {
+    union {
+        struct {
+            volatile enum ADSTAT_ANxRDY_e an0rdy : 1; // DATA READY bit AN0
+            volatile enum ADSTAT_ANxRDY_e an1rdy : 1; // DATA READY bit AN1
+            volatile enum ADSTAT_ANxRDY_e an2rdy : 1; // DATA READY bit AN2
+            volatile enum ADSTAT_ANxRDY_e an3rdy : 1; // DATA READY bit AN3
+            volatile enum ADSTAT_ANxRDY_e an4rdy : 1; // DATA READY bit AN4
+            volatile enum ADSTAT_ANxRDY_e an5rdy : 1; // DATA READY bit AN5
+            volatile enum ADSTAT_ANxRDY_e an6rdy : 1; // DATA READY bit AN6
+            volatile enum ADSTAT_ANxRDY_e an7rdy : 1; // DATA READY bit AN7
+            volatile enum ADSTAT_ANxRDY_e an8rdy : 1; // DATA READY bit AN8
+            volatile enum ADSTAT_ANxRDY_e an9rdy : 1; // DATA READY bit AN9
+            volatile enum ADSTAT_ANxRDY_e an10rdy : 1; // DATA READY bit AN10
+            volatile enum ADSTAT_ANxRDY_e an11rdy : 1; // DATA READY bit AN11
+            volatile enum ADSTAT_ANxRDY_e an12rdy : 1; // DATA READY bit AN12
+            volatile enum ADSTAT_ANxRDY_e an13rdy : 1; // DATA READY bit AN13
+            volatile enum ADSTAT_ANxRDY_e an14rdy : 1; // DATA READY bit AN14
+            volatile enum ADSTAT_ANxRDY_e an15rdy : 1; // DATA READY bit AN15
 
-        volatile ADSTAT_e an16rdy : 1; // DATA READY bit AN16
-        volatile ADSTAT_e an17rdy : 1; // DATA READY bit AN17
-        volatile ADSTAT_e an18rdy : 1; // DATA READY bit AN18
-        volatile ADSTAT_e an19rdy : 1; // DATA READY bit AN19
-        volatile ADSTAT_e an20rdy : 1; // DATA READY bit AN20
-        volatile ADSTAT_e an21rdy : 1; // DATA READY bit AN21
-        volatile ADSTAT_e an22rdy : 1; // DATA READY bit AN22
-        volatile ADSTAT_e an23rdy : 1; // DATA READY bit AN23
-        volatile ADSTAT_e an24rdy : 1; // DATA READY bit AN24
-        volatile ADSTAT_e an25rdy : 1; // DATA READY bit AN25
-        volatile ADSTAT_e an26rdy : 1; // DATA READY bit AN26
-        volatile ADSTAT_e an27rdy : 1; // DATA READY bit AN27
-        volatile ADSTAT_e an28rdy : 1; // DATA READY bit AN28
-        volatile ADSTAT_e an29rdy : 1; // DATA READY bit AN29
-        volatile ADSTAT_e an30rdy : 1; // DATA READY bit AN30
-        volatile ADSTAT_e an31rdy : 1; // DATA READY bit AN31
-    }__attribute__((packed)) bits;
-    volatile uint32_t value;
-} ADSTAT_t;
-
+            volatile enum ADSTAT_ANxRDY_e an16rdy : 1; // DATA READY bit AN16
+            volatile enum ADSTAT_ANxRDY_e an17rdy : 1; // DATA READY bit AN17
+            volatile enum ADSTAT_ANxRDY_e an18rdy : 1; // DATA READY bit AN18
+            volatile enum ADSTAT_ANxRDY_e an19rdy : 1; // DATA READY bit AN19
+            volatile enum ADSTAT_ANxRDY_e an20rdy : 1; // DATA READY bit AN20
+            volatile enum ADSTAT_ANxRDY_e an21rdy : 1; // DATA READY bit AN21
+            volatile enum ADSTAT_ANxRDY_e an22rdy : 1; // DATA READY bit AN22
+            volatile enum ADSTAT_ANxRDY_e an23rdy : 1; // DATA READY bit AN23
+            volatile enum ADSTAT_ANxRDY_e an24rdy : 1; // DATA READY bit AN24
+            volatile enum ADSTAT_ANxRDY_e an25rdy : 1; // DATA READY bit AN25
+            volatile enum ADSTAT_ANxRDY_e an26rdy : 1; // DATA READY bit AN26
+            volatile enum ADSTAT_ANxRDY_e an27rdy : 1; // DATA READY bit AN27
+            volatile enum ADSTAT_ANxRDY_e an28rdy : 1; // DATA READY bit AN28
+            volatile enum ADSTAT_ANxRDY_e an29rdy : 1; // DATA READY bit AN29
+            volatile enum ADSTAT_ANxRDY_e an30rdy : 1; // DATA READY bit AN30
+            volatile enum ADSTAT_ANxRDY_e an31rdy : 1; // DATA READY bit AN31
+        }__attribute__((packed)) bits;
+        volatile uint32_t value;
+    } ADSTAT;
+};
+typedef struct ADSTAT_s ADSTAT_t;
 
 // REGISTER 19-26: ADTRGxH: ADC CHANNEL x TRIGGER SOURCE SELECTION REGISTER 
 
@@ -3807,7 +3822,7 @@ typedef union {
 #define REG_ADTRIGxL_TRGSRC_CSWTRG          0b0000000000000001 // Common Software Trigger
 #define REG_ADTRIGxL_TRGSRC_NONE            0b0000000000000000 // No trigger is selected
 
-typedef enum {
+enum ADTRIG_TRGSRC_e {
 
     ADTRIGx_TRGSRC_ADTRG31    = 0b11111, // ADC Trigger #31 (PPS input)
     ADTRIGx_TRGSRC_LSWTRG     = 0b00010, // Level software trigger
@@ -3870,8 +3885,8 @@ typedef enum {
 
     ADTRIGx_TRGSRC_NONE       = 0b00000 // No trigger is selected
         
-} ADTRIG_TRGSRC_e;
-
+};
+typedef enum ADTRIG_TRGSRC_e ADTRIG_TRGSRC_t;
 
 // REGISTER 19-27: ADCAL0L: ADC CALIBRATION REGISTER 0 LOW
 
@@ -4053,7 +4068,7 @@ typedef enum {
 #define REG_ADCMPxCON_CHNL_AN1          0b0000000100000000      // ADC Input Number used for comparison
 #define REG_ADCMPxCON_CHNL_AN0          0b0000000000000000      // ADC Input Number used for comparison
 
-typedef enum {
+enum ADCMPxCON_CHNL_e {
     ADCMPxCON_CHNL_AN31 = 0b11111,      // ADC Input Number used for comparison
     ADCMPxCON_CHNL_AN30 = 0b11110,      // ADC Input Number used for comparison
     ADCMPxCON_CHNL_AN29 = 0b11101,      // ADC Input Number used for comparison
@@ -4086,88 +4101,99 @@ typedef enum {
     ADCMPxCON_CHNL_AN2  = 0b00010,      // ADC Input Number used for comparison
     ADCMPxCON_CHNL_AN1  = 0b00001,      // ADC Input Number used for comparison
     ADCMPxCON_CHNL_AN0  = 0b00000       // ADC Input Number used for comparison
-}ADCMPxCON_CHNL_e; // Input Channel Number bits
+}; // Input Channel Number bits
+typedef enum ADCMPxCON_CHNL_e ADCMPxCON_CHNL_t; // Input Channel Number bits data type
 
 #define REG_ADCMPxCON_CMPEN_ENABLED     0b0000000010000000      // ADC Digital Comparator Enabled
 #define REG_ADCMPxCON_CMPEN_DISABLED    0b0000000000000000      // ADC Digital Comparator Disabled
 
-typedef enum {
+enum ADCMPxCON_CMPEN_e{
     ADCMPxCON_CMPEN_ENABLED  = 0b1, // ADC Digital Comparator Enabled
     ADCMPxCON_CMPEN_DISABLED = 0b0  // ADC Digital Comparator Disabled
-}ADCMPxCON_CMPEN_e; // Digital Comparator Enable bit
+}; // Digital Comparator Enable bit
+typedef enum ADCMPxCON_CMPEN_e ADCMPxCON_CMPEN_t;
 
 #define REG_ADCMPxCON_IE_ENABLED        0b0000000001000000      // ADC Digital Comparator Common Interrupt Enabled
 #define REG_ADCMPxCON_IE_DISABLED       0b0000000000000000      // ADC Digital Comparator Common Interrupt Disabled
 
-typedef enum {
+enum ADCMPxCON_IE_e{
     ADCMPxCON_IE_ENABLED  = 0b1, // ADC Digital Comparator Common Interrupt Enabled
     ADCMPxCON_IE_DISABLED = 0b0  // ADC Digital Comparator Common Interrupt Disabled
-}ADCMPxCON_IE_e; // Digital Comparator Common ADC Interrupt Enable bit
+}; // Digital Comparator Common ADC Interrupt Enable bit
+typedef enum ADCMPxCON_IE_e ADCMPxCON_IE_t;
 
 #define REG_ADCMPxCON_STAT_ACTIVE       0b0000000000100000      // ADC Digital Comparator Common Interrupt Active
 #define REG_ADCMPxCON_STAT_READY        0b0000000000000000      // ADC Digital Comparator Common Interrupt Pending
 
-typedef enum {
+enum ADCMPxCON_STAT_e{
     ADCMPxCON_STAT_ACTIVE = 0b1, // ADC Digital Comparator event active
     ADCMPxCON_STAT_READY  = 0b0  // ADC Digital Comparator event not active
-}ADCMPxCON_STAT_e; // Digital Comparator Event Status bit
+}; // Digital Comparator Event Status bit
+typedef enum ADCMPxCON_STAT_e ADCMPxCON_STAT_t;
 
 #define REG_ADCMPxCON_BTWN_ENABLED      0b0000000000010000      // Generate Interrupt when ADC buffer between min & max
 #define REG_ADCMPxCON_BTWN_DISABLED     0b0000000000000000      // No Interrupt when ADC buffer between min & max
 
-typedef enum {
+enum ADCMPxCON_BTWN_e{
     ADCMPxCON_BTWN_ACTIVE = 0b1, // Generate Interrupt when ADC buffer between min & max
     ADCMPxCON_BTWN_READY  = 0b0  // No Interrupt when ADC buffer between min & max
-}ADCMPxCON_BTWN_e; // Digital Comparator Between Low/High Comparator Event bit
+}; // Digital Comparator Between Low/High Comparator Event bit
+typedef enum ADCMPxCON_BTWN_e ADCMPxCON_BTWN_t;
 
 #define REG_ADCMPxCON_HIHI_ENABLED      0b0000000000001000      // Generate Interrupt when ADC buffer >= max
 #define REG_ADCMPxCON_HIHI_DISABLED     0b0000000000000000      // No Interrupt when ADC buffer >= max
 
-typedef enum {
+enum ADCMPxCON_HIHI_e{
     ADCMPxCON_HIHI_ACTIVE = 0b1, // Generate Interrupt when ADC buffer >= max
     ADCMPxCON_HIHI_READY  = 0b0  // No Interrupt when ADC buffer >= max
-}ADCMPxCON_HIHI_e; // Digital Comparator Above High Comparator Event bit
+}; // Digital Comparator Above High Comparator Event bit
+typedef enum ADCMPxCON_HIHI_e ADCMPxCON_HIHI_t;
 
 #define REG_ADCMPxCON_HILO_ENABLED      0b0000000000000100      // Generate Interrupt when ADC buffer < max
 #define REG_ADCMPxCON_HILO_DISABLED     0b0000000000000000      // No Interrupt when ADC buffer < max
 
-typedef enum {
+enum ADCMPxCON_HILO_e{
     ADCMPxCON_HILO_ACTIVE = 0b1, // Generate Interrupt when ADC buffer ? max
     ADCMPxCON_HILO_READY  = 0b0  // No Interrupt when ADC buffer ? max
-}ADCMPxCON_HILO_e; // Digital Comparator Below High Comparator Event bit
+}; // Digital Comparator Below High Comparator Event bit
+typedef enum ADCMPxCON_HILO_e ADCMPxCON_HILO_t;
 
 #define REG_ADCMPxCON_LOHI_ENABLED      0b0000000000000010      // Generate Interrupt when ADC buffer ? min
 #define REG_ADCMPxCON_LOHI_DISABLED     0b0000000000000000      // No Interrupt when ADC buffer ? min
 
-typedef enum {
+enum ADCMPxCON_LOHI_e {
     ADCMPxCON_LOHI_ACTIVE = 0b1, // Generate Interrupt when ADC buffer ? min
     ADCMPxCON_LOHI_READY  = 0b0  // No Interrupt when ADC buffer ? min
-}ADCMPxCON_LOHI_e; // Digital Comparator Above Low Comparator Event bit
+}; // Digital Comparator Above Low Comparator Event bit
+typedef enum ADCMPxCON_LOHI_e ADCMPxCON_LOHI_t;
 
 #define REG_ADCMPxCON_LOLO_ENABLED      0b0000000000000001      // Generate Interrupt when ADC buffer < min
 #define REG_ADCMPxCON_LOLO_DISABLED     0b0000000000000000      // No Interrupt when ADC buffer < min
 
-typedef enum {
+enum ADCMPxCON_LOLO_e {
     ADCMPxCON_LOLO_ACTIVE = 0b1, // Generate Interrupt when ADC buffer ? min
     ADCMPxCON_LOLO_READY  = 0b0  // No Interrupt when ADC buffer ? min
-}ADCMPxCON_LOLO_e; // Digital Comparator Below Low Comparator Event bit
+}; // Digital Comparator Below Low Comparator Event bit
+typedef enum ADCMPxCON_LOLO_e ADCMPxCON_LOLO_t;
 
-typedef union {
-    struct {
-        volatile ADCMPxCON_LOLO_e lolo   : 1; // Bit 0: Low/Low Comparator Event bit
-        volatile ADCMPxCON_LOHI_e lohi   : 1; // Bit 1: Low/High Comparator Event bit
-        volatile ADCMPxCON_HILO_e hilo   : 1; // Bit 2: High/Low Comparator Event bit
-        volatile ADCMPxCON_HIHI_e hihi   : 1; // Bit 3: High/High Comparator Event bit
-        volatile ADCMPxCON_BTWN_e btwn   : 1; // Bit 4: Between Low/High Comparator Event bit
-        volatile ADCMPxCON_STAT_e stat   : 1; // Bit 5: Comparator Event Status bit
-        volatile ADCMPxCON_IE_e   ie     : 1; // Bit 6: Comparator Common ADC Interrupt Enable bit
-        volatile ADCMPxCON_CMPEN_e cmpen : 1; // Bit 7: Comparator Enable bit
-        volatile ADCMPxCON_CHNL_e chnl   : 5; // Bit 12-8: Input Channel Number bits
-        volatile unsigned                : 3; // Bit 15-13: (reserved)
-    }__attribute__((packed)) bits; // ADC DIGITAL COMPARATOR x CONTROL REGISTER
-    volatile uint16_t value; // Analog-To-Digital input index (e.g. 3 for AN3)
-} ADCMPxCON_t; // ADC DIGITAL COMPARATOR Settings 
-
+struct ADCMPxCON_s {
+    union {
+        struct {
+            volatile enum ADCMPxCON_LOLO_e lolo   : 1; // Bit 0: Low/Low Comparator Event bit
+            volatile enum ADCMPxCON_LOHI_e lohi   : 1; // Bit 1: Low/High Comparator Event bit
+            volatile enum ADCMPxCON_HILO_e hilo   : 1; // Bit 2: High/Low Comparator Event bit
+            volatile enum ADCMPxCON_HIHI_e hihi   : 1; // Bit 3: High/High Comparator Event bit
+            volatile enum ADCMPxCON_BTWN_e btwn   : 1; // Bit 4: Between Low/High Comparator Event bit
+            volatile enum ADCMPxCON_STAT_e stat   : 1; // Bit 5: Comparator Event Status bit
+            volatile enum ADCMPxCON_IE_e   ie     : 1; // Bit 6: Comparator Common ADC Interrupt Enable bit
+            volatile enum ADCMPxCON_CMPEN_e cmpen : 1; // Bit 7: Comparator Enable bit
+            volatile enum ADCMPxCON_CHNL_e chnl   : 5; // Bit 12-8: Input Channel Number bits
+            volatile unsigned                     : 3; // Bit 15-13: (reserved)
+        }__attribute__((packed)) bits; // ADC DIGITAL COMPARATOR x CONTROL REGISTER
+        volatile uint16_t value; // Analog-To-Digital input index (e.g. 3 for AN3)
+    }ADCMPxCON; // ADC DIGITAL COMPARATOR Settings 
+};
+typedef struct ADCMPxCON_s ADCMPxCON_t;
 
 // REGISTER 19-31: ADCMPxENL: ADC DIGITAL COMPARATOR x CHANNEL ENABLE REGISTER LOW
 
@@ -4210,10 +4236,11 @@ typedef union {
 #define REG_ADCMPxENL_AN15_ENABLED      0b1000000000000000      // Interrupt enabled for AN15
 #define REG_ADCMPxENL_AN15_DISABLED     0b0000000000000000      // Interrupt disabled for AN15
 
-typedef enum {
+enum ADCMPxENL_e {
     ADCMPxENL_ANx_ENABLED  = 0b1,     // Interrupt enabled for ANx 
     ADCMPxENL_ANx_DISABLED = 0b0      // Interrupt disabled for ANx 
-}ADCMPxENL_e;
+};
+typedef enum ADCMPxENL_e ADCMPxENL_t;
 
 // REGISTER 19-32: ADCMPxENH: ADC DIGITAL COMPARATOR x CHANNEL ENABLE REGISTER HIGH
 
@@ -4256,51 +4283,54 @@ typedef enum {
 #define REG_ADCMPxENH_AN31_ENABLED      0b1000000000000000      // Interrupt enabled for AN31
 #define REG_ADCMPxENH_AN31_DISABLED     0b0000000000000000      // Interrupt disabled for AN31
 
-typedef enum {
+enum CMPEN_e {
 	ADCMPxEN_ANx_ENABLED = 0b1,      // Conversion result for corresponding channel is used by the comparator
 	ADCMPxEN_ANx_DISABLED = 0b0      // Conversion result for corresponding channel is not used by the comparator
-} ADCMPxEN_e;   // Comparator Enable for Corresponding Input Channels bits
+}; // Comparator Enable for Corresponding Input Channels bits
+typedef enum CMPEN_e CMPEN_t;   // Comparator Enable for Corresponding Input Channels bits data type
 
-typedef union {
-    
-    struct {
-        volatile ADCMPxEN_e an0cmpen : 1;    // Bit 0: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an1cmpen : 1;    // Bit 1: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an2cmpen : 1;    // Bit 2: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an3cmpen : 1;    // Bit 3: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an4cmpen : 1;    // Bit 4: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an5cmpen : 1;    // Bit 5: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an6cmpen : 1;    // Bit 6: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an7cmpen : 1;    // Bit 7: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an8cmpen : 1;    // Bit 8: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an9cmpen : 1;    // Bit 9: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an10cmpen : 1;    // Bit 10: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an11cmpen : 1;    // Bit 11: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an12cmpen : 1;    // Bit 12: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an13cmpen : 1;    // Bit 13: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an14cmpen : 1;    // Bit 14: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an15cmpen : 1;    // Bit 15: Enable ANx as digital comparator input source
+struct ADCMPxEN_s {
+    union {
+        struct {
+            volatile enum CMPEN_e an0cmpen : 1;    // Bit 0: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an1cmpen : 1;    // Bit 1: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an2cmpen : 1;    // Bit 2: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an3cmpen : 1;    // Bit 3: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an4cmpen : 1;    // Bit 4: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an5cmpen : 1;    // Bit 5: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an6cmpen : 1;    // Bit 6: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an7cmpen : 1;    // Bit 7: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an8cmpen : 1;    // Bit 8: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an9cmpen : 1;    // Bit 9: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an10cmpen : 1;    // Bit 10: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an11cmpen : 1;    // Bit 11: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an12cmpen : 1;    // Bit 12: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an13cmpen : 1;    // Bit 13: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an14cmpen : 1;    // Bit 14: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an15cmpen : 1;    // Bit 15: Enable ANx as digital comparator input source
 
-        volatile ADCMPxEN_e an16cmpen : 1;    // Bit 0: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an17cmpen : 1;    // Bit 1: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an18cmpen : 1;    // Bit 2: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an19cmpen : 1;    // Bit 3: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an20cmpen : 1;    // Bit 4: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an21cmpen : 1;    // Bit 5: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an22cmpen : 1;    // Bit 6: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an23cmpen : 1;    // Bit 7: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an24cmpen : 1;    // Bit 8: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an25cmpen : 1;    // Bit 9: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an26cmpen : 1;    // Bit 10: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an27cmpen : 1;    // Bit 11: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an28cmpen : 1;    // Bit 12: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an29cmpen : 1;    // Bit 13: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an30cmpen : 1;    // Bit 14: Enable ANx as digital comparator input source
-        volatile ADCMPxEN_e an31cmpen : 1;    // Bit 15: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an16cmpen : 1;    // Bit 0: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an17cmpen : 1;    // Bit 1: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an18cmpen : 1;    // Bit 2: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an19cmpen : 1;    // Bit 3: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an20cmpen : 1;    // Bit 4: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an21cmpen : 1;    // Bit 5: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an22cmpen : 1;    // Bit 6: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an23cmpen : 1;    // Bit 7: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an24cmpen : 1;    // Bit 8: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an25cmpen : 1;    // Bit 9: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an26cmpen : 1;    // Bit 10: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an27cmpen : 1;    // Bit 11: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an28cmpen : 1;    // Bit 12: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an29cmpen : 1;    // Bit 13: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an30cmpen : 1;    // Bit 14: Enable ANx as digital comparator input source
+            volatile enum CMPEN_e an31cmpen : 1;    // Bit 15: Enable ANx as digital comparator input source
 
-    }__attribute__((packed)) bits;  // Digital Comparator Input Source Selection
-    volatile uint32_t value;
-}ADCMPxEN_t; // Comparator Enable for Corresponding Input Channels bits
+        }__attribute__((packed)) bits;  // Digital Comparator Input Source Selection
+        volatile uint32_t value;
+    };  // Comparator Enable for Corresponding Input Channels bits
+};
+typedef struct ADCMPxEN_s ADCMPxEN_t; // Comparator Enable for Corresponding Input Channels bits
 
 // REGISTER 19-33: ADFLxCON: ADC DIGITAL FILTER x CONTROL REGISTER
 
@@ -4314,18 +4344,20 @@ typedef union {
 #define REG_ADFLxCON_FLEN_ENABLED           0b1000000000000000      // Digital filter enabled
 #define REG_ADFLxCON_FLEN_DISABLED          0b0000000000000000      // Digital filter disabled
 
-typedef enum {
+enum ADFLxCON_FLEN_e {
     ADFLxCON_FLEN_ENABLED  = 0b1, // Analog filter x is enabled
     ADFLxCON_FLEN_DISABLED = 0b0  // Analog filter x is disabled
-}ADFLxCON_FLEN_e; // Filter Enable bit
+}; // Filter Enable bit
+typedef enum ADFLxCON_FLEN_e ADFLxCON_FLEN_t; // Filter Enable bit data type
 
 #define REG_ADFLxCON_MODE_AVERAGE           0b0110000000000000      // Digital filter operates in Averaging mode
 #define REG_ADFLxCON_MODE_OVERSAMPLE        0b0000000000000000      // Digital filter operates in Oversampling mode
 
-typedef enum {
+enum ADFLxCON_MODE_e {
     ADFLxCON_MODE_AVERAGE    = 0b11, // Analog filter x is enabled
     ADFLxCON_MODE_OVERSAMPLE = 0b00  // Analog filter x is disabled
-}ADFLxCON_MODE_e; // Filter Enable bit
+}; // Filter Enable bit
+typedef enum ADFLxCON_MODE_e ADFLxCON_MODE_t; // Filter Enable bit data type
 
 
 #define REG_ADFLxCON_OVRSAM_LEFT_ALIGN_256X    0b0000110000000000      // Digital filter result alignment left
@@ -4346,7 +4378,7 @@ typedef enum {
 #define REG_ADFLxCON_AVERAGE_RIGHT_ALIGN_4X    0b0110010000000000      // Digital filter result alignment right
 #define REG_ADFLxCON_AVERAGE_RIGHT_ALIGN_2X    0b0110000000000000      // Digital filter result alignment right
 
-typedef enum {
+enum ADFLxCON_OVRSAM_e {
     ADFLxCON_AVERAGE_RIGHT_ALIGN_256X = 0b11111,      // Digital filter result alignment right
     ADFLxCON_AVERAGE_RIGHT_ALIGN_128X = 0b11110,      // Digital filter result alignment right
     ADFLxCON_AVERAGE_RIGHT_ALIGN_64X  = 0b11101,      // Digital filter result alignment right
@@ -4364,23 +4396,26 @@ typedef enum {
     ADFLxCON_OVRSAM_LEFT_ALIGN_8X     = 0b00101,      // Digital filter result alignment left
     ADFLxCON_OVRSAM_LEFT_ALIGN_4X     = 0b00000,      // Digital filter result alignment left
     ADFLxCON_OVRSAM_LEFT_ALIGN_2X     = 0b00100       // Digital filter result alignment left
-}ADFLxCON_OVRSAM_e;
+};
+typedef enum ADFLxCON_OVRSAM_e ADFLxCON_OVRSAM_t;
 
 #define REG_ADFLxCON_IE_ENABLED             0b0000001000000000      // Digital filter result ready interrupt enabled
 #define REG_ADFLxCON_IE_DISABLED            0b0000000000000000      // Digital filter result ready interrupt disabled
 
-typedef enum {
+enum ADFLxCON_IE_e {
     ADFLxCON_IE_ENABLED  = 0b1, // Digital filter result ready interrupt enabled
     ADFLxCON_IE_DISABLED = 0b0  // Digital filter result ready interrupt disabled
-}ADFLxCON_IE_e; // Filter Common ADC Interrupt Enable bit
+}; // Filter Common ADC Interrupt Enable bit
+typedef enum ADFLxCON_IE_e ADFLxCON_IE_t; // Filter Common ADC Interrupt Enable bit data type
 
 #define REG_ADFLxCON_RDY_READY              0b0000000100000000      // Digital filter result ready 
 #define REG_ADFLxCON_RDY_PEND               0b0000000000000000      // Digital filter result pending
 
-typedef enum {
+enum ADFLxCON_RDY_e {
     ADFLxCON_RDY_READY  = 0b1, // Digital filter result ready 
     ADFLxCON_RDY_PEND   = 0b0  // Digital filter result pending
-}ADFLxCON_RDY_e; // Oversampling Filter Data Ready Flag bit
+};
+typedef enum ADFLxCON_RDY_e ADFLxCON_RDY_t; // Oversampling Filter Data Ready Flag bit
 
 #define REG_ADFLxCON_INPUT_MSK              0b0000000001111111      // ADC Core Clock Divider Filter Mask
 #define REG_ADFLxCON_INPUT(x)            (x & REG_ADFLxCON_INPUT_MSK)     // Digital Filter ADC Input Number
@@ -4418,7 +4453,7 @@ typedef enum {
 #define REG_ADFLxCON_INPUT_AN1              0b0000000000000001      // Digital Filter ADC Input Number 
 #define REG_ADFLxCON_INPUT_AN0              0b0000000000000000      // Digital Filter ADC Input Number 
 
-typedef enum {
+enum ADFLxCON_INPUT_e {
     ADFLxCON_INPUT_AN25 = 0b11001,      // Digital Filter ADC Input Number 
     ADFLxCON_INPUT_AN24 = 0b11000,      // Digital Filter ADC Input Number 
     ADFLxCON_INPUT_AN23 = 0b10111,      // Digital Filter ADC Input Number 
@@ -4445,21 +4480,23 @@ typedef enum {
     ADFLxCON_INPUT_AN2  = 0b00010,      // Digital Filter ADC Input Number 
     ADFLxCON_INPUT_AN1  = 0b00001,      // Digital Filter ADC Input Number 
     ADFLxCON_INPUT_AN0  = 0b00000       // Digital Filter ADC Input Number 
-}ADFLxCON_INPUT_e;
+};
+typedef enum ADFLxCON_INPUT_e ADFLxCON_INPUT_t;
 
-typedef union {
-    
-    struct {
-        volatile ADFLxCON_INPUT_e flchsel : 5;  // Bit 4-0: Oversampling Filter Input Channel Selection bits
-        volatile unsigned  : 3;                 // Bit 7-5: (reserved)
-        volatile ADFLxCON_RDY_e rdy : 1;        // Bit 8: Oversampling Filter Data Ready Flag bit
-        volatile ADFLxCON_IE_e ie : 1;          // Bit 9: Filter Common ADC Interrupt Enable bit
-        volatile ADFLxCON_OVRSAM_e ovrsam : 5;  // Bit 14-10: Filter Mode bits + Filter Averaging/Oversampling Ratio bits
-        volatile ADFLxCON_FLEN_e flen : 1;      // Bit 15: Filter Enable bit
-    }__attribute__((packed)) bits;        // ADFLxCON: ADC DIGITAL FILTER x CONTROL REGISTER
-    volatile uint16_t value;
-} ADFLxCON_t;    // ADFLxCON: ADC DIGITAL FILTER x CONTROL REGISTER
-
+struct ADFLxCON_s {
+    union {
+        struct {
+            volatile enum ADFLxCON_INPUT_e flchsel : 5;  // Bit 4-0: Oversampling Filter Input Channel Selection bits
+            volatile unsigned  : 3;                 // Bit 7-5: (reserved)
+            volatile enum ADFLxCON_RDY_e rdy : 1;        // Bit 8: Oversampling Filter Data Ready Flag bit
+            volatile enum ADFLxCON_IE_e ie : 1;          // Bit 9: Filter Common ADC Interrupt Enable bit
+            volatile enum ADFLxCON_OVRSAM_e ovrsam : 5;  // Bit 14-10: Filter Mode bits + Filter Averaging/Oversampling Ratio bits
+            volatile enum ADFLxCON_FLEN_e flen : 1;      // Bit 15: Filter Enable bit
+        }__attribute__((packed)) bits;        // ADFLxCON: ADC DIGITAL FILTER x CONTROL REGISTER
+        volatile uint16_t value;
+    } ADFLxCON;    // ADFLxCON: ADC DIGITAL FILTER x CONTROL REGISTER
+};
+typedef struct ADFLxCON_s ADFLxCON_t;
 
 // ==============================================================================================
 // Global macros 
@@ -4471,39 +4508,30 @@ typedef union {
 // High Speed ADC Core Settings Data Structure (Dedicated ADC Code 0-6 and Shared ADC Core)
 // ==============================================================================================
 
-typedef union {
-    struct {
-        volatile ADCOREx_SAMC_e samc : 10;  // Bit 9-0: Dedicated ADC Core x Conversion Delay Selection bits
-        volatile unsigned : 6;              // Bit 15-10: (reserved)
-    } __attribute__((packed)) bits;   // DEDICATED ADC CORE x CONTROL REGISTER LOW BIT FIELD
-    volatile uint16_t value;  // DEDICATED ADC CORE x CONTROL REGISTER LOW VALUE
-}ADCORExL_t; // DEDICATED ADC CORE x CONTROL REGISTER LOW BIT FIELD AND REGISTER VALUE
+struct ADCORExL_s {
+    union {
+        struct {
+            volatile enum ADCOREx_SAMC_e samc : 10;  // Bit 9-0: Dedicated ADC Core x Conversion Delay Selection bits
+            volatile unsigned : 6;              // Bit 15-10: (reserved)
+        } __attribute__((packed)) bits;   // DEDICATED ADC CORE x CONTROL REGISTER LOW BIT FIELD
+        volatile uint16_t value;  // DEDICATED ADC CORE x CONTROL REGISTER LOW VALUE
+    }ADCORExL; // DEDICATED ADC CORE x CONTROL REGISTER LOW BIT FIELD AND REGISTER VALUE
+};
+typedef struct ADCORExL_s ADCORExL_t; // DEDICATED ADC CORE x CONTROL REGISTER LOW BIT FIELD AND REGISTER VALUE
 
-typedef union {
-    struct {
-        volatile ADCOREx_ADCS_e adcs : 7;   // Bit 6-0: ADC Core x Input Clock Divider bits
-        volatile unsigned : 1;              // Bit 7: (reserved)
-        volatile ADCOREx_RES_e res : 2;     // Bit 9-8: ADC Core x Resolution Selection bits
-        volatile ADCOREx_EISEL_e eisel : 3; // Bit 12-10: ADC Core x Early Interrupt Time Selection bits
-        volatile unsigned : 3;              // Bit 15-13: (reserved)
-    }__attribute__((packed)) bits;    // DEDICATED ADC CORE x CONTROL REGISTER HIGH BIT FIELD
-    volatile uint16_t value;  // DEDICATED ADC CORE x CONTROL REGISTER VALUE
-}ADCORExH_t; // DEDICATED ADC CORE x CONTROL REGISTER HIGH BIT FIELD AND REGISTER VALUE
-
-typedef union {
-    struct {
-        // --- LOW-WORD ---
-        volatile ADCOREx_SAMC_e samc : 10;  // Bit 9-0: Dedicated ADC Core x Conversion Delay Selection bits
-        volatile unsigned : 6;              // Bit 15-10: (reserved)
-        // --- HIGH-WORD ---
-        volatile ADCOREx_ADCS_e adcs : 7;   // Bit 6-0: ADC Core x Input Clock Divider bits
-        volatile unsigned : 1;              // Bit 7: (reserved)
-        volatile ADCOREx_RES_e res : 2;     // Bit 9-8: ADC Core x Resolution Selection bits
-        volatile ADCOREx_EISEL_e eisel : 3; // Bit 12-10: ADC Core x Early Interrupt Time Selection bits
-        volatile unsigned : 3;              // Bit 15-13: (reserved)
-    }__attribute__((packed)) bits;     // DEDICATED ADC CORE x CONTROL REGISTER HIGH BIT FIELD
-    volatile uint32_t value;  // REGISTER HIGH/LOW VALUE (32-bit)
-}ADCOREx_t; // DEDICATED ADC CORE x CONTROL REGISTER HIGH/LOW BIT FIELD AND REGISTER VALUE
+struct ADCORExH_s {
+    union {
+        struct {
+            volatile ADCOREx_ADCS_e adcs : 7;   // Bit 6-0: ADC Core x Input Clock Divider bits
+            volatile unsigned : 1;              // Bit 7: (reserved)
+            volatile ADCOREx_RES_e res : 2;     // Bit 9-8: ADC Core x Resolution Selection bits
+            volatile ADCOREx_EISEL_e eisel : 3; // Bit 12-10: ADC Core x Early Interrupt Time Selection bits
+            volatile unsigned : 3;              // Bit 15-13: (reserved)
+        }__attribute__((packed)) bits;    // DEDICATED ADC CORE x CONTROL REGISTER HIGH BIT FIELD
+        volatile uint16_t value;  // DEDICATED ADC CORE x CONTROL REGISTER VALUE
+    }ADCORExH;
+};
+typedef struct ADCORExH_s ADCORExH_t; // DEDICATED ADC CORE x CONTROL REGISTER HIGH BIT FIELD AND REGISTER VALUE
 
 
 /*!HSADC_ADCORECFG_t
@@ -4570,17 +4598,18 @@ typedef union {
 // ==============================================================================================
 // High Speed ADC Module Base Register Data Structure (ADCONx Registers)
 // ==============================================================================================
- typedef struct {
-    volatile ADCOREx_SAMC_e samc;       // Shared/Dedicated ADC Core Conversion Delay Selection bits
+struct HSADC_CORE_CONFIG_s {
+    volatile enum ADCOREx_SAMC_e samc;       // Shared/Dedicated ADC Core Conversion Delay Selection bits
     #if ADC_CORE_COUNT > 1
     volatile ADCON4_SAMCxEN_e samc_en;  // Flag indicating if sample delay should be enabled/disabled
     #endif
     volatile ADCOREx_EISEL_e eisel;     // ADC Core x Early Interrupt Time Selection bits
     volatile ADCOREx_ADCS_e adcs;       // Shared ADC Core Input Clock Divider bits
     volatile ADCOREx_RES_e res;         // ADC Core x Resolution Selection bits
-} HSADC_CORE_CONFIG_t; // GENERIC ADC CORE CONFIGURAITON REGISTER SETTINGS
+};
+typedef struct HSADC_CORE_CONFIG_s HSADC_CORE_CONFIG_t; // GENERIC ADC CORE CONFIGURAITON REGISTER SETTINGS
 
-typedef struct {
+struct HSADC_CLOCK_CONFIG_s {
     #if defined (ADCORE0L)
     volatile HSADC_CORE_CONFIG_t core0;    // DEDICATED ADC CORE #0 CLOCK CONFIGURAITON REGISTER SETTINGS
     #endif
@@ -4590,91 +4619,101 @@ typedef struct {
     volatile HSADC_CORE_CONFIG_t shared_core; // SHARED ADC CORE CLOCK CONFIGURAITON REGISTER SETTINGS
     volatile ADCON3_CLKDIV_e clkdiv;    // ADC Module Clock Source Divider bits
     volatile ADCON3_CLKSEL_e clksel;    // ADC Module Clock Source Selection bits
-} HSADC_CLOCK_CONFIG_t; // ADC CLOCK CONFIGURAITON REGISTER SETTINGS
+};
+typedef struct HSADC_CLOCK_CONFIG_s HSADC_CLOCK_CONFIG_t; // ADC CLOCK CONFIGURAITON REGISTER SETTINGS
 
-typedef struct {
+struct HSADC_REFERENCE_CONFIG_s {
     volatile ADCON2_REFERCIE_e refercie;    // Band Gap or Reference Voltage Error Common Interrupt Enable bit
     volatile ADCON2_REFCIE_e refcie;        // Band Gap and Reference Voltage Ready Common Interrupt Enable bit
     volatile ADCON3_REFSEL_e refsel;        // ADC Reference Voltage Selection bits
-} HSADC_REFERENCE_CONFIG_t; // ADC REFERENCE CONFIGURAITON REGISTER SETTINGS
+};
+typedef struct HSADC_REFERENCE_CONFIG_s HSADC_REFERENCE_CONFIG_t; // ADC REFERENCE CONFIGURAITON REGISTER SETTINGS
 
-typedef struct {
+struct HSADC_SWTRIG_CONFIG_s {
     volatile ADCON3_CNVCHSEL_e cnvchsel;    // Channel Number Selection for Software Individual Channel Conversion Trigger bits
     volatile ADCON3_SUSPCIE_e suspcie;      // All ADC Core Triggers Disable bit
     volatile ADCON3_SUSPEND_e suspend;      // All ADC Core Triggers Disable bit
-} HSADC_SWTRIG_CONFIG_t; // ADC SOFTWARE TRIGGER CONFIGURAITON REGISTER SETTINGS
+};
+typedef struct HSADC_SWTRIG_CONFIG_s HSADC_SWTRIG_CONFIG_t; // ADC SOFTWARE TRIGGER CONFIGURAITON REGISTER SETTINGS
 
-typedef struct {
-    volatile ADCON5_WARMTIME_e warmtime; // ADC Dedicated Core x Power-up Delay
+struct HSADC_CONTROL_CONFIG_s {
+    volatile enum ADCON5_WARMTIME_e warmtime; // ADC Dedicated Core x Power-up Delay
     volatile ADCON2_PTGEN_e ptgen;      // External Conversion Request Interface bit
     volatile ADCON2_EIEN_e eien;        // Early Interrupts Enable bit
     volatile ADCON1_FORM_e form;        // Fractional Data Output Format bit
     volatile ADCON1_ADSIDL_e adsidl;    // ADC Stop in Idle Mode bit
     volatile ADCON1_ADON_e adon;        // ADC Enable bit
-} HSADC_CONTROL_CONFIG_t; // BASIC ADC MODULE CONTROL REGISTER SETTINGS
+};
+typedef struct HSADC_CONTROL_CONFIG_s HSADC_CONTROL_CONFIG_t; // BASIC ADC MODULE CONTROL REGISTER SETTINGS
 
-typedef struct {
+struct HSADC_ADMODCFG_s {
     volatile HSADC_CLOCK_CONFIG_t cores;      // ADC CLOCK CONFIGURAITON REGISTER SETTINGS
     volatile HSADC_REFERENCE_CONFIG_t refcfg; // ADC REFERENCE CONFIGURAITON REGISTER SETTINGS
     volatile HSADC_SWTRIG_CONFIG_t swtrig;    // ADC SOFTWARE TRIGGER CONFIGURAITON REGISTER SETTINGS
     volatile HSADC_CONTROL_CONFIG_t config;   // BASIC ADC MODULE CONTROL REGISTER SETTINGS
-} HSADC_ADMODCFG_t; // ADC module base register set
-
+}; // ADC module base register set
+typedef struct HSADC_ADMODCFG_s HSADC_ADMODCFG_t; // ADC module base register set data type
 
 // ==============================================================================================
 // High Speed ADC Input Channel Settings Data Structure (ANx inputs 0-31)
 // ==============================================================================================
 
-typedef enum {
+enum ADCORE_ASSIGNMENT_e{
     ANx_CORE_ASSIGNMENT_DEDICATED = 0b1, // Input pin ANx is tied to Dedicated ADC core
     ANx_CORE_ASSIGNMENT_SHARED = 0b1     // Input pin ANx is tied to Shared ADC core
-}ADCORE_ASSIGNMENT_e;
+};
+typedef enum ADCORE_ASSIGNMENT_e ADCORE_ASSIGNMENT_t;
 
 typedef enum {
     ANx_DIFFERENTIAL = 0b1, // Input pin ANx is configured in differential mode
     ANx_SINGLE_ENDED = 0b0  // Input pin ANx is configured in single-ended mode
 }ADMOD_INPUT_MODE_e;
 
-typedef enum {
+enum ADMOD_OUTPUT_DATA_MODE_e {
     ANx_DATA_SIGNED = 0b1, // Input pin ANx output data is signed
     ANx_DATA_UNSIGNED = 0b0  // Input pin ANx output data is unsigned
-}ADMOD_OUTPUT_DATA_MODE_e; // Input pin ANx output data mode
+}; // Input pin ANx output data mode
+typedef enum ADMOD_OUTPUT_DATA_MODE_e ADMOD_OUTPUT_DATA_MODE_t;
 
-typedef struct {
+struct ADCAN_CONFIG_s {
     volatile uint16_t core_index;                   // Index of the ADC core the analog input is connected to
-    volatile ADCORE_ASSIGNMENT_e core_assigmnment;  // Pin ANx is tied to dedicated or shared ADC core bit (read only)
+    volatile enum ADCORE_ASSIGNMENT_e core_assigmnment;  // Pin ANx is tied to dedicated or shared ADC core bit (read only)
     volatile ADMOD_INPUT_MODE_e input_mode;         // Input ANx input mode is differential or single-ended bit
-    volatile ADMOD_OUTPUT_DATA_MODE_e data_mode;    // Input ANx output data mode bit
-    volatile ADLVLTRG_e trigger_mode;               // Level Trigger for corresponding Analog Input Enable bit
-    volatile ADIE_IE_e interrupt_enable;            // Input ANx interrupt enable bit
-    volatile ADEIE_EIEN_e early_interrupt_enable;   // Input ANx early interrupt enable bit
-    volatile ADTRIG_TRGSRC_e trigger_source;        // Input ANx trigger source bits
-} ADCAN_CONFIG_t; // ADC Input Channel Settings 
+    volatile enum ADMOD_OUTPUT_DATA_MODE_e data_mode;    // Input ANx output data mode bit
+    volatile enum ADLVLTRG_e trigger_mode;               // Level Trigger for corresponding Analog Input Enable bit
+    volatile enum ADIE_IE_e interrupt_enable;            // Input ANx interrupt enable bit
+    volatile enum ADEIE_EIEN_e early_interrupt_enable;   // Input ANx early interrupt enable bit
+    volatile enum ADTRIG_TRGSRC_e trigger_source;        // Input ANx trigger source bits
+};
+typedef struct ADCAN_CONFIG_s ADCAN_CONFIG_t; // ADC Input Channel Settings 
 
-typedef struct {
+struct HSADC_ADCANCFG_s  {
     volatile ADCAN_CONFIG_t config; // Analog input configuration
     volatile uint16_t ad_input; // Analog-To-Digital input index (e.g. 3 for AN3)
-}HSADC_ADCANCFG_t; // ADC Input Channel Settings 
+};
+typedef struct HSADC_ADCANCFG_s HSADC_ADCANCFG_t; // ADC Input Channel Settings 
 
 // ==============================================================================================
 // ADC Digital Comparator Object
 // ==============================================================================================
 
-typedef struct {
+struct HSADC_ADCMP_CONFIG_s {
     volatile ADCMPxCON_t ADCMPxCON; // ADC digital comparator configuration
     volatile ADCMPxEN_t ADCMPxEN;   // Analog input source enable selection
     volatile uint16_t ADCMPxLO;   // ADC digital comparator Lower Threshold register
     volatile uint16_t ADCMPxHI;   // ADC digital comparator Upper Threshold register
-}HSADC_ADCMP_CONFIG_t; // ADC DIGITAL COMPARATOR Settings 
+};
+typedef struct HSADC_ADCMP_CONFIG_s HSADC_ADCMP_CONFIG_t; // ADC DIGITAL COMPARATOR Settings 
 
 // ==============================================================================================
 // ADC Digital Comparator Object
 // ==============================================================================================
 
-typedef struct {
-    volatile ADFLxCON_t ADFLxCON;    // ADC digital filter configuration
-    volatile uint16_t ADFLxDAT;             // ADC digital filter result register
-}HSADC_ADFLT_CONFIG_t; // ADC DIGITAL FILTER Settings 
+struct HSADC_ADFLT_CONFIG_s {
+    volatile struct ADFLxCON_s ADFLxCON;    // ADC digital filter configuration
+    volatile uint16_t ADFLxDAT;      // ADC digital filter result register
+};
+typedef struct HSADC_ADFLT_CONFIG_s HSADC_ADFLT_CONFIG_t; // ADC DIGITAL FILTER Settings 
 
 // ==============================================================================================
 // Global Function Prototypes

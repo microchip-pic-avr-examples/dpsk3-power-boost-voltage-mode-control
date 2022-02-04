@@ -10,9 +10,9 @@
 #include "config/hal.h"
 
 // PRIVATE VARIABLE DELARATIONS
-volatile uint16_t tgl_cnt = 0;  // local counter of LED toggle loops
-#define TGL_INTERVAL     4999   // LED toggle interval of (4999 + 1) x 100usec = 500ms
-#define TGL_INTERVAL_ERR  999   // LED toggle interval of ( 999 + 1) x 100usec = 100ms
+static volatile uint16_t tgl_cnt = 0;  // local counter of LED toggle loops
+#define TGL_INTERVAL      4     // LED toggle interval of 5 x 100 ms = 500 ms
+#define TGL_INTERVAL_ERR  0     // LED toggle interval of 1 x 100 ms = 100 ms
 
 volatile DEBUGGING_LED_t debug_led;
 
@@ -54,16 +54,47 @@ volatile uint16_t appLED_Execute(void)
 {
     volatile uint16_t retval = 1;
 
+    DBGPIN1_Set();
+    
+    // Exit early if debugging LED is disabled
+    if (!debug_led.status.bits.enabled)
+        return(1);
+
+    // Change LED toggle frequency when power supply is in fault state
     if (boost.status.bits.fault_active)
         debug_led.period = TGL_INTERVAL_ERR;
     else
         debug_led.period = TGL_INTERVAL;
     
 	// Toggle LED, refresh LCD and reset toggle counter
-	if (tgl_cnt++ > debug_led.period) { // Count n loops until LED toggle interval is exceeded
+	if (++tgl_cnt > debug_led.period) { // Count n loops until LED toggle interval is exceeded
 		DBGLED_Toggle();
+        debug_led.status.bits.on = (bool)(DBGLED_Get() == DBGLED_ON);
 		tgl_cnt = 0;
 	} 
+
+    DBGPIN1_Clear();
+    
+    return(retval);
+}
+
+/*********************************************************************************
+ * @ingroup app-layer-debug-led-functions-public
+ * @fn volatile uint16_t appLED_Start(void)
+ * @brief  Enables the periodic refresh of the debugging LED status
+ * @param  void
+ * @return unsigned int (0=failure, 1=success)
+ * @details
+ *  This routine is used to allow function 'appLED_Execute' to periodically 
+ *  refresh the debugging LED status.
+ **********************************************************************************/
+
+volatile uint16_t appLED_Start(void) 
+{
+    volatile uint16_t retval = 1;
+    
+    debug_led.status.bits.enabled = true;
+    retval &= (uint16_t)(debug_led.status.bits.enabled);
 
     return(retval);
 }

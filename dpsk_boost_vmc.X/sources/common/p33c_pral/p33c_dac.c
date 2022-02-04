@@ -27,29 +27,61 @@
 
 #include "p33c_dac.h"
 
-/*********************************************************************************
- * @fn      volatile struct P33C_DAC_MODULE_s* p33c_DacModule_GetHandle(void)
- * @ingroup lib-layer-pral-functions-public-dac
- * @brief   Gets pointer to DAC Module SFR set
- * @param   void
- * @return  struct P33C_DAC_MODULE_s Pointer to DAC module special function register set object 
- *  
- * @details
- *      This function returns the pointer to a DAC module register set
- *    Special Function Register memory space. This pointer can be used to 
- *    directly write to/read from the Special Function Registers of the 
- *    DAC peripheral module configuration.
- *********************************************************************************/
+// Determine number of available DAC instances on the selected device
+#if defined (DAC8CONL)
+	// Array of pointers to first register of DAC instances on this device
+	volatile uint16_t* p33cDacInstanceHandles[8]={ 
+		&DAC1CONL, &DAC2CONL, &DAC3CONL, &DAC4CONL, 
+		&DAC5CONL, &DAC6CONL, &DAC7CONL, &DAC8CONL 
+	};
+	#define P33C_DAC_COUNT   8
+#elif defined (DAC7CONL)
+	// Array of pointers to first register of DAC instances on this device
+	volatile uint16_t* p33cDacInstanceHandles[7]={ 
+		&DAC1CONL, &DAC2CONL, &DAC3CONL, &DAC4CONL, 
+		&DAC5CONL, &DAC6CONL, &DAC7CONL 
+	};
+	#define P33C_DAC_COUNT   7
+#elif defined (DAC6CONL)
+	// Array of pointers to first register of DAC instances on this device
+	volatile uint16_t* p33cDacInstanceHandles[6]={ 
+		&DAC1CONL, &DAC2CONL, &DAC3CONL, &DAC4CONL, 
+		&DAC5CONL, &DAC6CONL
+	};
+	#define P33C_DAC_COUNT   6
+#elif defined (DAC5CONL)
+	// Array of pointers to first register of DAC instances on this device
+	volatile uint16_t* p33cDacInstanceHandles[5]={ 
+		&DAC1CONL, &DAC2CONL, &DAC3CONL, &DAC4CONL, 
+		&DAC5CONL
+	};
+	#define P33C_DAC_COUNT   5
+#elif defined (DAC4CONL)
+	// Array of pointers to first register of DAC instances on this device
+	volatile uint16_t* p33cDacInstanceHandles[4]={ 
+		&DAC1CONL, &DAC2CONL, &DAC3CONL, &DAC4CONL
+	};
+	#define P33C_DAC_COUNT   4
+#elif defined (DAC3CONL)
+	// Array of pointers to first register of DAC instances on this device
+	volatile uint16_t* p33cDacInstanceHandles[3]={ 
+		&DAC1CONL, &DAC2CONL, &DAC3CONL
+	};
+	#define P33C_DAC_COUNT   3
+#elif defined (DAC2CONL)
+	// Array of pointers to first register of DAC instances on this device
+	volatile uint16_t* p33cDacInstanceHandles[2]={ 
+		&DAC1CONL, &DAC2CONL
+	};
+	#define P33C_DAC_COUNT   2
+#elif defined (DAC1CONL)
+	// Array of pointers to first register of DAC instances on this device
+	volatile uint16_t* p33cDacInstanceHandles[2]={ 
+		&DAC1CONL
+	};
+	#define P33C_DAC_COUNT   1
+#endif
 
-volatile struct P33C_DAC_MODULE_s* p33c_DacModule_GetHandle(void)
-{
-    volatile struct P33C_DAC_MODULE_s* dac;
-    
-    // Capture Handle: set pointer to memory address of desired DAC instance
-    dac = (volatile struct P33C_DAC_MODULE_s*)((volatile uint8_t*) &DACCTRL1L);
-    
-    return(dac);
-}
 
 /*********************************************************************************
  * @fn      volatile uint16_t p33c_DacModule_Dispose(void)
@@ -102,7 +134,7 @@ volatile struct P33C_DAC_MODULE_s p33c_DacModule_ConfigRead(void)
     volatile struct P33C_DAC_MODULE_s* dac;
 
     // Set pointer to memory address of desired DAC instance
-    dac = (volatile struct P33C_DAC_MODULE_s*)((volatile uint8_t*) &DACCTRL1L);
+    dac = p33c_DacModule_GetHandle();
 
     return(*dac);
     
@@ -134,7 +166,7 @@ volatile uint16_t p33c_DacModule_ConfigWrite(
     volatile struct P33C_DAC_MODULE_s* dac;    
 
     // Set pointer to memory address of the DAC module base registers
-    dac = (volatile struct P33C_DAC_MODULE_s*)((volatile uint8_t*) &DACCTRL1L);
+    dac = p33c_DacModule_GetHandle();
     *dac = dacModuleConfig;
     
     return(retval);
@@ -145,33 +177,6 @@ volatile uint16_t p33c_DacModule_ConfigWrite(
 /* ============================================================================== */
 /* ============================================================================== */
 /* ============================================================================== */
-
-
-/*********************************************************************************
- * @fn      volatile struct P33C_DAC_INSTANCE_s* p33c_DacInstance_GetHandle(volatile uint16_t dacInstance)
- * @ingroup lib-layer-pral-functions-public-dac
- * @brief   Gets pointer to DAC Instance SFR set
- * @param   dacInstance  Index of the selected DAC Instance (1=DAC1, 2=DAC2, etc.)
- * @return  DAC instance object of type struct P33C_DAC_INSTANCE_s of the selected DAC instance 
- *  
- * @details
- *    This function returns the pointer to a DAC instance register set in 
- *    Special Function Register memory space. This pointer can be used to directly
- *    write to/read from the Special Function Registers of a given peripheral
- *    instance.
- * 
- *********************************************************************************/
-
-volatile struct P33C_DAC_INSTANCE_s* p33c_DacInstance_GetHandle(volatile uint16_t dacInstance)
-{
-    volatile struct P33C_DAC_INSTANCE_s* dac;
-    
-    // Capture Handle: set pointer to memory address of desired DAC instance
-    dac = (volatile struct P33C_DAC_INSTANCE_s*) 
-        ((volatile uint8_t*) &DAC1CONL + ((dacInstance - 1) * P33C_DAC_SFR_OFFSET));
-    
-    return(dac);
-}
 
 /*********************************************************************************
  * @fn      volatile uint16_t p33c_DacInstance_Dispose(volatile uint16_t dacInstance)
@@ -223,8 +228,7 @@ volatile struct P33C_DAC_INSTANCE_s p33c_DacInstance_ConfigRead(volatile uint16_
     volatile struct P33C_DAC_INSTANCE_s* dac;
 
     // Set pointer to memory address of desired DAC instance
-    dac = (volatile struct P33C_DAC_INSTANCE_s*) 
-        ((volatile uint8_t*) &DAC1CONL + ((dacInstance - 1) * P33C_DAC_SFR_OFFSET));
+    dac = p33c_DacInstance_GetHandle(dacInstance);
 
     return(*dac);
     
@@ -257,8 +261,7 @@ volatile uint16_t p33c_DacInstance_ConfigWrite(
     volatile struct P33C_DAC_INSTANCE_s* dac;    
 
     // Set pointer to memory address of desired DAC instance
-    dac = (volatile struct P33C_DAC_INSTANCE_s*) 
-        ((volatile uint8_t*) &DAC1CONL + ((dacInstance - 1) * P33C_DAC_SFR_OFFSET));
+    dac = p33c_DacInstance_GetHandle(dacInstance);
     *dac = dacConfig;
     
     return(retval);

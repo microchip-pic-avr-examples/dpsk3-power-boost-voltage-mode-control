@@ -1,7 +1,7 @@
 /*************************************************************************************************
  * <b>Software License Agreement</b>
  *
- * Copyright © 2020 Microchip Technology Inc.  All rights reserved. Microchip licenses to you the
+ * Copyright © 2021 Microchip Technology Inc.  All rights reserved. Microchip licenses to you the
  * right to use, modify, copy and distribute Software only when embedded on a Microchip 
  * microcontroller or digital signal controller, which is integrated into your product or third 
  * party product (pursuant to the sublicense terms in the accompanying license agreement).
@@ -49,16 +49,33 @@
 
 #if defined (__P33SMPS_CK__) || defined (__P33SMPS_CH__)
 
-#include "p33c_ccp.h"  ///< include Capture/Compare instance SFR abstraction driver file
-#include "p33c_dac.h"  ///< include Digital-to-Analog Converter module & instance SFR abstraction driver file
-#include "p33c_dsp.h"  ///< include Digital Signal Processor configuration SFR abstraction driver file
-#include "p33c_gpio.h" ///< include GPIO instance SFR abstraction driver file
-#include "p33c_opa.h"  ///< include Operational Amplifier SFR abstraction driver file
-#include "p33c_osc.h"  ///< include Oscillator module SFR abstraction driver file
-#include "p33c_pps.h"  ///< include Peripheral Pin Select SFR abstraction driver file
-#include "p33c_pwm.h"  ///< include high-speed PWM module & instance SFR abstraction driver file
+    #include "p33c_macros.h"    ///< include generic dsPIC33C CPU macros
 
-#include "p33c_macros.h"  ///< include generic dsPIC33C CPU instruction macros
+	// List of peripherals supported by both cores
+    #include "p33c_ccp.h"       ///< include Capture/Compare instance SFR abstraction driver file
+	#include "p33c_crc.h"		///< include Cyclic Redundancy Check peripheral SFR abstraction driver file
+    #include "p33c_dac.h"       ///< include Digital-to-Analog Converter module & instance SFR abstraction driver file
+    #include "p33c_dma.h"       ///< include Direct Memory Access module & instance SFR abstraction driver file
+    #include "p33c_dsp.h"       ///< include Digital Signal Processor configuration SFR abstraction driver file
+    #include "p33c_gpio.h"      ///< include GPIO instance SFR abstraction driver file
+    #include "p33c_mpuart.h"    ///< include Multi-Protocol UART SFR abstraction driver file
+    #include "p33c_osc.h"       ///< include Oscillator module SFR abstraction driver file
+    #include "p33c_pmd.h"       ///< include Peripheral Module Disable SFR abstraction driver file
+    #include "p33c_pps.h"       ///< include Peripheral Pin Select SFR abstraction driver file
+    #include "p33c_pwm.h"       ///< include high-speed PWM module & instance SFR abstraction driver file
+    #include "p33c_timer.h"     ///< include standard 16-bit timer module SFR abstraction driver file
+
+	#include "p33c_uart.h"		///< include standard UART function driver file
+
+	// List of peripherals only supported by dual core devices
+	#if defined (__P33SMPS_CH__)
+      // (none)
+	#endif
+
+	// List of peripherals only supported by single core devices
+	#if defined (__P33SMPS_CK__)
+      #include "p33c_opa.h"       ///< include Operational Amplifier SFR abstraction driver file
+	#endif
 
 #else
     #pragma message "warning: currently selected device is not supported by XC16 Periperhal Register Abstraction Layer (PRAL) drivers"

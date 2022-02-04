@@ -40,6 +40,7 @@
 // COMMON SOFTWARE MODULES
 #include "config/hal.h"
 #include "config/system.h"
+#include "os/rtos.h"
 
 // APPLICATION LAYER HEADER FILES
 #include "config/apps.h"

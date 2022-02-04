@@ -74,6 +74,21 @@
     } __attribute__((packed));
     typedef struct P33C_DAC_MODULE_s P33C_DAC_MODULE_t; // PDM DAC MODULE REGISTER SET
     
+	/*********************************************************************************
+	 * @def     p33c_DacModule_GetHandle()
+	 * @ingroup lib-layer-pral-functions-public-dac
+	 * @brief   Gets pointer to DAC Module SFR set
+	 * @param   void
+	 * @return  struct P33C_DAC_MODULE_s Pointer to DAC module special function register set object 
+	 *  
+	 * @details
+	 *      This function returns the pointer to a DAC module register set
+	 *    Special Function Register memory space. This pointer can be used to 
+	 *    directly write to/read from the Special Function Registers of the 
+	 *    DAC peripheral module configuration.
+	 *********************************************************************************/
+	#define p33c_DacModule_GetHandle(x) (struct P33C_DAC_MODULE_s*)&DACCTRL1L
+	
 #endif
 
 // GENERIC PDM DAC INSTANCE SPECIAL FUNCTION REGISTER SET
@@ -123,16 +138,35 @@
     } __attribute__((packed));
     typedef struct P33C_DAC_INSTANCE_s P33C_DAC_INSTANCE_t; // PDM DAC INSTANCE REGISTER SET
     
-/*********************************************************************************
- * @ingroup lib-layer-pral-properties-public-dac
- * @def     P33C_CCPGEN_SFR_OFFSET
- * @brief   Derives the address offset between two peripheral instances
- * @details
- * This macro derives the address offset between two peripheral instances. 
- * Users can use this address offset to derive the start address to/from which
- * the register set should be written or read.
- **********************************************************************************/
+	/*********************************************************************************
+	 * @ingroup lib-layer-pral-properties-public-dac
+	 * @def     P33C_CCPGEN_SFR_OFFSET
+	 * @brief   Derives the address offset between two peripheral instances
+	 * @details
+	 * This macro derives the address offset between two peripheral instances. 
+	 * Users can use this address offset to derive the start address to/from which
+	 * the register set should be written or read.
+	 **********************************************************************************/
     #define P33C_DAC_SFR_OFFSET  ((volatile uint16_t)&DAC2CONL - (volatile uint16_t)&DAC1CONL)
+
+
+	/*********************************************************************************
+	 * @def     p33c_DacInstance_GetHandle(x)
+	 * @ingroup lib-layer-pral-functions-public-dac
+	 * @brief   Gets pointer to DAC Instance 'x' SFR set
+	 * @param   x   Index of the selected DAC Instance of type unsinged integer (1=DAC1, 2=DAC2, etc.)
+	 * @return  DAC instance object of type struct P33C_DAC_INSTANCE_s of the selected DAC instance 
+	 *  
+	 * @details
+	 *    This function returns the pointer to a DAC instance register set in 
+	 *    Special Function Register memory space. This pointer can be used to directly
+	 *    write to/read from the Special Function Registers of a given peripheral
+	 *    instance.
+	 * 
+	 *********************************************************************************/
+	extern volatile uint16_t* p33cDacInstanceHandles[];
+	#define p33c_DacInstance_GetHandle(x) (struct P33C_DAC_INSTANCE_s*)p33cDacInstanceHandles[(x-1)]
+
 
 #endif
 
@@ -141,19 +175,12 @@
  * API FUNCTION PROTOTYPES
  * ********************************************************************************************* */
 
-extern volatile struct P33C_DAC_MODULE_s* p33c_DacModule_GetHandle(void);
-
 extern volatile uint16_t p33c_DacModule_Dispose(void);
-
 extern volatile struct P33C_DAC_MODULE_s p33c_DacModule_ConfigRead(void);
 extern volatile uint16_t p33c_DacModule_ConfigWrite(
                     volatile struct P33C_DAC_MODULE_s dacConfig
                 );
 
-
-extern volatile struct P33C_DAC_INSTANCE_s* p33c_DacInstance_GetHandle(
-                    volatile uint16_t dacInstance
-                );
 
 extern volatile uint16_t p33c_DacInstance_Dispose(
                     volatile uint16_t dacInstance

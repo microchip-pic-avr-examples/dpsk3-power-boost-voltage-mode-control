@@ -66,6 +66,7 @@ extern volatile LCD_t lcd;
 // PUBLIC FUNCTION PROTOTYPE DECLARATION
 extern volatile uint16_t appLCD_Initialize(void);
 extern volatile uint16_t appLCD_Execute(void);
+extern volatile uint16_t appLCD_Start(void);
 extern volatile uint16_t appLCD_Dispose(void);
 
 #endif	/* APPLICATION_LAYER_LC_DISPLAY_H */

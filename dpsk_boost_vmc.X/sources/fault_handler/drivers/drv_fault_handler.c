@@ -5,7 +5,7 @@
  * Created on December 27, 2019, 12:21 PM
  */
 /**
- *  (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ *  (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  *  Subject to your compliance with these terms, you may use Microchip software
  *  and any derivatives exclusively with Microchip products. You're responsible
@@ -41,7 +41,7 @@
 #include <stdbool.h> // include standard boolean data types
 #include <stdlib.h> // include standard library data types and macros
 
-#include "drv_fault_handler.h" // 
+#include "drv_fault_handler.h" // include fault handler device driver header file
 
 
 /*******************************************************************************
@@ -72,9 +72,12 @@ volatile struct FAULT_OBJECT_s fltObjectClear =
         .RecoveryResponse.ptrResponseFunction = NULL,  ///< Clear fault recovery response function pointer
     };
 
+// Public fault monitor object
+volatile struct FAULT_MONITOR_s FaultMonitor;
+
 /*******************************************************************************
  * @fn	uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltObject)
- * @ingroup lib-layer-fault-functions-public
+ * @ingroup lib-layer-fault-functions-private
  * @param	fltObject Pointer to a Fault Monitoring Object of type struct FAULT_OBJECT_s
  * @return  unsigned integer (0=failure, 1=success)
  *
@@ -165,7 +168,7 @@ volatile struct FAULT_OBJECT_s fltObjectClear =
  * 
  *****************************************************************************/
 
-volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltObject) {
+static volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltObject) {
 
     volatile uint16_t retval=1;
     volatile uint16_t source=0;
@@ -287,6 +290,150 @@ volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* f
     
     return (retval); // Fault handler executed successfully
 }
+
+/*********************************************************************************
+ * @ingroup lib-layer-fault-functions-public
+ * @fn      volatile uint16_t drv_FaultHandler_ScanObjects(volatile struct FAULT_OBJECT_s* fltObjectList[], volatile uint16_t size)
+ * @brief   Scans a list of user-defined fault objects
+ * @param   fltObjectList[] Pointer array of user defined fault objects of type struct FAULT_OBJECT_s
+ * @param   size Size of the pointer array of user defined fault objects of type unsigned integer
+ * @return  unsigned integer (0=failure, 1=success)
+ * @details
+ *  This function scans through a list of user defined fault objects of type 
+ * FAULT_OBECT_s executing the check of declared fault conditions. Each fault
+ * object is capable of raising an individual fault response and fault reset 
+ * function call, which can be considered as the equivalent of a software 
+ * triggered interrupt.
+ * 
+ * During the scan the status of each individual fault object is logged and 
+ * merged into one common fault condition flag bit FaultMonitor.Status.bits.FaultStatus.
+ * This common fault condition flag is also use to detect a Fault Recovery condition.
+ * Users can specify a global function used to reset the system wide fault condition
+ * triggering a system-wide recovery procedure.
+ * 
+ * The fault scan also allows to specify if the system should be locked in a
+ * latched fault state if a given number of successive restart attempts failed.
+ * The maximum number of restart attempts can be specified by setting the fault 
+ * monitor property FaultMonitor.FaultLatchCount to a value greater than one. If the 
+ * property FaultMonitor.FaultLatchCount is set to zero, no latched fault condition
+ * will be triggered then the system will initiate an unlimited number of recovery 
+ * attempts.
+ * 
+ * This function requires users to declare a list (array) of pointers to 
+ * individually declared fault objects, like shown in the following code 
+ * example:
+ *
+ * <p><b>Example:</b></p>
+ * @code{.c}
+ *       volatile struct FAULT_OBJECT_s* FaultObjectList[] = {
+ *           &fltobj_Object_1,
+ *           &fltobj_Object_2,
+ *           (...),
+ *           &fltobj_Object_n
+ *       };
+ * @endcode
+ *
+ * @note
+ *  The size of this list can be determined by using the following declaration 
+ * example:
+ *
+ * @code{.c}
+ * volatile uint16_t FaultObjectList_size = (sizeof(FaultObjectList)/sizeof(FaultObjectList[0]));
+ * @endcode
+ * 
+ **********************************************************************************/
+
+volatile uint16_t drv_FaultHandler_ScanObjects(volatile struct FAULT_OBJECT_s* fltObjectList[], volatile uint16_t size)
+{
+    volatile uint16_t retval=1;
+	volatile uint16_t _i=0;
+    volatile uint16_t _fltlog=0;
+    volatile bool _fltstate=false;
+    static   bool _pre_fltstate=false;
+    
+    // Scan through all defined fault objects and log their state in common fault state flag
+    for (_i=size; _i>0; _i--)
+    {
+        retval &= drv_FaultHandler_CheckObject(fltObjectList[(_i-1)]);
+        _fltstate |= fltObjectList[(_i-1)]->Status.bits.FaultStatus;
+        _fltlog <<= _i;
+        _fltlog |= fltObjectList[(_i-1)]->Status.bits.FaultStatus;
+    }
+
+    // Update common fault state flag status
+    FaultMonitor.Status.bits.FaultStatus = _fltstate;
+    FaultMonitor.FaultStatusList = _fltlog;
+    
+    if ((_pre_fltstate) && (!_fltstate))
+    { 
+        if (FaultMonitor.FaultRecoveryCounter++ < FaultMonitor.FaultLatchCount)
+        {   if (FaultMonitor.FaultRecovery != NULL)     // Check if recovery function has been assigned
+                retval &= FaultMonitor.FaultRecovery(); // Initiate fault recovery attempt
+        }
+        else
+        { // Latch system-wide Fault Condition
+            if(FaultMonitor.FaultLatchCount > 0) {
+                FaultMonitor.Status.bits.FaultStatus = true; 
+                FaultMonitor.Status.bits.FaultLatch = true; 
+                FaultMonitor.FaultRecoveryCounter = FaultMonitor.FaultLatchCount;
+            }
+        }
+    }
+    
+    // Track global fault bit transitions
+    _pre_fltstate = _fltstate;
+    
+	return(retval);
+
+}
+
+/*********************************************************************************
+ * @ingroup lib-layer-fault-functions-public
+ * @fn      volatile uint16_t drv_FaultHandler_Dispose(volatile struct FAULT_OBJECT_s* fltObjectList[], volatile uint16_t size)
+ * @brief   Disposes a list of user-defined fault objects
+ * @param   fltObjectList[] Pointer array of user defined fault objects of type struct FAULT_OBJECT_s
+ * @param   size Size of the pointer array of user defined fault objects of type unsigned integer
+ * @return  unsigned integer (0=failure, 1=success)
+ * @details
+ *  This function disposes a list of user defined fault objects of type 
+ * FAULT_OBECT_s by clearing all settings. 
+ * 
+ * This function requires users to declare a list (array) of pointers to 
+ * individually declared fault objects, like shown in the following code 
+ * example:
+ *
+ * <p><b>Example:</b></p>
+ * @code{.c}
+ *       volatile struct FAULT_OBJECT_s* FaultObjectList[] = {
+ *           &fltobj_Object_1,
+ *           &fltobj_Object_2,
+ *           (...),
+ *           &fltobj_Object_n
+ *       };
+ * @endcode
+ *
+ * @note
+ *  The size of this list can be determined by using the following declaration 
+ * example:
+ *
+ * @code{.c}
+ * volatile uint16_t FaultObjectList_size = (sizeof(FaultObjectList)/sizeof(FaultObjectList[0]));
+ * @endcode
+ * 
+ **********************************************************************************/
+
+volatile uint16_t drv_FaultHandler_Dispose(volatile struct FAULT_OBJECT_s* fltObjectList[], volatile uint16_t size)
+{
+    volatile uint16_t retval=1;
+	volatile uint16_t _i=0;
+    
+    for (_i=0; _i<size; _i++)
+    { *fltObjectList[_i] = fltObjectClear; }
+    
+	return(retval);
+
+}
+
 
 
 // end of file

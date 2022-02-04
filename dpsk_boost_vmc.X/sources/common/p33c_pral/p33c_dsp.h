@@ -163,34 +163,35 @@ enum CORCON_IF_e{
 }; 
 typedef enum CORCON_IF_e CORCON_IF_t; // Integer or Fractional Multiplier Mode Select bit
 
-struct DSP_CONFIG_s
+struct P33C_DSP_CONFIG_s
 {
     union {
-    struct {
-        volatile CORCON_IF_t IF : 1; // Integer or Fractional Multiplier Mode Select bit
-        volatile CORCON_RND_t RND : 1; // Rounding Mode Select bit
-        volatile CORCON_SFA_t SFA : 1; // Stack Frame Active Status bit
-        volatile CORCON_IPL3_STAT_t IPL3 : 1; // CPU Interrupt Priority Level Status bit 3
-        volatile CORCON_ACCSAT_t ACCSAT : 1; // Accumulator Saturation Mode Select bit
-        volatile CORCON_SATDW_t SATDW : 1; // Data Space Write from DSP Engine Saturation Enable bit
-        volatile CORCON_SATB_t SATB : 1; // ACCB Saturation Enable bit
-        volatile CORCON_SATA_t SATA : 1; // ACCA Saturation Enable bit
+        struct tagCORCONBITS bits; // Register bit-field
+        uint16_t value; // 16-bit wide register value
+    } CORCON; // CORCON: CORE CONTROL REGISTER VALUE
 
-        volatile CORCON_DL_STAT_t DL : 3; // DO Loop Nesting Level Status bits
-        volatile CORCON_EDT_t EDT : 1; // Early DO Loop Termination Control bit
-        volatile CORCON_US_t US : 2; // DSP Multiply Unsigned/Signed Control bits
-        volatile unsigned : 1; // reserved
-        volatile CORCON_VAR_t VAR : 1; // Variable Exception Processing Latency Control bit
-    } __attribute__((packed)) bits; // CORCON: CORE CONTROL REGISTER BITFIELD
-
-    volatile uint16_t value;  // CORCON: CORE CONTROL REGISTER VALUE
-    };
 }; 
-typedef struct DSP_CONFIG_s DSP_CONFIG_t; // CORCON: CORE CONTROL REGISTER
+typedef struct P33C_DSP_CONFIG_s P33C_DSP_CONFIG_t; // CORCON: CORE CONTROL REGISTER
+
+/*********************************************************************************
+ * @fn      volatile struct P33C_DSP_CONFIG_s* p33c_Dsp_GetHandle(void)
+ * @ingroup lib-layer-pral-functions-public-dsp
+ * @brief   Gets pointer to DSP Module SFR set
+ * @param   void
+ * @return  struct P33C_DSP_CONFIG_s Pointer to DSP module special function register set object 
+ *  
+ * @details
+ *      This function returns the pointer to the DSP configuration register 
+ *    in Special Function Register memory space. This pointer can be used to 
+ *    directly write to/read from the Special Function Registers of the DSP 
+ *    peripheral module configuration.
+ *********************************************************************************/
+    #define p33c_DspConfig_GetHandle() (struct P33C_DSP_CONFIG_s*)&CORCON
+
 
 /* PROTOTYPES */
-extern volatile uint16_t Dsp_SetConfig(volatile struct DSP_CONFIG_s dsp_cfg);
-extern volatile struct DSP_CONFIG_s Dsp_GetConfig(void);
+extern volatile uint16_t p33c_Dsp_WriteConfig(volatile struct P33C_DSP_CONFIG_s dsp_cfg);
+extern volatile struct P33C_DSP_CONFIG_s p33c_Dsp_ReadConfig(void);
 
 #endif /* end of P33C_DSP_SFR_ABSTRACTION_H */ 
 
