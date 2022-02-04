@@ -36,7 +36,7 @@
 #include <stdbool.h> // include standard boolean data types
 #include <stddef.h> // include standard definition data types
 #include <math.h> // include standard math functions library
-
+#include "config/mcal.h"
 
 /* DPSK3 BOARD CIRCUIT SEGMENTS */
 
@@ -98,7 +98,7 @@
 
 // ADC/DAC Reference and Resolution Settings    
 #define ADC_REFERENCE       (float)3.300 ///< ADC reference voltage in [V]
-#define ADC_RESOLUTION      (float)12.0  ///< ADC resolution in [bit]
+//#define ADC_RESOLUTION      (float)12.0  ///< ADC resolution in [bit]
 
 // PWM/ADC Clock Settings   
 #define PWM_CLOCK_HIGH_RESOLUTION   true ///< Enables/disables the PWM generator high resolution mode of 250 ps versus 2 ns
@@ -122,10 +122,10 @@
  * in physical quantities, into binary (integer) numbers to be written to variables and SFRs.
  */
 
-#define CPU_TCY             (float)(1.0/CPU_FREQUENCY) ///< Instruction period
-#define ADC_GRANULARITY     (float)(ADC_REFERENCE / pow(2.0, ADC_RESOLUTION)) ///< ADC granularity in [V/tick]
-#define ADC_VALUE_MAX       (uint16_t) (pow(2.0, ADC_RESOLUTION) - 1.0) // DO NOT CHANGE
-#define PWM_CLOCK_PERIOD    (float)(1.0/PWM_CLOCK_FREQUENCY) ///< PWM Clock Period in [sec]
+//#define CPU_TCY             (float)(1.0/CPU_FREQUENCY) ///< Instruction period
+//#define ADC_GRANULARITY     (float)(ADC_REFERENCE / pow(2.0, ADC_RESOLUTION)) ///< ADC granularity in [V/tick]
+//#define ADC_VALUE_MAX       (uint16_t) (pow(2.0, ADC_RESOLUTION) - 1.0) // DO NOT CHANGE
+//#define PWM_CLOCK_PERIOD    (float)(1.0/PWM_CLOCK_FREQUENCY) ///< PWM Clock Period in [sec]
 
 /** @} */ // end of group device-abstraction-macros
 
