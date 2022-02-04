@@ -12,8 +12,8 @@
 
 // PRIVATE VARIABLE DELARATIONS
 
-#define PUSH_BUTTON_DEBOUNCE_DELAY_DEFAULT    199    // Push Button needs to be pressed >20ms to trip a PUSH BUTTON switch event
-#define PUSH_BUTTON_LONG_PRESS_DELAY_DEFAULT  4999   // Push Button needs to be pressed >500ms to trip a PUSH BUTTON switch event
+#define PUSH_BUTTON_DEBOUNCE_DELAY_DEFAULT    1    // Push Button needs to be pressed >20ms to trip a PUSH BUTTON switch event
+#define PUSH_BUTTON_LONG_PRESS_DELAY_DEFAULT  24   // Push Button needs to be pressed >500ms to trip a PUSH BUTTON switch event
 
 volatile PUSH_BUTTON_OBJECT_t push_button;
 
@@ -48,9 +48,9 @@ volatile uint16_t appPushButton_Initialize(void)
     
     retval &= drv_PushButton_Initialize(&push_button);   
     
+    push_button.status.bits.enabled = false;
     push_button.debounce_delay = PUSH_BUTTON_DEBOUNCE_DELAY_DEFAULT;
     push_button.long_press_delay = PUSH_BUTTON_LONG_PRESS_DELAY_DEFAULT;
-    push_button.status.bits.enabled = true;
     
     push_button.event_btn_down = &appPushButton_EventButtonDown;
     push_button.event_btn_up = &appPushButton_EventButtonUp;
@@ -72,9 +72,9 @@ volatile uint16_t appPushButton_Initialize(void)
  *  application example to switch between different LCD screens allowing the 
  *  user to view runtime data.
  *  
- *  This function monitors the defined general purpose I/O to detect the status 
- *  of the on-board push button 'USER', scanning for Long Press events, which 
- *  will trigger the switch-over between different LCD screens.
+ *  All user settings will get reset. The PUSH_BUTTON_OBJECT_t data 
+ *  object holding all user-defined settings of the push-button object need
+ *  to be re-initialized before this function driver can be used again. * 
  *
  **********************************************************************************/
 
@@ -82,7 +82,39 @@ volatile uint16_t appPushButton_Execute(void)
 {
     volatile uint16_t retval = 1;
 
+    DBGPIN1_Set();
+
     retval &= drv_PushButton_Execute(&push_button);
+
+    DBGPIN1_Clear();
+
+    return(retval);
+}
+
+/*********************************************************************************
+ * @ingroup app-layer-push-button-functions-public
+ * @fn volatile uint16_t appPushButton_Start(void)
+ * @brief  Starts the push button data object 
+ * @param  void
+ * @return unsigned integer (0=failure, 1=success)
+ * 
+ * @details
+ *  This function is used to unload all push button function driver data 
+ *  objects and free their resources. 
+ * 
+ *  This function enables the pre-configured general purpose I/O monitoring 
+ *  software function detecting the status of the on-board push button 'USER',
+ *  scanning for Long Press events, which will trigger the switch-over between 
+ *  different LCD screens.
+ *  
+ *  **********************************************************************************/
+
+volatile uint16_t appPushButton_Start(void) {
+    
+    volatile uint16_t retval = 1;
+
+    push_button.status.bits.enabled = true;
+    retval &= (uint16_t)(push_button.status.bits.enabled);
 
     return(retval);
 }
@@ -201,7 +233,7 @@ volatile uint16_t appPushButton_EventButtonPressed(void)
 volatile uint16_t appPushButton_EventButtonLongPress(void) {
     
     lcd.screen += 1;    // increment screen index
-    if (lcd.screen > lcd.screens) // Roll-over after screen #2
+    if (lcd.screen >= lcd.screens) // Roll-over after last screen
         lcd.screen = 0; // Reset to default view
     return(1);
 }

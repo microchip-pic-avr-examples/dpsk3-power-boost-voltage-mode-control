@@ -47,6 +47,7 @@ extern volatile struct FAULT_OBJECT_s fltobj_BoostOCP;
 // PUBLIC FUNCTION PROTOTYPE DECLARATIONS
 extern volatile uint16_t appFaultMonitor_Initialize(void);
 extern volatile uint16_t appFaultMonitor_Execute(void);
+extern volatile uint16_t appFaultMonitor_Start(void);
 extern volatile uint16_t appFaultMonitor_Dispose(void);
 
 #endif	/* APPLICATION_LAYER_FAULTS_HEADER_H */

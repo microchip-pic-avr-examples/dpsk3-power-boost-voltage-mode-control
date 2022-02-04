@@ -20,33 +20,33 @@
  */
 
 /* 
- * File:   main.h
+ * File:   os.h
  * Author: M91406
- * Comments: main header file of this application
+ * Comments: global defines of the operating system
  * Revision history: 
  * v1.0 initial version
  */
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef APPLICATION_MAIN_HEADER_H
-#define	APPLICATION_MAIN_HEADER_H
+#ifndef OPERATING_SYSTEM_GLOBALS_HEADER_H
+#define	OPERATING_SYSTEM_GLOBALS_HEADER_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h> // include standard integer data types
 #include <stdbool.h> // include standard boolean data types
 #include <stddef.h> // include standard definition data types
 
-// COMMON SOFTWARE MODULES
-#include "config/hal.h"
-#include "config/system.h"
+// OPERATING SYSTEM HEADER FILES
+#include "os/boot.h"
 #include "os/rtos.h"
 
-// APPLICATION LAYER HEADER FILES
-#include "config/apps.h"
 
-// Task managing variables
-extern volatile bool run_main; ///< Flag allowing to terminate the main loop and restart the CPU
+// Runtime task profiling data logging array
+#define TASK_PROFILE_ARR_SIZE   1024
+extern volatile uint16_t ptrTaskProfileArray;
+extern volatile uint16_t arrTaskProfile[2][TASK_PROFILE_ARR_SIZE];
 
-#endif	/* APPLICATION_MAIN_HEADER_H */
+#endif	/* OPERATING_SYSTEM_GLOBALS_HEADER_H */
 
+//D:\Applications\Digital Control Library SDK\math development

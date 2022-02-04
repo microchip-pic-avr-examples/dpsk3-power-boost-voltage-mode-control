@@ -224,6 +224,9 @@
 #define DBGLED_Init()       { _LATB6 = 0; _TRISB6 = 0; } ///< Macro instruction initializing the specified GPIO as output
 #define DBGLED_Dispose()    { _LATB6 = 1; _TRISB6 = 1; } ///< Macro instruction initializing the specified GPIO as input 
 
+#define DBGLED_ON           1U  ///< pin state when debugging LED is on (1=HIGH, 0=LOW)
+#define DBGLED_OFF          0U  ///< pin state when debugging LED is off (1=HIGH, 0=LOW)
+
 // Power Good Output
 #define PWRGOOD_PORT        1   ///< GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc.
 #define PWRGOOD_PIN         12  ///< GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc.

@@ -1,5 +1,5 @@
 /**
- *  (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ *  (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  *  Subject to your compliance with these terms, you may use Microchip software
  *  and any derivatives exclusively with Microchip products. You're responsible
@@ -128,7 +128,7 @@ typedef struct FLT_EVENT_RESPONSE_s {
  * @struct FAULT_OBJECT_s
  * @brief This data structure is a collection of data structures for fault handling.
  *********************************************************************************/
-typedef struct FAULT_OBJECT_s {
+struct FAULT_OBJECT_s {
 
 	volatile struct FLT_OBJECT_STATUS_s  Status;           ///< Status word of this fault object
 	volatile uint16_t Counter;                             ///< Fault event counter (controlled by FAULT HANDLER)
@@ -137,16 +137,48 @@ typedef struct FAULT_OBJECT_s {
     volatile struct FLT_EVENT_RESPONSE_s TripResponse;     ///< Settings defining the fault trip event
     volatile struct FLT_EVENT_RESPONSE_s RecoveryResponse; ///< Settings defining the fault recovery event
 
-} FAULT_OBJECT_t; ///< Generic fault object 
+}; ///< Generic fault object 
+typedef struct FAULT_OBJECT_s FAULT_OBJECT_t; ///< Generic fault object data type
+
+struct FAULT_MONITOR_STATUS_s {
+    union {
+        struct {
+        volatile bool FaultStatus : 1;  ///< Bit 0: Flag bit indicating if a FAULT condition has been tripped
+        volatile bool FaultLatch : 1;   ///< Bit 1: Flag bit indicating if a latched FAULT condition has been enforced
+		volatile unsigned : 14;         ///< Bit <15:2>: (reserved)
+	} __attribute__((packed)) bits;     ///< Fault monitor status bit field for single bit access  
+	volatile uint16_t value;            ///< Fault monitor status word  
+    };
+};
+typedef struct FAULT_MONITOR_STATUS_s FAULT_MONITOR_STATUS_t;
+
+/**********************************************************************************
+ * @struct FAULT_MONITOR_s
+ * @brief Common fault monitor settings
+ *********************************************************************************/
+struct FAULT_MONITOR_s {
+    volatile struct FAULT_MONITOR_STATUS_s Status;          ///< Status word of the fault monitor
+    volatile uint16_t FaultStatusList;                      ///< Status word encoding individual fault object states in order of their list index
+    volatile uint16_t FaultRecoveryCounter;                 ///< Most recent number of fault recovery attempts
+    volatile uint16_t FaultLatchCount;                      ///< Number of fault recovery attempts after which the system gets locked in a latched fault state
+    volatile uint16_t (*FaultRecovery)(void);               ///< Function pointer to the common fault recovery function
+};
+typedef struct FAULT_MONITOR_s FAULT_MONITOR_t;
+
+/*********************************************************************************
+ * @var     FaultMonitor
+ * @brief   Global fault monitor object
+ * @details
+ *  ADD_DESCRIPTION_HERE
+ **********************************************************************************/
+extern volatile struct FAULT_MONITOR_s FaultMonitor;        ///< Global fault monitor object
 
 /** @} */ // end of group
 
 
-// Public Fault Configuration Templates
-extern volatile struct FAULT_OBJECT_s fltObjectClear;
-
 // Public Function Prototypes
-extern volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltobj);
+extern volatile uint16_t drv_FaultHandler_ScanObjects(volatile struct FAULT_OBJECT_s* fltObjectList[], volatile uint16_t size);
+extern volatile uint16_t drv_FaultHandler_Dispose(volatile struct FAULT_OBJECT_s* fltObjectList[], volatile uint16_t size);
 
 #endif	/* FAULT_HANDLER_H */
 

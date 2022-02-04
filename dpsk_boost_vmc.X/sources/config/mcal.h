@@ -20,33 +20,26 @@
  */
 
 /* 
- * File:   main.h
+ * File:   mcal.h
  * Author: M91406
- * Comments: main header file of this application
+ * Comments: Microcontroller Abstraction Layer (MCAL) main header file
  * Revision history: 
- * v1.0 initial version
+ *   1.0    initial release
  */
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef APPLICATION_MAIN_HEADER_H
-#define	APPLICATION_MAIN_HEADER_H
+#ifndef MICROCONTROLLER_ABSTRACTION_LAYER_H
+#define	MICROCONTROLLER_ABSTRACTION_LAYER_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h> // include standard integer data types
 #include <stdbool.h> // include standard boolean data types
 #include <stddef.h> // include standard definition data types
 
-// COMMON SOFTWARE MODULES
-#include "config/hal.h"
-#include "config/system.h"
-#include "os/rtos.h"
+// MICROCONTROLLER ABSTRACTION LAYER HEADER FILES
+#include "common/p33c_pral/xc16_pral.h"
+#include "config/mcal/dspic33c_mcal.h"
 
-// APPLICATION LAYER HEADER FILES
-#include "config/apps.h"
 
-// Task managing variables
-extern volatile bool run_main; ///< Flag allowing to terminate the main loop and restart the CPU
-
-#endif	/* APPLICATION_MAIN_HEADER_H */
-
+#endif	/* MICROCONTROLLER_ABSTRACTION_LAYER_H */

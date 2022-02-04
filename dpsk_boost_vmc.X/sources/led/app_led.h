@@ -52,10 +52,39 @@
  *  requirements. 
  **********************************************************************************/
 
-typedef struct DEBUGGING_LED_s{
-    volatile uint16_t period;
-}DEBUGGING_LED_t;    
+struct DEBUGGING_LED_STATUS_s{
+        union {
+    struct{
 
+        unsigned on : 1;    // Bit #0:  Flag bit, set and cleared by software driver, indicating the debugging LED is currently on (read only)
+        unsigned : 1;       // Bit #1:  (reserved)
+        unsigned : 1;       // Bit #2:  (reserved)
+        unsigned : 1;       // Bit #3:  (reserved)
+        unsigned : 1;       // Bit #4:  (reserved)
+        unsigned : 1;       // Bit #5:  (reserved)
+        unsigned : 1;       // Bit #6:  (reserved)
+        unsigned : 1;       // Bit #7:  (reserved)
+
+        unsigned : 1;       // Bit #8:  (reserved)
+        unsigned : 1;       // Bit #9:  (reserved)
+        unsigned : 1;       // Bit #10: (reserved)
+        unsigned : 1;       // Bit #11: (reserved)
+        unsigned : 1;       // Bit #12: (reserved)
+        unsigned : 1;       // Bit #13: (reserved)
+        unsigned : 1;       // Bit #14: (reserved)
+        unsigned enabled;   // Bit #15: Control bit enabling and disabling the Debugging LED function
+    } __attribute__((packed)) bits; ///< data structure for single bit addressing operations
+
+	volatile uint16_t value; // buffer for 16-bit word read/write operations
+    };
+};    
+typedef struct DEBUGGING_LED_STATUS_s DEBUGGING_LED_STATUS_t;
+
+struct DEBUGGING_LED_s{
+    volatile struct DEBUGGING_LED_STATUS_s status; ///< Status word of the Debugging LED driver
+    volatile uint16_t period; //< Period setting of the Debugging LED driver
+};    
+typedef struct DEBUGGING_LED_s DEBUGGING_LED_t;
 
 // PUBLIC VARIABLE DECLARATION
 extern volatile DEBUGGING_LED_t debug_led;
@@ -63,6 +92,7 @@ extern volatile DEBUGGING_LED_t debug_led;
 // PUBLIC FUNCTION PROTOTYPE DECLARATION
 extern volatile uint16_t appLED_Initialize(void);
 extern volatile uint16_t appLED_Execute(void);
+extern volatile uint16_t appLED_Start(void);
 extern volatile uint16_t appLED_Dispose(void);
 
 #endif	/* APPLICATION_LAYER_DEBUGGING_LED_H */

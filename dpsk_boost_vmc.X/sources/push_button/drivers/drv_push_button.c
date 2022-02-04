@@ -70,7 +70,7 @@ volatile uint16_t drv_PushButton_Initialize(volatile struct PUSH_BUTTON_OBJECT_s
 volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s* pushbtn) 
 {
     volatile uint16_t retval = 1; // Return value
-    static uint16_t press_cnt, release_cnt;     // local counters of SWITCH_USER being pressed/released
+    static uint16_t press_cnt = 0, release_cnt = 0;     // local counters of SWITCH_USER being pressed/released
     static bool pre_pressed = false, pre_long_press = false;
     
     // If switch is disabled, exit here
@@ -84,7 +84,7 @@ volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s* p
 	if ((!SW_USER_Get()) && (!pushbtn->status.bits.pressed)) { 
 		
         // switch button PRESSED event
-        if (++press_cnt > pushbtn->debounce_delay) {
+        if (++press_cnt >= pushbtn->debounce_delay) {
             pushbtn->status.bits.pressed = true; // Set PRESSED flag
             if (pushbtn->event_btn_down != NULL)   // Raise Button Event
                 pushbtn->event_btn_down();
@@ -94,7 +94,7 @@ volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s* p
     else if ((!SW_USER_Get()) && (pushbtn->status.bits.pressed)) {
 
         // switch button LONG PRESS event
-        if (++press_cnt > pushbtn->long_press_delay) {
+        if (++press_cnt >= pushbtn->long_press_delay) {
             
             if (!pushbtn->status.bits.long_press)    // Long Press Event is triggered for the first time
             if (pushbtn->event_long_press != NULL)   // Raise Button Long Press Event
@@ -113,7 +113,7 @@ volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s* p
 	else if ((SW_USER_Get()) && (pushbtn->status.bits.pressed)) {  
         
         // switch button RELEASE event
-        if (++release_cnt > pushbtn->debounce_delay) {
+        if (++release_cnt >= pushbtn->debounce_delay) {
             if (pushbtn->event_btn_up != NULL)       // Raise Button Event
                 pushbtn->event_btn_up();
             pushbtn->status.bits.pressed = false;      // Clear PRESSED flag
