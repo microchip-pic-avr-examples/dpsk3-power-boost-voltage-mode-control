@@ -50,6 +50,34 @@
     __asm__ ("ctxtswp %1;\n\t" : "=d" (__v) : "d" (__x)); __v; \
 })    
 
+/**********************************************************************************
+ * @def    SwapWordBytes(x)
+ * @brief: Swaps high and low byte of a 16 bit value
+ * @param  x: Value to be swapped
+ * @return 16-bit value of swapped byte order
+ **********************************************************************************/
+#define SwapWordBytes(x) __extension__ ({ \
+    volatile uint16_t __x = (x), __v; \
+    __asm__ ("swap %0;\n\t" : "=d" (__v) : "d" (__x)); __v; \
+})    
+
+/**********************************************************************************
+ * @def    ReverseBitOrder16b(x)
+ * @brief: Reverses the bit order of a 16 bit value
+ * @param  x: Value to be reversed
+ * @return 16-bit value in reverse bit order
+ **********************************************************************************/
+        
+#define ReverseBitOrder16b(x) __extension__ ({ \
+    volatile uint16_t __x = (x), __v; \
+    __asm__ volatile ( \
+        "0: do #15, 1f\n\t" \
+           "sl %1, %1\n\t" \
+        "1: rrc %0, %0\n\t" \
+        : "=d" (__v), \
+          "+d" (__x)); \
+        __v; \
+})
 
 #endif	/* P33C_CPU_MACROS_H */
 

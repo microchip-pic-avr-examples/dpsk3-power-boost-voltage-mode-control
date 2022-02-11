@@ -27,6 +27,20 @@
 
 #include "p33c_pwm.h"
 
+// Private arrays of register set start addresses
+#if defined (PG8CONL)
+volatile uint16_t* p33c_PwmGenerator_Handles[]={
+    &PG1CONL, &PG2CONL, &PG3CONL, &PG4CONL, 
+    &PG5CONL, &PG6CONL, &PG7CONL, &PG8CONL 
+};
+#elif defined (PG4CONL)
+volatile uint16_t* p33c_PwmGenerator_Handles[]={
+    &PG1CONL, &PG2CONL, &PG3CONL, &PG4CONL 
+};
+#else
+#pragma message "selected device has no supported PWM generators"
+#endif
+
 /*********************************************************************************
  * @fn uint16_t p33c_PwmModule_Initialize(void)
  * @ingroup lib-layer-pral-functions-public-pwm
@@ -54,31 +68,6 @@ volatile uint16_t p33c_PwmModule_Initialize(void)
     retval = p33c_PwmModule_ConfigWrite(pwmConfigDefault);
     
     return(retval);
-}
-
-/*********************************************************************************
- * @fn struct P33C_PWM_MODULE_s* p33c_PwmModule_GetHandle(void)
- * @ingroup lib-layer-pral-functions-public-pwm
- * @brief Gets pointer to PWM module SFR set
- * @return struct P33C_PWM_GENERATOR_s: PWM generator object of the selected PWM generator instance
- *  
- * @details
- *      This function returns the PWM generator index, the PWM generator group
- *      (1 = [PG1-PG4], 2 = [PG5-PG8]) and the address pointer (handle) of
- *      the PWM generator Special Function Register set. handle can be used
- *      to directly read from/write to PWM registers of the selected PWM 
- *      generator with zero API overhead.
- * 
- *********************************************************************************/
-
-volatile struct P33C_PWM_MODULE_s* p33c_PwmModule_GetHandle(void)
-{
-    volatile struct P33C_PWM_MODULE_s* pwm;
-    
-    // Capture Handle: set pointer to memory address of desired PWM instance
-    pwm = (volatile struct P33C_PWM_MODULE_s*) ((volatile uint8_t*)&PCLKCON);
-    
-    return(pwm);
 }
 
 /*********************************************************************************
@@ -129,8 +118,7 @@ volatile struct P33C_PWM_MODULE_s p33c_PwmModule_ConfigRead(void)
     volatile struct P33C_PWM_MODULE_s* pwm;
 
     // Set pointer to memory address of desired PWM instance
-    pwm = (volatile struct P33C_PWM_MODULE_s*) 
-        ((volatile uint8_t*) &PCLKCON);
+    pwm = p33c_PwmModule_GetHandle();
 
     return(*pwm);    
     
@@ -161,8 +149,7 @@ volatile uint16_t p33c_PwmModule_ConfigWrite(volatile struct P33C_PWM_MODULE_s p
     volatile struct P33C_PWM_MODULE_s* pwm;    
 
     // Set pointer to memory address of desired PWM instance
-    pwm = (volatile struct P33C_PWM_MODULE_s*) 
-        ((volatile uint8_t*) &PCLKCON);
+    pwm = p33c_PwmModule_GetHandle();
     *pwm = pwmConfig;
     
     return(retval);
@@ -190,8 +177,7 @@ volatile struct P33C_PWM_GENERATOR_s p33c_PwmGenerator_ConfigRead(volatile uint1
     volatile struct P33C_PWM_GENERATOR_s* pg;    
 
     // Set pointer to memory address of desired PWM instance
-    pg = (volatile struct P33C_PWM_GENERATOR_s*) 
-        ((volatile uint8_t*) &PG1CONL + ((pgInstance - 1) * P33C_PWMGEN_SFR_OFFSET));
+    pg = p33c_PwmGenerator_GetHandle(pgInstance);
 
     return(*pg);
     
@@ -223,8 +209,9 @@ volatile uint16_t p33c_PwmGenerator_ConfigWrite(
     volatile struct P33C_PWM_GENERATOR_s* pg;    
 
     // Set pointer to memory address of desired PWM instance
-    pg = (volatile struct P33C_PWM_GENERATOR_s*) 
-        ((volatile uint8_t*) &PG1CONL + ((pgInstance - 1) * P33C_PWMGEN_SFR_OFFSET));
+    pg = p33c_PwmGenerator_GetHandle(pgInstance);
+    if (pg == NULL) return(0); // return error
+
     *pg = pgConfig;
     
     return(retval);
@@ -255,9 +242,11 @@ volatile uint16_t p33c_PwmGenerator_Initialize(volatile uint16_t pgInstance)
     
     // Set pointer to memory address of desired PWM instance
     pg = p33c_PwmGenerator_GetHandle(pgInstance);
+    if (pg == NULL) return(0); // return error
 
     // Disable the PWM generator
     retval &= p33c_PwmGenerator_Disable(pg);
+    
 
     // Reset all SFRs to default
     retval &= p33c_PwmGenerator_ConfigWrite(pgInstance, pgConfigClear);
@@ -318,6 +307,8 @@ volatile uint16_t p33c_PwmGenerator_Enable(volatile struct P33C_PWM_GENERATOR_s*
     volatile uint16_t retval=1;
     volatile uint16_t timeout=0;
     
+	if(pg == NULL) return(0); // NULL pointer protection
+
     // Set PWM generator override bits to prevent signals being generated outside the device
     pg->PGxIOCONL.bits.OVRENH = 1;
     pg->PGxIOCONL.bits.OVRENL = 1;
@@ -367,6 +358,8 @@ volatile uint16_t p33c_PwmGenerator_Disable(volatile struct P33C_PWM_GENERATOR_s
 {
     volatile uint16_t retval=1;
     
+	if(pg == NULL) return(0); // NULL pointer protection
+
     // Set PWM generator override bits to prevent signals being generated outside the device
     pg->PGxIOCONL.bits.OVRENH = 1;
     pg->PGxIOCONL.bits.OVRENL = 1;
@@ -401,10 +394,11 @@ volatile uint16_t p33c_PwmGenerator_Resume(volatile struct P33C_PWM_GENERATOR_s*
 {
     volatile uint16_t retval=1;
     
+	if(pg == NULL) return(0); // NULL pointer protection
+
     // Set PWM generator override bits to prevent signals being generated outside the device
     pg->PGxIOCONL.bits.OVRENH = 0;
     pg->PGxIOCONL.bits.OVRENL = 0;
-
     
     return(retval);       
     
@@ -432,7 +426,6 @@ volatile uint16_t p33c_PwmGenerator_Suspend(volatile struct P33C_PWM_GENERATOR_s
     // Set PWM generator override bits to prevent signals being generated outside the device
     pg->PGxIOCONL.bits.OVRENH = 1;
     pg->PGxIOCONL.bits.OVRENL = 1;
-
     
     return(retval);       
     
@@ -529,6 +522,8 @@ volatile uint16_t p33c_PwmGenerator_SetDeadTimes(
 {
     volatile uint16_t retval=1;
     
+	if(pg == NULL) return(0); // NULL pointer protection
+	
     // Set PWM generator period
     pg->PGxDTH.value = dead_time_rising;
     pg->PGxDTL.value = dead_time_falling;
@@ -536,32 +531,7 @@ volatile uint16_t p33c_PwmGenerator_SetDeadTimes(
     return(retval);       
     
 }
-/*********************************************************************************
- * @fn struct P33C_PWM_GENERATOR_s* p33c_PwmGenerator_GetHandle(volatile uint16_t pgInstance)
- * @ingroup lib-layer-pral-functions-public-pwm
- * @brief  Returns the PWM generator index
- * @param  pgInstance Instance of the PWM generator of type unsigned integer (e.g. 1=PG1, 2=PG2, etc.)
- * @return Pointer address to PWM generator instance of type struct P33C_PWM_GENERATOR_s specified by parameter pgInstance
- *  
- * @details
- * This function returns the address pointer (pgHandle) of the PWM generator
- * Special Function Register set specified by parameter pgInstance. pgHandle 
- * can be used to assign a global variable in user code, which allows to directly 
- * read from/write to PWM registers of the selected PWM generator with zero API 
- * overhead.
- * 
- *********************************************************************************/
 
-volatile struct P33C_PWM_GENERATOR_s* p33c_PwmGenerator_GetHandle(volatile uint16_t pgInstance)
-{
-    volatile struct P33C_PWM_GENERATOR_s* pg;
-    
-    // Capture Handle: set pointer to memory address of desired PWM instance
-    pg = (volatile struct P33C_PWM_GENERATOR_s*) 
-         ((volatile uint8_t*)&PG1CONL + ((pgInstance - 1) * P33C_PWMGEN_SFR_OFFSET));
-    
-    return(pg);
-}
 
 /*********************************************************************************
  * volatile uint16_t p33c_PwmGenerator_GetInstance(volatile struct P33C_PWM_GENERATOR_s* pg)
@@ -619,8 +589,7 @@ volatile uint16_t p33c_PwmGenerator_GetGroup(volatile struct P33C_PWM_GENERATOR_
         return(0);
 
     // Get group of PWM generator
-    pgInstance = (volatile uint16_t)
-        (((volatile uint16_t)&pg->PGxCONL - (volatile uint16_t)&PG1CONL) / P33C_PWMGEN_SFR_OFFSET + 1);
+    pgInstance = p33c_PwmGenerator_GetInstance(pg);
     
     // Verify PWM generator group is valid and available
     if (pgInstance > P33C_PG_COUNT)

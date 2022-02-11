@@ -1,5 +1,5 @@
 /* **************************************************************************************************
-* © 2020 Microchip Technology Inc.
+* © 2021 Microchip Technology Inc.
 *
 * FileName:        drv_TrapHandler.h
 * Processor:       dsPIC33C

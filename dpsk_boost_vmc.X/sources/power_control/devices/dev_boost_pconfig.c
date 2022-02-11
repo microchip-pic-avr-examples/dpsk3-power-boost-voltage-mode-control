@@ -5,7 +5,7 @@
  * Created on March 12, 2020, 4:31 PM
  */
 
-#if (__XC16_VERSION__ > 1500)
+#if (__XC16_VERSION__ > 2000)
   #pragma message ("Warning: Library file '" __FILE__ "' has not been tested with the recently selected compiler version")
 #endif
 

@@ -696,12 +696,12 @@
 
 // PROTOTYPES FOR p33c_pps
     
-extern volatile uint16_t PPS_RemapOutput(volatile uint8_t pinno, volatile uint8_t peripheral);
-extern volatile uint16_t PPS_UnmapOutput(volatile uint8_t pinno);
-extern volatile uint16_t PPS_RemapInput(volatile uint8_t pinno, volatile uint8_t *peripheral);
-extern volatile uint16_t PPS_UnmapInput(volatile uint8_t *peripheral);
-extern volatile uint16_t PPS_LockIO(void);
-extern volatile uint16_t PPS_UnlockIO(void);
+extern volatile uint16_t p33c_PPS_RemapOutput(volatile uint8_t pinno, volatile uint8_t peripheral);
+extern volatile uint16_t p33c_PPS_UnmapOutput(volatile uint8_t pinno);
+extern volatile uint16_t p33c_PPS_RemapInput(volatile uint8_t pinno, volatile uint8_t *peripheral);
+extern volatile uint16_t p33c_PPS_UnmapInput(volatile uint8_t *peripheral);
+extern volatile uint16_t p33c_PPS_LockIO(void);
+extern volatile uint16_t p33c_PPS_UnlockIO(void);
 
 #endif // end of MCAL_P33C_PPS_ABSTRACTION_DRIVER_H
 // End of File 
