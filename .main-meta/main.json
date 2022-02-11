@@ -42,13 +42,44 @@
 		"TIMER"
 		],
 		"keywords": [
-		"Digital Power Conversion",
-		"Digital Filters",
-		"Power Conversion",
-		"Power Supply",
-		"SMPS",
-		"dsPIC",
-		"DSC"
+			{  "name": "Digital Power",
+				"status": "Active",
+				"parents": ["Power"]
+			},
+			{  "name": "Digital Power Conversion",
+				"status": "Active",
+				"parents": ["Digital Power"]
+			},
+			{  "name": "Power Conversion",
+				"status": "Active",
+				"synonyms": ["Power Converter"],
+				"parents": ["Power"]
+			},
+			{  "name": "Power Supply",
+				"status": "Active",
+				"parents": ["Power Conversion"]
+			},
+			{  "name": "Power",
+				"status": "Active"
+			},
+			{  "name": "Power Converter Type",
+				"status": "Active",
+				"parents": ["Power Conversion"]
+			},
+			{  "name": "SMPS",
+				"status": "Active",
+				"synonyms": ["Switched Mode Power Supply"],
+				"parents": ["Power Converter Type"]
+			},
+			{  "name": "dsPIC",
+				"status": "Active",
+				"parents": ["DSC", "DSP"]
+			},
+			{  "name": "DSC",
+				"status": "Active",
+				"synonyms": ["Digital Signal Controller"],
+				"parents": ["Controller"]
+			}
 		]
 	}
 }
