@@ -1,3 +1,12 @@
+# dpsk3-power-boost-voltage-mode-control, release v1.2.11
+
+### Features Added\Updated
+
+Online firmware documentation output destination has been changed from Github Pages to https://onlinedocs.microchip.com
+
+When you download this version of the firmware, please also update your version of PowerSmart&trade; Digital Control Library Designer to version 0.9.14 or higher:
+[MPLAB&reg; PowerSmart&trade; Digital Control Library Designer v0.9.14](https://microchip-pic-avr-tools.github.io/powersmart-dcld/)
+
 # dpsk3-power-boost-voltage-mode-control, release v1.2.1
 
 ### Features Added\Updated
