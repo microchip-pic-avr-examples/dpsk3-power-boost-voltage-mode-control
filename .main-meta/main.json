@@ -34,13 +34,6 @@
 			"versionRange":"*"
 		 }
 		},
-		"peripherals":[
-		"UART",
-		"PWM",
-		"SMPS PWM",
-		"ADC",
-		"TIMER"
-		],
 		"keywords": [
 			{  "name": "Digital Power",
 				"status": "Active",
@@ -49,6 +42,9 @@
 			{  "name": "Digital Power Conversion",
 				"status": "Active",
 				"parents": ["Digital Power"]
+			},
+			{  "name": "Digital Filters",
+				"parents": ["Signal Processing"]
 			},
 			{  "name": "Power Conversion",
 				"status": "Active",
@@ -65,6 +61,9 @@
 			{  "name": "Power Converter Type",
 				"status": "Active",
 				"parents": ["Power Conversion"]
+			},
+			{  "name": "PowerSmart",
+				"parents": ["Digital Power"]
 			},
 			{  "name": "SMPS",
 				"status": "Active",
