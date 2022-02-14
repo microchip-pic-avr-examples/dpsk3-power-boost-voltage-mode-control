@@ -1,0 +1,6 @@
+<map id="Fault Response Settings" name="Fault Response Settings">
+<area shape="rect" id="node1" href="$a00658.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,23,228,63"/>
+<area shape="rect" id="node3" title="Declaration of fault object trip and recovery delays." alt="" coords="276,31,528,56"/>
+<area shape="rect" id="node2" href="$a00497.html" title="User&#45;declaration of fault object trip and recovery delays using physical quantities." alt="" coords="596,5,748,31"/>
+<area shape="rect" id="node4" href="$a00499.html" title="Conversion macros for user declarations of fault object trip and recovery delays." alt="" coords="576,55,768,80"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="BOOST_FEEDBACK_SETTINGS_s" name="BOOST_FEEDBACK_SETTINGS_s">
+<area shape="rect" id="node1" title="Boost converter feedback declarations." alt="" coords="11,505,283,583"/>
+<area shape="rect" id="node2" href="$a02429.html" title="ADC input channel configuration." alt="" coords="5,175,288,399"/>
+<area shape="rect" id="node3" href="$a02425.html" title="ADC input signal scaling = (ADCBUF &#45; &lt;offset&gt;) * &lt;factor&gt; &gt;&gt; 2^&lt;scaler&gt;" alt="" coords="11,5,283,112"/>
+</map>

@@ -1,0 +1,3 @@
+<map id="BOOST_ADC_INPUT_SCALING_s" name="BOOST_ADC_INPUT_SCALING_s">
+<area shape="rect" id="node1" title="ADC input signal scaling = (ADCBUF &#45; &lt;offset&gt;) * &lt;factor&gt; &gt;&gt; 2^&lt;scaler&gt;" alt="" coords="5,5,277,112"/>
+</map>

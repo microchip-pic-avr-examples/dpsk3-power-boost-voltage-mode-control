@@ -1,0 +1,28 @@
+<map id="BOOST_CONVERTER_s" name="BOOST_CONVERTER_s">
+<area shape="rect" id="node1" title="BOOST control &amp; monitoring data structure." alt="" coords="3387,1284,3579,1361"/>
+<area shape="rect" id="node2" href="$a02417.html" title="Boost converter main settingsUser defined settings for control loops;" alt="" coords="2206,968,2438,1163"/>
+<area shape="rect" id="node3" href="$a02509.html" title=" " alt="" coords="1265,667,1377,744"/>
+<area shape="rect" id="node4" href="$a02489.html" title=" " alt="" coords="5,321,268,443"/>
+<area shape="rect" id="node5" href="$a02501.html" title=" " alt="" coords="292,321,555,443"/>
+<area shape="rect" id="node6" href="$a02485.html" title=" " alt="" coords="579,321,742,443"/>
+<area shape="rect" id="node7" href="$a02505.html" title=" " alt="" coords="767,292,1019,472"/>
+<area shape="rect" id="node8" href="$a02477.html" title=" " alt="" coords="1043,343,1275,421"/>
+<area shape="rect" id="node9" href="$a02473.html" title=" " alt="" coords="1088,5,1231,127"/>
+<area shape="rect" id="node10" href="$a02481.html" title=" " alt="" coords="1299,248,1571,516"/>
+<area shape="rect" id="node11" href="$a02493.html" title=" " alt="" coords="1595,321,1947,443"/>
+<area shape="rect" id="node12" href="$a02497.html" title=" " alt="" coords="1971,233,2323,531"/>
+<area shape="rect" id="node13" href="$a02453.html" title=" " alt="" coords="2348,285,2611,479"/>
+<area shape="rect" id="node14" href="$a02433.html" title="Boost converter feedback declarations." alt="" coords="2511,1027,2783,1104"/>
+<area shape="rect" id="node15" href="$a02429.html" title="ADC input channel configuration." alt="" coords="2617,593,2899,817"/>
+<area shape="rect" id="node16" href="$a02425.html" title="ADC input signal scaling = (ADCBUF &#45; &lt;offset&gt;) * &lt;factor&gt; &gt;&gt; 2^&lt;scaler&gt;" alt="" coords="2635,329,2907,435"/>
+<area shape="rect" id="node17" href="$a02385.html" title=" " alt="" coords="2808,1005,2991,1126"/>
+<area shape="rect" id="node18" href="$a02421.html" title="Switching signal timing settings." alt="" coords="3015,953,3317,1177"/>
+<area shape="rect" id="node19" href="$a02413.html" title=" " alt="" coords="3342,997,3625,1133"/>
+<area shape="rect" id="node20" href="$a02405.html" title=" " alt="" coords="3649,1027,3921,1104"/>
+<area shape="rect" id="node21" href="$a02401.html" title=" " alt="" coords="3565,630,3767,781"/>
+<area shape="rect" id="node22" href="$a02397.html" title=" " alt="" coords="3792,637,4015,773"/>
+<area shape="rect" id="node23" href="$a02373.html" title=" " alt="" coords="3945,924,4208,1207"/>
+<area shape="rect" id="node24" href="$a02441.html" title="GPIO instance of the converter control GPIO." alt="" coords="4233,1027,4465,1104"/>
+<area shape="rect" id="node25" href="$a02437.html" title="GPIO instance of the converter control GPIO." alt="" coords="4233,637,4465,773"/>
+<area shape="rect" id="node26" href="$a02409.html" title=" " alt="" coords="4489,975,4731,1155"/>
+</map>

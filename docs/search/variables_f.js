@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['rcon_5freg',['rcon_reg',['../a02289.html#a622b54af34934b9ed58310984866f335',1,'TRAP_LOGGER_s']]],
+  ['ready',['ready',['../a02165.html#ae9ddb688ae3a8deb1925c49a851b2a4c',1,'UART_INSTANCE_STATUS_s::ready()'],['../a02373.html#a17c7212252d1da4aacdddd45db29a6d1',1,'BOOST_CONVERTER_STATUS_s::ready()']]],
+  ['recoveryresponse',['RecoveryResponse',['../a02217.html#af9e053ccdb2ca7c1cff5fcbe4596bf9c',1,'FAULT_OBJECT_s']]],
+  ['ref_5finc_5fstep',['ref_inc_step',['../a02397.html#a832c6be5021565e3da55cbc0a523e744',1,'BOOST_STARTUP_PERIOD_HANDLER_s']]],
+  ['reference',['reference',['../a02397.html#aad7bda3be2c1e6a89bd7093086bbeec8',1,'BOOST_STARTUP_PERIOD_HANDLER_s::reference()'],['../a02417.html#aad7bda3be2c1e6a89bd7093086bbeec8',1,'BOOST_LOOP_SETTINGS_s::reference()']]],
+  ['referenceobject',['ReferenceObject',['../a02217.html#a9e234a289ec2e7de63ab9095222086eb',1,'FAULT_OBJECT_s']]],
+  ['refresh',['refresh',['../a02293.html#adc2298ffda0c853e699e6da9098f82ae',1,'LCD_s']]],
+  ['reset_5fcount',['reset_count',['../a02289.html#a95744ea4cf032674585b4e25a114c31a',1,'TRAP_LOGGER_s']]],
+  ['retval',['retval',['../a02313.html#ad1cac6410117a4777ec3a8b0c80b3337',1,'APPTASK_STATUS_s']]],
+  ['roi',['ROI',['../a01589.html#a13255c2c3dee6738ad0289ccc5f8ee2c',1,'CLKDIV_s']]],
+  ['rpid',['rpid',['../a01329.html#a75a85c224605a21f8a61d14d9573ff46',1,'GPIO_PORT_PIN_s']]],
+  ['rx_5fbuffer',['rx_buffer',['../a02193.html#ad02a0b7aaf9e59a05a1ee2b9d19ff704',1,'UART_DATA_BUFFER_PROPERTY_s']]],
+  ['rx_5fuse_5fdma',['rx_use_dma',['../a02165.html#a0e14d622e4f56339de3856d6ae81d2ac',1,'UART_INSTANCE_STATUS_s']]],
+  ['rxchk',['RXCHK',['../a01333.html#aa29efc31ca28aa4a4a5e35049606541b',1,'P33C_UART_INSTANCE_s']]],
+  ['rxd',['RxD',['../a02173.html#af631cd0c426098701f4cf4b880a117b5',1,'UART_INTERFACE_s']]],
+  ['rxreg',['RXREG',['../a01333.html#acda95525467df2919e095da5e2a6c844',1,'P33C_UART_INSTANCE_s']]]
+];

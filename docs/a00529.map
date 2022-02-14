@@ -1,0 +1,7 @@
+<map id="Temperature Feedback" name="Temperature Feedback">
+<area shape="rect" id="node1" href="$a00658.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,47,228,87"/>
+<area shape="rect" id="node4" title="Declaration of temperature feedback parameters." alt="" coords="276,55,499,80"/>
+<area shape="rect" id="node2" href="$a00531.html" title="Conversion macros for user&#45;declarations of temperature feedback parameters." alt="" coords="597,5,789,31"/>
+<area shape="rect" id="node3" href="$a00532.html" title="Device analog input pin, register and interrupt vector assignments of temperature feedback signal(s)" alt="" coords="547,55,839,80"/>
+<area shape="rect" id="node5" href="$a00530.html" title="User&#45;declaration of temperature feedback parameters using physical quantities." alt="" coords="617,104,769,129"/>
+</map>
