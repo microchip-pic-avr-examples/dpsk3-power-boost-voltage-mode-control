@@ -130,7 +130,7 @@ void dev_Lcd_Initialize(void)
     
     drv_LcdInterface_SendCmd(LCD_FUNCTION | FUNCTION_8BITS | FUNCTION_1_HIGH | FUNCTION_1_LINE | FUNCTION_nIS);   //function set
  
-    __delay_ms(25);
+    __delay_ms(1);
 
     drv_LcdInterface_SendCmd(LCD_FUNCTION | FUNCTION_8BITS | FUNCTION_1_HIGH | FUNCTION_1_LINE | FUNCTION_nIS);   //function set
     drv_LcdInterface_SendCmd(LCD_FUNCTION | FUNCTION_8BITS | FUNCTION_1_HIGH | FUNCTION_1_LINE | FUNCTION_nIS);   //function set
@@ -148,7 +148,7 @@ void dev_Lcd_Initialize(void)
     drv_LcdInterface_SendCmd(LCD_ENTRY_MODE | CURSOR_nSHIFT | DATA_INCREMENT);   //entry mode
     drv_LcdInterface_SendCmd(LCD_CLEAR);   //clear
 
-    __delay_ms(150);
+    __delay_ms(1);
 }
 
 /*********************************************************************************

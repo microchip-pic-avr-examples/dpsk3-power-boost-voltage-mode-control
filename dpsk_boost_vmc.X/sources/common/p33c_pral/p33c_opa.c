@@ -28,29 +28,6 @@
 #include "p33c_opa.h"
 
 /*********************************************************************************
- * @fn struct P33C_OPA_MODULE_s* p33c_OpaModule_GetHandle(void)
- * @ingroup lib-layer-pral-functions-public-opa
- * @brief Gets pointer to op-amp Module SFR set
- * @return struct P33C_OPA_MODULE_s*: Pointer to op-amp module special function register set object 
- *  
- * @details
- * This function returns the pointer to a op-amp module register set
- * Special Function Register memory space. This pointer can be used to 
- * directly write to/read from the Special Function Registers of the 
- * op-amp peripheral module configuration.
- *********************************************************************************/
-
-volatile struct P33C_OPA_MODULE_s* p33c_OpaModule_GetHandle(void)
-{
-    volatile struct P33C_OPA_MODULE_s* opa;
-    
-    // Capture Handle: set pointer to memory address of desired op-amp instance
-    opa = (volatile struct P33C_OPA_MODULE_s*)((volatile uint8_t*) &AMPCON1L);
-    
-    return(opa);
-}
-
-/*********************************************************************************
  * @fn uint16_t p33c_OpaModule_Dispose(void)
  * @ingroup lib-layer-pral-functions-public-opa
  * @brief Resets all Op-Amp Module registers to their RESET default values
@@ -97,7 +74,7 @@ volatile struct P33C_OPA_MODULE_s p33c_OpaModule_ConfigRead(void)
     volatile struct P33C_OPA_MODULE_s* opa;
 
     // Set pointer to memory address of desired Op-Amp instance
-    opa = (volatile struct P33C_OPA_MODULE_s*)((volatile uint8_t*) &AMPCON1L);
+    opa = p33c_OpaModule_GetHandle();
 
     return(*opa);
     
@@ -130,7 +107,7 @@ volatile uint16_t p33c_OpaModule_ConfigWrite(
     volatile struct P33C_OPA_MODULE_s* opa;    
 
     // Set pointer to memory address of the op-amp module base registers
-    opa = (volatile struct P33C_OPA_MODULE_s*)((volatile uint8_t*) &AMPCON1L);
+    opa = p33c_OpaModule_GetHandle();
     *opa = opaModuleConfig;
     
     return(retval);

@@ -57,14 +57,27 @@
     } __attribute__((packed));
 	typedef struct P33C_OPA_MODULE_s P33C_OPA_MODULE_t; // PDM OP-AMP MODULE REGISTER SET
 
+    /*********************************************************************************
+     * @def   p33c_OpaModule_GetHandle()
+     * @ingroup lib-layer-pral-functions-public-opa
+     * @brief Gets pointer to op-amp Module SFR set
+     * @return struct P33C_OPA_MODULE_s*: Pointer to op-amp module special function register set object 
+     *  
+     * @details
+     * This macro returns the pointer to a op-amp module register set
+     * Special Function Register memory space. This pointer can be used to 
+     * directly write to/read from the Special Function Registers of the 
+     * op-amp peripheral module configuration.
+     *********************************************************************************/
+    
+    #define p33c_OpaModule_GetHandle() (struct P33C_OPA_MODULE_s*)&AMPCON1L // Captures memory address of first OPA module register 
+    
 #endif
 
 
 /* ********************************************************************************************* * 
  * API FUNCTION PROTOTYPES
  * ********************************************************************************************* */
-
-extern volatile struct P33C_OPA_MODULE_s* p33c_OpaModule_GetHandle(void);
 
 extern volatile uint16_t p33c_OpaModule_Dispose(void);
 

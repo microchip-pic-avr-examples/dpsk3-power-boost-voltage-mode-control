@@ -5,8 +5,13 @@
  * Created on March 12, 2020, 12:10 PM
  */
 
+#include <xc.h> // include processor files - each processor file is guarded.  
+#include <stdint.h> // include standard integer types header file
+#include <stdbool.h> // include standard boolean types header file
+#include <stddef.h> // include standard definition types header file
+#include <math.h> // include standard math library header file
+
 #include "lcd/app_lcd.h"
-#include <math.h>
 
 // Additional header files required by this task
 #include "config/apps.h"
@@ -44,7 +49,7 @@ volatile uint16_t lcd_cnt = 0;  ///< Local counter used to trigger LCD refresh e
  * @details
  *  Period counter compare value determining how long the startup screen will be shown
  ***********************************************************************************/
-#define LCD_STARTUP   30000     ///< Value of 30000 equals a period of 3 seconds
+#define LCD_STARTUP   14     ///< Value of 14 scheduler call ticks equals a period of 3 seconds
 
 /** @} */ // end of group app-layer-lcd-properties-private
 
@@ -56,7 +61,7 @@ volatile uint16_t lcd_cnt = 0;  ///< Local counter used to trigger LCD refresh e
  * @details
  *  Period counter compare value determining the LCD refresh rate
  ***********************************************************************************/
-#define LCD_REFRESH   2000      ///< Value of 30000 equals a period of 200 milliseconds
+#define LCD_REFRESH   0      ///< Value of 0 scheduler call ticks equals a period of 200 milliseconds
 
 /** @} */ // end of group app-layer-lcd-properties-private
 
@@ -69,7 +74,7 @@ volatile uint16_t lcd_cnt = 0;  ///< Local counter used to trigger LCD refresh e
  *  This application supports multiple different screens which can be selected by
  *  the user to display different runtime data fields.
  ***********************************************************************************/
-#define LCD_NO_OF_SCREENS   3   ///< Number of screens which can be selected
+#define LCD_NO_OF_SCREENS   4   ///< Number of screens which can be selected
 
 /** @} */ // end of group app-layer-lcd-properties-private
 
@@ -93,13 +98,13 @@ volatile uint16_t appLCD_Initialize(void)
         lcd.refresh = LCD_STARTUP;
     
     lcd.screens = LCD_NO_OF_SCREENS;
-
+    
     dev_Lcd_Initialize();
-    dev_Lcd_WriteStringXY(0,0,"==== DPSK-3 ====");
-    dev_Lcd_WriteStringXY(0,1,"   BOOST VMC    ");
+    PrintLcd(0, "%s", FIRMWARE_TITLE);
+    PrintLcd(1, "%s", FIRMWARE_NAME);
 
     lcd_cnt = 0;
-    lcd.enabled = true;
+    lcd.enabled = false;
     
     return(retval);
 }
@@ -121,22 +126,21 @@ volatile uint16_t appLCD_Execute(void)
 {
     volatile uint16_t retval = 1;
     volatile float vi=0.0, vo=0.0, isns=0.0, temp=0.0;
+
+    DBGPIN1_Set();
     
     // IF LCD output is disabled, exit here
     if(!lcd.enabled)
         return(retval);
     
-    // Refresh LCD and reset refresh counter
-    lcd_cnt++;
-    
     // If REFRESH period has expired, update LCD contents
-    if(lcd_cnt == lcd.refresh) {
+    if(++lcd_cnt >= lcd.refresh) {
         
         // Calculate output values
         vi = ((boost.data.v_in << 3) * ADC_GRANULARITY); // Scale ADC value to physical unit
         vi = (float)(int)(100.0 * vi);      // Rounding operation required to prevent display
-        vi /= 100.0;                        // rounding issues around 9.99 and 10.0 ° C
-        
+        vi /= 100.0;                        // rounding issues around 9.99 and 10.0 ï¿½ C
+
         // Input voltage display
         if((double)vi < 10.000)
             PrintLcd(0, "VIN     = %2.2f V", (double)vi);
@@ -147,9 +151,9 @@ volatile uint16_t appLCD_Execute(void)
         {
             case 1:     // Show Temperature Output
 
-                temp = ((float)(boost.data.temp - TEMP_FB_ZERO) / TEMP_FB_SLOPE); // Scale ADC value to physical unit
-                temp = (float)(int)(100.0 * temp);  // Rounding operation required to prevent display 
-                temp /= 100.0;                      // rounding issues around 9.99 and 10.0 V
+				temp = ((float)(boost.data.temp - TEMP_FB_ZERO) / TEMP_FB_SLOPE); // Scale ADC value to physical unit
+				temp = (float)(int)(100.0 * temp);  // Rounding operation required to prevent display 
+				temp /= 100.0;                      // rounding issues around 9.99 and 10.0 V
 
                 if((double)temp < 10.000)
                     PrintLcd(1, "TEMP    = %2.2f C", (double)temp);
@@ -159,7 +163,7 @@ volatile uint16_t appLCD_Execute(void)
             
             case 2:     // Show Current Output
 
-                isns = ((boost.data.i_out * ADC_GRANULARITY) /  BOOST_ISNS_FEEDBACK_GAIN); // Scale ADC value to physical unit
+				isns = ((boost.data.i_out * ADC_GRANULARITY) /  BOOST_ISNS_FEEDBACK_GAIN); // Scale ADC value to physical unit
 
                 if((double)isns < 1.000)
                 {
@@ -173,7 +177,7 @@ volatile uint16_t appLCD_Execute(void)
                 break;
 
             case 3:     // Firmware Version Number
-                PrintLcd(1, "Firmware: %s", FIRMWARE_VERSION_STRING);
+                PrintLcd(1, "FW:  v%s", FIRMWARE_VERSION_STRING);
                 break;
 
             default:    // Output voltage display
@@ -207,6 +211,31 @@ volatile uint16_t appLCD_Execute(void)
         lcd.refresh = LCD_REFRESH;
         lcd_cnt = 0; // Reset internal interval counter
     }
+
+    DBGPIN1_Clear();
+    
+    return(retval);
+}
+
+/*********************************************************************************
+ * @ingroup app-layer-lcd-functions-public
+ * @fn volatile uint16_t appLCD_Start(void)
+ * @brief  Enables the periodic refresh of the LC display content
+ * @param  void
+ * @return unsigned int (0=failure, 1=success)
+ * @details
+ *  This function is enables the periodic display refresh executed by function
+ *  'appLCD_Execute'. Until the LCD driver is enabled, the startup screen will
+ *  set by function 'appLCD_Initialize' be shown.
+ *
+ **********************************************************************************/
+
+volatile uint16_t appLCD_Start(void) 
+{
+    volatile uint16_t retval = 1;
+    
+    lcd.enabled = true;
+    retval &= (uint16_t)(lcd.enabled);
     
     return(retval);
 }

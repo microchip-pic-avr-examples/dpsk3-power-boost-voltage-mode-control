@@ -29,7 +29,7 @@
  * @var struct OSCILLATOR_SYSTEM_FREQUENCIES_s system_frequencies
  * @ingroup lib-layer-pral-properties-private-osc
  */
-volatile struct OSCILLATOR_SYSTEM_FREQUENCIES_s  system_frequencies;
+volatile struct OSCILLATOR_SYSTEM_FREQUENCIES_s SystemFrequencies;
 
 /*************************************************************************************************
  * @fn uint16_t p33c_OscFrc_DefaultInitialize(volatile enum CPU_SPEED_DEFAULTS_e cpu_speed)
@@ -61,7 +61,7 @@ volatile struct OSCILLATOR_SYSTEM_FREQUENCIES_s  system_frequencies;
 
 volatile uint16_t p33c_OscFrc_DefaultInitialize(volatile enum CPU_SPEED_DEFAULTS_e cpu_speed)
 {
-    volatile int16_t retval = 0;
+    volatile int16_t retval = 1;
     volatile struct OSC_CONFIG_s osc;
     
     osc.osc_type = OSCCON_xOSC_FRCPLL;
@@ -103,7 +103,7 @@ volatile uint16_t p33c_OscFrc_DefaultInitialize(volatile enum CPU_SPEED_DEFAULTS
     osc.N2 = PLLDIV_POST2DIV_N2N3_2;
     osc.N3 = PLLDIV_POST2DIV_N2N3_1; 
     
-    retval = p33c_Osc_Initialize(osc);
+    retval &= p33c_Osc_Initialize(osc);
 
     return(retval);
 }
@@ -139,7 +139,7 @@ volatile uint16_t p33c_OscFrc_Initialize(volatile enum CLKDIV_FRCDIVN_e frc_div,
 {
 #if defined (__P33SMPS_CH_MSTR__) || defined (__P33SMPS_CK__)
 
-// Slave cores do not have access to the FRC oscillator tuning register
+// Secondary cores of multi-core devices do not have access to the FRC oscillator tuning register
     
     volatile uint16_t err=0;
 
@@ -191,9 +191,8 @@ volatile uint16_t p33c_OscFrc_Initialize(volatile enum CLKDIV_FRCDIVN_e frc_div,
 
 volatile uint16_t p33c_Osc_Initialize(volatile struct OSC_CONFIG_s osc_config)
 {
-
+    volatile uint16_t retval=0;
     volatile uint16_t _n=0;
-    volatile uint16_t err=0;
 
     // =============================================================================================
     // First make sure we are not running from a PLL derived source, when modifying the PLL settings.
@@ -209,7 +208,7 @@ volatile uint16_t p33c_Osc_Initialize(volatile struct OSC_CONFIG_s osc_config)
         __builtin_write_OSCCONL((OSCCON & 0x7E) | 0x01); 
         //Wait for switch over to complete.
         while((OSCCONbits.COSC != OSCCONbits.NOSC) && (_n++ < OSC_CLKSW_TIMEOUT)); 
-        if (_n >= OSC_CLKSW_TIMEOUT) err = OSCERR_RST;
+        if (_n >= OSC_CLKSW_TIMEOUT) retval = OSCERR_RST;
     }
 
     // Switch to target oscillator
@@ -246,14 +245,14 @@ volatile uint16_t p33c_Osc_Initialize(volatile struct OSC_CONFIG_s osc_config)
             // Wait for clock switch to finish
             while((OSCCONbits.COSC != OSCCONbits.NOSC) && (_n++ < OSC_CLKSW_TIMEOUT));  
             if ((OSCCONbits.COSC != OSCCONbits.NOSC) || (_n >= OSC_CLKSW_TIMEOUT))
-            { err = OSCERR_CSF; }
+            { retval = OSCERR_CSF; }
         }
 
 	}
 	else if ((OSCCONbits.COSC != osc_config.osc_type) && (OSCCONbits.CLKLOCK == 1))
 	{ // If clock switching is disabled and the current clock differs from the desired clock,
 	  // return error code
-			err = OSCERR_CSD;
+			retval = OSCERR_CSD;
 	}
         
     // Lock registers against accidental changes
@@ -261,15 +260,14 @@ volatile uint16_t p33c_Osc_Initialize(volatile struct OSC_CONFIG_s osc_config)
     
     while((OSCCONbits.LOCK != 1) && (_n++ < OSC_CLKSW_TIMEOUT)); // Wait n while loops for PLL to Lock
 	if ((OSCCONbits.LOCK != 1) || (_n >= OSC_CLKSW_TIMEOUT)) // Error occurred? 
-	{ err = OSCERR_PLL_LCK; } // => If so, return error code
+	{ retval = OSCERR_PLL_LCK; } // => If so, return error code
     
 // Return Success/Failure
-    if (err == 0)
-    { 
+    if (retval == 0) { 
         return((1 - OSCCONbits.CF));					// Return oscillator fail status bit
     }													// (1=Success, 0=Failure)
     else
-    {  return(err); }                                   // Return error code
+    {  return(retval); }                                // Return error code
 
 }
 
@@ -381,9 +379,7 @@ volatile uint16_t p33c_OscAuxClk_Initialize(volatile struct AUXOSC_CONFIG_s aux_
     return(retval);
  }
 
-
-/*!smpsOSC_GetFrequencies()
- * ************************************************************************************************
+ /**************************************************************************************************
  * @fn uint16_t p33c_Osc_GetFrequencies(volatile uint32_t main_osc_frequency)
  * @ingroup lib-layer-pral-functions-public-osc
  * @brief
@@ -414,26 +410,65 @@ volatile uint16_t p33c_OscAuxClk_Initialize(volatile struct AUXOSC_CONFIG_s aux_
  * recommended to call the function 'osc_get_frequencies' in user code every time after 
  * clock settings have been modified. 
  *
- * ************************************************************************************************/
-volatile uint16_t p33c_Osc_GetFrequencies(volatile uint32_t main_osc_frequency) {
+ **************************************************************************************************/
+volatile uint16_t p33c_Osc_SetExtFrequency(volatile int32_t ext_osc_frequency)
+{
+    volatile uint16_t retval=1;
     
+    SystemFrequencies.fpri = ext_osc_frequency;
+    
+    return(retval);
+}
+
+/**************************************************************************************************
+ * @fn uint16_t p33c_Osc_GetFrequencies(volatile uint32_t main_osc_frequency)
+ * @ingroup lib-layer-pral-functions-public-osc
+ * @brief
+ * This routine reads all oscillator related SFRs recalculating the various frequencies
+ * across clock domains. These frequencies are broadcasted in the global data structure 
+ * 'system_frequencies'.
+ *
+ * @return
+ * unsigned integer
+ * 0 = reading oscillator settings failed
+ * 1 = reading oscillator settings successful
+ *
+ * @details
+ * Microchip's 16-Bit devices offer multiple clock sources to clock the CPU and peripherals. This 
+ * routine reads the most recent, oscillator related Special Function Registers (SFR) and determines
+ * the recently active main clock and its frequency and calculates the resulting clock frequencies
+ * of other clock domains. 
+ * 
+ * The results are broadcasted through the 'system_frequencies' data structure which is globally 
+ * accessible in user code and can be used to calculate other oscillator dependent settings such as
+ * timer periods or baud rates of communication interfaces-
+ * 
+ * @note
+ * The content of data structure 'system_frequencies' is NOT updated automatically. It is 
+ * recommended to call the function 'p33c_Osc_GetFrequencies' in user code every time after 
+ * clock settings have been modified. 
+ * 
+ * @note
+ * If external oscillators are used, users have to specify the clock frequency by calling 
+ * the function 'p33c_Osc_SetExtFrequency(volatile int32_t ext_osc_frequency)' before the
+ * function 'p33c_Osc_GetFrequencies' will return accurate frequency information. 
+ * 
+ * If the recent oscillator is set to "External Clock" and the primary clock frequency
+ * equals zero, this function will return an error code and no frequency information 
+ * update will occur.
+ *
+ **************************************************************************************************/
+volatile uint16_t p33c_Osc_GetFrequencies(void) 
+{
     volatile int32_t freq=0;
     volatile uint16_t vbuf=0;
-    volatile OSCCON_xOSC_TYPE_e otype;
-    
-    // Copy oscillator frequency given as unsigned 32-bit integer into signed 32-bit variable
-    freq = (volatile int32_t)main_osc_frequency;
-
-    // Capture external oscillator frequency
-    if (main_osc_frequency > 0) {
-        system_frequencies.fpri = (volatile uint32_t)freq;
-    }
+    volatile enum OSCCON_xOSC_TYPE_e otype;
     
     // read currently selected oscillator
     otype = OSCCONbits.COSC; 
-    
+
     // Copy Base FRC frequency into data structure
-    system_frequencies.frc = (volatile int32_t)OSC_FRC_FREQ;   // Set default FRC oscillator frequency 
+    SystemFrequencies.frc = (volatile int32_t)OSC_FRC_FREQ;   // Set default FRC oscillator frequency 
     
     // Depending on detected oscillator type, set/override oscillator frequency
     
@@ -446,7 +481,7 @@ volatile uint16_t p33c_Osc_GetFrequencies(volatile uint32_t main_osc_frequency) 
         // FRC tuning register does not affect Backup FRC clock
         if(otype != OSCCON_xOSC_BFRC) {
             freq += OSC_TUN_STEP_FREQUENCY * (volatile int32_t)(OSCTUNbits.TUN); // Add oscillator tuning value (is singed)
-            system_frequencies.frc = freq;    // Copy updated fast RC oscillator frequency after tuning
+            SystemFrequencies.frc = freq;    // Copy updated fast RC oscillator frequency after tuning
         }
         #endif
         
@@ -465,11 +500,11 @@ volatile uint16_t p33c_Osc_GetFrequencies(volatile uint32_t main_osc_frequency) 
     
     // If external clock modes are set, check if given frequency is non-zero
     else { // If no oscillator frequency is given, it's assumed FRC oscillator is used
-        if (freq == 0) return(0);   // Error: no oscillator frequency given
+        if (freq == 0) return(0);   // Error: no oscillator frequency of external clock given
     }
     
     // Capture system root clock
-    system_frequencies.fclk = (volatile uint32_t)freq;
+    SystemFrequencies.fclk = (volatile uint32_t)freq;
 
     // Check for PLL usage and calculate oscillator frequency based on recent settings
     if ( (otype == OSCCON_xOSC_FRCPLL) || (otype == OSCCON_xOSC_PRIPLL) ) {
@@ -491,7 +526,7 @@ volatile uint16_t p33c_Osc_GetFrequencies(volatile uint32_t main_osc_frequency) 
         vbuf = (PLLDIVbits.VCODIV & 0x0003);
         if(vbuf > 3) return (0);  // if incorrect/not valid, return error
         vbuf = 4-vbuf;  // Subtract value from 4 to get divider ratio
-        system_frequencies.fvco = (volatile uint32_t)(freq/vbuf);   // Divide frequency by VCO divider
+        SystemFrequencies.fvco = (volatile uint32_t)(freq/vbuf);   // Divide frequency by VCO divider
         
         // Check PLL divider N2 for valid value
         vbuf = (PLLDIVbits.POST1DIV & 0x0007);
@@ -506,28 +541,28 @@ volatile uint16_t p33c_Osc_GetFrequencies(volatile uint32_t main_osc_frequency) 
     }
     
     // Capture PLL output frequency
-    system_frequencies.fpllo = (volatile uint32_t)freq;
+    SystemFrequencies.fpllo = (volatile uint32_t)freq;
 
     // CPU Clock Divider
     freq >>= 1;   // Divide frequency by 2
-    system_frequencies.fosc = (volatile uint32_t)freq;
+    SystemFrequencies.fosc = (volatile uint32_t)freq;
     
     // Peripheral Bus Divider
     freq >>= 1;   // Divide frequency by 2
-    system_frequencies.fp = (volatile uint32_t)freq;
+    SystemFrequencies.fp = (volatile uint32_t)freq;
 
     // Reading DOZE setting
     if (CLKDIVbits.DOZEN) {                 // If DOZE divider is enabled
         vbuf = (CLKDIVbits.DOZE & 0x0003);  // Copy divider SFR bits
         freq >>= vbuf; // Right-shift oscillator frequency by divider bits (DOZE)
     }
-    system_frequencies.fcy = (volatile uint32_t)freq;
+    SystemFrequencies.fcy = (volatile uint32_t)freq;
     
     // Calculate CPU clock period
-    system_frequencies.tcy = 1.0/((float)system_frequencies.fcy);
+    SystemFrequencies.tcy = 1.0/((float)SystemFrequencies.fcy);
 
     // Calculate peripheral clock period
-    system_frequencies.tp = 1.0/((float)system_frequencies.fp);
+    SystemFrequencies.tp = 1.0/((float)SystemFrequencies.fp);
 
     // -----------------------------------------------
     // Capture APLL frequencies
@@ -536,8 +571,8 @@ volatile uint16_t p33c_Osc_GetFrequencies(volatile uint32_t main_osc_frequency) 
     if (ACLKCON1bits.APLLEN) {  // APLL is enabled...
     
         // Select input frequency
-        if(ACLKCON1bits.FRCSEL) { freq = system_frequencies.frc; }
-        else { freq = system_frequencies.fpri; }
+        if(ACLKCON1bits.FRCSEL) { freq = SystemFrequencies.frc; }
+        else { freq = SystemFrequencies.fpri; }
         
         // Check APLL divider N1 for valid value
         vbuf = (ACLKCON1bits.APLLPRE & 0x000F);
@@ -553,7 +588,7 @@ volatile uint16_t p33c_Osc_GetFrequencies(volatile uint32_t main_osc_frequency) 
         vbuf = (APLLDIV1bits.AVCODIV & 0x0003);
         if(vbuf > 3) return (0);  // if incorrect/not valid, return error
         vbuf = 4-vbuf;  // Subtract value from 4 to get divider ratio
-        system_frequencies.afvco = (volatile uint32_t)(freq/vbuf);   // Divide frequency by VCO divider
+        SystemFrequencies.afvco = (volatile uint32_t)(freq/vbuf);   // Divide frequency by VCO divider
 
         // Check PLL divider N2 for valid value
         vbuf = (APLLDIV1bits.APOST1DIV & 0x0007);
@@ -564,12 +599,12 @@ volatile uint16_t p33c_Osc_GetFrequencies(volatile uint32_t main_osc_frequency) 
         vbuf = (APLLDIV1bits.APOST2DIV & 0x0007);
         if((vbuf > 8) || (vbuf == 0)) return (0);  // if incorrect/not valid, return error
         freq /= vbuf;   // Divide frequency by divider N3
-        system_frequencies.afpllo = freq;    // Capture auxiliary PLL output
+        SystemFrequencies.afpllo = freq;    // Capture auxiliary PLL output
         
     }
     else {  // APLL is disabled...
-        system_frequencies.afpllo = 0;    // Reset auxiliary PLL output
-        system_frequencies.afvco = 0;     // Reset auxiliary PLL VCO output
+        SystemFrequencies.afpllo = 0;    // Reset auxiliary PLL output
+        SystemFrequencies.afvco = 0;     // Reset auxiliary PLL VCO output
     }
         
     // Return 1=Success, 0=Failure

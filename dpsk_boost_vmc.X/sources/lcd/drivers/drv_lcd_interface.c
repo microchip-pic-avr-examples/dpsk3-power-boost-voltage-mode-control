@@ -76,7 +76,7 @@ void drv_LcdInterface_Initialize(void)
 void drv_LcdInterface_Reset(void)
 {
     LCD_RST_SetLow();
-    __delay_ms(25);
+    __delay_ms(1);
     LCD_RST_SetHigh();
 }
 
@@ -143,7 +143,7 @@ void drv_LcdInterface_SpiSend(uint8_t data)
         __delay_us(1);
     }
     LCD_CS_nSELECTED();
-    __delay_us(50);
+    __delay_us(1);
 }
 
 

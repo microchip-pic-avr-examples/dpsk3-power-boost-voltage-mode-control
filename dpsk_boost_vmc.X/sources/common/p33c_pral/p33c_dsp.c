@@ -2,7 +2,7 @@
  *
  * Software License Agreement
  *
- * Copyright (R) 2017 Microchip Technology Inc.  All rights reserved. Microchip licenses to you the
+ * Copyright (R) 2021 Microchip Technology Inc.  All rights reserved. Microchip licenses to you the
  * right to use, modify, copy and distribute Software only when embedded on a Microchip 
  * microcontroller or digital signal controller, which is integrated into your product or third 
  * party product (pursuant to the sublicense terms in the accompanying license agreement).
@@ -38,10 +38,10 @@
 
 
 /******************************************************************************************************
- * @fn 	  uint16_t Dsp_SetConfig(volatile struct DSP_CONFIG_s dsp_cfg) 
+ * @fn 	  uint16_t p33c_Dsp_WriteConfig(volatile struct P33C_DSP_CONFIG_s dsp_cfg) 
  * @ingroup lib-layer-pral-functions-public-dsp
  * @brief  Initializes the DSP engine in accordance to user settings 
- * @param  dsp_cfg DSP configuration SFR object of type struct DSP_CONFIG_s
+ * @param  dsp_cfg DSP configuration SFR object of type struct P33C_DSP_CONFIG_s
  * @return unsigned integer (0=failure, 1=success)
  *
  * @details
@@ -50,13 +50,13 @@
  * 
  ******************************************************************************************************/
 
-volatile uint16_t Dsp_SetConfig(volatile struct DSP_CONFIG_s dsp_cfg)
+volatile uint16_t p33c_Dsp_WriteConfig(volatile struct P33C_DSP_CONFIG_s dsp_cfg)
 {
 	volatile uint16_t retval = 0;
+    volatile struct P33C_DSP_CONFIG_s* dsp;
 	
-    CORCON = dsp_cfg.value;
-	if(CORCON == (dsp_cfg.value & REG_CORCON_VALID_DATA_WRITE_MSK)) 
-        retval = 1;
+    dsp = p33c_DspConfig_GetHandle();
+    *dsp = dsp_cfg;
 	
     return(retval);
 
@@ -64,10 +64,10 @@ volatile uint16_t Dsp_SetConfig(volatile struct DSP_CONFIG_s dsp_cfg)
 
 
 /******************************************************************************************************
- * @fn struct DSP_CONFIG_s Dsp_GetConfig(void)
+ * @fn struct P33C_DSP_CONFIG_s p33c_Dsp_GetConfig(void)
  * @ingroup lib-layer-pral-functions-public-dsp
  * @brief Reads the DSP engine configuration 
- * @return struct DSP_CONFIG_s
+ * @return struct P33C_DSP_CONFIG_s
  *
  * @details
  * This routine writes a DSP user-configuration into the core configuration register and verifies
@@ -75,13 +75,13 @@ volatile uint16_t Dsp_SetConfig(volatile struct DSP_CONFIG_s dsp_cfg)
  * 
  ******************************************************************************************************/
 
-volatile struct DSP_CONFIG_s Dsp_GetConfig(void)
+volatile struct P33C_DSP_CONFIG_s p33c_Dsp_ReadConfig(void)
 {
-	volatile struct DSP_CONFIG_s dsp_cfg;
+	volatile struct P33C_DSP_CONFIG_s* dsp;
 	
-    dsp_cfg.value = (volatile uint16_t)(CORCON); // & REG_CORCON_VALID_DATA_READ_MSK);
+    dsp = p33c_DspConfig_GetHandle();
 	
-    return(dsp_cfg);
+    return(*dsp);
 
 } 
 

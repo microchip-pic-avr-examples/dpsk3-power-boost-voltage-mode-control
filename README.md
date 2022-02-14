@@ -50,10 +50,10 @@ This code example also includes the LCD driver allowing users to observe runtime
 - [dsPIC33CH512MP508 Family](https://www.microchip.com/dsPIC33CH512MP508)
 
 ## Software Used 
-- [MPLAB&reg; X IDE v5.45](https://www.microchip.com/mplabx-ide-windows-installer)
-- [MPLAB&reg; XC16 Compiler v1.61](https://www.microchip.com/mplabxc16windows)
+- [MPLAB&reg; X IDE v6.00](https://www.microchip.com/mplabx-ide-windows-installer)
+- [MPLAB&reg; XC16 Compiler v2.00](https://www.microchip.com/mplabxc16windows)
 - [Microchip Code Configurator v4.0.2](https://www.microchip.com/mplab/mplab-code-configurator)
-- [MPLAB&reg; PowerSmart&trade; Digital Control Library Designer v0.9.14](https://microchip-pic-avr-tools.github.io/powersmart-dcld/)
+- [MPLAB&reg; PowerSmart&trade; Development Suite v1.00](https://www.microchip.com/powersmart)
 
 ## Hardware Used
 - dsPIC33C Digital Power Starter Kit, Part-No. [DM330017-3](https://www.microchip.com/DM330017-3)
@@ -70,10 +70,10 @@ This code example also includes the LCD driver allowing users to observe runtime
 - [8-MHz MEMS Oscillator, DSC6011JI2A-008](https://www.microchip.com/DSC6000B)
 - [50V/1A, Asynchronous Buck Regulator, MCP16331](https://www.microchip.com/MCP16331)
 - [16V/300mA Low Quiescent Current LDO with Shutdown and Power Good, 3.3V, MCP1755-330](https://www.microchip.com/MCP1755)
-- [High-Speed Low-Side MOSFET Driver, MCP14A0152](https://www.microchip.com/MCP14A0152)
-- [Dual Input Synchronous Half-Bridge MOSFET Driver, MCP14700](https://www.microchip.com/MCP14700)
+- [High-Speed Low-Side MOSFET Driver, MCP14A0152](https://www.microchip.com/en-us/product/MCP14A015)
+- [Dual Input Synchronous Half-Bridge MOSFET Driver, MCP14700](https://www.microchip.com/en-us/product/MCP14700)
 - [High-Speed N-Channel MOSFET, MCP87130](https://www.microchip.com/MCP87130)
-- [Active Thermistor Temperature Sensor, MCP9700](https://www.microchip.com/MCP9700)
+- [Active Thermistor Temperature Sensor, MCP9700](https://www.microchip.com/en-us/product/MCP9700)
 
 *b) Protection Circuit*
 - [P-Channel Enhancement-Mode MOSFET, TP2104](https://www.microchip.com/TP2104)
@@ -107,7 +107,6 @@ Unattended operating power supplies are always a potential safety risk as short 
 <br>
 DPSK3 Boost Converter Test Points
 </center>
-
 
 ## Operation
 After the device has been programmed and the target device starts up, the LC display will show the startup screen for approx. 3 seconds before switching to the runtime data display, showing the most recent input and output voltages.

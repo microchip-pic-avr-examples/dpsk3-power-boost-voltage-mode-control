@@ -3,7 +3,7 @@
  *
  * Software License Agreement
  *
- * Copyright © 2020 Microchip Technology Inc.  All rights reserved. Microchip licenses to you the
+ * Copyright © 2021 Microchip Technology Inc.  All rights reserved. Microchip licenses to you the
  * right to use, modify, copy and distribute Software only when embedded on a Microchip 
  * microcontroller or digital signal controller, which is integrated into your product or third 
  * party product (pursuant to the sublicense terms in the accompanying license agreement).
@@ -49,10 +49,11 @@
  *  04/11/2016	Added definitions and compile switches for dsPIC33EP GS
  *  05/29/2019  Added RPx pin configuration lock/unlock sequence for dsPIC33C
  *  10/14/2020  Removed support for dsPIC33F and dsPIC33E
+ *  06/17/2021  Synchronized all function names across PRAL drivers
  * ***********************************************************************************************/
 
 /*************************************************************************************************
- * @fn uint16_t PPS_LockIO(void)
+ * @fn uint16_t p33c_PPS_LockIO(void)
  * @ingroup lib-layer-pral-functions-public-pps
  * @brief Locks the Peripheral Pin Select Configuration registers against accidental changes
  * @return
@@ -72,7 +73,7 @@
  * @see p33c_pps.h
  * 
  ************************************************************************************************/
-volatile uint16_t PPS_LockIO(void){
+volatile uint16_t p33c_PPS_LockIO(void){
 
     __builtin_write_RPCON(0x0800); // lock PPS
     return(RPCONbits.IOLOCK);
@@ -80,7 +81,7 @@ volatile uint16_t PPS_LockIO(void){
 }
 
 /*************************************************************************************************
- * @fn uint16_t PPS_UnlockIO(void)
+ * @fn uint16_t p33c_PPS_UnlockIO(void)
  * @ingroup lib-layer-pral-functions-public-pps
  * @brief Unlocks the Peripheral Pin Select Configuration registers to enable changes
  * @return
@@ -99,7 +100,7 @@ volatile uint16_t PPS_LockIO(void){
  * @see p33c_pps.h
  * 
  ************************************************************************************************/
-volatile uint16_t PPS_UnlockIO(void){
+volatile uint16_t p33c_PPS_UnlockIO(void){
 
     __builtin_write_RPCON(0x0000); // unlock PPS
     return(1 - RPCONbits.IOLOCK);
@@ -107,7 +108,7 @@ volatile uint16_t PPS_UnlockIO(void){
 }
 
 /*************************************************************************************************
- * @fn uint16_t PPS_RemapOutput(volatile uint8_t pinno, volatile uint8_t peripheral)
+ * @fn uint16_t p33c_PPS_RemapOutput(volatile uint8_t pinno, volatile uint8_t peripheral)
  * @ingroup lib-layer-pral-functions-public-pps
  * @brief Assigns a digital function output to a pin
  * @param pinno: Index number of the RPx-pin of type uint8_t, which should be assigned to the function
@@ -121,16 +122,16 @@ volatile uint16_t PPS_UnlockIO(void){
  * Any supported digital function output (e.g. UART TxD) can be assigned to one of the RPx pins
  * of the MCU/DSC. To assign a function output to a pin, call 
  *
- *	smpsPPS_RemapOutput([RP-NUMBER], [FUNCTION])
+ *	p33c_PPS_RemapOutput([RP-NUMBER], [FUNCTION])
  * 
  * @code{.c}
- *	lres |= smpsPPS_RemapOutput(PIN_RP9 , PPSOUT_SYNCO1);	// Assign RP9 to PWMSyncClkOutput
+ *	retval |= p33c_PPS_RemapOutput(PIN_RP9 , PPSOUT_SYNCO1);	// Assign RP9 to PWMSyncClkOutput
  * @endcode
  *
  * @see p33c_pps.h
  * 
  *************************************************************************************************/
-volatile uint16_t PPS_RemapOutput(volatile uint8_t pinno, volatile uint8_t peripheral){
+volatile uint16_t p33c_PPS_RemapOutput(volatile uint8_t pinno, volatile uint8_t peripheral){
 	
     volatile uint16_t retval = 0;
     volatile uint8_t *regptr;
@@ -140,14 +141,14 @@ volatile uint16_t PPS_RemapOutput(volatile uint8_t pinno, volatile uint8_t perip
     regptr = (volatile uint8_t *)&RPOR0;    // get register block base address
     regptr += (volatile uint8_t)pin_offset; // add offset
     *regptr = (volatile uint8_t)peripheral;	// copy configuration into register location
-   retval = (bool)(*regptr == (volatile uint8_t)peripheral);	// Check if contents have been written correctly
+    retval = (bool)(*regptr == (volatile uint8_t)peripheral);	// Check if contents have been written correctly
     
 	return (retval);
 
 }
 
 /*************************************************************************************************
- * @fn uint16_t PPS_RemapInput(volatile uint8_t pinno, volatile uint8_t *peripheral)
+ * @fn uint16_t p33c_PPS_RemapInput(volatile uint8_t pinno, volatile uint8_t *peripheral)
  * @ingroup lib-layer-pral-functions-public-pps
  * @brief Assigns a pin to a digital function input
  * @param pinno: Index number of the RPx-pin of type uint8_t, which should be assigned to the function
@@ -161,17 +162,17 @@ volatile uint16_t PPS_RemapOutput(volatile uint8_t pinno, volatile uint8_t perip
  * Any RPx pin can be assigned to a supported digital function input (e.g. UART RxD). To assign 
  * a pin to a function input, call 
  *
- *	smpsPPS_RemapInput([RP-NUMBER], [FUNCTION])
+ *	p33c_PPS_RemapInput([RP-NUMBER], [FUNCTION])
  * 
  * @code{.c}
- *	lres |= smpsPPS_RemapInput(PIN_RP10, PPSIN_U1RX);		// Assign RP10 to UART1 RxD
+ *	retval |= p33c_PPS_RemapInput(PIN_RP10, PPSIN_U1RX);		// Assign RP10 to UART1 RxD
  * @endcode
  *
  * @see p33SMPS_pps.h, FOSC, IOL1WAY, IOL1WAY_ON, IOL1WAY_OFF, smpsPPS_LockIO, smpsPPS_UnlockIO, smpsPPS_RemapOutput, 
  *  smpsPPS_UnmapInput, smpsPPS_UnmapOutput
  * 
  * ***********************************************************************************************/
-volatile uint16_t PPS_RemapInput(volatile uint8_t pinno, volatile uint8_t *peripheral)
+volatile uint16_t p33c_PPS_RemapInput(volatile uint8_t pinno, volatile uint8_t *peripheral)
 {
 
 	// Map selected pin function
@@ -182,7 +183,7 @@ volatile uint16_t PPS_RemapInput(volatile uint8_t pinno, volatile uint8_t *perip
 }
 
 /*************************************************************************************************
- * @fn uint16_t PPS_UnmapOutput(volatile uint8_t pinno)
+ * @fn uint16_t p33c_PPS_UnmapOutput(volatile uint8_t pinno)
  * @ingroup lib-layer-pral-functions-public-pps
  * @brief   Disconnects a pin from a digital function output
  * @param   pinno: Index number of the RPx-pin of type uint8_t, which should be assigned to the function
@@ -195,27 +196,27 @@ volatile uint16_t PPS_RemapInput(volatile uint8_t pinno, volatile uint8_t *perip
  * An existing assignment between any RPx pin and a supported digital function output will be
  * dissolved.
  *
- *	smpsPPS_UnmapOutput([RP-NUMBER])
+ *	p33c_PPS_UnmapOutput([RP-NUMBER])
  * 
  * @code{.c}
- *	lres |= smpsPPS_UnmapOutput(PIN_RP10);		// Dissolve RP10 assignment
+ *	retval |= p33c_PPS_UnmapOutput(PIN_RP10);		// Dissolve RP10 assignment
  * @endcode
  *
  * @see p33c_pps.h
  * 
  ************************************************************************************************/
-volatile uint16_t PPS_UnmapOutput(volatile uint8_t pinno)
+volatile uint16_t p33c_PPS_UnmapOutput(volatile uint8_t pinno)
 {
     volatile uint16_t retval=0;
 
 	// Unmap selected pin function
-	retval = PPS_RemapOutput(pinno, PPSPIN_NULL);
+	retval = p33c_PPS_RemapOutput(pinno, PPSPIN_NULL);
 	return retval;
 
 }
 
 /************************************************************************************************
- * @fn uint16_t PPS_UnmapInput(volatile uint8_t *peripheral)
+ * @fn uint16_t p33c_PPS_UnmapInput(volatile uint8_t *peripheral)
  * @ingroup lib-layer-pral-functions-public-pps
  * @brief  Disconnects a pin from a digital function input
  * @param  peripheral: Pointer to peripheral of type uint8_t, which should be assigned to the pin
@@ -228,21 +229,21 @@ volatile uint16_t PPS_UnmapOutput(volatile uint8_t pinno)
  * An existing assignment between any RPx pin and a supported digital function input will be
  * dissolved.
  *
- *	smpsPPS_UnmapInput([RP-NUMBER])
+ *	p33c_PPS_UnmapInput([RP-NUMBER])
  * 
  * @code{.c}
- *	lres |= smpsPPS_UnmapInput(PIN_RP10);		// Dissolve RP10 assignment
+ *	retval |= p33c_PPS_UnmapInput(PIN_RP10);		// Dissolve RP10 assignment
  * @endcode
  *
  * @see p33c_pps.h
  * 
  ************************************************************************************************/
-volatile uint16_t PPS_UnmapInput(volatile uint8_t *peripheral)
+volatile uint16_t p33c_PPS_UnmapInput(volatile uint8_t *peripheral)
 {
     volatile uint16_t retval=0;
 
 	// Unmap selected pin function
-	retval = PPS_RemapInput(PPSPIN_NULL, peripheral);
+	retval = p33c_PPS_RemapInput(PPSPIN_NULL, peripheral);
 	return retval;
 
 }

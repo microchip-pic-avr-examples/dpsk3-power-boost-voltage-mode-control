@@ -65,8 +65,7 @@
  * 
  *************************************************************************************************/
 
-typedef enum CPU_SPEED_DEFAULTS_e
-{
+enum CPU_SPEED_DEFAULTS_e {
     CPU_SPEED_20_MIPS = 20, // CPU Speed setting for 20 MIPS operation
     CPU_SPEED_30_MIPS = 30, // CPU Speed setting for 30 MIPS operation
     CPU_SPEED_40_MIPS = 40, // CPU Speed setting for 40 MIPS operation
@@ -76,11 +75,11 @@ typedef enum CPU_SPEED_DEFAULTS_e
     CPU_SPEED_80_MIPS = 80, // CPU Speed setting for 80 MIPS operation
     CPU_SPEED_90_MIPS = 90, // CPU Speed setting for 90 MIPS operation
     CPU_SPEED_100_MIPS = 100 // CPU Speed setting for 100 MIPS operation
-} CPU_SPEED_DEFAULTS_t;  // Default CPU speed settings 
+};  // Default CPU speed settings 
+typedef enum CPU_SPEED_DEFAULTS_e CPU_SPEED_DEFAULTS_t;  // Default CPU speed settings data type
 
 
-typedef enum AUX_PLL_DEFAULTS_e
-{
+enum AUX_PLL_DEFAULTS_e {
     AFPLLO_100_MHZ  = 100, // Auxiliary PLL output frequency of 500 MHz
     AFPLLO_200_MHZ  = 200, // Auxiliary PLL output frequency of 500 MHz
     AFPLLO_300_MHZ  = 300, // Auxiliary PLL output frequency of 500 MHz
@@ -89,8 +88,8 @@ typedef enum AUX_PLL_DEFAULTS_e
     AFPLLO_600_MHZ  = 600, // Auxiliary PLL output frequency of 600 MHz
     AFPLLO_700_MHZ  = 700, // Auxiliary PLL output frequency of 700 MHz
     AFPLLO_800_MHZ  = 800  // Auxiliary PLL output frequency of 800 MHz
-} AUX_PLL_DEFAULTS_t;  // Default Auxiliary PLL output frequency settings 
-
+};  // Default Auxiliary PLL output frequency settings 
+typedef enum AUX_PLL_DEFAULTS_e AUX_PLL_DEFAULTS_t;  // Default Auxiliary PLL output frequency settings data type
 
 /**************************************************************************************************
  * @struct OSCILLATOR_SYSTEM_FREQUENCIES_s
@@ -122,21 +121,21 @@ typedef enum AUX_PLL_DEFAULTS_e
  * If only the internal FRC oscillator is used, this parameter should be set = 0.
  * ***********************************************************************************************/
 
-typedef struct OSCILLATOR_SYSTEM_FREQUENCIES_s {
+struct OSCILLATOR_SYSTEM_FREQUENCIES_s {
     volatile uint32_t frc;      // Internal fast RC oscillator frequency incl. tuning
     volatile uint32_t fpri;     // External primary oscillator frequency 
-    volatile uint32_t fclk;     // Clock frequency (external or internal oscillator frequency)
-    volatile uint32_t fosc;     // Oscillator frequency
-    volatile uint32_t fcy;      // CPU click frequency (instruction frequency = MIPS incl. DOZE divider)
+    volatile uint32_t fclk;     // Clock frequency (currently active external or internal oscillator block input frequency)
+    volatile uint32_t fosc;     // CPU Oscillator frequency (e.g. 200 MHz at 100 MIPS)
+    volatile uint32_t fcy;      // CPU tick frequency (instruction cycle frequency = MIPS incl. DOZE divider)
     volatile uint32_t fp;       // Peripheral bus clock frequency
     volatile uint32_t fpllo;    // PLL output frequency
-    volatile uint32_t fvco;     // PLL VCO frequency output incl. divider
-    volatile float tp;          // Peripheral clock period 
-    volatile float tcy;         // CPU clock period 
+    volatile uint32_t fvco;     // PLL VCO frequency output incl. VCO divider
+    volatile float tp;          // Peripheral bus clock period 
+    volatile float tcy;         // CPU instruction clock period 
     volatile uint32_t afpllo;   // APLL output frequency
-    volatile uint32_t afvco;    // APLL VCO frequency output incl. divider
-}OSCILLATOR_SYSTEM_FREQUENCIES_t;
-
+    volatile uint32_t afvco;    // APLL VCO frequency output incl. AVCO divider
+}; // Data set of global system clock domain frequencies and periods
+typedef struct OSCILLATOR_SYSTEM_FREQUENCIES_s OSCILLATOR_SYSTEM_FREQUENCIES_t; // Data set of global system clock domain frequencies and periods data type
 
 /* FRC oscillator settings and tuning */
 #if defined (__P33SMPS_CH__) 
@@ -175,34 +174,38 @@ typedef struct OSCILLATOR_SYSTEM_FREQUENCIES_s {
 #define REG_OSCCON_OSWEN_REQUEST_SWITCH  0b0000000000001000
 #define REG_OSCCON_OSWEN_SWITCH_COMPLETE 0b0000000000000000
 
-typedef enum {
+enum OSCCON_OSWEN_e {
     OSCCON_OSWEN_REQUEST_SWITCH = 0b1, // Requests oscillator switch to the selection specified by the NOSC<2:0> bits
     OSCCON_OSWEN_SWITCH_COMPLETE = 0b0 // Oscillator switch is complete
-} OSCCON_OSWEN_e; // Oscillator Switch Enable bit
+}; // Oscillator Switch Enable bit
+typedef enum OSCCON_OSWEN_e OSCCON_OSWEN_t; // Oscillator Switch Enable bit data type
 
 #define REG_OSCCON_CF_CLKSTAT_FAIL 0b0000000000001000
 #define REG_OSCCON_CF_CLKSTAT_OK   0b0000000000000000
 
-typedef enum {
+enum OSCCON_CF_e {
     OSCCON_CF_CLKSTAT_FAIL = 0b1, // FSCM has detected a clock failure
     OSCCON_CF_CLKSTAT_OK = 0b0 // FSCM has not detected a clock failure
-} OSCCON_CF_e; // Clock Fail Detect bit
+}; // Clock Fail Detect bit
+typedef enum OSCCON_CF_e OSCCON_CF_t; // Clock Fail Detect bit data type
 
 #define REG_OSCCON_LOCK_PLL_LOCKED   0b0000000000100000
 #define REG_OSCCON_LOCK_PLL_UNLOCKED 0b0000000000000000
 
-typedef enum {
+enum OSCCON_LOCK_e {
     OSCCON_LOCK_PLL_LOCKED = 0b1, // Indicates that PLL is in lock or PLL start-up timer is satisfied
     OSCCON_LOCK_PLL_UNLOCKED = 0b0 // Indicates that PLL is out of lock, start-up timer is in progress or PLL is disabled
-} OSCCON_LOCK_e; // PLL Lock Status bit (read-only)
-
+}; // PLL Lock Status bit (read-only)
+typedef enum OSCCON_LOCK_e OSCCON_LOCK_t; // PLL Lock Status bit (read-only) data type
+    
 #define REG_OSCCON_CLKLOCK_LOCKED   0b0000000010000000
 #define REG_OSCCON_CLKLOCK_UNLOCKED 0b0000000000000000
 
-typedef enum {
+enum OSCCON_CLKLOCK_e{
     OSCCON_CLKLOCK_LOCKED = 0b1, // If (FCKSM0 = 1), then clock and PLL configurations are locked; if (FCKSM0 = 0), then clock and PLL configurations may be modified
     OSCCON_CLKLOCK_UNLOCKED = 0b0 // Clock and PLL selections are not locked, configurations may be modified
-} OSCCON_CLKLOCK_e; // Clock Lock Enable bit
+}; // Clock Lock Enable bit
+typedef enum OSCCON_CLKLOCK_e OSCCON_CLKLOCK_t; // Clock Lock Enable bit data type
 
 #define REG_OSCCON_NOSC_FRCDIVN 0b0000011100000000
 #define REG_OSCCON_NOSC_BFRC    0b0000011000000000
@@ -221,7 +224,7 @@ typedef enum {
 #define REG_OSCCON_COSC_FRC     0b0000000000000000
 
 
-typedef enum {
+enum OSCCON_xOSC_TYPE_e {
     OSCCON_xOSC_FRC = 0b000, // Fast RC Oscillator, no PLL 
     OSCCON_xOSC_FRCPLL = 0b001, // Fast RC Oscillator with PLL
     OSCCON_xOSC_PRI = 0b010, // Primary Oscillator (EC, XT, HS), no PLL
@@ -229,26 +232,30 @@ typedef enum {
     OSCCON_xOSC_LPRC = 0b101, // Low Power Oscillator for Idle/Sleep Mode
     OSCCON_xOSC_BFRC = 0b110, // Backup Fast RC Oscillator
     OSCCON_xOSC_FRCDIVN = 0b111 // Fast RC Oscillator with variable Divider
-} OSCCON_xOSC_TYPE_e ;// Oscillator Type Selection bits
+}; // Oscillator Type Selection bits
+typedef enum OSCCON_xOSC_TYPE_e OSCCON_xOSC_TYPE_t; // Oscillator Type Selection bits data type
 
-typedef struct {
-    volatile OSCCON_OSWEN_e OSWEN : 1; // Oscillator Switch Enable bit
-    volatile unsigned : 2; // reserved
-    volatile OSCCON_CF_e CF : 1; // Clock Fail Detect bit
-    volatile unsigned : 1; // reserved
-    volatile OSCCON_LOCK_e LOCK : 1; // PLL Lock Status bit (read only)
-    volatile unsigned : 1; // reserved
-    volatile OSCCON_CLKLOCK_e CLKLOCK : 1; // Clock Lock Enable bit
-    volatile OSCCON_xOSC_TYPE_e NOSC : 3; // New Oscillator Selection bits
-    volatile unsigned : 1; // reserved
-    volatile OSCCON_xOSC_TYPE_e COSC : 3; // Current Oscillator Selection bits (read only)
-
-} __attribute__((packed)) OSCCON_t; // Oscillator configuration register
-
-typedef union {
-    volatile uint16_t value;
-    volatile OSCCON_t OSCCON;
-} REGBLK_OSCCON_CONFIG_t;
+struct P33C_OSC_CONFIG_s {
+    union {
+        struct {
+            volatile enum OSCCON_OSWEN_e OSWEN : 1;  // Bit 0: Oscillator Switch Enable bit
+            volatile unsigned : 1;              // Bit 1: reserved
+            volatile unsigned : 1;              // Bit 2: reserved
+            volatile enum OSCCON_CF_e CF : 1;        // Bit 3: Clock Fail Detect bit
+            volatile unsigned : 1;              // Bit 4: reserved
+            volatile enum OSCCON_LOCK_e LOCK : 1;    // Bit 5: PLL Lock Status bit (read only)
+            volatile unsigned : 1;              // Bit 6: reserved
+            volatile enum OSCCON_CLKLOCK_e CLKLOCK : 1; // Bit 7: Clock Lock Enable bit
+            volatile enum OSCCON_xOSC_TYPE_e NOSC : 3; // Bit 8-10: New Oscillator Selection bits
+            volatile unsigned : 1;              // Bit 11: reserved
+            volatile enum OSCCON_xOSC_TYPE_e COSC : 3; // Bit 12-14: Current Oscillator Selection bits (read only)
+            volatile unsigned : 1;              // Bit 15: reserved
+        } __attribute__((packed)) bits;
+        volatile uint16_t value;
+    };
+    
+}; // Oscillator configuration special function register set
+typedef struct P33C_OSC_CONFIG_s P33C_OSC_CONFIG_t; // Oscillator configuration special function register set data type
 
 /* ===========================================================================
  * CLKDIV: CLOCK DIVIDER REGISTER
@@ -262,7 +269,7 @@ typedef union {
 #define REG_CLKDIV_PLLPRE_DIV_MASK          0b0000000000001111
 #define REG_CLKDIV_PLLPRE_DIVIDER_N1(x)     {(x & REG_CLKDIV_PLLPRE_DIV_MASK)}
 
-typedef enum {
+enum CLKDIV_PLLPRE_e {
     CLKDIV_PLLDIV_N1_1 = 0b000001, // PLL Input Clock Divider Setting 1:1
     CLKDIV_PLLDIV_N1_2 = 0b000010, // PLL Input Clock Divider Setting 1:2
     CLKDIV_PLLDIV_N1_3 = 0b000011, // PLL Input Clock Divider Setting 1:3
@@ -271,7 +278,8 @@ typedef enum {
     CLKDIV_PLLDIV_N1_6 = 0b000110, // PLL Input Clock Divider Setting 1:6
     CLKDIV_PLLDIV_N1_7 = 0b000111, // PLL Input Clock Divider Setting 1:7
     CLKDIV_PLLDIV_N1_8 = 0b001000 // PLL Input Clock Divider Setting 1:8
-} CLKDIV_PLLPRE_e; // PLL Phase Detector Input Divider Select bits (also denoted as ?N1?, PLL prescaler)
+}; // PLL Phase Detector Input Divider Select bits (also denoted as ?N1?, PLL prescaler) data type
+typedef enum CLKDIV_PLLPRE_e CLKDIV_PLLPRE_t; // PLL Phase Detector Input Divider Select bits (also denoted as ?N1?, PLL prescaler) data type
 
 #else
     #pragma message "error: === selected device family is not supported by oscillator mcal library ==="
@@ -286,7 +294,7 @@ typedef enum {
 #define REG_CLKDIV_DOZE_DIV_64   0b0110000000000000
 #define REG_CLKDIV_DOZE_DIV_128  0b0111000000000000
 
-typedef enum {
+enum CLKDIV_DOZE_e {
     CLKDIV_DOZE_DIV_1 = 0b000, // FCY Clock Divider Setting 1:1
     CLKDIV_DOZE_DIV_2 = 0b001, // FCY Clock Divider Setting 1:2
     CLKDIV_DOZE_DIV_4 = 0b010, // FCY Clock Divider Setting 1:4
@@ -295,15 +303,17 @@ typedef enum {
     CLKDIV_DOZE_DIV_32 = 0b101, // FCY Clock Divider Setting 1:32
     CLKDIV_DOZE_DIV_64 = 0b110, // FCY Clock Divider Setting 1:64
     CLKDIV_DOZE_DIV_128 = 0b111 // FCY Clock Divider Setting 1:128
-} CLKDIV_DOZE_e; // Processor Clock Reduction Select bits
+}; // Processor Clock Reduction Select bits
+typedef enum CLKDIV_DOZE_e CLKDIV_DOZE_t; // Processor Clock Reduction Select bits data type
 
 #define REG_CLKDIV_DOZEN_ENABLED  0b0000100000000000
 #define REG_CLKDIV_DOZEN_DISABLED 0b0000000000000000
 
-typedef enum {
+enum CLKDIV_DOZEN_e {
     CLKDIV_DOZEN_ENABLED = 0b1, // DOZE<2:0> field specifies the ratio between the peripheral clocks and the processor clocks
     CLKDIV_DOZEN_DISABLED = 0b0 // Processor clock and peripheral clock ratio is forced to 1:1
-} CLKDIV_DOZEN_e; // Doze Mode Enable bit
+}; // Doze Mode Enable bit
+typedef enum CLKDIV_DOZEN_e CLKDIV_DOZEN_t; // Doze Mode Enable bit data type
 
 #define REG_CLKDIV_FRCDIVN_256  0b0000011100000000
 #define REG_CLKDIV_FRCDIVN_64   0b0000011000000000
@@ -314,7 +324,7 @@ typedef enum {
 #define REG_CLKDIV_FRCDIVN_2    0b0000000100000000
 #define REG_CLKDIV_FRCDIVN_1    0b0000000000000000
 
-typedef enum CLKDIV_FRCDIVN_e {
+enum CLKDIV_FRCDIVN_e {
     CLKDIV_FRCDIVN_1 = 0b000, // Fast RC Oscillator Clock Divider Setting 1:1
     CLKDIV_FRCDIVN_2 = 0b001, // Fast RC Oscillator Clock Divider Setting 1:2
     CLKDIV_FRCDIVN_4 = 0b010, // Fast RC Oscillator Clock Divider Setting 1:4
@@ -323,29 +333,32 @@ typedef enum CLKDIV_FRCDIVN_e {
     CLKDIV_FRCDIVN_32 = 0b101, // Fast RC Oscillator Clock Divider Setting 1:32
     CLKDIV_FRCDIVN_64 = 0b110, // Fast RC Oscillator Clock Divider Setting 1:64
     CLKDIV_FRCDIVN_256 = 0b111 // Fast RC Oscillator Clock Divider Setting 1:256
-} CLKDIV_FRCDIVN_t; // Internal Fast RC Oscillator Postscaler bits
+}; // Internal Fast RC Oscillator Postscaler bits data type
+typedef enum CLKDIV_FRCDIVN_e CLKDIV_FRCDIVN_t; // Internal Fast RC Oscillator Postscaler bits data type
 
 #define REG_CLKDIV_ROI_ENABLED  0b1000000000000000
 #define REG_CLKDIV_ROI_DISABLED 0b0000000000000000
 
-typedef enum {
+enum CLKDIV_ROI_e {
     CLKDIV_ROI_ENABLED = 0b1, // Interrupts will clear the DOZEN bit and the processor clock, and the peripheral clock ratio is set to 1:1
     CLKDIV_ROI_DISABLED = 0b0 // Interrupts have no effect on the DOZEN bit
-} CLKDIV_ROI_e; // Recover on Interrupt bit
+}; // Recover on Interrupt bit
+typedef enum CLKDIV_ROI_e CLKDIV_ROI_t; // Recover on Interrupt bit data type
 
-typedef struct {
-    volatile CLKDIV_PLLPRE_e PLLPRE : 6; // PLL Phase Detector Input Divider Select bits (also denoted as ?N1?, PLL prescaler)
-    volatile unsigned : 2;
-    volatile enum CLKDIV_FRCDIVN_e FRCDIV : 3; // Internal Fast RC Oscillator Postscaler bits
-    volatile CLKDIV_DOZEN_e DOZEN : 1; // Doze Mode Enable bit
-    volatile CLKDIV_DOZE_e DOZE : 3; // Processor Clock Reduction Select bits
-    volatile CLKDIV_ROI_e ROI : 1; // Recover on Interrupt bit
-} __attribute__((packed)) CLKDIV_t;
-
-typedef union {
-    volatile uint16_t value;
-    volatile CLKDIV_t CLKDIV;
-} REGBLK_CLKDIV_CONFIG_t;
+struct CLKDIV_s {
+    union {
+        struct {
+            volatile enum CLKDIV_PLLPRE_e PLLPRE : 4; // PLL Phase Detector Input Divider Select bits (also denoted as ?N1?, PLL prescaler)
+            volatile unsigned : 4;
+            volatile enum CLKDIV_FRCDIVN_e FRCDIV : 3; // Internal Fast RC Oscillator Postscaler bits
+            volatile enum CLKDIV_DOZEN_e DOZEN : 1; // Doze Mode Enable bit
+            volatile enum CLKDIV_DOZE_e DOZE : 3; // Processor Clock Reduction Select bits
+            volatile enum CLKDIV_ROI_e ROI : 1; // Recover on Interrupt bit
+        } __attribute__((packed)) bits;
+        volatile uint16_t value;
+    };
+}; // CLKDIV: clock divider register data type
+typedef struct CLKDIV_s CLKDIV_t; // CLKDIV: clock divider register data type
 
 
 /* ===========================================================================
@@ -360,7 +373,7 @@ typedef union {
 #define REG_PLLFBD_PLLFBDIV_M_MASK           0b0000000011111111
 #define REG_PLLFBD_MULTIPLIER_M(x)     {(x & REG_PLLFBD_PLLFBDIV_M_MASK)}
 
-typedef enum {
+enum PLLFBD_PLLFBDIV_e {
     PLLFBD_PLLFBDIV_M_16 = 0b00010000, // PLL Input Clock Multiplier Setting x16
     PLLFBD_PLLFBDIV_M_17 = 0b00010001, // PLL Input Clock Multiplier Setting x17
     PLLFBD_PLLFBDIV_M_18 = 0b00010010, // PLL Input Clock Multiplier Setting x18
@@ -546,21 +559,23 @@ typedef enum {
     PLLFBD_PLLFBDIV_M_198 = 0b11000110, // PLL Input Clock Multiplier Setting x198
     PLLFBD_PLLFBDIV_M_199 = 0b11000111, // PLL Input Clock Multiplier Setting x199
     PLLFBD_PLLFBDIV_M_200 = 0b11001000 // PLL Input Clock Multiplier Setting x200
-} PLLFBD_PLLFBDIV_e; // PLL Feedback Divider bits (also denoted as ?M?, PLL multiplier)
+}; // PLL Feedback Divider bits (also denoted as ?M?, PLL multiplier) data type
+typedef enum PLLFBD_PLLFBDIV_e PLLFBD_PLLFBDIV_t; // PLL Feedback Divider bits (also denoted as ?M?, PLL multiplier) data type
 
-typedef struct {
-    volatile PLLFBD_PLLFBDIV_e PLLFBDIV : 8; // PLL Feedback Divider bits (also denoted as ?M?, PLL multiplier)
-    volatile unsigned : 8; // reserved
-} PLLFBD_t;
+struct PLLFBD_s {
+    union {
+        struct {
+            volatile enum PLLFBD_PLLFBDIV_e PLLFBDIV : 8; // PLL Feedback Divider bits (also denoted as ?M?, PLL multiplier)
+            volatile unsigned : 8; // reserved
+        } __attribute__((packed)) bits;
+        volatile uint16_t value;
+    };    
+};
+typedef struct PLLFBD_s PLLFBD_t;
 
 #else
     #pragma message "error: === selected device family is not supported by oscillator mcal library ==="
 #endif
-
-typedef union {
-    volatile uint16_t value;
-    volatile PLLFBD_t PLLFBD;
-} REGBLK_PLLFBD_CONFIG_t;
 
 
 /* ===========================================================================
@@ -575,7 +590,7 @@ typedef union {
 
 #if defined (__P33SMPS_CH__) ||  defined (__P33SMPS_CK__)
 
-typedef enum OSCTUN_TUN_e {
+enum OSCTUN_TUN_e {
     OSCTUN_TUN_MINUS_31 = 0b100001, // Center frequency -1.457% (=7.88344 MHz)
     OSCTUN_TUN_MINUS_30 = 0b100010, // Center frequency -1.41% (=7.8872 MHz)
     OSCTUN_TUN_MINUS_29 = 0b100011, // Center frequency -1.363% (=7.89096 MHz)
@@ -639,22 +654,23 @@ typedef enum OSCTUN_TUN_e {
     OSCTUN_TUN_PLUS_29 = 0b011101, // Center frequency +1.363% (=8.10904 MHz)
     OSCTUN_TUN_PLUS_30 = 0b011110, // Center frequency +1.41% (=8.1128 MHz)
     OSCTUN_TUN_PLUS_31 = 0b011111 // Center frequency +1.457% (=8.11656 MHz)
-} OSCTUN_TUN_t; // FRC Oscillator Tuning bits
+};
+typedef enum OSCTUN_TUN_e OSCTUN_TUN_t; // FRC Oscillator Tuning bits
 
 #else
     #pragma message "error: === selected device family is not supported by oscillator mcal library ==="
 #endif
 
-typedef struct {
-    volatile enum OSCTUN_TUN_e TUN : 6; // FRC Oscillator Tuning bits
-    volatile unsigned : 10; // reserved
-} __attribute__((packed)) OSCTUN_t;
-
-typedef union {
-    volatile uint16_t value;
-    volatile OSCTUN_t OSCTUN;
-} REGBLK_OSCTUN_CONFIG_t;
-
+struct OSCTUN_s{
+    union {
+        struct {
+            volatile enum OSCTUN_TUN_e TUN : 6; // FRC Oscillator Tuning bits
+            volatile unsigned : 10; // reserved
+        } __attribute__((packed)) bits;
+        volatile uint16_t value;
+    };
+};
+typedef struct OSCTUN_s OSCTUN_t;
 
 /* ===========================================================================
  * PLLDIV: PLL OUTPUT DIVIDER REGISTER
@@ -671,7 +687,7 @@ typedef union {
 #define REG_PLLDIV_POST2DIV_N3_MASK         0b0000000000000111
 #define REG_PLLDIV_POST2DIV_N3(x)     {(x & REG_PLLDIV_POST1DIV_N3_MASK)}
 
-typedef enum {
+enum PLLDIV_POSTxDIV_e {
     PLLDIV_POST2DIV_N2N3_1 = 0b001, // PLL Output Divider Ratio bits 1:1
     PLLDIV_POST2DIV_N2N3_2 = 0b010, // PLL Output Divider Ratio bits 1:2
     PLLDIV_POST2DIV_N2N3_3 = 0b011, // PLL Output Divider Ratio bits 1:3
@@ -679,33 +695,36 @@ typedef enum {
     PLLDIV_POST2DIV_N2N3_5 = 0b101, // PLL Output Divider Ratio bits 1:5
     PLLDIV_POST2DIV_N2N3_6 = 0b110, // PLL Output Divider Ratio bits 1:6
     PLLDIV_POST2DIV_N2N3_7 = 0b111 // PLL Output Divider Ratio bits 1:7
-} PLLDIV_POSTxDIV_e; // PLL Output Divider Ratio bits (also denoted as ?N2? and ?N3?, PLL divider)
+}; // PLL Output Divider Ratio bits (also denoted as ?N2? and ?N3?, PLL divider)
+typedef enum PLLDIV_POSTxDIV_e PLLDIV_POSTxDIV_t;  // PLL Output Divider Ratio bits (also denoted as ?N2? and ?N3?, PLL divider) data type
 
 #define REG_PLLDIV_VCODIV_FVCO_DIV_BY_1	0b0000001100000000
 #define REG_PLLDIV_VCODIV_FVCO_DIV_BY_2	0b0000001000000000
 #define REG_PLLDIV_VCODIV_FVCO_DIV_BY_3	0b0000000100000000
 #define REG_PLLDIV_VCODIV_FVCO_DIV_BY_4	0b0000000000000000
 
-typedef enum {
+enum PLLDIV_VCODIV_e{
     PLLDIV_VCODIV_FVCO_DIV_BY_1 = 0b11, // PLL VCO Output Divider 1:1
     PLLDIV_VCODIV_FVCO_DIV_BY_2 = 0b10, // PLL VCO Output Divider 1:2
     PLLDIV_VCODIV_FVCO_DIV_BY_3 = 0b01, // PLL VCO Output Divider 1:3
-    PLLDIV_VCODIV_FVCO_DIV_BY_4 = 0b00 // PLL VCO Output Divider 1:4
-} PLLDIV_VCODIV_e; // PLL VCO Output Divider Select bits
+    PLLDIV_VCODIV_FVCO_DIV_BY_4 = 0b00  // PLL VCO Output Divider 1:4
+}; // PLL VCO Output Divider Select bits
+typedef enum PLLDIV_VCODIV_e PLLDIV_VCODIV_t; // PLL VCO Output Divider Select bits data type
 
-typedef struct {
-    volatile PLLDIV_POSTxDIV_e POST2DIV : 3;
-    volatile unsigned : 1;
-    volatile PLLDIV_POSTxDIV_e POST1DIV : 3;
-    volatile unsigned : 1;
-    volatile PLLDIV_VCODIV_e VCODIV : 2;
-    volatile unsigned : 6;
-} __attribute__((packed)) PLLDIV_t;
-
-typedef union {
-    volatile uint16_t value;
-    volatile PLLDIV_t PLLDIV;
-} REGBLK_PLLDIV_CONFIG_t;
+struct PLLDIV_s {
+    union {
+        struct {
+            volatile enum PLLDIV_POSTxDIV_e POST2DIV : 3;
+            volatile unsigned : 1;
+            volatile enum PLLDIV_POSTxDIV_e POST1DIV : 3;
+            volatile unsigned : 1;
+            volatile enum PLLDIV_VCODIV_e VCODIV : 2;
+            volatile unsigned : 6;
+        } __attribute__((packed)) bits;
+        volatile uint16_t value;
+    };
+};
+typedef struct PLLDIV_s PLLDIV_t;
 
 #endif
 
@@ -722,7 +741,7 @@ typedef union {
 #define REG_ACLKCON_APLLPRE_DIV_MASK          0b0000000000001111
 #define REG_ACLKCON_APLLPRE_DIVIDER_N1(x)     {(x & REG_ACLKCON_APLLPRE_DIV_MASK)}
 
-typedef enum {
+enum ACLKCON_APLLPRE_e {
     ACLKCON_APLLDIV_N1_1 = 0b000001, // APLL Input Clock Divider Setting 1:1
     ACLKCON_APLLDIV_N1_2 = 0b000010, // APLL Input Clock Divider Setting 1:2
     ACLKCON_APLLDIV_N1_3 = 0b000011, // APLL Input Clock Divider Setting 1:3
@@ -731,45 +750,50 @@ typedef enum {
     ACLKCON_APLLDIV_N1_6 = 0b000110, // APLL Input Clock Divider Setting 1:6
     ACLKCON_APLLDIV_N1_7 = 0b000111, // APLL Input Clock Divider Setting 1:7
     ACLKCON_APLLDIV_N1_8 = 0b001000 // APLL Input Clock Divider Setting 1:8
-} ACLKCON_APLLPRE_e; // PLL Phase Detector Input Divider Select bits (also denoted as ?N1?, PLL prescaler)
+}; // PLL Phase Detector Input Divider Select bits (also denoted as ?N1?, PLL prescaler)
+typedef enum ACLKCON_APLLPRE_e ACLKCON_APLLPRE_t; // PLL Phase Detector Input Divider Select bits (also denoted as ?N1?, PLL prescaler) data type
 
 #define REG_ACLKCON_FRCSEL_FRC  0b0000000100000000
 #define REG_ACLKCON_FRCSEL_PRI  0b0000000000000000
 
-typedef enum {
+enum ACLKCON_FRCSEL_e{
     PLLDIV_ACLKCON_FRCSEL_FRC = 0b1, // FRC is the clock source for APLL
     PLLDIV_ACLKCON_FRCSEL_PRI = 0b0 // Primary Oscillator is the clock source for APLL
-} ACLKCON_FRCSEL_e; // APLL Clock Source Select bit
+}; // APLL Clock Source Select bit
+typedef enum ACLKCON_FRCSEL_e ACLKCON_FRCSEL_t; // APLL Clock Source Select bit data type
 
 #define REG_ACLKCON_APLLCK_STAT_LOCKED	  0b0100000000000000
 #define REG_ACLKCON_APLLCK_STAT_UNLOCKED  0b0000000000000000
 
-typedef enum {
+enum ACLKCON_APLLCK_e {
     ACLKCON_APLLCK_STAT_LOCKED = 0b1, // APLL Phase-Locked State Status bit
     ACLKCON_APLLCK_STAT_UNLOCKED = 0b0 // Auxiliary PLL is not in lock
-} ACLKCON_APLLCK_e; // APLL Phase-Locked State Status bit
+}; // APLL Phase-Locked State Status bit
+typedef enum ACLKCON_APLLCK_e ACLKCON_APLLCK_t; // APLL Phase-Locked State Status bit data type
 
 #define REG_ACLKCON_APLLEN_ENABLED	 0b1000000000000000
 #define REG_ACLKCON_APLLEN_DISABLED  0b0000000000000000
 
-typedef enum {
+enum ACLKCON_APLLEN_e {
     ACLKCON_APLLEN_ENABLED = 0b1, // AFPLLO is connected to the APLL post-divider output (bypass disabled)
     ACLKCON_APLLEN_DISABLED = 0b0 // AFPLLO is connected to the APLL input clock (bypass enabled)
-} ACLKCON_APLLEN_e; // Auxiliary PLL Enable/Bypass select bit
+}; // Auxiliary PLL Enable/Bypass select bit
+typedef enum ACLKCON_APLLEN_e ACLKCON_APLLEN_t; // Auxiliary PLL Enable/Bypass select bit data type
 
-typedef struct {
-    volatile ACLKCON_APLLPRE_e APLLPRE : 6;
-    volatile unsigned : 2;
-    volatile ACLKCON_FRCSEL_e FRCSEL : 1;
-    volatile unsigned : 5;
-    volatile ACLKCON_APLLCK_e APLLCK : 1;
-    volatile ACLKCON_APLLEN_e APLLEN : 1;
-} ACLKCON_t;
-
-typedef union {
-    volatile uint16_t value;
-    volatile ACLKCON_t ACLKCON; // APLL Feedback Divider bits
-} REGBLK_ACLKCON_CONFIG_t;
+struct ACLKCON_s {
+    union {
+        struct {
+            volatile enum ACLKCON_APLLPRE_e APLLPRE : 6;
+            volatile unsigned : 2;
+            volatile enum ACLKCON_FRCSEL_e FRCSEL : 1;
+            volatile unsigned : 5;
+            volatile enum ACLKCON_APLLCK_e APLLCK : 1;
+            volatile enum ACLKCON_APLLEN_e APLLEN : 1;
+        } __attribute__((packed)) bits;
+        volatile uint16_t value;
+    };
+};
+typedef struct ACLKCON_s ACLKCON_t;
 
 #else
     #pragma message "error: === selected device family is not supported by oscillator mcal library ==="
@@ -787,7 +811,7 @@ typedef union {
 #define REG_APLLFBD_APLLFBDIV_M_MASK           0b0000000011111111
 #define REG_APLLFBD_MULTIPLIER_M(x)     {(x & REG_APLLFBD_APLLFBDIV_M_MASK)}
 
-typedef enum {
+enum APLLFBD_APLLFBDIV_e {
     APLLFBD_APLLFBDIV_M_16 = 0b00010000, // APLL Input Clock Multiplier Setting x16
     APLLFBD_APLLFBDIV_M_17 = 0b00010001, // APLL Input Clock Multiplier Setting x17
     APLLFBD_APLLFBDIV_M_18 = 0b00010010, // APLL Input Clock Multiplier Setting x18
@@ -973,17 +997,19 @@ typedef enum {
     APLLFBD_APLLFBDIV_M_198 = 0b11000110, // APLL Input Clock Multiplier Setting x198
     APLLFBD_APLLFBDIV_M_199 = 0b11000111, // APLL Input Clock Multiplier Setting x199
     APLLFBD_APLLFBDIV_M_200 = 0b11001000 // APLL Input Clock Multiplier Setting x200
-} APLLFBD_APLLFBDIV_e; // APLL Feedback Divider bits (also denoted as ?M?, PLL multiplier)
+};
+typedef enum APLLFBD_APLLFBDIV_e APLLFBD_APLLFBDIV_t; // APLL Feedback Divider bits (also denoted as ?M?, PLL multiplier)
 
-typedef struct {
-    volatile APLLFBD_APLLFBDIV_e APLLFBDIV : 8; // APLL Feedback Divider bits (also denoted as ?M?, PLL multiplier)
-    volatile unsigned : 8; // reserved
-} APLLFBD_t; // APLL Feedback Divider bits
-
-typedef union {
-    volatile uint16_t value;
-    volatile APLLFBD_t APLLFBD; // APLL Feedback Divider bits
-} REGBLK_APLLFBD_CONFIG_t;
+struct APLLFBD_s {
+    union {
+        struct {
+            volatile enum APLLFBD_APLLFBDIV_e APLLFBDIV : 8; // APLL Feedback Divider bits (also denoted as ?M?, PLL multiplier)
+            volatile unsigned : 8; // reserved
+        } __attribute__((packed)) bits;
+        volatile uint16_t value;
+    };
+};
+typedef struct APLLFBD_s APLLFBD_t; // APLL Feedback Divider bits
 
 #else
     #pragma message "error: === selected device family is not supported by oscillator mcal library ==="
@@ -1004,7 +1030,7 @@ typedef union {
 #define REG_APLLDIV_POST2DIV_N3_MASK         0b0000000000000111
 #define REG_APLLDIV_POST2DIV_N3(x)     {(x & REG_APLLDIV_POST1DIV_N3_MASK)}
 
-typedef enum {
+enum APLLDIV_POSTxDIV_e {
     APLLDIV_POST2DIV_N2N3_1 = 0b001, // PLL Output Divider Ratio bits 1:1
     APLLDIV_POST2DIV_N2N3_2 = 0b010, // PLL Output Divider Ratio bits 1:2
     APLLDIV_POST2DIV_N2N3_3 = 0b011, // PLL Output Divider Ratio bits 1:3
@@ -1012,33 +1038,36 @@ typedef enum {
     APLLDIV_POST2DIV_N2N3_5 = 0b101, // PLL Output Divider Ratio bits 1:5
     APLLDIV_POST2DIV_N2N3_6 = 0b110, // PLL Output Divider Ratio bits 1:6
     APLLDIV_POST2DIV_N2N3_7 = 0b111 // PLL Output Divider Ratio bits 1:7
-} APLLDIV_POSTxDIV_e; // PLL Output Divider Ratio bits (also denoted as ?N2? and ?N3?, PLL divider)
+}; // PLL Output Divider Ratio bits (also denoted as ?N2? and ?N3?, PLL divider)
+typedef enum APLLDIV_POSTxDIV_e APLLDIV_POSTxDIV_t; // PLL Output Divider Ratio bits (also denoted as ?N2? and ?N3?, PLL divider) data type
 
 #define REG_APLLDIV_AVCODIV_FVCO_DIV_BY_1	0b0000001100000000
 #define REG_APLLDIV_AVCODIV_FVCO_DIV_BY_2	0b0000001000000000
 #define REG_APLLDIV_AVCODIV_FVCO_DIV_BY_3	0b0000000100000000
 #define REG_APLLDIV_AVCODIV_FVCO_DIV_BY_4	0b0000000000000000
 
-typedef enum {
+enum APLLDIV_AVCODIV_e {
     APLLDIV_AVCODIV_FVCO_DIV_BY_1 = 0b11, // APLL AVCO Output Divider 1:1
     APLLDIV_AVCODIV_FVCO_DIV_BY_2 = 0b10, // APLL AVCO Output Divider 1:2
     APLLDIV_AVCODIV_FVCO_DIV_BY_3 = 0b01, // APLL AVCO Output Divider 1:3
     APLLDIV_AVCODIV_FVCO_DIV_BY_4 = 0b00 // APLL AVCO Output Divider 1:4
-} APLLDIV_AVCODIV_e; // APLL AVCO Output Divider Select bits
+}; // APLL AVCO Output Divider Select bits
+typedef enum APLLDIV_AVCODIV_e APLLDIV_AVCODIV_t; // APLL AVCO Output Divider Select bits data type
 
-typedef struct {
-    volatile APLLDIV_POSTxDIV_e APOST2DIV : 3;
-    volatile unsigned : 1;
-    volatile APLLDIV_POSTxDIV_e APOST1DIV : 3;
-    volatile unsigned : 1;
-    volatile APLLDIV_AVCODIV_e AVCODIV : 2;
-    volatile unsigned : 6;
-} __attribute__((packed)) APLLDIV_t;
-
-typedef union {
-    volatile uint16_t value;
-    volatile APLLDIV_t APLLDIV; // APLL Output Divider Select bits
-} REGBLK_APLLDIV_CONFIG_t;
+struct APLLDIV_s {
+    union {
+        struct {
+            volatile enum APLLDIV_POSTxDIV_e APOST2DIV : 3;
+            volatile unsigned : 1;
+            volatile enum APLLDIV_POSTxDIV_e APOST1DIV : 3;
+            volatile unsigned : 1;
+            volatile enum APLLDIV_AVCODIV_e AVCODIV : 2;
+            volatile unsigned : 6;
+        } __attribute__((packed)) bits;
+        volatile uint16_t value;
+    };
+}; // APLL Output Divider Select bits
+typedef struct APLLDIV_s APLLDIV_t; // APLL Output Divider Select bits data type
 
 #else
     #pragma message "error: === selected device family is not supported by oscillator mcal library ==="
@@ -1050,27 +1079,29 @@ typedef union {
 
 #if defined (__P33SMPS_CH__) ||  defined (__P33SMPS_CK__)
 
-typedef struct OSC_CONFIG_s {
-    volatile OSCCON_xOSC_TYPE_e osc_type;
+struct OSC_CONFIG_s {
+    volatile enum OSCCON_xOSC_TYPE_e osc_type;
     volatile enum CLKDIV_FRCDIVN_e frc_div;
     volatile enum OSCTUN_TUN_e frc_tune;
-    volatile CLKDIV_PLLPRE_e N1;
-    volatile PLLFBD_PLLFBDIV_e M;
-    volatile PLLDIV_POSTxDIV_e N2;
-    volatile PLLDIV_POSTxDIV_e N3;
-    volatile PLLDIV_VCODIV_e VCODIV;
-} OSC_CONFIG_t;
+    volatile enum CLKDIV_PLLPRE_e N1;
+    volatile enum PLLFBD_PLLFBDIV_e M;
+    volatile enum PLLDIV_POSTxDIV_e N2;
+    volatile enum PLLDIV_POSTxDIV_e N3;
+    volatile enum PLLDIV_VCODIV_e VCODIV;
+};
+typedef struct OSC_CONFIG_s OSC_CONFIG_t;
 
-typedef struct AUXOSC_CONFIG_s {
-    volatile ACLKCON_APLLPRE_e N1;
-    volatile APLLFBD_APLLFBDIV_e M;
-    volatile APLLDIV_POSTxDIV_e N2;
-    volatile APLLDIV_POSTxDIV_e N3;
-    volatile APLLDIV_AVCODIV_e AVCODIV;
-    volatile ACLKCON_FRCSEL_e FRCSEL : 1;
-    volatile ACLKCON_APLLCK_e APLLCK : 1;
-    volatile ACLKCON_APLLEN_e APLLEN : 1;
-} AUXOSC_CONFIG_t;
+struct AUXOSC_CONFIG_s {
+    volatile enum ACLKCON_APLLPRE_e N1;
+    volatile enum APLLFBD_APLLFBDIV_e M;
+    volatile enum APLLDIV_POSTxDIV_e N2;
+    volatile enum APLLDIV_POSTxDIV_e N3;
+    volatile enum APLLDIV_AVCODIV_e AVCODIV;
+    volatile enum ACLKCON_FRCSEL_e FRCSEL : 1;
+    volatile enum ACLKCON_APLLCK_e APLLCK : 1;
+    volatile enum ACLKCON_APLLEN_e APLLEN : 1;
+};
+typedef struct AUXOSC_CONFIG_s AUXOSC_CONFIG_t;
 
 #else
     #pragma message "error: === selected device family is not supported by oscillator mcal library ==="
@@ -1081,7 +1112,7 @@ typedef struct AUXOSC_CONFIG_s {
  *	ERROR CODES
  * **************************************************************************************/
 
-typedef enum OSC_CFG_ERR_RESULT_e{
+enum OSC_CFG_ERR_RESULT_e {
     OSCERR_FAILURE = 0x0000, // Global Clock Error
     OSCERR_SUCCESS = 0x0001, // Clock initialization was successfully performed
     OSCERR_CSF = 0x0002, // Clock switch-over failed
@@ -1089,12 +1120,19 @@ typedef enum OSC_CFG_ERR_RESULT_e{
     OSCERR_CSD = 0x0008, // Clock switching is disabled but desired clock differs from current clock
     OSCERR_PLL_LCK = 0x0010, // Primary PLL does not lock in
     OSCERR_APLL_LCK = 0x0020, // Auxiliary PLL does not lock in
-} OSC_CFG_ERR_RESULT_t;
+};
+typedef enum OSC_CFG_ERR_RESULT_e OSC_CFG_ERR_RESULT_t;
 
 
-/* ***************************************************************************************
- *	Prototypes
- * **************************************************************************************/
+/****************************************************************************************
+ * GLOBAL VARIABLES AND DATA OBJECTS
+ ***************************************************************************************/
+
+extern volatile struct OSCILLATOR_SYSTEM_FREQUENCIES_s SystemFrequencies; // Global data object of type OSCILLATOR_SYSTEM_FREQUENCIES_t
+
+/****************************************************************************************
+ * GLOBAL FUNCTION CALL PROTOTYPES
+ ***************************************************************************************/
 
 extern volatile uint16_t p33c_Osc_Initialize(volatile struct OSC_CONFIG_s osc_config);
 extern volatile uint16_t p33c_OscFrc_Initialize(volatile enum CLKDIV_FRCDIVN_e frc_div, volatile enum OSCTUN_TUN_e frc_tun);
@@ -1102,6 +1140,8 @@ extern volatile uint16_t p33c_OscAuxClk_Initialize(volatile struct AUXOSC_CONFIG
 
 extern volatile uint16_t p33c_OscFrc_DefaultInitialize(volatile enum CPU_SPEED_DEFAULTS_e cpu_speed);
 extern volatile uint16_t p33c_OscAuxClk_DefaultInitialize(volatile enum AUX_PLL_DEFAULTS_e afpllo_frequency);
-extern volatile uint16_t p33c_Osc_GetFrequencies(volatile uint32_t main_osc_frequency);
+
+extern volatile uint16_t p33c_Osc_SetExtFrequency(volatile int32_t ext_osc_frequency);
+extern volatile uint16_t p33c_Osc_GetFrequencies(void);
 
 #endif  /* MCAL_P33SMPS_OSCILLATOR_H */

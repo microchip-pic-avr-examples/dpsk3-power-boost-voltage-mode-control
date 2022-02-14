@@ -1,11 +1,13 @@
 # Fault Handler Function Driver
 
-<span id="startDoc"> </span> <!-- start tag for internal references -->
+<span id="startDoc"><a name="startDoc"></a></span> <!-- start tag for internal references -->
 
 ### Class
+
 PowerSmart™ Firmware Framework Component
 
 ### Summary
+
 Generic fault handler supporting comparison of static and dynamic data with automated fault trip and release function hooks. It further provides interrupt service routines for uninterruptible interrupts (traps) and a trap logger, capturing the status of CPU registers at the time when an uninterruptible interrupt is triggered (e.g. divide-by-zero, address error, oscillator failure, etc.). 
 
 ### Table Of Contents
@@ -17,7 +19,7 @@ Generic fault handler supporting comparison of static and dynamic data with auto
 - [History](#history)
 
 
-<span id="intro"> </span>
+<span id="intro"><a name="intro"></a></span>
 ### Introduction
 
 #### Description
@@ -27,34 +29,35 @@ The main Execute function of this fault handler is restricted to detecting fault
 
 The numbers n and m used for triggering/clearing a fault condition is set as parameter in user code and effectively provide filtering options influencing the sensitivity of the respective fault condition detection.
 
-#### Fault Object Types:
+#### Fault Object Types
 
-* Static: One 16-bit wide SFR or user variable compared against 16-bit wide constant
-* Dynamic: One 16-bit wide SFR or user variable compared against another 16-bit wide SFR or user variable 
-* Each variable is/can be supported by bit masks supporting range or bit-wise comparisons
+- Static: One 16-bit wide SFR or user variable compared against 16-bit wide constant
+- Dynamic: One 16-bit wide SFR or user variable compared against another 16-bit wide SFR or user variable 
+- Each variable is/can be supported by bit masks supporting range or bit-wise comparisons
 
-#### Compare Functions:
+#### Compare Functions
 
-* None (no comparison takes place, fault object ignored)
-* Greater Than
-* Less Than
-* Is Equal
-* Is Not Equal
-* Between Thresholds
-* Outside Thresholds
+- None (no comparison takes place, fault object ignored)
+- Greater Than
+- Less Than
+- Is Equal
+- Is Not Equal
+- Between Thresholds
+- Outside Thresholds
 
-#### Fault Indication/Fault Response:
+#### Fault Indication/Fault Response
 
-* Immediate indication of fault condition through status bit in fault object status word 
+- Immediate indication of fault condition through status bit in fault object status word 
 (set/cleared when change in fault condition is detected)
-* Immediate indication of fault status through status bit in fault object status word 
+- Immediate indication of fault status through status bit in fault object status word 
 (set/cleared when fault trips/resets)
-* Automated trigger of user-defined software function when a fault condition trips
-* Automated trigger of user-defined software function when a fault condition is released
+- Automated trigger of user-defined software function when a fault condition trips
+- Automated trigger of user-defined software function when a fault condition is released
 
 [[back](#startDoc)]
 
-<span id="lib_use"> </span>
+<span id="lib_use"><a name="lib_use"></a></span>
+
 ### Library Usage Guidance
 
 This code library repository must be included in an independent directory within the target project. Changes to any of the files of this repository in the target project environment can be pushed back to this library repository from where these changes can be distributed to one, more or all target projects this library has been used in. The upgrade of library files in a particular target project needs to be performed individually, allowing to individually manage the device driver version used.
@@ -62,33 +65,37 @@ This code library repository must be included in an independent directory within
 #### Adding Subtree Repository
 
 ##### Step 1 - Adding Subtree Repository to Target Project
+
 ###### a) Using Sourcetree Application
 
 Open *Sourcetree* Application
-* Open menu *Repository* → *Repository Settings*
-* Click *Add* to open the Add Repository dialog
+
+- Open menu *Repository* → *Repository Settings*
+- Click *Add* to open the Add Repository dialog
 
 Inside the Repository dialog
-* Enter *Remote Name* `subrepo-fault`
-* Enter clone URL/path https://bitbucket.microchip.com/scm/mcu16asmpsl/subrepo-fault-handler.git
-* Under *Optional extended integration* → *Remote Account* select your user account
-* Click *OK* to close the dialog
+
+- Enter *Remote Name* `subrepo-fault`
+- Enter clone URL/path https://bitbucket.microchip.com/scm/mcu16asmpsl/subrepo-fault-handler.git
+- Under *Optional extended integration* → *Remote Account* select your user account
+- Click *OK* to close the dialog
 
 ###### b) Using Git Bash
 
 Open Git Bash at root of target project repository and use the following command for adding the new subtree remote:
 
-* `$ git remote add subrepo-fault https://bitbucket.microchip.com/scm/mcu16asmpsl/subrepo-fault-handler.git`
+- `$ git remote add subrepo-fault https://bitbucket.microchip.com/scm/mcu16asmpsl/subrepo-fault-handler.git`
 
 ##### Step 2) Cloning Subtree Repository
 
 Further using Git Bash, use the `subtree add` command to clone the contents of this code library to the target project
 
-* `$ git subtree add --prefix=<code_library_target> subrepo-fault main  --squash`
+- `$ git subtree add --prefix=<code_library_target> subrepo-fault main  --squash`
 
 with `<code_library_target>` = path to sub-folder within the target project directory structure this code library should be cloned to (e.g. my_project.X/sources/fault_handler/drivers).
 
 #### 3) Pulling latest version from Library Repository
+
 When a new version of this code library is available, you can pull it by using the `subtree pull` command in the Git Bash:
 
 `$ git subtree pull --prefix=<code_library_target> subtree-fault main --squash`
@@ -96,6 +103,7 @@ When a new version of this code library is available, you can pull it by using t
 with `<code_library_target>` = path to sub-folder within the target project directory structure this code library has been cloned to (e.g. my_project.X/sources/fault_handler/drivers).
 
 #### 4) Pushing new version back to Library Repository
+
 When changes have been made to files of this code library, the new version can be pushed back to the library repository by using the `subtree push` command in the Git Bash:
 
 `$ git subtree push --prefix=<code_library_target> subtree-fault feature/version-update --squash`
@@ -103,17 +111,19 @@ When changes have been made to files of this code library, the new version can b
 with `<code_library_target>` = path to sub-folder within the target project directory structure this code library has been cloned to (e.g. my_project.X/sources/fault_handler/drivers).
 
 <span style="color:red">
+
     <u><b>Note:</b></u><br>
     Pushing directly to the library project 'main' or 'develop' branches may be prohibited. 
     Hence, <i><u><b>changes can only be pushed to feature branches</b></u></i>. A Pull Request is required to review and merge changes to 'develop'. Once changes have been approved and merged int 'develop', they may be merged into branch 'main' and thus released as new version through another pull request. This new version of 'main' can be tagged with a new version number and pulled into target projects.
-</span>
 
+</span>
 
 <br>&nbsp;
 
 [[back](#startDoc)]
 
-<span id="api_guide"> </span>
+<span id="api_guide"><a name="api_guide"></a></span>
+
 ### API Quick-Start Guide
 
 #### API Public Functions
@@ -128,19 +138,18 @@ volatile uint16_t drv_TrapHandler_SoftTrapsInitialize(
                 bool accumulator_catastrophic_overflow_trap_enable);
 ```
 
-* **`uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltobj)`**<br>&nbsp;
+- **`uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltobj)`**<br>&nbsp;
 This function executes the comparison between the defined fault object variable or register and its thresholds, tracking the most recent fault condition of the object by incrementing or clearing fault threshold violation counters.
 This function takes a function call parameter of type *struct FAULT_OBJECT_s* (see blow) on which the fault condition analysis is performed and returns an integer return value indicating success (= 1) or failure (= 0) of the function execution. The return value ***does not*** reflect the fault condition but only verifies if the ***execution of the fault check function*** was successful. The result of the fault check function can be read from the status bits of the fault object fltobj of type `FAULT_OBECT_s`.<br>&nbsp;<br>
 
-
-* **`uint16_t drv_TrapHandler_SoftTrapsInitialize( bool, bool, bool)`**<br>&nbsp;
+- **`uint16_t drv_TrapHandler_SoftTrapsInitialize( bool, bool, bool)`**<br>&nbsp;
 This function initializes the use of so-called *Soft Traps*. Soft traps define conditions which can be considered critical enough to be treated like other uninterruptible interrupts triggered by hardware errors (e.g. address error). 
 In this version the trap handler allows to treat DSP accumulator saturation events be treated as uninterruptible interrupt event or be ignored. This function can be used to enable/disable trap-treatment of saturation event (32-bit overflow condition) of accumulator a and/or b and also provides an additional, independent trap option for super-saturation events of any accumulator (40-bit overflow condition) <br>&nbsp;<br>
 
-
 [[back](#startDoc)]
 
-<span id="api_objects"> </span>
+<span id="api_objects"><a name="api_objects"></a></span>
+
 #### API Public Data Objects
 
 ##### 1) Fault Handler
@@ -392,11 +401,12 @@ typedef struct CPU_RCON_s
 [[back](#startDoc)]
 
 ---
-<span id="history"> </span>
+<span id="history"><a name="history"></a></span>
 ##### History:
 * 03/13/2020 v1.0 (M91406) Initial release
 * 11/02/2020 v2.0 (M91406) Enhanced version with generic trap handler
 * 03/08/2021 v2.1 (M91406) Improved ENABLE bit handling keeping fault check executed but bypassing fault trip and recovery responses
+* 07/16/2021 v2.2 (M91406) Introduced global FaultMonitor object and encapsulated scan through fault objects in fault driver
 
 ---
 © 2021, Microchip Technology Inc.

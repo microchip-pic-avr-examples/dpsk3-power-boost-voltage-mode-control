@@ -1,11 +1,17 @@
-# dpsk3-power-boost-voltage-mode-control, release v1.2.11
+# dpsk3-power-boost-voltage-mode-control, release v1.3.1
 
 ### Features Added\Updated
 
-Online firmware documentation output destination has been changed from Github Pages to https://onlinedocs.microchip.com
+- **Operating System RTOS 6G2**
+This version introduces an updated RTOS 6G2 task scheduler implementation. This slim operating system provides two preemtive task priorities. Each priority layer schedules tasks coorporatively. The high priority task layer includes time critical tasks, such as power supply state machine and fault handler, executing both at a fixed 10 kHz interval. The low priority layer schedules all HMI background tasks such as switch buttons, LCD and on-board LEDs. All tasks on both priority layers can be configured to run at their own interval. Task execution time offsets allow users to interleave execution periods preventing conflicts and task execution jitter, increasing the overall robustness and perceived performance while making the firmware more deterministic and predictable. Please read the firmware documentation for more details.
 
-When you download this version of the firmware, please also update your version of PowerSmart&trade; Digital Control Library Designer to version 0.9.14 or higher:
-[MPLAB&reg; PowerSmart&trade; Digital Control Library Designer v0.9.14](https://microchip-pic-avr-tools.github.io/powersmart-dcld/)
+- **[MPLAB&reg; PowerSmart&trade; Development Suite](https://www.microchip.com/powersmart)**
+This project release has been upgraded to support the new MPLAB&reg; PowerSmart&trade; Development Suite for control loop configuration and code generation. MPLAB&reg; PowerSmart&trade; Development Suite is now available for download for free on the Microchip Technology website.
+
+- **MPLAB&reg; PowerSmart&trade; Migration**
+The control loop configuration of previous versions of this project were supported by the preliminary stand-alone version of MPLAB&reg; PowerSmart&trade; Digital Control Library Designer (PS-DCLD). With the introduction of version 1.0 of the MPLAB&reg; PowerSmart&trade; Development Suite, this preliminary beta version is being replaced.<br>
+DCLD controller configuration files of the type (*.dcld) can be seamlessly imported in the Development Suite as well as new configurations created in the Development Suite can be exported to previous versions of DCLD to ensure compatibility with existing projects. Please refer to the [MPLAB&reg; PowerSmart&trade; Development Suite Quick Start Guide](https://ww1.microchip.com/downloads/en/DeviceDoc/UG20220108) for more information.<br>
+**The previous version is still available [here on Github](https://microchip-pic-avr-tools.github.io/powersmart-dcld/) but support will be discontinued on 1st of April 2022.**
 
 # dpsk3-power-boost-voltage-mode-control, release v1.2.1
 

@@ -5,6 +5,55 @@
 
 #include "p33c_ccp.h"
 
+// Private arrays of register set start addresses
+#if defined (CCP9CON1L)
+volatile uint16_t* p33c_CcpInstance_Handles[9]={
+    &CCP1CON1L, &CCP2CON1L, &CCP3CON1L, &CCP4CON1L, 
+    &CCP5CON1L, &CCP6CON1L, &CCP7CON1L, &CCP8CON1L, 
+    &CCP9CON1L
+};
+#elif defined (CCP8CON1L)
+volatile uint16_t* p33c_CcpInstance_Handles[8]={
+    &CCP1CON1L, &CCP2CON1L, &CCP3CON1L, &CCP4CON1L, 
+    &CCP5CON1L, &CCP6CON1L, &CCP7CON1L, &CCP8CON1L 
+};
+#elif defined (CCP7CON1L)
+volatile uint16_t* p33c_CcpInstance_Handles[7]={
+    &CCP1CON1L, &CCP2CON1L, &CCP3CON1L, &CCP4CON1L, 
+    &CCP5CON1L, &CCP6CON1L, &CCP7CON1L
+};
+#elif defined (CCP6CON1L)
+volatile uint16_t* p33c_CcpInstance_Handles[6]={
+    &CCP1CON1L, &CCP2CON1L, &CCP3CON1L, &CCP4CON1L, 
+    &CCP5CON1L, &CCP6CON1L
+};
+#elif defined (CCP5CON1L)
+volatile uint16_t* p33c_CcpInstance_Handles[5]={
+    &CCP1CON1L, &CCP2CON1L, &CCP3CON1L, &CCP4CON1L, 
+    &CCP5CON1L
+};
+#elif defined (CCP4CON1L)
+volatile uint16_t* p33c_CcpInstance_Handles[4]={
+    &CCP1CON1L, &CCP2CON1L, &CCP3CON1L, &CCP4CON1L
+};
+#elif defined (CCP3CON1L)
+volatile uint16_t* p33c_CcpInstance_Handles[3]={
+    &CCP1CON1L, &CCP2CON1L, &CCP3CON1L
+};
+#elif defined (CCP2CON1L)
+volatile uint16_t* p33c_CcpInstance_Handles[2]={
+    &CCP1CON1L, &CCP2CON1L
+};
+#elif defined (CCP1CON1L)
+volatile uint16_t* p33c_CcpInstance_Handles[1]={
+    &CCP1CON1L
+};
+#else
+#pragma message "selected device has no supported PWM generators"
+#endif
+
+
+
 /*********************************************************************************
  * @ingroup lib-layer-pral-properties-private-ccp
  * @var ccpConfigDefault
@@ -20,7 +69,7 @@
  *********************************************************************************/
 /**@ingroup lib-layer-pral-properties-private-ccp */
 
-volatile struct P33C_CCP_INSTANCE_SFRSET_s ccpConfigDefault = { 
+volatile struct P33C_CCP_INSTANCE_s ccpConfigDefault = { 
     
     .CCPxTMRL.value = 0,
     .CCPxTMRH.value = 0,
@@ -42,38 +91,13 @@ volatile struct P33C_CCP_INSTANCE_SFRSET_s ccpConfigDefault = {
 /* PRIVATE FUNCTION CALL PROTOTYPES*/
 //    (none)
 
-/*********************************************************************************
- * @fn     volatile struct P33C_CCP_INSTANCE_SFRSET_s* p33c_CcpInstance_GetHandle(volatile uint16_t ccpInstance)
- * @ingroup lib-layer-pral-functions-public-ccp
- * @brief  Gets pointer to CCP instance SFR set
- * @param  ccpInstance Index of the Capture/Compare peripheral instance of type unsinged integer
- * @return Pointer to SCCP/MCCP instance special function register data object of type struct P33C_CCP_INSTANCE_SFRSET_s 
- *  
- * @details
- *      This function returns the pointer to a CCP module register set
- *    Special Function Register memory space. This pointer can be used to 
- *    directly write to/read from the Special Function Registers of the 
- *    CCP peripheral module configuration.
- * 
- *********************************************************************************/
-
-volatile struct P33C_CCP_INSTANCE_SFRSET_s* p33c_CcpInstance_GetHandle(volatile uint16_t ccpInstance){
-
- volatile struct P33C_CCP_INSTANCE_SFRSET_s* ccp;
-    
-    // Capture Handle: set pointer to memory address of desired PWM instance
-    ccp = (volatile struct P33C_CCP_INSTANCE_SFRSET_s*) 
-         ((volatile uint8_t*)&CCP1CON1L + ((ccpInstance - 1) * P33C_CCPGEN_SFR_OFFSET));
-    
-    return(ccp);
-}
 
 /*********************************************************************************
- * @fn     volatile struct P33C_CCP_INSTANCE_SFRSET_s p33c_CcpInstance_ConfigRead(volatile uint16_t ccpInstance)
+ * @fn     volatile struct P33C_CCP_INSTANCE_s p33c_CcpInstance_ConfigRead(volatile uint16_t ccpInstance)
  * @ingroup lib-layer-pral-functions-public-ccp
  * @brief  Read the current configuration from the CCP instance registers
  * @param  ccpInstance Index of the Capture/Compare peripheral instance of type unsinged integer
- * @return SCCP/MCCP instance special function register data object of type struct P33C_CCP_INSTANCE_SFRSET_s
+ * @return SCCP/MCCP instance special function register data object of type struct P33C_CCP_INSTANCE_s
  * 
  * @details
  *     This function reads all registers with their current configuration into
@@ -83,23 +107,22 @@ volatile struct P33C_CCP_INSTANCE_SFRSET_s* p33c_CcpInstance_GetHandle(volatile 
  * 
  *********************************************************************************/
 
-volatile struct P33C_CCP_INSTANCE_SFRSET_s p33c_CcpInstance_ConfigRead(volatile uint16_t ccpInstance){
+volatile struct P33C_CCP_INSTANCE_s p33c_CcpInstance_ConfigRead(volatile uint16_t ccpInstance){
 
- volatile struct P33C_CCP_INSTANCE_SFRSET_s* ccp;
+ volatile struct P33C_CCP_INSTANCE_s* ccp;
     
     // Capture Handle: set pointer to memory address of desired PWM instance
-    ccp = (volatile struct P33C_CCP_INSTANCE_SFRSET_s*) 
-         ((volatile uint8_t*)&CCP1CON1L + ((ccpInstance - 1) * P33C_CCPGEN_SFR_OFFSET));
+    ccp = p33c_CcpInstance_GetHandle(ccpInstance); 
     
     return(*ccp);
 }
 
 /********************************************************************************
- * @fn     volatile uint16_t p33c_CcpInstance_ConfigWrite(volatile uint16_t ccpInstance, volatile struct P33C_CCP_INSTANCE_SFRSET_s ccpConfig)
+ * @fn     volatile uint16_t p33c_CcpInstance_ConfigWrite(volatile uint16_t ccpInstance, volatile struct P33C_CCP_INSTANCE_s ccpConfig)
  * @ingroup lib-layer-pral-functions-public-ccp
  * @brief  Writes a user-defined configuration to the CCP instance registers
  * @param  ccpInstance Index of the Capture/Compare peripheral instance of type unsinged integer
- * @param  ccpConfig SCCP/MCCP instance special function register data object of type struct P33C_CCP_INSTANCE_SFRSET_s
+ * @param  ccpConfig SCCP/MCCP instance special function register data object of type struct P33C_CCP_INSTANCE_s
  * @return 0 = failure, writing to CCP instance was not successful
  * @return 1 = success, writing to CCP instance was successful
  * 
@@ -114,14 +137,13 @@ volatile struct P33C_CCP_INSTANCE_SFRSET_s p33c_CcpInstance_ConfigRead(volatile 
  *********************************************************************************/
 
 volatile uint16_t p33c_CcpInstance_ConfigWrite(volatile uint16_t ccpInstance, 
-                                volatile struct P33C_CCP_INSTANCE_SFRSET_s ccpConfig)
+                                volatile struct P33C_CCP_INSTANCE_s ccpConfig)
 {
     volatile uint16_t retval=1;
-    volatile struct P33C_CCP_INSTANCE_SFRSET_s* ccp;    
+    volatile struct P33C_CCP_INSTANCE_s* ccp;    
 
-    // Set pointer to memory address of desired PWM instance
-    ccp = (volatile struct P33C_CCP_INSTANCE_SFRSET_s*) 
-        ((volatile uint8_t*)&CCP1CON1L + ((ccpInstance - 1) * P33C_CCPGEN_SFR_OFFSET));
+    // Set pointer to memory address of desired CCP instance
+    ccp = p33c_CcpInstance_GetHandle(ccpInstance); 
     *ccp = ccpConfig;
     
     return(retval);

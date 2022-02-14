@@ -44,6 +44,7 @@ extern volatile PUSH_BUTTON_OBJECT_t push_button;
 // PUBLIC FUNCTION PROTOTYPE DECLARATION
 extern volatile uint16_t appPushButton_Initialize(void);
 extern volatile uint16_t appPushButton_Execute(void);
+extern volatile uint16_t appPushButton_Start(void);
 extern volatile uint16_t appPushButton_Dispose(void);
 
 

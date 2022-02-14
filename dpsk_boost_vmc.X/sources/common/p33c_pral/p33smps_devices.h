@@ -105,11 +105,14 @@
       defined (__dsPIC33CH64MP206S1__) || defined (__dsPIC33CH128MP206S1__) || defined (__dsPIC33CH256MP206S1__) || defined (__dsPIC33CH512MP206S1__) || \
       defined (__dsPIC33CH64MP208S1__) || defined (__dsPIC33CH128MP208S1__) || defined (__dsPIC33CH256MP208S1__) || defined (__dsPIC33CH512MP208S1__)
     // Gemini family of devices (slave core)
-        #define __P33SMPS_CH_SLV__
-        #define __P33SMPS_CH_SLV1__
+        #define __P33SMPS_CH_SLV__  //(depreciated)
+        #define __P33SMPS_CH_SLV1__ //(depreciated)
+        #define __P33SMPS_CH_SEC__
+        #define __P33SMPS_CH_SEC1__
     #else
     // Gemini family of devices (master core)
-        #define __P33SMPS_CH_MSTR__
+        #define __P33SMPS_CH_MSTR__ //(depreciated)
+        #define __P33SMPS_CH_MAIN__
     #endif
 
 
@@ -134,10 +137,13 @@
       defined (__dsPIC33CH64MP506S1__) || defined (__dsPIC33CH128MP506S1__) || defined (__dsPIC33CH256MP506S1__) || defined (__dsPIC33CH512MP506S1__) || \
       defined (__dsPIC33CH64MP508S1__) || defined (__dsPIC33CH128MP508S1__) || defined (__dsPIC33CH256MP508S1__) || defined (__dsPIC33CH512MP508S1__)
     // Gemini family of devices with CAN FD (slave core)
-        #define __P33SMPS_CH_SLV__
-        #define __P33SMPS_CH_SLV1__
+        #define __P33SMPS_CH_SLV__  //(depreciated)
+        #define __P33SMPS_CH_SLV1__ //(depreciated)
+        #define __P33SMPS_CH_SEC__
+        #define __P33SMPS_CH_SEC1__
     #else
-        #define __P33SMPS_CH_MSTR__
+        #define __P33SMPS_CH_MSTR__ //(depreciated)
+        #define __P33SMPS_CH_MAIN__
     #endif
 
 #elif defined (__dsPIC33CK32MP102__) || defined (__dsPIC33CK64MP102__) || \
